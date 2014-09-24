@@ -1,3 +1,4 @@
 ﻿Public Class iLogin
-    Dim shit
+    Dim shit As Integer
+
 End Class
