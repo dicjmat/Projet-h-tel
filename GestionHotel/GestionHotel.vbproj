@@ -74,6 +74,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="iAjouterActivite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iAjouterHoraire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +96,9 @@
     <Compile Include="iAccueilGestionnaire.xaml.vb">
       <DependentUpon>iAccueilGestionnaire.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iAjouterActivite.xaml.vb">
+      <DependentUpon>iAjouterActivite.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iAjouterHoraire.xaml.vb">
       <DependentUpon>iAjouterHoraire.xaml</DependentUpon>
     </Compile>
@@ -99,6 +106,38 @@
       <DependentUpon>iAjouterItem.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="iCommande.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iFicheClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iFicheEmploye.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iGestionCentrale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iGestionChambre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iGestionHotel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iGestionSalle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iInventaire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +163,30 @@
     <Import Include="System.Windows.Navigation" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="iCommande.xaml.vb">
+      <DependentUpon>iCommande.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iFicheClient.xaml.vb">
+      <DependentUpon>iFicheClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iFicheEmploye.xaml.vb">
+      <DependentUpon>iFicheEmploye.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iGestionCentrale.xaml.vb">
+      <DependentUpon>iGestionCentrale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iGestionChambre.xaml.vb">
+      <DependentUpon>iGestionChambre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iGestionHotel.xaml.vb">
+      <DependentUpon>iGestionHotel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iGestionSalle.xaml.vb">
+      <DependentUpon>iGestionSalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iInventaire.xaml.vb">
+      <DependentUpon>iInventaire.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iLogin.xaml.vb">
       <DependentUpon>iLogin.xaml</DependentUpon>
     </Compile>
