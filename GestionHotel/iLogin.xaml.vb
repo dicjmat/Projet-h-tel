@@ -1,3 +1,3 @@
 ﻿Public Class iLogin
-    Dim shit
+    Dim shit As String
 End Class
