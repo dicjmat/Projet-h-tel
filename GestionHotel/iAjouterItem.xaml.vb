@@ -5,7 +5,6 @@
     End Sub
 
     Private Sub btnRechercherItem_Click(sender As Object, e As RoutedEventArgs) Handles btnRechercherItem.Click
-        Dim codeItem As New SqlCommand("SELECT codeItem FROM Inventaire.tblItem WHERE codeItem=txtRCodeItem.Text")
 
     End Sub
 End Class
