@@ -10,11 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblActivite
-    Public Property noActivite As Byte
-    Public Property nomActivite As String
-    Public Property descActivite As String
+Partial Public Class tblPays
+    Public Property codePays As String
+    Public Property nomPays As String
 
-    Public Overridable Property tblForfait As ICollection(Of tblForfait) = New HashSet(Of tblForfait)
+    Public Overridable Property tblProvince As ICollection(Of tblProvince) = New HashSet(Of tblProvince)
 
 End Class

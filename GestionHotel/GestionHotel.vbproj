@@ -83,9 +83,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblActivite.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="tblBoiteReception.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -119,9 +116,6 @@
     <Compile Include="tblForfait.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblForfaitOffert.vb">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="tblFournisseur.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -150,6 +144,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblOption.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPays.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblPieceJointe.vb">

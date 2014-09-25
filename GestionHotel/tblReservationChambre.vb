@@ -21,4 +21,9 @@ Partial Public Class tblReservationChambre
     Public Property noClient As Integer
     Public Property noEmpl As Short
 
+    Public Overridable Property tblEmploye As tblEmploye
+    Public Overridable Property tblChambre As tblChambre
+    Public Overridable Property tblClient As tblClient
+    Public Overridable Property tblFacture As ICollection(Of tblFacture) = New HashSet(Of tblFacture)
+
 End Class

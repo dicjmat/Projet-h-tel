@@ -22,8 +22,10 @@ Partial Public Class tblClient
     Public Property noCompagnie As Nullable(Of Integer)
     Public Property codeVille As String
     Public Property dateExpiration As String
+    Public Property typeCarteCredit As String
 
     Public Overridable Property tblVille As tblVille
     Public Overridable Property tblCompagnie As tblCompagnie
+    Public Overridable Property tblReservationChambre As ICollection(Of tblReservationChambre) = New HashSet(Of tblReservationChambre)
 
 End Class

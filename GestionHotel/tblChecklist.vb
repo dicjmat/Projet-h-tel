@@ -19,4 +19,8 @@ Partial Public Class tblChecklist
     Public Property codeItem As String
     Public Property noEmpl As Short
 
+    Public Overridable Property tblItem As tblItem
+    Public Overridable Property tblChambre As tblChambre
+    Public Overridable Property tblEmploye As tblEmploye
+
 End Class

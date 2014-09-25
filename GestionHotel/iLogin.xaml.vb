@@ -5,6 +5,9 @@
     Dim gestion As iAccueilGestionnaire
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click
         Me.Close()
+        checkList.Close()
+        gerant.Close()
+        gestion.Close()
     End Sub
 
     Private Sub btnConfirmer_Click(sender As Object, e As RoutedEventArgs) Handles btnConfirmer.Click
@@ -24,8 +27,10 @@
         Dim res = From el In maBD.tblLogin Where el.utilisateur = txtNomUtilisateur.Text And txtMDP.Password = el.mdp Select el
         If Not My.Computer.Network.IsAvailable Then
             lblErreur.Content = "Erreur de connexion"
+            Exit Sub
         ElseIf res.ToList().Count = 0 Then
-            lblErreur.Content = "Le nom d'utilisateur ou le mot de passe est invalide"
+            lblErreur.Content = "Nom d'utilisateur ou mot de passe invalide"
+            Exit Sub
         End If
         typeEmploye = res.First.statut
         Select Case typeEmploye
@@ -38,7 +43,6 @@
             Case Else
 
         End Select
-
     End Sub
 
     Private Sub Window_KeyDown(sender As Object, e As KeyEventArgs)

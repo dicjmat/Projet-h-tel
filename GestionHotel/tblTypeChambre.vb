@@ -18,6 +18,7 @@ Partial Public Class tblTypeChambre
     Public Overridable Property tblGabarit As ICollection(Of tblGabarit) = New HashSet(Of tblGabarit)
     Public Overridable Property tblChambre As ICollection(Of tblChambre) = New HashSet(Of tblChambre)
     Public Overridable Property tblRabais As ICollection(Of tblRabais) = New HashSet(Of tblRabais)
+    Public Overridable Property tblForfait As ICollection(Of tblForfait) = New HashSet(Of tblForfait)
     Public Overridable Property tblHotel As ICollection(Of tblHotel) = New HashSet(Of tblHotel)
     Public Overridable Property tblOption As ICollection(Of tblOption) = New HashSet(Of tblOption)
 

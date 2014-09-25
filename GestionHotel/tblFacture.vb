@@ -17,7 +17,6 @@ Partial Public Class tblFacture
     Public Property noReservation As Integer
 
     Public Overridable Property tblElementFacture As ICollection(Of tblElementFacture) = New HashSet(Of tblElementFacture)
-    Public Overridable Property tblFacture1 As tblFacture
-    Public Overridable Property tblFacture2 As tblFacture
+    Public Overridable Property tblReservationChambre As tblReservationChambre
 
 End Class
