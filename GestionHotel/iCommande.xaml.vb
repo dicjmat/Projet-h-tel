@@ -4,9 +4,9 @@
         bd = New P2014_Equipe2_GestionHôtelièreEntities
     End Sub
     Private Sub btnAjouterItemComm_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItemComm.Click
-        Dim prix = From item In bd.tblItem
-                   Where txtCodeItem.Text = item.codeItem And 
-                   Select prix
+        'Dim prix = From item In bd.tblItem
+        'Where txtCodeItem.Text = item.codeItem And 
+        'Select prix
 
 
     End Sub
