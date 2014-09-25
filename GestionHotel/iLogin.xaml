@@ -11,13 +11,10 @@
                         <Label Content="Nom d'utilisateur :" Margin="26,20,0,0" HorizontalAlignment="Left"/>
                         <TextBox x:Name="txtNomUtilisateur" Height="25" Width="125" Margin="26,44,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                         <Label Content="Mot de passe :" Margin="24,69,65.6,0"></Label>
-                        <TextBox Name="txtMDP" Height="25" Width="125" Margin="24,91,28.6,0" HorizontalAlignment="Center" VerticalAlignment="Top"></TextBox>
+                        <Label Name="lblErreur" Content="" HorizontalAlignment="Center" Margin="34,0,30.6,5" VerticalAlignment="Bottom" Foreground="Red"/>
+                        <PasswordBox Name="txtMDP" Height="25" Width="125" Margin="24,91,28.6,0" HorizontalAlignment="Center" VerticalAlignment="Top"></PasswordBox>
                         <Button Name="btnConfirmer" Content="Confirmer" Margin="10,144,96.6,-23" Width="75"/>
                         <Button Name="btnQuitter" Content="Quitter" Margin="97,144,0,-23" Width="75" HorizontalAlignment="Left"/>
-                        <Label Name="lblErreur" Content="Erreur de connexion" HorizontalAlignment="Center" Margin="34,0,30.6,5" VerticalAlignment="Bottom" Foreground="Red"/>
-                        <PasswordBox Name="txtMDP" Height="25" Width="125" Margin="24,91,28.6,0" HorizontalAlignment="Center" VerticalAlignment="Top"></PasswordBox>
-                        <Button Name="btnConfirmer" Content="Confirmer" Margin="10,121,96.6,0" Width="75"/>
-                        <Button Name="btnQuitter" Content="Quitter" Margin="97,121,0,0" Width="75" HorizontalAlignment="Left"/>
                     </Grid>
                 </StackPanel>
             </Grid>
