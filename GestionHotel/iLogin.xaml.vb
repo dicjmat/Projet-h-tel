@@ -41,10 +41,12 @@
                 checkList = New iCheckList
                 checkList.Owner = Me
                 checkList.Show()
+                Me.Hide()
             Case "GEST"
                 gestion = New iAccueilGestionnaire
                 gestion.Owner = Me
                 gestion.Show()
+                Me.Hide()
             Case Else
         End Select
     End Sub
