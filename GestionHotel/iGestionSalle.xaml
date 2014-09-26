@@ -1,16 +1,16 @@
-﻿<Window x:Class="iGestionSalle" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+﻿<Window x:Class="iGestionSalle" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="350" Width="525">
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="172">
-                <GroupBox Header="Gestion des salles" HorizontalAlignment="Center" Width="238" Height="148" VerticalAlignment="Top">
+                <GroupBox BorderBrush="Black" Header="Gestion des salles" HorizontalAlignment="Center" Width="238" Height="148" VerticalAlignment="Top">
                     <StackPanel>
                         <Grid>
                             <Label Content="NoSalle :" Margin="0,0,0,0"></Label>
                             <TextBox Name="txtNoSalle" Margin="60,5,0.4,100.6" Height="20"></TextBox>
-                            <Label Content="DescSalle :" Margin="0,25,0,0"></Label>
+                            <Label Content="Description :" Margin="0,25,0,0"></Label>
                             <TextBox Name="txtDescSalle" Margin="73,30,0.4,75.6" Height="20"></TextBox>
                             <Label Content="Nombre de place de la salle :" Margin="0,50,0,0"></Label>
                             <TextBox Name="txtNoPlaceSalle" Margin="163,55,0.8,50.6" Height="20"></TextBox>

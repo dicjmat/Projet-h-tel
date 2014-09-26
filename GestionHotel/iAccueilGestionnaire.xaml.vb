@@ -14,17 +14,17 @@
         Me.Owner.Show()
     End Sub
 
-    Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
-        Me.Close()
-    End Sub
-
     Private Sub btnFicheEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmploye.Click
         Dim iEmploye As New iFicheEmploye
         iEmploye.Show()
     End Sub
 
     Private Sub btnInventaire_Click(sender As Object, e As RoutedEventArgs) Handles btnInventaire.Click
-        Dim inventaire As New iInventaire
+        Dim inventaire = New iInventaire(_p2)
         inventaire.Show()
+    End Sub
+
+    Private Sub btnDeco_Click(sender As Object, e As RoutedEventArgs) Handles btnDeco.Click
+        Me.Close()
     End Sub
 End Class
