@@ -15,7 +15,7 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <ListBox ItemsSource="{Binding}" Name="lbTest" Width="500" Margin="75,45,74.6,65">
+                <ListBox ItemsSource="{Binding}" Name="lbItem" Width="500" Margin="75,45,74.6,65">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -26,7 +26,7 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
                 <Button x:Name="btnSauvegarder" Content="Sauvegarder" Width="100" Height="50" Margin="369,518,180.6,10"/>
-                <Button x:Name="btnQuitter" Content="Quitter" Width="100" Height="50" Margin="474,518,75.6,10"/>
+                <Button x:Name="btnQuitter" Content="Déconnexion" Width="100" Height="50" Margin="474,518,75.6,10"/>
             </Grid>
         </Viewbox>
     </Grid>
