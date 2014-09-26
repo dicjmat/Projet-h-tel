@@ -5,17 +5,17 @@
     <Grid>
         <Viewbox>
             <Grid Height="578">
-                <Label Content="Numéro de la chambre" FontSize="15" Margin="50,10,89,538" />
-                <ComboBox ItemsSource="{Binding}" Name="cbTest" Height="30" Width="300" Margin="211,10,89,538" Background="White">
+                <Label Content="Numéro de la chambre" FontSize="15" Margin="180,10,-41.4,538" />
+                <ComboBox ItemsSource="{Binding}" Name="cbChambre" Height="30" Margin="347,11,180,537" Background="White">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Label Content="{Binding nom}"/>
+                                <Label Content="{Binding noChambre}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <ListBox ItemsSource="{Binding}" Name="lbTest" Width="500" Margin="50,45,50,10">
+                <ListBox ItemsSource="{Binding}" Name="lbTest" Width="500" Margin="75,45,74.6,65">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -25,6 +25,8 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
+                <Button x:Name="btnSauvegarder" Content="Sauvegarder" Width="100" Height="50" Margin="369,518,180.6,10"/>
+                <Button x:Name="btnQuitter" Content="Quitter" Width="100" Height="50" Margin="474,518,75.6,10"/>
             </Grid>
         </Viewbox>
     </Grid>
