@@ -139,6 +139,11 @@
           <Property Name="dateEmbauche" Type="date" Nullable="false" />
           <Property Name="noHotel" Type="tinyint" Nullable="false" />
           <Property Name="codeProf" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="hrtravail" Type="smallint" />
+          <Property Name="salaire" Type="tinyint" Nullable="false" />
+          <Property Name="joursVac" Type="tinyint" />
+          <Property Name="joursFerie" Type="tinyint" />
+          <Property Name="joursMal" Type="tinyint" />
         </EntityType>
         <EntityType Name="tblHoraire">
           <Key>
@@ -1336,6 +1341,11 @@
           <Property Name="dateEmbauche" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="noHotel" Type="Byte" Nullable="false" />
           <Property Name="codeProf" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="hrtravail" Type="Int16" />
+          <Property Name="salaire" Type="Byte" Nullable="false" />
+          <Property Name="joursVac" Type="Byte" />
+          <Property Name="joursFerie" Type="Byte" />
+          <Property Name="joursMal" Type="Byte" />
           <NavigationProperty Name="tblChecklist" Relationship="Self.fk_chklist_noempl" FromRole="tblEmploye" ToRole="tblChecklist" />
           <NavigationProperty Name="tblHotel" Relationship="Self.fk_empl_hot" FromRole="tblEmploye" ToRole="tblHotel" />
           <NavigationProperty Name="tblVille" Relationship="Self.fk_empl_covi" FromRole="tblEmploye" ToRole="tblVille" />
@@ -2421,6 +2431,11 @@
                 <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />
                 <ScalarProperty Name="noHotel" ColumnName="noHotel" />
                 <ScalarProperty Name="codeProf" ColumnName="codeProf" />
+                <ScalarProperty Name="hrtravail" ColumnName="hrtravail" />
+                <ScalarProperty Name="salaire" ColumnName="salaire" />
+                <ScalarProperty Name="joursVac" ColumnName="joursVac" />
+                <ScalarProperty Name="joursFerie" ColumnName="joursFerie" />
+                <ScalarProperty Name="joursMal" ColumnName="joursMal" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

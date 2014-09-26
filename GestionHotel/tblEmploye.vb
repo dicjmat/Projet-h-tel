@@ -22,6 +22,11 @@ Partial Public Class tblEmploye
     Public Property dateEmbauche As Date
     Public Property noHotel As Byte
     Public Property codeProf As String
+    Public Property hrtravail As Nullable(Of Short)
+    Public Property salaire As Byte
+    Public Property joursVac As Nullable(Of Byte)
+    Public Property joursFerie As Nullable(Of Byte)
+    Public Property joursMal As Nullable(Of Byte)
 
     Public Overridable Property tblChecklist As ICollection(Of tblChecklist) = New HashSet(Of tblChecklist)
     Public Overridable Property tblHotel As tblHotel
