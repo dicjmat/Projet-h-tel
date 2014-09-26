@@ -19,8 +19,8 @@
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <CheckBox Content="{Binding tblItem.NomItem}"/>
-                                <TextBox x:Name="txtComCheck" Width="300" Height="70" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"/>
+                                <CheckBox Content="{Binding nomItem}"/>
+                                <TextBox x:Name="txtComCheck" Width="300" Height="40" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
