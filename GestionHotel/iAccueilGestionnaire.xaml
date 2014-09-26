@@ -12,7 +12,7 @@
                 <Button Name="btnFIcheClient" Content="Fiche Client" HorizontalAlignment="Center" Margin="67,104,69,0" VerticalAlignment="Top" Width="100"/>
                 <Button Name="btnAjoutHoraire" Content="Ajouter Horaire" HorizontalAlignment="Center" Margin="67,131,69,0" VerticalAlignment="Top" Width="100"/>
                 <Button Name="btnAjoutItem" Content="Ajouter Item" HorizontalAlignment="Center" Margin="67,158,69,0" VerticalAlignment="Top" Width="100"/>
-                <Button Content="Quitter" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Button Content="Quitter" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Button_Click"/>
             </Grid>
         </Viewbox>
     </Grid>
