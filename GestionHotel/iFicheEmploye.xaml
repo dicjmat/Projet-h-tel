@@ -4,7 +4,7 @@
     Title="Gestion Hotel" Height="277.2" Width="535">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="250" Width="530">
+            <Grid Height="250" Width="530" Loaded="Grid_Loaded">
                 <Label Content="NomEmploye : " HorizontalAlignment="Left" Margin="4,5,0,0" VerticalAlignment="Top"/>
                 <TextBox Name="txtRNomClient" Height="25" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="100,5,0,0"/>
                 <GroupBox Header="Fiche Employe" Margin="0,30,0,0" HorizontalAlignment="Left" Width="400">
@@ -37,7 +37,7 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Content="Créer" HorizontalAlignment="Left" Margin="420,44,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+                <Button Content="Créer" HorizontalAlignment="Left" Margin="420,44,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="Button_Click"/>
                 <Button Content="Sauvegarder" HorizontalAlignment="Left" Margin="420,94,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
                 <Button Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Margin="420,194,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
                 <Button Content="Annuler" HorizontalAlignment="Left" Margin="420,144,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
