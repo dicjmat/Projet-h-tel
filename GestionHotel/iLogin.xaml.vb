@@ -5,9 +5,6 @@
     Dim gestion As iAccueilGestionnaire
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click
         Me.Close()
-        checkList.Close()
-        gerant.Close()
-        gestion.Close()
     End Sub
 
     Private Sub btnConfirmer_Click(sender As Object, e As RoutedEventArgs) Handles btnConfirmer.Click
