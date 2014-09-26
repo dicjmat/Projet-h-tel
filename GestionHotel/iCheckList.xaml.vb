@@ -19,7 +19,7 @@
         Dim nHotel As Short
         BD = New P2014_Equipe2_GestionHôtelièreEntities
         hotel = From el In BD.tblEmploye Where el.noEmpl = _p1 Select el.noHotel
-        nHotel = hotel.First()
+        nHotel = Convert.ToInt16(hotel.First())
         Dim res = From el In BD.tblChambre Where el.noHotel = nHotel Select el
 
         cbChambre.DataContext = res.ToList()
@@ -30,10 +30,10 @@
     End Sub
 
     Private Sub cbChambre_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbChambre.SelectionChanged
-        'Dim chambre = Convert.ToInt16(cbChambre.SelectedValue.nom())
-        'Dim typeChambre = From el In BD.tblChambre Where el.noChambre = chambre And el.noHotel =
-        'Dim res = From el In BD.tblGabarit Where (el.nom = chambre) Select el
+        Dim chambre = Convert.ToInt16(cbChambre.SelectedValue.nom())
+        Dim typeChambre = From el In BD.tblChambre Where el.noChambre = chambre And el.noHotel = Convert.ToInt16(hotel) Select el.codeTypeChambre
+        Dim res = From el In BD.tblItem Join comp In BD.tblGabarit On comp.codeItem Equals el.codeItem Where comp.codeTypeChambre = typeChambre.ToString() Select el.descItem
 
-        'lbTest.DataContext = res.ToList()
+        lbItem.DataContext = res.ToList()
     End Sub
 End Class
