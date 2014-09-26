@@ -1,14 +1,14 @@
-﻿<Window x:Class="iAjouterHoraire" FontSize="16" WindowState="Maximized" WindowStartupLocation="CenterScreen"
+﻿<Window x:Class="iAjouterHoraire" FontSize="16" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="CadetBlue"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Gestion Hotel" Height="350" Width="525">
+    Title="Gestion Hotel" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid>
-                <GroupBox Header="Employé" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="70" Width="498" Grid.ColumnSpan="2">
-                    <Button Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Height="29" Margin="413,0,-3.2,0" VerticalAlignment="Top" Width="75"/>
+                <GroupBox BorderBrush="Black" Header="Employé" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="70" Width="498" Grid.ColumnSpan="2">
+                    <Button Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Height="29" Margin="402,0,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.546,0.688"/>
                 </GroupBox>
-                <GroupBox Header="Horaire" HorizontalAlignment="Left" Margin="261,84,0,0" VerticalAlignment="Top" Height="228" Width="247">
+                <GroupBox BorderBrush="Black" Header="Horaire" HorizontalAlignment="Left" Margin="261,84,0,0" VerticalAlignment="Top" Height="228" Width="247">
                     <StackPanel HorizontalAlignment="Left" Height="208" Margin="10,10,0,-18.8" VerticalAlignment="Top" Width="225">
                         <Canvas>
                             <Label Content="Heure de début :" Canvas.Top="1" Margin="0,0,10.2,0"/>
@@ -21,7 +21,7 @@
                         </Canvas>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox Header="Calendrier" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Height="228" Width="246">
+                <GroupBox  BorderBrush="Black" Header="Calendrier" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Height="228" Width="246">
                     <Calendar HorizontalAlignment="Left" Margin="0,10,0,-18.8" VerticalAlignment="Top" Height="208" Width="212"/>
                 </GroupBox>
             </Grid>

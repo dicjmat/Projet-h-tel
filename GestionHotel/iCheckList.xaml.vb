@@ -1,12 +1,14 @@
 ﻿Public Class iCheckList
 
     Private _p1 As Short
+    Private _p2 As Short
     Private BD As P2014_Equipe2_GestionHôtelièreEntities
     Private hotel
 
-    Sub New(p1 As Short)
+    Sub New(p1 As Short, p2 As Short)
         InitializeComponent()
         _p1 = p1
+        _p2 = p2
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
