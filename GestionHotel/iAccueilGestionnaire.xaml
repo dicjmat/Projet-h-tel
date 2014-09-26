@@ -1,4 +1,4 @@
-﻿<Window x:Class="iAccueilGestionnaire" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+﻿<Window x:Class="iAccueilGestionnaire" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="503.588" Width="525" Closing="Window_Closing">
@@ -12,7 +12,7 @@
                 <Button Name="btnFIcheClient" Content="Fiche Client" HorizontalAlignment="Center" Margin="67,104,69,0" VerticalAlignment="Top" Width="100"/>
                 <Button Name="btnAjoutHoraire" Content="Ajouter Horaire" HorizontalAlignment="Center" Margin="67,131,69,0" VerticalAlignment="Top" Width="100"/>
                 <Button Name="btnAjoutItem" Content="Ajouter Item" HorizontalAlignment="Center" Margin="67,158,69,0" VerticalAlignment="Top" Width="100"/>
-                <Button Content="Quitter" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Button Name="btnDeco" Content="Deconnexion" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
             </Grid>
         </Viewbox>
     </Grid>
