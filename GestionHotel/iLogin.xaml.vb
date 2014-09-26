@@ -18,6 +18,7 @@
 
     Private Sub login()
         Dim typeEmploye As String
+        Dim noEmploye As Short
         Dim res = From el In maBD.tblLogin Where el.utilisateur = txtNomUtilisateur.Text And txtMDP.Password = el.mdp Select el
         If Not My.Computer.Network.IsAvailable Then
             lblErreur.Content = "Erreur de connexion"
@@ -27,6 +28,7 @@
             Exit Sub
         End If
         typeEmploye = res.First.statut
+        noEmploye = res.First.noEmpl
         lblErreur.Content = ""
         txtMDP.Password = ""
         txtNomUtilisateur.Text = ""
@@ -34,15 +36,15 @@
         Me.Hide()
         Select Case typeEmploye
             Case "ADMI"
-                gerant = New iAccueilGerant(res.First.noEmpl)
+                gerant = New iAccueilGerant(noEmploye)
                 gerant.Owner = Me
                 gerant.Show()
             Case "PERS"
-                checkList = New iCheckList(res.First.noEmpl)
+                checkList = New iCheckList(noEmploye)
                 checkList.Owner = Me
                 checkList.Show()
             Case "GEST"
-                gestion = New iAccueilGestionnaire(res.First.noEmpl)
+                gestion = New iAccueilGestionnaire(noEmploye)
                 gestion.Owner = Me
                 gestion.Show()
             Case Else
