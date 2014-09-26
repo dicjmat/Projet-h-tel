@@ -38,12 +38,12 @@
                 gerant.Show()
                 Me.Hide()
             Case "PERS"
-                checkList.Owner = Me
                 checkList = New iCheckList
+                checkList.Owner = Me
                 checkList.Show()
             Case "GEST"
-                gestion.Owner = Me
                 gestion = New iAccueilGestionnaire
+                gestion.Owner = Me
                 gestion.Show()
             Case Else
         End Select
