@@ -31,22 +31,20 @@
         txtMDP.Password = ""
         txtNomUtilisateur.Text = ""
         txtNomUtilisateur.Focus()
+        Me.Hide()
         Select Case typeEmploye
             Case "ADMI"
                 gerant = New iAccueilGerant
                 gerant.Owner = Me
                 gerant.Show()
-                Me.Hide()
             Case "PERS"
                 checkList = New iCheckList
                 checkList.Owner = Me
                 checkList.Show()
-                Me.Hide()
             Case "GEST"
                 gestion = New iAccueilGestionnaire
                 gestion.Owner = Me
                 gestion.Show()
-                Me.Hide()
             Case Else
         End Select
     End Sub
