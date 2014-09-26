@@ -16,9 +16,9 @@
 
     Private Sub Grid_Loaded(sender As Object, e As RoutedEventArgs)
         maBD = New P2014_Equipe2_GestionHôtelièreEntities
-        checkList = New iCheckList
-        gerant = New iAccueilGerant
-        gestion = New iAccueilGestionnaire
+
+
+
         txtNomUtilisateur.Focus()
     End Sub
 
@@ -33,12 +33,17 @@
             Exit Sub
         End If
         typeEmploye = res.First.statut
+        lblErreur.Content = ""
+        txtMDP.Password = ""
         Select Case typeEmploye
             Case "ADMI"
+                gerant = New iAccueilGerant
                 gerant.Show()
             Case "PERS"
+                checkList = New iCheckList
                 checkList.Show()
             Case "GEST"
+                gestion = New iAccueilGestionnaire
                 gestion.Show()
             Case Else
 
