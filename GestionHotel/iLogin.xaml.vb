@@ -34,15 +34,15 @@
         Me.Hide()
         Select Case typeEmploye
             Case "ADMI"
-                gerant = New iAccueilGerant
+                gerant = New iAccueilGerant(res.First.noEmpl)
                 gerant.Owner = Me
                 gerant.Show()
             Case "PERS"
-                checkList = New iCheckList
+                checkList = New iCheckList(res.First.noEmpl)
                 checkList.Owner = Me
                 checkList.Show()
             Case "GEST"
-                gestion = New iAccueilGestionnaire
+                gestion = New iAccueilGestionnaire(res.First.noEmpl)
                 gestion.Owner = Me
                 gestion.Show()
             Case Else
