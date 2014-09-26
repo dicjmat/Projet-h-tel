@@ -1,4 +1,4 @@
-﻿<Window x:Class="iInventaire" WindowStartupLocation="CenterScreen" WindowState="Maximized"
+﻿<Window x:Class="iInventaire" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="566.397" Width="708.6">
@@ -7,7 +7,7 @@
             <Grid Height="197" Width="190">
                 <Label Content="Code Item : " Margin="-34,0,34,161" Height="36" VerticalAlignment="Bottom"></Label>
                 <TextBox Name="txtCodeItem" Margin="41,5,33,0" Height="20" VerticalAlignment="Top"/>
-                <GroupBox Header="Inventaire" Margin="-32,30,-32,45">
+                <GroupBox BorderBrush="Black" Header="Inventaire" Margin="-32,30,-32,45">
                     <StackPanel>
                         <Grid>
                             <DataGrid Name="lstInventaire" ItemsSource="{Binding}" Margin="0,0,-0.2,-100" Height="100">
