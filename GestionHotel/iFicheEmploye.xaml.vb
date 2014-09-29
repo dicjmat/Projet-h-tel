@@ -32,6 +32,7 @@
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         windowFicheEmploye.Close()
+
     End Sub
 
 
