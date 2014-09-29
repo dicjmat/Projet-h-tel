@@ -1,7 +1,7 @@
 ﻿<Window x:Name="windowListeEmploye" x:Class="iListeEmploye" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Gestion Hotel" Height="300" Width="300" Loaded="Window_Loaded">
+    Title="Gestion Hotel" Height="300" Width="300" Loaded="Window_Loaded" Closing="Window_Closing">
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="453">
@@ -10,11 +10,11 @@
                 <GroupBox BorderBrush="Black" Header="Employé" Margin="0,30,0,45">
                     <StackPanel>
                         <Grid>
-                            <DataGrid Name="lstEmploye" ItemsSource="{Binding}" Margin="0,0,-0.2,-357">
+                            <DataGrid Name="lstEmploye" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,0,-0.2,-357">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="no Employé" Binding="{Binding noEmploye}"></DataGridTextColumn>
-                                    <DataGridTextColumn Header="Nom" Binding="{Binding nomEmploye}"></DataGridTextColumn>
-                                    <DataGridTextColumn Header="Prénom" Binding="{Binding prenEmploye}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="no Employé" Binding="{Binding noEmpl}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Nom" Binding="{Binding nomEmpl}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Prénom" Binding="{Binding prenEmpl}"></DataGridTextColumn>
                                     <DataGridTextColumn Header="Code de Profession" Binding="{Binding codeProf}"></DataGridTextColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
