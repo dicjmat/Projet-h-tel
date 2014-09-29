@@ -23,10 +23,19 @@
 
     Private Sub btnInventaire_Click(sender As Object, e As RoutedEventArgs) Handles btnInventaire.Click
         Dim inventaire = New iInventaire(_p2)
+        inventaire.Owner = Me
+        Me.Hide()
         inventaire.Show()
     End Sub
 
     Private Sub btnDeco_Click(sender As Object, e As RoutedEventArgs) Handles btnDeco.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnCommande.Click
+        Dim commande = New iCommande()
+        commande.Owner = Me
+        Me.Hide()
+        commande.Show()
     End Sub
 End Class
