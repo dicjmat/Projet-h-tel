@@ -32,8 +32,11 @@
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         windowFicheEmploye.Close()
-
+        Dim listeemploye As iListeEmploye
+        listeemploye = New iListeEmploye
+        listeemploye.Close()
     End Sub
-
-
+    Private Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
+        windowFicheEmploye.Close()
+    End Sub
 End Class
