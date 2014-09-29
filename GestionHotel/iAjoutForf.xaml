@@ -8,8 +8,8 @@
                 <GroupBox BorderBrush="Black" Header="Forfait" Margin="0,0,-0.2,0">
                     <StackPanel Margin="0,0,0,73">
                         <Grid>
-                            <Label Content="PrixForfait :" Margin="-6,5,6.2,-4.4"></Label>
-                            <TextBox Name="txtPrixForf" Height="20" Margin="59,10,0,11.6" HorizontalAlignment="Left" Width="100"></TextBox>
+                            <Label Content="Prix :" Margin="-6,5,6.2,-4.4"></Label>
+                            <TextBox Name="txtPrixForf" Height="20" Margin="29,10,0,11.6" HorizontalAlignment="Left" Width="100"></TextBox>
                             <ListBox Name="lstTypeChambre" Margin="0,74,0,-138.2" HorizontalAlignment="Left" Width="86"></ListBox>
                             <Label Content="TypeChambre" Margin="-5,47,-0.4,-47.2" HorizontalAlignment="Left" Width="183"></Label>
                             <ListBox Name="lstTypeChambreC" Margin="102,74,0,-138.4" HorizontalAlignment="Left" Width="86"></ListBox>

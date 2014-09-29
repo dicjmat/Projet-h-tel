@@ -33,7 +33,7 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnFaireComm" Content="Faire la commande" Margin="195,220,94,0"></Button>
+                <Button Name="btnFaireComm" Content="Créer la commande" Margin="195,220,94,0"></Button>
                 <Button Name="btnAccueil" Content="Accueil" Margin="320,220,0,0"></Button>
             </Grid>
         </Viewbox>
