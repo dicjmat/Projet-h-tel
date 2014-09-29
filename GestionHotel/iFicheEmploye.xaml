@@ -5,20 +5,20 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="250" Width="530">
-                <Label Content="NoEmploye : " HorizontalAlignment="Left" Margin="4,5,0,0" VerticalAlignment="Top"/>
-                <TextBox Name="txtRNoClient" Height="25" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="100,5,0,0"/>
+                <Label Content="No de l'employe : " HorizontalAlignment="Left" Margin="4,5,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="txtRNoClient" Height="25" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="108,5,0,0"/>
                 <GroupBox BorderBrush="Black" Header="Fiche Employe" Margin="0,30,0,0" HorizontalAlignment="Left" Width="400">
                     <StackPanel>
                         <Grid>
-                            <Label Content="NomEmploye : " Margin="0,0,0,0"></Label>
+                            <Label Content="Nom : " Margin="0,0,0,0"></Label>
                             <TextBox Name="txtNomEmp" Margin="110,5,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
-                            <Label Content="PrenomEmploye : " Margin="0,25,0,0"></Label>
+                            <Label Content="Prenom : " Margin="0,25,0,0"></Label>
                             <TextBox Name="txtPrenomEmp" Margin="110,30,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
-                            <Label Content="noTellEmploye : " Margin="0,50,0,0"></Label>
+                            <Label Content="noTelephone : " Margin="0,50,0,0"></Label>
                             <TextBox Name="txtTellEmp" Margin="110,55,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
-                            <Label Content="noCellEmploye : " Margin="0,75,0,0"></Label>
+                            <Label Content="noCellulaire : " Margin="0,75,0,0"></Label>
                             <TextBox Name="txtCellEmp" Margin="110,80,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
-                            <Label Content="AdresseEmploye : " Margin="0,100,0,0"></Label>
+                            <Label Content="Adresse : " Margin="0,100,0,0"></Label>
                             <TextBox Name="txtAdrEmp" Margin="110,105,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
                             <Label Content="NAS : " Margin="0,125,0,0"></Label>
                             <TextBox Name="txtNASEmp" Margin="110,130,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
