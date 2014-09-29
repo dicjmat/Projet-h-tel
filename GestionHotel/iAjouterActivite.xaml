@@ -1,4 +1,4 @@
-﻿<Window x:Class="iAjouterActivite" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+﻿<Window x:Class="iAjouterActivite" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Name="windowCreerAct"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Background="CadetBlue"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="452.233" Width="664.835">
