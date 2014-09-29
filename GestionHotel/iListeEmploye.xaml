@@ -24,7 +24,7 @@
                     </StackPanel>
                 </GroupBox>
                 <Button Name="btnAccueil" Content="Accueil" Margin="0,0,9.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="44"></Button>
-                <Button Name="btnAjouterEmploye" Content="Ajouter un Employe" Margin="0,0,58.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Button>
+                <Button Name="btnAjouterEmploye" Content="Ajouter un employe" Margin="0,0,58.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Button>
             </Grid>
         </Viewbox>
     </Grid>
