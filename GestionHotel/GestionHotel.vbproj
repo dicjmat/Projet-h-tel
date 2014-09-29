@@ -81,6 +81,9 @@
     <Compile Include="iCheckList.xaml.vb">
       <DependentUpon>iCheckList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iListeEmploye.xaml.vb">
+      <DependentUpon>iListeEmploye.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iInventaire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iListeEmploye.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
