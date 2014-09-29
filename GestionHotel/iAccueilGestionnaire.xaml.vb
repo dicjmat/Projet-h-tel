@@ -1,13 +1,13 @@
 ﻿Public Class iAccueilGestionnaire
 
-    Private _p1 As Short
-    Private _p2 As Short
+    Private noEmpl As Short
+    Private noHotel As Short
 
     Sub New(p1 As Short, p2 As Short)
         ' TODO: Complete member initialization 
         InitializeComponent()
-        _p1 = p1
-        _p2 = p2
+        noEmpl = p1
+        noHotel = p2
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
@@ -15,7 +15,7 @@
     End Sub
 
     Private Sub btnInventaire_Click(sender As Object, e As RoutedEventArgs) Handles btnInventaire.Click
-        Dim inventaire = New iInventaire(_p2)
+        Dim inventaire = New iInventaire(noHotel)
         inventaire.Owner = Me
         Me.Hide()
         inventaire.Show()
@@ -33,7 +33,7 @@
     End Sub
 
     Private Sub btnListeEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnListeEmploye.Click
-        Dim iEmploye As New iListeEmploye
+        Dim iEmploye = New iListeEmploye(noHotel)
         iEmploye.Owner = Me
         Me.Hide()
         iEmploye.Show()
