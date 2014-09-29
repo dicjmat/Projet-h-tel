@@ -16,6 +16,8 @@
 
     Private Sub btnFicheEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmploye.Click
         Dim iEmploye As New iFicheEmploye
+        iEmploye.Owner = Me
+        Me.Hide()
         iEmploye.Show()
     End Sub
 
