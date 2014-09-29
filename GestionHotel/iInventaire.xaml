@@ -1,4 +1,4 @@
-﻿<Window x:Class="iInventaire" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue"
+﻿<Window x:Class="iInventaire" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" Name="windowInventaire"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="692.964" Width="1373" Loaded="Window_Loaded">

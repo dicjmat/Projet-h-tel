@@ -1,6 +1,6 @@
 ﻿Public Class iFicheEmploye
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
-    Private Sub Grid_Loaded(sender As Object, e As RoutedEventArgs)
+    Private Sub windowFicheEmploye_Loaded(sender As Object, e As RoutedEventArgs) Handles windowFicheEmploye.Loaded
         bd = New P2014_Equipe2_GestionHôtelièreEntities()
     End Sub
     Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
@@ -23,6 +23,7 @@
         Employe.noHotel = txtCdProf.Text
         bd.tblEmploye.Add(Employe)
         bd.SaveChanges()
+        MessageBox.Show("L'employé a été créé avec succès.")
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
@@ -31,5 +32,8 @@
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         windowFicheEmploye.Close()
+
     End Sub
+
+
 End Class

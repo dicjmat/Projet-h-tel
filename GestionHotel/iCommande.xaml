@@ -1,4 +1,4 @@
-﻿<Window WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue"
+﻿<Window WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" Name="windowCommande"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="iCommande"
@@ -6,19 +6,19 @@
     <Grid>
         <Viewbox Stretch="Uniform" Margin="0,0,0.4,0.4">
             <Grid Height="247" Width="409">
-                <Label Content="CodeItem : " HorizontalAlignment="Left" Margin="0,9,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtCodeItem" Height="25" VerticalAlignment="Top" Width="118" HorizontalAlignment="Left" Canvas.Left="85" Margin="72,10,0,0"/>
+                <Label Content="Code de l'item : " HorizontalAlignment="Left" Margin="0,9,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtCodeItem" Height="25" VerticalAlignment="Top" Width="103" HorizontalAlignment="Left" Canvas.Left="85" Margin="96,10,0,0"/>
                 <GroupBox BorderBrush="Black" Header="Commande" Margin="-5,0,205,80" HorizontalAlignment="Right" Width="209" Height="127" VerticalAlignment="Bottom">
                     <StackPanel>
                         <Grid>
                             <Label Content="Quantité : " Margin="0,2,0.6,22.4"/>
                             <TextBox x:Name="txtQteComm" Margin="80,8,-0.4,122.4" Height="20"/>
-                            <Label Content="Prix(unité)($) : " Margin="0,27,0.6,22.4"/>
-                            <TextBox Name="txtPrixUnit" Margin="80,33,-0.4,97.4" Height="20"></TextBox>
-                            <Label Content="Prix Total($) : " Margin="0,52,0.6,22.4"></Label>
-                            <TextBox Name="txtPrixTotComm" Margin="80,57,-0.4,73.4" Height="20"></TextBox>
-                            <Label Content="Fournisseur : " Margin="0,77,-1,16.4"></Label>
-                            <ComboBox Background="White" Height="20" Margin="80,82,-1,48.4"></ComboBox>
+                            <Label Content="Prix(unité)($) : " Margin="0,53,1,-3.6"/>
+                            <TextBox Name="txtPrixUnit" Margin="80,59,0,71.4" Height="20"></TextBox>
+                            <Label Content="Prix Total($) : " Margin="0,78,1,-3.6"></Label>
+                            <TextBox Name="txtPrixTotComm" Margin="80,83,0,47.4" Height="20"></TextBox>
+                            <Label Content="Fournisseur : " Margin="0,28,-1,65.4"></Label>
+                            <ComboBox Background="White" Height="20" Margin="80,34,-1,96.4"></ComboBox>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
@@ -33,7 +33,7 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnFaireComm" Content="Faire la commande" Margin="195,220,94,0"></Button>
+                <Button Name="btnFaireComm" Content="Créer la commande" Margin="195,220,94,0"></Button>
                 <Button Name="btnAccueil" Content="Accueil" Margin="320,220,0,0"></Button>
             </Grid>
         </Viewbox>

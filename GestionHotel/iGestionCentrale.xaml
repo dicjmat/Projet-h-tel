@@ -1,4 +1,4 @@
-﻿<Window x:Class="iGestionCentrale" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="CadetBlue"
+﻿<Window x:Class="iGestionCentrale" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="CadetBlue" Name="windowGCentrale"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="350" Width="525">
@@ -9,10 +9,10 @@
                 <GroupBox BorderBrush="Black" Header="Province" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="221,45,24,67">
                     <StackPanel>
                         <Grid>
-                            <Label Content="codeProvince :" Margin="0,0,0,0"></Label>
-                            <TextBox Name="cbCodeProv" Height="20" Margin="93,5,0,51" Background="White"/>
-                            <Label Content="NomProvince :" Margin="0,25,-0.4,25.2"></Label>
-                            <TextBox Name="txtNomProv" Margin="93,31,0,25" Height="20"></TextBox>
+                            <Label Content="Code :" Margin="0,0,0,0"></Label>
+                            <TextBox Name="cbCodeProv" Height="20" Margin="40,6,52.8,50" Background="White"/>
+                            <Label Content="Nom :" Margin="0,25,-0.4,25.2"></Label>
+                            <TextBox Name="txtNomProv" Margin="40,31,-0.2,25" Height="20"></TextBox>
                             <Button Name="btnAjouterProv" Content="Ajouter" Height="20" Margin="125,56,0,-0.2"></Button>
                         </Grid>
                     </StackPanel>
@@ -20,10 +20,10 @@
                 <GroupBox BorderBrush="Black" Header="Ville" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="31,45,210,69">
                     <StackPanel>
                         <Grid Height="73">
-                            <Label Content="CodeVille :" Margin="0,0,0,24.6"></Label>
-                            <TextBox Name="txtCodeVille" Height="20" Margin="75,5,0,48"></TextBox>
-                            <Label Content="NomVille :" Margin="0,25,0,24"/>
-                            <TextBox Name="txtNomVille" Margin="75,30,0,23" Height="20"></TextBox>
+                            <Label Content="Code :" Margin="0,0,0,24.6"></Label>
+                            <TextBox Name="txtCodeVille" Height="20" Margin="40,5,34.8,48"></TextBox>
+                            <Label Content="Nom :" Margin="0,25,0,24"/>
+                            <TextBox Name="txtNomVille" Margin="40,30,-0.2,23" Height="20"></TextBox>
                             <Button Name="btnAjouterVille" Content="Ajouter" Margin="127,54,0,-1" Height="20"></Button>
                         </Grid>
                     </StackPanel>
@@ -31,7 +31,7 @@
 
                 <Button Name="btnRapport" Content="Demander un Rapport" Height="38" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,210,10" Width="129"/>
                 <Button Name="btnAccueil" Content="Accueil" Margin="355,212,6,-24"/>
-                <Button Name="btnAjoutForf" Content="AjouterForfait" Margin="221,162,78,11"></Button>
+                <Button Name="btnAjoutForf" Content="Ajouter un Forfait" Margin="221,162,78,10"></Button>
             </Grid>
         </Viewbox>
     </Grid>
