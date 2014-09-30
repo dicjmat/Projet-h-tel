@@ -1,10 +1,10 @@
-﻿<Window x:Class="iFicheClient" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" Name="windowFicheCli"
+﻿<Window x:Class="iFicheClient" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" Name="windowFicheCli" WindowStyle="None"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Gestion Hotel" Height="618.782" Width="1159.926">
+    Title="Gestion Hotel" Height="749.827" Width="1159.926">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="286" Width="583" Loaded="Grid_Loaded">
+            <Grid Height="358" Width="583">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="332*"/>
                     <ColumnDefinition Width="251*"/>
@@ -28,8 +28,12 @@
                             <TextBox Name="txtCarteCreditCli" Margin="90,129,0,27" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
                             <Label Content="Type de carte :" Margin="-2,149,2,-149"></Label>
                             <ComboBox Name="cbTypeCarte" Margin="89,154,2,0" Background="White"></ComboBox>
-                            <Label Content="Commentaire : " Margin="2,176,0,-26" HorizontalAlignment="Left" Width="196"></Label>
-                            <TextBox Name="txtCommCli" Margin="91,181,0,-55" Width="120" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True"/>
+                            <Label Content="Commentaire : " Margin="0,226,0,-76" HorizontalAlignment="Left" Width="196"></Label>
+                            <TextBox Name="txtCommCli" Margin="90,231,0,-123" Width="120" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True"/>
+                            <Label Content="Code expiration :" Margin="-2,176,2,-176"></Label>
+                            <TextBox Name="txtCodeExp" Margin="103,181,2,-25" Height="20"></TextBox>
+                            <Label Content="Code de la ville :" Margin="-2,201,2,-201"></Label>
+                            <ComboBox Name="cbCodeVille" Background="White" Margin="92,206,2,-50" Height="20"></ComboBox>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
@@ -54,7 +58,7 @@
                         <Grid Margin="0,0,0.2,0">
                             <Label Content="Compagnie : " Margin="0,0,0,0"/>
                             <ComboBox Margin="0,25,0,24.2" Background="White"/>
-                            <Button x:Name="btnLierClient" Content="Lier la compagnie" Margin="33,59,-2.2,-8" Height="21" VerticalAlignment="Top"/>
+                            <Button x:Name="btnLierClient" Content="Lier la compagnie" Margin="33,59,-2,-8" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
                         </Grid>
                     </StackPanel>
                 </GroupBox>

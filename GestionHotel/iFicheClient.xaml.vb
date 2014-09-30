@@ -13,9 +13,20 @@
         Client.noCellClient = txtNoCellCli.Text
         Client.adrClient = txtAdrCli.Text
         Client.noCarteCredit = txtCarteCreditCli.Text
-
+        Client.typeCarteCredit = cbTypeCarte.SelectedValue
+        Client.dateExpiration = txtCodeExp.Text
+        Client.codeVille = cbCodeVille.SelectedValue
+        Client.commentaire = txtCommCli.Text
         db.tblClient.Add(Client)
         db.SaveChanges()
+    End Sub
+
+    Private Sub btnLierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnLierClient.Click
+
+    End Sub
+
+    Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
+        Me.Close()
     End Sub
 
 End Class
