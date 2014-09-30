@@ -32,4 +32,9 @@
         End If
 
     End Sub
+
+    Private Sub btnAjoutItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutItem.Click
+        Dim iItem = New iAjouterItem
+        iItem.ShowDialog()
+    End Sub
 End Class
