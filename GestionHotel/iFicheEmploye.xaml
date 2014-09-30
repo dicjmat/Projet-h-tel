@@ -1,4 +1,4 @@
-﻿<Window x:Name="windowFicheEmploye" x:Class="iFicheEmploye" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue"
+﻿<Window x:Name="windowFicheEmploye" x:Class="iFicheEmploye" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" WindowStyle="None"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="286.8" Width="535" Closing="Window_Closing">
