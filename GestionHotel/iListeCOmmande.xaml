@@ -1,4 +1,4 @@
-﻿<Window x:Class="iListeCOmmande"
+﻿<Window x:Class="iListeCOmmande" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" Background="CadetBlue"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="iListeCOmmande" Height="300" Width="300">
