@@ -6,7 +6,7 @@
         <Viewbox Stretch="Uniform" Margin="0,0,0.4,0.4">
             <Grid Height="239" Width="493">
                 <Button Name="btnAjoutItem" Content="Ajouter Item" HorizontalAlignment="Center" Margin="258,212,135,0" VerticalAlignment="Top" Width="100" Height="25"/>
-                <Label Content="Code Item : " Margin="0,0,0,203" Height="36" VerticalAlignment="Bottom"></Label>
+                <Label Content="Rechercher : " Margin="0,0,0,203" Height="36" VerticalAlignment="Bottom"></Label>
                 <TextBox Name="txtCodeItem" Margin="75,0,298,0" Height="20" Width="120" VerticalAlignment="Top"/>
                 <GroupBox BorderBrush="Black" Header="Inventaire" Margin="0,30,0,32">
                     <StackPanel>

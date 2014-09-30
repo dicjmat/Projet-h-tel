@@ -27,17 +27,25 @@
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
-        Me.Owner.Show()
+        If Me.Focusable Then
+            Me.Owner.Close()
+        Else
+            Me.Owner.Show()
+        End If
+
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Owner.Close()
+        Me.Focusable = False
         windowFicheEmploye.Close()
-        Dim listeemploye As iListeEmploye
-        listeemploye = New iListeEmploye()
-        listeemploye.Close()
+        Me.Owner.Focusable = False
+        Me.Owner.Close()
+        'Dim listeemploye As iListeEmploye
+        'listeemploye = New iListeEmploye()
+        'listeemploye.Close()
     End Sub
     Private Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
+        Me.Focusable = False
         windowFicheEmploye.Close()
     End Sub
 End Class
