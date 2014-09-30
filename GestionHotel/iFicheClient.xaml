@@ -5,9 +5,14 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="256" Width="583" Loaded="Grid_Loaded">
-                <Label Content="No du client : " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtRNoClient" Height="20" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Canvas.Left="85" Margin="90,5,0,0"/>
-                <GroupBox BorderBrush="Black" Header="Fiche Client" Margin="0,30,359,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="54*"/>
+                    <ColumnDefinition Width="369*"/>
+                    <ColumnDefinition Width="160*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="No du client : " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="txtRNoClient" Height="20" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="35.63,5,0,0" Grid.Column="1"/>
+                <GroupBox BorderBrush="Black" Header="Fiche Client" Margin="0,30,199.2,0" Grid.ColumnSpan="2">
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0.2,0"></Label>
@@ -27,7 +32,7 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox BorderBrush="Black" Header="Fiche Compagnie" Margin="224,30,0,0" Height="226" VerticalAlignment="Top" HorizontalAlignment="Left" Width="207">
+                <GroupBox BorderBrush="Black" Header="Fiche Compagnie" Margin="169.63,30,0,0" Height="226" VerticalAlignment="Top" HorizontalAlignment="Left" Width="207" Grid.ColumnSpan="2" Grid.Column="1">
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0,0"></Label>
@@ -43,7 +48,7 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox BorderBrush="Black" Header="Liaison Client" Margin="435,30,0,0" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144">
+                <GroupBox BorderBrush="Black" Header="Liaison Client" Margin="11.8,30,0,0" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Width="144" Grid.Column="2">
                     <StackPanel>
                         <Grid Margin="0,0,0.2,0">
                             <Label Content="Compagnie : " Margin="0,0,0,0"/>
@@ -52,8 +57,8 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Content="Sauvegarder" HorizontalAlignment="Left" Margin="430,232,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Margin="507,232,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button Content="Sauvegarder" HorizontalAlignment="Left" Margin="6.8,232,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Grid.Column="2"/>
+                <Button Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Margin="83.8,232,0,0" VerticalAlignment="Top" Width="75" Grid.Column="2"/>
             </Grid>
         </Viewbox>
     </Grid>
