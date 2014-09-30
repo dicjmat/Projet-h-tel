@@ -4,7 +4,7 @@
     Title="Gestion Hotel" Height="618.782" Width="1159.926">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="286" Width="583" Loaded="Grid_Loaded">
+            <Grid Height="286" Width="583">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="332*"/>
                     <ColumnDefinition Width="251*"/>
@@ -54,7 +54,7 @@
                         <Grid Margin="0,0,0.2,0">
                             <Label Content="Compagnie : " Margin="0,0,0,0"/>
                             <ComboBox Margin="0,25,0,24.2" Background="White"/>
-                            <Button x:Name="btnLierClient" Content="Lier la compagnie" Margin="33,59,-2.2,-8" Height="21" VerticalAlignment="Top"/>
+                            <Button x:Name="btnLierClient" Content="Lier la compagnie" Margin="33,59,-2,-8" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100"/>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
