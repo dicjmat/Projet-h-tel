@@ -24,10 +24,6 @@
 
     End Sub
 
-    'Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
-    '    Me.Owner.Show()
-    'End Sub
-
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Focusable = False
         Me.Close()
@@ -36,6 +32,8 @@
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
         If Me.Focusable Then
             Me.Owner.Close()
+        Else
+            Me.Owner.Show()
         End If
 
     End Sub
