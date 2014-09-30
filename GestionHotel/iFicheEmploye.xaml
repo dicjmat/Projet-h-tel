@@ -5,6 +5,7 @@
     <Grid Margin="0,0,14.8,0.4">
         <Viewbox Stretch="Uniform">
             <Grid Height="250" Width="530">
+                <Button Name="btnAjoutHoraire" Content="Ajouter Horaire" HorizontalAlignment="Center" Margin="420,0,10,0" VerticalAlignment="Top" Width="100" Height="30"/>
                 <Label Content="No de l'employe : " HorizontalAlignment="Left" Margin="4,5,0,0" VerticalAlignment="Top"/>
                 <TextBox Name="txtRNoClient" Height="25" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="108,5,0,0"/>
                 <GroupBox BorderBrush="Black" Header="Fiche Employe" Margin="0,30,0,0" HorizontalAlignment="Left" Width="400">
