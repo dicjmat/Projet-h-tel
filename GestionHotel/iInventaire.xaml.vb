@@ -20,17 +20,8 @@
 
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Focusable = False
+        Me.Owner.Show()
         Me.Close()
-    End Sub
-
-    Private Sub windowInventaire_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles windowInventaire.Closing
-        If Me.Focusable Then
-            Me.Owner.Close()
-        Else
-            Me.Owner.Show()
-        End If
-
     End Sub
 
     Private Sub btnAjoutItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutItem.Click
