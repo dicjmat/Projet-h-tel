@@ -33,4 +33,12 @@
 
         lbItem.DataContext = res.ToList()
     End Sub
+
+    Private Sub btnSauvegarder_Click(sender As Object, e As RoutedEventArgs) Handles btnSauvegarder.Click
+        Dim Contenu As tblChecklist
+        For Each el In lbItem.Items
+            Contenu = New tblChecklist()
+
+        Next
+    End Sub
 End Class
