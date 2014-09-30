@@ -4,6 +4,7 @@
     Dim maBd As P2014_Equipe2_GestionHôtelièreEntities
     Sub New(noHotel As Short)
         ' TODO: Complete member initialization 
+        InitializeComponent()
         _noHotel = noHotel
     End Sub
 
