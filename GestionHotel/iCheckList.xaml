@@ -6,7 +6,7 @@
         <Viewbox>
             <Grid Height="578">
                 <Label Content="Numéro de la chambre" FontSize="15" Margin="180,10,-41.4,538" />
-                <ComboBox ItemsSource="{Binding}" Name="cbChambre" Height="30" Margin="347,11,180,537" Background="White">
+                <ComboBox ItemsSource="{Binding}" Name="cbChambre" Height="30" Margin="347,9,179.6,539" Background="White">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
