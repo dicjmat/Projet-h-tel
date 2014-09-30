@@ -10,8 +10,6 @@
                 <Button Name="btnCommande" Content="Commande" HorizontalAlignment="Center" Margin="67,50,69,0" VerticalAlignment="Top" Width="100"/>
                 <Button Name="btnListeEmploye" Content="Liste Employé" HorizontalAlignment="Center" Margin="67,77,69,0" VerticalAlignment="Top" Width="100"/>
                 <Button Name="btnFIcheClient" Content="Fiche Client" HorizontalAlignment="Center" Margin="67,104,69,0" VerticalAlignment="Top" Width="100"/>
-                <Button Name="btnAjoutHoraire" Content="Ajouter Horaire" HorizontalAlignment="Center" Margin="67,131,69,0" VerticalAlignment="Top" Width="100"/>
-                <Button Name="btnAjoutItem" Content="Ajouter Item" HorizontalAlignment="Center" Margin="67,158,69,0" VerticalAlignment="Top" Width="100"/>
                 <Button Name="btnDeco" Content="Deconnexion" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Label Name="lblNom" Content="" HorizontalAlignment="Left" Margin="0,189,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.182,1.764"/>
             </Grid>
