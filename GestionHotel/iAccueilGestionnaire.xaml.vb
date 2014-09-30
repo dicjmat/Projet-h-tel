@@ -2,6 +2,7 @@
 
     Private noEmpl As Short
     Private noHotel As Short
+    Dim maBd As P2014_Equipe2_GestionHôtelièreEntities
 
     Sub New(p1 As Short, p2 As Short)
         ' TODO: Complete member initialization 
@@ -11,7 +12,13 @@
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
-        Me.Owner.Show()
+
+        If Not Me.Focusable Then
+            Me.Owner.Show()
+        Else
+            Me.Owner.Close()
+        End If
+
     End Sub
 
     Private Sub btnInventaire_Click(sender As Object, e As RoutedEventArgs) Handles btnInventaire.Click
@@ -22,6 +29,7 @@
     End Sub
 
     Private Sub btnDeco_Click(sender As Object, e As RoutedEventArgs) Handles btnDeco.Click
+        Me.Focusable = False
         Me.Close()
     End Sub
 
@@ -37,5 +45,12 @@
         iEmploye.Owner = Me
         Me.Hide()
         iEmploye.Show()
+    End Sub
+
+    Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
+        maBd = New P2014_Equipe2_GestionHôtelièreEntities
+        Dim res = From el In maBd.tblEmploye Where el.noEmpl = noEmpl Select el
+
+        lblNom.Content = "Bonjour, " + res.ToList.Single.prenEmpl + " " + res.ToList.Single.nomEmpl
     End Sub
 End Class
