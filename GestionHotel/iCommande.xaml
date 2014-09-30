@@ -5,10 +5,10 @@
     Title="Gestion Hotel" Height="Auto" Width="906.909" Closing="Window_Closing">
     <Grid>
         <Viewbox Stretch="Uniform" Margin="0,0,0.4,0.4">
-            <Grid Height="247" Width="409">
+            <Grid Height="247" Width="445">
                 <Label Content="Code de l'item : " HorizontalAlignment="Left" Margin="0,9,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="txtCodeItem" Height="25" VerticalAlignment="Top" Width="103" HorizontalAlignment="Left" Canvas.Left="85" Margin="96,10,0,0"/>
-                <GroupBox BorderBrush="Black" Header="Commande" Margin="-5,0,205,80" HorizontalAlignment="Right" Width="209" Height="127" VerticalAlignment="Bottom">
+                <GroupBox BorderBrush="Black" Header="Commande" Margin="0,0,236,80" HorizontalAlignment="Right" Width="209" Height="127" VerticalAlignment="Bottom">
                     <StackPanel>
                         <Grid>
                             <Label Content="Quantité : " Margin="0,2,0.6,22.4"/>
@@ -24,7 +24,7 @@
                 </GroupBox>
                 <Button Name="btnAjouterItemComm" Content="Ajouter" Margin="0,5,0,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"></Button>
                 <Button Name="btnSupprimerItemComm" Content="Supprimer" Margin="0,5,105,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"></Button>
-                <GroupBox BorderBrush="Black" Header="Aperçu Commande" Margin="209,40,-14,32">
+                <GroupBox BorderBrush="Black" Header="Aperçu Commande" Margin="209,40,0,32">
                     <StackPanel>
                         <Grid>
                             <ListBox Name="lstCOmmande" Height="120" Margin="0,0,-0.2,32.8"></ListBox>
@@ -33,7 +33,7 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnFaireComm" Content="Faire la commande" Margin="195,220,94,0"></Button>
+                <Button Name="btnFaireComm" Content="Faire la commande" Margin="159,220,130,0"></Button>
                 <Button Name="btnAccueil" Content="Accueil" Margin="320,220,0,0"></Button>
             </Grid>
         </Viewbox>
