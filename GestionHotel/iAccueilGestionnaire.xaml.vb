@@ -12,7 +12,13 @@
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
-        Me.Owner.Show()
+
+        If Not Me.Focusable Then
+            Me.Owner.Show()
+        Else
+            Me.Owner.Close()
+        End If
+
     End Sub
 
     Private Sub btnInventaire_Click(sender As Object, e As RoutedEventArgs) Handles btnInventaire.Click
@@ -23,6 +29,7 @@
     End Sub
 
     Private Sub btnDeco_Click(sender As Object, e As RoutedEventArgs) Handles btnDeco.Click
+        Me.Focusable = False
         Me.Close()
     End Sub
 
