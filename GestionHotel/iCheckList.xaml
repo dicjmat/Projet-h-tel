@@ -15,16 +15,16 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <ListBox ItemsSource="{Binding}" Name="lbItem" Width="500" Margin="75,45,74.6,65">
-                    <ListBox.ItemTemplate>
+                <ListView ItemsSource="{Binding}" Name="lbItem" Width="500" Margin="75,45,74.6,65">
+                    <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
                                 <CheckBox Name="chkItem" Content="{Binding nomItem}"/>
                                 <TextBox x:Name="txtComCheck" Width="300" Height="40" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"/>
                             </StackPanel>
                         </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
+                    </ListView.ItemTemplate>
+                </ListView>
                 <Button x:Name="btnSauvegarder" Content="Sauvegarder" Width="100" Height="50" Margin="369,518,180.6,10"/>
                 <Button x:Name="btnQuitter" Content="Déconnexion" Width="100" Height="50" Margin="474,518,75.6,10"/>
             </Grid>
