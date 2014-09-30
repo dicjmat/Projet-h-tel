@@ -13,9 +13,9 @@
         Client.noCellClient = txtNoCellCli.Text
         Client.adrClient = txtAdrCli.Text
         Client.noCarteCredit = txtCarteCreditCli.Text
-        Client.typeCarteCredit = cbTypeCarte.SelectedValue
+        Client.typeCarteCredit = cbTypeCarte.SelectedItem
         Client.dateExpiration = txtCodeExp.Text
-        Client.codeVille = cbCodeVille.SelectedValue
+        Client.codeVille = cbCodeVille.SelectedItem
         Client.commentaire = txtCommCli.Text
         db.tblClient.Add(Client)
         db.SaveChanges()
