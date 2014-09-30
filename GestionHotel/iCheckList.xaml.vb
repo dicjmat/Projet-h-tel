@@ -36,6 +36,7 @@
 
     Private Sub btnSauvegarder_Click(sender As Object, e As RoutedEventArgs) Handles btnSauvegarder.Click
         Dim Contenu As tblChecklist
+        Dim dateAjout = Date.Today
         For Each el In lbItem.Items
             Contenu = New tblChecklist()
 
