@@ -1,10 +1,10 @@
 ﻿<Window x:Class="iAccueilGestionnaire" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" Name="windowAGest"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Gestion Hotel" Height="503.588" Width="525" Closing="Window_Closing" Loaded="Window_Loaded">
+    Title="Gestion Hotel" Height="390.788" Width="525" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="215" Width="236">
+            <Grid Height="159" Width="236">
                 <Label Content="Accueil" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
                 <Button Name="btnInventaire" Content="Inventaire" HorizontalAlignment="Center" Margin="41,25,43,0" Width="100" Height="20" VerticalAlignment="Top"/>
                 <Button Name="btnCommande" Content="Commande" HorizontalAlignment="Center" Margin="67,50,69,0" VerticalAlignment="Top" Width="100"/>

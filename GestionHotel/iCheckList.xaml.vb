@@ -39,6 +39,10 @@
         Dim dateAjout = Date.Today
         For Each el In lbItem.Items
             Contenu = New tblChecklist()
+            Contenu.dateSaisit = dateAjout
+            Contenu.noChambre = cbChambre.SelectedValue.noChambre()
+            Contenu.noHotel = noHotel
+
 
         Next
     End Sub
