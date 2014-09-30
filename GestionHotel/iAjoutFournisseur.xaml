@@ -1,4 +1,4 @@
-﻿<Window x:Class="iAjoutFournisseur" WindowStartupLocation="CenterScreen" WindowState="Maximized" Name="windowAjoutFournisseur" Background="CadetBlue"
+﻿<Window x:Class="iAjoutFournisseur" WindowStartupLocation="CenterScreen" WindowState="Maximized" Name="windowAjoutFournisseur" Background="CadetBlue" WindowStyle="None"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="300" Width="507.2">
