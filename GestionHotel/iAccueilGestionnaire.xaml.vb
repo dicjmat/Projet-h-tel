@@ -44,7 +44,7 @@
         Dim iEmploye = New iListeEmploye(noHotel)
         iEmploye.Owner = Me
         Me.Hide()
-        iEmploye.Show()
+        iEmploye.ShowDialog()
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
