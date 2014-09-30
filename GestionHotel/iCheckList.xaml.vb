@@ -42,8 +42,16 @@
             Contenu.dateSaisit = dateAjout
             Contenu.noChambre = cbChambre.SelectedValue.noChambre()
             Contenu.noHotel = noHotel
-
-
-        Next
+            If el.chkItem.Checked = True Then
+                Contenu.statut = "oui"
+            Else
+                Contenu.statut = "non"
+            End If
+            Contenu.commentaire = el.txtComCheck.Text
+            Contenu.codeItem = el.codeItem
+            Contenu.noEmpl = noEmploye
+            BD.tblChecklist.Add(Contenu)
+            BD.SaveChanges()
+        Next (el)
     End Sub
 End Class
