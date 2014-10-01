@@ -5,7 +5,7 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="453">
-                <Label Content="No de l'employe : " Margin="4,0,-4.4,417" Height="36" VerticalAlignment="Bottom"></Label>
+                <Label Content="Recherche : " Margin="4,0,-4.4,417" Height="36" VerticalAlignment="Bottom"></Label>
                 <TextBox Name="txtNoEmp" Margin="107,5,278.6,0" Height="20" Width="120" VerticalAlignment="Top"/>
                 <GroupBox BorderBrush="Black" Header="Employé" Margin="0,30,0,45">
                     <StackPanel>
