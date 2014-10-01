@@ -11,6 +11,7 @@
         maBD = New P2014_Equipe2_GestionHôtelièreEntities
         Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem Where el.noHotel = noHotel Select el.codeItem, item.nomItem, el.Quantite, item.descItem
         lstInventaire.ItemsSource = res.ToList
+        Me.Owner.Hide()
     End Sub
 
     Private Sub txtCodeItem_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtCodeItem.TextChanged

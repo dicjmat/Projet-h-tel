@@ -13,7 +13,6 @@
     Private Sub btnInventaire_Click(sender As Object, e As RoutedEventArgs) Handles btnInventaire.Click
         Dim inventaire = New iInventaire(noHotel)
         inventaire.Owner = Me
-        Me.Hide()
         inventaire.Show()
     End Sub
 
