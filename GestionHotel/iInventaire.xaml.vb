@@ -26,6 +26,7 @@
 
     Private Sub btnAjoutItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutItem.Click
         Dim iItem = New iAjouterItem
-        iItem.ShowDialog()
+        iItem.Owner = Me
+        iItem.Show()
     End Sub
 End Class
