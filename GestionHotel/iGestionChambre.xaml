@@ -10,7 +10,7 @@
                         <Grid>
                             <Label Content="No de Chambre :" Margin="0,0,0,0"></Label>
                             <TextBox Name="txtNoChambre" Margin="100,5,0.2,101.4" Height="20"></TextBox>
-                            <Label Content="No d'hotel:" Margin="0,30,0.4,68.6"></Label>
+                            <Label Content="No d'hôtel:" Margin="0,30,0.4,68.6"></Label>
                             <ComboBox Name="CbNoHotel" Margin="69,34,0.2,72.4" Height="20" Background="White"></ComboBox>
                             <Label Content="TypeChambre :" Margin="0,59,0.4,41.6"></Label>
                             <ComboBox Background="White" Height="20" Margin="90,63,0.4,43.4"></ComboBox>

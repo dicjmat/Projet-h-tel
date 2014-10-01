@@ -26,8 +26,7 @@
                 <Button  Name="btnRechercherItem" Content="Rechercher" HorizontalAlignment="Left" Margin="74,6,0,0" VerticalAlignment="Top" Width="68" Height="20" Grid.Column="1"/>
                 <Button Name="btnAccueil" Content="Accueil" Grid.Column="1" HorizontalAlignment="Left" Margin="74,141,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button Content="Supprimer" Grid.Column="1" HorizontalAlignment="Left" Margin="74,97,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="Modifier" Grid.Column="1" HorizontalAlignment="Left" Margin="74,70,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Content="Ajouter" Grid.Column="1" HorizontalAlignment="Left" Margin="74,43,0,0" VerticalAlignment="Top" Width="75"/>
+                <Button Content="Ajouter" Grid.Column="1" HorizontalAlignment="Left" Margin="74,70,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button Name="btnAjoutFour" Content="Ajouter Fournisseur" Margin="81,156,87,6" Height="20" Grid.ColumnSpan="2"/>
             </Grid>
         </Viewbox>

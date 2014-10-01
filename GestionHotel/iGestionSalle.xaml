@@ -8,13 +8,13 @@
                 <GroupBox BorderBrush="Black" Header="Gestion des salles" HorizontalAlignment="Center" Width="238" Height="148" VerticalAlignment="Top">
                     <StackPanel>
                         <Grid>
-                            <Label Content="NoSalle :" Margin="0,0,0,0"></Label>
-                            <TextBox Name="txtNoSalle" Margin="60,5,0.4,100.6" Height="20"></TextBox>
+                            <Label Content="No de Salle :" Margin="0,0,0,0"></Label>
+                            <TextBox Name="txtNoSalle" Margin="73,5,0.6,100.6" Height="20"></TextBox>
                             <Label Content="Description :" Margin="0,25,0,0"></Label>
                             <TextBox Name="txtDescSalle" Margin="73,30,0.4,75.6" Height="20"></TextBox>
                             <Label Content="Nombre de place de la salle :" Margin="0,50,0,0"></Label>
                             <TextBox Name="txtNoPlaceSalle" Margin="163,55,0.8,50.6" Height="20"></TextBox>
-                            <Label Content="NoHotel :" Margin="0,75,0.8,24.6"></Label>
+                            <Label Content="No d'hôtel :" Margin="0,75,0.8,24.6"></Label>
                             <ComboBox Name="cbNoHotel" Margin="73,80,0.8,25.6" Background="White" Height="20"></ComboBox>
                         </Grid>
                     </StackPanel>

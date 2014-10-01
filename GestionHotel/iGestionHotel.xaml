@@ -8,8 +8,8 @@
                 <GroupBox BorderBrush="Black" Header="Gestion des Hôtels" HorizontalAlignment="Center" Margin="102,0,101.4,26" Width="155">
                     <StackPanel Margin="0,0,0.4,-3.2">
                         <Grid>
-                            <Label Content="NoHotel :" Margin="0,0,0,0"></Label>
-                            <TextBox Name="txtNoHotel" Margin="60,5,0.4,100.6" Height="20"></TextBox>
+                            <Label Content="No d'hôtel :" Margin="0,0,0,0"></Label>
+                            <TextBox Name="txtNoHotel" Margin="73,5,0.4,100.6" Height="20"></TextBox>
                             <Label Content="Nom :" Margin="0,25,0,0"></Label>
                             <TextBox Name="txtNomHotel" Margin="40,30,0.4,75.6" Height="20"></TextBox>
                             <Label Content="Adresse :" Margin="0,50,0,0"></Label>

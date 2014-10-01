@@ -16,11 +16,11 @@
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0.2,0"></Label>
                             <TextBox x:Name="txtNomCli" Margin="90,5,0,0" HorizontalAlignment="Left" Width="120" Height="20" VerticalAlignment="Top"/>
-                            <Label Content="Prenom : " Margin="0,25,0,0" HorizontalAlignment="Left" Width="287"></Label>
+                            <Label Content="Prénom : " Margin="0,25,0,0" HorizontalAlignment="Left" Width="287"></Label>
                             <TextBox Name="txtPrenCli" Margin="90,30,0,126" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
-                            <Label Content="NoTelephone : " Margin="0,50,0,0" HorizontalAlignment="Left" Width="196"></Label>
+                            <Label Content="NoTéléphone : " Margin="0,50,0,0" HorizontalAlignment="Left" Width="196"></Label>
                             <TextBox Name="txtNoTellCli" Margin="90,55,0,101" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
-                            <Label Content="NoCellulaire : " Margin="0,75,0,0" HorizontalAlignment="Left" Width="196"></Label>
+                            <Label Content="NoCéllulaire : " Margin="0,75,0,0" HorizontalAlignment="Left" Width="196"></Label>
                             <TextBox Name="txtNoCellCli" Margin="90,80,0,76" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
                             <Label Content="Adresse : " Margin="0,100,0,0" HorizontalAlignment="Left" Width="196"></Label>
                             <TextBox Name="txtAdrCli" Margin="90,105,0,51" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
@@ -42,9 +42,9 @@
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0,0"></Label>
                             <TextBox x:Name="txtNomCie" Margin="100,5,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
-                            <Label Content="NoTelephone : " Margin="0,25,0,0"></Label>
+                            <Label Content="NoTéléphone : " Margin="0,25,0,0"></Label>
                             <TextBox x:Name="txtTellCie" Margin="100,30,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
-                            <Label Content="NoCellulaire : " Margin="0,50,0,0"></Label>
+                            <Label Content="NoCéllulaire : " Margin="0,50,0,0"></Label>
                             <TextBox x:Name="txtCellCie" Margin="100,55,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
                             <Label Content="NomResponsable : " Margin="0,75,0,0"></Label>
                             <TextBox x:Name="txtNomRespCie" Margin="106,80,0,0" HorizontalAlignment="Left" Width="84" Height="20" VerticalAlignment="Top"/>
