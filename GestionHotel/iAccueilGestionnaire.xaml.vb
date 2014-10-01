@@ -10,17 +10,6 @@
         noEmpl = p1
         noHotel = p2
     End Sub
-
-    Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
-
-        If Not Me.Focusable Then
-            Me.Owner.Show()
-        Else
-            Me.Owner.Close()
-        End If
-
-    End Sub
-
     Private Sub btnInventaire_Click(sender As Object, e As RoutedEventArgs) Handles btnInventaire.Click
         Dim inventaire = New iInventaire(noHotel)
         inventaire.Owner = Me
@@ -29,7 +18,7 @@
     End Sub
 
     Private Sub btnDeco_Click(sender As Object, e As RoutedEventArgs) Handles btnDeco.Click
-        Me.Focusable = False
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
@@ -43,8 +32,8 @@
     Private Sub btnListeEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnListeEmploye.Click
         Dim iEmploye = New iListeEmploye(noHotel)
         iEmploye.Owner = Me
+        iEmploye.Show()
         Me.Hide()
-        iEmploye.ShowDialog()
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)

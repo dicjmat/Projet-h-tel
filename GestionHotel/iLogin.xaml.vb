@@ -37,7 +37,6 @@
         txtMDP.Password = ""
         txtNomUtilisateur.Text = ""
         txtNomUtilisateur.Focus()
-        Me.Hide()
         Select Case typeEmploye
             Case "ADMI"
                 gerant = New iAccueilGerant(noEmploye, nHotel)
@@ -53,6 +52,7 @@
                 gestion.Show()
             Case Else
         End Select
+        Me.Hide()
     End Sub
 
     Private Sub Window_KeyDown(sender As Object, e As KeyEventArgs)
