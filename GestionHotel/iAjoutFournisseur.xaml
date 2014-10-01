@@ -1,17 +1,17 @@
 ﻿<Window x:Class="iAjoutFournisseur" WindowStartupLocation="CenterScreen" WindowState="Maximized" Name="windowAjoutFournisseur" Background="CadetBlue" WindowStyle="None"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Gestion Hotel" Height="300" Width="507.2">
+    Title="Gestion Hotel" Height="217.6" Width="507.2">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="122" Width="223">
+            <Grid Height="137" Width="223">
                 <Label Content="Ajouter un Fournisseur" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
-                <Label Content="Numero du fournisseur :" Margin="0,26,-0.4,-25"/>
-                <TextBox Name="txtNoFourni" Margin="137,31,0,71" Height="20"></TextBox>
+                <Label Content="Numéro du fournisseur :" Margin="0,26,-0.4,-25"/>
+                <TextBox Name="txtNoFourni" Margin="137,31,-1,86" Height="20"></TextBox>
                 <Label Content="Nom du fournisseur :" Margin="0,56,0,-56"></Label>
-                <TextBox Name="txtNomFourni" Margin="122,60,0,42" Height="20" Width="100"></TextBox>
-                <Button Name="btnConfirmer" Content="Confirmer" Height="25" Margin="95,97,57,0"></Button>
-                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="171,97,0,0"></Button>
+                <TextBox Name="txtNomFourni" Margin="124,60,-1,57" Height="20" Width="100"></TextBox>
+                <Button Name="btnConfirmer" Content="Confirmer" Height="25" Margin="95,99,57,13"></Button>
+                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="171,99,-1,13"></Button>
                 </Grid>
         </Viewbox>
     </Grid>
