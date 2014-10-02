@@ -1,6 +1,10 @@
 ﻿Public Class iAjouterHoraire
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
-    Sub New(_noEmploye As Short)
+    Sub New(_noGestionnaire As Short)
+        InitializeComponent()
+        'noEmploye = _noEmploye
+    End Sub
+    Sub New(_noGestionnaire As Short, _noEmploye As Short)
         InitializeComponent()
         'noEmploye = _noEmploye
     End Sub

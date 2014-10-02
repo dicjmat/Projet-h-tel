@@ -24,7 +24,7 @@
                 <Button Name="btnAccueil" Content="Accueil" Margin="0,0,9.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="44"></Button>
                 <Button Name="btnAjouterEmploye" Content="Ajouter un employé" Margin="0,0,187.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Button>
                 <Button Name="btnModifEmp" Content="Modifier un employé" Height="25" Margin="323,418,58.6,10"></Button>
-                <Button Name="btnFaireHoraire" Content="Faire les horaires" Height="25" Margin="80,418,304.6,10"></Button>
+                <Button Name="btnFaireHoraire" Content="Faire les horaires" Height="25" Margin="80,418,304.6,0" VerticalAlignment="Top"></Button>
             </Grid>
         </Viewbox>
     </Grid>
