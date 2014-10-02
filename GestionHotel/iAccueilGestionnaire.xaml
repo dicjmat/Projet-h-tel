@@ -11,7 +11,7 @@
                 <Button Name="btnListeEmploye" Content="Liste d'employés" HorizontalAlignment="Center" Margin="47,75,47,0" VerticalAlignment="Top" Width="142"/>
                 <Button Name="btnListeClient" Content="Liste de clients" HorizontalAlignment="Center" Margin="47,102,47,0" VerticalAlignment="Top" Width="142"/>
                 <Button Name="btnDeco" Content="Deconnexion" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Label Name="lblNom" Content="" HorizontalAlignment="Left" Margin="0,189,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.182,1.764"/>
+                <Label Name="lblNom" Content="" HorizontalAlignment="Left" Margin="10,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.182,1.764"/>
             </Grid>
         </Viewbox>
     </Grid>
