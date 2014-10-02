@@ -38,7 +38,7 @@
         Dim Contenu As tblChecklist
         Dim dateAjout = Date.Today
         Dim i = 0
-        For Each el In lbItem.
+        For Each el In lbItem.Items
             Contenu = New tblChecklist()
             Contenu.dateSaisit = dateAjout
             Contenu.noChambre = cbChambre.SelectedValue.noChambre()
