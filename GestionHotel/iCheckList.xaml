@@ -19,7 +19,7 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <CheckBox Name="chkItem" Content="{Binding nomItem}"/>
+                                <CheckBox Name="chkCheck" Content="{Binding nomItem}"/>
                                 <TextBox x:Name="txtComCheck" Width="300" Height="40" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"/>
                             </StackPanel>
                         </DataTemplate>
