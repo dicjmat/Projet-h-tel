@@ -5,7 +5,6 @@
     Private _noEmpl As Short
 
     Sub New(noEmpl As Short, noHotel As Short)
-        ' TODO: Complete member initialization 
         InitializeComponent()
         _noEmpl = noEmpl
         _noHotel = noHotel
@@ -49,5 +48,9 @@
                   Select el
         'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
         lstEmploye.DataContext = res.ToList()
+    End Sub
+
+    Private Sub btnFaireHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnFaireHoraire.Click
+        Dim Horaire = New iAjouterHoraire(_noEmpl)
     End Sub
 End Class

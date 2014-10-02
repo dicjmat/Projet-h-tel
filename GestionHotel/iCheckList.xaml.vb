@@ -37,16 +37,17 @@
     Private Sub btnSauvegarder_Click(sender As Object, e As RoutedEventArgs) Handles btnSauvegarder.Click
         Dim Contenu As tblChecklist
         Dim dateAjout = Date.Today
+        Dim i = 0
         For Each el In lbItem.Items
             Contenu = New tblChecklist()
             Contenu.dateSaisit = dateAjout
             Contenu.noChambre = cbChambre.SelectedValue.noChambre()
             Contenu.noHotel = noHotel
-            If el.chkItem.Checked = True Then
-                Contenu.statut = "oui"
-            Else
-                Contenu.statut = "non"
-            End If
+            'If = True Then
+            '    Contenu.statut = "oui"
+            'Else
+            '    Contenu.statut = "non"
+            'End If
             Contenu.commentaire = el.txtComCheck.Text
             Contenu.codeItem = el.codeItem
             Contenu.noEmpl = noEmploye
