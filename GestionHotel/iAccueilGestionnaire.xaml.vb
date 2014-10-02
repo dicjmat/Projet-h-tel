@@ -21,13 +21,6 @@
         Me.Close()
     End Sub
 
-    Private Sub btnCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnCommande.Click
-        Dim commande = New iCommande()
-        commande.Owner = Me
-        Me.Hide()
-        commande.Show()
-    End Sub
-
     Private Sub btnListeEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnListeEmploye.Click
         Dim iEmploye = New iListeEmploye(noHotel)
         iEmploye.Owner = Me
@@ -40,5 +33,19 @@
         Dim res = From el In maBd.tblEmploye Where el.noEmpl = noEmpl Select el
 
         lblNom.Content = "Bonjour, " + res.ToList.Single.prenEmpl + " " + res.ToList.Single.nomEmpl
+    End Sub
+
+    Private Sub btnListeCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnListeCommande.Click
+        Dim lstcommande = New iListeCOmmande()
+        lstcommande.Owner = Me
+        Me.Hide()
+        lstcommande.Show()
+    End Sub
+
+    Private Sub btnListeClient_Click(sender As Object, e As RoutedEventArgs) Handles btnListeClient.Click
+        Dim lstCli = New iListeClient()
+        lstCli.Owner = Me
+        Me.Hide()
+        lstCli.Show()
     End Sub
 End Class
