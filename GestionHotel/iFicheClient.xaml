@@ -10,28 +10,28 @@
                     <ColumnDefinition Width="251*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="No du client : " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtRNoClient" Height="20" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="90,5,0,0"/>
+                <TextBox x:Name="txtRNoClient" Text="{Binding noClient}" Height="20" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="90,5,0,0" ></TextBox>
                 <GroupBox BorderBrush="Black" Header="Fiche Client" Margin="0,30,108.044,0">
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0.2,0"></Label>
-                            <TextBox x:Name="txtNomCli" Margin="90,5,0,0" HorizontalAlignment="Left" Width="120" Height="20" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtNomCli" Text="{Binding nomClient}" Margin="90,5,0,0" HorizontalAlignment="Left" Width="120" Height="20" VerticalAlignment="Top"/>
                             <Label Content="Prénom : " Margin="0,25,0,0" HorizontalAlignment="Left" Width="287"></Label>
-                            <TextBox Name="txtPrenCli" Margin="90,30,0,126" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
+                            <TextBox Name="txtPrenCli" Text="{Binding prenClient}" Margin="90,30,0,126" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
                             <Label Content="NoTéléphone : " Margin="0,50,0,0" HorizontalAlignment="Left" Width="196"></Label>
-                            <TextBox Name="txtNoTellCli" Margin="90,55,0,101" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
+                            <TextBox Name="txtNoTellCli" Text="{Binding noTelClient}" Margin="90,55,0,101" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
                             <Label Content="NoCéllulaire : " Margin="0,75,0,0" HorizontalAlignment="Left" Width="196"></Label>
-                            <TextBox Name="txtNoCellCli" Margin="90,80,0,76" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
+                            <TextBox Name="txtNoCellCli" Text="{Binding noCellClient}" Margin="90,80,0,76" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
                             <Label Content="Adresse : " Margin="0,100,0,0" HorizontalAlignment="Left" Width="196"></Label>
-                            <TextBox Name="txtAdrCli" Margin="90,105,0,51" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
+                            <TextBox Name="txtAdrCli" Text="{Binding adrClient}" Margin="90,105,0,51" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
                             <Label Content="NoCarteCredit : " Margin="0,125,0,0" HorizontalAlignment="Left" Width="196"></Label>
-                            <TextBox Name="txtCarteCreditCli" Margin="90,129,0,27" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
+                            <TextBox Name="txtCarteCreditCli" Text="{Binding noCarteCredit}" Margin="90,129,0,27" Width="120" Height="20" HorizontalAlignment="Left"></TextBox>
                             <Label Content="Type de carte :" Margin="-2,149,2,-149"></Label>
                             <ComboBox Name="cbTypeCarte" Margin="89,154,2,0" Background="White"></ComboBox>
                             <Label Content="Commentaire : " Margin="0,226,0,-76" HorizontalAlignment="Left" Width="196"></Label>
-                            <TextBox Name="txtCommCli" Margin="90,231,0,-123" Width="120" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True"/>
+                            <TextBox Name="txtCommCli" Text="{Binding commentaire}" Margin="90,231,0,-123" Width="120" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True"/>
                             <Label Content="Code expiration :" Margin="-2,176,2,-176"></Label>
-                            <TextBox Name="txtCodeExp" Margin="103,181,2,-25" Height="20"></TextBox>
+                            <TextBox Name="txtCodeExp" Text="{Binding dateExpiration}" Margin="103,181,2,-25" Height="20"></TextBox>
                             <Label Content="Code de la ville :" Margin="-2,201,2,-201"></Label>
                             <ComboBox Name="cbCodeVille" Background="White" Margin="92,206,2,-50" Height="20"></ComboBox>
                         </Grid>
@@ -41,15 +41,15 @@
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0,0"></Label>
-                            <TextBox x:Name="txtNomCie" Margin="100,5,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtNomCie" Text="{Binding nomCompagnie}" Margin="100,5,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
                             <Label Content="NoTéléphone : " Margin="0,25,0,0"></Label>
-                            <TextBox x:Name="txtTellCie" Margin="100,30,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtTellCie" Text="{Binding noTelCompagnie}" Margin="100,30,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
                             <Label Content="NoCéllulaire : " Margin="0,50,0,0"></Label>
-                            <TextBox x:Name="txtCellCie" Margin="100,55,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtCellCie" Text="{Binding noCellCompagnie}" Margin="100,55,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
                             <Label Content="NomResponsable : " Margin="0,75,0,0"></Label>
-                            <TextBox x:Name="txtNomRespCie" Margin="106,80,0,0" HorizontalAlignment="Left" Width="84" Height="20" VerticalAlignment="Top"/>
+                            <TextBox x:Name="txtNomRespCie" Text="{Binding respCompagnie}" Margin="106,80,0,0" HorizontalAlignment="Left" Width="84" Height="20" VerticalAlignment="Top"/>
                             <Label Content="Commentaire : " Margin="0,100,0,0"></Label>
-                            <TextBox x:Name="txtComCie" Margin="100,105,0,-34.4" HorizontalAlignment="Left" Width="90" Height="60" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"/>
+                            <TextBox x:Name="txtComCie" Text="{Binding commentaire}" Margin="100,105,0,-34.4" HorizontalAlignment="Left" Width="90" Height="60" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"/>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
