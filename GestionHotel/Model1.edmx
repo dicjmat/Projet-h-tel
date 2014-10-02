@@ -32,7 +32,7 @@
           <Key>
             <PropertyRef Name="noCommande" />
           </Key>
-          <Property Name="noCommande" Type="int" Nullable="false" />
+          <Property Name="noCommande" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateCommande" Type="date" Nullable="false" />
           <Property Name="prixCommande" Type="money" />
           <Property Name="etatCommande" Type="varchar" MaxLength="10" Nullable="false" />
@@ -41,7 +41,7 @@
           <Key>
             <PropertyRef Name="noFournisseur" />
           </Key>
-          <Property Name="noFournisseur" Type="smallint" Nullable="false" />
+          <Property Name="noFournisseur" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nomFournisseur" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="tblGabarit">
@@ -71,7 +71,7 @@
           <Property Name="noHotel" Type="tinyint" Nullable="false" />
           <Property Name="codeItem" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="Quantite" Type="smallint" Nullable="false" />
-          <Property Name="quantiteMin" Type="smallint" Nullable="false" />
+          <Property Name="quantiteMin" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblItem">
           <Key>
@@ -128,7 +128,7 @@
           <Key>
             <PropertyRef Name="noEmpl" />
           </Key>
-          <Property Name="noEmpl" Type="smallint" Nullable="false" />
+          <Property Name="noEmpl" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nomEmpl" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="prenEmpl" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="noTelEmpl" Type="char" MaxLength="12" Nullable="false" />
@@ -149,7 +149,7 @@
           <Key>
             <PropertyRef Name="noHoraire" />
           </Key>
-          <Property Name="noHoraire" Type="bigint" Nullable="false" />
+          <Property Name="noHoraire" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateHoraire" Type="date" Nullable="false" />
           <Property Name="heureDebut" Type="time" Precision="7" Nullable="false" />
           <Property Name="heureFin" Type="time" Precision="7" Nullable="false" />
@@ -168,7 +168,7 @@
           <Key>
             <PropertyRef Name="noMessage" />
           </Key>
-          <Property Name="noMessage" Type="bigint" Nullable="false" />
+          <Property Name="noMessage" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="objetMessage" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="contMessage" Type="text" Nullable="false" />
           <Property Name="emetteurMessage" Type="smallint" Nullable="false" />
@@ -177,7 +177,7 @@
           <Key>
             <PropertyRef Name="noPieceJointe" />
           </Key>
-          <Property Name="noPieceJointe" Type="bigint" Nullable="false" />
+          <Property Name="noPieceJointe" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="acces" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="noMessage" Type="bigint" Nullable="false" />
         </EntityType>
@@ -202,7 +202,7 @@
           <Key>
             <PropertyRef Name="noClient" />
           </Key>
-          <Property Name="noClient" Type="int" Nullable="false" />
+          <Property Name="noClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nomClient" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="prenClient" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="noTelClient" Type="char" MaxLength="12" Nullable="false" />
@@ -219,7 +219,7 @@
           <Key>
             <PropertyRef Name="noCompagnie" />
           </Key>
-          <Property Name="noCompagnie" Type="int" Nullable="false" />
+          <Property Name="noCompagnie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nomCompagnie" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="noTelCompagnie" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="noCellCompagnie" Type="char" MaxLength="12" />
@@ -241,7 +241,7 @@
           <Key>
             <PropertyRef Name="noFacture" />
           </Key>
-          <Property Name="noFacture" Type="int" Nullable="false" />
+          <Property Name="noFacture" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="montantFacture" Type="money" Nullable="false" />
           <Property Name="etatFacture" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="noReservation" Type="int" Nullable="false" />
@@ -250,7 +250,7 @@
           <Key>
             <PropertyRef Name="noForfait" />
           </Key>
-          <Property Name="noForfait" Type="tinyint" Nullable="false" />
+          <Property Name="noForfait" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descForfait" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="etatForfait" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="prixForfait" Type="smallmoney" Nullable="false" />
@@ -268,7 +268,7 @@
           <Key>
             <PropertyRef Name="noOption" />
           </Key>
-          <Property Name="noOption" Type="tinyint" Nullable="false" />
+          <Property Name="noOption" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descOption" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tblOptionForfait">
@@ -283,7 +283,7 @@
           <Key>
             <PropertyRef Name="noRabais" />
           </Key>
-          <Property Name="noRabais" Type="tinyint" Nullable="false" />
+          <Property Name="noRabais" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tauxRabais" Type="decimal" Precision="3" Scale="2" Nullable="false" />
           <Property Name="etatRabais" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="codeTypeChambre" Type="char" MaxLength="2" Nullable="false" />
@@ -292,7 +292,7 @@
           <Key>
             <PropertyRef Name="noReservation" />
           </Key>
-          <Property Name="noReservation" Type="int" Nullable="false" />
+          <Property Name="noReservation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateDebutSejour" Type="date" Nullable="false" />
           <Property Name="dateFinSejour" Type="date" Nullable="false" />
           <Property Name="dateReserv" Type="date" Nullable="false" />
@@ -306,13 +306,14 @@
           <Key>
             <PropertyRef Name="noReservation" />
           </Key>
-          <Property Name="noReservation" Type="int" Nullable="false" />
+          <Property Name="noReservation" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateDebut" Type="date" Nullable="false" />
           <Property Name="dateFin" Type="date" Nullable="false" />
           <Property Name="dateReserv" Type="date" Nullable="false" />
           <Property Name="commentaire" Type="text" />
           <Property Name="noSalle" Type="tinyint" Nullable="false" />
           <Property Name="noEmpl" Type="smallint" Nullable="false" />
+          <Property Name="noClient" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tblSalle">
           <Key>
@@ -801,6 +802,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_resa_nocli">
+          <End Role="tblClient" Type="Self.tblClient" Multiplicity="1" />
+          <End Role="tblReservationSalle" Type="Self.tblReservationSalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblClient">
+              <PropertyRef Name="noClient" />
+            </Principal>
+            <Dependent Role="tblReservationSalle">
+              <PropertyRef Name="noClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_resa_noem">
           <End Role="tblEmploye" Type="Self.tblEmploye" Multiplicity="1" />
           <End Role="tblReservationSalle" Type="Self.tblReservationSalle" Multiplicity="*" />
@@ -1120,6 +1133,10 @@
             <End Role="tblTypeChambre" EntitySet="tblTypeChambre" />
             <End Role="tblRabais" EntitySet="tblRabais" />
           </AssociationSet>
+          <AssociationSet Name="fk_resa_nocli" Association="Self.fk_resa_nocli">
+            <End Role="tblClient" EntitySet="tblClient" />
+            <End Role="tblReservationSalle" EntitySet="tblReservationSalle" />
+          </AssociationSet>
           <AssociationSet Name="fk_resa_noem" Association="Self.fk_resa_noem">
             <End Role="tblEmploye" EntitySet="tblEmploye" />
             <End Role="tblReservationSalle" EntitySet="tblReservationSalle" />
@@ -1203,7 +1220,7 @@
           <Key>
             <PropertyRef Name="noCommande" />
           </Key>
-          <Property Name="noCommande" Type="Int32" Nullable="false" />
+          <Property Name="noCommande" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dateCommande" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="prixCommande" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="etatCommande" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
@@ -1213,7 +1230,7 @@
           <Key>
             <PropertyRef Name="noFournisseur" />
           </Key>
-          <Property Name="noFournisseur" Type="Int16" Nullable="false" />
+          <Property Name="noFournisseur" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomFournisseur" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblCatalogue" Relationship="Self.fk_cat_nofour" FromRole="tblFournisseur" ToRole="tblCatalogue" />
           <NavigationProperty Name="tblLigneCommande" Relationship="Self.fk_ligcom_nofour" FromRole="tblFournisseur" ToRole="tblLigneCommande" />
@@ -1253,7 +1270,7 @@
           <Property Name="noHotel" Type="Byte" Nullable="false" />
           <Property Name="codeItem" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="Quantite" Type="Int16" Nullable="false" />
-          <Property Name="quantiteMin" Type="Int16" Nullable="false" />
+          <Property Name="quantiteMin" Type="Byte" Nullable="false" />
           <NavigationProperty Name="tblHotel" Relationship="Self.fk_inv_hot" FromRole="tblInventaire" ToRole="tblHotel" />
           <NavigationProperty Name="tblItem" Relationship="Self.fk_inv_item" FromRole="tblInventaire" ToRole="tblItem" />
         </EntityType>
@@ -1330,7 +1347,7 @@
           <Key>
             <PropertyRef Name="noEmpl" />
           </Key>
-          <Property Name="noEmpl" Type="Int16" Nullable="false" />
+          <Property Name="noEmpl" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomEmpl" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="prenEmpl" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noTelEmpl" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
@@ -1361,7 +1378,7 @@
           <Key>
             <PropertyRef Name="noHoraire" />
           </Key>
-          <Property Name="noHoraire" Type="Int64" Nullable="false" />
+          <Property Name="noHoraire" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dateHoraire" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="heureDebut" Type="Time" Nullable="false" Precision="7" />
           <Property Name="heureFin" Type="Time" Nullable="false" Precision="7" />
@@ -1382,7 +1399,7 @@
           <Key>
             <PropertyRef Name="noMessage" />
           </Key>
-          <Property Name="noMessage" Type="Int64" Nullable="false" />
+          <Property Name="noMessage" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="objetMessage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="contMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="emetteurMessage" Type="Int16" Nullable="false" />
@@ -1394,7 +1411,7 @@
           <Key>
             <PropertyRef Name="noPieceJointe" />
           </Key>
-          <Property Name="noPieceJointe" Type="Int64" Nullable="false" />
+          <Property Name="noPieceJointe" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="acces" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noMessage" Type="Int64" Nullable="false" />
           <NavigationProperty Name="tblMessage" Relationship="Self.fk_pijo_noMess" FromRole="tblPieceJointe" ToRole="tblMessage" />
@@ -1425,7 +1442,7 @@
           <Key>
             <PropertyRef Name="noClient" />
           </Key>
-          <Property Name="noClient" Type="Int32" Nullable="false" />
+          <Property Name="noClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomClient" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="prenClient" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noTelClient" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
@@ -1439,13 +1456,14 @@
           <Property Name="typeCarteCredit" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblVille" Relationship="Self.fk_cli_covi" FromRole="tblClient" ToRole="tblVille" />
           <NavigationProperty Name="tblCompagnie" Relationship="Self.fk_cli_cum" FromRole="tblClient" ToRole="tblCompagnie" />
+          <NavigationProperty Name="tblReservationSalle" Relationship="Self.fk_resa_nocli" FromRole="tblClient" ToRole="tblReservationSalle" />
           <NavigationProperty Name="tblReservationChambre" Relationship="Self.fk_rescha_nocli" FromRole="tblClient" ToRole="tblReservationChambre" />
         </EntityType>
         <EntityType Name="tblCompagnie">
           <Key>
             <PropertyRef Name="noCompagnie" />
           </Key>
-          <Property Name="noCompagnie" Type="Int32" Nullable="false" />
+          <Property Name="noCompagnie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomCompagnie" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noTelCompagnie" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="noCellCompagnie" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
@@ -1471,7 +1489,7 @@
           <Key>
             <PropertyRef Name="noFacture" />
           </Key>
-          <Property Name="noFacture" Type="Int32" Nullable="false" />
+          <Property Name="noFacture" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="montantFacture" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="etatFacture" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noReservation" Type="Int32" Nullable="false" />
@@ -1482,7 +1500,7 @@
           <Key>
             <PropertyRef Name="noForfait" />
           </Key>
-          <Property Name="noForfait" Type="Byte" Nullable="false" />
+          <Property Name="noForfait" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descForfait" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="etatForfait" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="prixForfait" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
@@ -1495,7 +1513,7 @@
           <Key>
             <PropertyRef Name="noOption" />
           </Key>
-          <Property Name="noOption" Type="Byte" Nullable="false" />
+          <Property Name="noOption" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descOption" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblForfait" Relationship="Self.tblOptionForfait" FromRole="tblOption" ToRole="tblForfait" />
           <NavigationProperty Name="tblTypeChambre" Relationship="Self.tblTypeChambreOption" FromRole="tblOption" ToRole="tblTypeChambre" />
@@ -1504,7 +1522,7 @@
           <Key>
             <PropertyRef Name="noRabais" />
           </Key>
-          <Property Name="noRabais" Type="Byte" Nullable="false" />
+          <Property Name="noRabais" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tauxRabais" Type="Decimal" Precision="3" Scale="2" Nullable="false" />
           <Property Name="etatRabais" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codeTypeChambre" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
@@ -1514,7 +1532,7 @@
           <Key>
             <PropertyRef Name="noReservation" />
           </Key>
-          <Property Name="noReservation" Type="Int32" Nullable="false" />
+          <Property Name="noReservation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dateDebutSejour" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="dateFinSejour" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="dateReserv" Type="DateTime" Nullable="false" Precision="0" />
@@ -1532,14 +1550,16 @@
           <Key>
             <PropertyRef Name="noReservation" />
           </Key>
-          <Property Name="noReservation" Type="Int32" Nullable="false" />
+          <Property Name="noReservation" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dateDebut" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="dateFin" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="dateReserv" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="noSalle" Type="Byte" Nullable="false" />
           <Property Name="noEmpl" Type="Int16" Nullable="false" />
+          <Property Name="noClient" Type="Int32" Nullable="false" />
           <NavigationProperty Name="tblEmploye" Relationship="Self.fk_resa_noem" FromRole="tblReservationSalle" ToRole="tblEmploye" />
+          <NavigationProperty Name="tblClient" Relationship="Self.fk_resa_nocli" FromRole="tblReservationSalle" ToRole="tblClient" />
           <NavigationProperty Name="tblSalle" Relationship="Self.fk_resa_nosa" FromRole="tblReservationSalle" ToRole="tblSalle" />
         </EntityType>
         <EntityType Name="tblSalle">
@@ -1988,6 +2008,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_resa_nocli">
+          <End Role="tblClient" Type="Self.tblClient" Multiplicity="1" />
+          <End Role="tblReservationSalle" Type="Self.tblReservationSalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblClient">
+              <PropertyRef Name="noClient" />
+            </Principal>
+            <Dependent Role="tblReservationSalle">
+              <PropertyRef Name="noClient" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_rescha_nocli">
           <End Role="tblClient" Type="Self.tblClient" Multiplicity="1" />
           <End Role="tblReservationChambre" Type="Self.tblReservationChambre" Multiplicity="*" />
@@ -2244,6 +2276,10 @@
           <AssociationSet Name="fk_cli_cum" Association="Self.fk_cli_cum">
             <End Role="tblCompagnie" EntitySet="tblCompagnie" />
             <End Role="tblClient" EntitySet="tblClient" />
+          </AssociationSet>
+          <AssociationSet Name="fk_resa_nocli" Association="Self.fk_resa_nocli">
+            <End Role="tblClient" EntitySet="tblClient" />
+            <End Role="tblReservationSalle" EntitySet="tblReservationSalle" />
           </AssociationSet>
           <AssociationSet Name="fk_rescha_nocli" Association="Self.fk_rescha_nocli">
             <End Role="tblClient" EntitySet="tblClient" />
@@ -2602,6 +2638,7 @@
                 <ScalarProperty Name="commentaire" ColumnName="commentaire" />
                 <ScalarProperty Name="noSalle" ColumnName="noSalle" />
                 <ScalarProperty Name="noEmpl" ColumnName="noEmpl" />
+                <ScalarProperty Name="noClient" ColumnName="noClient" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

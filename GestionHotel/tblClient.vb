@@ -26,6 +26,7 @@ Partial Public Class tblClient
 
     Public Overridable Property tblVille As tblVille
     Public Overridable Property tblCompagnie As tblCompagnie
+    Public Overridable Property tblReservationSalle As ICollection(Of tblReservationSalle) = New HashSet(Of tblReservationSalle)
     Public Overridable Property tblReservationChambre As ICollection(Of tblReservationChambre) = New HashSet(Of tblReservationChambre)
 
 End Class

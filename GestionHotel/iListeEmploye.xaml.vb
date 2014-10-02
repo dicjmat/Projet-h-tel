@@ -21,7 +21,8 @@
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         maBd = New P2014_Equipe2_GestionHôtelièreEntities
         Dim prof = From el In maBd.tblEmploye Where el.noEmpl = _noEmpl Select el.codeProf
-        Dim res = From el In maBd.tblEmploye Where el.noHotel = _noHotel And el.codeProf = prof.ToString() Select el
+        Dim codeProff = prof.Single.ToString()
+        Dim res = From el In maBd.tblEmploye Where el.noHotel = _noHotel And el.codeProf = codeProff Select el
 
         'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
         lstEmploye.DataContext = res.ToList()

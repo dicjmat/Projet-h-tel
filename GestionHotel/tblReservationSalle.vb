@@ -18,8 +18,10 @@ Partial Public Class tblReservationSalle
     Public Property commentaire As String
     Public Property noSalle As Byte
     Public Property noEmpl As Short
+    Public Property noClient As Integer
 
     Public Overridable Property tblEmploye As tblEmploye
+    Public Overridable Property tblClient As tblClient
     Public Overridable Property tblSalle As tblSalle
 
 End Class

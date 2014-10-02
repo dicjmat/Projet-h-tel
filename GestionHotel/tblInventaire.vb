@@ -14,7 +14,7 @@ Partial Public Class tblInventaire
     Public Property noHotel As Byte
     Public Property codeItem As String
     Public Property Quantite As Short
-    Public Property quantiteMin As Short
+    Public Property quantiteMin As Byte
 
     Public Overridable Property tblHotel As tblHotel
     Public Overridable Property tblItem As tblItem
