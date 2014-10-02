@@ -2,9 +2,12 @@
 
     Private _noHotel As Short
     Dim maBd As P2014_Equipe2_GestionHôtelièreEntities
-    Sub New(noHotel As Short)
+    Private _noEmpl As Short
+
+    Sub New(noEmpl As Short, noHotel As Short)
         ' TODO: Complete member initialization 
         InitializeComponent()
+        _noEmpl = noEmpl
         _noHotel = noHotel
     End Sub
 
@@ -17,7 +20,8 @@
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         maBd = New P2014_Equipe2_GestionHôtelièreEntities
-        Dim res = From el In maBd.tblEmploye Where el.noHotel = _noHotel Select el
+        Dim prof = From el In maBd.tblEmploye Where el.noEmpl = _noEmpl Select el.codeProf
+        Dim res = From el In maBd.tblEmploye Where el.noHotel = _noHotel And el.codeProf = prof.ToString() Select el
 
         'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
         lstEmploye.DataContext = res.ToList()

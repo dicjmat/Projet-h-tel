@@ -29,7 +29,7 @@
     End Sub
 
     Private Sub btnListeEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnListeEmploye.Click
-        Dim iEmploye = New iListeEmploye(noHotel)
+        Dim iEmploye = New iListeEmploye(noEmpl, noHotel)
         iEmploye.Owner = Me
         iEmploye.Show()
         Me.Hide()
