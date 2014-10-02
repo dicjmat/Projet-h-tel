@@ -6,10 +6,10 @@
         <Viewbox Stretch="Uniform">
             <Grid Height="159" Width="236">
                 <Label Content="Accueil" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
-                <Button Name="btnInventaire" Content="Inventaire" HorizontalAlignment="Center" Margin="41,25,43,0" Width="100" Height="20" VerticalAlignment="Top"/>
-                <Button Name="btnCommande" Content="Commande" HorizontalAlignment="Center" Margin="67,50,69,0" VerticalAlignment="Top" Width="100"/>
-                <Button Name="btnListeEmploye" Content="Liste Employé" HorizontalAlignment="Center" Margin="67,77,69,0" VerticalAlignment="Top" Width="100"/>
-                <Button Name="btnFIcheClient" Content="Fiche Client" HorizontalAlignment="Center" Margin="67,104,69,0" VerticalAlignment="Top" Width="100"/>
+                <Button Name="btnInventaire" Content="Inventaire / Liste d'items" HorizontalAlignment="Center" Margin="47,23,47,0" Width="142" Height="20" VerticalAlignment="Top"/>
+                <Button Name="btnListeCommande" Content="Liste de commandes" HorizontalAlignment="Center" Margin="47,48,47,0" VerticalAlignment="Top" Width="142"/>
+                <Button Name="btnListeEmploye" Content="Liste d'employés" HorizontalAlignment="Center" Margin="47,75,47,0" VerticalAlignment="Top" Width="142"/>
+                <Button Name="btnListeClient" Content="Liste de clients" HorizontalAlignment="Center" Margin="47,102,47,0" VerticalAlignment="Top" Width="142"/>
                 <Button Name="btnDeco" Content="Deconnexion" Margin="0,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Label Name="lblNom" Content="" HorizontalAlignment="Left" Margin="0,189,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.182,1.764"/>
             </Grid>
