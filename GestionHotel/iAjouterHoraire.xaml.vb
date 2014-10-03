@@ -32,4 +32,14 @@
             Me.Owner.Show()
         End If
     End Sub
+
+    Private Sub cmbHeureDebut_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbHeureDebut.SelectionChanged
+        Dim temp As Integer
+        Dim Debut = cmbHeureDebut.SelectedIndex()
+        If Debut > 15 Then
+            temp = 24 - Debut
+            cmbHeureFin.SelectedIndex = temp
+        End If
+        cmbHeureFin.SelectedIndex = Debut + 8
+    End Sub
 End Class

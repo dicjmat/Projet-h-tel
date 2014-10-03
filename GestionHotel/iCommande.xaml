@@ -3,14 +3,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="iCommande"
     Title="Gestion Hotel" Height="792.02" Width="1433.619" Closing="Window_Closing">
-    <Grid>
+    <Grid Loaded="Grid_Loaded">
         <Viewbox Stretch="Uniform" Margin="0,0,0.4,0.4">
             <Grid Height="410" Width="739">
-                <Label Content="Code de l'item : " HorizontalAlignment="Left" Margin="0,19,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtCodeItem" Height="25" VerticalAlignment="Top" Width="131" HorizontalAlignment="Left" Canvas.Left="85" Margin="96,20,0,0"/>
+                <Label Content="Recherche : " HorizontalAlignment="Left" Margin="0,19,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtRecherche" Height="25" VerticalAlignment="Top" Width="131" HorizontalAlignment="Left" Canvas.Left="85" Margin="85,20,0,0"/>
                 <GroupBox BorderBrush="Black" Header="Commande" Margin="0,0,339,10" HorizontalAlignment="Right" Width="390" Height="343" VerticalAlignment="Bottom">
                     <Grid>
-                        <DataGrid Name="dgCommande" AutoGenerateColumns="False" Margin="0,10,0.8,93" RenderTransformOrigin="0.5,0.5">
+                        <DataGrid Name="dgCommande" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="0,10,0.8,93" RenderTransformOrigin="0.5,0.5">
                             <DataGrid.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
@@ -20,16 +20,16 @@
                                 </TransformGroup>
                             </DataGrid.RenderTransform>
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="CodeItem"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Fournisseur"></DataGridTextColumn>
-                                <DataGridTextColumn Header="PrixUnitaire"></DataGridTextColumn>
-
+                                <DataGridTextColumn Header="Code" Binding="{Binding codeItem}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nom" Binding="{Binding nomItem}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Fournisseur" Binding="{Binding nomFournisseur}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Prix Unitaire" Binding="{Binding prixItem}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                         <Label Content="Quantité :" Margin="0,227,-0.2,-227"></Label>
-                        <TextBox Name="txtQteCom" Height="20" Margin="64,231,220.8,69"></TextBox>
+                        <TextBox Name="txtQteCom" Text="1" Height="20" Margin="64,231,220.8,69"></TextBox>
                         <Label Content="Prix total de l'item ($) :" Margin="0,256,-0.2,-256"></Label>
-                        <Label Name="txtPrixTotItem" Height="20" Margin="135,260,149.8,40"></Label>
+                        <Label Content="0 $" x:Name="lblPrixTotItem" Margin="135,256,149.8,39"/>
                     </Grid>
                 </GroupBox>
                 <Button Name="btnAjouterItemComm" Content="Ajouter" Margin="0,370,344,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"></Button>

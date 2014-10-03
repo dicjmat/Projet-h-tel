@@ -18,4 +18,19 @@
     Private Sub windowAjoutItem_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles windowAjoutItem.Closing
         Me.Owner.Show()
     End Sub
+
+    Private Sub btnRechercherItem_Click(sender As Object, e As RoutedEventArgs) Handles btnRechercherItem.Click
+
+    End Sub
+
+    Private Sub btnAjouterItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItem.Click
+        Dim Item = New tblItem()
+        Item.codeItem = txtRCodeItem.Text
+        Item.nomItem = txtNomItem.Text
+        Item.descItem = txtDescItem.Text
+    End Sub
+
+    Private Sub btnModifierItem_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierItem.Click
+
+    End Sub
 End Class
