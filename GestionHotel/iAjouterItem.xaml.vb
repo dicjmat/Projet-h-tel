@@ -28,6 +28,10 @@
         Item.codeItem = txtRCodeItem.Text
         Item.nomItem = txtNomItem.Text
         Item.descItem = txtDescItem.Text
+
+        bd.tblItem.Add(Item)
+        bd.SaveChanges()
+        MessageBox.Show("L'item a été créé avec succès.")
     End Sub
 
     Private Sub btnModifierItem_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierItem.Click
