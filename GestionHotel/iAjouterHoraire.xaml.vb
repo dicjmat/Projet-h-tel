@@ -37,9 +37,16 @@
         Dim temp As Integer
         Dim Debut = cmbHeureDebut.SelectedIndex()
         If Debut > 15 Then
-            temp = 24 - Debut
+            temp = Debut - 16
             cmbHeureFin.SelectedIndex = temp
         End If
         cmbHeureFin.SelectedIndex = Debut + 8
+    End Sub
+
+    Private Sub btnAjouterHor_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterHor.Click
+        Dim Horaire = New tblHoraire()
+        Dim prenomEmpl = cbEmploye.SelectedItem.prenEmpl
+        Dim numEmpl = From el In bd.tblEmploye Where el.prenEmpl = prenomEmpl Select el.noEmpl
+        Horaire.noEmpl = Convert.ToInt16(numEmpl)
     End Sub
 End Class

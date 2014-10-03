@@ -13,8 +13,8 @@
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Label Content="{Binding prenEmpl}"/>
-                                            <Label Content="{Binding nomEmpl}"/>
+                                            <Label Name="lblPren" Content="{Binding prenEmpl}"/>
+                                            <Label Name="lblNom" Content="{Binding nomEmpl}"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
