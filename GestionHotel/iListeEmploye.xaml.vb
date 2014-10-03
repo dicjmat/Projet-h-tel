@@ -52,8 +52,9 @@
 
     Private Sub btnFaireHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnFaireHoraire.Click
         Dim Horaire = New iAjouterHoraire(_noEmpl, _noHotel)
+        Horaire.Owner = Me
         Horaire.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 End Class
 

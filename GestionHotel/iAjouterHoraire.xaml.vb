@@ -20,8 +20,16 @@
         cbEmploye.DataContext = res.ToList()
     End Sub
 
-    Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
+    Private Sub btnRetour_Click(sender As Object, e As RoutedEventArgs) Handles btnRetour.Click
         Me.Focusable = False
         Me.Close()
+    End Sub
+
+    Private Sub windowAjoutHoraire_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles windowAjoutHoraire.Closing
+        If Me.Focusable Then
+            Me.Owner.Close()
+        Else
+            Me.Owner.Show()
+        End If
     End Sub
 End Class
