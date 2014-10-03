@@ -3,7 +3,7 @@
     Private Sub windowFicheEmploye_Loaded(sender As Object, e As RoutedEventArgs) Handles windowFicheEmploye.Loaded
         bd = New P2014_Equipe2_GestionHôtelièreEntities()
     End Sub
-    Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
+    Private Sub btnCreer_Click(sender As Object, e As RoutedEventArgs)
         Dim Employe = New tblEmploye()
         Employe.noEmpl = txtRNoClient.Text
         Employe.nomEmpl = txtNomEmp.Text
@@ -44,7 +44,7 @@
         'listeemploye = New iListeEmploye()
         'listeemploye.Close()
     End Sub
-    Private Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
+    Private Sub btnAnnuler_Click(sender As Object, e As RoutedEventArgs)
         Me.Focusable = False
         windowFicheEmploye.Close()
     End Sub

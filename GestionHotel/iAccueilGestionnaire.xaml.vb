@@ -41,11 +41,4 @@
         Me.Hide()
         lstcommande.Show()
     End Sub
-
-    Private Sub btnListeClient_Click(sender As Object, e As RoutedEventArgs) Handles btnListeClient.Click
-        Dim lstCli = New iListeClient()
-        lstCli.Owner = Me
-        Me.Hide()
-        lstCli.Show()
-    End Sub
 End Class
