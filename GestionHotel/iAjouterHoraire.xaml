@@ -8,12 +8,13 @@
                 <GroupBox BorderBrush="Black" Header="Employé" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="70" Width="498" Grid.ColumnSpan="2">
                     <StackPanel>
                         <Grid>
-                            <Button x:Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Height="29" Margin="402,0,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5"/>
+                            <Button x:Name="btnRetour" Content="Retour" HorizontalAlignment="Left" Height="29" Margin="402,0,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5"/>
                             <ComboBox x:Name="cbEmploye" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.546,0.688" Background="white">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
-                                        <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
                                             <Label Content="{Binding prenEmpl}"/>
+                                            <Label Content="{Binding nomEmpl}"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
