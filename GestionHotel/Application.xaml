@@ -1,7 +1,8 @@
 ﻿<Application x:Class="Application"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    StartupUri="MainWindow.xaml"
+    xmlns:toolKit="http://schemas.xceed.com/wpf/xaml/toolkit"
+    StartupUri="iLogin.xaml"
     ShutdownMode="OnLastWindowClose">
     <Application.Resources>
         
