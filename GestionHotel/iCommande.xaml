@@ -29,7 +29,7 @@
                         <Label Content="Quantité :" Margin="0,227,-0.2,-227"></Label>
                         <TextBox Name="txtQteCom" Height="20" Margin="64,231,220.8,69"></TextBox>
                         <Label Content="Prix total de l'item ($) :" Margin="0,256,-0.2,-256"></Label>
-                        <TextBox Name="txtPrixTotItem" Height="20" Margin="135,260,149.8,40"></TextBox>
+                        <Label Name="txtPrixTotItem" Height="20" Margin="135,260,149.8,40"></Label>
                     </Grid>
                 </GroupBox>
                 <Button Name="btnAjouterItemComm" Content="Ajouter" Margin="0,370,344,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"></Button>
