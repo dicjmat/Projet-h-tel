@@ -12,6 +12,12 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Nom" Binding="{Binding nomCli}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Prénom" Binding="{Binding prenomCli}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="No Tel" Binding="{Binding noTelClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="No Cell" Binding="{Binding noCellClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Adresse" Binding="{Binding adrClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="No Carte Crédit" Binding="{Binding noCarteCredit}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Type" Binding="{Binding typeCarteCredit}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Date Expiration" Binding="{Binding dateExpiration}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
