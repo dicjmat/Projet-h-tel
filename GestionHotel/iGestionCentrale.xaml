@@ -10,9 +10,9 @@
                     <StackPanel>
                         <Grid>
                             <Label Content="Code :" Margin="0,0,0,0"></Label>
-                            <TextBox Name="cbCodeProv" Height="20" Margin="40,6,52.8,50" Background="White"/>
+                            <TextBox Name="cbCodeProv" Text="{Binding codeProv}" Height="20" Margin="40,6,52.8,50" Background="White"/>
                             <Label Content="Nom :" Margin="0,25,-0.4,25.2"></Label>
-                            <TextBox Name="txtNomProv" Margin="40,31,-0.2,25" Height="20"></TextBox>
+                            <TextBox Name="txtNomProv" Text="{Binding nomProv}" Margin="40,31,-0.2,25" Height="20"></TextBox>
                             <Button Name="btnAjouterProv" Content="Ajouter" Height="20" Margin="125,56,0,-0.2"></Button>
                         </Grid>
                     </StackPanel>
@@ -21,9 +21,9 @@
                     <StackPanel>
                         <Grid Height="73">
                             <Label Content="Code :" Margin="0,0,0,24.6"></Label>
-                            <TextBox Name="txtCodeVille" Height="20" Margin="40,5,34.8,48"></TextBox>
+                            <TextBox Name="txtCodeVille" Text="{Binding codeVille}" Height="20" Margin="40,5,34.8,48"></TextBox>
                             <Label Content="Nom :" Margin="0,25,0,24"/>
-                            <TextBox Name="txtNomVille" Margin="40,30,-0.2,23" Height="20"></TextBox>
+                            <TextBox Name="txtNomVille" Text="{Binding nomVille}" Margin="40,30,-0.2,23" Height="20"></TextBox>
                             <Button Name="btnAjouterVille" Content="Ajouter" Margin="127,54,0,-1" Height="20"></Button>
                         </Grid>
                     </StackPanel>
