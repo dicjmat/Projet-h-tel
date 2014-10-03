@@ -9,8 +9,8 @@
                 <Button Name="btnInventaire" Content="Inventaire / Liste d'items" HorizontalAlignment="Center" Margin="47,23,47,0" Width="142" Height="20" VerticalAlignment="Top"/>
                 <Button Name="btnListeCommande" Content="Liste de commandes" HorizontalAlignment="Center" Margin="47,48,47,0" VerticalAlignment="Top" Width="142"/>
                 <Button Name="btnListeEmploye" Content="Liste d'employés" HorizontalAlignment="Center" Margin="47,75,47,0" VerticalAlignment="Top" Width="142"/>
-                <Button Name="btnDeco" Content="Déconnexion" Margin="0,0,10,7" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Label Name="lblNom" Content="" HorizontalAlignment="Left" Margin="0,129,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.182,1.764"/>
+                <Button Name="btnDeco" Content="Déconnexion" Margin="0,0,5,7" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Label Name="lblNom" Content="" HorizontalAlignment="Left" Margin="5,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.182,1.764" Width="9"/>
             </Grid>
         </Viewbox>
     </Grid>

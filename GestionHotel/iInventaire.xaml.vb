@@ -30,4 +30,10 @@
         iItem.Owner = Me
         iItem.Show()
     End Sub
+
+    Private Sub btnCommander_Click(sender As Object, e As RoutedEventArgs) Handles btnCommander.Click
+        Dim iComman = New iCommande
+        iComman.Owner = Me
+        iComman.Show()
+    End Sub
 End Class
