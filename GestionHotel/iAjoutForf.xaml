@@ -17,7 +17,7 @@
                             <Button Name="btnEnleverType" Content="«" Margin="86,121,0,-104.4" HorizontalAlignment="Left" Width="16" RenderTransformOrigin="0.5,0.504"></Button>
                             <Button Name="AjouterForf" Content="Créer Forfait" Margin="375,166,6.2,-144.4" Height="20"></Button>
                             <Label Content="Description Activité :" Margin="193,46,-193.2,-46.4"></Label>
-                            <TextBox Name="txtDescAct" Margin="198,67,10.8,-93.4"></TextBox>
+                            <TextBox Name="txtDescAct" Margin="203,74,5.8,-100.4"></TextBox>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
