@@ -3,6 +3,7 @@
     Dim checkList As iCheckList
     Dim gerant As iAccueilGerant
     Dim gestion As iAccueilGestionnaire
+    Dim gestionPatr As iGestionCentrale
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click
         Me.Close()
     End Sub
@@ -50,6 +51,10 @@
                 gestion = New iAccueilGestionnaire(noEmploye, nHotel)
                 gestion.Owner = Me
                 gestion.Show()
+            Case "PATR"
+                gestionPatr = New iGestionCentrale()
+                gestionPatr.Owner = Me
+                gestionPatr.Show()
             Case Else
         End Select
         Me.Hide()
