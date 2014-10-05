@@ -37,16 +37,17 @@
         Dim Horaire = New tblHoraire()
         Horaire.noEmpl = Convert.ToInt16(cbEmploye.SelectedItem.noEmpl)
         Horaire.dateHoraire = Format(cldHoraire.SelectedDate(), "yyyy/MM/dd")
+        'Dim 
         Horaire.heureDebut = Replace(cmbHeureFin.SelectedValue(), "h", ":")
     End Sub
 
-    Private Sub tpDebut_ValueChanged(sender As Object, e As RoutedPropertyChangedEventArgs(Of Object)) Handles tpDebut.ValueChanged
+    Private Sub cmbHeureDebut_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbHeureDebut.SelectionChanged
         Dim temp As Integer
-        'Dim Debut = tpDebut.Value()
-        If Convert.ToInt16(Debut) > 15 Then
-            temp = Convert.ToInt16(Debut) - 16
-            'tpFin.SetCurrentValue()
+        Dim Debut = cmbHeureDebut.SelectedIndex()
+        If Debut > 15 Then
+            temp = Debut - 16
+            cmbHeureFin.SelectedIndex = temp
         End If
-        'cmbHeureFin.SelectedIndex = Debut + 8
+        cmbHeureFin.SelectedIndex = Debut + 8
     End Sub
 End Class
