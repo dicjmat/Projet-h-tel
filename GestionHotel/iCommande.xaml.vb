@@ -2,7 +2,9 @@
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Dim lstCommande As New List(Of tblLigneCommande)
     Dim lstAffichage As New List(Of Object)
+    Dim prixTotal
     Private Sub Grid_Loaded(sender As Object, e As RoutedEventArgs)
+        prixTotal = 0
         bd = New P2014_Equipe2_GestionHôtelièreEntities
         Dim res = From It In bd.tblItem Join FoIt In bd.tblCatalogue On It.codeItem Equals FoIt.codeItem Join Fo In bd.tblFournisseur On FoIt.noFournisseur Equals Fo.noFournisseur
                     Select It.codeItem, It.nomItem, FoIt.prixItem, Fo.nomFournisseur, Fo.noFournisseur
@@ -14,22 +16,33 @@
         'Dim prix = From item In bd.tblItem
         'Where txtCodeItem.Text = item.codeItem And 
         'Select prix
+        Dim pareil As Boolean = False
         If dgCommande.SelectedItem IsNot Nothing Then
-            Dim ligne = New tblLigneCommande
-            Dim prixTotal = 0
-            ligne.noFournisseur = dgCommande.SelectedItem.noFournisseur
-            ligne.codeItem = dgCommande.SelectedItem.CodeItem
-            ligne.quantite = txtQteCom.Text
-            ligne.prixLigne = dgCommande.SelectedItem.prixItem * Convert.ToInt32(txtQteCom.Text)
-            lstCommande.Add(ligne)
-            Dim affichage = New With {.nomFournisseur = dgCommande.SelectedItem.nomFournisseur _
-                                     , .quantite = ligne.quantite _
-                                     , .prixLigne = ligne.prixLigne _
-                                     , .nomItem = dgCommande.SelectedItem.nomItem}
-            lstAffichage.Add(affichage)
-            lstViewCommande.ItemsSource = lstAffichage.ToList()
-            prixTotal += ligne.prixLigne
-            lblPrixComm.Content = prixTotal.ToString() + " $"
+            For Each el In lstCommande
+                If el.codeItem = dgCommande.SelectedItem.codeItem And el.noFournisseur = dgCommande.SelectedItem.noFournisseur Then
+                    pareil = True
+                End If
+            Next
+            If Not pareil Then
+
+                Dim ligne = New tblLigneCommande
+                ligne.noFournisseur = dgCommande.SelectedItem.noFournisseur
+                ligne.codeItem = dgCommande.SelectedItem.CodeItem
+                ligne.quantite = txtQteCom.Text
+                ligne.prixLigne = dgCommande.SelectedItem.prixItem * Convert.ToInt32(txtQteCom.Text)
+                lstCommande.Add(ligne)
+                Dim affichage = New With {.nomFournisseur = dgCommande.SelectedItem.nomFournisseur _
+                                         , .quantite = ligne.quantite _
+                                         , .prixLigne = ligne.prixLigne _
+                                         , .nomItem = dgCommande.SelectedItem.nomItem _
+                                         , .codeItem = dgCommande.SelectedItem.codeItem}
+                lstAffichage.Add(affichage)
+                lstViewCommande.ItemsSource = lstAffichage.ToList()
+                prixTotal += ligne.prixLigne
+                lblPrixComm.Content = prixTotal.ToString() + " $"
+            Else
+                MessageBox.Show("Vous ne pouvez entrer qu'une seule fois le même item")
+            End If
         Else
             MessageBox.Show("Veuillez sélectionner un item dans la liste")
         End If
@@ -74,11 +87,16 @@
             For Each el In lstAffichage
                 If el.nomItem = lstViewCommande.SelectedItem.nomItem Then
                     lstAffichage.Remove(el)
+                    Exit For
                 End If
             Next
             For Each el In lstCommande
-                'If 
+                If el.prixLigne = lstViewCommande.SelectedItem.prixLigne And el.codeItem = lstViewCommande.SelectedItem.codeItem Then
+                    lstCommande.Remove(el)
+                    Exit For
+                End If
             Next
+            lstViewCommande.ItemsSource = lstAffichage.ToList
         Else
             MessageBox.Show("Veullez sélectionner l'item que vous voulez supprimer")
         End If
