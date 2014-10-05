@@ -27,7 +27,32 @@
                     <StackPanel HorizontalAlignment="Left" Height="208" Margin="10,10,0,-18.8" VerticalAlignment="Top" Width="225">
                         <Canvas>
                             <Label Content="Heure de début :" Canvas.Top="-4"/>
-                            <xctk:TimePicker Name="tpDebut" Canvas.Top="30" Width="106"/>
+                            <ComboBox x:Name="cmbHeureDebut" Canvas.Top="30" Background="White" Width="128">
+                                <Label Content="1h00"/>
+                                <Label Content="2h00"/>
+                                <Label Content="3h00"/>
+                                <Label Content="4h00"/>
+                                <Label Content="5h00"/>
+                                <Label Content="6h00"/>
+                                <Label Content="7h00"/>
+                                <Label Content="8h00"/>
+                                <Label Content="9h00"/>
+                                <Label Content="10h00"/>
+                                <Label Content="11h00"/>
+                                <Label Content="12h00"/>
+                                <Label Content="13h00"/>
+                                <Label Content="14h00"/>
+                                <Label Content="15h00"/>
+                                <Label Content="16h00"/>
+                                <Label Content="17h00"/>
+                                <Label Content="18h00"/>
+                                <Label Content="19h00"/>
+                                <Label Content="20h00"/>
+                                <Label Content="21h00"/>
+                                <Label Content="22h00"/>
+                                <Label Content="23h00"/>
+                                <Label Content="24h00"/>
+                            </ComboBox>
                             <Label Content="Heure de fin :" Canvas.Top="64"/>
                             <ComboBox x:Name="cmbHeureFin" Canvas.Top="98" Background="White" Width="128">
                                 <Label Content="1h00"/>
