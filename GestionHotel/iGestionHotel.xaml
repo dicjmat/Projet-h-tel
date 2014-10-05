@@ -21,7 +21,7 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86" Margin="0,0,-0.2,0"/>
+                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Top" HorizontalAlignment="Right" Width="86" Margin="0,150,-0.6,0"/>
                 <Button Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,272.8,0" Width="86"></Button>
                 <Button Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,181.8,0" Width="86"></Button>
                 <Button Name="btnSupprimer" Content="Supprimer" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,90.8,0" Width="86"></Button>

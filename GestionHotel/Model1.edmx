@@ -90,6 +90,7 @@
           <Property Name="codeItem" Type="char" MaxLength="7" Nullable="false" />
           <Property Name="quantite" Type="smallint" Nullable="false" />
           <Property Name="noFournisseur" Type="smallint" Nullable="false" />
+          <Property Name="prixLigne" Type="money" />
         </EntityType>
         <EntityType Name="tblPays">
           <Key>
@@ -1297,6 +1298,7 @@
           <Property Name="codeItem" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="quantite" Type="Int16" Nullable="false" />
           <Property Name="noFournisseur" Type="Int16" Nullable="false" />
+          <Property Name="prixLigne" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="tblCommande" Relationship="Self.fk_ligcom_nocom" FromRole="tblLigneCommande" ToRole="tblCommande" />
           <NavigationProperty Name="tblFournisseur" Relationship="Self.fk_ligcom_nofour" FromRole="tblLigneCommande" ToRole="tblFournisseur" />
           <NavigationProperty Name="tblItem" Relationship="Self.fk_ligcom_codeitem" FromRole="tblLigneCommande" ToRole="tblItem" />
@@ -2414,6 +2416,7 @@
                 <ScalarProperty Name="codeItem" ColumnName="codeItem" />
                 <ScalarProperty Name="quantite" ColumnName="quantite" />
                 <ScalarProperty Name="noFournisseur" ColumnName="noFournisseur" />
+                <ScalarProperty Name="prixLigne" ColumnName="prixLigne" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
