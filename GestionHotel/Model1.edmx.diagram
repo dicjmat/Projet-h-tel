@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e188a2b4e0784af097d7ca0a873d67f4" Name="Diagram1">
+      <Diagram DiagramId="a8a379d747354fda84b1cb6ae1aac01b" Name="Diagram1">
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblCatalogue" Width="1.5" PointX="3" PointY="27.375" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblChecklist" Width="1.5" PointX="13.25" PointY="24.125" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblCommande" Width="1.5" PointX="3.75" PointY="13.25" IsExpanded="true" />
@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblHotel" Width="1.5" PointX="0.75" PointY="19.875" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblInventaire" Width="1.5" PointX="3" PointY="20.375" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblItem" Width="1.5" PointX="0.75" PointY="24.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblLigneCommande" Width="1.5" PointX="6" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblLigneCommande" Width="1.5" PointX="6" PointY="26.25" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblPays" Width="1.5" PointX="1.5" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblProvince" Width="1.5" PointX="1.5" PointY="16.375" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblVille" Width="1.5" PointX="3.75" PointY="16.125" IsExpanded="true" />

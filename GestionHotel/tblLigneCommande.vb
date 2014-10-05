@@ -15,6 +15,7 @@ Partial Public Class tblLigneCommande
     Public Property codeItem As String
     Public Property quantite As Short
     Public Property noFournisseur As Short
+    Public Property prixLigne As Nullable(Of Decimal)
 
     Public Overridable Property tblCommande As tblCommande
     Public Overridable Property tblFournisseur As tblFournisseur
