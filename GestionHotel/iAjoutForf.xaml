@@ -10,11 +10,11 @@
                         <Grid>
                             <Label Content="Prix :" Margin="-6,5,6.2,-4.4"></Label>
                             <TextBox Name="txtPrixForf" Height="20" Margin="29,10,0,11.6" HorizontalAlignment="Left" Width="100"></TextBox>
-                            <ListBox Name="lstTypeChambre" Margin="0,74,0,-138.2" HorizontalAlignment="Left" Width="86"></ListBox>
+                            <ListBox Name="lstTypeChambre" ItemsSource="{Binding}" Margin="0,74,0,-138.2" HorizontalAlignment="Left" Width="86"></ListBox>
                             <Label Content="TypeChambre" Margin="-5,47,-0.4,-47.2" HorizontalAlignment="Left" Width="183"></Label>
                             <ListBox Name="lstTypeChambreC" Margin="102,74,0,-138.4" HorizontalAlignment="Left" Width="86"></ListBox>
                             <Button Name="btnAjouterType" Content="»" Margin="86,94,0,-74.4" HorizontalAlignment="Left" Width="16"></Button>
-                            <Button Name="btnEnleverType" Content="«" Margin="86,121,0,-104.4" HorizontalAlignment="Left" Width="16"></Button>
+                            <Button Name="btnEnleverType" Content="«" Margin="86,121,0,-104.4" HorizontalAlignment="Left" Width="16" RenderTransformOrigin="0.5,0.504"></Button>
                             <Button Name="AjouterForf" Content="Créer Forfait" Margin="375,166,6.2,-144.4" Height="20"></Button>
                             <Label Content="Description Activité :" Margin="193,46,-193.2,-46.4"></Label>
                             <TextBox Name="txtDescAct" Margin="198,67,10.8,-93.4"></TextBox>
