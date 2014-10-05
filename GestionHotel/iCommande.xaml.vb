@@ -101,4 +101,23 @@
             MessageBox.Show("Veullez sélectionner l'item que vous voulez supprimer")
         End If
     End Sub
+
+    Private Sub btnFaireComm_Click(sender As Object, e As RoutedEventArgs) Handles btnFaireComm.Click
+        Dim commande = New tblCommande
+        If lstAffichage IsNot Nothing Then
+            commande.dateCommande = Date.Today
+            commande.prixCommande = prixTotal
+            commande.etatCommande = ""
+            For Each el In lstCommande
+                commande.tblLigneCommande.Add(el)
+            Next
+            bd.tblCommande.Add(commande)
+            bd.SaveChanges()
+            MessageBox.Show("Votre commande a été enregistrée avec succès!")
+        Else
+            MessageBox.Show("Vous devez choisir au moins un item avant de créer la commande")
+        End If
+
+
+    End Sub
 End Class
