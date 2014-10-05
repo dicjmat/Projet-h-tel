@@ -13,7 +13,7 @@
                         <Label Content="Code du type de chambre :" Margin="0,30,0,-29.8"></Label>
                         <ComboBox Name="cbTypeChambre" Height="25" Margin="152,33,95.8,85"></ComboBox>
                         <Label Content="État du rabais :" Margin="0,63,0,-63"></Label>
-                        <CheckBox Margin="92,69,-92,-70">Actif</CheckBox>
+                        <CheckBox Margin="92,69,204,51">Actif</CheckBox>
                     </Grid>
                 </GroupBox>
                 <Button Name="btndeco" Content="Déconnexion" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,10"></Button>
