@@ -152,8 +152,8 @@
           </Key>
           <Property Name="noHoraire" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dateHoraire" Type="date" Nullable="false" />
-          <Property Name="heureDebut" Type="time" Precision="7" Nullable="false" />
-          <Property Name="heureFin" Type="time" Precision="7" Nullable="false" />
+          <Property Name="heureDebut" Type="datetime" />
+          <Property Name="heureFin" Type="datetime" />
           <Property Name="noEmpl" Type="smallint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblLogin">
@@ -1382,8 +1382,8 @@
           </Key>
           <Property Name="noHoraire" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dateHoraire" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="heureDebut" Type="Time" Nullable="false" Precision="7" />
-          <Property Name="heureFin" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="heureDebut" Type="DateTime" Precision="3" />
+          <Property Name="heureFin" Type="DateTime" Precision="3" />
           <Property Name="noEmpl" Type="Int16" Nullable="false" />
           <NavigationProperty Name="tblEmploye" Relationship="Self.fk_hor_noempl" FromRole="tblHoraire" ToRole="tblEmploye" />
         </EntityType>

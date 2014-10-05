@@ -1,6 +1,7 @@
-﻿<Window x:Class="iAjouterHoraire" FontSize="16" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="CadetBlue" Name="windowAjoutHoraire" WindowStyle="None"
+﻿<Window
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="iAjouterHoraire" FontSize="16" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="CadetBlue" x:Name="windowAjoutHoraire" WindowStyle="None"
     Title="Gestion Hotel" Height="350" Width="525" Loaded="Window_Loaded">
     <Grid>
         <Viewbox Stretch="Uniform">
@@ -13,8 +14,8 @@
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Label Name="lblPren" Content="{Binding prenEmpl}"/>
-                                            <Label Name="lblNom" Content="{Binding nomEmpl}"/>
+                                            <Label x:Name="lblPren" Content="{Binding prenEmpl}"/>
+                                            <Label x:Name="lblNom" Content="{Binding nomEmpl}"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
@@ -25,8 +26,8 @@
                 <GroupBox BorderBrush="Black" Header="Horaire" HorizontalAlignment="Left" Margin="261,84,0,0" VerticalAlignment="Top" Height="228" Width="247">
                     <StackPanel HorizontalAlignment="Left" Height="208" Margin="10,10,0,-18.8" VerticalAlignment="Top" Width="225">
                         <Canvas>
-                            <Label Content="Heure de début :" Canvas.Top="-5"/>
-                            <ComboBox Name="cmbHeureDebut" Canvas.Top="29" Background="White" Width="128">
+                            <Label Content="Heure de début :" Canvas.Top="-4"/>
+                            <ComboBox x:Name="cmbHeureDebut" Canvas.Top="30" Background="White" Width="128">
                                 <Label Content="1h00"/>
                                 <Label Content="2h00"/>
                                 <Label Content="3h00"/>
@@ -53,7 +54,7 @@
                                 <Label Content="24h00"/>
                             </ComboBox>
                             <Label Content="Heure de fin :" Canvas.Top="64"/>
-                            <ComboBox Name="cmbHeureFin" Canvas.Top="99" Background="White" Width="128">
+                            <ComboBox x:Name="cmbHeureFin" Canvas.Top="98" Background="White" Width="128">
                                 <Label Content="1h00"/>
                                 <Label Content="2h00"/>
                                 <Label Content="3h00"/>
@@ -79,15 +80,16 @@
                                 <Label Content="23h00"/>
                                 <Label Content="24h00"/>
                             </ComboBox>
-                            <Label Name="lblConfirmation" Content="Message de confirmation" Canvas.Top="125" Visibility="Hidden"/>
-                            <Button Name="btnAjouterHor" Content="Ajouter" Canvas.Top="157"/>
-                            <Button Name="btnModifierHor" Content="Modifier" Canvas.Top="157" Canvas.Left="65"/>
-                            <Button Name="btnSupprimerHor" Content="Supprimer" Canvas.Top="157" Canvas.Left="137" Width="81"/>
+                            <Label x:Name="lblConfirmation" Content="Message de confirmation" Canvas.Top="125" Visibility="Hidden"/>
+                            <Button x:Name="btnAjouterHor" Content="Ajouter" Canvas.Top="157"/>
+                            <Button x:Name="btnModifierHor" Content="Modifier" Canvas.Top="157" Canvas.Left="65"/>
+                            <Button x:Name="btnSupprimerHor" Content="Supprimer" Canvas.Top="157" Canvas.Left="137" Width="81"/>
                         </Canvas>
+                        
                     </StackPanel>
                 </GroupBox>
                 <GroupBox  BorderBrush="Black" Header="Calendrier" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Height="228" Width="246">
-                    <Calendar HorizontalAlignment="Left" Margin="0,10,0,-18.8" VerticalAlignment="Top" Height="208" Width="212"/>
+                    <Calendar x:Name="cldHoraire" HorizontalAlignment="Left" Margin="0,10,0,-18.8" VerticalAlignment="Top" Height="208" Width="212"/>
                 </GroupBox>
             </Grid>
         </Viewbox>
