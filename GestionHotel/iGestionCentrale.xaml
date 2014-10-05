@@ -29,9 +29,8 @@
                     </StackPanel>
                 </GroupBox>
 
-                <Button Name="btnRapport" Content="Demander un Rapport" Height="38" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,210,10" Width="129"/>
+                <Button Name="btnRapport" Content="Demander un Rapport" Height="38" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,145,10" Width="129"/>
                 <Button Name="btnAccueil" Content="Accueil" Margin="355,212,6,-24"/>
-                <Button Name="btnAjoutForf" Content="Ajouter un Forfait" Margin="221,162,78,10"></Button>
             </Grid>
         </Viewbox>
     </Grid>

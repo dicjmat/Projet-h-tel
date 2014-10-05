@@ -6,6 +6,8 @@
 
         Dim res = From el In bd.tblTypeChambre Select el.nomTypeChambre
         lstTypeChambre.DataContext = res.ToList()
+        lstTypeChambre.AllowDrop = True
+        lstTypeChambreC.AllowDrop = True
     End Sub
     Private Sub AjouterForf_Click(sender As Object, e As RoutedEventArgs) Handles AjouterForf.Click
         Dim Forfait As New tblForfait
@@ -17,11 +19,7 @@
         MessageBox.Show("Le forfait a été créé avec succès.")
     End Sub
 
-    Private Sub btnAjouterType_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterType.Click
-
-    End Sub
-
-    Private Sub btnEnleverType_Click(sender As Object, e As RoutedEventArgs) Handles btnEnleverType.Click
+    Private Sub lstTypeChambre_MouseDown(sender As Object, e As MouseButtonEventArgs)
 
     End Sub
 End Class
