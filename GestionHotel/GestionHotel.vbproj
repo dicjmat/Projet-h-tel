@@ -220,10 +220,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="iAjouterActivite.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="iAjouterHoraire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -241,9 +237,6 @@
     </Compile>
     <Compile Include="iAccueilGestionnaire.xaml.vb">
       <DependentUpon>iAccueilGestionnaire.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="iAjouterActivite.xaml.vb">
-      <DependentUpon>iAjouterActivite.xaml</DependentUpon>
     </Compile>
     <Compile Include="iAjouterHoraire.xaml.vb">
       <DependentUpon>iAjouterHoraire.xaml</DependentUpon>
