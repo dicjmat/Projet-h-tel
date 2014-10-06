@@ -26,7 +26,7 @@
                                 <DataGridTextColumn Header="Code" Binding="{Binding codeItem,Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Nom" Binding="{Binding nomItem,Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Fournisseur" Binding="{Binding nomFournisseur,Mode=OneWay}"/>
-                                <DataGridTextColumn Header="Prix Unitaire" Binding="{Binding prixItem,Mode=OneWay}"/>
+                                <DataGridTextColumn Header="Prix Unitaire" Binding="{Binding prixItem,Mode=OneWay,StringFormat={}{0:#.00}}"/>
                             </DataGrid.Columns>
                         </DataGrid>
                         <Label Content="Quantité :" Margin="0,227,-0.2,-227"/>
@@ -44,7 +44,7 @@
                             <ListView x:Name="lstViewCommande" Margin="0,0,-0.2,-108.2">
                                 <ListView.View>
                                     <GridView>
-                                        <GridViewColumn Header="Prix" DisplayMemberBinding="{Binding prixLigne,Mode=OneWay}"/>
+                                        <GridViewColumn Width="70" Header="Prix" DisplayMemberBinding="{Binding prixLigne,Mode=OneWay,StringFormat={}{0:#####.00}}"/>
                                         <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding nomItem,Mode=OneWay}"/>
                                         <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding quantite,Mode=OneWay}"/>
                                         <GridViewColumn Header="Fournisseur" DisplayMemberBinding="{Binding nomFournisseur,Mode=OneWay}"/>

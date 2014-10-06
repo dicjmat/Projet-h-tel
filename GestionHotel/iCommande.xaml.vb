@@ -3,6 +3,14 @@
     Dim lstCommande As New List(Of tblLigneCommande)
     Dim lstAffichage As New List(Of Object)
     Dim prixTotal
+    Private _noEmpl As Short
+
+    Sub New(noEmpl As Short)
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+        _noEmpl = noEmpl
+    End Sub
+
     Private Sub Grid_Loaded(sender As Object, e As RoutedEventArgs)
         prixTotal = 0
         bd = New P2014_Equipe2_GestionHôtelièreEntities
@@ -39,7 +47,7 @@
                 lstAffichage.Add(affichage)
                 lstViewCommande.ItemsSource = lstAffichage.ToList()
                 prixTotal += ligne.prixLigne
-                lblPrixComm.Content = prixTotal.ToString() + " $"
+                lblPrixComm.Content = Convert.ToDouble(prixTotal).ToString() + " $"
             Else
                 MessageBox.Show("Vous ne pouvez entrer qu'une seule fois le même item")
             End If
@@ -59,7 +67,7 @@
     Private Sub txtRecherche_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRecherche.TextChanged
         Dim res = From It In bd.tblItem Join FoIt In bd.tblCatalogue On It.codeItem Equals FoIt.codeItem Join Fo In bd.tblFournisseur On FoIt.noFournisseur Equals Fo.noFournisseur
                   Where It.codeItem.StartsWith(txtRecherche.Text) Or It.nomItem.StartsWith(txtRecherche.Text) Or Fo.nomFournisseur.StartsWith(txtRecherche.Text)
-                  Select It.codeItem, It.nomItem, FoIt.prixItem, Fo.nomFournisseur
+                  Select It.codeItem, It.nomItem, FoIt.prixItem, Fo.nomFournisseur, Fo.noFournisseur
 
         dgCommande.ItemsSource = res.ToList()
     End Sub
@@ -92,13 +100,15 @@
             Next
             For Each el In lstCommande
                 If el.prixLigne = lstViewCommande.SelectedItem.prixLigne And el.codeItem = lstViewCommande.SelectedItem.codeItem Then
+                    prixTotal -= el.prixLigne
+                    lblPrixComm.Content = Convert.ToDouble(prixTotal).ToString() + " $"
                     lstCommande.Remove(el)
                     Exit For
                 End If
             Next
             lstViewCommande.ItemsSource = lstAffichage.ToList
         Else
-            MessageBox.Show("Veullez sélectionner l'item que vous voulez supprimer")
+            MessageBox.Show("Veuillez sélectionner l'item que vous voulez supprimer")
         End If
     End Sub
 
@@ -108,6 +118,7 @@
             commande.dateCommande = Date.Today
             commande.prixCommande = prixTotal
             commande.etatCommande = ""
+            'commande.noEmpl = _noEmpl
             For Each el In lstCommande
                 commande.tblLigneCommande.Add(el)
             Next

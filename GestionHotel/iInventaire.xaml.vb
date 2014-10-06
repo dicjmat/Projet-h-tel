@@ -2,11 +2,15 @@
 
     Private noHotel As Short
     Dim maBD As P2014_Equipe2_GestionHôtelièreEntities
-    Sub New(p2 As Short)
+    Private _noEmpl As Short
+    Private _noHotel As Short
+
+    Sub New(noEmpl As Short, noHotel As Short)
         ' TODO: Complete member initialization 
-        InitializeComponent()
-        noHotel = p2
+        _noEmpl = noEmpl
+        _noHotel = noHotel
     End Sub
+
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         maBD = New P2014_Equipe2_GestionHôtelièreEntities
         Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem Where el.noHotel = noHotel Select el.codeItem, item.nomItem, el.Quantite, item.descItem
@@ -32,7 +36,7 @@
     End Sub
 
     Private Sub btnCommander_Click(sender As Object, e As RoutedEventArgs) Handles btnCommander.Click
-        Dim iComman = New iCommande
+        Dim iComman = New iCommande(_noEmpl)
         iComman.Owner = Me
         iComman.Show()
     End Sub
