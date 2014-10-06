@@ -1,14 +1,14 @@
 ﻿<Window x:Class="iListeCOmmande" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" Background="CadetBlue"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="iListeCOmmande" Height="247.2" Width="300" Closing="Window_Closing">
+    Title="iListeCOmmande" Height="247.2" Width="466.003" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="453" Width="547">
-                <Label Content="Rechercher :"></Label>
-                <TextBox Name="txtRComm" Height="20" Margin="81,5,346,428" Width="120"></TextBox>
-                <GroupBox Header="Liste de commande" Margin="0,25,0,33">
-                    <DataGrid Name="dgCommande">
+            <Grid Height="453" Width="873">
+                <Label Content="Rechercher :"/>
+                <TextBox Name="txtRComm" Height="20" Margin="75,5,678,428" Width="120"></TextBox>
+                <GroupBox Header="Liste de commande" Margin="0,25,336,33">
+                    <DataGrid Name="dgCommande" HorizontalAlignment="Left" Margin="0,0,0,-0.2" Width="534">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="No" Binding="{Binding noCommande}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Date" Binding="{Binding dateCommande}"></DataGridTextColumn>
@@ -17,9 +17,20 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="460,425,10,0" VerticalAlignment="Top"></Button>
-                <Button Name="btnSupprimerComm" Content="Supprimer une commande" Height="25" Margin="287,425,92,3"></Button>
-                <Button Name="btnAjouterComm" Content="Ajouter une commande" Height="25" Margin="113,425,265,3"></Button>
+                <GroupBox Header="Apercu de la commande" Margin="542,25,0,33">
+                    <Grid>
+                        <DataGrid>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Je sais pas"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nimporte"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Quelqu'un arrange ca"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </GroupBox>
+                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="786,425,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77"></Button>
+                <Button Name="btnSupprimerComm" Content="Supprimer une commande" Height="25" Margin="613,425,0,3" HorizontalAlignment="Left" Width="168"></Button>
+                <Button Name="btnAjouterComm" Content="Ajouter une commande" Height="25" Margin="439,425,0,3" HorizontalAlignment="Left" Width="169"></Button>
             </Grid>
         </Viewbox>
     </Grid>
