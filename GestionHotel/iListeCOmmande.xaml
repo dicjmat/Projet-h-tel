@@ -8,11 +8,11 @@
                 <Label Content="Rechercher :"/>
                 <TextBox Name="txtRComm" Height="20" Margin="75,5,678,428" Width="120"></TextBox>
                 <GroupBox Header="Liste de commande" Margin="0,25,336,33">
-                    <DataGrid Name="dgCommande" HorizontalAlignment="Left" Margin="0,0,0,-0.2" Width="534">
+                    <DataGrid Name="dgCommande" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="0,0,0,-0.2" Width="534">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="No" Binding="{Binding noCommande}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Date" Binding="{Binding dateCommande}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Prix Total ($)" Binding="{Binding prixCommande}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Prix Total ($)" Binding="{Binding prixCommande,StringFormat={}{0:#.00}}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Etat de la commande" Binding="{Binding etatCommande}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
@@ -21,9 +21,10 @@
                     <Grid>
                         <DataGrid>
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Je sais pas"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Nimporte"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Quelqu'un arrange ca"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Prix" Binding="{Binding prixLigne}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nom"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Quantité"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Fournisseur"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>

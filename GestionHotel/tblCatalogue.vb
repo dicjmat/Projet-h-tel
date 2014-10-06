@@ -17,6 +17,5 @@ Partial Public Class tblCatalogue
 
     Public Overridable Property tblItem As tblItem
     Public Overridable Property tblFournisseur As tblFournisseur
-    Public Overridable Property tblItem1 As tblItem
 
 End Class

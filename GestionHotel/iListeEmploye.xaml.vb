@@ -43,8 +43,10 @@
     End Sub
 
     Private Sub txtNoEmp_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtNoEmp.TextChanged
+        Dim prof = From el In maBd.tblEmploye Where el.noEmpl = _noEmpl Select el.codeProf
+        Dim codeProff = prof.Single.ToString()
         Dim res = From el In maBd.tblEmploye
-                  Where el.noHotel = _noHotel And (el.noEmpl.ToString.StartsWith(txtNoEmp.Text) Or (el.nomEmpl + " " + el.prenEmpl).StartsWith(txtNoEmp.Text) Or (el.prenEmpl + " " + el.nomEmpl).StartsWith(txtNoEmp.Text) Or el.codeProf.StartsWith(txtNoEmp.Text))
+                  Where el.noHotel = _noHotel And el.codeProf = codeProff And (el.noEmpl.ToString.StartsWith(txtNoEmp.Text) Or (el.nomEmpl + " " + el.prenEmpl).StartsWith(txtNoEmp.Text) Or (el.prenEmpl + " " + el.nomEmpl).StartsWith(txtNoEmp.Text) Or el.codeProf.StartsWith(txtNoEmp.Text))
                   Select el
         'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
         lstEmploye.DataContext = res.ToList()

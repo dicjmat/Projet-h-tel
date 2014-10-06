@@ -118,17 +118,25 @@
             commande.dateCommande = Date.Today
             commande.prixCommande = prixTotal
             commande.etatCommande = ""
-            'commande.noEmpl = _noEmpl
+            commande.noEmpl = _noEmpl
             For Each el In lstCommande
                 commande.tblLigneCommande.Add(el)
             Next
             bd.tblCommande.Add(commande)
             bd.SaveChanges()
             MessageBox.Show("Votre commande a été enregistrée avec succès!")
+            viderListes()
         Else
             MessageBox.Show("Vous devez choisir au moins un item avant de créer la commande")
         End If
 
 
+    End Sub
+
+    Private Sub viderListes()
+        lstAffichage.Clear()
+        lstCommande.Clear()
+        lstViewCommande.ItemsSource = lstAffichage.ToList()
+        lblPrixComm.Content = ""
     End Sub
 End Class

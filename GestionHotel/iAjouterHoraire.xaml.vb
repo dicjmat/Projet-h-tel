@@ -38,7 +38,7 @@
         Horaire.noEmpl = Convert.ToInt16(cbEmploye.SelectedItem.noEmpl)
         Horaire.dateHoraire = Format(cldHoraire.SelectedDate(), "yyyy/MM/dd")
         Dim heureDebut = cmbHeureDebut.SelectedItem.ToString()
-        Horaire.heureDebut = Convert.ToDateTime(Replace(cmbHeureFin.SelectedItem(), "h", ":"))
+        'Horaire.heureDebut = Convert.ToDateTime(Replace(cmbHeureFin.SelectedItem(), "h", ":"))
     End Sub
 
     Private Sub cmbHeureDebut_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbHeureDebut.SelectionChanged
