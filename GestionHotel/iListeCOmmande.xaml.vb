@@ -23,7 +23,7 @@
         '          Where noHotel = Em.noEmpl
         '          Select Co
 
-        dgCommande.ItemsSource = res.ToList()
+        'dgCommande.ItemsSource = res.ToList()
     End Sub
 
     Private Sub txtRComm_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRComm.TextChanged
