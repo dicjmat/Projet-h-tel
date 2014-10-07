@@ -38,7 +38,7 @@
             Dim Horaire = New tblHoraire()
             Horaire.noEmpl = Convert.ToInt16(cbEmploye.SelectedItem.noEmpl)
             Horaire.dateHoraire = Format(cldHoraire.SelectedDate(), "yyyy/MM/dd")
-            Horaire.heureDebut = Convert.ToDateTime(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
+            Horaire.heureDebut = Convert.ToTime(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
             Horaire.heureFin = Convert.ToDateTime(Replace(cmbHeureFin.SelectedItem.Content, "h", ":"))
             bd.tblHoraire.Add(Horaire)
             bd.SaveChanges()
