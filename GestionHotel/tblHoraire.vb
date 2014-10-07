@@ -13,8 +13,8 @@ Imports System.Collections.Generic
 Partial Public Class tblHoraire
     Public Property noHoraire As Long
     Public Property dateHoraire As Date
-    Public Property heureDebut As Nullable(Of Date)
-    Public Property heureFin As Nullable(Of Date)
+    Public Property heureDebut As System.TimeSpan
+    Public Property heureFin As System.TimeSpan
     Public Property noEmpl As Short
 
     Public Overridable Property tblEmploye As tblEmploye

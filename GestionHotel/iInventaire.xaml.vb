@@ -1,12 +1,11 @@
 ﻿Public Class iInventaire
 
-    Private noHotel As Short
+    Private _noHotel As Short
     Dim maBD As P2014_Equipe2_GestionHôtelièreEntities
     Private _noEmpl As Short
-    Private _noHotel As Short
 
     Sub New(noEmpl As Short, noHotel As Short)
-        ' TODO: Complete member initialization
+        ' TODO: Complete member initialization 
         InitializeComponent()
         _noEmpl = noEmpl
         _noHotel = noHotel
@@ -14,13 +13,13 @@
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         maBD = New P2014_Equipe2_GestionHôtelièreEntities
-        Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem Where el.noHotel = noHotel Select el.codeItem, item.nomItem, el.Quantite, item.descItem
+        Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem Where el.noHotel = _noHotel Select el.codeItem, item.nomItem, el.Quantite, item.descItem
         lstInventaire.ItemsSource = res.ToList
         Me.Owner.Hide()
     End Sub
 
     Private Sub txtCodeItem_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtCodeItem.TextChanged
-        Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem Where el.noHotel = noHotel And (item.codeItem.StartsWith(txtCodeItem.Text) Or item.nomItem.StartsWith(txtCodeItem.Text)) Select el.codeItem, item.nomItem, el.Quantite, item.descItem
+        Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem Where el.noHotel = _noHotel And (item.codeItem.StartsWith(txtCodeItem.Text) Or item.nomItem.StartsWith(txtCodeItem.Text)) Select el.codeItem, item.nomItem, el.Quantite, item.descItem
         lstInventaire.ItemsSource = res.ToList
     End Sub
 

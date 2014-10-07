@@ -29,6 +29,7 @@ Partial Public Class tblEmploye
     Public Property joursMal As Nullable(Of Byte)
 
     Public Overridable Property tblChecklist As ICollection(Of tblChecklist) = New HashSet(Of tblChecklist)
+    Public Overridable Property tblCommande As ICollection(Of tblCommande) = New HashSet(Of tblCommande)
     Public Overridable Property tblHotel As tblHotel
     Public Overridable Property tblVille As tblVille
     Public Overridable Property tblBoiteReception As ICollection(Of tblBoiteReception) = New HashSet(Of tblBoiteReception)

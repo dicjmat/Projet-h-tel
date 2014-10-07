@@ -30,7 +30,7 @@
     End Sub
 
     Private Sub AppuieCommande()
-        Dim lstcommande = New iListeCOmmande(noHotel)
+        Dim lstcommande = New iListeCOmmande(noEmpl, noHotel)
         lstcommande.Owner = Me
         Me.Hide()
         lstcommande.Show()
