@@ -80,7 +80,7 @@
                                 <Label Content="23h00"/>
                                 <Label Content="24h00"/>
                             </ComboBox>
-                            <Label x:Name="lblConfirmation" Content="Message de confirmation" Canvas.Top="125" Visibility="Hidden"/>
+                            <Label x:Name="lblConfirmation" Content="Message de confirmation" Canvas.Top="125" Visibility="Hidden" FontSize="12"/>
                             <Button x:Name="btnAjouterHor" Content="Ajouter" Canvas.Top="157"/>
                             <Button x:Name="btnModifierHor" Content="Modifier" Canvas.Top="157" Canvas.Left="65"/>
                             <Button x:Name="btnSupprimerHor" Content="Supprimer" Canvas.Top="157" Canvas.Left="137" Width="81"/>

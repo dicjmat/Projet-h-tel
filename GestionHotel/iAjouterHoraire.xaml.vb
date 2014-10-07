@@ -34,11 +34,20 @@
     End Sub
 
     Private Sub btnAjouterHor_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterHor.Click
-        Dim Horaire = New tblHoraire()
-        Horaire.noEmpl = Convert.ToInt16(cbEmploye.SelectedItem.noEmpl)
-        Horaire.dateHoraire = Format(cldHoraire.SelectedDate(), "yyyy/MM/dd")
-        Dim heureDebut = cmbHeureDebut.SelectedItem.ToString()
-        Horaire.heureDebut = Convert.ToDateTime(Replace(cmbHeureFin.SelectedItem(), "h", ":"))
+        If cbEmploye.SelectedItem IsNot DBNull.Value And cldHoraire.SelectedDate IsNot Nothing And cmbHeureDebut.SelectedItem IsNot DBNull.Value Then
+            Dim Horaire = New tblHoraire()
+            Horaire.noEmpl = Convert.ToInt16(cbEmploye.SelectedItem.noEmpl)
+            Horaire.dateHoraire = Format(cldHoraire.SelectedDate(), "yyyy/MM/dd")
+            Horaire.heureDebut = Convert.ToDateTime(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
+            Horaire.heureFin = Convert.ToDateTime(Replace(cmbHeureFin.SelectedItem.Content, "h", ":"))
+            bd.tblHoraire.Add(Horaire)
+            bd.SaveChanges()
+            lblConfirmation.Content = "L'horaire est ajouté"
+            lblConfirmation.Visibility = Windows.Visibility.Visible
+        Else
+            lblConfirmation.Content = "Des informations sont manquantes"
+            lblConfirmation.Visibility = Windows.Visibility.Visible
+        End If
     End Sub
 
     Private Sub cmbHeureDebut_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbHeureDebut.SelectionChanged
@@ -52,6 +61,10 @@
     End Sub
 
     Private Sub cldHoraire_SelectedDatesChanged(sender As Object, e As SelectionChangedEventArgs) Handles cldHoraire.SelectedDatesChanged
+
+    End Sub
+
+    Private Sub btnModifierHor_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierHor.Click
 
     End Sub
 End Class
