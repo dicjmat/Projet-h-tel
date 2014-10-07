@@ -14,6 +14,7 @@ Partial Public Class tblElementFacture
     Public Property noFacture As Integer
     Public Property codeTypeElement As String
     Public Property montantElement As Short
+    Public Property noLigne As Byte
 
     Public Overridable Property tblTypeElement As tblTypeElement
     Public Overridable Property tblFacture As tblFacture

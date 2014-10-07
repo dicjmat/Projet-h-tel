@@ -19,7 +19,7 @@ Partial Public Class tblReservationChambre
     Public Property noChambre As Short
     Public Property noHotel As Byte
     Public Property noClient As Integer
-    Public Property noEmpl As Short
+    Public Property noEmpl As Nullable(Of Short)
 
     Public Overridable Property tblEmploye As tblEmploye
     Public Overridable Property tblChambre As tblChambre

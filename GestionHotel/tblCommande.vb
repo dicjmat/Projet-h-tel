@@ -15,7 +15,9 @@ Partial Public Class tblCommande
     Public Property dateCommande As Date
     Public Property prixCommande As Nullable(Of Decimal)
     Public Property etatCommande As String
+    Public Property noEmpl As Short
 
+    Public Overridable Property tblEmploye As tblEmploye
     Public Overridable Property tblLigneCommande As ICollection(Of tblLigneCommande) = New HashSet(Of tblLigneCommande)
 
 End Class
