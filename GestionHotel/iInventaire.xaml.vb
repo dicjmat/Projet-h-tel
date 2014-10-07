@@ -6,7 +6,8 @@
     Private _noHotel As Short
 
     Sub New(noEmpl As Short, noHotel As Short)
-        ' TODO: Complete member initialization 
+        ' TODO: Complete member initialization
+        InitializeComponent()
         _noEmpl = noEmpl
         _noHotel = noHotel
     End Sub
