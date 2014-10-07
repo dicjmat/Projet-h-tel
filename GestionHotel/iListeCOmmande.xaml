@@ -8,30 +8,32 @@
                 <Label Content="Rechercher :"/>
                 <TextBox Name="txtRComm" Height="20" Margin="75,5,678,428" Width="120"></TextBox>
                 <GroupBox Header="Liste de commande" Margin="0,25,336,33">
-                    <DataGrid Name="dgCommande" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="0,0,0,-0.2" Width="534">
+                    <DataGrid Name="dgCommande" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="0,0,0,-0.2" Width="534" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserAddRows="False" CanUserResizeColumns="False" CanUserResizeRows="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="No" Binding="{Binding noCommande}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Date" Binding="{Binding dateCommande}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Prix Total ($)" Binding="{Binding prixCommande,StringFormat={}{0:#.00}}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Etat de la commande" Binding="{Binding etatCommande}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="No" Binding="{Binding noCommande,Mode=OneWay}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Date" Binding="{Binding dateCommande,Mode=OneWay,StringFormat={}{0:dd/MM/yyyy}}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Prix Total ($)" Binding="{Binding prixCommande,Mode=OneWay,StringFormat={}{0:#.00}}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Etat de la commande" Binding="{Binding etatCommande,Mode=OneWay}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Nom" Binding="{Binding nomEmpl,Mode=OneWay}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Prénom" Binding="{Binding prenEmpl,Mode=OneWay}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
                 <GroupBox Header="Apercu de la commande" Margin="542,25,0,33">
                     <Grid>
-                        <DataGrid>
+                        <DataGrid Name="dgLigneCommande" AutoGenerateColumns="False" CanUserAddRows="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" >
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="Prix" Binding="{Binding prixLigne}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Nom"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Quantité"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Fournisseur"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Prix" Binding="{Binding prixLigne,Mode=OneWay,StringFormat={}{0:#.00}}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nom" Binding="{Binding nomItem,Mode=OneWay}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Quantité" Binding="{Binding quantite,Mode=OneWay}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Fournisseur" Binding="{Binding nomFournisseur,Mode=OneWay}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>
                 </GroupBox>
                 <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="786,425,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77"></Button>
                 <Button Name="btnSupprimerComm" Content="Supprimer une commande" Height="25" Margin="613,425,0,3" HorizontalAlignment="Left" Width="168"></Button>
-                <Button Name="btnAjouterComm" Content="Ajouter une commande" Height="25" Margin="439,425,0,3" HorizontalAlignment="Left" Width="169"></Button>
+                <Button Name="btnAjouterComm" Content="Ajouter une commande" Height="25" Margin="439,425,0,0" HorizontalAlignment="Left" Width="169" VerticalAlignment="Top"></Button>
             </Grid>
         </Viewbox>
     </Grid>

@@ -12,6 +12,7 @@
     End Sub
 
     Private Sub Grid_Loaded(sender As Object, e As RoutedEventArgs)
+        Me.Owner.Hide()
         prixTotal = 0
         bd = New P2014_Equipe2_GestionHôtelièreEntities
         Dim res = From It In bd.tblItem Join FoIt In bd.tblCatalogue On It.codeItem Equals FoIt.codeItem Join Fo In bd.tblFournisseur On FoIt.noFournisseur Equals Fo.noFournisseur
