@@ -61,7 +61,16 @@
     End Sub
 
     Private Sub cldHoraire_SelectedDatesChanged(sender As Object, e As SelectionChangedEventArgs) Handles cldHoraire.SelectedDatesChanged
-
+        If cbEmploye.SelectedItem() IsNot Nothing Then
+            Dim numEmpl = cbEmploye.SelectedItem.noEmpl
+            Dim dateSaisi = cldHoraire.SelectedDate
+            Dim res = From el In bd.tblHoraire Where el.noEmpl = numEmpl And el.dateHoraire = dateSaisi Select el
+            'Dim Horaire = res.ToList()
+            If res.ToList().Count <> 0 Then
+                cmbHeureDebut.SelectedItem = res.First.heureDebut
+                cmbHeureFin.SelectedItem = res.First.heureFin
+            End If
+        End If
     End Sub
 
     Private Sub btnModifierHor_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierHor.Click
