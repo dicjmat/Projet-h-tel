@@ -84,4 +84,8 @@
 
         dgCommande.ItemsSource = res.ToList()
     End Sub
+
+    Private Sub Window_Activated(sender As Object, e As EventArgs)
+        requete()
+    End Sub
 End Class

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="iListeCOmmande" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" Background="CadetBlue"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="iListeCOmmande" Height="247.2" Width="466.003" Closing="Window_Closing" Loaded="Window_Loaded">
+    Title="iListeCOmmande" Height="247.2" Width="466.003" Closing="Window_Closing" Loaded="Window_Loaded" Activated="Window_Activated">
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="453" Width="873">

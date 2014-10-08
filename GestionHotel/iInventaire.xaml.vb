@@ -13,14 +13,18 @@
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         maBD = New P2014_Equipe2_GestionHôtelièreEntities
-        Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem Where el.noHotel = _noHotel Select el.codeItem, item.nomItem, el.Quantite, item.descItem
-        lstInventaire.ItemsSource = res.ToList
+        Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem
+                  Where el.noHotel = _noHotel
+                  Select el.codeItem, item.nomItem, el.Quantite, item.descItem, el.quantiteMin
+        lstInventaire.ItemsSource = creerAffichage(res)
         Me.Owner.Hide()
     End Sub
 
     Private Sub txtCodeItem_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtCodeItem.TextChanged
-        Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem Where el.noHotel = _noHotel And (item.codeItem.StartsWith(txtCodeItem.Text) Or item.nomItem.StartsWith(txtCodeItem.Text)) Select el.codeItem, item.nomItem, el.Quantite, item.descItem
-        lstInventaire.ItemsSource = res.ToList
+        Dim res = From item In maBD.tblItem Join el In maBD.tblInventaire On el.codeItem Equals item.codeItem
+                  Where el.noHotel = _noHotel And (item.codeItem.StartsWith(txtCodeItem.Text) Or item.nomItem.StartsWith(txtCodeItem.Text))
+                  Select el.codeItem, item.nomItem, el.Quantite, item.descItem, el.quantiteMin
+        lstInventaire.ItemsSource = creerAffichage(res.ToList)
     End Sub
 
 
@@ -40,4 +44,22 @@
         iComman.Owner = Me
         iComman.Show()
     End Sub
+
+    Private Function creerAffichage(res)
+        Dim lstAffichage As New List(Of Object)
+        Dim Affichage
+        For Each el In res
+            Dim Stock As Boolean = False
+            If el.Quantite < el.quantiteMin Then
+                Stock = True
+            End If
+            Affichage = New With {.codeItem = el.codeItem _
+                                , .nomItem = el.nomItem _
+                                , .Quantite = el.Quantite _
+                                , .stock = Stock _
+                                , .descItem = el.descItem}
+            lstAffichage.Add(Affichage)
+        Next
+        Return lstAffichage
+    End Function
 End Class
