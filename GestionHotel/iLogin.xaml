@@ -4,17 +4,18 @@
     Title="Gestion Hotel" Height="682.574" Width="699.328" KeyDown="Window_KeyDown">
     <Grid Loaded="Grid_Loaded">
         <Viewbox Stretch="Uniform">
-            <Grid Height="202" Width="247">
-                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" Height="192">
-                    <Grid Height="201" Width="247">
-                        <Label Content="Nom d'utilisateur :" Margin="61,46,0,-26" HorizontalAlignment="Left"/>
-                        <TextBox x:Name="txtNomUtilisateur" Height="25" Width="125" Margin="61,70,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                        <Label Content="Mot de passe :" Margin="61,95,79,31"/>
-                        <Label x:Name="lblErreur" Content="" HorizontalAlignment="Center" Margin="0,140,0,36" Foreground="Red" Width="247"/>
-                        <PasswordBox x:Name="txtMDP" Height="25" Width="125" Margin="61,117,61,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-                        <Button x:Name="btnConfirmer" Content="Confirmer" Margin="50,168,122,-18" Width="75" Height="23" VerticalAlignment="Top"/>
-                        <Button x:Name="btnQuitter" Content="Quitter" Margin="130,168,0,-18" Width="75" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top"/>
-                        <Image Margin="0,-3,0,155" Source="banniere_5.png" Stretch="Fill"/>
+            <Grid Height="217" Width="247">
+                <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" Height="217">
+                    <Grid Height="217" Width="247">
+                        <Label Content="Nom d'utilisateur :" Margin="63,53,0,-33" HorizontalAlignment="Left"/>
+                        <TextBox x:Name="txtNomUtilisateur" Height="25" Width="125" Margin="63,77,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <Label Content="Mot de passe :" Margin="63,102,77,24"/>
+                        <Label x:Name="lblErreur" Content="" HorizontalAlignment="Center" Margin="0,152,0,33" Foreground="Red" Width="247"/>
+                        <PasswordBox x:Name="txtMDP" Height="25" Width="125" Margin="63,124,59,0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                        <Button x:Name="btnConfirmer" Content="Confirmer" Margin="48,186,124,0" Width="75" Height="23" VerticalAlignment="Top"/>
+                        <Button x:Name="btnQuitter" Content="Quitter" Margin="128,186,0,0" Width="75" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top"/>
+                        <Image Margin="0,0,0,163" Source="header11.png" Stretch="Fill" Height="54" VerticalAlignment="Bottom"/>
+
                     </Grid>
                 </StackPanel>
             </Grid>
