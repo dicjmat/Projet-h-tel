@@ -28,6 +28,7 @@
                         <Canvas>
                             <Label Content="Heure de début :" Canvas.Top="-4"/>
                             <ComboBox x:Name="cmbHeureDebut" Canvas.Top="30" Background="White" Width="128">
+                                <Label Content="0h00"/>
                                 <Label Content="1h00"/>
                                 <Label Content="2h00"/>
                                 <Label Content="3h00"/>
@@ -50,11 +51,11 @@
                                 <Label Content="20h00"/>
                                 <Label Content="21h00"/>
                                 <Label Content="22h00"/>
-                                <Label Content="23h00"/>
-                                <Label Content="24h00"/>
+                                <Label Content="23h00"/>                               
                             </ComboBox>
                             <Label Content="Heure de fin :" Canvas.Top="64"/>
                             <ComboBox x:Name="cmbHeureFin" Canvas.Top="98" Background="White" Width="128">
+                                <Label Content="0h00"/>
                                 <Label Content="1h00"/>
                                 <Label Content="2h00"/>
                                 <Label Content="3h00"/>
@@ -77,8 +78,7 @@
                                 <Label Content="20h00"/>
                                 <Label Content="21h00"/>
                                 <Label Content="22h00"/>
-                                <Label Content="23h00"/>
-                                <Label Content="24h00"/>
+                                <Label Content="23h00"/>                            
                             </ComboBox>
                             <Label x:Name="lblConfirmation" Content="Message de confirmation" Canvas.Top="125" Visibility="Hidden" FontSize="12"/>
                             <Button x:Name="btnAjouterHor" Content="Ajouter" Canvas.Top="157"/>

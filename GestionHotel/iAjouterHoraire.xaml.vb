@@ -2,22 +2,31 @@
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
     Private noGest As Short
     Private hotel As Short
-    Sub New(_noGestionnaire As Short)
+    Private numEmpl
+    Sub New(_noEmpl As Short)
         InitializeComponent()
+        numEmpl = _noEmpl
+        bd = New P2014_Equipe2_GestionHôtelièreEntities
 
+        Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
+
+        cbEmploye.DataContext = res.ToList()
+        cbEmploye.IsEnabled = False
     End Sub
     Sub New(_noGestionnaire As Short, _noHotel As Short)
         InitializeComponent()
         noGest = _noGestionnaire
         hotel = _noHotel
-    End Sub
-    Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         bd = New P2014_Equipe2_GestionHôtelièreEntities
+
         Dim profGest = From el In bd.tblEmploye Where noGest = el.noEmpl Select el.codeProf
         Dim prof = profGest.Single.ToString()
         Dim res = From el In bd.tblEmploye Where el.codeProf = prof And el.noHotel = hotel Select el
 
         cbEmploye.DataContext = res.ToList()
+    End Sub
+    Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
+
     End Sub
 
     Private Sub btnRetour_Click(sender As Object, e As RoutedEventArgs) Handles btnRetour.Click
@@ -62,13 +71,15 @@
 
     Private Sub cldHoraire_SelectedDatesChanged(sender As Object, e As SelectionChangedEventArgs) Handles cldHoraire.SelectedDatesChanged
         If cbEmploye.SelectedItem() IsNot Nothing Then
-            Dim numEmpl = cbEmploye.SelectedItem.noEmpl
+            Dim numEmpl As Integer = cbEmploye.SelectedItem.noEmpl
             Dim dateSaisi = cldHoraire.SelectedDate
             Dim res = From el In bd.tblHoraire Where el.noEmpl = numEmpl And el.dateHoraire = dateSaisi Select el
-            'Dim Horaire = res.ToList()
             If res.ToList().Count <> 0 Then
-                cmbHeureDebut.SelectedItem = res.First.heureDebut
-                cmbHeureFin.SelectedItem = res.First.heureFin
+                cmbHeureDebut.SelectedIndex = res.First.heureDebut.Hours
+                cmbHeureFin.SelectedIndex = res.First.heureFin.Hours
+            Else
+                cmbHeureDebut.SelectedIndex = -1
+                cmbHeureFin.SelectedIndex = -1
             End If
         End If
     End Sub

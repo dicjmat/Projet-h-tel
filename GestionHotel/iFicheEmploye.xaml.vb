@@ -1,7 +1,24 @@
 ﻿Public Class iFicheEmploye
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
+    Private numEmpl As Integer
+
+    Sub New(_numEmpl As Integer)
+        InitializeComponent()
+        numEmpl = _numEmpl
+    End Sub
+
+    Sub New()
+        InitializeComponent()
+        numEmpl = 0
+    End Sub
     Private Sub windowFicheEmploye_Loaded(sender As Object, e As RoutedEventArgs) Handles windowFicheEmploye.Loaded
         bd = New P2014_Equipe2_GestionHôtelièreEntities()
+
+        If numEmpl <> 0 Then
+            Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
+            Me.DataContext = res.ToList()
+        End If
+        txt()
     End Sub
     Private Sub btnCreer_Click(sender As Object, e As RoutedEventArgs)
         Dim Employe = New tblEmploye()
@@ -48,4 +65,13 @@
         Me.Focusable = False
         windowFicheEmploye.Close()
     End Sub
+
+    Private Sub btnAjoutHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutHoraire.Click
+        Dim Horaire = New iAjouterHoraire(numEmpl)
+        Horaire.Owner = Me
+        Horaire.Show()
+        Me.Hide()
+    End Sub
+
+
 End Class
