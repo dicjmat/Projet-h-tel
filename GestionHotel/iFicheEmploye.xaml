@@ -13,9 +13,9 @@
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0,0"></Label>
-                            <TextBox Name="txtNomEmp" Text="{Binding nomEmpl}" Margin="110,5,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+                            <xctk:MaskedTextBox Mask="????????????????????????????????????????????????" Name="txtNomEmp" Text="{Binding nomEmpl}" Margin="110,5,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="Prénom : " Margin="0,25,0,0"></Label>
-                            <TextBox Name="txtPrenomEmp" Text="{Binding prenEmpl}" Margin="110,30,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+                            <xctk:MaskedTextBox Mask="????????????????????????????????????????????????" Name="txtPrenomEmp" Text="{Binding prenEmpl}" Margin="110,30,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="noTéléphone : " Margin="0,50,0,0"></Label>
                             <xctk:MaskedTextBox Mask="(000) 000-0000" Name="txtTellEmp" Text="{Binding noTelEmpl}" Margin="110,55,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="noCéllulaire : " Margin="0,75,0,0"></Label>
