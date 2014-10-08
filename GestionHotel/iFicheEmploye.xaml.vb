@@ -18,11 +18,9 @@
             Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
             Me.DataContext = res.ToList()
         End If
-        txt()
     End Sub
     Private Sub btnCreer_Click(sender As Object, e As RoutedEventArgs)
         Dim Employe = New tblEmploye()
-        Employe.noEmpl = txtRNoClient.Text
         Employe.nomEmpl = txtNomEmp.Text
         Employe.prenEmpl = txtPrenomEmp.Text
         Employe.noTelEmpl = txtTellEmp.Text
