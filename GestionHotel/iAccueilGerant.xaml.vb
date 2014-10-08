@@ -26,7 +26,7 @@
     End Sub
 
     Private Sub AppuieGHotel()
-        Dim Ghotel = New iGestionHotel
+        Dim Ghotel = New iListeHotel
         Ghotel.Owner = Me
         Ghotel.Show()
     End Sub
