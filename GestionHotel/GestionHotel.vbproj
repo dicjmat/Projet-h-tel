@@ -114,6 +114,9 @@
     <Compile Include="iListeEmploye.xaml.vb">
       <DependentUpon>iListeEmploye.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iListeHotel.xaml.vb">
+      <DependentUpon>iListeHotel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iRabais.xaml.vb">
       <DependentUpon>iRabais.xaml</DependentUpon>
     </Compile>
@@ -308,6 +311,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iListeEmploye.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iListeHotel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
