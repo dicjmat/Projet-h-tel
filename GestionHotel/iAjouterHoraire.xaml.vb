@@ -2,7 +2,7 @@
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
     Private noGest As Short
     Private hotel As Short
-    Private numEmpl
+    Private numEmpl As Short
     Sub New(_noEmpl As Short)
         InitializeComponent()
         numEmpl = _noEmpl
@@ -11,6 +11,7 @@
         Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
 
         cbEmploye.DataContext = res.ToList()
+        cbEmploye.SelectedIndex = 0
         cbEmploye.IsEnabled = False
     End Sub
     Sub New(_noGestionnaire As Short, _noHotel As Short)

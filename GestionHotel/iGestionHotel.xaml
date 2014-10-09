@@ -6,7 +6,7 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="172" Width="617">
-                <GroupBox BorderBrush="Black" Header="Gestion des Hôtels" HorizontalAlignment="Center" Margin="71,4,86,22" Width="460">
+                <GroupBox BorderBrush="Black" Header="Gestion des Hôtels" HorizontalAlignment="Center" Margin="4,-58,6,-11" Width="607">
                     <StackPanel Margin="0,0,0.4,-3.2">
                         <Grid>
                             <Label Content="No d'hôtel :" Margin="0,0,0,0"></Label>
@@ -28,10 +28,10 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Top" HorizontalAlignment="Right" Width="86" Margin="0,150,85,0"/>
-                <Button Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,358,0" Width="86"></Button>
-                <Button Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,267,0" Width="86"></Button>
-                <Button Name="btnSupprimer" Content="Supprimer" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,176,0" Width="86"></Button>
+                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Top" HorizontalAlignment="Right" Width="86" Margin="0,188,86,-38"/>
+                <Button Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,359,-38" Width="86" RenderTransformOrigin="0.139,1.293"></Button>
+                <Button Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,268,-38" Width="86"></Button>
+                <Button Name="btnSupprimer" Content="Supprimer" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,177,-38" Width="86"></Button>
             </Grid>
         </Viewbox>
     </Grid>

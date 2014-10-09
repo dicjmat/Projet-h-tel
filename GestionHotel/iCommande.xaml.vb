@@ -44,11 +44,13 @@
                                          , .quantite = ligne.quantite _
                                          , .prixLigne = ligne.prixLigne _
                                          , .nomItem = dgCommande.SelectedItem.nomItem _
-                                         , .codeItem = dgCommande.SelectedItem.codeItem}
+                                         , .codeItem = dgCommande.SelectedItem.codeItem _
+                                         , .noFournisseur = dgCommande.SelectedItem.noFournisseur}
                 lstAffichage.Add(affichage)
                 lstViewCommande.ItemsSource = lstAffichage.ToList()
                 prixTotal += ligne.prixLigne
                 lblPrixComm.Content = Convert.ToDouble(prixTotal).ToString() + " $"
+                requete()
             Else
                 MessageBox.Show("Vous ne pouvez entrer qu'une seule fois le même item")
             End If
@@ -66,15 +68,14 @@
     End Sub
 
     Private Sub txtRecherche_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRecherche.TextChanged
-        Dim res = From It In bd.tblItem Join FoIt In bd.tblCatalogue On It.codeItem Equals FoIt.codeItem Join Fo In bd.tblFournisseur On FoIt.noFournisseur Equals Fo.noFournisseur
-                  Where It.codeItem.StartsWith(txtRecherche.Text) Or It.nomItem.StartsWith(txtRecherche.Text) Or Fo.nomFournisseur.StartsWith(txtRecherche.Text)
-                  Select It.codeItem, It.nomItem, FoIt.prixItem, Fo.nomFournisseur, Fo.noFournisseur
-
-        dgCommande.ItemsSource = res.ToList()
+        requete()
     End Sub
 
     Private Sub dgCommande_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgCommande.SelectionChanged
-        calculPrixTot(dgCommande.SelectedItem.prixItem())
+        If dgCommande.SelectedIndex <> -1 Then
+            calculPrixTot(dgCommande.SelectedItem.prixItem())
+        End If
+
     End Sub
 
 
@@ -108,6 +109,7 @@
                 End If
             Next
             lstViewCommande.ItemsSource = lstAffichage.ToList
+            requete()
         Else
             MessageBox.Show("Veuillez sélectionner l'item que vous voulez supprimer")
         End If
@@ -139,5 +141,23 @@
         lstCommande.Clear()
         lstViewCommande.ItemsSource = lstAffichage.ToList()
         lblPrixComm.Content = ""
+    End Sub
+
+    Private Sub requete()
+        Dim res As System.Linq.IQueryable(Of Object)
+        If lstViewCommande.Items.Count <> 0 Then
+            Dim fournisseur As Integer = lstViewCommande.Items.Item(0).noFournisseur
+            res = From It In bd.tblItem Join FoIt In bd.tblCatalogue On It.codeItem Equals FoIt.codeItem Join Fo In bd.tblFournisseur On FoIt.noFournisseur Equals Fo.noFournisseur
+                Where (It.codeItem.StartsWith(txtRecherche.Text) Or It.nomItem.StartsWith(txtRecherche.Text) Or Fo.nomFournisseur.StartsWith(txtRecherche.Text)) And fournisseur = Fo.noFournisseur
+                Select It.codeItem, It.nomItem, FoIt.prixItem, Fo.nomFournisseur, Fo.noFournisseur
+        Else
+            res = From It In bd.tblItem Join FoIt In bd.tblCatalogue On It.codeItem Equals FoIt.codeItem Join Fo In bd.tblFournisseur On FoIt.noFournisseur Equals Fo.noFournisseur
+                Where It.codeItem.StartsWith(txtRecherche.Text) Or It.nomItem.StartsWith(txtRecherche.Text) Or Fo.nomFournisseur.StartsWith(txtRecherche.Text)
+                Select It.codeItem, It.nomItem, FoIt.prixItem, Fo.nomFournisseur, Fo.noFournisseur
+        End If
+
+
+
+        dgCommande.ItemsSource = res.ToList()
     End Sub
 End Class
