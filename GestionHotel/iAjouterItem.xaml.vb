@@ -19,9 +19,6 @@
         Me.Owner.Show()
     End Sub
 
-    Private Sub btnRechercherItem_Click(sender As Object, e As RoutedEventArgs) Handles btnRechercherItem.Click
-
-    End Sub
 
     Private Sub btnAjouterItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItem.Click
         Dim Item = New tblItem()
