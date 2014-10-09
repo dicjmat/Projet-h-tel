@@ -10,7 +10,7 @@
                     <StackPanel Margin="0,0,0,73">
                         <Grid>
                             <Label Content="Prix :" Margin="-6,5,6.2,-4.4"></Label>
-                            <xctk:MaskedTextBox Mask="999999999999999.00" Name="txtPrixForf" Height="20" Margin="29,10,0,11.6" HorizontalAlignment="Left" Width="100"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox PromptChar=" " Mask="999999999999999.00" Name="txtPrixForf" Height="20" Margin="29,10,0,11.6" HorizontalAlignment="Left" Width="100"></xctk:MaskedTextBox>
                             <ListBox Name="lstTypeChambre" ItemsSource="{Binding}" Margin="0,74,0,-138.2" HorizontalAlignment="Left" Width="86"></ListBox>
                             <Label Content="TypeChambre" Margin="-5,47,-0.4,-47.2" HorizontalAlignment="Left" Width="183"></Label>
                             <ListBox Name="lstTypeChambreC" Margin="102,74,0,-138.4" HorizontalAlignment="Left" Width="86"></ListBox>

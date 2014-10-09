@@ -13,15 +13,15 @@
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="????????????????????????????????????????????????" Name="txtNomEmp" Text="{Binding nomEmpl}" Margin="110,5,0,0" Height="23" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="????????????????????????????????????????????????" Name="txtNomEmp" Text="{Binding nomEmpl}" Margin="110,5,0,0" Height="23" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="Prénom : " Margin="0,25,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="????????????????????????????????????????????????" Name="txtPrenomEmp" Text="{Binding prenEmpl}" Margin="110,30,0,0" Height="23" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="????????????????????????????????????????????????" Name="txtPrenomEmp" Text="{Binding prenEmpl}" Margin="110,30,0,0" Height="23" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="noTéléphone : " Margin="0,50,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="(000) 000-0000" Name="txtTellEmp" Text="{Binding noTelEmpl}" Margin="110,55,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
-                            <Label Content="noCellulaire : " Margin="0,75,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="(000) 000-0000" Name="txtCellEmp" Text="{Binding noCellEmpl}" Margin="110,80,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" Name="txtTellEmp" Text="{Binding noTelEmpl}" Margin="110,55,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <Label Content="noCéllulaire : " Margin="0,75,0,0"></Label>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" Name="txtCellEmp" Text="{Binding noCellEmpl}" Margin="110,80,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="Adresse : " Margin="0,100,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrEmp" Text="{Binding adrEmpl}" Margin="110,105,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrEmp" Text="{Binding adrEmpl}" Margin="110,105,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="NAS : " Margin="0,125,0,0"></Label>
                             <TextBox Name="txtNASEmp" Text="{Binding NAS}" Margin="110,130,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
                             <Label Content="Date d'embauche : " Margin="0,150,0,0"></Label>

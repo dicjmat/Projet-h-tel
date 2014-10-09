@@ -4,12 +4,10 @@
     Title="Gestion Hotel" Height="217.6" Width="411.2">
     <Grid>
         <Viewbox Stretch="Uniform" Margin="0,0,-0.2,0.2">
-            <Grid Height="137" Width="265">
+            <Grid Height="175" Width="265">
                 <Label Content="Ajouter un Fournisseur" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
-                <Label Content="Numéro du fournisseur :" Margin="10,26,-10,-23"/>
-                <TextBox Name="txtNoFourni" Text="{Binding noFournisseur}" Margin="151,31,0,86" Height="20" HorizontalAlignment="Left" Width="88"></TextBox>
-                <Label Content="Nom du fournisseur :" Margin="10,56,-10,-56"></Label>
-                <TextBox Name="txtNomFourni" Text="{Binding nomFournisseur}" Margin="139,60,0,57" Height="20" Width="100" HorizontalAlignment="Left"></TextBox>
+                <Label Content="Nom du fournisseur :" Margin="10,23,-10,-23"></Label>
+                <TextBox Name="txtNomFourni" Text="{Binding nomFournisseur}" Margin="139,25,0,130" Height="20" Width="100" HorizontalAlignment="Left"></TextBox>
                 <Button Name="btnConfirmer" Content="Ajouter le fournisseur" Height="25" Margin="61,101,0,11" HorizontalAlignment="Left" Width="119"></Button>
                 <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="185,101,0,11" HorizontalAlignment="Left" Width="54"></Button>
             </Grid>
