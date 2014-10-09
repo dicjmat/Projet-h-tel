@@ -86,6 +86,10 @@
     End Sub
 
     Private Sub btnModifierHor_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierHor.Click
-
+        Dim numeroEmpl As Integer = cbEmploye.SelectedItem.noEmpl
+        Dim Horaire As tblHoraire = (From el In bd.tblHoraire Where el.noEmpl = numeroEmpl And el.dateHoraire = cldHoraire.SelectedDate Select el).Single()
+        Horaire.heureDebut = TimeSpan.Parse(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
+        Horaire.heureFin = TimeSpan.Parse(Replace(cmbHeureFin.SelectedItem.Content, "h", ":"))
+        bd.SaveChanges()
     End Sub
 End Class
