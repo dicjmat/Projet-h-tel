@@ -10,7 +10,7 @@
                     <StackPanel>
                         <Grid>
                             <Label Content="No de Salle :" Margin="0,0,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="09" Name="txtNoSalle" Margin="73,5,125.6,100.6" Height="20"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="09" Name="txtNoSalle" Margin="73,5,125.6,100.6" Height="20"></xctk:MaskedTextBox>
                             <Label Content="Description :" Margin="0,25,0,0"></Label>
                             <TextBox Name="txtDescSalle" Margin="73,30,0.4,75.6" Height="20"></TextBox>
                             <Label Content="Nombre de place de la salle :" Margin="0,50,0,0"></Label>

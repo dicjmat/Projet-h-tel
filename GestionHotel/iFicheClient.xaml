@@ -16,23 +16,23 @@
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0.2,0"></Label>
-                            <xctk:MaskedTextBox Mask="????????????????????????????????????????????????" x:Name="txtNomCli" Text="{Binding nomClient}" Margin="90,5,0,0" HorizontalAlignment="Left" Width="120" Height="20" VerticalAlignment="Top"/>
+                            <xctk:MaskedTextBox PromptChar=" " Mask="????????????????????????????????????????????????" x:Name="txtNomCli" Text="{Binding nomClient}" Margin="90,5,0,0" HorizontalAlignment="Left" Width="120" Height="20" VerticalAlignment="Top"/>
                             <Label Content="Prénom : " Margin="0,25,0,0" HorizontalAlignment="Left" Width="287"></Label>
-                            <xctk:MaskedTextBox Mask="????????????????????????????????????????????????" Name="txtPrenCli" Text="{Binding prenClient}" Margin="90,30,0,126" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="????????????????????????????????????????????????" Name="txtPrenCli" Text="{Binding prenClient}" Margin="90,30,0,126" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
                             <Label Content="NoTéléphone : " Margin="0,50,0,0" HorizontalAlignment="Left" Width="196"></Label>
-                            <xctk:MaskedTextBox Mask="(000) 000-0000" Name="txtNoTellCli" Text="{Binding noTelClient}" Margin="90,55,0,101" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" Name="txtNoTellCli" Text="{Binding noTelClient}" Margin="90,55,0,101" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
                             <Label Content="NoCellulaire : " Margin="0,75,0,0" HorizontalAlignment="Left" Width="196"></Label>
-                            <xctk:MaskedTextBox Mask="(000) 000-0000" Name="txtNoCellCli" Text="{Binding noCellClient}" Margin="90,80,0,76" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" Name="txtNoCellCli" Text="{Binding noCellClient}" Margin="90,80,0,76" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
                             <Label Content="Adresse : " Margin="0,100,0,0" HorizontalAlignment="Left" Width="196"></Label>
-                            <xctk:MaskedTextBox Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrCli" Text="{Binding adrClient}" Margin="90,105,0,51" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrCli" Text="{Binding adrClient}" Margin="90,105,0,51" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
                             <Label Content="NoCarteCredit : " Margin="0,125,0,0" HorizontalAlignment="Left" Width="196"></Label>
-                            <xctk:MaskedTextBox Mask="0000000000000009" Name="txtCarteCreditCli" Text="{Binding noCarteCredit}" Margin="90,129,0,27" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="0000000000000009" Name="txtCarteCreditCli" Text="{Binding noCarteCredit}" Margin="90,129,0,27" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
                             <Label Content="Type de carte :" Margin="-2,149,2,-149"></Label>
                             <ComboBox Name="cbTypeCarte" Margin="89,154,2,0" Background="White"></ComboBox>
                             <Label Content="Commentaire : " Margin="0,226,0,-76" HorizontalAlignment="Left" Width="196"></Label>
                             <TextBox Name="txtCommCli" Text="{Binding commentaire}" Margin="90,231,0,-123" Width="120" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True"/>
                             <Label Content="Code expiration :" Margin="-2,176,2,-176"></Label>
-                            <xctk:MaskedTextBox Mask="00/00" Name="txtCodeExp" Text="{Binding dateExpiration}" Margin="103,181,2,-25" Height="20"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="00/00" Name="txtCodeExp" Text="{Binding dateExpiration}" Margin="103,181,2,-25" Height="20"></xctk:MaskedTextBox>
                             <Label Content="Code de la ville :" Margin="-2,201,2,-201"></Label>
                             <ComboBox Name="cbCodeVille" Background="White" Margin="92,206,2,-50" Height="20"></ComboBox>
                         </Grid>
@@ -44,9 +44,9 @@
                             <Label Content="Nom : " Margin="0,0,0,0"></Label>
                             <TextBox x:Name="txtNomCie" Text="{Binding nomCompagnie}" Margin="100,5,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
                             <Label Content="NoTéléphone : " Margin="0,25,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="(000) 000-0000" x:Name="txtTellCie" Text="{Binding noTelCompagnie}" Margin="100,30,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" x:Name="txtTellCie" Text="{Binding noTelCompagnie}" Margin="100,30,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
                             <Label Content="NoCellulaire : " Margin="0,50,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="(000) 000-0000" x:Name="txtCellCie" Text="{Binding noCellCompagnie}" Margin="100,55,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" x:Name="txtCellCie" Text="{Binding noCellCompagnie}" Margin="100,55,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
                             <Label Content="NomResponsable : " Margin="0,75,0,0"></Label>
                             <TextBox x:Name="txtNomRespCie" Text="{Binding respCompagnie}" Margin="106,80,0,0" HorizontalAlignment="Left" Width="84" Height="20" VerticalAlignment="Top"/>
                             <Label Content="Commentaire : " Margin="0,100,0,0"></Label>

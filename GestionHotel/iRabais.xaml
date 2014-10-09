@@ -10,7 +10,7 @@
                 <GroupBox Header="Rabais" BorderBrush="Black" Margin="0,26,0,40">
                     <Grid Margin="68,0,0,0.2">
                         <Label Content="Taux du rabais :"></Label>
-                        <xctk:MaskedTextBox Mask="09%" Height="20" Margin="92,5,146.8,118" RenderTransformOrigin="0.581,0.486"/>
+                        <xctk:MaskedTextBox  PromptChar=" " Mask="09%" Height="20" Margin="92,5,146.8,118" RenderTransformOrigin="0.581,0.486"/>
                         <Label Content="Code du type de chambre :" Margin="0,30,0,-29.8"></Label>
                         <ComboBox Name="cbTypeChambre" Height="25" Margin="152,33,95.8,85"></ComboBox>
                         <Label Content="État du rabais :" Margin="0,63,0,-63"></Label>

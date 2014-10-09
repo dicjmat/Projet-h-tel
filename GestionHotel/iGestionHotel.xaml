@@ -16,13 +16,13 @@
                             <Label Content="Adresse :" Margin="0,50,0,0"></Label>
                             <xctk:MaskedTextBox Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrHotel" Margin="60,55,0,50.6" Height="20" HorizontalAlignment="Left" Width="100"></xctk:MaskedTextBox>
                             <Label Content="noTelephone :" Margin="0,75,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="(000)000-0000" Name="txtTelHotel" Margin="86,80,0,25.6" Height="20" HorizontalAlignment="Left" Width="74"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" Name="txtTelHotel" Margin="86,80,0,25.6" Height="20" HorizontalAlignment="Left" Width="74"></xctk:MaskedTextBox>
                             <Label Content="CodeVille :" Margin="0,100,0,0"></Label>
                             <ComboBox Name="cbCodeVille" Margin="73,105,0,0.6" Background="White" Height="20" HorizontalAlignment="Left" Width="87"></ComboBox>
                             <Label Content="No Téléphone de réservation :" Margin="160,-1,119.4,0.6"></Label>
-                            <xctk:MaskedTextBox Mask="(000)000-0000" Name="noTelRes" Height="20" Margin="332,5,-0.6,100.6"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" Name="noTelRes" Height="20" Margin="332,5,-0.6,100.6"></xctk:MaskedTextBox>
                             <Label Content="No Télécopieur :" Margin="160,25,168,-25.4"></Label>
-                            <xctk:MaskedTextBox Mask="(000)000-0000" Name="txtNoteleC" Height="25" Margin="263,27,109,73.6"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" Name="txtNoteleC" Height="25" Margin="263,27,109,73.6"></xctk:MaskedTextBox>
                             <Label Content="Code Postal :" Margin="160,52,-160,-52.4"></Label>
                             <TextBox Name="txtCodePostHo" Height="20" Margin="245,55,109,50.6"></TextBox>
                         </Grid>
