@@ -37,7 +37,7 @@
                     </Grid>
                 </GroupBox>
                 <Button x:Name="btnAjouterItemComm" Content="Ajouter" Margin="0,370,344,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-                <Button x:Name="btnSupprimerItemComm" Content="Supprimer" Margin="0,370,449,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                <Button x:Name="btnSupprimerItemComm" Content="Supprimer" Margin="0,339,16,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
                 <GroupBox BorderBrush="Black" Header="Aperçu Commande" Margin="400,57,10,32">
                     <StackPanel>
                         <Grid>
@@ -47,12 +47,11 @@
                                         <GridViewColumn Width="70" Header="Prix" DisplayMemberBinding="{Binding prixLigne,Mode=OneWay,StringFormat={}{0:#####.00}}"/>
                                         <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding nomItem,Mode=OneWay}"/>
                                         <GridViewColumn Header="Quantité" DisplayMemberBinding="{Binding quantite,Mode=OneWay}"/>
-                                        <GridViewColumn Header="Fournisseur" DisplayMemberBinding="{Binding nomFournisseur,Mode=OneWay}"/>
                                     </GridView>
                                 </ListView.View>
                             </ListView>
-                            <Label Content="Prix Commande($) :" Margin="4,266,5.8,-141.2"/>
-                            <Label x:Name="lblPrixComm" Margin="115,266,-1.2,-141.2"/>
+                            <Label Content="Prix Commande($) :" Margin="-5,266,14.8,-141.6"/>
+                            <Label x:Name="lblPrixComm" Margin="108,266,5.8,-141.6"/>
                         </Grid>
                     </StackPanel>
                 </GroupBox>

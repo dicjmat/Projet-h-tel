@@ -26,11 +26,7 @@
     End Sub
 
     Private Sub txtRComm_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRComm.TextChanged
-        Dim res = From Co In bd.tblCommande Join Em In bd.tblEmploye On Co.noEmpl Equals Em.noEmpl
-                  Where _noHotel = Em.noHotel And ((Em.nomEmpl + " " + Em.prenEmpl).StartsWith(txtRComm.Text) Or (Em.prenEmpl + " " + Em.nomEmpl).StartsWith(txtRComm.Text) Or Co.dateCommande.ToString.StartsWith(txtRComm.Text) Or Co.etatCommande.StartsWith(txtRComm.Text))
-                  Select Co.noCommande, Co.dateCommande, Co.etatCommande, Co.prixCommande, Em.nomEmpl, Em.prenEmpl
-
-        dgCommande.ItemsSource = res.ToList
+        requete()
     End Sub
 
     Private Sub dgCommande_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgCommande.SelectionChanged
@@ -78,9 +74,12 @@
     End Sub
 
     Private Sub requete()
-        Dim res = From Co In bd.tblCommande Join Em In bd.tblEmploye On Co.noEmpl Equals Em.noEmpl
-                          Where _noHotel = Em.noHotel
-                          Select Co.noCommande, Co.dateCommande, Co.etatCommande, Co.prixCommande, Em.nomEmpl, Em.prenEmpl
+        Dim res = (From Co In bd.tblCommande
+                  Join Em In bd.tblEmploye On Co.noEmpl Equals Em.noEmpl
+                  Join LiCo In bd.tblLigneCommande On Co.noCommande Equals LiCo.noCommande
+                  Join Fo In bd.tblFournisseur On LiCo.noFournisseur Equals Fo.noFournisseur
+                  Where _noHotel = Em.noHotel And (Em.nomEmpl.StartsWith(txtRComm.Text) Or Co.dateCommande.ToString.StartsWith(txtRComm.Text) Or Co.etatCommande.StartsWith(txtRComm.Text))
+                  Select Co.noCommande, Co.dateCommande, Co.etatCommande, Co.prixCommande, Em.nomEmpl, Em.prenEmpl, Fo.nomFournisseur).Distinct
 
         dgCommande.ItemsSource = res.ToList()
     End Sub
