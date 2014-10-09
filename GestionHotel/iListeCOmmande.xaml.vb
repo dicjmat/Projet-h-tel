@@ -54,25 +54,6 @@
         iComman.Show()
     End Sub
 
-    Private Sub btnSupprimerComm_Click(sender As Object, e As RoutedEventArgs) Handles btnSupprimerComm.Click
-        If dgCommande.SelectedIndex <> -1 Then
-            Dim supprime As Integer = dgCommande.SelectedItem.noCommande
-            Dim res = From LiCo In bd.tblLigneCommande
-                      Where LiCo.noCommande = supprime
-                      Select LiCo
-            For Each el As tblLigneCommande In res.ToList
-                bd.tblLigneCommande.Remove(el)
-            Next
-            Dim commande = From Co In bd.tblCommande
-                          Where Co.noCommande = supprime
-                          Select Co
-            bd.tblCommande.Remove(commande.Single())
-        End If
-        bd.SaveChanges()
-        requete()
-
-    End Sub
-
     Private Sub requete()
         Dim res = (From Co In bd.tblCommande
                   Join Em In bd.tblEmploye On Co.noEmpl Equals Em.noEmpl

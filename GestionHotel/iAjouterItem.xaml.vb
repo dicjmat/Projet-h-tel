@@ -19,7 +19,6 @@
         Me.Owner.Show()
     End Sub
 
-
     Private Sub btnAjouterItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItem.Click
         Dim Item = New tblItem()
         Item.codeItem = txtRCodeItem.Text
