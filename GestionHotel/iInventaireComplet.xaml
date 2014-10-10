@@ -8,9 +8,35 @@
                 <Label Content="Rechercher :" Margin="0,5,186,224"></Label>
                 <TextBox Name="txtRecherche" Height="25" Margin="73,5,278,234"></TextBox>
                 <Label Content="Hôtel :" Margin="221,5,161,234"></Label>
-                <ComboBox Name="cbHotel" Background="White" Margin="269,5,59,234"/>
+                <ComboBox Name="cbHotel" Background="White" Margin="269,5,59,234" ItemsSource="{Binding}"  SelectedIndex="0">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Label x:Name="lblHotel" Content="{Binding nomHotel}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <GroupBox Header="Inventaire" BorderBrush="Black" Margin="0,30,10,30">
-                    <DataGrid Name="dgInventaireC" AutoGenerateColumns="False"></DataGrid>
+                    <DataGrid Name="dgInventaireC" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Code" Binding="{Binding codeItem}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Nom" Binding="{Binding nomItem}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Quantité" Binding="{Binding Quantite}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Stock" Binding="{Binding stock}" Foreground="Transparent">
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="{x:Type TextBlock}">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding stock}" Value="True">
+                                                <Setter Property="Background" Value="Red"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Description" Binding="{Binding descItem}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </GroupBox>
                 <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="385,239,10,0"></Button>
                 <Button Name="btnSupprimer" Content="Supprimer un item" Height="25" Margin="257,239,106,0"></Button>
