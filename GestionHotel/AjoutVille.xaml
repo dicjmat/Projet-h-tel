@@ -1,0 +1,19 @@
+﻿<Window x:Class="AjoutVille" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Background="CadetBlue" Name="window_Ville"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="AjoutVille" Height="130.4" Width="300">
+    <Grid>
+        <GroupBox Header="Ville" BorderBrush="Black">
+            <StackPanel>
+                <Grid>
+                    <Label Content="Code de la ville :"></Label>
+                    <TextBox x:Name="txtCodeVille" Height="20" Margin="97,0,-0.8,0"/>
+                    <Label Content="Nom de la ville :" Margin="1,31,-0.8,-30.4"></Label>
+                    <TextBox Name="txtNomVille" Height="20" Margin="98,35,-0.8,-28.6"></TextBox>
+                    <Button Name="btnAjouter" Content="Ajouter" Margin="26,77,151.2,-76.6"></Button>
+                    <Button Name="btnAnnuler" Content="Annuler" Margin="151,77,26.2,-77.6"></Button>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+    </Grid>
+</Window>

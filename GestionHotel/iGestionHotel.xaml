@@ -28,10 +28,11 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Top" HorizontalAlignment="Right" Width="86" Margin="0,188,86,-38"/>
+                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Top" HorizontalAlignment="Right" Width="86" Margin="0,188,6,-38" Height="22"/>
                 <Button Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,359,-38" Width="86" RenderTransformOrigin="0.139,1.293"></Button>
                 <Button Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,268,-38" Width="86"></Button>
                 <Button Name="btnSupprimer" Content="Supprimer" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,177,-38" Width="86"></Button>
+                <Button Name="btnSauv" Content="Sauvegarder" Margin="445,188,97,-38"/>
             </Grid>
         </Viewbox>
     </Grid>
