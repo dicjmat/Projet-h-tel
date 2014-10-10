@@ -157,11 +157,15 @@
           <Property Name="heureFin" Type="time" Precision="7" Nullable="false" />
           <Property Name="noEmpl" Type="smallint" Nullable="false" />
         </EntityType>
+        <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Personnel.tblLogin' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="tblLogin">
           <Key>
-            <PropertyRef Name="utilisateur" />
+            <PropertyRef Name="mdp" />
+            <PropertyRef Name="statut" />
+            <PropertyRef Name="noEmpl" />
           </Key>
-          <Property Name="utilisateur" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="utilisateur" Type="char" MaxLength="9" />
           <Property Name="mdp" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="statut" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="noEmpl" Type="smallint" Nullable="false" />
@@ -980,7 +984,6 @@
           <EntitySet Name="tblBoiteReception" EntityType="Self.tblBoiteReception" Schema="Personnel" store:Type="Tables" />
           <EntitySet Name="tblEmploye" EntityType="Self.tblEmploye" Schema="Personnel" store:Type="Tables" />
           <EntitySet Name="tblHoraire" EntityType="Self.tblHoraire" Schema="Personnel" store:Type="Tables" />
-          <EntitySet Name="tblLogin" EntityType="Self.tblLogin" Schema="Personnel" store:Type="Tables" />
           <EntitySet Name="tblMessage" EntityType="Self.tblMessage" Schema="Personnel" store:Type="Tables" />
           <EntitySet Name="tblPieceJointe" EntityType="Self.tblPieceJointe" Schema="Personnel" store:Type="Tables" />
           <EntitySet Name="tblProfession" EntityType="Self.tblProfession" Schema="Personnel" store:Type="Tables" />
@@ -1001,6 +1004,14 @@
           <EntitySet Name="tblTypeChambreHotel" EntityType="Self.tblTypeChambreHotel" Schema="Reservation" store:Type="Tables" />
           <EntitySet Name="tblTypeChambreOption" EntityType="Self.tblTypeChambreOption" Schema="Reservation" store:Type="Tables" />
           <EntitySet Name="tblTypeElement" EntityType="Self.tblTypeElement" Schema="Reservation" store:Type="Tables" />
+          <EntitySet Name="tblLogin" EntityType="Self.tblLogin" store:Type="Tables" store:Schema="Personnel">
+            <DefiningQuery>SELECT 
+    [tblLogin].[utilisateur] AS [utilisateur], 
+    [tblLogin].[mdp] AS [mdp], 
+    [tblLogin].[statut] AS [statut], 
+    [tblLogin].[noEmpl] AS [noEmpl]
+    FROM [Personnel].[tblLogin] AS [tblLogin]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="fk_bore_noempl" Association="Self.fk_bore_noempl">
             <End Role="tblEmploye" EntitySet="tblEmploye" />
             <End Role="tblBoiteReception" EntitySet="tblBoiteReception" />
@@ -1409,16 +1420,6 @@
           <Property Name="noEmpl" Type="Int16" Nullable="false" />
           <NavigationProperty Name="tblEmploye" Relationship="Self.fk_hor_noempl" FromRole="tblHoraire" ToRole="tblEmploye" />
         </EntityType>
-        <EntityType Name="tblLogin">
-          <Key>
-            <PropertyRef Name="utilisateur" />
-          </Key>
-          <Property Name="utilisateur" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="mdp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="statut" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="noEmpl" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="tblEmploye" Relationship="Self.fk_log_noempl" FromRole="tblLogin" ToRole="tblEmploye" />
-        </EntityType>
         <EntityType Name="tblMessage">
           <Key>
             <PropertyRef Name="noMessage" />
@@ -1621,6 +1622,18 @@
           <Property Name="codeTypeElement" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="nomTypeElement" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblElementFacture" Relationship="Self.fk_elefac_cotyel" FromRole="tblTypeElement" ToRole="tblElementFacture" />
+        </EntityType>
+        <EntityType Name="tblLogin">
+          <Key>
+            <PropertyRef Name="mdp" />
+            <PropertyRef Name="statut" />
+            <PropertyRef Name="noEmpl" />
+          </Key>
+          <Property Name="utilisateur" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+          <Property Name="mdp" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="statut" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="noEmpl" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="tblEmploye" Relationship="Self.fk_log_noempl" FromRole="tblLogin" ToRole="tblEmploye" />
         </EntityType>
         <Association Name="fk_cat_codeitem">
           <End Role="tblItem" Type="Self.tblItem" Multiplicity="1" />
@@ -2162,7 +2175,6 @@
           <EntitySet Name="tblBoiteReception" EntityType="Self.tblBoiteReception" />
           <EntitySet Name="tblEmploye" EntityType="Self.tblEmploye" />
           <EntitySet Name="tblHoraire" EntityType="Self.tblHoraire" />
-          <EntitySet Name="tblLogin" EntityType="Self.tblLogin" />
           <EntitySet Name="tblMessage" EntityType="Self.tblMessage" />
           <EntitySet Name="tblPieceJointe" EntityType="Self.tblPieceJointe" />
           <EntitySet Name="tblProfession" EntityType="Self.tblProfession" />
@@ -2179,6 +2191,7 @@
           <EntitySet Name="tblSalle" EntityType="Self.tblSalle" />
           <EntitySet Name="tblTypeChambre" EntityType="Self.tblTypeChambre" />
           <EntitySet Name="tblTypeElement" EntityType="Self.tblTypeElement" />
+          <EntitySet Name="tblLogin" EntityType="Self.tblLogin" />
           <AssociationSet Name="fk_cat_codeitem" Association="Self.fk_cat_codeitem">
             <End Role="tblItem" EntitySet="tblItem" />
             <End Role="tblCatalogue" EntitySet="tblCatalogue" />
@@ -2530,16 +2543,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblLogin">
-            <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreModel.tblLogin">
-              <MappingFragment StoreEntitySet="tblLogin">
-                <ScalarProperty Name="utilisateur" ColumnName="utilisateur" />
-                <ScalarProperty Name="mdp" ColumnName="mdp" />
-                <ScalarProperty Name="statut" ColumnName="statut" />
-                <ScalarProperty Name="noEmpl" ColumnName="noEmpl" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblMessage">
             <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreModel.tblMessage">
               <MappingFragment StoreEntitySet="tblMessage">
@@ -2712,6 +2715,16 @@
               <MappingFragment StoreEntitySet="tblTypeElement">
                 <ScalarProperty Name="codeTypeElement" ColumnName="codeTypeElement" />
                 <ScalarProperty Name="nomTypeElement" ColumnName="nomTypeElement" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLogin">
+            <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreModel.tblLogin">
+              <MappingFragment StoreEntitySet="tblLogin">
+                <ScalarProperty Name="utilisateur" ColumnName="utilisateur" />
+                <ScalarProperty Name="mdp" ColumnName="mdp" />
+                <ScalarProperty Name="statut" ColumnName="statut" />
+                <ScalarProperty Name="noEmpl" ColumnName="noEmpl" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

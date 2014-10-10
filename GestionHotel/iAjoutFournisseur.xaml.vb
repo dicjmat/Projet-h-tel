@@ -22,4 +22,9 @@
 
         cbVilleFourni.DataContext = res.ToList
     End Sub
+
+
+    Private Sub windowAjoutFournisseur_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles windowAjoutFournisseur.Closing
+        Me.Owner.Show()
+    End Sub
 End Class

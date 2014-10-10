@@ -120,7 +120,7 @@
         If lstAffichage IsNot Nothing Then
             commande.dateCommande = Date.Today
             commande.prixCommande = prixTotal
-            commande.etatCommande = ""
+            commande.etatCommande = "NL"
             commande.noEmpl = _noEmpl
             For Each el In lstCommande
                 commande.tblLigneCommande.Add(el)

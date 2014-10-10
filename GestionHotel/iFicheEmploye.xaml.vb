@@ -42,19 +42,12 @@
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
-        If Me.Focusable Then
-            Me.Owner.Close()
-        Else
-            Me.Owner.Show()
-        End If
-
+        Me.Owner.Show()
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Focusable = False
-        windowFicheEmploye.Close()
-        Me.Owner.Focusable = False
         Me.Owner.Close()
+        Me.Close()
         'Dim listeemploye As iListeEmploye
         'listeemploye = New iListeEmploye()
         'listeemploye.Close()
