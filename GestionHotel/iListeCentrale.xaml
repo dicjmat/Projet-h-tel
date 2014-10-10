@@ -25,7 +25,7 @@
                                 <DataGridTextColumn Header="Nom" Binding="{Binding nomProv}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Name="btnAjouterProv" Content="Ajouter la province" Height="20" Margin="0,253,-0.4,-1.8"></Button>
+                        <Button Name="btnAjouterProv" Content="Ajouter la province" Height="20" Margin="0,253,-0.4,-1.8" RenderTransformOrigin="0.502,0.5"></Button>
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Ville" BorderBrush="Black" Margin="302,21,0,38" HorizontalAlignment="Left" Width="144">

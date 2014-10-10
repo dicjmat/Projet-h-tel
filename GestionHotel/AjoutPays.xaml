@@ -11,7 +11,7 @@
                 <Label Content="Nom du pays :" Margin="0,29,149.8,26.2"></Label>
                 <TextBox Name="txtnomPays" Height="20" Margin="92,33,0,0" HorizontalAlignment="Left" Width="138" VerticalAlignment="Top"></TextBox>
                 <Button Name="btnAjouter" Height="25" Content="Ajouter" Margin="9,68,121.6,10.2"></Button>
-                <Button Name="btnAccueil" Height="25" Content="Accueil" Margin="121,68,9.6,10.2"></Button>
+                <Button Name="btnAnnuler" Height="25" Content="Annuler" Margin="121,68,9.6,10.2"></Button>
             </Grid>
         </GroupBox>
         </Viewbox>
