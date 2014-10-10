@@ -1,15 +1,34 @@
 ﻿<Window x:Class="iAjoutFournisseur" WindowStartupLocation="CenterScreen" WindowState="Maximized" Name="windowAjoutFournisseur" Background="CadetBlue" WindowStyle="None"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Gestion Hotel" Height="217.6" Width="411.2">
+    xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
+    Title="Gestion Hotel" Height="494.638" Width="527.544">
     <Grid>
         <Viewbox Stretch="Uniform" Margin="0,0,-0.2,0.2">
-            <Grid Height="175" Width="265">
-                <Label Content="Ajouter un Fournisseur" VerticalAlignment="Top" HorizontalAlignment="Center"></Label>
-                <Label Content="Nom du fournisseur :" Margin="10,23,-10,-23"></Label>
-                <TextBox Name="txtNomFourni" Text="{Binding nomFournisseur}" Margin="139,25,0,130" Height="20" Width="100" HorizontalAlignment="Left"></TextBox>
-                <Button Name="btnConfirmer" Content="Ajouter le fournisseur" Height="25" Margin="61,101,0,11" HorizontalAlignment="Left" Width="119"></Button>
-                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="185,101,0,11" HorizontalAlignment="Left" Width="54"></Button>
+            <Grid Height="240" Width="265">
+                <Label Content="Ajouter un Fournisseur" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="68,-3,63,0" Width="134"></Label>
+                <Label Content="Nom du fournisseur :" Margin="10,19,131,163"></Label>
+                <TextBox Name="txtNomFourni" Margin="139,23,0,197" Width="116" HorizontalAlignment="Left" Height="20"/>
+                <Button Name="btnConfirmer" Content="Ajouter le fournisseur" Height="25" Margin="61,197,0,-13" HorizontalAlignment="Left" Width="119"></Button>
+                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="185,197,0,-13" HorizontalAlignment="Left" Width="54"></Button>
+                <Label Content="Adresse :" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="txtAdrFourni" HorizontalAlignment="Left" Height="20" Margin="68,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
+                <Label Content="Code postal :" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
+                <xctk:MaskedTextBox Mask="L0L\ 0L0" PromptChar=" " Name="txtcodePostFourni" HorizontalAlignment="Left" Height="20" Margin="139,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+                <Label Content="Téléphone :" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="txtnoTelFourni" HorizontalAlignment="Left" Height="20" Margin="135,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <Label Content="Responsable :" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="txtRespFourni" HorizontalAlignment="Left" Height="22" Margin="98,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157"/>
+                <Label Content="Ville :" HorizontalAlignment="Left" Margin="13,184,0,0" VerticalAlignment="Top"/>
+                <ComboBox Name="cbVilleFourni" ItemsSource="{Binding}" Text="{Binding nomVille}"  HorizontalAlignment="Left" Margin="82,184,0,0" VerticalAlignment="Top" Height="20" Width="157">
+                    <!--<ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Label x:Name="lblVille" Content="{Binding nomVille}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>-->
+                    </ComboBox>
             </Grid>
         </Viewbox>
     </Grid>
