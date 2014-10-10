@@ -27,69 +27,86 @@
                     <StackPanel HorizontalAlignment="Left" Height="208" Margin="10,10,0,-18.8" VerticalAlignment="Top" Width="225">
                         <Canvas>
                             <Label Content="Heure de début :" Canvas.Top="-4"/>
-                            <ComboBox x:Name="cmbHeureDebut" Canvas.Top="30" Background="White" Width="128">
-                                <Label Content="0h00"/>
-                                <Label Content="1h00"/>
-                                <Label Content="2h00"/>
-                                <Label Content="3h00"/>
-                                <Label Content="4h00"/>
-                                <Label Content="5h00"/>
-                                <Label Content="6h00"/>
-                                <Label Content="7h00"/>
-                                <Label Content="8h00"/>
-                                <Label Content="9h00"/>
-                                <Label Content="10h00"/>
-                                <Label Content="11h00"/>
-                                <Label Content="12h00"/>
-                                <Label Content="13h00"/>
-                                <Label Content="14h00"/>
-                                <Label Content="15h00"/>
-                                <Label Content="16h00"/>
-                                <Label Content="17h00"/>
-                                <Label Content="18h00"/>
-                                <Label Content="19h00"/>
-                                <Label Content="20h00"/>
-                                <Label Content="21h00"/>
-                                <Label Content="22h00"/>
-                                <Label Content="23h00"/>                               
-                            </ComboBox>
+                            <StackPanel Orientation="Horizontal" Canvas.Top="30">
+                                <ComboBox x:Name="cmbHeureDebutH" Background="White" Width="58">
+                                    <Label Content="0"/>
+                                    <Label Content="1"/>
+                                    <Label Content="2"/>
+                                    <Label Content="3"/>
+                                    <Label Content="4"/>
+                                    <Label Content="5"/>
+                                    <Label Content="6"/>
+                                    <Label Content="7"/>
+                                    <Label Content="8"/>
+                                    <Label Content="9"/>
+                                    <Label Content="10"/>
+                                    <Label Content="11"/>
+                                    <Label Content="12"/>
+                                    <Label Content="13"/>
+                                    <Label Content="14"/>
+                                    <Label Content="15"/>
+                                    <Label Content="16"/>
+                                    <Label Content="17"/>
+                                    <Label Content="18"/>
+                                    <Label Content="19"/>
+                                    <Label Content="20"/>
+                                    <Label Content="21"/>
+                                    <Label Content="22"/>
+                                    <Label Content="23"/>                               
+                                </ComboBox>
+                                <ComboBox x:Name="cmbHeureDebutM" Background="White" Width="58">
+                                    <Label Content="00"/>
+                                    <Label Content="15"/>
+                                    <Label Content="30"/>
+                                    <Label Content="45"/>
+                                </ComboBox>
+                            </StackPanel>
                             <Label Content="Heure de fin :" Canvas.Top="64"/>
-                            <ComboBox x:Name="cmbHeureFin" Canvas.Top="98" Background="White" Width="128">
-                                <Label Content="0h00"/>
-                                <Label Content="1h00"/>
-                                <Label Content="2h00"/>
-                                <Label Content="3h00"/>
-                                <Label Content="4h00"/>
-                                <Label Content="5h00"/>
-                                <Label Content="6h00"/>
-                                <Label Content="7h00"/>
-                                <Label Content="8h00"/>
-                                <Label Content="9h00"/>
-                                <Label Content="10h00"/>
-                                <Label Content="11h00"/>
-                                <Label Content="12h00"/>
-                                <Label Content="13h00"/>
-                                <Label Content="14h00"/>
-                                <Label Content="15h00"/>
-                                <Label Content="16h00"/>
-                                <Label Content="17h00"/>
-                                <Label Content="18h00"/>
-                                <Label Content="19h00"/>
-                                <Label Content="20h00"/>
-                                <Label Content="21h00"/>
-                                <Label Content="22h00"/>
-                                <Label Content="23h00"/>                            
-                            </ComboBox>
+                            <StackPanel Orientation="Horizontal" Canvas.Top="98">
+                                <ComboBox x:Name="cmbHeureFinH" Background="White" Width="58">
+                                    <Label Content="0"/>
+                                    <Label Content="1"/>
+                                    <Label Content="2"/>
+                                    <Label Content="3"/>
+                                    <Label Content="4"/>
+                                    <Label Content="5"/>
+                                    <Label Content="6"/>
+                                    <Label Content="7"/>
+                                    <Label Content="8"/>
+                                    <Label Content="9"/>
+                                    <Label Content="10"/>
+                                    <Label Content="11"/>
+                                    <Label Content="12"/>
+                                    <Label Content="13"/>
+                                    <Label Content="14"/>
+                                    <Label Content="15"/>
+                                    <Label Content="16"/>
+                                    <Label Content="17"/>
+                                    <Label Content="18"/>
+                                    <Label Content="19"/>
+                                    <Label Content="20"/>
+                                    <Label Content="21"/>
+                                    <Label Content="22"/>
+                                    <Label Content="23"/>                            
+                                </ComboBox>
+                                <ComboBox x:Name="cmbHeureFinM" Background="White" Width="58">
+                                    <Label Content="00"/>
+                                    <Label Content="15"/>
+                                    <Label Content="30"/>
+                                    <Label Content="45"/>
+                                </ComboBox>
+                            </StackPanel>
                             <Label x:Name="lblConfirmation" Content="Message de confirmation" Canvas.Top="125" Visibility="Hidden" FontSize="12"/>
                             <Button x:Name="btnAjouterHor" Content="Ajouter" Canvas.Top="157"/>
                             <Button x:Name="btnModifierHor" Content="Modifier" Canvas.Top="157" Canvas.Left="65"/>
                             <Button x:Name="btnSupprimerHor" Content="Supprimer" Canvas.Top="157" Canvas.Left="137" Width="81"/>
                         </Canvas>
                         
+
                     </StackPanel>
                 </GroupBox>
                 <GroupBox  BorderBrush="Black" Header="Calendrier" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Height="228" Width="246">
-                    <Calendar x:Name="cldHoraire" HorizontalAlignment="Left" Margin="0,10,0,-18.8" VerticalAlignment="Top" Height="208" Width="212"/>
+                    <Calendar x:Name="cldHoraire" HorizontalAlignment="Left" Margin="0,10,0,-18.8" VerticalAlignment="Top" Height="208" Width="212" SelectionMode="SingleRange"/>
                 </GroupBox>
             </Grid>
         </Viewbox>
