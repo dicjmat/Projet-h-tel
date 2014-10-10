@@ -1,4 +1,4 @@
-﻿<Window x:Class="AjoutProvince" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="CadetBlue"
+﻿<Window x:Class="AjoutProvince" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="CadetBlue" Name="window_province"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="AjoutProvince" Height="115.2" Width="300">
