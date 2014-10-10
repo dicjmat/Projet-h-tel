@@ -21,13 +21,13 @@
                 <TextBox Name="txtRespFourni" HorizontalAlignment="Left" Height="22" Margin="98,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157"/>
                 <Label Content="Ville :" HorizontalAlignment="Left" Margin="13,184,0,0" VerticalAlignment="Top"/>
                 <ComboBox Name="cbVilleFourni" ItemsSource="{Binding}" Text="{Binding nomVille}"  HorizontalAlignment="Left" Margin="82,184,0,0" VerticalAlignment="Top" Height="20" Width="157">
-                    <!--<ComboBox.ItemTemplate>
+                    <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
                                 <Label x:Name="lblVille" Content="{Binding nomVille}"/>
                             </StackPanel>
                         </DataTemplate>
-                    </ComboBox.ItemTemplate>-->
+                    </ComboBox.ItemTemplate>
                     </ComboBox>
             </Grid>
         </Viewbox>
