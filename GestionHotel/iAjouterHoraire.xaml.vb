@@ -22,7 +22,7 @@
 
         Dim profGest = From el In bd.tblEmploye Where noGest = el.noEmpl Select el.codeProf
         Dim prof = profGest.Single.ToString()
-        Dim res = From el In bd.tblEmploye Where el.codeProf = prof And el.noHotel = hotel Select el
+        Dim res = From el In bd.tblEmploye Where el.codeProf = prof And el.noHotel = hotel And el.noEmpl <> noGest Select el
 
         cbEmploye.DataContext = res.ToList()
     End Sub

@@ -10,7 +10,7 @@
                 <GroupBox BorderBrush="Black" Header="Employé" Margin="0,30,0,45">
                     <StackPanel>
                         <Grid>
-                            <DataGrid Name="lstEmploye" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,0,-0.2,-357">
+                            <DataGrid Name="lstEmploye" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,0,-0.2,-357" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="no Employé" Binding="{Binding noEmpl}"></DataGridTextColumn>
                                     <DataGridTextColumn Header="Nom" Binding="{Binding nomEmpl}"></DataGridTextColumn>

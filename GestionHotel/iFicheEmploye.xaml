@@ -9,39 +9,63 @@
                 <Button Name="btnAjoutHoraire" Content="Ajouter Horaire" HorizontalAlignment="Center" Margin="420,0,10,0" VerticalAlignment="Top" Width="100" Height="30"/>
                 <Label Content="No de l'employé : " HorizontalAlignment="Left" Margin="4,5,0,0" VerticalAlignment="Top"/>
                 <TextBox Name="txtNoEmpl" Text="{Binding noEmpl}" Height="25" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="108,5,0,0" IsEnabled="False"/>
-                <GroupBox BorderBrush="Black" Header="Fiche Employé" Margin="0,30,0,0" HorizontalAlignment="Left" Width="400">
+                <GroupBox BorderBrush="Black" Header="Fiche Employé" Margin="0,30,0,-13" HorizontalAlignment="Left" Width="415">
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0,0"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="????????????????????????????????????????????????" Name="txtNomEmp" Text="{Binding nomEmpl}" Margin="110,5,0,0" Height="23" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="????????????????????????????????????????????????" Name="txtNomEmp" Text="{Binding nomEmpl}" Margin="110,5,0,0" Height="23" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="Prénom : " Margin="0,25,0,0"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="????????????????????????????????????????????????" Name="txtPrenomEmp" Text="{Binding prenEmpl}" Margin="110,30,0,0" Height="23" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="????????????????????????????????????????????????" Name="txtPrenomEmp" Text="{Binding prenEmpl}" Margin="110,30,0,0" Height="23" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="noTéléphone : " Margin="0,50,0,0"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="000-000-0000" Name="txtTellEmp" Text="{Binding noTelEmpl}" Margin="110,55,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="000-000-0000" Name="txtTellEmp" Text="{Binding noTelEmpl}" Margin="110,55,0,0" Height="20" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="noCéllulaire : " Margin="0,75,0,0"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="000-000-0000" Name="txtCellEmp" Text="{Binding noCellEmpl}" Margin="110,80,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="000-000-0000" Name="txtCellEmp" Text="{Binding noCellEmpl}" Margin="110,80,0,0" Height="20" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="Adresse : " Margin="0,100,0,0"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="09CCCCCCaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrEmp" Text="{Binding adrEmpl}" Margin="110,105,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="09aaa????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????" Name="txtAdrEmp" Text="{Binding adrEmpl}" Margin="110,105,0,0" Height="20" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"></xctk:MaskedTextBox>
                             <Label Content="NAS : " Margin="0,125,0,0"></Label>
-                            <TextBox Name="txtNASEmp" Text="{Binding NAS}" Margin="110,130,0,0" Height="20" Width="120" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+                            <TextBox Name="txtNASEmp" Text="{Binding NAS}" Margin="110,130,0,0" Height="20" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
                             <Label Content="Date d'embauche : " Margin="0,150,0,0"></Label>
                             <DatePicker Name="DPEmbaucheEmp" Text="{Binding dateEmbauche}" HorizontalAlignment="Left" Margin="110,155,0,0" VerticalAlignment="Top" Width="120"/>
-                            <Label Content="Heures travaillées : " Margin="230,0,0,0"></Label>
-                            <TextBox Name="txtHrsEmp" Text="{Binding hrTravail}" Margin="335,5,0,0" Height="20" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
-                            <Label Content="Salaire ($/h) : " Margin="230,25,0,0"></Label>
-                            <TextBox Name="txtSalaireEmp" Text="{Binding salaire}" Margin="310,30,0,0" Height="20" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
-                            <Label Content="Jours Vacances : " Margin="230,50,0,0"></Label>
-                            <TextBox Name="txtVacEmp" Text="{Binding joursVac}" Margin="325,55,0,0" Height="20" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
-                            <Label Content="Jours Fériés : " Margin="230,75,0,0"></Label>
-                            <TextBox Name="txtFerieEmp" Text="{Binding joursFerie}" Margin="348,80,0,0" Height="20" Width="37" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
-                            <Label Content="Jours Maladies : " Margin="230,100,0.2,54.2"></Label>
-                            <TextBox Name="txtMaladieEmp" Text="{Binding joursMal}" Margin="325,105,0,0" Height="20" Width="60" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
-                            <Label Content="CodeVille :" Margin="235,125,84.2,30"></Label>
-                            <Label Content="CodeProf :" Margin="235,175,84.2,-21.2"></Label>
-                            <Label Content="No d'hôtel :" Margin="235,150,77,1.8"></Label>
-                            <TextBox Name="txtCdVille" Text="{Binding codeVille}" Margin="310,130,0.2,54.8" Height="20"></TextBox>
-                            <TextBox Name="txtCdProf" Text="{Binding codeProf}" Margin="311,155,0,29.8" Height="20"></TextBox>
-                            <TextBox Name="txtNoHot" Text="{Binding noHotel}" Height="20" Margin="311,180,-0.8,4.8"></TextBox>
+                            <Label Content="Heures travaillées : " Margin="209,101,84.2,79.4"></Label>
+                            <TextBox Name="txtHrsEmp" Text="{Binding hrTravail}" Margin="316,106,0,0" Height="20" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+                            <Label Content="Salaire ($/h) : " Margin="209,78,114.2,106.4"></Label>
+                            <TextBox Name="txtSalaireEmp" Text="{Binding salaire}" Margin="291,83,0,0" Height="20" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+                            <Label Content="Jours Vacances : " Margin="228,152,63.2,34"></Label>
+                            <TextBox Name="txtVacEmp" Text="{Binding joursVac}" Margin="324,182,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+                            <Label Content="Jours Fériés : " Margin="228,177,91.2,-23.8"></Label>
+                            <TextBox Name="txtFerieEmp" Text="{Binding joursFerie}" Margin="324,155,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+                            <Label Content="Jours Maladies : " Margin="210,125,92.2,55.4"></Label>
+                            <TextBox Name="txtMaladieEmp" Text="{Binding joursMal}" Margin="324,129,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"></TextBox>
+                            <Label Content="CodeVille :" Margin="209,0,21.2,182.8"></Label>
+                            <Label Content="CodeProf :" Margin="209,53,126.2,131.6"></Label>
+                            <Label Content="No d'hôtel :" Margin="209,27,21.2,156.4"></Label>
+                            <ComboBox Name="cmbCdVille" ItemsSource="{Binding}" Margin="282,0,0.2,179.8" Height="25" Background="White" FontSize="10">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblVille" Content="{Binding nomVille}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox Name="cmbNoHot" ItemsSource="{Binding}" Margin="282,27,0.2,152.8" Height="25" Background="White" FontSize="10">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblHotel" Content="{Binding nomHotel}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox Name="cmbCdProf" ItemsSource="{Binding}" Height="25" Margin="282,54,0.2,125.8" Background="White" FontSize="10">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblProf" Content="{Binding nomProf}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                         </Grid>
                     </StackPanel>
                 </GroupBox>

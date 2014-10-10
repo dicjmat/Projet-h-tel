@@ -50,11 +50,13 @@
     End Sub
 
     Private Sub btnModifEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnModifEmp.Click
-        Dim numEmpl = lstEmploye.SelectedItem.noEmpl
-        Dim iEmploye As New iFicheEmploye(numEmpl)
-        iEmploye.Owner = Me
-        Me.Hide()
-        iEmploye.Show()
+        If lstEmploye.SelectedItem IsNot Nothing Then
+            Dim numEmpl = lstEmploye.SelectedItem.noEmpl
+            Dim iEmploye As New iFicheEmploye(numEmpl)
+            iEmploye.Owner = Me
+            Me.Hide()
+            iEmploye.Show()
+        End If
     End Sub
 
     Private Sub requete()
