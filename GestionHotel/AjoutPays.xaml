@@ -1,8 +1,9 @@
 ﻿<Window x:Class="AjoutPays" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Background="CadetBlue" Name="window_Pays"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="AjoutPays" Height="125.913" Width="249.635">
+    Title="AjoutPays" Height="200" Width="400">
     <Grid>
+        <Viewbox Stretch="Uniform">
         <GroupBox Header="Pays" BorderBrush="Black">
             <Grid>
                 <Label Content="Code du pays :" Margin="0,0,149.8,50.2"></Label>
@@ -13,5 +14,6 @@
                 <Button Name="btnAccueil" Height="25" Content="Accueil" Margin="121,68,9.6,10.2"></Button>
             </Grid>
         </GroupBox>
+        </Viewbox>
     </Grid>
 </Window>
