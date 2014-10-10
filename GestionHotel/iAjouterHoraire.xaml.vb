@@ -44,30 +44,46 @@
     End Sub
 
     Private Sub btnAjouterHor_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterHor.Click
-        If cbEmploye.SelectedItem IsNot DBNull.Value And cldHoraire.SelectedDate IsNot Nothing And cmbHeureDebut.SelectedItem IsNot DBNull.Value Then
-            Dim Horaire = New tblHoraire()
-            Horaire.noEmpl = Convert.ToInt16(cbEmploye.SelectedItem.noEmpl)
-            Horaire.dateHoraire = Format(cldHoraire.SelectedDate(), "yyyy/MM/dd")
-            Horaire.heureDebut = TimeSpan.Parse(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
-            Horaire.heureFin = TimeSpan.Parse(Replace(cmbHeureFin.SelectedItem.Content, "h", ":"))
-            bd.tblHoraire.Add(Horaire)
-            bd.SaveChanges()
-            lblConfirmation.Content = "L'horaire est ajouté"
-            lblConfirmation.Visibility = Windows.Visibility.Visible
+        If cbEmploye.SelectedItem IsNot DBNull.Value And cldHoraire.SelectedDate IsNot Nothing And cmbHeureDebutH.SelectedItem IsNot DBNull.Value And cmbHeureDebutM.SelectedItem IsNot DBNull.Value Then
+            If cldHoraire.SelectedDates.Count > 1 Then
+                For Each el As Date In cldHoraire.SelectedDates
+                    Dim Horaire = New tblHoraire()
+                    Horaire.noEmpl = Convert.ToInt16(cbEmploye.SelectedItem.noEmpl)
+                    Horaire.dateHoraire = Format(el, "yyyy/MM/dd")
+                    Horaire.heureDebut = TimeSpan.Parse(cmbHeureDebutH.SelectedItem.Content + ":" + cmbHeureDebutM.SelectedItem.Content)
+                    Horaire.heureFin = TimeSpan.Parse(cmbHeureFinH.SelectedItem.Content + ":" + cmbHeureFinM.SelectedItem.Content)
+                    'Horaire.heureDebut = TimeSpan.Parse(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
+                    'Horaire.heureFin = TimeSpan.Parse(Replace(cmbHeureFin.SelectedItem.Content, "h", ":"))
+                    bd.tblHoraire.Add(Horaire)
+                    bd.SaveChanges()
+                Next
+            Else
+                Dim Horaire = New tblHoraire()
+                Horaire.noEmpl = Convert.ToInt16(cbEmploye.SelectedItem.noEmpl)
+                Horaire.dateHoraire = Format(cldHoraire.SelectedDate(), "yyyy/MM/dd")
+                Horaire.heureDebut = TimeSpan.Parse(cmbHeureDebutH.SelectedItem.Content + ":" + cmbHeureDebutM.SelectedItem.Content)
+                Horaire.heureFin = TimeSpan.Parse(cmbHeureFinH.SelectedItem.Content + ":" + cmbHeureFinM.SelectedItem.Content)
+                'Horaire.heureDebut = TimeSpan.Parse(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
+                'Horaire.heureFin = TimeSpan.Parse(Replace(cmbHeureFin.SelectedItem.Content, "h", ":"))
+                bd.tblHoraire.Add(Horaire)
+                bd.SaveChanges()
+                lblConfirmation.Content = "L'horaire est ajouté"
+                lblConfirmation.Visibility = Windows.Visibility.Visible
+            End If
         Else
             lblConfirmation.Content = "Des informations sont manquantes"
             lblConfirmation.Visibility = Windows.Visibility.Visible
         End If
     End Sub
 
-    Private Sub cmbHeureDebut_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbHeureDebut.SelectionChanged
+    Private Sub cmbHeureDebutH_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbHeureDebutH.SelectionChanged
         Dim temp As Integer
-        Dim Debut = cmbHeureDebut.SelectedIndex()
+        Dim Debut = cmbHeureDebutH.SelectedIndex()
         If Debut > 15 Then
             temp = Debut - 16
-            cmbHeureFin.SelectedIndex = temp
+            cmbHeureFinH.SelectedIndex = temp
         End If
-        cmbHeureFin.SelectedIndex = Debut + 8
+        cmbHeureFinH.SelectedIndex = Debut + 8
     End Sub
 
     Private Sub cldHoraire_SelectedDatesChanged(sender As Object, e As SelectionChangedEventArgs) Handles cldHoraire.SelectedDatesChanged
@@ -76,20 +92,43 @@
             Dim dateSaisi = cldHoraire.SelectedDate
             Dim res = From el In bd.tblHoraire Where el.noEmpl = numEmpl And el.dateHoraire = dateSaisi Select el
             If res.ToList().Count <> 0 Then
-                cmbHeureDebut.SelectedIndex = res.First.heureDebut.Hours
-                cmbHeureFin.SelectedIndex = res.First.heureFin.Hours
+                cmbHeureDebutH.SelectedIndex = res.First.heureDebut.Hours
+                cmbHeureDebutM.SelectedIndex = res.First.heureDebut.Minutes / 15
+                cmbHeureFinH.SelectedIndex = res.First.heureFin.Hours
+                cmbHeureFinM.SelectedIndex = res.First.heureFin.Minutes / 15
             Else
-                cmbHeureDebut.SelectedIndex = -1
-                cmbHeureFin.SelectedIndex = -1
+                cmbHeureDebutH.SelectedIndex = -1
+                cmbHeureDebutM.SelectedIndex = -1
+                cmbHeureFinH.SelectedIndex = -1
+                cmbHeureFinM.SelectedIndex = -1
             End If
         End If
     End Sub
 
     Private Sub btnModifierHor_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierHor.Click
-        Dim numeroEmpl As Integer = cbEmploye.SelectedItem.noEmpl
-        Dim Horaire As tblHoraire = (From el In bd.tblHoraire Where el.noEmpl = numeroEmpl And el.dateHoraire = cldHoraire.SelectedDate Select el).Single()
-        Horaire.heureDebut = TimeSpan.Parse(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
-        Horaire.heureFin = TimeSpan.Parse(Replace(cmbHeureFin.SelectedItem.Content, "h", ":"))
-        bd.SaveChanges()
+        If cbEmploye.SelectedItem IsNot DBNull.Value And cldHoraire.SelectedDate IsNot Nothing And cmbHeureDebutH.SelectedItem IsNot DBNull.Value And cmbHeureDebutM.SelectedItem IsNot DBNull.Value Then
+            Dim numeroEmpl As Integer = cbEmploye.SelectedItem.noEmpl
+            Dim Horaire As tblHoraire
+            If cldHoraire.SelectedDates.Count > 1 Then
+                For Each sel As Date In cldHoraire.SelectedDates
+                    Horaire = (From el In bd.tblHoraire Where el.noEmpl = numeroEmpl And el.dateHoraire = sel Select el).Single()
+                    Horaire.heureDebut = TimeSpan.Parse(cmbHeureDebutH.SelectedItem.Content + ":" + cmbHeureDebutM.SelectedItem.Content)
+                    Horaire.heureFin = TimeSpan.Parse(cmbHeureFinH.SelectedItem.Content + ":" + cmbHeureFinM.SelectedItem.Content)
+                    bd.SaveChanges()
+                Next
+            Else
+                Horaire = (From el In bd.tblHoraire Where el.noEmpl = numeroEmpl And el.dateHoraire = cldHoraire.SelectedDate Select el).Single()
+                Horaire.heureDebut = TimeSpan.Parse(cmbHeureDebutH.SelectedItem.Content + ":" + cmbHeureDebutM.SelectedItem.Content)
+                Horaire.heureFin = TimeSpan.Parse(cmbHeureFinH.SelectedItem.Content + ":" + cmbHeureFinM.SelectedItem.Content)
+                bd.SaveChanges()
+            End If
+            lblConfirmation.Content = "L'horaire a été modifié"
+            lblConfirmation.Visibility = Windows.Visibility.Visible
+        End If
+
+    End Sub
+
+    Private Sub cmbHeureDebutM_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbHeureDebutM.SelectionChanged
+        cmbHeureFinM.SelectedIndex = cmbHeureDebutM.SelectedIndex
     End Sub
 End Class

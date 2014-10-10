@@ -8,19 +8,19 @@
                 <Label Content="Liste Centrale" HorizontalAlignment="Center"></Label>
                 <GroupBox Header="Province" BorderBrush="Black" Margin="5,21,0,38" HorizontalAlignment="Left" Width="122">
                     <Grid>
-                        <DataGrid Name="dgProvince" Margin="0,0,-0.4,23.4"></DataGrid>
-                        <Button Name="btnAjouterProv" Content="Ajouter la province" Height="20" Margin="0,253,-2.4,-1.8" HorizontalAlignment="Left" Width="112" VerticalAlignment="Top"></Button>
+                        <DataGrid Name="dgProvince" Margin="0,0,-0.4,23.4" IsReadOnly="True" AutoGenerateColumns="False"></DataGrid>
+                        <Button Name="btnAjouterProv" Content="Ajouter la province" Height="20" Margin="0,253,-2.4,-1.8" HorizontalAlignment="Left" Width="112"></Button>
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Ville" BorderBrush="Black" Margin="132,21,0,38" HorizontalAlignment="Left" Width="122">
                     <Grid>
-                        <DataGrid Name="dgVille" Margin="0,0,-0.2,23.4"></DataGrid>
+                        <DataGrid Name="dgVille" Margin="0,0,-0.2,23.4" IsReadOnly="True" AutoGenerateColumns="False"></DataGrid>
                         <Button Name="btnAjouterVille" Content="Ajouter la ville" Height="20" Margin="0,253,-0.4,-1.8"></Button>
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Pays" BorderBrush="Black" Margin="259,21,0,38" HorizontalAlignment="Left" Width="122">
                     <Grid>
-                        <DataGrid Name="dgPays" Margin="0,0,-0.2,23.4"></DataGrid>
+                        <DataGrid Name="dgPays" Margin="0,0,-0.2,23.4" IsReadOnly="True" AutoGenerateColumns="False"></DataGrid>
                         <Button Name="btnAjouterPays" Content="Ajouter le pays" Height="20" Margin="0,253,-0.2,-1.8"></Button>
                     </Grid>
                 </GroupBox>
