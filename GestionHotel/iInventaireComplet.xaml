@@ -8,7 +8,7 @@
                 <Label Content="Rechercher :" Margin="0,5,186,224"></Label>
                 <TextBox Name="txtRecherche" Height="25" Margin="73,5,278,234"></TextBox>
                 <Label Content="Hôtel :" Margin="221,5,161,234"></Label>
-                <ComboBox Name="cbHotel" Background="White" Margin="269,5,59,234" ItemsSource="{Binding}"  SelectedIndex="0">
+                <ComboBox Name="cbHotel" Background="White" Margin="269,5,59,234" ItemsSource="{Binding}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>

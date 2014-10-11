@@ -135,12 +135,18 @@
     <Compile Include="iListeHotel.xaml.vb">
       <DependentUpon>iListeHotel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="inventaireCommun.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="iRabais.xaml.vb">
       <DependentUpon>iRabais.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblBoiteReception.vb">
@@ -231,6 +237,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblTypeChambre.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblTypeChambreHotel.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblTypeElement.vb">
@@ -452,6 +461,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.vb</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -471,9 +481,6 @@
     </None>
     <AppDesigner Include="My Project\" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

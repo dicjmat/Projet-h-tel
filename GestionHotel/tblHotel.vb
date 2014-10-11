@@ -15,6 +15,9 @@ Partial Public Class tblHotel
     Public Property nomHotel As String
     Public Property adrHotel As String
     Public Property noTelHotel As String
+    Public Property noTelecopieur As String
+    Public Property noTelReserv As String
+    Public Property codePostal As String
     Public Property codeVille As String
 
     Public Overridable Property tblChambre As ICollection(Of tblChambre) = New HashSet(Of tblChambre)
@@ -23,6 +26,6 @@ Partial Public Class tblHotel
     Public Overridable Property tblVille As tblVille
     Public Overridable Property tblInventaire As ICollection(Of tblInventaire) = New HashSet(Of tblInventaire)
     Public Overridable Property tblSalle As ICollection(Of tblSalle) = New HashSet(Of tblSalle)
-    Public Overridable Property tblTypeChambre As ICollection(Of tblTypeChambre) = New HashSet(Of tblTypeChambre)
+    Public Overridable Property tblTypeChambreHotel As ICollection(Of tblTypeChambreHotel) = New HashSet(Of tblTypeChambreHotel)
 
 End Class

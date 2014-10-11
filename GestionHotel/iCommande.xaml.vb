@@ -28,14 +28,13 @@
         Dim pareil As Boolean = False
         If dgCommande.SelectedItem IsNot Nothing Then
             For Each el In lstCommande
-                If el.codeItem = dgCommande.SelectedItem.codeItem And el.noFournisseur = dgCommande.SelectedItem.noFournisseur Then
+                If el.codeItem = dgCommande.SelectedItem.codeItem And el.tblCommande.noFournisseur = dgCommande.SelectedItem.noFournisseur Then
                     pareil = True
                 End If
             Next
             If Not pareil Then
 
                 Dim ligne = New tblLigneCommande
-                ligne.noFournisseur = dgCommande.SelectedItem.noFournisseur
                 ligne.codeItem = dgCommande.SelectedItem.CodeItem
                 ligne.quantite = txtQteCom.Text
                 ligne.prixLigne = dgCommande.SelectedItem.prixItem * Convert.ToInt32(txtQteCom.Text)

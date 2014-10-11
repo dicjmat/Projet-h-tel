@@ -11,10 +11,18 @@
     Private Sub requete()
         Dim hotel As Integer = cbHotel.SelectedItem.noHotel
         If cbHotel.SelectedIndex <> -1 Then
-            Dim res = From item In bd.tblItem Join el In bd.tblInventaire On el.codeItem Equals item.codeItem
-                  Where el.noHotel = hotel And (item.codeItem.StartsWith(txtRecherche.Text) Or item.nomItem.StartsWith(txtRecherche.Text))
-                  Select el.codeItem, item.nomItem, el.Quantite, item.descItem, el.quantiteMin
-            dgInventaireC.ItemsSource = creerAffichage(res.ToList)
+            If cbHotel.SelectedItem.nomHotel <> "Tout" Then
+                Dim res = From item In bd.tblItem Join el In bd.tblInventaire On el.codeItem Equals item.codeItem
+                      Where el.noHotel = hotel And (item.codeItem.StartsWith(txtRecherche.Text) Or item.nomItem.StartsWith(txtRecherche.Text))
+                      Select el.codeItem, item.nomItem, el.Quantite, item.descItem, el.quantiteMin
+                dgInventaireC.ItemsSource = creerAffichage(res.ToList)
+            Else
+                Dim res = From el In bd.inventaireCommun
+                          Where el.codeItem.StartsWith(txtRecherche.Text) Or el.nomItem.StartsWith(txtRecherche.Text)
+                          Select el
+
+                dgInventaireC.ItemsSource = creerAffichage(res.ToList)
+            End If
         End If
     End Sub
 
@@ -23,7 +31,7 @@
         Dim Affichage
         For Each el In res
             Dim Stock As Boolean = False
-            If el.Quantite < el.quantiteMin Then
+            If cbHotel.SelectedItem.nomHotel <> "Tout" AndAlso el.Quantite < el.quantiteMin Then
                 Stock = True
             End If
             Affichage = New With {.codeItem = el.codeItem _
@@ -38,10 +46,17 @@
 
     Private Sub window_invComp_Loaded(sender As Object, e As RoutedEventArgs) Handles window_invComp.Loaded
         bd = New P2014_Equipe2_GestionHôtelièreEntities
+        Dim listeCbHotel As List(Of tblHotel)
+        Dim affichage As New tblHotel
         Dim hotel = From ho In bd.tblHotel
                     Select ho
+        affichage.nomHotel = "Tout"
+        listeCbHotel = hotel.ToList
+        listeCbHotel.Add(affichage)
+        listeCbHotel.Reverse()
+        cbHotel.DataContext = listeCbHotel.ToList
 
-        cbHotel.DataContext = hotel.ToList
+        cbHotel.SelectedItem = affichage
         requete()
     End Sub
 
@@ -70,6 +85,8 @@
                 bd.tblItem.Remove(res.Single)
                 bd.SaveChanges()
             End If
+        Else
+            MessageBox.Show("Vous devez choisir l'item à supprimer")
         End If
     End Sub
 End Class

@@ -36,7 +36,7 @@
                         Where LiCo.noCommande = commande
                         Select LiCo
             For Each el In ligne.ToList()
-                Dim affichage = New With {.nomFournisseur = el.tblFournisseur.nomFournisseur _
+                Dim affichage = New With {.nomFournisseur = el.tblCommande.tblFournisseur.nomFournisseur _
                                             , .quantite = el.quantite _
                                             , .prixLigne = el.prixLigne _
                                             , .nomItem = el.tblItem.nomItem _
@@ -58,7 +58,7 @@
         Dim res = (From Co In bd.tblCommande
                   Join Em In bd.tblEmploye On Co.noEmpl Equals Em.noEmpl
                   Join LiCo In bd.tblLigneCommande On Co.noCommande Equals LiCo.noCommande
-                  Join Fo In bd.tblFournisseur On LiCo.noFournisseur Equals Fo.noFournisseur
+                  Join Fo In bd.tblFournisseur On Co.noFournisseur Equals Fo.noFournisseur
                   Where _noHotel = Em.noHotel And (Em.nomEmpl.StartsWith(txtRComm.Text) Or Co.dateCommande.ToString.StartsWith(txtRComm.Text) Or Co.etatCommande.StartsWith(txtRComm.Text))
                   Select Co.noCommande, Co.dateCommande, Co.etatCommande, Co.prixCommande, Em.nomEmpl, Em.prenEmpl, Fo.nomFournisseur).Distinct
 

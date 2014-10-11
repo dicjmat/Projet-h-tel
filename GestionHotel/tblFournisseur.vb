@@ -13,8 +13,13 @@ Imports System.Collections.Generic
 Partial Public Class tblFournisseur
     Public Property noFournisseur As Short
     Public Property nomFournisseur As String
+    Public Property adrFournisseur As String
+    Public Property CPFournisseur As String
+    Public Property noTelFournisseur As String
+    Public Property respFournisseur As String
+    Public Property codeVille As String
 
     Public Overridable Property tblCatalogue As ICollection(Of tblCatalogue) = New HashSet(Of tblCatalogue)
-    Public Overridable Property tblLigneCommande As ICollection(Of tblLigneCommande) = New HashSet(Of tblLigneCommande)
+    Public Overridable Property tblCommande As ICollection(Of tblCommande) = New HashSet(Of tblCommande)
 
 End Class

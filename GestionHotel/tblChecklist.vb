@@ -11,12 +11,11 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class tblChecklist
-    Public Property dateSaisit As Date
     Public Property noChambre As Short
     Public Property noHotel As Byte
+    Public Property codeItem As String
     Public Property statut As String
     Public Property commentaire As String
-    Public Property codeItem As String
     Public Property noEmpl As Short
 
     Public Overridable Property tblItem As tblItem

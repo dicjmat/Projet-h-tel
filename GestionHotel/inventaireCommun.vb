@@ -10,13 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblLigneCommande
-    Public Property noCommande As Integer
+Partial Public Class inventaireCommun
     Public Property codeItem As String
-    Public Property quantite As Short
-    Public Property prixLigne As Nullable(Of Decimal)
-
-    Public Overridable Property tblCommande As tblCommande
-    Public Overridable Property tblItem As tblItem
+    Public Property nomItem As String
+    Public Property Quantite As Nullable(Of Integer)
+    Public Property descItem As String
+    Public Property quantiteMin As Byte
 
 End Class
