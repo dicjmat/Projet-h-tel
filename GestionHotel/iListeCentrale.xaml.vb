@@ -40,15 +40,23 @@
     End Sub
 
     Private Sub btnAjouterProv_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterProv.Click
-        Dim prov = New AjoutProvince
-        prov.Owner = Me
-        prov.ShowDialog()
+        If dgPays.SelectedItem IsNot Nothing Then
+            Dim prov = New AjoutProvince(dgPays.SelectedItem.codePays)
+            prov.Owner = Me
+            prov.ShowDialog()
+        Else
+            MessageBox.Show("Veuiller sélectionner un pays", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+        End If
     End Sub
 
     Private Sub btnAjouterVille_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterVille.Click
-        Dim ville = New AjoutVille
-        ville.Owner = Me
-        ville.ShowDialog()
+        If dgProvince.SelectedItem IsNot Nothing Then
+            Dim ville = New AjoutVille(dgProvince.SelectedItem.codeProv)
+            ville.Owner = Me
+            ville.ShowDialog()
+        Else
+            MessageBox.Show("Veuiller sélectionner une province", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+        End If
     End Sub
 
     Private Sub btnAjouterPays_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterPays.Click
