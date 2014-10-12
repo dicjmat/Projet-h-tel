@@ -10,7 +10,7 @@
                 <Label Content="Nom du fournisseur :" Margin="10,19,131,163"></Label>
                 <TextBox Name="txtNomFourni" Margin="139,23,0,197" Width="116" HorizontalAlignment="Left" Height="20"/>
                 <Button Name="btnConfirmer" Content="Ajouter le fournisseur" Height="25" Margin="61,221,0,-6" HorizontalAlignment="Left" Width="119"></Button>
-                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="185,221,0,-6" HorizontalAlignment="Left" Width="54"></Button>
+                <Button Name="btnAccueil" Content="Annuler" Height="25" Margin="185,221,0,-6" HorizontalAlignment="Left" Width="54"></Button>
                 <Label Content="Adresse :" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top"/>
                 <TextBox Name="txtAdrFourni" HorizontalAlignment="Left" Height="20" Margin="68,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
                 <Label Content="Code postal :" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>

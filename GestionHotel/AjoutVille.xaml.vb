@@ -22,6 +22,7 @@
             bd.tblVille.Add(Ville)
             bd.SaveChanges()
             MessageBox.Show("La ville est ajouté", "Confirmation", MessageBoxButton.OK)
+            Me.Close()
         End If
     End Sub
 End Class

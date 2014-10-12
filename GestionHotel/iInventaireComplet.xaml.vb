@@ -71,7 +71,11 @@
     End Sub
 
     Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
-
+        Dim item = dgInventaireC.SelectedItem.codeItem
+        Dim iItem As New iAjouterItem(item)
+        iItem.Owner = Me
+        Me.Hide()
+        iItem.Show()
     End Sub
 
     Private Sub btnSupprimer_Click(sender As Object, e As RoutedEventArgs) Handles btnSupprimer.Click
@@ -88,5 +92,9 @@
         Else
             MessageBox.Show("Vous devez choisir l'item à supprimer")
         End If
+    End Sub
+
+    Private Sub window_invComp_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles window_invComp.Closing
+        Me.Owner.Show()
     End Sub
 End Class

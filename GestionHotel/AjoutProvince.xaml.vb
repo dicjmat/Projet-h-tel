@@ -22,6 +22,7 @@
             bd.tblProvince.Add(Province)
             bd.SaveChanges()
             MessageBox.Show("La province est ajouté", "Confirmation", MessageBoxButton.OK)
+            Me.Close()
         End If
     End Sub
 End Class

@@ -1,5 +1,17 @@
 ﻿Class iAjouterItem
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
+    Private _item As Object
+
+    Sub New()
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+    End Sub
+    Sub New(item As Object)
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+        _item = item
+    End Sub
+
     Private Sub Viewbox_Loaded(sender As Object, e As RoutedEventArgs)
         bd = New P2014_Equipe2_GestionHôtelièreEntities
         Me.Owner.Hide()

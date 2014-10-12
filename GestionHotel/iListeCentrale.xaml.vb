@@ -7,10 +7,7 @@
 
     Private Sub window_lstCentrale_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstCentrale.Loaded
         bd = New P2014_Equipe2_GestionHôtelièreEntities
-        Dim res = From Pa In bd.tblPays
-                  Select Pa
-
-        dgPays.ItemsSource = res.ToList
+        requete()
     End Sub
 
     Private Sub window_lstCentrale_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles window_lstCentrale.Closing
@@ -18,25 +15,11 @@
     End Sub
 
     Private Sub dgProvince_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgProvince.SelectionChanged
-        If dgProvince.SelectedIndex <> -1 Then
-            Dim province As String = dgProvince.SelectedItem.codeProv
-            Dim res = From Vi In bd.tblVille
-                      Where Vi.codeProv = province
-                      Select Vi
-
-            dgVille.ItemsSource = res.ToList
-        End If
+        requete()
     End Sub
 
     Private Sub dgPays_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgPays.SelectionChanged
-        If dgPays.SelectedIndex <> -1 Then
-            Dim pays As String = dgPays.SelectedItem.codePays
-            Dim res = From Pro In bd.tblProvince
-                      Where Pro.codePays = pays
-                      Select Pro
-
-            dgProvince.ItemsSource = res.ToList
-        End If
+        requete()
     End Sub
 
     Private Sub btnAjouterProv_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterProv.Click
@@ -63,5 +46,33 @@
         Dim pays = New AjoutPays
         pays.Owner = Me
         pays.ShowDialog()
+    End Sub
+
+    Private Sub window_lstCentrale_Activated(sender As Object, e As EventArgs) Handles window_lstCentrale.Activated
+        requete()
+    End Sub
+
+    Private Sub requete()
+        Dim res = From Pa In bd.tblPays
+          Select Pa
+
+        dgPays.ItemsSource = res.ToList
+
+        If dgProvince.SelectedIndex <> -1 Then
+            Dim province As String = dgProvince.SelectedItem.codeProv
+            Dim resVille = From Vi In bd.tblVille
+                      Where Vi.codeProv = province
+                      Select Vi
+
+            dgVille.ItemsSource = resVille.ToList
+        End If
+        If dgPays.SelectedIndex <> -1 Then
+            Dim pays As String = dgPays.SelectedItem.codePays
+            Dim resProv = From Pro In bd.tblProvince
+                      Where Pro.codePays = pays
+                      Select Pro
+
+            dgProvince.ItemsSource = resProv.ToList
+        End If
     End Sub
 End Class

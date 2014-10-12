@@ -13,6 +13,7 @@
             bd.tblPays.Add(Pays)
             bd.SaveChanges()
             MessageBox.Show("Le pays est ajouté", "Confirmation", MessageBoxButton.OK)
+            Me.Close()
         End If
     End Sub
 End Class
