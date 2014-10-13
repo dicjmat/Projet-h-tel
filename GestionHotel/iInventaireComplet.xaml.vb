@@ -71,11 +71,17 @@
     End Sub
 
     Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
-        Dim item = dgInventaireC.SelectedItem.codeItem
-        Dim iItem As New iAjouterItem(item)
-        iItem.Owner = Me
-        Me.Hide()
-        iItem.Show()
+        If dgInventaireC.SelectedIndex <> -1 Then
+            Dim item = dgInventaireC.SelectedItem.codeItem
+            Dim iItem As New iAjouterItem(item)
+            iItem.Owner = Me
+            Me.Hide()
+            iItem.Show()
+        Else
+            MessageBox.Show("Veuillez sélectionner un item")
+        End If
+
+
     End Sub
 
     Private Sub btnSupprimer_Click(sender As Object, e As RoutedEventArgs) Handles btnSupprimer.Click

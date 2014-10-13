@@ -44,10 +44,16 @@
     End Sub
 
     Private Sub btnModif_Click(sender As Object, e As RoutedEventArgs) Handles btnModif.Click
-        Dim numEmpl = dgEmploye.SelectedItem.noEmpl
-        Dim iEmploye As New iFicheEmploye(numEmpl)
-        iEmploye.Owner = Me
-        Me.Hide()
-        iEmploye.Show()
+        If dgEmploye.SelectedIndex <> -1 Then
+            Dim numEmpl = dgEmploye.SelectedItem.noEmpl
+            Dim iEmploye As New iFicheEmploye(numEmpl)
+            iEmploye.Owner = Me
+            Me.Hide()
+            iEmploye.Show()
+        Else
+            MessageBox.Show("Veuillez sélectionner un employé")
+        End If
+
+
     End Sub
 End Class

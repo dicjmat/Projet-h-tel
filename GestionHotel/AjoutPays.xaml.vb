@@ -14,6 +14,8 @@
             bd.SaveChanges()
             MessageBox.Show("Le pays est ajouté", "Confirmation", MessageBoxButton.OK)
             Me.Close()
+        Else
+            MessageBox.Show("Veuillez entrer le code et le nom du pays")
         End If
     End Sub
 End Class

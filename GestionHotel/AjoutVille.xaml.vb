@@ -23,6 +23,8 @@
             bd.SaveChanges()
             MessageBox.Show("La ville est ajouté", "Confirmation", MessageBoxButton.OK)
             Me.Close()
+        Else
+            MessageBox.Show("Veuillez entrer le code et le nom de la ville")
         End If
     End Sub
 End Class
