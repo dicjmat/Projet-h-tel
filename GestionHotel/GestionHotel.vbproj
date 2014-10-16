@@ -114,6 +114,9 @@
     <Compile Include="iCheckList.xaml.vb">
       <DependentUpon>iCheckList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iFaireReservation.xaml.vb">
+      <DependentUpon>iFaireReservation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iInventaireComplet.xaml.vb">
       <DependentUpon>iInventaireComplet.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,9 @@
     </Compile>
     <Compile Include="iListeClient.xaml.vb">
       <DependentUpon>iListeClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iListeClientReserv.xaml.vb">
+      <DependentUpon>iListeClientReserv.xaml</DependentUpon>
     </Compile>
     <Compile Include="iListeCOmmande.xaml.vb">
       <DependentUpon>iListeCOmmande.xaml</DependentUpon>
@@ -313,6 +319,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="iFaireReservation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iFicheClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -350,6 +360,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iListeClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iListeClientReserv.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,24 @@
+﻿<Window x:Class="iListeClientReserv" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" ResizeMode="NoResize" Background="CadetBlue" Name="window_ListCliReser"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="iListeClientReserv" Height="300" Width="300">
+    <Grid>
+        <Viewbox Stretch="Uniform">
+            <Grid Height="349" Width="362">
+                <Label Content="Rechercher :" Margin="0,0,264,318"></Label>
+                <TextBox Name="txtRechercher" Height="25" Width="120" Margin="84,2,144,318"></TextBox>
+                <GroupBox Header="Liste de clients" Margin="0,26,0,31" BorderBrush="Black">
+                    <DataGrid Name="dgListeCli" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="LoL"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Troll"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+                <Button Name="btnDeco" Content="Déconnexion" Height="25" Margin="0,316,10,4" HorizontalAlignment="Right" Width="101"></Button>
+                <Button Name="btnReserv" Content="Faire une réservation" Height="25" Margin="0,316,116,4" HorizontalAlignment="Right" Width="139"></Button>
+                <Button Name="btnNouvCli" Content="Nouveau Client" Height="25" Margin="-6,316,260,4" HorizontalAlignment="Right" Width="94"></Button>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Window>

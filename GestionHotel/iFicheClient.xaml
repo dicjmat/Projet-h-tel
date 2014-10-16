@@ -31,9 +31,9 @@
                             <ComboBox Name="cbTypeCarte" Margin="89,154,2,0" Background="White"></ComboBox>
                             <Label Content="Commentaire : " Margin="0,226,0,-76" HorizontalAlignment="Left" Width="196"></Label>
                             <TextBox Name="txtCommCli" Text="{Binding commentaire}" Margin="90,231,0,-123" Width="120" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True"/>
-                            <Label Content="Code expiration :" Margin="-2,176,2,-176"></Label>
+                            <Label Content="Code expiration :" Margin="-2,176,2,-76"></Label>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="00/00" Name="txtCodeExp" Text="{Binding dateExpiration}" Margin="103,181,2,-25" Height="20"></xctk:MaskedTextBox>
-                            <Label Content="Code de la ville :" Margin="-2,201,2,-201"></Label>
+                            <Label Content="Code de la ville :" Margin="-2,201,2,-76"></Label>
                             <ComboBox Name="cbCodeVille" Background="White" Margin="92,206,2,-50" Height="20"></ComboBox>
                         </Grid>
                     </StackPanel>
