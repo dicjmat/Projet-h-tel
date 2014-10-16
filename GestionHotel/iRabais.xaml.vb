@@ -4,4 +4,8 @@
         Me.Owner.Show()
         Me.Close()
     End Sub
+
+    Private Sub windowRabais_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles windowRabais.Closing
+        Me.Owner.Close()
+    End Sub
 End Class
