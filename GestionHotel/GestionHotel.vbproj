@@ -105,6 +105,9 @@
     <Compile Include="iAccueilVente.xaml.vb">
       <DependentUpon>iAccueilVente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iAjoutClient.xaml.vb">
+      <DependentUpon>iAjoutClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iAjoutForf.xaml.vb">
       <DependentUpon>iAjoutForf.xaml</DependentUpon>
     </Compile>
@@ -146,6 +149,9 @@
     </Compile>
     <Compile Include="iRabais.xaml.vb">
       <DependentUpon>iRabais.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListeForfait.xaml.vb">
+      <DependentUpon>ListeForfait.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model1.vb">
       <AutoGen>True</AutoGen>
@@ -278,6 +284,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="iAjoutClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iAjouterHoraire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -388,6 +398,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iRabais.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListeForfait.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

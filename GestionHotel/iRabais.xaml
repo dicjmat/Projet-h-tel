@@ -5,22 +5,27 @@
     Title="iRabais" Height="300" Width="567.785">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="230" Width="437">
+            <Grid Height="309" Width="587">
                 <Label Content="Gestion des rabais" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
                 <GroupBox Header="Rabais" BorderBrush="Black" Margin="0,26,0,40">
-                    <Grid Margin="68,0,0,0.2">
-                        <Label Content="Taux du rabais :"></Label>
-                        <xctk:MaskedTextBox  PromptChar=" " Mask="09%" Height="20" Margin="92,5,146.8,118" RenderTransformOrigin="0.581,0.486"/>
-                        <Label Content="Code du type de chambre :" Margin="0,30,0,-29.8"></Label>
-                        <ComboBox Name="cbTypeChambre" Height="25" Margin="152,33,95.8,85"></ComboBox>
-                        <Label Content="État du rabais :" Margin="0,63,0,-63"></Label>
-                        <CheckBox Margin="92,69,204,51">Actif</CheckBox>
+                    <Grid Margin="0,0,-2.6,-0.2">
+                        <Label Content="Taux du rabais :" Margin="1,0,414,182"></Label>
+                        <xctk:MaskedTextBox  PromptChar=" " Mask="09%" Height="20" Margin="99,3,414,198" RenderTransformOrigin="0.581,0.486"/>
+                        <Label Content="Code du type de chambre :" Margin="1,30,345,163"></Label>
+                        <ComboBox Name="cbTypeChambre" Height="25" Margin="154,30,354,166"></ComboBox>
+                        <Label Content="État du rabais :" Margin="1,63,414,124"></Label>
+                        <CheckBox Margin="93,69,354,113">Actif</CheckBox>
+                        <DataGrid Name="dgRabais" Margin="228,0,0,26">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="rabais"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </Grid>
                 </GroupBox>
                 <Button Name="btndeco" Content="Déconnexion" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,10"></Button>
-                <Button Name="AjoutRab" Content="Ajouter un rabais" Height="25" Margin="5,195,330,10"></Button>
-                <Button Name="ModifcRab" Content="Modifier un rabais" Height="25" Margin="112,195,213,10"></Button>
-                <Button Name="SuppRab" Content="Supprimer un rabais" Height="25" Margin="229,195,86,10"></Button>
+                <Button Name="AjoutRab" Content="Ajouter un rabais" Height="25" Margin="110,239,323,45"></Button>
+                <Button Name="ModifcRab" Content="Modifier un rabais" Height="25" Margin="269,239,164,45"></Button>
+                <Button Name="SuppRab" Content="Supprimer un rabais" Height="25" Margin="428,239,5,45"></Button>
             </Grid>
         </Viewbox>
     </Grid>
