@@ -6,27 +6,45 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="374" Width="554">
-                <GroupBox Header="Réservation" BorderBrush="Black" Margin="10,0,0,0" Height="306" VerticalAlignment="Top">
-                    <Grid>
-                        <Label Content="No de salle :"></Label>
-                        <Label Content="No de chambre :"></Label>
-                        <TextBox Name="txtIDReserv" Height="20" Margin="99,4,311.2,259.2"></TextBox>
-                        <Label Content="Date de début :" Margin="0,33,-0.8,167.2"></Label>
-                        <DatePicker Name="dpDateDebut" Height="25" Margin="91,35,282.2,223.2"></DatePicker>
-                        <Label Content="Date de fin :" Margin="0,72,-0.8,128.2"></Label>
-                        <DatePicker Name="dpDateFin" Height="25" Margin="91,76,282.2,182.2"></DatePicker>
-                        <Label Content="Date de création de réservation :" Margin="0,111,-0.8,89.2"></Label>
-                        <DatePicker Name="dpDateCreation" Height="25" Margin="182,114,187.2,144.2"></DatePicker>
-                        <Label Content="Commentaire :" Margin="0,150,-0.8,46.2"></Label>
-                        <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="91,150,187.2,3.2"></TextBox>
-                        <RadioButton Content="Réservation de chambre" Margin="367,37,.2,227.2" RenderTransformOrigin="0.5,0.5">
-                        </RadioButton>
-                        <RadioButton Content="Réservation de salle" Margin="367,4,30.2,252.2"></RadioButton>
+                <GroupBox Header="Client" BorderBrush="Black" Margin="0,0,283,0" Height="366" VerticalAlignment="Top">
+                    <Grid Height="387" Margin="0,0,-0.4,0" VerticalAlignment="Top">
+                        <Label Content="Nom :" Margin="0,0,2,348"></Label>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="???????????????????????????????????????????????????????????" Name="txtnomCli" Height="20" Margin="60,4,0,363"></xctk:MaskedTextBox>
+                        <Label Content="Prénom :" Margin="0,30,0,315"></Label>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="???????????????????????????????????????????????????????????" Name="txtPrenCli" Height="20" Margin="60,35,0,332"></xctk:MaskedTextBox>
+                        <Label Content="No téléphone :" Margin="0,60,0,240"></Label>
+                        <xctk:MaskedTextBox Name="txtnotel" PromptChar=" " Mask="(000) 000-0000" Height="20" Margin="96,65,63,302"></xctk:MaskedTextBox>
+                        <Label Content="No Céllulaire :" Margin="0,90,0,240"></Label>
+                        <xctk:MaskedTextBox Name="txtnocell" PromptChar=" " Mask="(000) 000-0000" Height="20" Margin="96,95,63,272"></xctk:MaskedTextBox>
+                        <Label Content="Adresse :" Margin="0,120,0,200"></Label>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrCli" Height="20" Margin="60,124,2,243"></xctk:MaskedTextBox>
+                        <Label Content="NoCarte de crédit :" Margin="0,150,0,182"></Label>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="0000000000000009" Name="txtNoCarte" Height="20" Margin="111,155,0,212"></xctk:MaskedTextBox>
+                        <Label Content="Type de carte :" Margin="0,180,-9,161"></Label>
+                        <ComboBox Name="cbTypeCarte" Height="20" Background="White" Margin="96,184,0,183"></ComboBox>
+                        <Label Content="Code d'expiration :" Margin="0,210,-9,142"></Label>
+                        <xctk:MaskedTextBox Name="txtCodeExp" Height="20" PromptChar=" " Mask="00/00" Margin="111,212,85,155"></xctk:MaskedTextBox>
+                        <Label Content="Code de la ville :" Margin="0,240,0,103"></Label>
+                        <ComboBox Name="cbCodeVille" Height="20" Background="White" Margin="96,245,85,122"></ComboBox>
+                        <Label Content="Commentaire :" Margin="0,270,0,58"></Label>
+                        <TextBox Name="txtCommCli" TextWrapping="Wrap" AcceptsReturn="True" Margin="90,270,2,45"></TextBox>
                     </Grid>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" Height="40" Margin="411,324,0,0" VerticalAlignment="Top"></Button>
-                <Button Name="btnReserv" Content="Faire la réservation" Height="40" Margin="263,324,148,0" VerticalAlignment="Top"></Button>
-
+                <GroupBox Header="Réservation" BorderBrush="Black" Margin="276,0,0,0" Height="249" VerticalAlignment="Top">
+                    <Grid>
+                        <Label Content="Date de début :" Margin="0,0,-0.4,200.4"></Label>
+                        <DatePicker Name="dpDateDebut" Height="25" Margin="91,1,20.6,200.4"></DatePicker>
+                        <Label Content="Date de fin :" Margin="0,39,-0.4,161.4"></Label>
+                        <DatePicker Name="dpDateFin" Height="25" Margin="91,40,20.6,161.4"></DatePicker>
+                        <Label Content="Date de création de réservation :" Margin="0,78,-0.4,122.4"></Label>
+                        <DatePicker Name="dpDateCreation" Height="25" Margin="182,78,0.6,123.4"></DatePicker>
+                        <Label Content="Commentaire :" Margin="0,117,-0.4,79.4"></Label>
+                        <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="91,117,0.6,10.4"></TextBox>
+                    </Grid>
+                </GroupBox>
+                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="342,314,69,0" VerticalAlignment="Top"></Button>
+                <Button Name="btnReserv" Content="Faire la réservation" Height="25" Margin="342,284,69,0" VerticalAlignment="Top"></Button>
+                <Button Name="btnAjoutCli" Content="Ajouter le client" Height="25" Margin="342,254,69,0" VerticalAlignment="Top"></Button>
             </Grid>
         </Viewbox>
     </Grid>
