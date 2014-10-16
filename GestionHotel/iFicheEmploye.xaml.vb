@@ -48,28 +48,63 @@
                 i = i + 1
             Next
         End If
-
     End Sub
     Private Sub btnCreer_Click(sender As Object, e As RoutedEventArgs)
         Dim Employe = New tblEmploye()
-        Employe.nomEmpl = txtNomEmp.Text
-        Employe.prenEmpl = txtPrenomEmp.Text
-        Employe.noTelEmpl = txtTellEmp.Text
-        Employe.noCellEmpl = txtCellEmp.Text
-        Employe.adrEmpl = txtAdrEmp.Text
-        Employe.NAS = txtNASEmp.Text
-        Employe.dateEmbauche = DPEmbaucheEmp.Text
-        Employe.hrtravail = txtHrsEmp.Text
-        Employe.salaire = txtSalaireEmp.Text
-        Employe.joursVac = txtVacEmp.Text
-        Employe.joursFerie = txtFerieEmp.Text
-        Employe.joursMal = txtMaladieEmp.Text
-        Employe.codeVille = cmbCdVille.SelectedItem.codeVille
-        Employe.codeProf = cmbCdProf.SelectedItem.codeProf
-        Employe.noHotel = cmbNoHot.SelectedItem.noHotel
-        bd.tblEmploye.Add(Employe)
-        bd.SaveChanges()
-        MessageBox.Show("L'employé a été créé avec succès.")
+        If txtNomEmp.Text = "" Or txtPrenomEmp.Text = "" Or txtTellEmp.Text = "" Or txtAdrEmp.Text = "" Or txtNASEmp.Text = "" Or txtSalaireEmp.Text = "" Then
+            Employe.nomEmpl = txtNomEmp.Text
+            Employe.prenEmpl = txtPrenomEmp.Text
+            Employe.noTelEmpl = txtTellEmp.Text
+
+            If txtCellEmp.Text <> "" Then
+                Employe.noCellEmpl = txtCellEmp.Text
+            End If
+
+            Employe.adrEmpl = txtAdrEmp.Text
+            Employe.NAS = txtNASEmp.Text
+            Employe.dateEmbauche = DPEmbaucheEmp.Text
+
+            If txtHrsEmp.Text <> "" Then
+                Employe.hrtravail = txtHrsEmp.Text
+            End If
+
+            If txtVacEmp.Text <> "" Then
+                Employe.joursVac = txtVacEmp.Text
+            End If
+
+            If txtFerieEmp.Text <> "" Then
+                Employe.joursFerie = txtFerieEmp.Text
+            End If
+
+            If txtMaladieEmp.Text <> "" Then
+                Employe.joursMal = txtMaladieEmp.Text
+            End If
+
+            Employe.salaire = txtSalaireEmp.Text
+            If cmbCdVille.SelectedIndex <> -1 Then
+                Employe.codeVille = cmbCdVille.SelectedItem.codeVille
+                If cmbCdProf.SelectedIndex <> -1 Then
+                    Employe.codeProf = cmbCdProf.SelectedItem.codeProf
+                    If cmbNoHot.SelectedIndex <> -1 Then
+                        Employe.noHotel = cmbNoHot.SelectedItem.noHotel
+                        bd.tblEmploye.Add(Employe)
+                        bd.SaveChanges()
+                    Else
+                        MessageBox.Show("Veuillez choisir un hôtel")
+                    End If
+
+                Else
+                    MessageBox.Show("Veuillez choisir une profession")
+                End If
+            Else
+                MessageBox.Show("Veuillez choisir une ville")
+            End If
+            MessageBox.Show("L'employé a été créé avec succès.")
+        Else
+            MessageBox.Show("Un des champs obligatoires n'a pas été rempli")
+        End If
+
+
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)

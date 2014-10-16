@@ -25,17 +25,11 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Focusable = False
         Me.Close()
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
-        If Me.Focusable Then
-            Me.Owner.Close()
-        Else
-            Me.Owner.Show()
-        End If
-
+        Me.Owner.Show()
     End Sub
 
     Private Sub txtNoEmp_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtNoEmp.TextChanged
@@ -50,12 +44,14 @@
     End Sub
 
     Private Sub btnModifEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnModifEmp.Click
-        If lstEmploye.SelectedItem IsNot Nothing Then
+        If lstEmploye.SelectedIndex <> -1 Then
             Dim numEmpl = lstEmploye.SelectedItem.noEmpl
             Dim iEmploye As New iFicheEmploye(numEmpl)
             iEmploye.Owner = Me
             Me.Hide()
             iEmploye.Show()
+        Else
+            MessageBox.Show("Veuillez sélectionner un employé")
         End If
     End Sub
 

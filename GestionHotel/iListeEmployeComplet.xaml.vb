@@ -53,7 +53,9 @@
         Else
             MessageBox.Show("Veuillez sélectionner un employé")
         End If
+    End Sub
 
-
+    Private Sub window_lstEmployeComplet_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles window_lstEmployeComplet.Closing
+        Me.Owner.Show()
     End Sub
 End Class

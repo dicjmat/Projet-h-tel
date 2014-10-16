@@ -26,7 +26,7 @@
         'Where txtCodeItem.Text = item.codeItem And 
         'Select prix
         Dim pareil As Boolean = False
-        If dgCommande.SelectedItem IsNot Nothing Then
+        If dgCommande.SelectedIndex <> -1 Then
             For Each el In lstCommande
                 If el.codeItem = dgCommande.SelectedItem.codeItem And el.tblCommande.noFournisseur = dgCommande.SelectedItem.noFournisseur Then
                     pareil = True
@@ -116,10 +116,11 @@
 
     Private Sub btnFaireComm_Click(sender As Object, e As RoutedEventArgs) Handles btnFaireComm.Click
         Dim commande = New tblCommande
-        If lstAffichage IsNot Nothing Then
+        If lstViewCommande.ItemsSource IsNot Nothing Then
             commande.dateCommande = Date.Today
             commande.prixCommande = prixTotal
             commande.etatCommande = "NL"
+            commande.noFournisseur = dgCommande.SelectedItem.noFournisseur
             commande.noEmpl = _noEmpl
             For Each el In lstCommande
                 commande.tblLigneCommande.Add(el)
