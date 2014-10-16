@@ -502,5 +502,8 @@
   <ItemGroup>
     <Resource Include="header11.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
