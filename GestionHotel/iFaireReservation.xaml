@@ -2,49 +2,31 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
-    Title="iFaireReservation" Height="267.467" Width="399.2">
+    Title="iFaireReservation" Height="267.467" Width="241.6">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="374" Width="554">
-                <GroupBox Header="Client" BorderBrush="Black" Margin="0,0,283,0" Height="366" VerticalAlignment="Top">
-                    <Grid Height="387" Margin="0,0,-0.4,0" VerticalAlignment="Top">
-                        <Label Content="Nom :" Margin="0,0,2,348"></Label>
-                        <xctk:MaskedTextBox PromptChar=" " Mask="???????????????????????????????????????????????????????????" Name="txtnomCli" Height="20" Margin="60,4,0,363"></xctk:MaskedTextBox>
-                        <Label Content="Prénom :" Margin="0,30,0,315"></Label>
-                        <xctk:MaskedTextBox PromptChar=" " Mask="???????????????????????????????????????????????????????????" Name="txtPrenCli" Height="20" Margin="60,35,0,332"></xctk:MaskedTextBox>
-                        <Label Content="No téléphone :" Margin="0,60,0,240"></Label>
-                        <xctk:MaskedTextBox Name="txtnotel" PromptChar=" " Mask="(000) 000-0000" Height="20" Margin="96,65,63,302"></xctk:MaskedTextBox>
-                        <Label Content="No Céllulaire :" Margin="0,90,0,240"></Label>
-                        <xctk:MaskedTextBox Name="txtnocell" PromptChar=" " Mask="(000) 000-0000" Height="20" Margin="96,95,63,272"></xctk:MaskedTextBox>
-                        <Label Content="Adresse :" Margin="0,120,0,200"></Label>
-                        <xctk:MaskedTextBox PromptChar=" " Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrCli" Height="20" Margin="60,124,2,243"></xctk:MaskedTextBox>
-                        <Label Content="NoCarte de crédit :" Margin="0,150,0,182"></Label>
-                        <xctk:MaskedTextBox PromptChar=" " Mask="0000000000000009" Name="txtNoCarte" Height="20" Margin="111,155,0,212"></xctk:MaskedTextBox>
-                        <Label Content="Type de carte :" Margin="0,180,-9,161"></Label>
-                        <ComboBox Name="cbTypeCarte" Height="20" Background="White" Margin="96,184,0,183"></ComboBox>
-                        <Label Content="Code d'expiration :" Margin="0,210,-9,142"></Label>
-                        <xctk:MaskedTextBox Name="txtCodeExp" Height="20" PromptChar=" " Mask="00/00" Margin="111,212,85,155"></xctk:MaskedTextBox>
-                        <Label Content="Code de la ville :" Margin="0,240,0,103"></Label>
-                        <ComboBox Name="cbCodeVille" Height="20" Background="White" Margin="96,245,85,122"></ComboBox>
-                        <Label Content="Commentaire :" Margin="0,270,0,58"></Label>
-                        <TextBox Name="txtCommCli" TextWrapping="Wrap" AcceptsReturn="True" Margin="90,270,2,45"></TextBox>
-                    </Grid>
-                </GroupBox>
-                <GroupBox Header="Réservation" BorderBrush="Black" Margin="276,0,0,0" Height="249" VerticalAlignment="Top">
+            <Grid Height="374" Width="341">
+                <GroupBox Header="Réservation" BorderBrush="Black" Margin="10,0" Height="334" VerticalAlignment="Top">
                     <Grid>
-                        <Label Content="Date de début :" Margin="0,0,-0.4,200.4"></Label>
-                        <DatePicker Name="dpDateDebut" Height="25" Margin="91,1,20.6,200.4"></DatePicker>
-                        <Label Content="Date de fin :" Margin="0,39,-0.4,161.4"></Label>
-                        <DatePicker Name="dpDateFin" Height="25" Margin="91,40,20.6,161.4"></DatePicker>
-                        <Label Content="Date de création de réservation :" Margin="0,78,-0.4,122.4"></Label>
-                        <DatePicker Name="dpDateCreation" Height="25" Margin="182,78,0.6,123.4"></DatePicker>
-                        <Label Content="Commentaire :" Margin="0,117,-0.4,79.4"></Label>
-                        <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="91,117,0.6,10.4"></TextBox>
+                        <RadioButton Content="Réserver une salle" Margin="0,0,188.8,251.8"></RadioButton>
+                        <RadioButton Content="Réserver une chambre" Margin="158,0,9.8,251.8"></RadioButton>
+                        <TextBox Name="txtID" Height="20" Margin="100,24,123.8,268"></TextBox>
+                        <Label Content="Type de chambre :" Margin="-1,53,188.8,234"></Label>
+                        <ComboBox Name="cbTypeChambre" Height="20" Background="White" Margin="107,58,121.8,234"></ComboBox>
+                        <Label Content="No de chambre :" Margin="-1,21,207.8,252"></Label>
+                        <Label Content="No de salle :" Margin="0,21,206.8,252"></Label>
+                        <Label Content="Date de début :" Margin="-1,89,207.8,189"></Label>
+                        <DatePicker Name="dpDateDebut" Height="25" Margin="91,70,20.8,177.8"></DatePicker>
+                        <Label Content="Date de fin :" Margin="-1,128,223.8,150"></Label>
+                        <DatePicker Name="dpDateFin" Height="25" Margin="90,109,20.8,138.8"></DatePicker>
+                        <Label Content="Date de création de réservation :" Margin="-1,167,121.8,111"></Label>
+                        <DatePicker Name="dpDateCreation" Height="25" Margin="182,148,0.8,99.8"></DatePicker>
+                        <Label Content="Commentaire :" Margin="0,201,216.8,75"></Label>
+                        <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="91,206,0.8,11"></TextBox>
                     </Grid>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="342,314,69,0" VerticalAlignment="Top"></Button>
-                <Button Name="btnReserv" Content="Faire la réservation" Height="25" Margin="342,284,69,0" VerticalAlignment="Top"></Button>
-                <Button Name="btnAjoutCli" Content="Ajouter le client" Height="25" Margin="342,254,69,0" VerticalAlignment="Top"></Button>
+                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="226,339,10,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                <Button Name="btnReserv" Content="Faire la réservation" Height="25" Margin="88,339,125,0" VerticalAlignment="Top"></Button>
             </Grid>
         </Viewbox>
     </Grid>

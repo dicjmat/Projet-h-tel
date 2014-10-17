@@ -105,6 +105,9 @@
     <Compile Include="iAccueilVente.xaml.vb">
       <DependentUpon>iAccueilVente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iAjoutCliReserv.xaml.vb">
+      <DependentUpon>iAjoutCliReserv.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iAjoutForf.xaml.vb">
       <DependentUpon>iAjoutForf.xaml</DependentUpon>
     </Compile>
@@ -278,6 +281,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iAccueilVente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iAjoutCliReserv.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
