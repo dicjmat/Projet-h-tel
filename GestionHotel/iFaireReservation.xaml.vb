@@ -5,7 +5,7 @@
         bd = New P2014_Equipe2_GestionHôtelièreEntities
     End Sub
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
-
+        If 
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click

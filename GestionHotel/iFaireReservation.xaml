@@ -8,8 +8,8 @@
             <Grid Height="374" Width="341">
                 <GroupBox Header="Réservation" BorderBrush="Black" Margin="10,0" Height="334" VerticalAlignment="Top">
                     <Grid>
-                        <RadioButton Content="Réserver une salle" Margin="0,0,188.8,251.8"></RadioButton>
-                        <RadioButton Content="Réserver une chambre" Margin="158,0,9.8,251.8"></RadioButton>
+                        <RadioButton x:Name="rdSalle" Content="Réserver une salle" Margin="0,0,188.8,251.8"></RadioButton>
+                        <RadioButton x:Name="rdChambre" Content="Réserver une chambre" Margin="158,0,9.8,251.8"></RadioButton>
                         <TextBox Name="txtID" Height="20" Margin="100,24,123.8,268"></TextBox>
                         <Label Content="Type de chambre :" Margin="-1,53,188.8,234"></Label>
                         <ComboBox Name="cbTypeChambre" Height="20" Background="White" Margin="107,58,121.8,234"></ComboBox>
