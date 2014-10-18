@@ -13,8 +13,8 @@
                         <TextBox Name="txtID" Height="20" Margin="100,24,123.8,268"></TextBox>
                         <Label Content="Type de chambre :" Margin="-1,53,188.8,234"></Label>
                         <ComboBox Name="cbTypeChambre" Height="20" Background="White" Margin="107,58,121.8,234"></ComboBox>
-                        <Label Content="No de chambre :" Margin="-1,21,207.8,252"></Label>
-                        <Label Content="No de salle :" Margin="0,21,206.8,252"></Label>
+                        <Label x:Name="lblChambre" Content="No de chambre :" Margin="-1,21,207.8,252"></Label>
+                        <Label x:Name="lblSalle" Content="No de salle :" Margin="0,21,216.8,252"></Label>
                         <Label Content="Date de début :" Margin="-1,89,207.8,189"></Label>
                         <DatePicker Name="dpDateDebut" Height="25" Margin="91,70,20.8,177.8"></DatePicker>
                         <Label Content="Date de fin :" Margin="-1,128,223.8,150"></Label>

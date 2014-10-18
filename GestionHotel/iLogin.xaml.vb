@@ -4,6 +4,7 @@
     Dim gerant As iAccueilGerant
     Dim gestion As iAccueilGestionnaire
     Dim gestionPatr As iGestionCentrale
+    Dim reserv As iFaireReservation
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click
         Me.Close()
     End Sub
@@ -55,6 +56,10 @@
                 gestionPatr = New iGestionCentrale()
                 gestionPatr.Owner = Me
                 gestionPatr.Show()
+            Case "RECE"
+                reserv = New iFaireReservation
+                reserv.Owner = Me
+                reserv.Show()
             Case Else
         End Select
         Me.Hide()
