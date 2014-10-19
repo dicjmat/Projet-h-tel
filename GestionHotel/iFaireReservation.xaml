@@ -38,7 +38,7 @@
                         </ComboBox>
                     </Grid>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="226,339,10,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+                <Button Name="btnAccueil" Content="Retour" Height="25" Margin="226,339,10,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
                 <Button Name="btnReserv" Content="Faire la réservation" Margin="88,339,125,10"/>
             </Grid>
         </Viewbox>
