@@ -8,9 +8,16 @@
             <Grid Height="374" Width="341">
                 <GroupBox Header="Réservation d'une chambre" BorderBrush="Black" Margin="10,0" Height="334" VerticalAlignment="Top">
                     <Grid>
-                        <TextBox Name="txtID" Height="20" Margin="100,24,123.8,268"></TextBox>
                         <Label Content="Type de chambre :" Margin="-1,53,188.8,234"></Label>
-                        <ComboBox Name="cbTypeChambre" Height="20" Background="White" Margin="107,58,121.8,234"></ComboBox>
+                        <ComboBox ItemsSource="{Binding}" Name="cbTypeChambre" Height="20" Background="White" Margin="107,58,121.8,234">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Label Content="{Binding nomTypeChambre}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                         <Label x:Name="lblChambre" Content="No de chambre :" Margin="-1,21,207.8,252"></Label>
                         <Label Content="Date de début :" Margin="-1,89,207.8,189"></Label>
                         <DatePicker Name="dpDateDebut" Height="25" Margin="91,70,20.8,177.8"></DatePicker>
@@ -20,6 +27,15 @@
                         <DatePicker Name="dpDateCreation" Height="25" Margin="182,148,0.8,99.8"></DatePicker>
                         <Label Content="Commentaire :" Margin="0,201,216.8,75"></Label>
                         <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="91,206,0.8,11"></TextBox>
+                        <ComboBox ItemsSource="{Binding}" x:Name="cbNoChambre" HorizontalAlignment="Left" Margin="107,26,0,0" VerticalAlignment="Top" Width="80">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Label Content="{Binding noChambre}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </Grid>
                 </GroupBox>
                 <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="226,339,10,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>

@@ -10,8 +10,14 @@
                 <GroupBox Header="Liste de clients" Margin="0,26,0,31" BorderBrush="Black">
                     <DataGrid Name="dgListeCli" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="LoL"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Troll"></DataGridTextColumn>
+                            <DataGridTextColumn Header="NomClient"></DataGridTextColumn>
+                            <DataGridTextColumn Header="PrénomClient"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TelClient"></DataGridTextColumn>
+                            <DataGridTextColumn Header="NoChambre"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TypeChambre"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DateDébutSéjour"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DateFinSéjour"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Statut"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
