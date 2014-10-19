@@ -1,46 +1,46 @@
 ﻿Public Class iFaireReservation
+    Private noEmpl As Short
+    Private noHotel As Short
+    Dim typeChambre As String
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
-
+    Sub New(p1 As Short, p2 As Short)
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+        noEmpl = p1
+        noHotel = p2
+    End Sub
     Private Sub window_FaireReserv_Loaded(sender As Object, e As RoutedEventArgs) Handles window_FaireReserv.Loaded
         bd = New P2014_Equipe2_GestionHôtelièreEntities
-        lblChambre.Visibility = System.Windows.Visibility.Hidden
-        lblSalle.Visibility = System.Windows.Visibility.Hidden
-        txtID.IsEnabled = False
 
-    End Sub
-    Sub Main()
-        If rdSalle.IsChecked = True Then
-            lblSalle.Visibility = System.Windows.Visibility.Visible
-            txtID.IsEnabled = True
-        ElseIf rdChambre.IsChecked = True Then
-            lblChambre.Visibility = System.Windows.Visibility.Visible
-            txtID.IsEnabled = True
-        End If
-
-    End Sub
-    Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
-        If rdSalle.IsChecked = True Then
-            Dim salle As New tblReservationSalle
-
-            bd.tblReservationSalle.Add(salle)
-            bd.SaveChanges()
-            MessageBox.Show("La réservation a été créé avec succès.")
-
-        ElseIf rdChambre.IsChecked = True Then
-            Dim chambre As New tblReservationChambre
-
-            bd.tblReservationChambre.Add(chambre)
-            bd.SaveChanges()
-            MessageBox.Show("La réservation a été créé avec succès.")
-
-        Else
-            MessageBox.Show("Il vous manque des informations pour votre réservation")
-        End If
-
-
+        Dim res = From el In bd.tblTypeChambre Select el
+        cbTypeChambre.DataContext = res.ToList()
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
+        Dim chambre As New tblReservationChambre
+        chambre.dateDebutSejour = dpDateDebut.SelectedDate
+        chambre.dateFinSejour = dpDateFin.SelectedDate
+        chambre.dateReserv = dpDateCreation.SelectedDate
+        chambre.commentaire = txtCommReser.Text
+        chambre.noChambre = cbNoChambre.SelectedItem
+        chambre.noEmpl = noEmpl
+        chambre.noHotel = noHotel
+
+
+        bd.tblReservationChambre.Add(chambre)
+        bd.SaveChanges()
+        MessageBox.Show("La réservation de la chambre a été fait avec succès.")
+    End Sub
+
+    Private Sub cbTypeChambre_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbTypeChambre.SelectionChanged
+
+        typeChambre = cbTypeChambre.SelectedItem.ToString
+
+        Dim res2 = From le In bd.tblChambre Where noHotel = le.noHotel And le.codeTypeChambre = typeChambre Select le
+        cbNoChambre.DataContext = res2.ToList()
     End Sub
 End Class

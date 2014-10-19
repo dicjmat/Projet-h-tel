@@ -4,14 +4,20 @@
     Title="iListeClientReserv" Height="300" Width="300">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="349" Width="362">
+            <Grid Height="349" Width="362" Loaded="Grid_Loaded">
                 <Label Content="Rechercher :" Margin="0,0,264,318"></Label>
                 <TextBox Name="txtRechercher" Height="25" Width="120" Margin="84,2,144,318"></TextBox>
                 <GroupBox Header="Liste de clients" Margin="0,26,0,31" BorderBrush="Black">
                     <DataGrid Name="dgListeCli" AutoGenerateColumns="False">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="LoL"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Troll"></DataGridTextColumn>
+                            <DataGridTextColumn Header="NomClient" Binding="{Binding nomClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="PrénomClient" Binding="{Binding prenomClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TelClient" Binding="{Binding noTelClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="NoChambre" Binding="{Binding noChambre}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="TypeChambre" Binding="{Binding nomTypeChambre}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DateDébutSéjour" Binding="{Binding dateDebutSejour}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="DateFinSéjour" Binding="{Binding dateFinSejour}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Statut"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
