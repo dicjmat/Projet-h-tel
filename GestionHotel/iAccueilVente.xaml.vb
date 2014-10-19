@@ -1,4 +1,13 @@
 ﻿Public Class iAccueilVente
+
+    Private hotel As Short
+
+    Sub New(nHotel As Short)
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+        hotel = nHotel
+    End Sub
+
     Private Sub AppuieForfait()
         Dim Forfait = New iAjoutForf
         Forfait.Owner = Me
@@ -10,7 +19,7 @@
         Me.Close()
     End Sub
     Private Sub AppuieRabais()
-        Dim Rabais = New iRabais
+        Dim Rabais = New iRabais(hotel)
         Rabais.Owner = Me
         Rabais.Show()
     End Sub

@@ -8,10 +8,10 @@
     Private Sub btnConfirmer_Click(sender As Object, e As RoutedEventArgs) Handles btnConfirmer.Click
         Dim fournisseur = New tblFournisseur
         fournisseur.nomFournisseur = txtNomFourni.Text
-        'fournisseur.adrFournisseur = txtAdrFourni.Text
-        'fournisseur.CPFournisseur = txtcodePostFourni.Text
-        'fournisseur.noTelFournisseur = txtnoTelFourni.Text
-        'fournisseur.resFournisseur = txtRespFourni.Text
+        fournisseur.adrFournisseur = txtAdrFourni.Text
+        fournisseur.CPFournisseur = txtcodePostFourni.Text
+        fournisseur.noTelFournisseur = txtnoTelFourni.Text
+        fournisseur.respFournisseur = txtRespFourni.Text
         maBd.tblFournisseur.Add(fournisseur)
     End Sub
 

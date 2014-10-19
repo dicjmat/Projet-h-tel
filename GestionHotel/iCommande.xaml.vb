@@ -27,8 +27,8 @@
         'Select prix
         Dim pareil As Boolean = False
         If dgCommande.SelectedIndex <> -1 Then
-            For Each el In lstCommande
-                If el.codeItem = dgCommande.SelectedItem.codeItem And el.tblCommande.noFournisseur = dgCommande.SelectedItem.noFournisseur Then
+            For Each el In lstAffichage
+                If el.codeItem = dgCommande.SelectedItem.codeItem And el.noFournisseur = dgCommande.SelectedItem.noFournisseur Then
                     pareil = True
                 End If
             Next

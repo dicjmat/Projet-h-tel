@@ -10,14 +10,26 @@
                 <GroupBox Header="Rabais" BorderBrush="Black" Margin="0,26,0,40">
                     <Grid Margin="0,0,-2.6,-0.2">
                         <Label Content="Taux du rabais :" Margin="1,0,414,182"></Label>
-                        <xctk:MaskedTextBox  PromptChar=" " Mask="09%" Height="20" Margin="99,3,414,198" RenderTransformOrigin="0.581,0.486"/>
+                        <xctk:IntegerUpDown DefaultValue="1" Name="numTaux" Height="20" Margin="99,0,429,198" RenderTransformOrigin="0.581,0.486" Minimum="1" Maximum="100" VerticalAlignment="Bottom"/>
+                        <Label Content="%" Margin="154,0,390.8,182"></Label>
                         <Label Content="Code du type de chambre :" Margin="1,30,345,163"></Label>
-                        <ComboBox Name="cbTypeChambre" Height="25" Margin="154,30,354,166"></ComboBox>
+                        <ComboBox Name="cbTypeChambre" ItemsSource="{Binding}" Height="25" Margin="154,30,354,166">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Label x:Name="lblTypeChambre" Content="{Binding nomTypeChambre}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                         <Label Content="État du rabais :" Margin="1,63,414,124"></Label>
-                        <CheckBox Margin="93,69,354,113">Actif</CheckBox>
-                        <DataGrid Name="dgRabais" Margin="228,0,0,26">
+                        <CheckBox Name="chkActif" Margin="93,69,354,113">Actif</CheckBox>
+                        <DataGrid Name="dgRabais" Margin="228,0,0,26" AutoGenerateColumns="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="rabais"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Numéro" Binding="{Binding noRabais}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeChambre}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Taux" Binding="{Binding tauxRabais}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="État" Binding="{Binding etatRabais}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>

@@ -5,6 +5,7 @@
     Dim gestion As iAccueilGestionnaire
     Dim gestionPatr As iGestionCentrale
     Dim reserv As iFaireReservation
+    Dim vente As iAccueilVente
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click
         Me.Close()
     End Sub
@@ -60,7 +61,13 @@
                 reserv = New iFaireReservation
                 reserv.Owner = Me
                 reserv.Show()
+            Case "VEND"
+                vente = New iAccueilVente(nHotel)
+                vente.Owner = Me
+                vente.Show()
             Case Else
+                lblErreur.Content = "Vous n'avez pas accès au système"
+                Exit Sub
         End Select
         Me.Hide()
     End Sub
