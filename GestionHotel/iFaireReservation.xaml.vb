@@ -1,7 +1,7 @@
 ﻿Public Class iFaireReservation
     Private noEmpl As Short
     Private noHotel As Short
-    Dim typeChambre As Char
+    Dim typeChambre As String
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Sub New(p1 As Short, p2 As Short)
         ' TODO: Complete member initialization 
@@ -38,7 +38,7 @@
 
     Private Sub cbTypeChambre_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbTypeChambre.SelectionChanged
 
-        typeChambre = cbTypeChambre.SelectedItem
+        typeChambre = cbTypeChambre.SelectedItem.ToString
 
         Dim res2 = From le In bd.tblChambre Where noHotel = le.noHotel And le.codeTypeChambre = typeChambre Select le
         cbNoChambre.DataContext = res2.ToList()

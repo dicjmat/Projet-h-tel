@@ -1,4 +1,5 @@
 ﻿Public Class iListeClientReserv
+    Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Private noEmpl As Short
     Private noHotel As Short
     Dim login As New iLogin
@@ -10,7 +11,7 @@
         noHotel = p2
     End Sub
     Private Sub window_ListCliReser_Loaded(sender As Object, e As RoutedEventArgs) Handles window_ListCliReser.Loaded
-
+        bd = New P2014_Equipe2_GestionHôtelièreEntities
     End Sub
 
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
@@ -23,4 +24,5 @@
         Me.Close()
         login.Show()
     End Sub
+
 End Class
