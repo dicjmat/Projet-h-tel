@@ -1,21 +1,27 @@
 ﻿<Window x:Class="iAccueilVente" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" Background="CadetBlue" Name="windowAccueilVente" WindowStyle="None"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="iAccueilVente" Height="300" Width="300">
+    Title="iAccueilVente" Height="413.644" Width="300">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="206">
+            <Grid Height="272">
                 <Label Content="Accueil" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
-                <Border BorderThickness="2" BorderBrush="Black" Height="59" Margin="0,95,-0.2,52">
+                <Border BorderThickness="2" BorderBrush="Black" Height="59" Margin="0,95,-0.2,118">
                     <TextBlock Background="WhiteSmoke" MouseLeftButtonDown="AppuieForfait">
                         Gestion Forfait<LineBreak/>
                         - Créer un forfait
                     </TextBlock>
                 </Border>
-                <Border BorderThickness="2" BorderBrush="Black" Height="59" Margin="0,31,-0.4,116">
+                <Border BorderThickness="2" BorderBrush="Black" Height="59" Margin="0,31,-0.2,182">
                     <TextBlock Background="WhiteSmoke" MouseLeftButtonDown="AppuieRabais">
                         Gestion Rabais<LineBreak/>
                         - Créer/Modifier/Supprimer un rabais
+                    </TextBlock>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="2" Height="59" Margin="0,159,-0.2,54">
+                    <TextBlock Background="WhiteSmoke" MouseLeftButtonDown="AppuieSalle">
+                        Réservation de salle<LineBreak/>
+                        - Faire une réservation de salle
                     </TextBlock>
                 </Border>
                 <Button Name="btnDeco" Content="Déconnexion" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Margin="0,0,-0.2,10"></Button>

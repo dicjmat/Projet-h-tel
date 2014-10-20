@@ -23,4 +23,11 @@
         Rabais.Owner = Me
         Rabais.Show()
     End Sub
+
+    Private Sub AppuieSalle()
+        Dim salle = New iFaireReservSalle()
+        salle.Owner = Me
+        salle.Show()
+    End Sub
+
 End Class

@@ -5,11 +5,11 @@
         bd = New P2014_Equipe2_GestionHôtelièreEntities
 
         Dim res = From el In bd.tblTypeChambre Select el.nomTypeChambre
-        lstTypeChambre.DataContext = res.ToList()
-        lstTypeChambre.AllowDrop = True
-        lstTypeChambreC.AllowDrop = True
+        cbTypeChambre.DataContext = res.ToList()
+        cbTypeChambre.AllowDrop = True
     End Sub
-    Private Sub AjouterForf_Click(sender As Object, e As RoutedEventArgs) Handles AjouterForf.Click
+
+    Private Sub AjouterForf_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterForf.Click
         Dim Forfait As New tblForfait
         Forfait.prixForfait = txtPrixForf.Text
         Forfait.descForfait = txtDescAct.Text
