@@ -5,16 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="P2014_Equipe2_GestionHôtelièreModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="tblCatalogue">
           <Key>
             <PropertyRef Name="noFournisseur" />
@@ -151,7 +141,7 @@
           <Property Name="nomEmpl" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="prenEmpl" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="noTelEmpl" Type="char" MaxLength="12" Nullable="false" />
-          <Property Name="noCellEmpl" Type="char" MaxLength="12" Nullable="false" />
+          <Property Name="noCellEmpl" Type="char" MaxLength="12" />
           <Property Name="adrEmpl" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="codeVille" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="NAS" Type="char" MaxLength="9" Nullable="false" />
@@ -273,18 +263,12 @@
             <PropertyRef Name="noForfait" />
           </Key>
           <Property Name="noForfait" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="descForfait" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nomForfait" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descForfait" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="etatForfait" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="prixForfait" Type="smallmoney" Nullable="false" />
           <Property Name="noHotel" Type="tinyint" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblForfaitOffert">
-          <Key>
-            <PropertyRef Name="codeTypeChambre" />
-            <PropertyRef Name="noForfait" />
-          </Key>
           <Property Name="codeTypeChambre" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="noForfait" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblOption">
           <Key>
@@ -309,6 +293,7 @@
           <Property Name="tauxRabais" Type="decimal" Precision="3" Scale="2" Nullable="false" />
           <Property Name="etatRabais" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="codeTypeChambre" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="noHotel" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblReservationChambre">
           <Key>
@@ -636,6 +621,18 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_for_cotych">
+          <End Role="tblTypeChambre" Type="Self.tblTypeChambre" Multiplicity="1" />
+          <End Role="tblForfait" Type="Self.tblForfait" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTypeChambre">
+              <PropertyRef Name="codeTypeChambre" />
+            </Principal>
+            <Dependent Role="tblForfait">
+              <PropertyRef Name="codeTypeChambre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_for_nohot">
           <End Role="tblHotel" Type="Self.tblHotel" Multiplicity="1" />
           <End Role="tblForfait" Type="Self.tblForfait" Multiplicity="*" />
@@ -645,30 +642,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             </Principal>
             <Dependent Role="tblForfait">
               <PropertyRef Name="noHotel" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_foroff_cotych">
-          <End Role="tblTypeChambre" Type="Self.tblTypeChambre" Multiplicity="1" />
-          <End Role="tblForfaitOffert" Type="Self.tblForfaitOffert" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblTypeChambre">
-              <PropertyRef Name="codeTypeChambre" />
-            </Principal>
-            <Dependent Role="tblForfaitOffert">
-              <PropertyRef Name="codeTypeChambre" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_foroff_nofor">
-          <End Role="tblForfait" Type="Self.tblForfait" Multiplicity="1" />
-          <End Role="tblForfaitOffert" Type="Self.tblForfaitOffert" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tblForfait">
-              <PropertyRef Name="noForfait" />
-            </Principal>
-            <Dependent Role="tblForfaitOffert">
-              <PropertyRef Name="noForfait" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -841,14 +814,16 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_rab_cotych">
-          <End Role="tblTypeChambre" Type="Self.tblTypeChambre" Multiplicity="1" />
+          <End Role="tblTypeChambreHotel" Type="Self.tblTypeChambreHotel" Multiplicity="1" />
           <End Role="tblRabais" Type="Self.tblRabais" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="tblTypeChambre">
+            <Principal Role="tblTypeChambreHotel">
               <PropertyRef Name="codeTypeChambre" />
+              <PropertyRef Name="noHotel" />
             </Principal>
             <Dependent Role="tblRabais">
               <PropertyRef Name="codeTypeChambre" />
+              <PropertyRef Name="noHotel" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -999,7 +974,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="P2014_Equipe2_GestionHôtelièreModelStoreContainer">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblCatalogue" EntityType="Self.tblCatalogue" Schema="Inventaire" store:Type="Tables" />
           <EntitySet Name="tblChecklist" EntityType="Self.tblChecklist" Schema="Inventaire" store:Type="Tables" />
           <EntitySet Name="tblCommande" EntityType="Self.tblCommande" Schema="Inventaire" store:Type="Tables" />
@@ -1025,7 +999,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <EntitySet Name="tblElementFacture" EntityType="Self.tblElementFacture" Schema="Reservation" store:Type="Tables" />
           <EntitySet Name="tblFacture" EntityType="Self.tblFacture" Schema="Reservation" store:Type="Tables" />
           <EntitySet Name="tblForfait" EntityType="Self.tblForfait" Schema="Reservation" store:Type="Tables" />
-          <EntitySet Name="tblForfaitOffert" EntityType="Self.tblForfaitOffert" Schema="Reservation" store:Type="Tables" />
           <EntitySet Name="tblOption" EntityType="Self.tblOption" Schema="Reservation" store:Type="Tables" />
           <EntitySet Name="tblOptionForfait" EntityType="Self.tblOptionForfait" Schema="Reservation" store:Type="Tables" />
           <EntitySet Name="tblRabais" EntityType="Self.tblRabais" Schema="Reservation" store:Type="Tables" />
@@ -1125,17 +1098,13 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             <End Role="tblReservationChambre" EntitySet="tblReservationChambre" />
             <End Role="tblFacture" EntitySet="tblFacture" />
           </AssociationSet>
+          <AssociationSet Name="fk_for_cotych" Association="Self.fk_for_cotych">
+            <End Role="tblTypeChambre" EntitySet="tblTypeChambre" />
+            <End Role="tblForfait" EntitySet="tblForfait" />
+          </AssociationSet>
           <AssociationSet Name="fk_for_nohot" Association="Self.fk_for_nohot">
             <End Role="tblHotel" EntitySet="tblHotel" />
             <End Role="tblForfait" EntitySet="tblForfait" />
-          </AssociationSet>
-          <AssociationSet Name="fk_foroff_cotych" Association="Self.fk_foroff_cotych">
-            <End Role="tblTypeChambre" EntitySet="tblTypeChambre" />
-            <End Role="tblForfaitOffert" EntitySet="tblForfaitOffert" />
-          </AssociationSet>
-          <AssociationSet Name="fk_foroff_nofor" Association="Self.fk_foroff_nofor">
-            <End Role="tblForfait" EntitySet="tblForfait" />
-            <End Role="tblForfaitOffert" EntitySet="tblForfaitOffert" />
           </AssociationSet>
           <AssociationSet Name="fk_gab_codi" Association="Self.fk_gab_codi">
             <End Role="tblItem" EntitySet="tblItem" />
@@ -1194,7 +1163,7 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             <End Role="tblProvince" EntitySet="tblProvince" />
           </AssociationSet>
           <AssociationSet Name="fk_rab_cotych" Association="Self.fk_rab_cotych">
-            <End Role="tblTypeChambre" EntitySet="tblTypeChambre" />
+            <End Role="tblTypeChambreHotel" EntitySet="tblTypeChambreHotel" />
             <End Role="tblRabais" EntitySet="tblRabais" />
           </AssociationSet>
           <AssociationSet Name="fk_resa_nocli" Association="Self.fk_resa_nocli">
@@ -1251,16 +1220,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="P2014_Equipe2_GestionHôtelièreModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="tblCatalogue">
           <Key>
             <PropertyRef Name="noFournisseur" />
@@ -1435,7 +1394,7 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <Property Name="nomEmpl" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="prenEmpl" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noTelEmpl" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="noCellEmpl" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="noCellEmpl" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="adrEmpl" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codeVille" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="NAS" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
@@ -1589,12 +1548,14 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             <PropertyRef Name="noForfait" />
           </Key>
           <Property Name="noForfait" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="descForfait" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nomForfait" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descForfait" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="etatForfait" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="prixForfait" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
           <Property Name="noHotel" Type="Byte" Nullable="false" />
+          <Property Name="codeTypeChambre" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblHotel" Relationship="Self.fk_for_nohot" FromRole="tblForfait" ToRole="tblHotel" />
-          <NavigationProperty Name="tblTypeChambre" Relationship="Self.tblForfaitOffert" FromRole="tblForfait" ToRole="tblTypeChambre" />
+          <NavigationProperty Name="tblTypeChambre" Relationship="Self.fk_for_cotych" FromRole="tblForfait" ToRole="tblTypeChambre" />
           <NavigationProperty Name="tblOption" Relationship="Self.tblOptionForfait" FromRole="tblForfait" ToRole="tblOption" />
         </EntityType>
         <EntityType Name="tblOption">
@@ -1614,7 +1575,8 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <Property Name="tauxRabais" Type="Decimal" Precision="3" Scale="2" Nullable="false" />
           <Property Name="etatRabais" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codeTypeChambre" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="tblTypeChambre" Relationship="Self.fk_rab_cotych" FromRole="tblRabais" ToRole="tblTypeChambre" />
+          <Property Name="noHotel" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="tblTypeChambreHotel" Relationship="Self.fk_rab_cotych" FromRole="tblRabais" ToRole="tblTypeChambreHotel" />
         </EntityType>
         <EntityType Name="tblReservationChambre">
           <Key>
@@ -1670,9 +1632,8 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <Property Name="nomTypeChambre" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblGabarit" Relationship="Self.fk_gab_tych" FromRole="tblTypeChambre" ToRole="tblGabarit" />
           <NavigationProperty Name="tblChambre" Relationship="Self.fk_ch_cotych" FromRole="tblTypeChambre" ToRole="tblChambre" />
-          <NavigationProperty Name="tblRabais" Relationship="Self.fk_rab_cotych" FromRole="tblTypeChambre" ToRole="tblRabais" />
+          <NavigationProperty Name="tblForfait" Relationship="Self.fk_for_cotych" FromRole="tblTypeChambre" ToRole="tblForfait" />
           <NavigationProperty Name="tblTypeChambreHotel" Relationship="Self.fk_tychho_tych" FromRole="tblTypeChambre" ToRole="tblTypeChambreHotel" />
-          <NavigationProperty Name="tblForfait" Relationship="Self.tblForfaitOffert" FromRole="tblTypeChambre" ToRole="tblForfait" />
           <NavigationProperty Name="tblOption" Relationship="Self.tblTypeChambreOption" FromRole="tblTypeChambre" ToRole="tblOption" />
         </EntityType>
         <EntityType Name="tblTypeChambreHotel">
@@ -1684,6 +1645,7 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <Property Name="noHotel" Type="Byte" Nullable="false" />
           <Property Name="prixChambre" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="tblHotel" Relationship="Self.fk_tychho_ho" FromRole="tblTypeChambreHotel" ToRole="tblHotel" />
+          <NavigationProperty Name="tblRabais" Relationship="Self.fk_rab_cotych" FromRole="tblTypeChambreHotel" ToRole="tblRabais" />
           <NavigationProperty Name="tblTypeChambre" Relationship="Self.fk_tychho_tych" FromRole="tblTypeChambreHotel" ToRole="tblTypeChambre" />
         </EntityType>
         <EntityType Name="tblTypeElement">
@@ -2204,15 +2166,29 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_rab_cotych">
+        <Association Name="fk_for_cotych">
           <End Role="tblTypeChambre" Type="Self.tblTypeChambre" Multiplicity="1" />
-          <End Role="tblRabais" Type="Self.tblRabais" Multiplicity="*" />
+          <End Role="tblForfait" Type="Self.tblForfait" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblTypeChambre">
               <PropertyRef Name="codeTypeChambre" />
             </Principal>
+            <Dependent Role="tblForfait">
+              <PropertyRef Name="codeTypeChambre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_rab_cotych">
+          <End Role="tblTypeChambreHotel" Type="Self.tblTypeChambreHotel" Multiplicity="1" />
+          <End Role="tblRabais" Type="Self.tblRabais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblTypeChambreHotel">
+              <PropertyRef Name="codeTypeChambre" />
+              <PropertyRef Name="noHotel" />
+            </Principal>
             <Dependent Role="tblRabais">
               <PropertyRef Name="codeTypeChambre" />
+              <PropertyRef Name="noHotel" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -2240,10 +2216,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="tblForfaitOffert">
-          <End Role="tblTypeChambre" Type="Self.tblTypeChambre" Multiplicity="*" />
-          <End Role="tblForfait" Type="Self.tblForfait" Multiplicity="*" />
-        </Association>
         <Association Name="tblOptionForfait">
           <End Role="tblForfait" Type="Self.tblForfait" Multiplicity="*" />
           <End Role="tblOption" Type="Self.tblOption" Multiplicity="*" />
@@ -2253,7 +2225,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <End Role="tblOption" Type="Self.tblOption" Multiplicity="*" />
         </Association>
         <EntityContainer Name="P2014_Equipe2_GestionHôtelièreEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="tblCatalogue" EntityType="Self.tblCatalogue" />
           <EntitySet Name="tblChecklist" EntityType="Self.tblChecklist" />
           <EntitySet Name="tblCommande" EntityType="Self.tblCommande" />
@@ -2452,8 +2423,12 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             <End Role="tblReservationChambre" EntitySet="tblReservationChambre" />
             <End Role="tblFacture" EntitySet="tblFacture" />
           </AssociationSet>
-          <AssociationSet Name="fk_rab_cotych" Association="Self.fk_rab_cotych">
+          <AssociationSet Name="fk_for_cotych" Association="Self.fk_for_cotych">
             <End Role="tblTypeChambre" EntitySet="tblTypeChambre" />
+            <End Role="tblForfait" EntitySet="tblForfait" />
+          </AssociationSet>
+          <AssociationSet Name="fk_rab_cotych" Association="Self.fk_rab_cotych">
+            <End Role="tblTypeChambreHotel" EntitySet="tblTypeChambreHotel" />
             <End Role="tblRabais" EntitySet="tblRabais" />
           </AssociationSet>
           <AssociationSet Name="fk_resa_nosa" Association="Self.fk_resa_nosa">
@@ -2463,10 +2438,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <AssociationSet Name="fk_tychho_tych" Association="Self.fk_tychho_tych">
             <End Role="tblTypeChambre" EntitySet="tblTypeChambre" />
             <End Role="tblTypeChambreHotel" EntitySet="tblTypeChambreHotel" />
-          </AssociationSet>
-          <AssociationSet Name="tblForfaitOffert" Association="Self.tblForfaitOffert">
-            <End Role="tblTypeChambre" EntitySet="tblTypeChambre" />
-            <End Role="tblForfait" EntitySet="tblForfait" />
           </AssociationSet>
           <AssociationSet Name="tblOptionForfait" Association="Self.tblOptionForfait">
             <End Role="tblForfait" EntitySet="tblForfait" />
@@ -2483,17 +2454,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="P2014_Equipe2_GestionHôtelièreModelStoreContainer" CdmEntityContainer="P2014_Equipe2_GestionHôtelièreEntities">
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblCatalogue">
             <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreModel.tblCatalogue">
               <MappingFragment StoreEntitySet="tblCatalogue">
@@ -2765,10 +2725,12 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreModel.tblForfait">
               <MappingFragment StoreEntitySet="tblForfait">
                 <ScalarProperty Name="noForfait" ColumnName="noForfait" />
+                <ScalarProperty Name="nomForfait" ColumnName="nomForfait" />
                 <ScalarProperty Name="descForfait" ColumnName="descForfait" />
                 <ScalarProperty Name="etatForfait" ColumnName="etatForfait" />
                 <ScalarProperty Name="prixForfait" ColumnName="prixForfait" />
                 <ScalarProperty Name="noHotel" ColumnName="noHotel" />
+                <ScalarProperty Name="codeTypeChambre" ColumnName="codeTypeChambre" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2787,6 +2749,7 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
                 <ScalarProperty Name="tauxRabais" ColumnName="tauxRabais" />
                 <ScalarProperty Name="etatRabais" ColumnName="etatRabais" />
                 <ScalarProperty Name="codeTypeChambre" ColumnName="codeTypeChambre" />
+                <ScalarProperty Name="noHotel" ColumnName="noHotel" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2866,14 +2829,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="tblForfaitOffert" TypeName="P2014_Equipe2_GestionHôtelièreModel.tblForfaitOffert" StoreEntitySet="tblForfaitOffert">
-            <EndProperty Name="tblTypeChambre">
-              <ScalarProperty Name="codeTypeChambre" ColumnName="codeTypeChambre" />
-            </EndProperty>
-            <EndProperty Name="tblForfait">
-              <ScalarProperty Name="noForfait" ColumnName="noForfait" />
-            </EndProperty>
-          </AssociationSetMapping>
           <AssociationSetMapping Name="tblOptionForfait" TypeName="P2014_Equipe2_GestionHôtelièreModel.tblOptionForfait" StoreEntitySet="tblOptionForfait">
             <EndProperty Name="tblForfait">
               <ScalarProperty Name="noForfait" ColumnName="noForfait" />

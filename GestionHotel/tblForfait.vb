@@ -12,13 +12,15 @@ Imports System.Collections.Generic
 
 Partial Public Class tblForfait
     Public Property noForfait As Byte
+    Public Property nomForfait As String
     Public Property descForfait As String
     Public Property etatForfait As String
     Public Property prixForfait As Decimal
     Public Property noHotel As Byte
+    Public Property codeTypeChambre As String
 
     Public Overridable Property tblHotel As tblHotel
-    Public Overridable Property tblTypeChambre As ICollection(Of tblTypeChambre) = New HashSet(Of tblTypeChambre)
+    Public Overridable Property tblTypeChambre As tblTypeChambre
     Public Overridable Property tblOption As ICollection(Of tblOption) = New HashSet(Of tblOption)
 
 End Class

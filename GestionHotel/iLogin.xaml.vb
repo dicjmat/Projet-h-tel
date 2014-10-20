@@ -19,7 +19,6 @@ Public Class iLogin
 
     Private Sub Grid_Loaded(sender As Object, e As RoutedEventArgs)
         maBD = New P2014_Equipe2_GestionHôtelièreEntities
-        creerEntity()
         txtNomUtilisateur.Focus()
     End Sub
 

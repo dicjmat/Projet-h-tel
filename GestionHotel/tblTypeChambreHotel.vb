@@ -16,6 +16,7 @@ Partial Public Class tblTypeChambreHotel
     Public Property prixChambre As Decimal
 
     Public Overridable Property tblHotel As tblHotel
+    Public Overridable Property tblRabais As ICollection(Of tblRabais) = New HashSet(Of tblRabais)
     Public Overridable Property tblTypeChambre As tblTypeChambre
 
 End Class

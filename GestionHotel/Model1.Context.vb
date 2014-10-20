@@ -22,7 +22,6 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
         Throw New UnintentionalCodeFirstException()
     End Sub
 
-    Public Overridable Property sysdiagrams() As DbSet(Of sysdiagrams)
     Public Overridable Property tblCatalogue() As DbSet(Of tblCatalogue)
     Public Overridable Property tblChecklist() As DbSet(Of tblChecklist)
     Public Overridable Property tblCommande() As DbSet(Of tblCommande)
