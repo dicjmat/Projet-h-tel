@@ -38,7 +38,7 @@
 
     Private Sub cbTypeChambre_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbTypeChambre.SelectionChanged
 
-        typeChambre = cbTypeChambre.SelectedItem.ToString
+        typeChambre = cbTypeChambre.SelectedItem.codeTypeChambre
 
         Dim res2 = From le In bd.tblChambre Where noHotel = le.noHotel And le.codeTypeChambre = typeChambre Select le
         cbNoChambre.DataContext = res2.ToList()
