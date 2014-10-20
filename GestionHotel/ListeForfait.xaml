@@ -11,7 +11,10 @@
                     <Grid>
                         <DataGrid Name="dgForfait">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="lol"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Numéro" Binding="{Binding noForfait}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nom" Binding="{Binding nomForfait}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeChambre}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Prix" Binding="{Binding prixForfait}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>

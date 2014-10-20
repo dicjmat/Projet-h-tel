@@ -9,7 +9,7 @@
     End Sub
 
     Private Sub AppuieForfait()
-        Dim Forfait = New iAjoutForf
+        Dim Forfait = New ListeForfait(hotel)
         Forfait.Owner = Me
         Forfait.Show()
     End Sub

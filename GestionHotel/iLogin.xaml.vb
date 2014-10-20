@@ -81,41 +81,4 @@ Public Class iLogin
             login()
         End If
     End Sub
-
-    Private Sub creerEntity()
-        Dim providerName As String = "System.Data.SqlClient"
-        Dim serverName As String = "DEPTINFO420"
-        Dim databaseName As String = "P2014_Equipe2_GestionHôtelière"
-
-        ' Initialize the connection string builder for the 
-        ' underlying provider. 
-        Dim sqlBuilder As New SqlConnectionStringBuilder()
-
-        ' Set the properties for the data source. 
-        sqlBuilder.DataSource = serverName
-        sqlBuilder.InitialCatalog = databaseName
-        sqlBuilder.IntegratedSecurity = True
-
-        ' Build the SqlConnection connection string. 
-        Dim providerString As String = sqlBuilder.ToString()
-
-        ' Initialize the EntityConnectionStringBuilder. 
-        Dim entityBuilder As New EntityConnectionStringBuilder()
-
-        'Set the provider name. 
-        entityBuilder.Provider = providerName
-
-        ' Set the provider-specific connection string. 
-        entityBuilder.ProviderConnectionString = providerString
-
-        ' Set the Metadata location. 
-        entityBuilder.Metadata = "res://*/AdventureWorksModel.csdl|res://*/AdventureWorksModel.ssdl|res://*/AdventureWorksModel.msl"
-        Console.WriteLine(entityBuilder.ToString())
-
-        Using conn As New EntityConnection(entityBuilder.ToString())
-            conn.Open()
-            Console.WriteLine("Just testing the connection.")
-            conn.Close()
-        End Using
-    End Sub
 End Class
