@@ -20,6 +20,7 @@
                     </StackPanel>
                 </GroupBox>
                 <Button Name="btnAjouterForf" Content="Créer Forfait" Margin="58,188,83,11" Height="25"></Button>
+                <Button Name="btnModifierForf" Content="Modifier forfait" Height="25" Margin="58,188,83,11"></Button>
                 <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="182,188,3,11"></Button>
             </Grid>
         </Viewbox>
