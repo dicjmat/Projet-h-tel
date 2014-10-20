@@ -4,7 +4,6 @@
     Dim gerant As iAccueilGerant
     Dim gestion As iAccueilGestionnaire
     Dim gestionPatr As iGestionCentrale
-    Dim reserv As iFaireReservation
     Dim vente As iAccueilVente
     Dim reserv As iListeClientReserv
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click
