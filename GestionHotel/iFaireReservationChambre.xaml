@@ -27,7 +27,7 @@
                         <DatePicker Name="dpDateCreation" Height="25" Margin="182,148,0.8,99.8"></DatePicker>
                         <Label Content="Commentaire :" Margin="0,201,216.8,75"></Label>
                         <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="91,206,0.8,11"></TextBox>
-                        <ComboBox ItemsSource="{Binding}" x:Name="cbNoChambre" HorizontalAlignment="Left" Margin="107,26,0,0" VerticalAlignment="Top" Width="80">
+                        <ComboBox ItemsSource="{Binding}" x:Name="cbNoChambre" HorizontalAlignment="Left" Margin="107,26,0,0" VerticalAlignment="Top" Width="80" Background="White">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
