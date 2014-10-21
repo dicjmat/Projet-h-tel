@@ -1,5 +1,5 @@
 ﻿Public Class ListeForfait
-
+    Dim bd As New P2014_Equipe2_GestionHôtelièreEntities
     Private _hotel As Short
 
     Sub New(hotel As Short)
@@ -18,5 +18,8 @@
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
+    End Sub
+
+    Private Sub requete()
     End Sub
 End Class
