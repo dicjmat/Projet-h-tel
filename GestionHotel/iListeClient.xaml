@@ -1,4 +1,4 @@
-﻿<Window x:Class="iListeClient" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" WindowStyle="None"
+﻿<Window x:Class="iListeClient" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" WindowStyle="None" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="iListeClient" Height="250.933" Width="300" Closing="Window_Closing" Loaded="Window_Loaded">

@@ -1,4 +1,4 @@
-﻿<Window x:Class="iAccueilVente" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" Background="CadetBlue" Name="windowAccueilVente" WindowStyle="None"
+﻿<Window x:Class="iAccueilVente" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" Background="CadetBlue" Name="windowAccueilVente" WindowStyle="None" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="iAccueilVente" Height="413.644" Width="300">

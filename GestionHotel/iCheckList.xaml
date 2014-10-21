@@ -1,4 +1,4 @@
-﻿<Window x:Class="iCheckList" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" Name="windowCheckList" WindowStyle="None"
+﻿<Window x:Class="iCheckList" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" Name="windowCheckList" WindowStyle="None" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="iCheckList" Height="500" Width="500" Loaded="Window_Loaded" Closing="Window_Closing">
