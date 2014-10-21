@@ -30,14 +30,18 @@
     End Sub
 
     Private Sub btnAjoutForf_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutForf.Click
-        Dim forfait = New iAjoutForf(True)
+        Dim forfait = New iAjoutForf(True, _hotel)
         forfait.Owner = Me
         forfait.Show()
     End Sub
 
     Private Sub btnModifForf_Click(sender As Object, e As RoutedEventArgs) Handles btnModifForf.Click
-        Dim forfait = New iAjoutForf(False)
+        Dim forfait = New iAjoutForf(False, _hotel)
         forfait.Owner = Me
         forfait.Show()
+    End Sub
+
+    Private Sub window_ListeForf_Activated(sender As Object, e As EventArgs) Handles window_ListeForf.Activated
+        requete()
     End Sub
 End Class
