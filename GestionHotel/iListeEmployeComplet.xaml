@@ -1,4 +1,4 @@
-﻿<Window x:Class="iListeEmployeComplet" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="CadetBlue" Name="window_lstEmployeComplet"
+﻿<Window x:Class="iListeEmployeComplet" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="CadetBlue" Name="window_lstEmployeComplet" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="iListeEmployeComplet" Height="300" Width="480.8">

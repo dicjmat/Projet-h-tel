@@ -1,4 +1,4 @@
-﻿<Window x:Class="iInventaireComplet" Name="window_invComp" WindowStyle="None" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" Background="CadetBlue"
+﻿<Window x:Class="iInventaireComplet" Name="window_invComp" WindowStyle="None" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" Background="CadetBlue" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="iInventaireComplet" Height="311.2" Width="570.4">
