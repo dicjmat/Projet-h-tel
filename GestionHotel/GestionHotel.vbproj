@@ -132,9 +132,6 @@
     <Compile Include="iListeClient.xaml.vb">
       <DependentUpon>iListeClient.xaml</DependentUpon>
     </Compile>
-    <Compile Include="iListeClientReserv.xaml.vb">
-      <DependentUpon>iListeClientReserv.xaml</DependentUpon>
-    </Compile>
     <Compile Include="iListeCOmmande.xaml.vb">
       <DependentUpon>iListeCOmmande.xaml</DependentUpon>
     </Compile>
@@ -374,10 +371,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iListeClient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="iListeClientReserv.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

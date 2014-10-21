@@ -15,7 +15,7 @@
                             <TextBox Name="txtDescAct" Margin="6,84,0.2,-109.6"></TextBox>
                             <Label Content="Type de Chambre :" Margin="0,158,132.2,-141.6"></Label>
                             <ComboBox Name="cbTypeChambre" Background="White" Height="20" Margin="115,163,0.2,-140.6"></ComboBox>
-                            <CheckBox Content="Actif" Margin="192,34,4.2,-33.6"></CheckBox>
+                            <CheckBox Name="ckActif" Content="Actif" Margin="192,34,4.2,-33.6"></CheckBox>
                             <Label Content="Nom du forfait :"></Label>
                             <TextBox Name="txtNomForf" Height="20" Margin="96,4,2.2,18.4"></TextBox>
                         </Grid>
