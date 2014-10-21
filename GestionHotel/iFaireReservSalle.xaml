@@ -6,6 +6,7 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Width="306" Height="304">
+                <Label Content="* = non-obligatoire" Margin="188,10,0,263"></Label>
                 <GroupBox Header="Réservation d'une salle" BorderBrush="Black" Margin="0,0,0,33">
                     <Grid>
                         <Label Content="No de salle :" Margin="0,0,213.6,224.6"></Label>
@@ -18,8 +19,8 @@
                         <DatePicker Name="dpFin" Height="25" Margin="94,90,39.6,138.6"></DatePicker>
                         <Label Content="Date de la réservation :" Margin="0,116,155.6,107.6"></Label>
                         <DatePicker Name="dpReserv" Margin="131,117,6.6,107.8"/>
-                        <Label Content="Commentaire :" Margin="0,146,199.6,76.6"></Label>
-                        <TextBox Name="txtCommReserv" Margin="85,151,6.6,-0.4"></TextBox>
+                        <Label Content="Commentaire* :" Margin="0,146,199.6,76.6"></Label>
+                        <TextBox Name="txtCommReserv" Margin="94,151,6.6,-0.2"></TextBox>
                     </Grid>
                 </GroupBox>
                 <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="193,276,10,3"></Button>

@@ -6,6 +6,7 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="358" Width="583">
+                <Label Content="* = non-obligatoire" Margin="113,191,10.2,131" Grid.Column="1"/>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="332*"/>
                     <ColumnDefinition Width="251*"/>
@@ -21,7 +22,7 @@
                             <xctk:MaskedTextBox  PromptChar=" " Mask="????????????????????????????????????????????????" Name="txtPrenCli" Text="{Binding prenClient}" Margin="90,30,0,126" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
                             <Label Content="NoTéléphone : " Margin="0,50,0,0" HorizontalAlignment="Left" Width="196"></Label>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" Name="txtNoTellCli" Text="{Binding noTelClient}" Margin="90,55,0,101" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
-                            <Label Content="NoCellulaire : " Margin="0,75,0,0" HorizontalAlignment="Left" Width="196"></Label>
+                            <Label Content="NoCellulaire* : " Margin="0,75,0,0" HorizontalAlignment="Left" Width="196"></Label>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" Name="txtNoCellCli" Text="{Binding noCellClient}" Margin="90,80,0,76" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
                             <Label Content="Adresse : " Margin="0,100,0,0" HorizontalAlignment="Left" Width="196"></Label>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrCli" Text="{Binding adrClient}" Margin="90,105,0,51" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
@@ -29,7 +30,7 @@
                             <xctk:MaskedTextBox  PromptChar=" " Mask="0000000000000009" Name="txtCarteCreditCli" Text="{Binding noCarteCredit}" Margin="90,129,0,27" Width="120" Height="20" HorizontalAlignment="Left"></xctk:MaskedTextBox>
                             <Label Content="Type de carte :" Margin="-2,149,2,-149"></Label>
                             <ComboBox Name="cbTypeCarte" Margin="89,154,2,0" Background="White"></ComboBox>
-                            <Label Content="Commentaire : " Margin="0,226,0,-76" HorizontalAlignment="Left" Width="196"></Label>
+                            <Label Content="Commentaire* : " Margin="0,226,0,-76" HorizontalAlignment="Left" Width="196"></Label>
                             <TextBox Name="txtCommCli" Text="{Binding commentaire}" Margin="90,231,0,-123" Width="120" HorizontalAlignment="Left" TextWrapping="Wrap" AcceptsReturn="True"/>
                             <Label Content="Code expiration :" Margin="-2,176,2,-76"></Label>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="00/00" Name="txtCodeExp" Text="{Binding dateExpiration}" Margin="103,181,2,-25" Height="20"></xctk:MaskedTextBox>
@@ -45,11 +46,11 @@
                             <TextBox x:Name="txtNomCie" Text="{Binding nomCompagnie}" Margin="100,5,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
                             <Label Content="NoTéléphone : " Margin="0,25,0,0"></Label>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" x:Name="txtTellCie" Text="{Binding noTelCompagnie}" Margin="100,30,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
-                            <Label Content="NoCellulaire : " Margin="0,50,0,0"></Label>
+                            <Label Content="NoCellulaire* : " Margin="0,50,94.4,55.4"></Label>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="(000) 000-0000" x:Name="txtCellCie" Text="{Binding noCellCompagnie}" Margin="100,55,0,0" HorizontalAlignment="Left" Width="90" Height="20" VerticalAlignment="Top"/>
-                            <Label Content="NomResponsable : " Margin="0,75,0,0"></Label>
-                            <TextBox x:Name="txtNomRespCie" Text="{Binding respCompagnie}" Margin="106,80,0,0" HorizontalAlignment="Left" Width="84" Height="20" VerticalAlignment="Top"/>
-                            <Label Content="Commentaire : " Margin="0,100,0,0"></Label>
+                            <Label Content="NomResponsable* : " Margin="0,75,0,0"></Label>
+                            <TextBox x:Name="txtNomRespCie" Text="{Binding respCompagnie}" Margin="113,80,0,0" HorizontalAlignment="Left" Width="77" Height="20" VerticalAlignment="Top"/>
+                            <Label Content="Commentaire* : " Margin="0,100,0,0"></Label>
                             <TextBox x:Name="txtComCie" Text="{Binding commentaire}" Margin="100,105,0,-34.4" HorizontalAlignment="Left" Width="90" Height="60" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"/>
                         </Grid>
                     </StackPanel>
