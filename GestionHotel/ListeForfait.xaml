@@ -9,7 +9,7 @@
                 <TextBox Name="txtrechercher" Height="25" Margin="77,2,174,376"></TextBox>
                 <GroupBox Header="Liste de forfaits" BorderBrush="Black" Margin="0,28,0,36">
                     <Grid>
-                        <DataGrid Name="dgForfait">
+                        <DataGrid Name="dgForfait" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Numéro" Binding="{Binding noForfait}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Nom" Binding="{Binding nomForfait}"></DataGridTextColumn>

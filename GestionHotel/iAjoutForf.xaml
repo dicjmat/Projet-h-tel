@@ -10,7 +10,7 @@
                     <StackPanel Margin="0,0,0,73">
                         <Grid>
                             <Label Content="Prix :" Margin="0,29,201.2,-28.6"></Label>
-                            <xctk:MaskedTextBox PromptChar=" " Mask="999999999999999.00" Name="txtPrixForf" Height="20" Margin="35,34,0,-11.6" HorizontalAlignment="Left" Width="100"></xctk:MaskedTextBox>
+                            <TextBox Name="txtPrixForf" Height="20" Margin="35,34,0,-11.6" HorizontalAlignment="Left" Width="100"></TextBox>
                             <Label Content="Description Activité :" Margin="6,59,-5.8,-58.6"></Label>
                             <TextBox Name="txtDescAct" Margin="6,84,0.2,-109.6"></TextBox>
                             <Label Content="Type de Chambre :" Margin="0,158,132.2,-141.6"></Label>
