@@ -13,7 +13,6 @@
         bd = New P2014_Equipe2_GestionHôtelièreEntities
 
         Dim res = From el In bd.tblTypeChambre Select el
-        cbTypeChambre.DataContext = res.ToList()
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
@@ -22,11 +21,7 @@
 
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
         Dim chambre As New tblReservationChambre
-        chambre.dateDebutSejour = dpDateDebut.SelectedDate
-        chambre.dateFinSejour = dpDateFin.SelectedDate
-        chambre.dateReserv = dpDateCreation.SelectedDate
         chambre.commentaire = txtCommReser.Text
-        chambre.noChambre = cbNoChambre.SelectedItem
         chambre.noEmpl = noEmpl
         chambre.noHotel = noHotel
 
@@ -36,11 +31,5 @@
         MessageBox.Show("La réservation de la chambre a été fait avec succès.")
     End Sub
 
-    Private Sub cbTypeChambre_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbTypeChambre.SelectionChanged
 
-        typeChambre = cbTypeChambre.SelectedItem.codeTypeChambre
-
-        Dim res2 = From le In bd.tblChambre Where noHotel = le.noHotel And le.codeTypeChambre = typeChambre Select le
-        cbNoChambre.DataContext = res2.ToList()
-    End Sub
 End Class
