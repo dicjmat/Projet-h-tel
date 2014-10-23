@@ -17,7 +17,6 @@
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        BD = New P2014_Equipe2_GestionHôtelièreEntities
         Dim res = From el In BD.tblChambre Where el.noHotel = noHotel Select el
 
         cbChambre.DataContext = res.ToList()
