@@ -14,9 +14,9 @@
                             <Label Content="Description :" Margin="0,25,0,0"></Label>
                             <TextBox Name="txtDescSalle" Margin="73,30,0.4,75.6" Height="20"></TextBox>
                             <Label Content="Nombre de place de la salle :" Margin="0,50,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="09999999999" Name="txtNoPlaceSalle" Margin="163,55,0.8,50.6" Height="20"></xctk:MaskedTextBox>
+                            <xctk:MaskedTextBox Mask="09999999999" PromptChar=" " Name="txtNoPlaceSalle" Margin="163,55,0.8,50.6" Height="20"></xctk:MaskedTextBox>
                             <Label Content="No d'hôtel :" Margin="0,75,0.8,24.6"></Label>
-                            <ComboBox Name="cbNoHotel" Margin="73,80,0.8,25.6" Background="White" Height="20"></ComboBox>
+                            <ComboBox Name="cbNoHotel" Margin="73,80,98.6,25.6" Background="White" Height="20"></ComboBox>
                         </Grid>
                     </StackPanel>
                 </GroupBox>

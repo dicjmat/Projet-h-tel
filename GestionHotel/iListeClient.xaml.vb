@@ -13,7 +13,6 @@
         requete()
     End Sub
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Focusable = False
         Me.Close()
     End Sub
 

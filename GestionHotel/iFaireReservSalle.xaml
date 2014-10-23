@@ -9,10 +9,10 @@
                 <Label Content="* = non-obligatoire" Margin="188,10,0,263"></Label>
                 <GroupBox Header="Réservation d'une salle" BorderBrush="Black" Margin="0,0,0,33">
                     <Grid>
-                        <Label Content="No de salle :" Margin="0,0,213.6,224.6"></Label>
+                        <Label Content="Nom de salle :" Margin="0,0,213.6,224.6"></Label>
                         <ComboBox Name="cbNoSalle" Background="White" Margin="80,2,133.6,227.6"/>
-                        <Label Content="No de client :" Margin="0,29,213.6,195.6"></Label>
-                        <TextBox Name="txtNoCli" Height="25" Margin="85,30,106.6,198.6"></TextBox>
+                        <Label Content="Nom de client :" Margin="0,29,199.6,195.8"></Label>
+                        <TextBox IsEnabled="False" Name="txtNoCli" Height="25" Margin="99,30,92.6,193.8"></TextBox>
                         <Label Content="Date de début :" Margin="0,58,199.6,166.6"></Label>
                         <DatePicker Name="dpDebut" Height="25" Margin="94,60,39.6,168.6"></DatePicker>
                         <Label Content="Date de fin :" Margin="0,87,213.6,137.6"></Label>
