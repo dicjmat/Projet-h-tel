@@ -20,8 +20,6 @@
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        Dim prof = From el In maBd.tblEmploye Where el.noEmpl = _noEmpl Select el.codeProf
-        Dim codeProff = prof.Single.ToString()
         requete()
     End Sub
 
