@@ -4,10 +4,12 @@
     Private noHotel As Short
     Private BD As P2014_Equipe2_GestionHôtelièreEntities
 
-    Sub New(_noEmploye As Short, _noHotel As Short)
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _noEmploye As Short, nHotel As Short)
+        ' TODO: Complete member initialization 
         InitializeComponent()
+        BD = maBD
         noEmploye = _noEmploye
-        noHotel = _noHotel
+        noHotel = nHotel
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
@@ -15,7 +17,6 @@
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        BD = New P2014_Equipe2_GestionHôtelièreEntities
         Dim res = From el In BD.tblChambre Where el.noHotel = noHotel Select el
 
         cbChambre.DataContext = res.ToList()

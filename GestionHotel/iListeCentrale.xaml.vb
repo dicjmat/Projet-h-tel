@@ -1,12 +1,18 @@
 ﻿Public Class iListeCentrale
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
+
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+        bd = _bd
+    End Sub
+
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Owner.Show()
         Me.Close()
     End Sub
 
     Private Sub window_lstCentrale_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstCentrale.Loaded
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
         requete()
     End Sub
 
@@ -24,7 +30,7 @@
 
     Private Sub btnAjouterProv_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterProv.Click
         If dgPays.SelectedItem IsNot Nothing Then
-            Dim prov = New AjoutProvince(dgPays.SelectedItem.codePays)
+            Dim prov = New AjoutProvince(dgPays.SelectedItem.codePays, bd)
             prov.Owner = Me
             prov.ShowDialog()
         Else
@@ -34,7 +40,7 @@
 
     Private Sub btnAjouterVille_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterVille.Click
         If dgProvince.SelectedItem IsNot Nothing Then
-            Dim ville = New AjoutVille(dgProvince.SelectedItem.codeProv)
+            Dim ville = New AjoutVille(dgProvince.SelectedItem.codeProv, bd)
             ville.Owner = Me
             ville.ShowDialog()
         Else
@@ -43,7 +49,7 @@
     End Sub
 
     Private Sub btnAjouterPays_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterPays.Click
-        Dim pays = New AjoutPays
+        Dim pays = New AjoutPays(bd)
         pays.Owner = Me
         pays.ShowDialog()
     End Sub

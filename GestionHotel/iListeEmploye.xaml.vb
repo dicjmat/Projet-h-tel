@@ -4,21 +4,22 @@
     Dim maBd As P2014_Equipe2_GestionHôtelièreEntities
     Private _noEmpl As Short
 
-    Sub New(noEmpl As Short, noHotel As Short)
+    Sub New(noEmpl As Short, noHotel As Short, _maBd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization
         InitializeComponent()
         _noEmpl = noEmpl
         _noHotel = noHotel
+        maBd = _maBd
     End Sub
 
     Private Sub btnAjouterEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterEmploye.Click
-        Dim iEmploye As New iFicheEmploye
+        Dim iEmploye As New iFicheEmploye(maBd)
         iEmploye.Owner = Me
         Me.Hide()
         iEmploye.Show()
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        maBd = New P2014_Equipe2_GestionHôtelièreEntities
         Dim prof = From el In maBd.tblEmploye Where el.noEmpl = _noEmpl Select el.codeProf
         Dim codeProff = prof.Single.ToString()
         requete()
@@ -37,7 +38,7 @@
     End Sub
 
     Private Sub btnFaireHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnFaireHoraire.Click
-        Dim Horaire = New iAjouterHoraire(_noEmpl, _noHotel)
+        Dim Horaire = New iAjouterHoraire(_noEmpl, _noHotel, maBd)
         Horaire.Owner = Me
         Horaire.Show()
         Me.Hide()
@@ -46,7 +47,7 @@
     Private Sub btnModifEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnModifEmp.Click
         If lstEmploye.SelectedIndex <> -1 Then
             Dim numEmpl = lstEmploye.SelectedItem.noEmpl
-            Dim iEmploye As New iFicheEmploye(numEmpl)
+            Dim iEmploye As New iFicheEmploye(numEmpl, maBd)
             iEmploye.Owner = Me
             Me.Hide()
             iEmploye.Show()

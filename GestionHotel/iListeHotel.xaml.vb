@@ -1,7 +1,13 @@
 ﻿Public Class iListeHotel
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
+
+    Sub New(maBd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization
+        InitializeComponent()
+        bd = maBd
+    End Sub
+
     Private Sub window_lstHotel_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstHotel.Loaded
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
         Dim res = From Ho In bd.tblHotel
                   Join Vi In bd.tblVille On Ho.codeVille Equals Vi.codeVille
                   Select Ho.noHotel, Ho.nomHotel, Vi.nomVille
@@ -31,13 +37,13 @@
     End Sub
 
     Private Sub btnAjouterHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterHotel.Click
-        Dim Ghotel = New iGestionHotel
+        Dim Ghotel = New iGestionHotel(bd)
         Ghotel.Owner = Me
         Ghotel.Show()
     End Sub
 
     Private Sub btnAjouterChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterChambre.Click
-        Dim Gchambre = New iGestionChambre
+        Dim Gchambre = New iGestionChambre(bd)
         Gchambre.Owner = Me
         Gchambre.Show()
     End Sub

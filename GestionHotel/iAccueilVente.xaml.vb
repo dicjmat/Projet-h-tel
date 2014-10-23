@@ -1,11 +1,19 @@
 ﻿Public Class iAccueilVente
 
     Private hotel As Short
+    Private _maBD As P2014_Equipe2_GestionHôtelièreEntities
+    Private _nHotel As Short
 
     Sub New(nHotel As Short)
         ' TODO: Complete member initialization 
         InitializeComponent()
         hotel = nHotel
+    End Sub
+
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, nHotel As Short)
+        ' TODO: Complete member initialization 
+        _maBD = maBD
+        _nHotel = nHotel
     End Sub
 
     Private Sub AppuieForfait()
