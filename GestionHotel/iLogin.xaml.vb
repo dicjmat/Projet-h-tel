@@ -45,27 +45,27 @@ Public Class iLogin
         txtNomUtilisateur.Focus()
         Select Case typeEmploye
             Case "ADMI"
-                gerant = New iAccueilGerant(noEmploye, nHotel)
+                gerant = New iAccueilGerant(maBD, noEmploye, nHotel)
                 gerant.Owner = Me
                 gerant.Show()
             Case "PERS"
-                checkList = New iCheckList(noEmploye, nHotel)
+                checkList = New iCheckList(maBD, noEmploye, nHotel)
                 checkList.Owner = Me
                 checkList.Show()
             Case "GEST"
-                gestion = New iAccueilGestionnaire(noEmploye, nHotel)
+                gestion = New iAccueilGestionnaire(maBD, noEmploye, nHotel)
                 gestion.Owner = Me
                 gestion.Show()
             Case "PATR"
-                gestionPatr = New iGestionCentrale()
+                gestionPatr = New iGestionCentrale(maBD)
                 gestionPatr.Owner = Me
                 gestionPatr.Show()
             Case "VEND"
-                vente = New iAccueilVente(nHotel)
+                vente = New iAccueilVente(maBD, nHotel)
                 vente.Owner = Me
                 vente.Show()
             Case "RECE"
-                recep = New iListeClient(noEmploye, nHotel)
+                recep = New iListeClient(maBD, noEmploye, nHotel)
                 recep.Owner = Me
                 recep.Show()
             Case Else

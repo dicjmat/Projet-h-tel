@@ -1,4 +1,12 @@
 ﻿Public Class iGestionCentrale
+
+    Private _maBD As P2014_Equipe2_GestionHôtelièreEntities
+
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization 
+        _maBD = maBD
+    End Sub
+
     Private Sub AppuieRapport()
 
     End Sub

@@ -3,11 +3,21 @@
     Private noEmploye As Short
     Private noHotel As Short
     Private BD As P2014_Equipe2_GestionHôtelièreEntities
+    Private _maBD As P2014_Equipe2_GestionHôtelièreEntities
+    Private _noEmploye As Short
+    Private _nHotel As Short
 
     Sub New(_noEmploye As Short, _noHotel As Short)
         InitializeComponent()
         noEmploye = _noEmploye
         noHotel = _noHotel
+    End Sub
+
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short)
+        ' TODO: Complete member initialization 
+        _maBD = maBD
+        _noEmploye = noEmploye
+        _nHotel = nHotel
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
