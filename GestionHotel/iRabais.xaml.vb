@@ -2,10 +2,10 @@
     Dim bd As New P2014_Equipe2_GestionHôtelièreEntities
     Private noHotel As Short
 
-    Sub New(hotel As Short)
-        ' TODO: Complete member initialization 
+    Sub New(hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         noHotel = hotel
+        bd = _bd
     End Sub
 
     Private Sub btndeco_Click(sender As Object, e As RoutedEventArgs) Handles btndeco.Click
@@ -34,7 +34,6 @@
     End Sub
 
     Private Sub windowRabais_Loaded(sender As Object, e As RoutedEventArgs) Handles windowRabais.Loaded
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
         Me.Owner.Hide()
         requete()
         Dim res = From tych In bd.tblTypeChambre
