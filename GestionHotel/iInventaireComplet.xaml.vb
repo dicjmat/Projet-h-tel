@@ -52,6 +52,7 @@
     End Function
 
     Private Sub window_invComp_Loaded(sender As Object, e As RoutedEventArgs) Handles window_invComp.Loaded
+        Me.Owner.Hide()
         Dim listeCbHotel As List(Of tblHotel)
         Dim affichage As New tblHotel
         Dim hotel = From ho In bd.tblHotel

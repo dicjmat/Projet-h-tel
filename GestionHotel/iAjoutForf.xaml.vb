@@ -4,49 +4,14 @@
     Private _hotel As Short
     Private forfait As Integer
 
-    Sub New(p1 As Boolean, hotel As Short)
-        ' TODO: Complete member initialization 
-
-        InitializeComponent()
-        ajout = p1
-        _hotel = hotel
-        remplirTypeChambre()
-    End Sub
-
-    Sub New(p1 As Boolean, hotel As Short, p3 As Integer)
-        ' TODO: Complete member initialization
-        InitializeComponent()
-        ajout = p1
-        _hotel = hotel
-        forfait = p3
-        remplirTypeChambre()
-        Dim res = From fo In bd.tblForfait
-                  Where fo.noForfait = forfait
-                  Select fo
-        If res.Single.etatForfait = "AC" Then
-            ckActif.IsChecked = True
-        Else
-            ckActif.IsChecked = False
-        End If
-
-        txtNomForf.Text = res.Single.nomForfait
-        txtDescAct.Text = res.Single.descForfait
-        txtPrixForf.Text = res.Single.prixForfait
-        For Each el In cbTypeChambre.Items
-            If el.codeTypeChambre = res.Single.codeTypeChambre Then
-                cbTypeChambre.SelectedItem = el
-                Exit For
-            End If
-        Next
-    End Sub
-
     Sub New(p1 As Boolean, hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         ' TODO: Complete member initialization 
         InitializeComponent()
         ajout = p1
         _hotel = hotel
-        remplirTypeChambre()
         bd = _bd
+        remplirTypeChambre()
+
     End Sub
 
     Sub New(p1 As Boolean, hotel As Short, p3 As Object, _bd As P2014_Equipe2_GestionHôtelièreEntities)
