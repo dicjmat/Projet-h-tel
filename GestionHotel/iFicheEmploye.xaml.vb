@@ -129,7 +129,7 @@
     End Sub
 
     Private Sub btnAjoutHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutHoraire.Click
-        Dim Horaire = New iAjouterHoraire(numEmpl)
+        Dim Horaire = New iAjouterHoraire(numEmpl, bd)
         Horaire.Owner = Me
         Horaire.Show()
         Me.Hide()

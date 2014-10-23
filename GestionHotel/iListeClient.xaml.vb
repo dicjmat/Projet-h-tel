@@ -7,7 +7,7 @@
         ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
-        noEmploye = noEmploye
+        noEmpl = noEmploye
         noHotel = nHotel
     End Sub
 
