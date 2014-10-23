@@ -1,18 +1,22 @@
 ﻿Public Class iFicheEmploye
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Private numEmpl As Integer
+    Private _numEmpl As Object
 
-    Sub New(_numEmpl As Integer)
+    Sub New(numEmpl As Object, _bd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization 
         InitializeComponent()
-        numEmpl = _numEmpl
+        _numEmpl = numEmpl
+        bd = _bd
     End Sub
 
-    Sub New()
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization 
         InitializeComponent()
-        numEmpl = 0
+        bd = _bd
     End Sub
+
     Private Sub windowFicheEmploye_Loaded(sender As Object, e As RoutedEventArgs) Handles windowFicheEmploye.Loaded
-        bd = New P2014_Equipe2_GestionHôtelièreEntities()
         Dim ville = From el In bd.tblVille Select el
         Dim hotel = From el In bd.tblHotel Select el
         Dim profession = From el In bd.tblProfession Select el

@@ -1,5 +1,12 @@
 ﻿Public Class iInventaireComplet
     Dim bd As New P2014_Equipe2_GestionHôtelièreEntities
+
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+        bd = _bd
+    End Sub
+
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
     End Sub
@@ -45,7 +52,6 @@
     End Function
 
     Private Sub window_invComp_Loaded(sender As Object, e As RoutedEventArgs) Handles window_invComp.Loaded
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
         Dim listeCbHotel As List(Of tblHotel)
         Dim affichage As New tblHotel
         Dim hotel = From ho In bd.tblHotel

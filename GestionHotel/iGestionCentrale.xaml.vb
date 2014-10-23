@@ -1,30 +1,31 @@
 ﻿Public Class iGestionCentrale
 
-    Private _maBD As P2014_Equipe2_GestionHôtelièreEntities
+    Private bd As P2014_Equipe2_GestionHôtelièreEntities
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities)
         ' TODO: Complete member initialization 
-        _maBD = maBD
+        InitializeComponent()
+        bd = maBD
     End Sub
 
     Private Sub AppuieRapport()
 
     End Sub
     Private Sub AppuielstCent()
-        Dim liste = New iListeCentrale()
+        Dim liste = New iListeCentrale(bd)
         liste.Owner = Me
         liste.Show()
         Me.Hide()
     End Sub
 
     Private Sub AppuielstEmp()
-        Dim lstemp = New iListeEmployeComplet()
+        Dim lstemp = New iListeEmployeComplet(bd)
         lstemp.Owner = Me
         lstemp.Show()
     End Sub
 
     Private Sub AppuieInvComp()
-        Dim invComplet = New iInventaireComplet()
+        Dim invComplet = New iInventaireComplet(bd)
         invComplet.Owner = Me
         invComplet.Show()
     End Sub

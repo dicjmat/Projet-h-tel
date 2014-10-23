@@ -4,8 +4,15 @@
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
 
     Sub New(_codePays As Object)
-        InitializeComponent()
+
         codePays = _codePays
+    End Sub
+
+    Sub New(p1 As Object, _bd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization
+        InitializeComponent()
+        codePays = p1
+        bd = _bd
     End Sub
 
     Private Sub btnAnnuler_Click(sender As Object, e As RoutedEventArgs) Handles btnAnnuler.Click
@@ -14,7 +21,6 @@
 
     Private Sub btnAjouter_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouter.Click
         If txtCodeProv.Text <> "" And txtNomProv.Text <> "" Then
-            bd = New P2014_Equipe2_GestionHôtelièreEntities()
             Dim Province = New tblProvince()
             Province.codeProv = txtCodeProv.Text
             Province.nomProv = txtNomProv.Text
