@@ -6,11 +6,11 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="358" Width="583">
-                <Label Content="* = non-obligatoire" Margin="113,191,10.2,131" Grid.Column="1"/>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="332*"/>
-                    <ColumnDefinition Width="251*"/>
+                    <ColumnDefinition Width="332"/>
+                    <ColumnDefinition Width="251"/>
                 </Grid.ColumnDefinitions>
+                <Label Content="* = non-obligatoire" Margin="113,191,10.2,131" Grid.Column="1"/>
                 <Label Content="No du client : " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="txtRNoClient" Text="{Binding noClient}" Height="20" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="90,5,0,0" ></TextBox>
                 <GroupBox BorderBrush="Black" Header="Fiche Client" Margin="0,30,108.044,0">
