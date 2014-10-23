@@ -71,7 +71,7 @@
     End Sub
 
     Private Sub btnAjouter_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouter.Click
-        Dim iItem = New iAjouterItem
+        Dim iItem = New iAjouterItem(bd)
         iItem.Owner = Me
         iItem.Show()
     End Sub
@@ -79,7 +79,7 @@
     Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
         If dgInventaireC.SelectedIndex <> -1 Then
             Dim item = dgInventaireC.SelectedItem.codeItem
-            Dim iItem As New iAjouterItem(item)
+            Dim iItem As New iAjouterItem(item, bd)
             iItem.Owner = Me
             Me.Hide()
             iItem.Show()

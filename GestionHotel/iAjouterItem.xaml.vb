@@ -2,18 +2,18 @@
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Private _item As Object
 
-    Sub New()
-        ' TODO: Complete member initialization 
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
+        bd = maBD
     End Sub
-    Sub New(item As Object)
-        ' TODO: Complete member initialization 
+
+    Sub New(item As Object, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         _item = item
+        bd = _bd
     End Sub
 
     Private Sub Viewbox_Loaded(sender As Object, e As RoutedEventArgs)
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
         Me.Owner.Hide()
     End Sub
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
@@ -21,7 +21,7 @@
     End Sub
 
     Private Sub btnAjoutFour_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFour.Click
-        Dim fournisseur = New iAjoutFournisseur
+        Dim fournisseur = New iAjoutFournisseur(bd)
         fournisseur.Owner = Me
         fournisseur.Show()
         Me.Hide()

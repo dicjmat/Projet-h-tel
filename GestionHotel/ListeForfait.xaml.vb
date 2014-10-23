@@ -2,14 +2,13 @@
     Dim bd As New P2014_Equipe2_GestionHôtelièreEntities
     Private _hotel As Short
 
-    Sub New(hotel As Short)
-        ' TODO: Complete member initialization
+    Sub New(hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         _hotel = hotel
+        bd = _bd
     End Sub
 
     Private Sub window_ListeForf_Loaded(sender As Object, e As RoutedEventArgs) Handles window_ListeForf.Loaded
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
         Me.Owner.Hide()
         requete()
     End Sub
@@ -30,14 +29,14 @@
     End Sub
 
     Private Sub btnAjoutForf_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutForf.Click
-        Dim forfait = New iAjoutForf(True, _hotel)
+        Dim forfait = New iAjoutForf(True, _hotel, bd)
         forfait.Owner = Me
         forfait.Show()
     End Sub
 
     Private Sub btnModifForf_Click(sender As Object, e As RoutedEventArgs) Handles btnModifForf.Click
         If dgForfait.SelectedIndex <> -1 Then
-            Dim forfait = New iAjoutForf(False, _hotel, dgForfait.SelectedItem.noForfait)
+            Dim forfait = New iAjoutForf(False, _hotel, dgForfait.SelectedItem.noForfait, bd)
             forfait.Owner = Me
             forfait.Show()
         Else

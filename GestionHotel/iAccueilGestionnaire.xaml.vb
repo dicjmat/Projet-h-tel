@@ -24,13 +24,13 @@
     End Sub
 
     Private Sub AppuieItem()
-        Dim inventaire = New iInventaire(noEmpl, noHotel)
+        Dim inventaire = New iInventaire(noEmpl, noHotel, maBd)
         inventaire.Owner = Me
         inventaire.Show()
     End Sub
 
     Private Sub AppuieCommande()
-        Dim lstcommande = New iListeCOmmande(noEmpl, noHotel)
+        Dim lstcommande = New iListeCOmmande(noEmpl, noHotel, maBd)
         lstcommande.Owner = Me
         Me.Hide()
         lstcommande.Show()
