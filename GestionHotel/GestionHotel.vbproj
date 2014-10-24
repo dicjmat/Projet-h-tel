@@ -120,6 +120,9 @@
     <Compile Include="iCheck_in-out.xaml.vb">
       <DependentUpon>iCheck_in-out.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iFacture.xaml.vb">
+      <DependentUpon>iFacture.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iFaireReservationChambre.xaml.vb">
       <DependentUpon>iFaireReservationChambre.xaml</DependentUpon>
     </Compile>
@@ -339,6 +342,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iCommande.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iFacture.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
