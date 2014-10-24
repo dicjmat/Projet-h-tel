@@ -2,12 +2,14 @@
     Private noEmpl As Short
     Private noHotel As Short
     Dim typeChambre As String
+    Dim listClient As iListeClient
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
-    Sub New(p1 As Short, p2 As Short)
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short)
         ' TODO: Complete member initialization 
         InitializeComponent()
-        noEmpl = p1
-        noHotel = p2
+        bd = maBD
+        noEmpl = noEmploye
+        noHotel = nHotel
     End Sub
     Private Sub window_FaireReserv_Loaded(sender As Object, e As RoutedEventArgs) Handles window_FaireReserv.Loaded
         bd = New P2014_Equipe2_GestionHôtelièreEntities
@@ -20,16 +22,17 @@
     End Sub
 
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
-        Dim chambre As New tblReservationChambre
-        chambre.commentaire = txtCommReser.Text
-        chambre.noEmpl = noEmpl
-        chambre.noHotel = noHotel
-
-
-        bd.tblReservationChambre.Add(chambre)
-        bd.SaveChanges()
-        MessageBox.Show("La réservation de la chambre a été fait avec succès.")
+        listClient = New iListeClient(bd, noEmpl, noHotel)
+        listClient.Owner = Me
+        listClient.Show()
     End Sub
+    Private Sub dpDebut_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpDebut.SelectedDateChanged
+        Dim dated As Date
+        dated = dpDebut.SelectedDate
 
-
+    End Sub
+    Private Sub dpFin_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpFin.SelectedDateChanged
+        Dim datef As Date
+        datef = dpFin.SelectedDate
+    End Sub
 End Class

@@ -117,11 +117,23 @@
     <Compile Include="iCheckList.xaml.vb">
       <DependentUpon>iCheckList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iCheck_in-out.xaml.vb">
+      <DependentUpon>iCheck_in-out.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iFacture.xaml.vb">
+      <DependentUpon>iFacture.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iFaireReservationChambre.xaml.vb">
       <DependentUpon>iFaireReservationChambre.xaml</DependentUpon>
     </Compile>
     <Compile Include="iFaireReservSalle.xaml.vb">
       <DependentUpon>iFaireReservSalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iFicheReserv.xaml.vb">
+      <DependentUpon>iFicheReserv.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iFicheReservFacture.xaml.vb">
+      <DependentUpon>iFicheReservFacture.xaml</DependentUpon>
     </Compile>
     <Compile Include="iInventaireComplet.xaml.vb">
       <DependentUpon>iInventaireComplet.xaml</DependentUpon>
@@ -325,7 +337,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="iCheck_in-out.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iCommande.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iFacture.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -342,6 +362,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iFicheEmploye.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iFicheReserv.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iFicheReservFacture.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

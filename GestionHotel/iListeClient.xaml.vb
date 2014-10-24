@@ -36,9 +36,6 @@
 
 
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
-        Dim reserv As iFaireReservation
-        reserv = New iFaireReservation(noEmpl, noHotel)
-        reserv.Owner = Me
-        reserv.Show()
+   
     End Sub
 End Class
