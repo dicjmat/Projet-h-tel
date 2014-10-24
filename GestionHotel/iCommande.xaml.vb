@@ -5,16 +5,15 @@
     Dim prixTotal
     Private _noEmpl As Short
 
-    Sub New(noEmpl As Short)
-        ' TODO: Complete member initialization 
+    Sub New(noEmpl As Short, maBD As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         _noEmpl = noEmpl
+        bd = maBD
     End Sub
 
     Private Sub Grid_Loaded(sender As Object, e As RoutedEventArgs)
         Me.Owner.Hide()
         prixTotal = 0
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
         Dim res = From It In bd.tblItem Join FoIt In bd.tblCatalogue On It.codeItem Equals FoIt.codeItem Join Fo In bd.tblFournisseur On FoIt.noFournisseur Equals Fo.noFournisseur
                     Select It.codeItem, It.nomItem, FoIt.prixItem, Fo.nomFournisseur, Fo.noFournisseur
 

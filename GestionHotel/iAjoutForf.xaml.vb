@@ -4,22 +4,21 @@
     Private _hotel As Short
     Private forfait As Integer
 
-    Sub New(p1 As Boolean, hotel As Short)
+    Sub New(p1 As Boolean, hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         ' TODO: Complete member initialization 
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
-
         InitializeComponent()
         ajout = p1
         _hotel = hotel
+        bd = _bd
         remplirTypeChambre()
+
     End Sub
 
-    Sub New(p1 As Boolean, hotel As Short, p3 As Integer)
-        ' TODO: Complete member initialization
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
+    Sub New(p1 As Boolean, hotel As Short, p3 As Object, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         ajout = p1
         _hotel = hotel
+        bd = _bd
         forfait = p3
         remplirTypeChambre()
         Dim res = From fo In bd.tblForfait

@@ -1,23 +1,16 @@
 ﻿Public Class iAccueilVente
 
     Private hotel As Short
-    Private _maBD As P2014_Equipe2_GestionHôtelièreEntities
-    Private _nHotel As Short
+    Private bd As P2014_Equipe2_GestionHôtelièreEntities
 
-    Sub New(nHotel As Short)
-        ' TODO: Complete member initialization 
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, nHotel As Short)
         InitializeComponent()
+        bd = maBD
         hotel = nHotel
     End Sub
 
-    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, nHotel As Short)
-        ' TODO: Complete member initialization 
-        _maBD = maBD
-        _nHotel = nHotel
-    End Sub
-
     Private Sub AppuieForfait()
-        Dim Forfait = New ListeForfait(hotel)
+        Dim Forfait = New ListeForfait(hotel, bd)
         Forfait.Owner = Me
         Forfait.Show()
     End Sub
@@ -27,13 +20,13 @@
         Me.Close()
     End Sub
     Private Sub AppuieRabais()
-        Dim Rabais = New iRabais(hotel)
+        Dim Rabais = New iRabais(hotel, bd)
         Rabais.Owner = Me
         Rabais.Show()
     End Sub
 
     Private Sub AppuieSalle()
-        Dim salle = New iFaireReservSalle()
+        Dim salle = New iFaireReservSalle(bd)
         salle.Owner = Me
         salle.Show()
     End Sub

@@ -4,15 +4,15 @@
     Private _noHotel As Short
     Private _noEmpl As Short
 
-    Sub New(noEmpl As Short, noHotel As Short)
-        ' TODO: Complete member initialization 
+
+    Sub New(noEmpl As Short, noHotel As Short, maBd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         _noEmpl = noEmpl
         _noHotel = noHotel
+        bd = maBd
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Focusable = False
         Me.Close()
     End Sub
 
@@ -21,7 +21,6 @@
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
         requete()
     End Sub
 
@@ -49,7 +48,7 @@
     End Sub
 
     Private Sub btnAjouterComm_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterComm.Click
-        Dim iComman = New iCommande(_noEmpl)
+        Dim iComman = New iCommande(_noEmpl, bd)
         iComman.Owner = Me
         iComman.Show()
     End Sub
