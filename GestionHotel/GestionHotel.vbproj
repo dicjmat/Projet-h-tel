@@ -117,6 +117,9 @@
     <Compile Include="iCheckList.xaml.vb">
       <DependentUpon>iCheckList.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iCheck_in-out.xaml.vb">
+      <DependentUpon>iCheck_in-out.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iFaireReservationChambre.xaml.vb">
       <DependentUpon>iFaireReservationChambre.xaml</DependentUpon>
     </Compile>
@@ -319,6 +322,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iCheckList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iCheck_in-out.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -2,12 +2,21 @@
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Private ajout As Boolean
     Private _hotel As Short
+    Private _p1 As Boolean
+    Private _p3 As Object
 
     Sub New(p1 As Boolean, hotel As Short)
         ' TODO: Complete member initialization 
         InitializeComponent()
         ajout = p1
         _hotel = hotel
+    End Sub
+
+    Sub New(p1 As Boolean, hotel As Short, p3 As Object)
+        ' TODO: Complete member initialization 
+        _p1 = p1
+        _hotel = hotel
+        _p3 = p3
     End Sub
 
     Private Sub windowAjoutForf_Loaded(sender As Object, e As RoutedEventArgs) Handles windowAjoutForf.Loaded
