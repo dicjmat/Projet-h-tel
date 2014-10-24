@@ -8,10 +8,9 @@
             <Grid Height="374" Width="526">
                 <GroupBox Header="Réservation d'une chambre" BorderBrush="Black" Margin="10,0" Height="334" VerticalAlignment="Top">
                     <Grid>
-                        <Calendar Margin="0,35,314.6,116"></Calendar>
                         <Label Content="* = non-obligatoire" Margin="192,0,-0.2,285"></Label>
                         <Label Content="Commentaire * :" Margin="47,201,349.6,75"></Label>
-                        <DataGrid Margin="192,35,-0.4,116" AutoGenerateColumns="False">
+                        <DataGrid x:Name="dgReserv" Margin="192,35,-0.4,116" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="No"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Type"></DataGridTextColumn>
@@ -20,10 +19,14 @@
                             </DataGrid.Columns>
                         </DataGrid>
                         <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="144,206,0,11" HorizontalAlignment="Left" Width="302"></TextBox>
+                        <DatePicker x:Name="dpDebut" HorizontalAlignment="Left" Margin="14,70,0,0" VerticalAlignment="Top"/>
+                        <DatePicker x:Name="dpFin" HorizontalAlignment="Left" Margin="14,141,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Date de début" HorizontalAlignment="Left" Margin="14,44,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Date de fin" HorizontalAlignment="Left" Margin="14,115,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </GroupBox>
                 <Button Name="btnAccueil" Content="Retour" Height="25" Margin="295,339,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="128"/>
-                <Button Name="btnReserv" Content="Faire la réservation" Margin="157,339,0,10" HorizontalAlignment="Left" Width="133"/>
+                <Button Name="btnReserv" Content="Faire la réservation" Margin="162,339,0,10" HorizontalAlignment="Left" Width="133"/>
             </Grid>
         </Viewbox>
     </Grid>
