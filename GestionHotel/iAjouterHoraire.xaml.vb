@@ -3,22 +3,13 @@
     Private noGest As Short
     Private hotel As Short
     Private numEmpl As Short
-    Sub New(_noEmpl As Short)
-        InitializeComponent()
-        numEmpl = _noEmpl
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
 
-        Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
-
-        cbEmploye.DataContext = res.ToList()
-        cbEmploye.SelectedIndex = 0
-        cbEmploye.IsEnabled = False
-    End Sub
-    Sub New(_noGestionnaire As Short, _noHotel As Short)
+    Sub New(noEmpl As Short, noHotel As Short, maBd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization
         InitializeComponent()
-        noGest = _noGestionnaire
-        hotel = _noHotel
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
+        noGest = noEmpl
+        hotel = noHotel
+        bd = maBd
 
         Dim profGest = From el In bd.tblEmploye Where noGest = el.noEmpl Select el.codeProf
         Dim prof = profGest.Single.ToString()
@@ -26,12 +17,21 @@
 
         cbEmploye.DataContext = res.ToList()
     End Sub
-    Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
 
+    Sub New(_noEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization
+        InitializeComponent()
+        bd = _bd
+        numEmpl = _noEmpl
+
+        Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
+
+        cbEmploye.DataContext = res.ToList()
+        cbEmploye.SelectedIndex = 0
+        cbEmploye.IsEnabled = False
     End Sub
 
     Private Sub btnRetour_Click(sender As Object, e As RoutedEventArgs) Handles btnRetour.Click
-        Me.Focusable = False
         Me.Close()
     End Sub
 

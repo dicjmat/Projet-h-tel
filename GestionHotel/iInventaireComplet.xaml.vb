@@ -1,5 +1,12 @@
 ﻿Public Class iInventaireComplet
     Dim bd As New P2014_Equipe2_GestionHôtelièreEntities
+
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+        bd = _bd
+    End Sub
+
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
     End Sub
@@ -45,7 +52,7 @@
     End Function
 
     Private Sub window_invComp_Loaded(sender As Object, e As RoutedEventArgs) Handles window_invComp.Loaded
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
+        Me.Owner.Hide()
         Dim listeCbHotel As List(Of tblHotel)
         Dim affichage As New tblHotel
         Dim hotel = From ho In bd.tblHotel
@@ -65,7 +72,7 @@
     End Sub
 
     Private Sub btnAjouter_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouter.Click
-        Dim iItem = New iAjouterItem
+        Dim iItem = New iAjouterItem(bd)
         iItem.Owner = Me
         iItem.Show()
     End Sub
@@ -73,7 +80,7 @@
     Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
         If dgInventaireC.SelectedIndex <> -1 Then
             Dim item = dgInventaireC.SelectedItem.codeItem
-            Dim iItem As New iAjouterItem(item)
+            Dim iItem As New iAjouterItem(item, bd)
             iItem.Owner = Me
             Me.Hide()
             iItem.Show()

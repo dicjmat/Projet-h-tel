@@ -8,10 +8,10 @@
                 <Label Content="Rechercher :" Margin="10,0,-10,0"></Label>
                 <TextBox Name="txtRCli" Height="20" Margin="91,5,336,428" Width="120"></TextBox>
                 <GroupBox Header="Liste de clients" BorderBrush="Black" Margin="10,25,10,40">
-                    <DataGrid Name="dgClient" Margin="0,0,-2.6,-4.4" Height="370" VerticalAlignment="Top">
+                    <DataGrid Name="dgClient" AutoGenerateColumns="False"  Margin="0,0,-2.6,-4.4" Height="370" VerticalAlignment="Top">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Nom" Binding="{Binding nomCli}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Prénom" Binding="{Binding prenomCli}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Nom" Binding="{Binding nomClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="No Tel" Binding="{Binding noTelClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="No Cell" Binding="{Binding noCellClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Adresse" Binding="{Binding adrClient}"></DataGridTextColumn>
@@ -24,6 +24,7 @@
                 <Button Name="btnAjouterClient" Content="Ajouter un client" Margin="258,418,188,10" Height="25"/>
                 <Button Name="btnModifierClient" Content="Modifier un client" Margin="364,418,74,10" Height="25"/>
                 <Button Name="btnAccueil" Content="Accueil" Margin="478,418,12,10" Height="25"/>
+                <Button Name="btnReserv" Content="Faire une réservation" Margin="127,418,294,10" Height="25"/>
             </Grid>
         </Viewbox>
     </Grid>

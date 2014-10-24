@@ -1,7 +1,14 @@
 ﻿Public Class iListeEmployeComplet
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
+
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+        bd = _bd
+    End Sub
+
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
-        Dim emp = New iFicheEmploye
+        Dim emp = New iFicheEmploye(bd)
         emp.Owner = Me
         emp.Show()
         Me.Hide()
@@ -12,13 +19,11 @@
     End Sub
 
     Private Sub window_lstEmployeComplet_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstEmployeComplet.Loaded
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
+        Me.Owner.Hide()
         Dim hotel = From ho In bd.tblHotel
                     Select ho
         cbHotel.DataContext = hotel.ToList
         requete()
-
-
     End Sub
 
     Private Sub requete()
@@ -46,7 +51,7 @@
     Private Sub btnModif_Click(sender As Object, e As RoutedEventArgs) Handles btnModif.Click
         If dgEmploye.SelectedIndex <> -1 Then
             Dim numEmpl = dgEmploye.SelectedItem.noEmpl
-            Dim iEmploye As New iFicheEmploye(numEmpl)
+            Dim iEmploye As New iFicheEmploye(numEmpl, bd)
             iEmploye.Owner = Me
             Me.Hide()
             iEmploye.Show()

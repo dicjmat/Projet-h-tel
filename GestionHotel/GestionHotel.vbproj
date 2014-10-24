@@ -147,6 +147,9 @@
     <Compile Include="iListeHotel.xaml.vb">
       <DependentUpon>iListeHotel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iListeSalle.xaml.vb">
+      <DependentUpon>iListeSalle.xaml</DependentUpon>
+    </Compile>
     <Compile Include="inventaireCommun.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -394,6 +397,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iListeHotel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iListeSalle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
