@@ -4,8 +4,24 @@
     Title="iFacture" Height="300" Width="300">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid>
-                
+            <Grid Width="399" Height="403">
+                <Label Content="No de facture :" Margin="10,0,299,376"></Label>
+                <TextBox Height="25" Name="txtNoFact" Margin="105,2,159,376"></TextBox>
+                <DataGrid AutoGenerateColumns="False" Name="dgEleFacture" Margin="10,32,10,205">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Description"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Montant"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <DataGrid Name="dgDescFact" AutoGenerateColumns="False" Margin="10,209,207,38">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Description"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label Content="Montant :" Margin="10,367,327,5"></Label>
+                <TextBox Name="txtMontant" Height="20" Margin="72,370,207,13"></TextBox>
+                <Button Name="btnAjout" Content="Ajouter" Height="25" Margin="197,209,117,169"></Button>
+                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="294,368,10,10"></Button>
             </Grid>
         </Viewbox>
     </Grid>
