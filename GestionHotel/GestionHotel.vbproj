@@ -129,6 +129,9 @@
     <Compile Include="iFicheReserv.xaml.vb">
       <DependentUpon>iFicheReserv.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iFicheReservFacture.xaml.vb">
+      <DependentUpon>iFicheReservFacture.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iInventaireComplet.xaml.vb">
       <DependentUpon>iInventaireComplet.xaml</DependentUpon>
     </Compile>
@@ -356,6 +359,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iFicheReserv.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iFicheReservFacture.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
