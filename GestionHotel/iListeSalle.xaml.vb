@@ -37,9 +37,9 @@
         If lstSalle.SelectedIndex <> -1 Then
             Dim numSalle = lstSalle.SelectedItem.noSalle
             Dim iReservSalle As New iFaireReservSalle(bd)
-            iSalle.Owner = Me
+            iReservSalle.Owner = Me
             Me.Hide()
-            iSalle.ShowDialog()
+            iReservSalle.ShowDialog()
         Else
             MessageBox.Show("Veuillez sélectionner une salle")
         End If
