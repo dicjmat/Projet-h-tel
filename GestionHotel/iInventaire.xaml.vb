@@ -33,7 +33,7 @@
     End Sub
 
     Private Sub btnAjoutItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutItem.Click
-        Dim iItem = New iAjouterItem(maBD)
+        Dim iItem = New iAjouterItem(maBD, True)
         iItem.Owner = Me
         iItem.Show()
     End Sub

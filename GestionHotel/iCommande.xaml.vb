@@ -6,7 +6,7 @@
     Private _noEmpl As Short
 
     Sub New(noEmpl As Short, maBD As P2014_Equipe2_GestionHôtelièreEntities)
-        ' TODO: Complete member initialization 
+        InitializeComponent()
         _noEmpl = noEmpl
         bd = maBD
     End Sub

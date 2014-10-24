@@ -1,6 +1,7 @@
 ﻿Class iAjouterItem
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Private _item As Object
+    Private _p2 As Boolean
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
@@ -11,6 +12,12 @@
         InitializeComponent()
         _item = item
         bd = _bd
+    End Sub
+
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, p2 As Boolean)
+        InitializeComponent()
+        bd = maBD
+        _p2 = p2
     End Sub
 
     Private Sub Viewbox_Loaded(sender As Object, e As RoutedEventArgs)

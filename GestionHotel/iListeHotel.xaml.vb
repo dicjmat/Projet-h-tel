@@ -8,6 +8,7 @@
     End Sub
 
     Private Sub window_lstHotel_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstHotel.Loaded
+        Me.Owner.Hide()
         Dim res = From Ho In bd.tblHotel
                   Join Vi In bd.tblVille On Ho.codeVille Equals Vi.codeVille
                   Select Ho.noHotel, Ho.nomHotel, Vi.nomVille

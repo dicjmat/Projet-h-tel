@@ -19,6 +19,7 @@
     End Sub
 
     Private Sub window_lstEmployeComplet_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstEmployeComplet.Loaded
+        Me.Owner.Hide()
         Dim hotel = From ho In bd.tblHotel
                     Select ho
         cbHotel.DataContext = hotel.ToList

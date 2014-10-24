@@ -4,10 +4,10 @@
     Private noHotel As Short
     Dim maBd As P2014_Equipe2_GestionHôtelièreEntities
 
-    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _noEmploye As Short, nHotel As Short)
+    Sub New(_maBD As P2014_Equipe2_GestionHôtelièreEntities, _noEmploye As Short, nHotel As Short)
         ' TODO: Complete member initialization
         InitializeComponent()
-        maBD = maBD
+        maBd = _maBD
         noEmploye = _noEmploye
         noHotel = nHotel
     End Sub
