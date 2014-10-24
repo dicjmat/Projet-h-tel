@@ -11,7 +11,7 @@
     End Sub
 
     Private Sub btnAjouterEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterEmploye.Click
-        Dim iEmploye As New iFicheEmploye
+        Dim iEmploye As New iFicheEmploye(maBd)
         iEmploye.Owner = Me
         Me.Hide()
         iEmploye.Show()

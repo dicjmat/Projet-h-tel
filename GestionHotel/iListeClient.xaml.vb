@@ -1,13 +1,14 @@
 ﻿Public Class iListeClient
     Private noEmpl As Short
     Private noHotel As Short
+
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short)
         ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
-        noEmploye = noEmploye
+        noEmpl = noEmploye
         noHotel = nHotel
     End Sub
 
@@ -34,4 +35,10 @@
     End Sub
 
 
+    Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
+        Dim reserv As iFaireReservation
+        reserv = New iFaireReservation(noEmpl, noHotel)
+        reserv.Owner = Me
+        reserv.Show()
+    End Sub
 End Class

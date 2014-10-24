@@ -11,7 +11,7 @@
                     <DataGrid Name="dgClient" AutoGenerateColumns="False"  Margin="0,0,-2.6,-4.4" Height="370" VerticalAlignment="Top">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Nom" Binding="{Binding nomClient}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Prénom" Binding="{Binding prenoClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="No Tel" Binding="{Binding noTelClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="No Cell" Binding="{Binding noCellClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Adresse" Binding="{Binding adrClient}"></DataGridTextColumn>
