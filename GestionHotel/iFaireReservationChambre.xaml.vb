@@ -29,9 +29,9 @@
     Private Sub dpFin_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpFin.SelectedDateChanged
         Dim datef As Date
         Dim dated As Date
-
         datef = dpFin.SelectedDate
         dated = dpDebut.SelectedDate
+        dgReserv.ItemsSource = bd.determinerlibre(dated, datef).ToList
 
 
 
