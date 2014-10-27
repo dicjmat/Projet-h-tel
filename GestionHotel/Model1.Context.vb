@@ -10,6 +10,8 @@
 Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
+Imports System.Data.Entity.Core.Objects
+Imports System.Linq
 
 Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
     Inherits DbContext
@@ -55,6 +57,9 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
     Public Overridable Property tblTypeChambre() As DbSet(Of tblTypeChambre)
     Public Overridable Property tblTypeChambreHotel() As DbSet(Of tblTypeChambreHotel)
     Public Overridable Property tblTypeElement() As DbSet(Of tblTypeElement)
-    Public Overridable Property inventaireCommun() As DbSet(Of inventaireCommun)
+
+    Public Overridable Function inventaireCommun() As ObjectResult(Of inventaireCommun_Result)
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of inventaireCommun_Result)("inventaireCommun")
+    End Function
 
 End Class

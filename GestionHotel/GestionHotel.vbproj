@@ -159,7 +159,7 @@
     <Compile Include="iListeSalle.xaml.vb">
       <DependentUpon>iListeSalle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="inventaireCommun.vb">
+    <Compile Include="inventaireCommun_Result.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="iRabais.xaml.vb">

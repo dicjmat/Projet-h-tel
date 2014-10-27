@@ -90,6 +90,7 @@
 
             bd.SaveChanges()
             MessageBox.Show("L'item a été modifié avec succès.")
+            Me.Close()
         Else
             MessageBox.Show("Un des champs obligatoire n'a pas été remplis")
         End If
