@@ -12,8 +12,8 @@
                         <Label Content="Commentaire * :" Margin="47,201,349.6,75"></Label>
                         <DataGrid x:Name="dgReserv" Margin="192,35,-0.4,116" AutoGenerateColumns="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="No"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Type"></DataGridTextColumn>
+                                <DataGridTextColumn Header="No" Binding="{Binding noChambre}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Type" Binding="{Binding codeTypeChambre}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Prix"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Lits"></DataGridTextColumn>
                             </DataGrid.Columns>
