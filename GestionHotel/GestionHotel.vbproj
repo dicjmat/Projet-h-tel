@@ -102,6 +102,9 @@
     <Compile Include="AjoutVille.xaml.vb">
       <DependentUpon>AjoutVille.xaml</DependentUpon>
     </Compile>
+    <Compile Include="determinerlibre_Result.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="iAccueilVente.xaml.vb">
       <DependentUpon>iAccueilVente.xaml</DependentUpon>
     </Compile>
@@ -159,7 +162,7 @@
     <Compile Include="iListeSalle.xaml.vb">
       <DependentUpon>iListeSalle.xaml</DependentUpon>
     </Compile>
-    <Compile Include="inventaireCommun.vb">
+    <Compile Include="inventaireCommun_Result.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="iRabais.xaml.vb">

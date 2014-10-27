@@ -35,11 +35,16 @@
                         Where LiCo.noCommande = commande
                         Select LiCo
             For Each el In ligne.ToList()
+                'Dim affichage = New With {.nomFournisseur = el.tblCommande.tblFournisseur.nomFournisseur _
+                '                            , .quantite = el.quantite _
+                '                            , .prixLigne = el.prixUnitaire * el.quantite _
+                '                            , .nomItem = el.tblItem.nomItem _
+                '                            , .codeItem = el.codeItem}
                 Dim affichage = New With {.nomFournisseur = el.tblCommande.tblFournisseur.nomFournisseur _
-                                            , .quantite = el.quantite _
-                                            , .prixLigne = el.prixLigne _
-                                            , .nomItem = el.tblItem.nomItem _
-                                            , .codeItem = el.codeItem}
+                            , .quantite = el.quantite _
+                            , .prixLigne = el.prixLigne _
+                            , .nomItem = el.tblItem.nomItem _
+                            , .codeItem = el.codeItem}
                 lstAffichage.Add(affichage)
             Next
             dgLigneCommande.ItemsSource = lstAffichage.ToList

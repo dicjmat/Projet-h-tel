@@ -10,6 +10,8 @@
 Imports System
 Imports System.Data.Entity
 Imports System.Data.Entity.Infrastructure
+Imports System.Data.Entity.Core.Objects
+Imports System.Linq
 
 Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
     Inherits DbContext
@@ -55,6 +57,17 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
     Public Overridable Property tblTypeChambre() As DbSet(Of tblTypeChambre)
     Public Overridable Property tblTypeChambreHotel() As DbSet(Of tblTypeChambreHotel)
     Public Overridable Property tblTypeElement() As DbSet(Of tblTypeElement)
-    Public Overridable Property inventaireCommun() As DbSet(Of inventaireCommun)
+
+    Public Overridable Function inventaireCommun() As ObjectResult(Of inventaireCommun_Result)
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of inventaireCommun_Result)("inventaireCommun")
+    End Function
+
+    Public Overridable Function determinerlibre(dateDebut As Nullable(Of Date), datefin As Nullable(Of Date)) As ObjectResult(Of determinerlibre_Result)
+        Dim dateDebutParameter As ObjectParameter = If(dateDebut.HasValue, New ObjectParameter("dateDebut", dateDebut), New ObjectParameter("dateDebut", GetType(Date)))
+
+        Dim datefinParameter As ObjectParameter = If(datefin.HasValue, New ObjectParameter("datefin", datefin), New ObjectParameter("datefin", GetType(Date)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of determinerlibre_Result)("determinerlibre", dateDebutParameter, datefinParameter)
+    End Function
 
 End Class
