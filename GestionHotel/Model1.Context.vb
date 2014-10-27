@@ -62,4 +62,10 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of inventaireCommun_Result)("inventaireCommun")
     End Function
 
+    Public Overridable Function determinerlibre(dateDebut As Nullable(Of Date), datefin As ObjectParameter) As ObjectResult(Of determinerlibre_Result)
+        Dim dateDebutParameter As ObjectParameter = If(dateDebut.HasValue, New ObjectParameter("dateDebut", dateDebut), New ObjectParameter("dateDebut", GetType(Date)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of determinerlibre_Result)("determinerlibre", dateDebutParameter, datefin)
+    End Function
+
 End Class
