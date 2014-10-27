@@ -26,13 +26,14 @@
         listClient.Owner = Me
         listClient.Show()
     End Sub
-    Private Sub dpDebut_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpDebut.SelectedDateChanged
-        Dim dated As Date
-        dated = dpDebut.SelectedDate
-
-    End Sub
     Private Sub dpFin_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpFin.SelectedDateChanged
         Dim datef As Date
+        Dim dated As Date
+
         datef = dpFin.SelectedDate
+        dated = dpDebut.SelectedDate
+
+
+
     End Sub
 End Class
