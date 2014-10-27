@@ -45,6 +45,7 @@
                                          , .codeItem = dgCommande.SelectedItem.codeItem _
                                          , .noFournisseur = dgCommande.SelectedItem.noFournisseur}
                 lstAffichage.Add(affichage)
+                Dim lol As System.Data.SqlClient.SqlParameter
                 lstViewCommande.ItemsSource = lstAffichage.ToList()
                 prixTotal += ligne.prixLigne
                 lblPrixComm.Content = Convert.ToDouble(prixTotal).ToString() + " $"

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f0cdffc2ebb24bfab75b6d68f1946e34" Name="Diagram1">
+      <Diagram DiagramId="77b00986056e4a489974dce453bbac97" Name="Diagram1">
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblCatalogue" Width="1.5" PointX="18" PointY="15.375" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblChecklist" Width="1.5" PointX="15" PointY="22.875" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblCommande" Width="1.5" PointX="18" PointY="22.25" IsExpanded="true" />
@@ -38,7 +38,6 @@
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblTypeChambre" Width="1.5" PointX="10.5" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblTypeChambreHotel" Width="1.5" PointX="12.75" PointY="18.875" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.tblTypeElement" Width="1.5" PointX="20.25" PointY="18.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreModel.inventaireCommun" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="P2014_Equipe2_GestionHôtelièreModel.fk_cat_codeitem" ManuallyRouted="false" />
         <AssociationConnector Association="P2014_Equipe2_GestionHôtelièreModel.fk_cat_nofour" ManuallyRouted="false" />
         <AssociationConnector Association="P2014_Equipe2_GestionHôtelièreModel.fk_chklist_coitem" ManuallyRouted="false" />
