@@ -1,11 +1,22 @@
 ﻿<Window x:Class="iFicheReservFacture" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="CadetBlue" Name="window_FicheReservFacture" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="iFicheReservFacture" Height="300" Width="408.8">
+    Title="iFicheReservFacture" Height="403.2" Width="408.8">
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Width="705" Height="520">
-                <GroupBox Header="Réservation" BorderBrush="Black" Margin="10,-3,0,291" HorizontalAlignment="Left" Width="364">
+            <Grid Width="705" Height="694">
+                <GroupBox Header="Menu" BorderBrush="Black" Margin="140,4,143,530">
+                    <Grid Margin="0,0,0,-12.2">
+                        <Button Name="btnCheck" Content="Check-in/Check-out" Height="25" Width="125" Margin="10,10,269.8,72.2"></Button>
+                        <Button Name="btnFact" Content="Facture" Height="25" Width="125" Margin="10,40,269.8,42.2"></Button>
+                        <Button Name="btnReservC" Content="Réservation Chambre" Height="25" Width="125" Margin="10,70,269.8,10.2"/>
+                        <Button Name="btnFicheC" Content="Fiche client" Height="25" Width="125" Margin="140,10,139.8,72.2"></Button>
+                        <Button Name="btnFicheReserv" Content="Fiche Réservation" Height="25" Width="125"></Button>
+                        <Button Name="btnAhoutCli" Content="Ajouter Client" Height="25" Width="125" Margin="140,71,139.8,11.2"></Button>
+                        <Button Name="btnListeCli" Content="Liste de client" Height="25" Width="125" Margin="270,10,9.8,72.2"></Button>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Réservation" BorderBrush="Black" Margin="10,164,0,298" HorizontalAlignment="Left" Width="364">
                     <Grid>
                         <Label Content="NoRéservation :" Margin="0,0,257.2,184.6"></Label>
                         <TextBox Name="txtNoReserv" Height="20" Margin="99,5,118.2,184.6"></TextBox>
@@ -19,7 +30,7 @@
                         <TextBox Name="txtCommReserv" TextWrapping="Wrap" AcceptsReturn="False" Margin="96,133,10.2,5.6"></TextBox>
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="Client" BorderBrush="Black" Margin="10,229,0,33" HorizontalAlignment="Left" Width="364">
+                <GroupBox Header="Client" BorderBrush="Black" Margin="10,396,0,33" HorizontalAlignment="Left" Width="364">
                     <Grid>
                         <Label Content="Prénom :" Margin="0,0,296,207.2"></Label>
                         <TextBox Name="txtPrenCli" Height="20" Margin="61,5,111,210.2"></TextBox>
@@ -36,7 +47,7 @@
                         <Button Name="btnFicheCli" Content="Fiche du client" Height="25" Margin="246,5,10,205.2"></Button>
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="Facture" BorderBrush="Black" Margin="379,0,10,241">
+                <GroupBox Header="Facture" BorderBrush="Black" Margin="379,164,10,250">
                     <Grid>
                         <DataGrid Name="dgFacture" AutoGenerateColumns="False" Margin="0,0,-0.2,30.8">
                             <DataGrid.Columns>
@@ -47,14 +58,14 @@
                         <Button Name="btnConsulter" Content="Consulter" Height="25" Margin="219,231,9.8,0.8"></Button>
                     </Grid>
                 </GroupBox>
-                <DataGrid Name="dgReserv" AutoGenerateColumns="False" Margin="379,284,10,90">
+                <DataGrid Name="dgReserv" AutoGenerateColumns="False" Margin="379,458,10,90">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="No de chambre"></DataGridTextColumn>
                         <DataGridTextColumn Header="Nom"></DataGridTextColumn>
                         <DataGridTextColumn Header="No de réservation"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="605,485,10,10"></Button>
+                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="605,636,10,33"></Button>
             </Grid>
         </Viewbox>
     </Grid>
