@@ -34,7 +34,7 @@
                         </DataGrid>
                     </Grid>
                 </GroupBox>
-                <Button Name="btndeco" Content="Déconnexion" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,10"></Button>
+                <Button Name="btndeco" Content="Annuler" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,10" Width="77"></Button>
                 <Button Name="AjoutRab" Content="Ajouter un rabais" Height="25" Margin="110,239,323,45"></Button>
                 <Button Name="ModifcRab" Content="Modifier un rabais" Height="25" Margin="269,239,164,45"></Button>
                 <Button Name="SuppRab" Content="Supprimer un rabais" Height="25" Margin="428,239,5,45"></Button>
