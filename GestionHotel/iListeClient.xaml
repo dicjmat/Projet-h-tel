@@ -5,9 +5,9 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="584" Width="547">
-                <Label Content="Rechercher :" Margin="10,0,-10,0"></Label>
-                <TextBox Name="txtRCli" Height="20" Margin="87,5,340,667" Width="120"></TextBox>
-                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,25,10,421">
+                <Label Content="Rechercher :" Margin="11,140,463,419"></Label>
+                <TextBox Name="txtRCli" Height="20" Margin="84,143,343,421" Width="120"></TextBox>
+                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,10,446">
                     <Grid>
                         <Button Name="btnCheck" Content="Check-in/Check-out" Height="25" Width="125" Margin="10,10,269.8,72.2"></Button>
                         <Button Name="btnFact" Content="Facture" Height="25" Width="125" Margin="10,40,269.8,42.2"></Button>
