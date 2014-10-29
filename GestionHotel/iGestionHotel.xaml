@@ -8,23 +8,52 @@
             <Grid Height="274" Width="506">
                 <GroupBox BorderBrush="Black" Header="Gestion des Hôtels" HorizontalAlignment="Center" Margin="22,10,128,31" Width="356">
                     <StackPanel Margin="0,0,0.4,-3.2">
-                        <Grid>
-                            <Label Content="No d'hôtel :" Margin="0,0,0,107.6" HorizontalAlignment="Left" Width="73"></Label>
-                            <xctk:MaskedTextBox Mask="09" Name="txtNoHotel" Margin="73,4,0,113.6" Height="20" HorizontalAlignment="Left" Width="87"></xctk:MaskedTextBox>
-                            <Label Content="Nom :" Margin="0,25,0,76.6" HorizontalAlignment="Left" Width="42"></Label>
-                            <TextBox Name="txtNomHotel" Margin="40,29,0,88.6" Height="20" HorizontalAlignment="Left" Width="120"></TextBox>
-                            <Label Content="Adresse :" Margin="0,50,0,57.6" HorizontalAlignment="Left" Width="62"></Label>
-                            <xctk:MaskedTextBox Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrHotel" Margin="60,54,0,63.6" Height="20" HorizontalAlignment="Left" Width="100"></xctk:MaskedTextBox>
-                            <Label Content="noTelephone :" Margin="0,75,0,26.6" HorizontalAlignment="Left" Width="88"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" Name="txtTelHotel" Margin="86,79,0,38.6" Height="20" HorizontalAlignment="Left" Width="74"></xctk:MaskedTextBox>
-                            <Label Content="CodeVille :" Margin="171,0,0,100.6" HorizontalAlignment="Left" Width="70"></Label>
-                            <ComboBox Name="cbCodeVille" Margin="241,4,0,113.6" Background="White" Height="20" HorizontalAlignment="Left" Width="87"></ComboBox>
-                            <Label Content="No Téléphone de réservation :" Margin="-1,108,0,-8.4" HorizontalAlignment="Left" Width="174"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" Name="noTelRes" Height="20" Margin="171,111,0,6.6" HorizontalAlignment="Left" Width="107"></xctk:MaskedTextBox>
-                            <Label Content="No de Télécopieur :" Margin="2,139,0,-40.4" HorizontalAlignment="Left" Width="119"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" Name="txtNoteleC" Margin="126,143,0,-27.4" HorizontalAlignment="Left" Width="107"/>
-                            <Label Content="Code Postal :" Margin="1,172,0,-74.4" HorizontalAlignment="Left" Width="82"></Label>
-                            <TextBox Name="txtCodePostHo" Height="20" Margin="86,176,0,-58.4" HorizontalAlignment="Left" Width="108"></TextBox>
+                        <Grid Margin="0,0,0.4,0">
+                            <Label Content="No d'hôtel :" Margin="0,0,0,107.6" HorizontalAlignment="Left" Width="73"/>
+                            <xctk:MaskedTextBox PromptChar=" " Mask="09" x:Name="txtNoHotel" Margin="73,4,0,113.6" Height="20" HorizontalAlignment="Left" Width="87"/>
+                            <Label Content="Nom :" Margin="0,25,0,76.6" HorizontalAlignment="Left" Width="42"/>
+                            <TextBox x:Name="txtNomHotel" Margin="40,29,0,88.6" Height="20" HorizontalAlignment="Left" Width="120"/>
+                            <Label Content="Adresse :" Margin="0,50,0,57.6" HorizontalAlignment="Left" Width="62"/>
+                            <xctk:MaskedTextBox x:Name="txtAdrHotel" Margin="60,54,0,63.6" Height="20" HorizontalAlignment="Left" Width="100"/>
+                            <Label Content="noTelephone :" Margin="0,75,0,26.6" HorizontalAlignment="Left" Width="88"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" x:Name="txtTelHotel" Margin="86,79,0,38.6" Height="20" HorizontalAlignment="Left" Width="74"/>
+                            <Label Content=""/>
+                            <Label Content="Pays :" Margin="165,2,0,98.6" HorizontalAlignment="Left" Width="70"/>
+                            <Label Content="Province :" Margin="165,36,0,64.6" HorizontalAlignment="Left" Width="70"/>
+                            <Label Content="Ville :" Margin="165,73,0,27.6" HorizontalAlignment="Left" Width="70" RenderTransformOrigin="0.5,0.5"/>
+                            <ComboBox x:Name="cbPays" Margin="240,4,0,113.6" Background="White" Height="20" HorizontalAlignment="Left" Width="87">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblPays" Content="{Binding nomPays}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox x:Name="cbProvince" Margin="241,41,0,76.6" Background="White" Height="20" HorizontalAlignment="Left" Width="87">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblProvince" Content="{Binding nomProv}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox x:Name="cbCodeVille" Margin="241,77,0,40.6" Background="White" Height="20" HorizontalAlignment="Left" Width="87">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblVille" Content="{Binding nomVille}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <Label Content="No Téléphone de réservation :" Margin="-1,108,0,-8.4" HorizontalAlignment="Left" Width="174"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" x:Name="noTelRes" Height="20" Margin="171,111,0,6.6" HorizontalAlignment="Left" Width="107"/>
+                            <Label Content="No de Télécopieur :" Margin="2,139,0,-40.4" HorizontalAlignment="Left" Width="119"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" x:Name="txtNoteleC" Margin="126,143,0,-27.4" HorizontalAlignment="Left" Width="107"/>
+                            <Label Content="Code Postal :" Margin="1,172,0,-74.4" HorizontalAlignment="Left" Width="82"/>
+                            <TextBox x:Name="txtCodePostHo" Height="20" Margin="86,176,0,-58.4" HorizontalAlignment="Left" Width="108"/>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
