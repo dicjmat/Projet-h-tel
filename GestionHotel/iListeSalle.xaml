@@ -5,7 +5,7 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="611">
-                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,9.6,464">
+                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,-0.2,464">
                     <Grid>
                         <Button Name="btnAjoutForfait" Content="Ajouter un forfait" Height="25" Width="125" Margin="10,10,269.8,72.2"></Button>
                         <Button Name="btnReservSalle" Content="Réservation de salle" Height="25" Width="125" Margin="10,40,269.8,42.2"></Button>
@@ -27,10 +27,10 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" Margin="0,0,9.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="44"></Button>
-                <Button Name="btnAjouterSalle" Content="Ajouter une salle" Margin="0,0,187.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Button>
+                <Button Name="btnAccueil" Content="Accueil" Margin="0,0,9.8,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="74"></Button>
+                <Button Name="btnAjouterSalle" Content="Ajouter une salle" Margin="0,0,88.8,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Button>
                 <Button Name="btnModifSalle" Content="Modifier la salle" Height="25" Margin="372,532,10.2,0" VerticalAlignment="Top"></Button>
-                <Button Name="btnReservaSalle" Content="Réserver la salle" Height="25" Margin="276,532,108.2,0" VerticalAlignment="Top"></Button>
+                <Button Name="btnReservaSalle" Content="Réserver la salle" Height="25" Margin="237,532,153.8,0" VerticalAlignment="Top"></Button>
             </Grid>
         </Viewbox>
     </Grid>
