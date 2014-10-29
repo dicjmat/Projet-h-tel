@@ -11,9 +11,9 @@
                     <ColumnDefinition Width="251"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="* = non-obligatoire" Margin="114,325,9.2,-4" Grid.Column="1"/>
-                <Label Content="No du client : " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtRNoClient" Text="{Binding noClient}" Height="20" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="90,5,0,0" ></TextBox>
-                <GroupBox Header="Menu" BorderBrush="Black" Margin="10,26,10.2,330" Grid.ColumnSpan="2">
+                <Label Content="No du client : " HorizontalAlignment="Left" Margin="3,131,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtRNoClient" Text="{Binding noClient}" Height="20" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="93,136,0,0" />
+                <GroupBox Header="Menu" BorderBrush="Black" Margin="3,-2,17.2,358" Grid.ColumnSpan="2">
                     <Grid>
                         <Button Name="btnCheck" Content="Check-in/Check-out" Height="25" Width="125" Margin="10,10,269.8,72.2"></Button>
                         <Button Name="btnFact" Content="Facture" Height="25" Width="125" Margin="10,40,269.8,42.2"></Button>

@@ -4,12 +4,19 @@
     xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" x:Name="windowCommande" WindowStyle="None" Icon="icon.ico"
     mc:Ignorable="d" x:Class="iCommande"
-    Title="Gestion Hotel" Height="792.02" Width="1433.619" Closing="Window_Closing">
+    Title="Gestion Hotel" Height="1089.76" Width="1433.619" Closing="Window_Closing">
     <Grid Loaded="Grid_Loaded">
         <Viewbox Stretch="Uniform" Margin="0,0,0.4,0.4">
-            <Grid Height="410" Width="739">
-                <Label Content="Recherche : " HorizontalAlignment="Left" Margin="0,19,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtRecherche" Height="25" VerticalAlignment="Top" Width="131" HorizontalAlignment="Left" Canvas.Left="85" Margin="85,20,0,0"/>
+            <Grid Height="563" Width="739">
+                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,9,384">
+                    <Grid>
+                        <Button Name="btnAjoutItem" Content="Ajouter un item" Height="25" Margin="10,64,473.6,67.8"/>
+                        <Button Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,10,473.6,121.8"/>
+                        <Button Name="btnInventaire" Content="Inventaire" Height="25" Margin="10,116,472.6,15.8"/>
+                    </Grid>
+                </GroupBox>
+                <Label Content="Recherche : " HorizontalAlignment="Left" Margin="11,184,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtRecherche" Height="25" VerticalAlignment="Top" Width="131" HorizontalAlignment="Left" Canvas.Left="85" Margin="96,185,0,0"/>
                 <GroupBox BorderBrush="Black" Header="Commande" Margin="0,0,339,10" HorizontalAlignment="Right" Width="390" Height="343" VerticalAlignment="Bottom">
                     <Grid>
                         <DataGrid x:Name="dgCommande" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="0,10,0.8,93" RenderTransformOrigin="0.5,0.5">
@@ -21,7 +28,7 @@
                                     <TranslateTransform Y="0.414"/>
                                 </TransformGroup>
                             </DataGrid.RenderTransform>
-                            
+
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Code" Binding="{Binding codeItem,Mode=OneWay}"/>
                                 <DataGridTextColumn Header="Nom" Binding="{Binding nomItem,Mode=OneWay}"/>
@@ -36,9 +43,9 @@
                         </Label>
                     </Grid>
                 </GroupBox>
-                <Button x:Name="btnAjouterItemComm" Content="Ajouter" Margin="0,370,344,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                <Button x:Name="btnAjouterItemComm" Content="Ajouter" Margin="0,522,345,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
                 <Button x:Name="btnSupprimerItemComm" Content="Supprimer" Margin="0,338,10,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-                <GroupBox BorderBrush="Black" Header="Aperçu Commande" Margin="405,57,5,33">
+                <GroupBox BorderBrush="Black" Header="Aperçu Commande" Margin="405,210,5,33">
                     <StackPanel>
                         <Grid>
                             <ListView x:Name="lstViewCommande" Margin="0,0,-0.2,-108.2">
@@ -55,8 +62,8 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button x:Name="btnFaireComm" Content="Faire la commande" Margin="486,383,121,2" Height="25"/>
-                <Button x:Name="btnAccueil" Content="Accueil" Margin="623,383,0,2" Height="25"/>
+                <Button x:Name="btnFaireComm" Content="Faire la commande" Margin="475,535,132,3" Height="25"/>
+                <Button x:Name="btnAccueil" Content="Accueil" Margin="612,535,11,3" Height="25"/>
             </Grid>
         </Viewbox>
     </Grid>
