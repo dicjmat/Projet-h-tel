@@ -1,7 +1,10 @@
 ﻿Public Class iGestionHotel
 
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
-
+    Dim y1
+    Dim o1
+    Dim l1
+    Dim o2
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         bd = _bd
@@ -16,6 +19,34 @@
     End Sub
 
     Private Sub btnAjouter_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouter.Click
+        If txtNomHotel.Text <> "" And txtAdrHotel.Text <> "" And txtTelHotel.Text <> "" And noTelRes.Text <> "" And txtNoteleC.Text <> "" And txtCodePostHo.Text <> "" Then
+            If cbPays.SelectedIndex <> -1 Then
+                If cbProvince.SelectedIndex <> -1 Then
+                    If cbCodeVille.SelectedIndex <> -1 Then
+                        Dim hotel = New tblHotel
+                        hotel.adrHotel = txtAdrHotel.Text
+                        hotel.codePostal = txtCodePostHo.Text
+                        hotel.codeVille = cbCodeVille.SelectedItem.codeVille
+                        hotel.nomHotel = txtNomHotel.Text
+                        hotel.noTelecopieur = txtNoteleC.Text
+                        hotel.noTelHotel = txtTelHotel.Text
+                        hotel.noTelReserv = noTelRes.Text
+                        bd.tblHotel.Add(hotel)
+                        bd.SaveChanges()
+                    Else
+                        MessageBox.Show("Veuillez entrer une ville")
+                    End If
+                Else
+                    MessageBox.Show("Veuillez choisir une province")
+                End If
+
+            Else
+                MessageBox.Show("Veuillez choisir un pays")
+            End If
+
+        Else
+            MessageBox.Show("Un des champs texte n'a pas été remplis")
+        End If
 
     End Sub
 
@@ -26,6 +57,11 @@
                    Select pa
 
         cbPays.ItemsSource = pays.ToList
+
+        y1 = False
+        o1 = False
+        l1 = False
+        o2 = False
     End Sub
 
     Private Sub cbPays_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbPays.SelectionChanged
