@@ -1,19 +1,25 @@
 ﻿Public Class iListeClient
     Private noEmpl As Short
     Private noHotel As Short
-
+    Private dated As Date
+    Private datef As Date
+    Private noChambre As Short
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
 
-    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short)
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short, _dated As Date, _datef As Date, _nochambre As Int16)
         ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
         noEmpl = noEmploye
         noHotel = nHotel
+        dated = _dated
+        datef = _datef
+        noChambre = _nochambre
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         requete()
+        btnReserv.IsEnabled = False
     End Sub
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
@@ -34,8 +40,27 @@
 
     End Sub
 
-
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
-   
+        Dim reserv As New tblReservationChambre
+        reserv.dateDebutSejour = dated
+        reserv.dateFinSejour = datef
+        reserv.dateReserv = DateValue(Now)
+        reserv.noChambre = noChambre
+        reserv.noHotel = noHotel
+        reserv.noClient = dgClient.SelectedItem.noClient
+        reserv.noEmpl = noEmpl
+        bd.tblReservationChambre.Add(reserv)
+        bd.SaveChanges()
+        MessageBox.Show("La réservation a été créé avec succès.")
+    End Sub
+
+    Private Sub dgClient_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgClient.SelectionChanged
+        btnReserv.IsEnabled = True
+    End Sub
+
+    Private Sub btnAjouterClient_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterClient.Click
+        Dim client As New iAjoutCliReserv
+        client.Owner = Me
+        client.Show()
     End Sub
 End Class

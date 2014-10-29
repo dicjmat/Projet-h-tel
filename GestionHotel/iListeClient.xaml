@@ -32,7 +32,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
-                <Button Name="btnAjouterClient" Content="Ajouter un client" Margin="251,549,195,10" Height="25"/>
+                <Button Name="btnAjouterClient" Content="Ajouter un client" Margin="251,549,195,10" Height="25" RenderTransformOrigin="0.5,0.504"/>
                 <Button Name="btnModifierClient" Content="Modifier un client" Margin="357,550,81,9" Height="25"/>
                 <Button Name="btnAccueil" Content="Accueil" Margin="471,550,19,9" Height="25"/>
                 <Button Name="btnReserv" Content="Faire une réservation" Margin="120,549,301,10" Height="25"/>
