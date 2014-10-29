@@ -15,6 +15,7 @@
         bd = New P2014_Equipe2_GestionHôtelièreEntities
 
         Dim res = From el In bd.tblTypeChambre Select el
+        btnReserv.IsEnabled = False
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
@@ -22,18 +23,24 @@
     End Sub
 
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
-        listClient = New iListeClient(bd, noEmpl, noHotel)
+        listClient = New iListeClient(bd, noEmpl, noHotel, dpDebut.SelectedDate, dpFin.SelectedDate, dgReserv.SelectedItem.noChambre)
         listClient.Owner = Me
         listClient.Show()
     End Sub
     Private Sub dpFin_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpFin.SelectedDateChanged
         Dim datef As Date
         Dim dated As Date
+
         datef = dpFin.SelectedDate
         dated = dpDebut.SelectedDate
-        dgReserv.ItemsSource = bd.determinerlibre(dated, datef).ToList
+        dgReserv.ItemsSource = bd.determinerlibre(dated, datef, noHotel).ToList
 
 
+    End Sub
 
+    Private Sub dgReserv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
+        Dim nocha As Int16
+        nocha = dgReserv.SelectedItem.noChambre
+        btnReserv.IsEnabled = True
     End Sub
 End Class

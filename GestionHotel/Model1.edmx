@@ -963,6 +963,7 @@
         <Function Name="determinerlibre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Reservation">
           <Parameter Name="dateDebut" Type="date" Mode="In" />
           <Parameter Name="datefin" Type="date" Mode="In" />
+          <Parameter Name="noHotel" Type="tinyint" Mode="In" />
         </Function>
         <EntityContainer Name="P2014_Equipe2_GestionHôtelièreModelStoreContainer">
           <EntitySet Name="tblCatalogue" EntityType="Self.tblCatalogue" Schema="Inventaire" store:Type="Tables" />
@@ -2420,6 +2421,7 @@
           <FunctionImport Name="determinerlibre" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreModel.determinerlibre_Result)">
             <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
             <Parameter Name="datefin" Mode="In" Type="DateTime" />
+            <Parameter Name="noHotel" Mode="In" Type="Byte" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="inventaireCommun_Result">
