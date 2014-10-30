@@ -31,12 +31,6 @@
         Ghotel.Show()
     End Sub
 
-    Private Sub AppuieGChambre()
-        Dim Gchambre = New iGestionChambre(maBd)
-        Gchambre.Owner = Me
-        Gchambre.Show()
-    End Sub
-
     Private Sub AppuieGSalle()
         Dim Gsalle = New iGestionSalle(maBd)
         Gsalle.Owner = Me

@@ -14,7 +14,7 @@
                             <Label Content="Adresse :" Margin="0,44,0,63.4" HorizontalAlignment="Left" Width="62"/>
                             <xctk:MaskedTextBox x:Name="txtAdrHotel" Margin="60,47,0,75.4" Height="20" HorizontalAlignment="Left" Width="100"/>
                             <Label Content="Télephone :" Margin="0,75,0,26.6" HorizontalAlignment="Left" Width="88"/>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" x:Name="txtTelHotel" Margin="86,79,0,38.6" Height="20" HorizontalAlignment="Left" Width="74"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="000 000-0000" x:Name="txtTelHotel" Margin="76,76,0,46.4" Height="20" HorizontalAlignment="Left" Width="84"/>
                             <Label Content="Pays :" Margin="165,2,0,98.6" HorizontalAlignment="Left" Width="70"/>
                             <Label Content="Province :" Margin="165,36,0,64.6" HorizontalAlignment="Left" Width="70"/>
                             <Label Content="Ville :" Margin="165,73,0,40.2" HorizontalAlignment="Left" Width="70" RenderTransformOrigin="0.5,0.5"/>
@@ -46,9 +46,9 @@
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
                             <Label Content="Téléphone de réservation :" Margin="-1,108,0,-8.4" HorizontalAlignment="Left" Width="174"/>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" x:Name="noTelRes" Height="20" Margin="165,108,0,14.4" HorizontalAlignment="Left" Width="107"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="0 000 000-0000" x:Name="noTelRes" Height="20" Margin="165,108,0,14.4" HorizontalAlignment="Left" Width="107"/>
                             <Label Content="Télécopieur :" Margin="2,139,0,-27.6" HorizontalAlignment="Left" Width="119"/>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" x:Name="txtNoteleC" Margin="86,141,0,-19.8" HorizontalAlignment="Left" Width="107"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="000 000-0000" x:Name="txtNoteleC" Margin="86,141,0,-19.8" HorizontalAlignment="Left" Width="107"/>
                             <Label Content="Code Postal :" Margin="1,172,0,-74.4" HorizontalAlignment="Left" Width="82"/>
                             <TextBox x:Name="txtCodePostHo" Height="20" Margin="86,176,0,-58.4" HorizontalAlignment="Left" Width="108"/>
                         </Grid>

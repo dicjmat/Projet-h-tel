@@ -24,8 +24,10 @@
                     </DataGrid>
                 </GroupBox>
                 <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="719,509,10,0" VerticalAlignment="Top"></Button>
-                <Button Name="btnAjouterHotel" Content="Ajouter un hotel" Height="25" Margin="231,509,431,5"></Button>
-                <Button Name="btnAjouterChambre" Content="Ajouter une chambre" Height="25" Margin="563,509,99,5"></Button>
+                <Button Name="btnAjouterHotel" Content="Ajouter un hotel" Height="25" Margin="33,509,630,5"></Button>
+                <Button Name="btnModifierHotel" Content="Modifier un hotel" Height="25" Margin="191,509,473,5"></Button>
+                <Button Name="btnAjouterChambre" Content="Ajouter une chambre" Height="25" Margin="406,509,256,5"></Button>
+                <Button Name="btnSupprimerChambre" Content="Supprimer une chambre" Height="25" Margin="561,509,101,5"></Button>
             </Grid>
         </Viewbox>
     </Grid>

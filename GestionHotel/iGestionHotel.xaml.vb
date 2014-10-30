@@ -1,13 +1,63 @@
 ﻿Public Class iGestionHotel
 
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
-    Dim y1
-    Dim o1
-    Dim l1
-    Dim o2
+
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _noHotel As Short)
+        'modifier
+        InitializeComponent()
+        bd = _bd
+        Dim pays = From pa In bd.tblPays
+           Select pa
+
+        cbPays.ItemsSource = pays.ToList
+
+        btnAjouter.Visibility = Windows.Visibility.Hidden
+        btnAjouter.IsEnabled = False
+        btnModifier.Visibility = Windows.Visibility.Visible
+        btnModifier.IsEnabled = True
+        Dim hotel = From ho In bd.tblHotel
+                    Where ho.noHotel = _noHotel
+                    Select ho
+
+        txtNomHotel.Text = hotel.Single.nomHotel
+        txtAdrHotel.Text = hotel.Single.adrHotel
+        txtTelHotel.Text = hotel.Single.noTelHotel
+        noTelRes.Text = hotel.Single.noTelReserv
+        txtNoteleC.Text = hotel.Single.noTelecopieur
+        txtCodePostHo.Text = hotel.Single.codePostal
+
+        For Each el In cbPays.Items
+            If el.codePays = hotel.Single.tblVille.tblProvince.codePays Then
+                cbPays.SelectedItem = el
+                Exit For
+            End If
+        Next
+
+        For Each el In cbProvince.Items
+            If el.codeProv = hotel.Single.tblVille.codeProv Then
+                cbProvince.SelectedItem = el
+                Exit For
+            End If
+        Next
+
+        For Each el In cbCodeVille.Items
+            If el.codeVille = hotel.Single.codeVille Then
+                cbCodeVille.SelectedItem = el
+                Exit For
+            End If
+        Next
+    End Sub
+
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         bd = _bd
+
+        cbProvince.IsEnabled = False
+        cbCodeVille.IsEnabled = False
+        btnAjouter.Visibility = Windows.Visibility.Visible
+        btnAjouter.IsEnabled = True
+        btnModifier.Visibility = Windows.Visibility.Hidden
+        btnModifier.IsEnabled = False
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
@@ -48,20 +98,6 @@
             MessageBox.Show("Un des champs texte n'a pas été remplis")
         End If
 
-    End Sub
-
-    Private Sub windowGHotel_Loaded(sender As Object, e As RoutedEventArgs) Handles windowGHotel.Loaded
-        cbProvince.IsEnabled = False
-        cbCodeVille.IsEnabled = False
-        Dim pays = From pa In bd.tblPays
-                   Select pa
-
-        cbPays.ItemsSource = pays.ToList
-
-        y1 = False
-        o1 = False
-        l1 = False
-        o2 = False
     End Sub
 
     Private Sub cbPays_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbPays.SelectionChanged
