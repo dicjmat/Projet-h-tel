@@ -63,4 +63,8 @@
         client.Owner = Me
         client.Show()
     End Sub
+
+    Private Sub btnModifierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierClient.Click
+
+    End Sub
 End Class
