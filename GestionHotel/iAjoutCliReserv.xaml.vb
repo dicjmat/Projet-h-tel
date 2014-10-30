@@ -13,16 +13,16 @@
 
     Private Sub btnAjouterCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterCli.Click
         Dim client As New tblClient
-        client.nomClient = txtNomCli.Text
-        client.prenClient = txtPrenCli.Text
+        client.nomClient = txtNomCli.Text.Trim
+        client.prenClient = txtPrenCli.Text.Trim
         client.noTelClient = txtTelCli.Text
         client.noCellClient = txtCelCli.Text
-        client.adrClient = txtAdrCli.Text
+        client.adrClient = txtAdrCli.Text.Trim
         client.noCarteCredit = txtNoCarteCredit.Text
         client.typeCarteCredit = cbTypeCarte.SelectedItem.typeCarteCredit
         client.dateExpiration = txtCodeExp.Text
         client.codeVille = cbCodeVille.SelectedItem.codeVille
-        client.commentaire = txtCommCli.Text
+        client.commentaire = txtCommCli.Text.Trim
         bd.tblClient.Add(client)
         bd.SaveChanges()
         MessageBox.Show("Le client a été ajouté avec succès.")
