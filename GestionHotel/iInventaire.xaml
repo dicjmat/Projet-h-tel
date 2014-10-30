@@ -10,7 +10,7 @@
                     <Button Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="10,64,0,67.8" HorizontalAlignment="Left" Width="162"/>
                     <Button Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,10,0,121.8" HorizontalAlignment="Left" Width="162"/>
                     <Button Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,116,0,15.8" HorizontalAlignment="Left" Width="162"/>
-                        <Button Name="btnFicheEmp" Content="Ficeh d'employé" Height="25" Margin="177,10,0,121.8" HorizontalAlignment="Left" Width="162"></Button>
+                        <Button Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="177,10,0,121.8" HorizontalAlignment="Left" Width="162"></Button>
                         <Button Name="btnGSalle" Content="Gestion salle" Height="25" Margin="177,64,0,67.8" HorizontalAlignment="Left" Width="162"></Button>
                         <Button Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="177,116,0,15.8" HorizontalAlignment="Left" Width="162"></Button>
                         <Button Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="344,10,-35.6,121.8" HorizontalAlignment="Left" Width="162"></Button>
@@ -19,6 +19,9 @@
                         <Button Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="511,10,-98.6,121.8" HorizontalAlignment="Left" Width="162"></Button>
                         <Button Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="511,64,-98.6,67.8" HorizontalAlignment="Left" Width="162"></Button>
                         <Button Name="btnLSalle" Content="Liste de salle" Height="25" Margin="511,116,-98.6,15.8" HorizontalAlignment="Left" Width="162"></Button>
+                        <Button Name="btnAjoutFourniGerant" Content="Ajouter un fournisseur" Height="25" Margin="10,10,516,121.8"></Button>
+                        <Button Name="btnAjoutItemGerant" Content="Ajouter un item" Height="25" Margin="10,64,516,67.8"></Button>
+                        <Button Name="btnCommandeGerant" Content="Faire une commande" Height="25" Margin="10,116,516,15.8"></Button>
                     </Grid>
                 </GroupBox>
                 <Label Content="Rechercher : " Margin="0,0,414,289" Height="27" VerticalAlignment="Bottom"></Label>
