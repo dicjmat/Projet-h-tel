@@ -2,22 +2,34 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
-    Title="Gestion Hotel" Height="382.8" Width="535" Closing="Window_Closing">
+    Title="Gestion Hotel" Height="430" Width="744.6" Closing="Window_Closing">
     <Grid Margin="0,0,14.8,0.4">
         <Viewbox Stretch="Uniform">
-            <Grid Height="358" Width="530">
-                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,10,269">
+            <Grid Height="422" Width="679">
+                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,-17,278">
                     <Grid>
-                        <Button Name="btnAhoutHoraire" Content="Ajouter un horaire" Height="25" Margin="184,19,183.2,23.2"/>
-                        <Button Name="btnListeCommande" Content="Liste de commande" Height="25" Margin="29,19,338.2,23.2"/>
-                        <Button Name="btnListeEmp" Content="Liste d'employé" Height="25" Margin="342,19,25.2,23.2"/>
+                        <Button Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="10,51,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                        <Button Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,10,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                        <Button Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,87,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                        <Button Name="btnFicheEmp" Content="Ficeh d'employé" Height="25" Margin="177,10,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnGSalle" Content="Gestion salle" Height="25" Margin="177,51,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="177,87,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="344,10,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="344,51,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnLCentrale" Content="Liste centrale" Height="25" Margin="344,87,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="511,10,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="511,51,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnLSalle" Content="Liste de salle" Height="25" Margin="511,87,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnAhoutHoraireGest" Content="Ajouter un horaire" Height="25" Margin="10,87,0,0" HorizontalAlignment="Left" Width="160" VerticalAlignment="Top"/>
+                        <Button Name="btnListeCommandeGest" Content="Liste de commande" Height="25" Margin="10,51,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                        <Button Name="btnListeEmpGest" Content="Liste d'employé" Height="25" Margin="10,10,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
                     </Grid>
                 </GroupBox>
-                <Label Content="* = non-obligatoire" Margin="265,89,125,237"></Label>
-                <Button Name="btnAjoutHoraire" Content="Ajouter Horaire" HorizontalAlignment="Center" Margin="430,174,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
-                <Label Content="No de l'employé : " HorizontalAlignment="Left" Margin="6,95,0,0" VerticalAlignment="Top"/>
-                <TextBox Name="txtNoEmpl" Text="{Binding noEmpl}" Height="25" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="110,94,0,0" IsEnabled="False"/>
-                <GroupBox BorderBrush="Black" Header="Fiche Employé" Margin="0,126,0,0" HorizontalAlignment="Left" Width="415">
+                <Label Content="* = non-obligatoire" Margin="292,146,264,248"></Label>
+                <Button Name="btnAjoutHoraire" Content="Ajouter Horaire" HorizontalAlignment="Center" Margin="420,179,159,0" VerticalAlignment="Top" Width="100" Height="30"/>
+                <Label Content="No de l'employé : " HorizontalAlignment="Left" Margin="2,150,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="txtNoEmpl" Text="{Binding noEmpl}" Height="25" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="106,149,0,0" IsEnabled="False"/>
+                <GroupBox BorderBrush="Black" Header="Fiche Employé" Margin="0,179,0,10" HorizontalAlignment="Left" Width="415">
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom : " Margin="0,0,0,0"></Label>
@@ -77,9 +89,9 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnCreer" Content="Créer" HorizontalAlignment="Left" Margin="430,209,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnCreer_Click"/>
-                <Button Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Margin="430,279,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
-                <Button Name="btnAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="430,244,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAnnuler_Click"/>
+                <Button Name="btnCreer" Content="Créer" HorizontalAlignment="Left" Margin="420,312,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnCreer_Click"/>
+                <Button Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Margin="420,382,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+                <Button Name="btnAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="420,347,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAnnuler_Click"/>
             </Grid>
         </Viewbox>
     </Grid>
