@@ -14,7 +14,7 @@
                         <Button Name="btnGSalle" Content="Gestion salle" Height="25" Margin="177,42,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                         <Button Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="177,72,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                         <Button Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="344,12,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                        <Button Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="344,42,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                        <Button Name="btnIventaire" Content="Inventaire" Height="25" Margin="344,42,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                         <Button Name="btnLCentrale" Content="Liste centrale" Height="25" Margin="344,74,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                         <Button Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="511,12,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                         <Button Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="511,42,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
@@ -33,7 +33,7 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <GroupBox Header="Inventaire" BorderBrush="Black" Margin="0,178,10,35">
+                <GroupBox Header="Inventaire complet" BorderBrush="Black" Margin="0,178,10,35">
                     <DataGrid Name="dgInventaireC" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Code" Binding="{Binding codeItem}"></DataGridTextColumn>

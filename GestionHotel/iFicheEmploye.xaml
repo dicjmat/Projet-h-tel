@@ -10,7 +10,7 @@
                     <Grid>
                         <Button Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="10,51,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
                         <Button Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,10,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
-                        <Button Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,87,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                        <Button Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,87,0,0" HorizontalAlignment="Left" Width="160" VerticalAlignment="Top"/>
                         <Button Name="btnFicheEmp" Content="Ficeh d'employé" Height="25" Margin="177,10,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                         <Button Name="btnGSalle" Content="Gestion salle" Height="25" Margin="177,51,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                         <Button Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="177,87,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
