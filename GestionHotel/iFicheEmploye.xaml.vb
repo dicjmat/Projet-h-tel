@@ -1,11 +1,10 @@
 ﻿Public Class iFicheEmploye
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Private numEmpl As Integer
-    Private _numEmpl As Object
 
-    Sub New(numEmpl As Object, _bd As P2014_Equipe2_GestionHôtelièreEntities)
+    Sub New(_numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
-        _numEmpl = numEmpl
+        numEmpl = _numEmpl
         bd = _bd
     End Sub
 
@@ -122,7 +121,6 @@
         'listeemploye.Close()
     End Sub
     Private Sub btnAnnuler_Click(sender As Object, e As RoutedEventArgs)
-        Me.Focusable = False
         windowFicheEmploye.Close()
     End Sub
 

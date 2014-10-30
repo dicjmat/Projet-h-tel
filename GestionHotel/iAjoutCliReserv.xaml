@@ -30,9 +30,9 @@
                         <Label Content="Prénom :" Margin="10,30,0,0" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59"></Label>
                         <xctk:MaskedTextBox PromptChar=" " Mask="?????????????????????????????????????????????" Height="20" Name="txtPrenCli" Margin="69,41,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="161"></xctk:MaskedTextBox>
                         <Label Content="NoTéléphone :" Margin="10,60,0,0" Height="37" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"></Label>
-                        <xctk:MaskedTextBox PromptChar=" " Mask="(000)000-0000" Height="20" Name="txtTelCli" Margin="100,71,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"></xctk:MaskedTextBox>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="000-000-0000" Height="20" Name="txtTelCli" Margin="100,71,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"></xctk:MaskedTextBox>
                         <Label Content="NoCéllulaire :" Margin="11,90,0,0" HorizontalAlignment="Left" Width="81" Height="36" VerticalAlignment="Top"></Label>
-                        <xctk:MaskedTextBox PromptChar=" " Mask="(000)000-0000" Height="20" Name="txtCelCli" Margin="100,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"></xctk:MaskedTextBox>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="000-000-0000" Height="20" Name="txtCelCli" Margin="100,100,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"></xctk:MaskedTextBox>
                         <Label Content="Adresse :" Margin="10,120,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59"></Label>
                         <xctk:MaskedTextBox PromptChar=" " Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Height="20" Name="txtAdrCli" Margin="69,131,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="228"></xctk:MaskedTextBox>
                         <Label Content="No Carte de crédit :" Margin="10,150,0,0" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116"></Label>

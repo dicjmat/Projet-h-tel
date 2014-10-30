@@ -5,13 +5,17 @@
     <Grid Margin="0,0,3.6,4.2">
         <Viewbox Stretch="Uniform">
             <Grid Width="305" Height="75">
-                <GroupBox BorderBrush="Black" Header="Gestion des chambres" Margin="0,0,86,0" Loaded="GroupBox_Loaded">
+                <GroupBox BorderBrush="Black" Header="Gestion des chambres" Margin="0,0,86,0">
                     <StackPanel>
                         <Grid>
-                            <Label Content="No de Chambre :" Margin="0,0,0.2,0" Height="52" VerticalAlignment="Top"></Label>
-                            <TextBox Name="txtNoChambre" Margin="100,0,-0.6,0" Height="20" VerticalAlignment="Top"></TextBox>
-                            <Label Content="TypeChambre :" Margin="0,26,0.2,0" Height="26" VerticalAlignment="Top"></Label>
-                            <ComboBox Name="cbTypeChambre"  Background="White" Height="26" Margin="90,26,0.4,0" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="26*"/>
+                                <ColumnDefinition Width="43*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="No de Chambre :" Margin="0,0,0.4,0" Height="52" VerticalAlignment="Top" Grid.ColumnSpan="2"></Label>
+                            <TextBox Name="txtNoChambre" Margin="22.169,0,-0.6,0" Height="20" VerticalAlignment="Top" Grid.Column="1"></TextBox>
+                            <Label Content="TypeChambre :" Margin="0,26,0.4,0" Height="26" VerticalAlignment="Top" Grid.ColumnSpan="2"></Label>
+                            <ComboBox Name="cbTypeChambre"  Background="White" Height="26" Margin="12.169,26,0.4,0" VerticalAlignment="Top" Grid.Column="1">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
