@@ -1,24 +1,37 @@
 ﻿<Window x:Class="iAjouterItem" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" Name="windowAjoutItem" WindowStyle="None" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Gestion Hotel" Height="1146.589" Width="1078.609">
+    Title="Gestion Hotel" Height="1146.589" Width="1883.409">
     <Grid>
         <Viewbox Stretch="Uniform" Loaded="Viewbox_Loaded">
-            <Grid Height="331" Width="312">
+            <Grid Height="331" Width="547">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="22*"/>
                     <ColumnDefinition Width="21*"/>
                 </Grid.ColumnDefinitions>
-                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,10,221" Grid.ColumnSpan="2">
+                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,10.2,211" Grid.ColumnSpan="2">
                     <Grid>
-                        <Button Name="btnCommande" Content="Faire une commande" Height="25" Margin="148,10,2.6,53"/>
-                        <Button Name="btnInventaire" Content="Inventaire" Height="25" Margin="4,10,146.6,53"/>
+                        <Button Name="btnInventaire" Content="Inventaire" Height="25" Margin="10,16,0,56.6" HorizontalAlignment="Left" Width="134"/>
+                        <Button Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="4,80,0,63.8" HorizontalAlignment="Left" Width="140"/>
+                        <Button Name="btnCommande" Content="Faire une commande" Height="25" Margin="16,76,0,-3.4" HorizontalAlignment="Left" Width="134"/>
+                        <Button Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="155,16,0,56.6" HorizontalAlignment="Left" Width="140"></Button>
+                        <Button Name="btnGSalle" Content="Gestion salle" Height="25" Margin="155,46,0,26.6" HorizontalAlignment="Left" Width="140"></Button>
+                        <Button Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="155,76,0,-3.4" HorizontalAlignment="Left" Width="140"></Button>
+                        <Button Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="300,16,0,56.6" HorizontalAlignment="Left" Width="140"></Button>
+                        <Button Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="300,46,0,26.6" HorizontalAlignment="Left" Width="140"></Button>
+                        <Button Name="btnLCentrale" Content="Liste centrale" Height="25" Margin="299,76,0,-3.4" HorizontalAlignment="Left" Width="140"></Button>
+                        <Button Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="445,16,-60.2,56.6" HorizontalAlignment="Left" Width="140"></Button>
+                        <Button Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="445,46,-60.2,26.6" HorizontalAlignment="Left" Width="140"></Button>
+                        <Button Name="btnLSalle" Content="Liste de salle" Height="25" Margin="445,76,-60.2,-3.4" HorizontalAlignment="Left" Width="140"></Button>
+                        <Button Name="btnCommandeGerant" Content="Faire une commande" Height="25" Margin="10,76,0,-3.4" HorizontalAlignment="Left" Width="140"/>
+                        <Button Name="btnInventaireGerant" Content="Inventaire" Height="25" Margin="10,16,0,56.6" HorizontalAlignment="Left" Width="140"/>
+                        <Button Name="btnAjoutFourniGerant" Content="Ajouter un fournisseur" Height="25" Margin="10,46,0,26.6" HorizontalAlignment="Left" Width="140"></Button>
                     </Grid>
                 </GroupBox>
                 <Label Content="* = non-obligatoire" Margin="40,120,0,174" Grid.Column="1"></Label>
                 <Label Content="Code de l'item : " HorizontalAlignment="Left" Margin="6,116,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="txtRCodeItem" Height="20" VerticalAlignment="Top" Width="99" HorizontalAlignment="Left" Margin="96,120,0,0" Grid.ColumnSpan="2"/>
-                <GroupBox BorderBrush="Black" Header="Item" Margin="0,138,88,0" Grid.ColumnSpan="2" Height="153" VerticalAlignment="Top">
+                <GroupBox BorderBrush="Black" Header="Item" Margin="0,138,196.2,0" Grid.ColumnSpan="2" Height="153" VerticalAlignment="Top">
                     <StackPanel>
                         <Grid Height="140" Margin="0,0,0.2,0">
                             <Label Content="Nom :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,-7,0,0"/>
@@ -40,8 +53,8 @@
                 </GroupBox>
                 <Button Name="btnAccueil" Content="Accueil" Grid.Column="1" HorizontalAlignment="Left" Margin="71,300,0,0" VerticalAlignment="Top" Width="75"/>
                 <Button Name="btnAjouterItem" Content="Ajouter" Grid.Column="1" HorizontalAlignment="Left" Margin="71,248,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button Name="btnAjoutFour" Content="Ajouter Fournisseur" Margin="74,265,94,46" Height="20" Grid.ColumnSpan="2"/>
-                <Button Name="btnModifierItem" Content="Modifier" Height="20" Margin="71,275,6,36" Grid.Column="1"/>
+                <Button Name="btnAjoutFour" Content="Ajouter Fournisseur" Margin="74,265,85,46" Height="20"/>
+                <Button Name="btnModifierItem" Content="Modifier" Height="20" Margin="71,275,0,36" Grid.Column="1" HorizontalAlignment="Left" Width="75"/>
             </Grid>
         </Viewbox>
 
