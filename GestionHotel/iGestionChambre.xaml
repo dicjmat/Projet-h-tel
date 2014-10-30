@@ -4,8 +4,8 @@
     Title="Gestion Hotel" Height="189.295" Width="632.2">
     <Grid Margin="0,0,3.6,4.2">
         <Viewbox Stretch="Uniform">
-            <Grid Width="305" Height="75" Loaded="Grid_Loaded">
-                <GroupBox BorderBrush="Black" Header="Gestion des chambres" Margin="0,0,86,0" Loaded="GroupBox_Loaded">
+            <Grid Width="305" Height="75">
+                <GroupBox BorderBrush="Black" Header="Gestion des chambres" Margin="0,0,86,0">
                     <StackPanel>
                         <Grid>
                             <Grid.ColumnDefinitions>

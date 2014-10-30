@@ -7,6 +7,7 @@
         InitializeComponent()
         bd = _bd
         hotel = p2
+
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
