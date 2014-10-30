@@ -48,4 +48,5 @@
 
         cbTypeChambre.ItemsSource = typeChambre.ToList
     End Sub
+
 End Class
