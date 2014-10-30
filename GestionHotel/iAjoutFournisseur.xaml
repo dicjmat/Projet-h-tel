@@ -20,7 +20,7 @@
                 <Label Content="Responsable :" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
                 <TextBox Name="txtRespFourni" HorizontalAlignment="Left" Height="22" Margin="98,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157"/>
                 <Label Content="Ville :" HorizontalAlignment="Left" Margin="13,184,0,0" VerticalAlignment="Top"/>
-                <ComboBox Name="cbVilleFourni" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="82,184,0,0" VerticalAlignment="Top" Height="26" Width="157">
+                <ComboBox Name="cbVilleFourni" Background="White" ItemsSource="{Binding}" HorizontalAlignment="Left" Margin="82,184,0,0" VerticalAlignment="Top" Height="26" Width="157">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
