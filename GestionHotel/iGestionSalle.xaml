@@ -3,6 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
     Title="Gestion Hotel" Height="251.6" Width="525">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="172">
@@ -20,10 +27,10 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86" Margin="0,0,19.4,41"/>
-                <Button Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,122" Width="86"></Button>
-                <Button Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,95" Width="86"></Button>
-                <Button Name="btnSupprimer" Content="Supprimer" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,68" Width="86"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86" Margin="0,0,19.4,41"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,122" Width="86"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,95" Width="86"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnSupprimer" Content="Supprimer" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,68" Width="86"></Button>
             </Grid>
         </Viewbox>
     </Grid>
