@@ -23,9 +23,10 @@
                   Group cli By cli.typeCarteCredit Into Group
                   Select Group.FirstOrDefault()
         Dim res2 = From el In bd.tblVille Select el
+        Dim res3 = From el In bd.tblCompagnie Select el
         cbTypeCarte.DataContext = res.ToList()
         cbCodeVille.DataContext = res2.Distinct().ToList()
-
+        cbCompagnie.DataContext = res3.Distinct().ToList()
     End Sub
 
     Private Sub btnAjouterCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterCli.Click
@@ -48,5 +49,9 @@
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnLierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnLierClient.Click
+
     End Sub
 End Class
