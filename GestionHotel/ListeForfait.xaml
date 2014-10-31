@@ -24,6 +24,7 @@
                                 <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeChambre}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Prix" Binding="{Binding prixForfait,StringFormat={}{0:#.00}}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="État" Binding="{Binding etatForfait}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Description" Binding="{Binding descForfait}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                     </Grid>

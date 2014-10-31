@@ -23,7 +23,7 @@
                   Join tych In bd.tblTypeChambre
                   On tych.codeTypeChambre Equals fo.codeTypeChambre
                   Where fo.noHotel = _hotel And (fo.nomForfait.StartsWith(txtrechercher.Text) Or tych.nomTypeChambre.StartsWith(txtrechercher.Text))
-                  Select fo.nomForfait, fo.noForfait, fo.etatForfait, tych.nomTypeChambre, fo.prixForfait
+                  Select fo.nomForfait, fo.noForfait, fo.etatForfait, tych.nomTypeChambre, fo.prixForfait, fo.descForfait
 
         dgForfait.ItemsSource = res.ToList
     End Sub
