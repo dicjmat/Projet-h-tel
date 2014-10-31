@@ -5,6 +5,7 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="453">
+                <Label Content="Date" />
                 <GroupBox BorderBrush="Black" Header="Salle" Margin="0,30,0,45">
                     <StackPanel>
                         <Grid>

@@ -4,14 +4,12 @@
     Private _numEmpl As Object
 
     Sub New(numEmpl As Object, _bd As P2014_Equipe2_GestionHôtelièreEntities)
-        ' TODO: Complete member initialization 
         InitializeComponent()
         _numEmpl = numEmpl
         bd = _bd
     End Sub
 
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
-        ' TODO: Complete member initialization 
         InitializeComponent()
         bd = _bd
     End Sub
