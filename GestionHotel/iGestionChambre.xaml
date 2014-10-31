@@ -2,6 +2,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="189.295" Width="632.2">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid Margin="0,0,3.6,4.2">
         <Viewbox Stretch="Uniform">
             <Grid Width="305" Height="75">
@@ -27,8 +34,8 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Center" HorizontalAlignment="Right" Width="86" Margin="0,48,0,2" Height="25"/>
-                <Button Name="btnAjouter" Content="Ajouter" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,40" Width="86" Height="25"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" VerticalAlignment="Center" HorizontalAlignment="Right" Width="86" Margin="0,48,0,2" Height="25"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouter" Content="Ajouter" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,40" Width="86" Height="25"></Button>
             </Grid>
         </Viewbox>
     </Grid>
