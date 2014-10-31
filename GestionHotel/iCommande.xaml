@@ -5,31 +5,36 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" x:Name="windowCommande" WindowStyle="None" Icon="icon.ico"
     mc:Ignorable="d" x:Class="iCommande"
     Title="Gestion Hotel" Height="1089.76" Width="1433.619" Closing="Window_Closing">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid Loaded="Grid_Loaded">
         <Viewbox Stretch="Uniform" Margin="0,0,0.4,0.4">
             <Grid Height="563" Width="713">
-                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,9,384">
-                    <Grid>
-                        <Button Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="10,64,0,67.8" HorizontalAlignment="Left" Width="162"/>
-                        <Button Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,10,0,121.8" HorizontalAlignment="Left" Width="162"/>
-                        <Button Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,116,0,15.8" HorizontalAlignment="Left" Width="162"/>
-                        <Button Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="177,10,0,121.8" HorizontalAlignment="Left" Width="162"></Button>
-                        <Button Name="btnGSalle" Content="Gestion salle" Height="25" Margin="177,64,0,67.8" HorizontalAlignment="Left" Width="162"></Button>
-                        <Button Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="177,116,0,15.8" HorizontalAlignment="Left" Width="162"></Button>
-                        <Button Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="344,10,-35.6,121.8" HorizontalAlignment="Left" Width="162"></Button>
-                        <Button Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="344,64,0,67.8" HorizontalAlignment="Left" Width="162"></Button>
-                        <Button Name="btnLCentrale" Content="Liste centrale" Height="25" Margin="344,116,0,15.8" HorizontalAlignment="Left" Width="162"></Button>
-                        <Button Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="511,10,-98.6,121.8" HorizontalAlignment="Left" Width="162"></Button>
-                        <Button Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="511,64,-98.6,67.8" HorizontalAlignment="Left" Width="162"></Button>
-                        <Button Name="btnLSalle" Content="Liste de salle" Height="25" Margin="511,116,-98.6,15.8" HorizontalAlignment="Left" Width="162"></Button>
-                        <Button Name="btnAjoutItemGerant" Content="Ajouter un item" Height="25" Margin="10,64,0,67.8" HorizontalAlignment="Left" Width="162"/>
-                        <Button Name="btnAjoutFourniGerant" Content="Ajouter un fournisseur" Height="25" Margin="10,10,0,121.8" HorizontalAlignment="Left" Width="162"/>
-                        <Button Name="btnInventaireGerant" Content="Inventaire" Height="25" Margin="10,116,0,15.8" HorizontalAlignment="Left" Width="162"/>
-                    </Grid>
-                </GroupBox>
-                <Label Content="Recherche : " HorizontalAlignment="Left" Margin="11,184,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtRecherche" Height="25" VerticalAlignment="Top" Width="131" HorizontalAlignment="Left" Canvas.Left="85" Margin="96,185,0,0"/>
-                <GroupBox BorderBrush="Black" Header="Commande" Margin="0,0,323,10" HorizontalAlignment="Right" Width="390" Height="343" VerticalAlignment="Bottom">
+                <Label Content="Menu"></Label>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="-2,23,0,515" HorizontalAlignment="Left" Width="162"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="-2,53,0,485" HorizontalAlignment="Left" Width="162"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnCommande" Content="Faire une commande" Height="25" Margin="-2,83,0,455" HorizontalAlignment="Left" Width="162"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="165,23,0,515" HorizontalAlignment="Left" Width="162"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnGSalle" Content="Gestion salle" Height="25" Margin="165,53,0,485" HorizontalAlignment="Left" Width="162"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="165,83,0,455" HorizontalAlignment="Left" Width="162"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="332,23,0,515" HorizontalAlignment="Left" Width="162"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="332,53,0,485" HorizontalAlignment="Left" Width="162"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnLCentrale" Content="Liste centrale" Height="25" Margin="332,83,0,455" HorizontalAlignment="Left" Width="162"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="499,23,0,515" HorizontalAlignment="Left" Width="162"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="499,53,0,485" HorizontalAlignment="Left" Width="162"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnLSalle" Content="Liste de salle" Height="25" Margin="499,83,0,455" HorizontalAlignment="Left" Width="162"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutItemGerant" Content="Ajouter un item" Height="25" Margin="-2,23,0,515" HorizontalAlignment="Left" Width="162"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourniGerant" Content="Ajouter un fournisseur" Height="25" Margin="-2,53,0,485" HorizontalAlignment="Left" Width="162"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnInventaireGerant" Content="Inventaire" Height="25" Margin="-2,83,0,455" HorizontalAlignment="Left" Width="162"/>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,113,0,448"></Rectangle>
+                <Label Content="Recherche : " HorizontalAlignment="Left" Margin="4,119,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtRecherche" Height="25" VerticalAlignment="Top" Width="131" HorizontalAlignment="Left" Canvas.Left="85" Margin="89,120,0,0"/>
+                <GroupBox BorderBrush="Black" Header="Commande" Margin="0,0,323,10" HorizontalAlignment="Right" Width="390" Height="403" VerticalAlignment="Bottom">
                     <Grid>
                         <DataGrid x:Name="dgCommande" ItemsSource="{Binding}" AutoGenerateColumns="False" Margin="0,10,0.8,93" RenderTransformOrigin="0.5,0.5">
                             <DataGrid.RenderTransform>
@@ -48,16 +53,16 @@
                                 <DataGridTextColumn Header="Prix Unitaire" Binding="{Binding prixItem,Mode=OneWay,StringFormat={}{0:#.00}}"/>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Label Content="Quantité :" Margin="0,227,-0.2,-227"/>
-                        <xctk:IntegerUpDown x:Name="txtQteCom" Value="1" Height="20" Margin="64,231,220.8,69" ParsingNumberStyle="Integer" Minimum="0"/>
-                        <Label Content="Prix total de l'item ($) :" Margin="0,256,247.6,38.8"/>
-                        <Label x:Name="lblPrixTotItem" Margin="135,256,149.8,39">
+                        <Label Content="Quantité :" Margin="0,286,-0.4,-286.2"/>
+                        <xctk:IntegerUpDown x:Name="txtQteCom" Value="1" Height="20" Margin="63,292,221.6,68.8" ParsingNumberStyle="Integer" Minimum="0"/>
+                        <Label Content="Prix total de l'item ($) :" Margin="0,315,247.6,-20.2"/>
+                        <Label x:Name="lblPrixTotItem" Margin="135,315,149.6,-20.2">
                         </Label>
                     </Grid>
                 </GroupBox>
-                <Button x:Name="btnAjouterItemComm" Content="Ajouter" Margin="0,522,345,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-                <Button x:Name="btnSupprimerItemComm" Content="Supprimer" Margin="0,499,26,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-                <GroupBox BorderBrush="Black" Header="Aperçu Commande" Margin="390,210,9,33">
+                <Button x:Name="btnAjouterItemComm" Style="{StaticResource styleBouton}" Content="Ajouter" Margin="0,522,345,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                <Button x:Name="btnSupprimerItemComm" Style="{StaticResource styleBouton}" Content="Supprimer" Margin="0,499,26,0" Width="100" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+                <GroupBox BorderBrush="Black" Header="Aperçu Commande" Margin="390,150,9,33">
                     <StackPanel>
                         <Grid>
                             <ListView x:Name="lstViewCommande" Margin="0,0,-0.2,-108.2">
@@ -74,8 +79,8 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button x:Name="btnFaireComm" Content="Faire la commande" Margin="475,535,132,3" Height="25"/>
-                <Button x:Name="btnAccueil" Content="Accueil" Margin="612,535,11,3" Height="25"/>
+                <Button Style="{StaticResource styleBouton}" x:Name="btnFaireComm" Content="Faire la commande" Margin="475,535,132,3" Height="25"/>
+                <Button Style="{StaticResource styleBouton}" x:Name="btnAccueil" Content="Accueil" Margin="612,535,11,3" Height="25"/>
             </Grid>
         </Viewbox>
     </Grid>

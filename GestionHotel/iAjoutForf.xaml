@@ -3,6 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
     Title="iAjoutForf" Height="309.146" Width="313.72">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="254" Width="260">
@@ -29,9 +36,9 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAjouterForf" Content="Créer Forfait" Margin="58,218,83,15" Height="25"></Button>
-                <Button Name="btnModifierForf" Content="Modifier forfait" Height="25" Margin="58,218,83,11"></Button>
-                <Button Name="btnAccueil" Content="Retour" Height="25" Margin="182,218,3,11"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterForf" Content="Créer Forfait" Margin="58,218,83,15" Height="25"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifierForf" Content="Modifier forfait" Height="25" Margin="58,218,83,11"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Retour" Height="25" Margin="182,218,3,11"></Button>
             </Grid>
         </Viewbox>
     </Grid>

@@ -2,20 +2,25 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="iCheck_in_out" Height="635.966" Width="498.051">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Width="503" Height="639">
-                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,0,509">
-                    <Grid>
-                        <Button Name="btnAjoutCli" Content="Ajouter Client" Height="25" Width="125" Margin="10,10,269.8,72.2"></Button>
-                        <Button Name="btnFact" Content="Facture" Height="25" Width="125" Margin="10,40,269.8,42.2"></Button>
-                        <Button Name="btnReservC" Content="Réservation Chambre" Height="25" Width="125" Margin="10,70,269.8,10.2"/>
-                        <Button Name="btnFicheC" Content="Fiche client" Height="25" Width="125" Margin="140,10,139.8,72.2"></Button>
-                        <Button Name="btnFicheReserv" Content="Fiche Réservation" Height="25" Width="125"></Button>
-                        <Button Name="btnFicheReservF" Content="Fiche Réservation Fact" Height="25" Width="125" Margin="140,71,139.8,11.2"></Button>
-                        <Button Name="btnListeCli" Content="Liste de client" Height="25" Width="125" Margin="270,10,9.8,72.2"></Button>
-                    </Grid>
-                </GroupBox>
+                <Label Content="Menu" Margin="10,0,453,614"></Label>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutCli" Content="Ajouter Client" Height="25" Width="125" Margin="10,25,368,589"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFact" Content="Facture" Height="25" Width="125" Margin="10,55,368,559"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnReservC" Content="Réservation Chambre" Height="25" Width="125" Margin="10,85,368,529"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheC" Content="Fiche client" Height="25" Width="125" Margin="140,25,238,589"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheReserv" Content="Fiche Réservation" Height="25" Width="125" Margin="140,55,238,559"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheReservF" Content="Fiche Réservation Fact" Height="25" Width="125" Margin="140,85,238,529"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeCli" Content="Liste de client" Height="25" Width="125" Margin="270,25,108,589"></Button>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,115,0,522"></Rectangle>
                 <GroupBox Header="Arrivé" BorderBrush="Black" Margin="0,130,0,278">
                     <Grid Margin="0,0,0,-0.4">
                         <DataGrid AutoGenerateColumns="False" Name="dgArrive" Margin="0,0,0,30">
@@ -26,8 +31,8 @@
                                 <DataGridTextColumn Header="NoRéservation"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Name="btnConsulterA" Height="25" Content="Consulter" Margin="327,183,0,0" HorizontalAlignment="Left" Width="77" VerticalAlignment="Top"></Button>
-                        <Button Name="btnArrive" Height="25" Content="Arrivé" Margin="409,183,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="71"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnConsulterA" Height="25" Content="Consulter" Margin="327,183,0,0" HorizontalAlignment="Left" Width="77" VerticalAlignment="Top"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnArrive" Height="25" Content="Arrivé" Margin="409,183,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="71"></Button>
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Départ" BorderBrush="Black" Margin="0,361,0,30">
@@ -40,11 +45,11 @@
                                 <DataGridTextColumn Header="NoRéservation"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Name="btnConsulterD" Height="25" Content="Consulter" Margin="337,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77"></Button>
-                        <Button Name="btnDepart" Height="25" Content="Départ" Margin="419,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="71"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnConsulterD" Height="25" Content="Consulter" Margin="337,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnDepart" Height="25" Content="Départ" Margin="419,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="71"></Button>
                     </Grid>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="412,612,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Height="25" Margin="412,612,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81"></Button>
             </Grid>
         </Viewbox>
     </Grid>

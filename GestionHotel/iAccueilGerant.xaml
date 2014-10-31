@@ -2,6 +2,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="Gestion Hotel" Height="609.889" Width="670.78" Closing="Window_Closing">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="336" Width="236">
@@ -27,7 +34,7 @@
                         - Ajouter/Modifier/Supprimer une salle
                     </TextBlock>
                 </Border>
-                <Button Name="btnDeco" Content="Déconnexion" Margin="0,0,0,50" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,50" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Label Content="" Name="lblNomEmpl" HorizontalAlignment="Left" Margin="0,301,0,0" VerticalAlignment="Top"/>
             </Grid>
         </Viewbox>

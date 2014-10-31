@@ -3,17 +3,22 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
     Title="iFaireReservSalle" Height="416.8" Width="300">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Width="306" Height="424">
-                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,0,307">
-                    <Grid>
-                        <Button Name="btnAjoutForfait" Content="Ajouter un forfait" Height="25" Width="125" Margin="10,10,158.6,59.4"></Button>
-                        <Button Name="btnListeForf" Content="Liste de forfait" Height="25" Width="125" Margin="10,40,158.6,29.4"></Button>
-                        <Button Name="btnListeSalle" Content="Liste de salle" Height="25" Width="125" Margin="10,70,158.6,-0.6"/>
-                        <Button Name="btnRabais" Content="Rabais" Height="25" Width="125" Margin="159,10,9.6,59.4"></Button>
-                    </Grid>
-                </GroupBox>
+                <Label Content="Menu" Margin="0,0,264,401"></Label>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutForfait" Content="Ajouter un forfait" Height="25" Width="125" Margin="16,28,165,371"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeForf" Content="Liste de forfait" Height="25" Width="125" Margin="16,58,165,341"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeSalle" Content="Liste de salle" Height="25" Width="125" Margin="146,58,35,341"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnRabais" Content="Rabais" Height="25" Width="125" Margin="146,28,35,371"></Button>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,91,0,331"></Rectangle>
                 <GroupBox Header="Réservation d'une salle" BorderBrush="Black" Margin="0,117,0,30">
                     <Grid>
                         <Label Content="* = non-obligatoire" Margin="177,-3,-0.4,227.8"></Label>
@@ -31,8 +36,8 @@
                         <TextBox Name="txtCommReserv" Margin="94,151,6.6,-0.2"></TextBox>
                     </Grid>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="193,396,10,3"></Button>
-                <Button Name="btnFaireReserv" Content="Faire la réservation" Height="25" Margin="65,396,118,3"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Height="25" Margin="193,396,10,3"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFaireReserv" Content="Faire la réservation" Height="25" Margin="65,396,118,3"></Button>
             </Grid>
         </Viewbox>
     </Grid>
