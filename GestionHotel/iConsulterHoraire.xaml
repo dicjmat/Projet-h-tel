@@ -12,17 +12,27 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Width="518" Height="515">
-                <Label Content="Recherche :"></Label>
-                <TextBox Name="txtRecherche" Height="25" Margin="77,0,267,490"></TextBox>
-                <GroupBox Header="Liste d'horaire" Margin="0,30,0,45">
-            <Grid>
-                        <Label Content="Nom de l'employé :"></Label>
-                        <ComboBox Name="cbNomEmp" Background="White" Height="25" Margin="117,0,257.6,392.6"></ComboBox>
-                    <DataGrid Name="dgHoraire" Margin="0,30,-0.4,-0.4">
+                <GroupBox BorderBrush="Black" Header="Liste d'horaire" Margin="0,35,0,40">
+                    <Grid>
+                        <Label Content="Nom de l'employé :" Margin="257,0,139.6,392.6"></Label>
+                        <ComboBox Name="cbNomEmp" Background="White" Height="25" Margin="367,0,7.6,392.6">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Label x:Name="lblVille" Content="{Binding nomEmpl}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="dgHoraire" Margin="0,30,-0.4,-0.4">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="LAWL"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Date" Binding="{Binding dateHoraire}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Heure de début" Binding="{Binding heureDebut}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Heure de fin" Binding="{Binding heureFin}"></DataGridTextColumn>
                             </DataGrid.Columns>
-                    </DataGrid>
+                        </DataGrid>
+                        <Label Content="Recherche :" Margin="10,3,423.6,387.6"/>
+                        <TextBox x:Name="txtRecherche" Height="25" Margin="81,0,248.6,392.6"/>
                     </Grid>
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Height="25" Margin="424,480,10,10"></Button>

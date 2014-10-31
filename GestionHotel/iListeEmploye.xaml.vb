@@ -63,5 +63,20 @@
         'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
         lstEmploye.DataContext = res.ToList()
     End Sub
+
+    Private Sub btnConsulterHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnConsulterHoraire.Click
+        If lstEmploye.SelectedIndex <> -1 Then
+            Dim numEmpl = lstEmploye.SelectedItem.noEmpl
+            Dim iHoraire As New iConsulterHoraire(numEmpl, maBd, _noEmpl)
+            iHoraire.Owner = Me
+            Me.Hide()
+            iHoraire.Show()
+        Else
+            Dim iHoraire As New iConsulterHoraire(maBd, _noEmpl)
+            iHoraire.Owner = Me
+            Me.Hide()
+            iHoraire.Show()
+        End If
+    End Sub
 End Class
 
