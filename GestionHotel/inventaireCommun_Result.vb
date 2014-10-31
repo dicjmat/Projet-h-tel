@@ -10,7 +10,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class inventaireCommun
+Partial Public Class inventaireCommun_Result
     Public Property codeItem As String
     Public Property nomItem As String
     Public Property Quantite As Nullable(Of Integer)

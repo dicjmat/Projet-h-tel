@@ -19,9 +19,10 @@
         Dim hotel As Integer = cbHotel.SelectedItem.noHotel
         If cbHotel.SelectedIndex <> -1 Then
             If cbHotel.SelectedItem.nomHotel <> "Tout" Then
-                Dim res = From item In bd.tblItem Join el In bd.tblInventaire On el.codeItem Equals item.codeItem
-                      Where el.noHotel = hotel And (item.codeItem.StartsWith(txtRecherche.Text) Or item.nomItem.StartsWith(txtRecherche.Text))
-                      Select el.codeItem, item.nomItem, el.Quantite, item.descItem, el.quantiteMin
+                Dim res = From item In bd.tblItem
+                          Join el In bd.tblInventaire On el.codeItem Equals item.codeItem
+                          Where el.noHotel = hotel And (item.codeItem.StartsWith(txtRecherche.Text) Or item.nomItem.StartsWith(txtRecherche.Text))
+                          Select el.codeItem, item.nomItem, el.Quantite, item.descItem, el.quantiteMin
                 dgInventaireC.ItemsSource = creerAffichage(res.ToList)
             Else
                 Dim res = From el In bd.inventaireCommun
@@ -35,7 +36,7 @@
 
     Private Function creerAffichage(res)
         Dim lstAffichage As New List(Of Object)
-        Dim Affichage
+        Dim Affichage As Object
         For Each el In res
             Dim Stock As Boolean = False
             If cbHotel.SelectedItem.nomHotel <> "Tout" AndAlso el.Quantite < el.quantiteMin Then
@@ -109,5 +110,9 @@
 
     Private Sub window_invComp_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles window_invComp.Closing
         Me.Owner.Show()
+    End Sub
+
+    Private Sub window_invComp_Activated(sender As Object, e As EventArgs) Handles window_invComp.Activated
+        requete()
     End Sub
 End Class

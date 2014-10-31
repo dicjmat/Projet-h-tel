@@ -363,20 +363,6 @@
           <Property Name="codeTypeElement" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="nomTypeElement" Type="varchar" MaxLength="15" Nullable="false" />
         </EntityType>
-        <!--Erreurs détectées durant la génération :
-avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.inventaireCommun' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
-        <EntityType Name="inventaireCommun">
-          <Key>
-            <PropertyRef Name="codeItem" />
-            <PropertyRef Name="nomItem" />
-            <PropertyRef Name="quantiteMin" />
-          </Key>
-          <Property Name="codeItem" Type="char" MaxLength="7" Nullable="false" />
-          <Property Name="nomItem" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Quantite" Type="int" />
-          <Property Name="descItem" Type="varchar" MaxLength="30" />
-          <Property Name="quantiteMin" Type="tinyint" Nullable="false" />
-        </EntityType>
         <Association Name="fk_bore_noempl">
           <End Role="tblEmploye" Type="Self.tblEmploye" Multiplicity="1" />
           <End Role="tblBoiteReception" Type="Self.tblBoiteReception" Multiplicity="*" />
@@ -973,6 +959,12 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="inventaireCommun" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Inventaire" />
+        <Function Name="determinerlibre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Reservation">
+          <Parameter Name="dateDebut" Type="date" Mode="In" />
+          <Parameter Name="datefin" Type="date" Mode="In" />
+          <Parameter Name="noHotel" Type="tinyint" Mode="In" />
+        </Function>
         <EntityContainer Name="P2014_Equipe2_GestionHôtelièreModelStoreContainer">
           <EntitySet Name="tblCatalogue" EntityType="Self.tblCatalogue" Schema="Inventaire" store:Type="Tables" />
           <EntitySet Name="tblChecklist" EntityType="Self.tblChecklist" Schema="Inventaire" store:Type="Tables" />
@@ -1009,15 +1001,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <EntitySet Name="tblTypeChambreHotel" EntityType="Self.tblTypeChambreHotel" Schema="Reservation" store:Type="Tables" />
           <EntitySet Name="tblTypeChambreOption" EntityType="Self.tblTypeChambreOption" Schema="Reservation" store:Type="Tables" />
           <EntitySet Name="tblTypeElement" EntityType="Self.tblTypeElement" Schema="Reservation" store:Type="Tables" />
-          <EntitySet Name="inventaireCommun" EntityType="Self.inventaireCommun" store:Type="Views" store:Schema="Inventaire">
-            <DefiningQuery>SELECT 
-    [inventaireCommun].[codeItem] AS [codeItem], 
-    [inventaireCommun].[nomItem] AS [nomItem], 
-    [inventaireCommun].[Quantite] AS [Quantite], 
-    [inventaireCommun].[descItem] AS [descItem], 
-    [inventaireCommun].[quantiteMin] AS [quantiteMin]
-    FROM [Inventaire].[inventaireCommun] AS [inventaireCommun]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="fk_bore_noempl" Association="Self.fk_bore_noempl">
             <End Role="tblEmploye" EntitySet="tblEmploye" />
             <End Role="tblBoiteReception" EntitySet="tblBoiteReception" />
@@ -1656,18 +1639,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <Property Name="nomTypeElement" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblElementFacture" Relationship="Self.fk_elefac_cotyel" FromRole="tblTypeElement" ToRole="tblElementFacture" />
         </EntityType>
-        <EntityType Name="inventaireCommun">
-          <Key>
-            <PropertyRef Name="codeItem" />
-            <PropertyRef Name="nomItem" />
-            <PropertyRef Name="quantiteMin" />
-          </Key>
-          <Property Name="codeItem" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="nomItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Quantite" Type="Int32" />
-          <Property Name="descItem" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="quantiteMin" Type="Byte" Nullable="false" />
-        </EntityType>
         <Association Name="fk_cat_codeitem">
           <End Role="tblItem" Type="Self.tblItem" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -2258,7 +2229,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
           <EntitySet Name="tblTypeChambre" EntityType="Self.tblTypeChambre" />
           <EntitySet Name="tblTypeChambreHotel" EntityType="Self.tblTypeChambreHotel" />
           <EntitySet Name="tblTypeElement" EntityType="Self.tblTypeElement" />
-          <EntitySet Name="inventaireCommun" EntityType="Self.inventaireCommun" />
           <AssociationSet Name="fk_cat_codeitem" Association="Self.fk_cat_codeitem">
             <End Role="tblItem" EntitySet="tblItem" />
             <End Role="tblCatalogue" EntitySet="tblCatalogue" />
@@ -2447,7 +2417,24 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
             <End Role="tblTypeChambre" EntitySet="tblTypeChambre" />
             <End Role="tblOption" EntitySet="tblOption" />
           </AssociationSet>
+          <FunctionImport Name="inventaireCommun" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreModel.inventaireCommun_Result)" />
+          <FunctionImport Name="determinerlibre" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreModel.determinerlibre_Result)">
+            <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+            <Parameter Name="datefin" Mode="In" Type="DateTime" />
+            <Parameter Name="noHotel" Mode="In" Type="Byte" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="inventaireCommun_Result">
+          <Property Type="String" Name="codeItem" Nullable="false" MaxLength="7" />
+          <Property Type="String" Name="nomItem" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Quantite" Nullable="true" />
+          <Property Type="String" Name="descItem" Nullable="true" MaxLength="30" />
+          <Property Type="Byte" Name="quantiteMin" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="determinerlibre_Result">
+          <Property Type="Int16" Name="noChambre" Nullable="false" />
+          <Property Type="String" Name="codeTypeChambre" Nullable="false" MaxLength="3" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2818,17 +2805,6 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="inventaireCommun">
-            <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreModel.inventaireCommun">
-              <MappingFragment StoreEntitySet="inventaireCommun">
-                <ScalarProperty Name="codeItem" ColumnName="codeItem" />
-                <ScalarProperty Name="nomItem" ColumnName="nomItem" />
-                <ScalarProperty Name="Quantite" ColumnName="Quantite" />
-                <ScalarProperty Name="descItem" ColumnName="descItem" />
-                <ScalarProperty Name="quantiteMin" ColumnName="quantiteMin" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <AssociationSetMapping Name="tblOptionForfait" TypeName="P2014_Equipe2_GestionHôtelièreModel.tblOptionForfait" StoreEntitySet="tblOptionForfait">
             <EndProperty Name="tblForfait">
               <ScalarProperty Name="noForfait" ColumnName="noForfait" />
@@ -2845,6 +2821,25 @@ avertissement 6002: La table/vue 'P2014_Equipe2_GestionHôtelière.Inventaire.in
               <ScalarProperty Name="noOption" ColumnName="noOption" />
             </EndProperty>
           </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="inventaireCommun" FunctionName="P2014_Equipe2_GestionHôtelièreModel.Store.inventaireCommun">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreModel.inventaireCommun_Result">
+                <ScalarProperty Name="codeItem" ColumnName="codeItem" />
+                <ScalarProperty Name="nomItem" ColumnName="nomItem" />
+                <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+                <ScalarProperty Name="descItem" ColumnName="descItem" />
+                <ScalarProperty Name="quantiteMin" ColumnName="quantiteMin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="determinerlibre" FunctionName="P2014_Equipe2_GestionHôtelièreModel.Store.determinerlibre">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreModel.determinerlibre_Result">
+                <ScalarProperty Name="noChambre" ColumnName="noChambre" />
+                <ScalarProperty Name="codeTypeChambre" ColumnName="codeTypeChambre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

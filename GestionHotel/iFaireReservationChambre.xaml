@@ -2,28 +2,47 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
-    Title="iFaireReservation" Height="267.467" Width="373.866">
+    Title="iFaireReservation" Height="357.867" Width="373.866">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="374" Width="526">
-                <GroupBox Header="Réservation d'une chambre" BorderBrush="Black" Margin="10,0" Height="334" VerticalAlignment="Top">
+            <Grid Height="509" Width="526">
+                <Label Content="Menu"></Label>
+                <Button Style="{StaticResource styleBouton}" Name="btnCheck" Content="Check-in/Check-out" Height="25" Width="125" Margin="10,33,391,451"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFact" Content="Facture" Height="25" Width="125" Margin="10,63,391,421"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutCli" Content="Ajouter Client" Height="25" Width="125" Margin="10,93,391,391"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheC" Content="Fiche client" Height="25" Width="125" Margin="140,33,261,451"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheReserv" Content="Fiche Réservation" Height="25" Width="125" Margin="140,63,261,421"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheReservF" Content="Fiche Réservation Fact" Height="25" Width="125" Margin="140,93,261,391"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeCli" Content="Liste de client" Height="25" Width="125" Margin="270,33,131,451"></Button>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,123,0,384"></Rectangle>
+                <GroupBox Header="Réservation d'une chambre" BorderBrush="Black" Margin="10,141,10,0" Height="334" VerticalAlignment="Top">
                     <Grid>
-                        <Calendar Margin="0,35,314.6,116"></Calendar>
-                        <Label Content="* = non-obligatoire" Margin="192,0,-0.2,285"></Label>
-                        <Label Content="Commentaire * :" Margin="47,201,349.6,75"></Label>
-                        <DataGrid Margin="192,35,-0.4,116" AutoGenerateColumns="False">
+                        <Label Content="* = non-obligatoire" Margin="192,0,-0.4,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302"></Label>
+                        <Label Content="Commentaire * :" Margin="47,201,0,0" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="97"></Label>
+                        <DataGrid x:Name="dgReserv" Margin="192,35,-0.4,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="302" Height="161" VerticalAlignment="Top">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="No"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Type"></DataGridTextColumn>
+                                <DataGridTextColumn Header="No" Binding="{Binding noChambre}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Type" Binding="{Binding codeTypeChambre}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Prix"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Lits"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="144,206,0,11" HorizontalAlignment="Left" Width="302"></TextBox>
+                        <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="144,206,0,0" HorizontalAlignment="Left" Width="302" Height="95" VerticalAlignment="Top"></TextBox>
+                        <DatePicker x:Name="dpDebut" HorizontalAlignment="Left" Margin="14,70,0,0" VerticalAlignment="Top"/>
+                        <DatePicker x:Name="dpFin" HorizontalAlignment="Left" Margin="14,141,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Date de début" HorizontalAlignment="Left" Margin="14,44,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Date de fin" HorizontalAlignment="Left" Margin="14,115,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Retour" Height="25" Margin="295,339,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="128"/>
-                <Button Name="btnReserv" Content="Faire la réservation" Margin="157,339,0,10" HorizontalAlignment="Left" Width="133"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Retour" Height="25" Margin="383,480,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="128"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnReserv" Content="Faire la réservation" Margin="245,480,0,0" HorizontalAlignment="Left" Width="133" Height="25" VerticalAlignment="Top"/>
             </Grid>
         </Viewbox>
     </Grid>

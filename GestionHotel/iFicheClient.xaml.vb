@@ -21,10 +21,6 @@
         db.SaveChanges()
     End Sub
 
-    Private Sub btnLierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnLierClient.Click
-
-    End Sub
-
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
     End Sub

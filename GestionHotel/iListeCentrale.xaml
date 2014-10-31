@@ -1,12 +1,32 @@
 ﻿<Window x:Class="iListeCentrale" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized" Background="CadetBlue" Name="window_lstCentrale" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="iListeCentrale" Height="448" Width="589.8">
+    Title="iListeCentrale" Height="638.478" Width="883.962">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Width="464" Height="353">
-                <Label Content="Liste Centrale" HorizontalAlignment="Center"></Label>
-                <GroupBox Header="Pays" BorderBrush="Black" Margin="5,21,0,38" HorizontalAlignment="Left" Width="143">
+            <Grid Width="692" Height="501">
+                <Label Content="Menu"></Label>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="19,62,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="19,32,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnCommande" Content="Faire une commande" Height="25" Margin="19,92,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="186,32,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnGSalle" Content="Gestion salle" Height="25" Margin="186,62,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="186,92,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="353,32,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="353,62,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnInventaire" Content="Inventaire" Height="25" Margin="353,93,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="520,32,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="520,62,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnLSalle" Content="Liste de salle" Height="25" Margin="520,92,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,129,0,370"></Rectangle>
+                <GroupBox Header="Pays" BorderBrush="Black" Margin="119,151,0,54" HorizontalAlignment="Left" Width="143">
                     <Grid>
                         <DataGrid Name="dgPays" Margin="0,0,-0.4,23.4" IsReadOnly="True" AutoGenerateColumns="False">
                             <DataGrid.Columns>
@@ -14,10 +34,10 @@
                                 <DataGridTextColumn Header="Nom" Binding="{Binding nomPays}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Name="btnAjouterPays" Content="Ajouter le pays" Height="20" Margin="0,253,-2.4,-1.8" HorizontalAlignment="Left" Width="112"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnAjouterPays" Content="Ajouter le pays" Height="20" Margin="0,253,0.4,-1.8" VerticalAlignment="Top"/>
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="Province" BorderBrush="Black" Margin="153,21,0,38" HorizontalAlignment="Left" Width="144">
+                <GroupBox Header="Province" BorderBrush="Black" Margin="267,151,0,54" HorizontalAlignment="Left" Width="144">
                     <Grid>
                         <DataGrid Name="dgProvince" Margin="0,0,-0.2,23.4" IsReadOnly="True" AutoGenerateColumns="False">
                             <DataGrid.Columns>
@@ -25,10 +45,10 @@
                                 <DataGridTextColumn Header="Nom" Binding="{Binding nomProv}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Name="btnAjouterProv" Content="Ajouter la province" Height="20" Margin="0,253,-0.4,-1.8" RenderTransformOrigin="0.502,0.5"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnAjouterProv" Content="Ajouter la province" Height="20" Margin="0,253,-0.8,-1.8" RenderTransformOrigin="0.502,0.5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="132"></Button>
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="Ville" BorderBrush="Black" Margin="302,21,0,38" HorizontalAlignment="Left" Width="144">
+                <GroupBox Header="Ville" BorderBrush="Black" Margin="416,151,0,54" HorizontalAlignment="Left" Width="144">
                     <Grid>
                         <DataGrid Name="dgVille" Margin="0,0,-0.2,23.4" IsReadOnly="True" AutoGenerateColumns="False">
                             <DataGrid.Columns>
@@ -36,10 +56,10 @@
                                 <DataGridTextColumn Header="Nom" Binding="{Binding nomVille}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Name="btnAjouterVille" Content="Ajouter la ville" Height="20" Margin="0,253,-0.2,-1.8"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnAjouterVille" Content="Ajouter la ville" Height="20" Margin="0,253,0,-1.8" VerticalAlignment="Top" HorizontalAlignment="Left" Width="131"></Button>
                     </Grid>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" Height="20" Margin="294,320,18,13"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Height="20" Margin="275,471,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="131"></Button>
             </Grid>
         </Viewbox>
     </Grid>

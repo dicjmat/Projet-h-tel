@@ -9,11 +9,7 @@
 
     Private Sub window_lstHotel_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstHotel.Loaded
         Me.Owner.Hide()
-        Dim res = From Ho In bd.tblHotel
-                  Join Vi In bd.tblVille On Ho.codeVille Equals Vi.codeVille
-                  Select Ho.noHotel, Ho.nomHotel, Vi.nomVille
-
-        dgHotel.ItemsSource = res.ToList()
+        requeteHotel()
     End Sub
 
     Private Sub window_lstHotel_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles window_lstHotel.Closing
@@ -26,13 +22,7 @@
 
     Private Sub dgHotel_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgHotel.SelectionChanged
         If dgHotel.SelectedIndex <> -1 Then
-            Dim noHotel As Integer = dgHotel.SelectedItem.noHotel
-            Dim res = From Ch In bd.tblChambre
-                              Join TyCh In bd.tblTypeChambre On Ch.codeTypeChambre Equals TyCh.codeTypeChambre
-                              Where Ch.noHotel = noHotel
-                              Select Ch.noChambre, TyCh.nomTypeChambre
-
-            dgChambre.ItemsSource = res.ToList()
+            requeteChambre()
         End If
 
     End Sub
@@ -41,11 +31,73 @@
         Dim Ghotel = New iGestionHotel(bd)
         Ghotel.Owner = Me
         Ghotel.Show()
+        requeteHotel()
     End Sub
 
     Private Sub btnAjouterChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterChambre.Click
-        Dim Gchambre = New iGestionChambre(bd)
-        Gchambre.Owner = Me
-        Gchambre.Show()
+        If dgHotel.SelectedIndex <> -1 Then
+            Dim Gchambre = New iGestionChambre(bd, dgHotel.SelectedItem.noHotel)
+            Gchambre.Owner = Me
+            Gchambre.Show()
+        Else
+            MessageBox.Show("Veuillez choisir un hôtel")
+        End If
+
+
+    End Sub
+
+    Private Sub btnModifierHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierHotel.Click
+        If dgHotel.SelectedIndex <> -1 Then
+            Dim Ghotel = New iGestionHotel(bd, dgHotel.SelectedItem.noHotel)
+            Ghotel.Owner = Me
+            Ghotel.Show()
+            requeteHotel()
+        Else
+            MessageBox.Show("Veuillez sélectionner un hôtel")
+        End If
+
+
+
+    End Sub
+
+    Private Sub btnSupprimerChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnSupprimerChambre.Click
+        If dgChambre.SelectedIndex <> -1 Then
+            Dim noHotel As Integer = dgHotel.SelectedItem.noHotel
+            Dim chambre As Integer = dgChambre.SelectedItem.noChambre
+            Dim supprimer = From ch In bd.tblChambre
+                            Where ch.noChambre = chambre And ch.noHotel = noHotel
+                            Select ch
+
+            bd.tblChambre.Remove(supprimer.Single)
+            bd.SaveChanges()
+            MessageBox.Show("La chambre a bien été supprimée")
+            requeteChambre()
+        Else
+            MessageBox.Show("Veuillez choisir une chambre")
+        End If
+
+
+    End Sub
+
+    Private Sub requeteHotel()
+        Dim res = From Ho In bd.tblHotel
+          Join Vi In bd.tblVille On Ho.codeVille Equals Vi.codeVille
+          Select Ho.noHotel, Ho.nomHotel, Vi.nomVille
+
+        dgHotel.ItemsSource = res.ToList()
+    End Sub
+
+    Private Sub requeteChambre()
+        Dim noHotel As Integer = dgHotel.SelectedItem.noHotel
+        Dim res = From Ch In bd.tblChambre
+                  Join TyCh In bd.tblTypeChambre On Ch.codeTypeChambre Equals TyCh.codeTypeChambre
+                  Where Ch.noHotel = noHotel
+                  Select Ch.noChambre, TyCh.nomTypeChambre
+
+        dgChambre.ItemsSource = res.ToList()
+    End Sub
+
+    Private Sub window_lstHotel_Activated(sender As Object, e As EventArgs) Handles window_lstHotel.Activated
+        requeteChambre()
     End Sub
 End Class

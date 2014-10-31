@@ -1,38 +1,69 @@
-﻿<Window x:Class="iGestionHotel" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="CadetBlue" Name="windowGHotel" WindowStyle="None" Icon="icon.ico"
+﻿<Window x:Class="iGestionHotel" WindowStartupLocation="CenterScreen" Background="CadetBlue" Name="windowGHotel" WindowStyle="None" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
-    Title="Gestion Hotel" Height="350" Width="757.998">
+    Title="Gestion Hotel" Height="272.766" Width="500.815">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="172" Width="617">
-                <GroupBox BorderBrush="Black" Header="Gestion des Hôtels" HorizontalAlignment="Center" Margin="4,-58,6,-11" Width="607">
+            <Grid Height="274" Width="506">
+                <GroupBox BorderBrush="Black" Header="Gestion des Hôtels" HorizontalAlignment="Center" Margin="22,10,128,31" Width="356">
                     <StackPanel Margin="0,0,0.4,-3.2">
-                        <Grid>
-                            <Label Content="No d'hôtel :" Margin="0,0,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="09" Name="txtNoHotel" Margin="73,5,0,100.6" Height="20" HorizontalAlignment="Left" Width="87"></xctk:MaskedTextBox>
-                            <Label Content="Nom :" Margin="0,25,0,0"></Label>
-                            <TextBox Name="txtNomHotel" Margin="40,30,0,75.6" Height="20" HorizontalAlignment="Left" Width="120"></TextBox>
-                            <Label Content="Adresse :" Margin="0,50,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="09999 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" Name="txtAdrHotel" Margin="60,55,0,50.6" Height="20" HorizontalAlignment="Left" Width="100"></xctk:MaskedTextBox>
-                            <Label Content="noTelephone :" Margin="0,75,0,0"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" Name="txtTelHotel" Margin="86,80,0,25.6" Height="20" HorizontalAlignment="Left" Width="74"></xctk:MaskedTextBox>
-                            <Label Content="CodeVille :" Margin="0,100,0,0"></Label>
-                            <ComboBox Name="cbCodeVille" Margin="73,105,0,0.6" Background="White" Height="20" HorizontalAlignment="Left" Width="87"></ComboBox>
-                            <Label Content="No Téléphone de réservation :" Margin="160,-1,119.4,0.6"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" Name="noTelRes" Height="20" Margin="332,5,-0.6,100.6"></xctk:MaskedTextBox>
-                            <Label Content="No Télécopieur :" Margin="160,25,168,-25.4"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="(000)000-0000" Name="txtNoteleC" Height="25" Margin="263,27,109,73.6"></xctk:MaskedTextBox>
-                            <Label Content="Code Postal :" Margin="160,52,-160,-52.4"></Label>
-                            <TextBox Name="txtCodePostHo" Height="20" Margin="245,55,109,50.6"></TextBox>
+                        <Grid Margin="0,0,0.4,0">
+                            <Label Content="Nom :" Margin="0,9,0,92.4" HorizontalAlignment="Left" Width="42"/>
+                            <TextBox x:Name="txtNomHotel" Margin="40,12,0,110.4" Height="20" HorizontalAlignment="Left" Width="120"/>
+                            <Label Content="Adresse :" Margin="0,44,0,63.4" HorizontalAlignment="Left" Width="62"/>
+                            <xctk:MaskedTextBox x:Name="txtAdrHotel" Margin="60,47,0,75.4" Height="20" HorizontalAlignment="Left" Width="100"/>
+                            <Label Content="Télephone :" Margin="0,75,0,26.6" HorizontalAlignment="Left" Width="88"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="000 000-0000" x:Name="txtTelHotel" Margin="76,76,0,46.4" Height="20" HorizontalAlignment="Left" Width="84"/>
+                            <Label Content="Pays :" Margin="165,2,0,98.6" HorizontalAlignment="Left" Width="70"/>
+                            <Label Content="Province :" Margin="165,36,0,64.6" HorizontalAlignment="Left" Width="70"/>
+                            <Label Content="Ville :" Margin="165,73,0,40.2" HorizontalAlignment="Left" Width="70" RenderTransformOrigin="0.5,0.5"/>
+                            <ComboBox x:Name="cbPays" Margin="223,1,0,116.4" Background="White" Height="25" HorizontalAlignment="Left" Width="119">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblPays" Content="{Binding nomPays}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox x:Name="cbProvince" Margin="224,38,-1,79.4" Background="White" Height="25" HorizontalAlignment="Left" Width="119">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblProvince" Content="{Binding nomProv}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <ComboBox x:Name="cbCodeVille" Margin="224,74,-1,43.4" Background="White" Height="25" HorizontalAlignment="Left" Width="119">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblVille" Content="{Binding nomVille}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                            <Label Content="Téléphone de réservation :" Margin="-1,108,0,-8.4" HorizontalAlignment="Left" Width="174"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="0 000 000-0000" x:Name="noTelRes" Height="20" Margin="165,108,0,14.4" HorizontalAlignment="Left" Width="107"/>
+                            <Label Content="Télécopieur :" Margin="2,139,0,-27.6" HorizontalAlignment="Left" Width="119"/>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="000 000-0000" x:Name="txtNoteleC" Margin="86,141,0,-19.8" HorizontalAlignment="Left" Width="107"/>
+                            <Label Content="Code Postal :" Margin="1,172,0,-74.4" HorizontalAlignment="Left" Width="82"/>
+                            <TextBox x:Name="txtCodePostHo" Height="20" Margin="86,176,0,-58.4" HorizontalAlignment="Left" Width="108"/>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Top" HorizontalAlignment="Right" Width="86" Margin="0,188,6,-38" Height="22"/>
-                <Button Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,359,-38" Width="86" RenderTransformOrigin="0.139,1.293"></Button>
-                <Button Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,268,-38" Width="86"></Button>
-                <Button Name="btnSupprimer" Content="Supprimer" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,177,-38" Width="86"></Button>
-                <Button Name="btnSauv" Content="Sauvegarder" Margin="445,188,97,-38"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Retour" VerticalAlignment="Top" HorizontalAlignment="Right" Width="102" Margin="0,153,21,0" Height="41"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,21,154" Width="102" Height="40" RenderTransformOrigin="0.139,1.293"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,21,152" Width="102" Height="42"></Button>
             </Grid>
         </Viewbox>
     </Grid>
