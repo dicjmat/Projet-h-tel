@@ -6,8 +6,8 @@
     
     <Window.Resources>
         <Style x:Key="styleBouton" TargetType="Button">
-            <Setter Property="Background" Value="Teal"></Setter>
-            <Setter Property="Foreground" Value="Gainsboro"></Setter>
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
         </Style>
     </Window.Resources>
     <Grid>
