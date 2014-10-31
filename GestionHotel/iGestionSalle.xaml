@@ -3,27 +3,34 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
     Title="Gestion Hotel" Height="251.6" Width="525">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="172">
                 <GroupBox BorderBrush="Black" Header="Gestion des salles" HorizontalAlignment="Center" Width="238" Height="148" VerticalAlignment="Top" Margin="10,2,110.4,0">
                     <StackPanel>
                         <Grid>
-                            <Label Content="No de Salle :" Margin="0,0,0,0"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="09" Name="txtNoSalle" Margin="73,5,125.6,100.6" Height="20"></xctk:MaskedTextBox>
+                            <Label Content="Nom :" Margin="0,0,0,0"></Label>
+                            <xctk:MaskedTextBox  PromptChar=" " Mask="09" Name="txtNomSalle" Margin="43,5,0.6,100.6" Height="20"></xctk:MaskedTextBox>
                             <Label Content="Description :" Margin="0,25,0,0"></Label>
-                            <TextBox Name="txtDescSalle" Margin="73,30,0.4,75.6" Height="20"></TextBox>
-                            <Label Content="Nombre de place de la salle :" Margin="0,50,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="09999999999" PromptChar=" " Name="txtNoPlaceSalle" Margin="163,55,0.8,50.6" Height="20"></xctk:MaskedTextBox>
+                            <TextBox Name="txtDescSalle" Margin="73,30,0.6,75.6" Height="20"></TextBox>
+                            <Label Content="Nombre de place :" Margin="0,50,0,0"></Label>
+                            <xctk:MaskedTextBox Mask="09999999999" PromptChar=" " Name="txtNbPlaceSalle" Margin="163,55,0.8,50.6" Height="20"></xctk:MaskedTextBox>
                             <Label Content="No d'hôtel :" Margin="0,75,0.8,24.6"></Label>
                             <ComboBox Name="cbNoHotel" Margin="73,80,98.6,25.6" Background="White" Height="20"></ComboBox>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Accueil" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86" Margin="0,0,19.4,41"/>
-                <Button Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,122" Width="86"></Button>
-                <Button Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,95" Width="86"></Button>
-                <Button Name="btnSupprimer" Content="Supprimer" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,68" Width="86"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="86" Margin="0,0,19.4,41"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,122" Width="86"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,95" Width="86"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnSupprimer" Content="Supprimer" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,19.4,68" Width="86"></Button>
             </Grid>
         </Viewbox>
     </Grid>

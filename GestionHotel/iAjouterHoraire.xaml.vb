@@ -52,8 +52,6 @@
                     Horaire.dateHoraire = Format(el, "yyyy/MM/dd")
                     Horaire.heureDebut = TimeSpan.Parse(cmbHeureDebutH.SelectedItem.Content + ":" + cmbHeureDebutM.SelectedItem.Content)
                     Horaire.heureFin = TimeSpan.Parse(cmbHeureFinH.SelectedItem.Content + ":" + cmbHeureFinM.SelectedItem.Content)
-                    'Horaire.heureDebut = TimeSpan.Parse(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
-                    'Horaire.heureFin = TimeSpan.Parse(Replace(cmbHeureFin.SelectedItem.Content, "h", ":"))
                     bd.tblHoraire.Add(Horaire)
                     bd.SaveChanges()
                 Next
@@ -63,8 +61,6 @@
                 Horaire.dateHoraire = Format(cldHoraire.SelectedDate(), "yyyy/MM/dd")
                 Horaire.heureDebut = TimeSpan.Parse(cmbHeureDebutH.SelectedItem.Content + ":" + cmbHeureDebutM.SelectedItem.Content)
                 Horaire.heureFin = TimeSpan.Parse(cmbHeureFinH.SelectedItem.Content + ":" + cmbHeureFinM.SelectedItem.Content)
-                'Horaire.heureDebut = TimeSpan.Parse(Replace(cmbHeureDebut.SelectedItem.Content, "h", ":"))
-                'Horaire.heureFin = TimeSpan.Parse(Replace(cmbHeureFin.SelectedItem.Content, "h", ":"))
                 bd.tblHoraire.Add(Horaire)
                 bd.SaveChanges()
                 lblConfirmation.Content = "L'horaire est ajouté"

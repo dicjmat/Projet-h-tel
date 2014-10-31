@@ -3,6 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
     Title="Gestion Hotel" Height="272.766" Width="500.815">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="274" Width="506">
@@ -54,9 +61,9 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Name="btnAccueil" Content="Retour" VerticalAlignment="Top" HorizontalAlignment="Right" Width="102" Margin="0,153,21,0" Height="41"/>
-                <Button Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,21,154" Width="102" Height="40" RenderTransformOrigin="0.139,1.293"></Button>
-                <Button Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,21,152" Width="102" Height="42"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Retour" VerticalAlignment="Top" HorizontalAlignment="Right" Width="102" Margin="0,153,21,0" Height="41"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouter" Content="Ajouter" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,21,154" Width="102" Height="40" RenderTransformOrigin="0.139,1.293"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifier" Content="Modifier" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,21,152" Width="102" Height="42"></Button>
             </Grid>
         </Viewbox>
     </Grid>

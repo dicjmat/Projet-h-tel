@@ -8,7 +8,7 @@
         bd = _bd
     End Sub
 
-    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities) 
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         bd = _bd
     End Sub

@@ -17,7 +17,7 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="10,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,103,0,0" HorizontalAlignment="Left" Width="160" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmp" Content="Ficeh d'employé" Height="25" Margin="177,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="177,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnGSalle" Content="Gestion salle" Height="25" Margin="177,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="177,103,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="344,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>

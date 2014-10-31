@@ -4,7 +4,6 @@
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
 
     Sub New(p1 As Object, _bd As P2014_Equipe2_GestionHôtelièreEntities)
-        ' TODO: Complete member initialization
         InitializeComponent()
         codePays = p1
         bd = _bd
