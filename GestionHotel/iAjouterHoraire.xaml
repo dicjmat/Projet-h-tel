@@ -3,20 +3,24 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Class="iAjouterHoraire" FontSize="16" WindowState="Maximized" WindowStartupLocation="CenterScreen" Background="CadetBlue" x:Name="windowAjoutHoraire" WindowStyle="None" Icon="icon.ico"
     Title="Gestion Hotel" Height="482.518" Width="525">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="446">
-                <GroupBox Header="Menu" BorderBrush="Black" Margin="0,0,9.6,312">
-                    <Grid>
-                        <Button Name="btnFicheEmploye" Content="Fiche Employé" Height="25" Margin="167,36,165.6,44.6"/>
-                        <Button Name="btnListeCommande" Content="Liste de commande" Height="25" Margin="10,36,323.6,44.6"/>
-                        <Button Name="btnListeEmp" Content="Liste d'employé" Height="25" Margin="325,36,7.6,44.6"/>
-                    </Grid>
-                </GroupBox>
-                <GroupBox BorderBrush="Black" Header="Employé" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Height="70" Width="498">
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmploye" Content="Fiche Employé" Height="25" Margin="10,0,323,421"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeCommande" Content="Liste de commande" Height="25" Margin="10,40,324,381"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeEmp" Content="Liste d'employé" Height="25" Margin="190,0,143,421"/>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,84,0,360"/>
+                <GroupBox BorderBrush="Black" Header="Employé" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Height="70" Width="498">
                     <StackPanel>
                         <Grid>
-                            <Button x:Name="btnRetour" Content="Retour" HorizontalAlignment="Left" Height="29" Margin="402,0,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5"/>
+                            <Button x:Name="btnRetour" Style="{StaticResource styleBouton}" Content="Retour" HorizontalAlignment="Left" Height="29" Margin="402,0,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.5,0.5"/>
                             <ComboBox x:Name="cbEmploye" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.546,0.688" Background="white">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
@@ -30,8 +34,8 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <GroupBox BorderBrush="Black" Header="Horaire" HorizontalAlignment="Left" Margin="261,218,0,0" VerticalAlignment="Top" Height="228" Width="247">
-                    <StackPanel HorizontalAlignment="Left" Height="208" Margin="10,10,0,-18.8" VerticalAlignment="Top" Width="225">
+                <GroupBox BorderBrush="Black" Header="Horaire" HorizontalAlignment="Left" Margin="261,166,0,0" VerticalAlignment="Top" Height="270" Width="247">
+                    <StackPanel HorizontalAlignment="Left" Height="235" Margin="10,10,0,-3.4" VerticalAlignment="Top" Width="225">
                         <Canvas>
                             <Label Content="Heure de début :" Canvas.Top="-4"/>
                             <StackPanel Orientation="Horizontal" Canvas.Top="30">
@@ -104,15 +108,15 @@
                                 </ComboBox>
                             </StackPanel>
                             <Label x:Name="lblConfirmation" Content="Message de confirmation" Canvas.Top="125" Visibility="Hidden" FontSize="12"/>
-                            <Button x:Name="btnAjouterHor" Content="Ajouter" Canvas.Top="157"/>
-                            <Button x:Name="btnModifierHor" Content="Modifier" Canvas.Top="157" Canvas.Left="65"/>
-                            <Button x:Name="btnSupprimerHor" Content="Supprimer" Canvas.Top="157" Canvas.Left="137" Width="81"/>
+                            <Button x:Name="btnAjouterHor" Style="{StaticResource styleBouton}" Content="Ajouter" Canvas.Top="201" Canvas.Left="5"/>
+                            <Button x:Name="btnModifierHor" Style="{StaticResource styleBouton}" Content="Modifier" Canvas.Top="201" Canvas.Left="70"/>
+                            <Button x:Name="btnSupprimerHor" Style="{StaticResource styleBouton}" Content="Supprimer" Canvas.Top="201" Canvas.Left="142" Width="81"/>
                         </Canvas>
 
 
                     </StackPanel>
                 </GroupBox>
-                <GroupBox  BorderBrush="Black" Header="Calendrier" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Height="228" Width="246">
+                <GroupBox  BorderBrush="Black" Header="Calendrier" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Height="270" Width="246">
                     <Calendar x:Name="cldHoraire" HorizontalAlignment="Left" Margin="0,10,0,-18.8" VerticalAlignment="Top" Height="208" Width="212" SelectionMode="SingleRange"/>
                 </GroupBox>
             </Grid>
