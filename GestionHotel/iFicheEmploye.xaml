@@ -33,15 +33,15 @@
                     <StackPanel>
                         <Grid Margin="0,0,0.2,0">
                             <Label Content="Nom : " Margin="0,0,0,0"/>
-                            <xctk:MaskedTextBox  x:Name="txtNomEmp" Text="{Binding nomEmpl}" Margin="110,5,0,0" Height="23" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <xctk:MaskedTextBox  x:Name="txtNomEmp" Text="{Binding nomEmpl}" Margin="76,5,0,0" Height="23" Width="133" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <Label Content="Prénom : " Margin="0,30,0,-4.8"/>
-                            <xctk:MaskedTextBox x:Name="txtPrenomEmp" Text="{Binding prenEmpl}" Margin="110,34,0,0" Height="23" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <xctk:MaskedTextBox x:Name="txtPrenomEmp" Text="{Binding prenEmpl}" Margin="91,34,0,0" Height="23" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <Label Content="noTéléphone : " Margin="0,60,0,-9.8"/>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="000-000-0000" x:Name="txtTellEmp" Text="{Binding noTelEmpl}" Margin="110,63,0,0" Height="20" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <Label Content="noCéllulaire* : " Margin="0,90,0,-14.8"/>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="000-000-0000" x:Name="txtCellEmp" Text="{Binding noCellEmpl}" Margin="110,90,0,0" Height="20" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <Label Content="Adresse : " Margin="0,116,0,-15.8"/>
-                            <xctk:MaskedTextBox x:Name="txtAdrEmp" Text="{Binding adrEmpl}" Margin="110,117,0,0" Height="20" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <xctk:MaskedTextBox x:Name="txtAdrEmp" Text="{Binding adrEmpl}" Margin="61,117,0,0" Height="20" Width="148" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <Label Content="NAS : " Margin="0,141,0,-15.8"/>
                             <xctk:MaskedTextBox PromptChar=" " Mask="000000000"  x:Name="txtNASEmp" Text="{Binding NAS}" Margin="110,143,0,0" Height="20" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <Label Content="Date d'embauche : " Margin="0,166,0,-15.8"/>
@@ -57,11 +57,11 @@
                             <Label Content="Jours Maladies : " Margin="210,149,92,31.2"/>
                             <TextBox x:Name="txtMaladieEmp" Text="{Binding joursMal}" Margin="324,151,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <Label Content="Pays :" Margin="215,-4,121,187.2"/>
-                            <ComboBox x:Name="cmbPays" ItemsSource="{Binding}" Margin="282,-3,0,203.6" Height="25" Background="White" FontSize="10">
+                            <ComboBox x:Name="cmbPays" ItemsSource="{Binding}" Margin="267,-3,0,203.6" Height="25" Background="White" FontSize="10">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            <Label x:Name="lblVille" Content="{Binding nomVille}"/>
+                                            <Label x:Name="lblPays" Content="{Binding nomPays}"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
@@ -71,7 +71,7 @@
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
-                                            <Label x:Name="lblVille" Content="{Binding nomVille}"/>
+                                            <Label x:Name="lblProvince" Content="{Binding nomProv}"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
@@ -79,7 +79,7 @@
                             <Label Content="Ville :" Margin="214,54,122,129.6"/>
                             <Label Content="Profession :" Margin="209,82,121,118.4"/>
                             <Label Content="Hôtel :" Margin="1,195,329,-11.8"/>
-                            <ComboBox x:Name="cmbCdVille" ItemsSource="{Binding}" Margin="282,52,0,148.6" Height="25" Background="White" FontSize="10">
+                            <ComboBox x:Name="cmbCdVille" ItemsSource="{Binding}" Margin="267,52,0,148.6" Height="25" Background="White" FontSize="10">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
