@@ -2,6 +2,13 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="AjoutProvince" Height="200" Width="400">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
             <GroupBox Header="Province" BorderBrush="Black" Height="144">
@@ -10,8 +17,8 @@
                     <TextBox Name="txtCodeProv" Height="20" Margin="122,3,102.2,0" VerticalAlignment="Top"></TextBox>
                     <Label Content="Nom de la province :" Margin="0,25,165.2,21.2"></Label>
                     <TextBox Name="txtNomProv" Height="20" Margin="122,30,0.2,0" VerticalAlignment="Top"></TextBox>
-                    <Button Name="btnAjouter" Content="Ajouter" Margin="10,74,155.4,22"/>
-                    <Button Name="btnAnnuler" Content="Annuler" Margin="155,73,10.4,22"/>
+                    <Button Style="{StaticResource styleBouton}" Name="btnAjouter" Content="Ajouter" Margin="10,74,155.4,22"/>
+                    <Button Style="{StaticResource styleBouton}" Name="btnAnnuler" Content="Annuler" Margin="155,73,10.4,22"/>
                 </Grid>
             </GroupBox>
         </Viewbox>
