@@ -3,7 +3,6 @@
     Sub New()
         ' TODO: Complete member initialization 
         InitializeComponent()
-        btnModifier.Visibility = System.Windows.Visibility.Hidden
     End Sub
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String)
         ' TODO: Complete member initialization 
@@ -49,9 +48,5 @@
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
-    End Sub
-
-    Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
-
     End Sub
 End Class
