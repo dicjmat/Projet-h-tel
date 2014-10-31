@@ -11,8 +11,21 @@
     </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid>
-                
+            <Grid Width="518" Height="515">
+                <Label Content="Recherche :"></Label>
+                <TextBox Name="txtRecherche" Height="25" Margin="77,0,267,490"></TextBox>
+                <GroupBox Header="Liste d'horaire" Margin="0,30,0,45">
+                    <Grid>
+                        <Label Content="Nom de l'employé :"></Label>
+                        <ComboBox Name="cbNomEmp" Background="White" Height="25" Margin="117,0,257.6,392.6"></ComboBox>
+                    <DataGrid Name="dgHoraire" Margin="0,30,-0.4,-0.4">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="LAWL"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                    </DataGrid>
+                    </Grid>
+                </GroupBox>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Height="25" Margin="424,480,10,10"></Button>
             </Grid>
         </Viewbox>
     </Grid>
