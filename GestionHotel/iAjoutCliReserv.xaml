@@ -65,6 +65,7 @@
                 </GroupBox>
                 <Button Name="btnAccueil" BorderBrush="Black" Style="{StaticResource styleBouton}" Height="25" Content="Accueil" Margin="335,541,0,7" HorizontalAlignment="Left" Width="78"></Button>
                 <Button Name="btnAjouterCli" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Ajouter le client" Height="25" Margin="228,541,0,7" HorizontalAlignment="Left" Width="102"></Button>
+                <Button x:Name="btnModifier" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Sauvegarder" Height="25" Margin="228,541,0,7" HorizontalAlignment="Left" Width="102"/>
             </Grid>
         </Viewbox>
     </Grid>

@@ -3,6 +3,7 @@
     Sub New()
         ' TODO: Complete member initialization 
         InitializeComponent()
+        btnModifier.Visibility = System.Windows.Visibility.Hidden
     End Sub
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String)
         ' TODO: Complete member initialization 
@@ -15,15 +16,17 @@
         txtAdrCli.Text = _adr
         txtNoCarteCredit.Text = _noCarte
         txtCodeExp.Text = _dateEx
+        btnAjouterCli.Visibility = System.Windows.Visibility.Hidden
     End Sub
     Private Sub window_AjoutCliReserv_Loaded(sender As Object, e As RoutedEventArgs) Handles window_AjoutCliReserv.Loaded
         bd = New P2014_Equipe2_GestionHôtelièreEntities
         Dim res = From cli In bd.tblClient
-             Group cli By cli.typeCarteCredit Into Group
-             Select Group.FirstOrDefault()
+                  Group cli By cli.typeCarteCredit Into Group
+                  Select Group.FirstOrDefault()
         Dim res2 = From el In bd.tblVille Select el
         cbTypeCarte.DataContext = res.ToList()
         cbCodeVille.DataContext = res2.Distinct().ToList()
+
     End Sub
 
     Private Sub btnAjouterCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterCli.Click
@@ -46,5 +49,9 @@
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
+    End Sub
+
+    Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
+
     End Sub
 End Class

@@ -31,7 +31,7 @@
     End Sub
 
     Private Sub txtRCli_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRCli.TextChanged
-
+        requete2()
     End Sub
 
     Private Sub requete()
@@ -70,5 +70,14 @@
         Dim client As New iAjoutCliReserv(bd, dgClient.SelectedItem.nomClient, dgClient.SelectedItem.prenClient, dgClient.SelectedItem.noTelClient, dgClient.SelectedItem.noCellClient, dgClient.SelectedItem.adrClient, dgClient.SelectedItem.noCarteCredit, dgClient.SelectedItem.typeCarteCredit, dgClient.SelectedItem.dateExpiration)
         client.Owner = Me
         client.Show()
+    End Sub
+
+    Private Sub requete2()
+
+        Dim res = From el In bd.tblClient
+                  Where (el.nomClient + " " + el.prenClient).StartsWith(txtRCli.Text) Or (el.prenClient + " " + el.nomClient).StartsWith(txtRCli.Text)
+                  Select el
+        'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
+        dgClient.ItemsSource = res.ToList()
     End Sub
 End Class

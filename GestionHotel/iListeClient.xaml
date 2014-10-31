@@ -19,7 +19,7 @@
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Liste de clients" BorderBrush="Black" Margin="10,163,10,54">
-                    <DataGrid Name="dgClient" AutoGenerateColumns="False"  Margin="0,10,-2.6,0" Height="333" VerticalAlignment="Top">
+                    <DataGrid Name="dgClient" ItemsSource="{Binding}" AutoGenerateColumns="False"  Margin="0,10,-2.6,0" Height="333" VerticalAlignment="Top">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Nom" Binding="{Binding nomClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
