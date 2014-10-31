@@ -20,6 +20,7 @@
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         requete()
         btnReserv.IsEnabled = False
+        btnModifierClient.IsEnabled = False
     End Sub
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
@@ -56,6 +57,7 @@
 
     Private Sub dgClient_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgClient.SelectionChanged
         btnReserv.IsEnabled = True
+        btnModifierClient.IsEnabled = True
     End Sub
 
     Private Sub btnAjouterClient_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterClient.Click
@@ -65,6 +67,8 @@
     End Sub
 
     Private Sub btnModifierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierClient.Click
-
+        Dim client As New iAjoutCliReserv(bd, dgClient.SelectedItem.nomClient, dgClient.SelectedItem.prenClient, dgClient.SelectedItem.noTelClient, dgClient.SelectedItem.noCellClient, dgClient.SelectedItem.adrClient, dgClient.SelectedItem.noCarteCredit, dgClient.SelectedItem.typeCarteCredit, dgClient.SelectedItem.dateExpiration)
+        client.Owner = Me
+        client.Show()
     End Sub
 End Class
