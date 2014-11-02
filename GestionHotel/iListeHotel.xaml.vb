@@ -91,7 +91,7 @@
         Dim noHotel As Integer = dgHotel.SelectedItem.noHotel
         Dim res = From Ch In bd.tblSalle
                   Join TyCh In bd.tblTypeSalle On Ch.codeTypeSalle Equals TyCh.codeTypeSalle
-                  Where Ch.noHotel = noHotel
+                  Where Ch.noHotel = noHotel And Ch.codeTypeSalle <> "REU"
                   Select Ch.noSalle, TyCh.nomTypeSalle
 
         dgChambre.ItemsSource = res.ToList()

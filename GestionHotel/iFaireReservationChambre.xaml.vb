@@ -23,7 +23,7 @@
     End Sub
 
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
-        listClient = New iListeClient(bd, noEmpl, noHotel, dpDebut.SelectedDate, dpFin.SelectedDate, dgReserv.SelectedItem.noChambre)
+        listClient = New iListeClient(bd, noEmpl, noHotel, dpDebut.SelectedDate, dpFin.SelectedDate, dgReserv.SelectedItem.noSalle)
         listClient.Owner = Me
         listClient.Show()
     End Sub
@@ -38,7 +38,7 @@
 
     Private Sub dgReserv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
         Dim nocha As Int16
-        nocha = dgReserv.SelectedItem.noChambre
+        nocha = dgReserv.SelectedItem.noSalle
         btnReserv.IsEnabled = True
     End Sub
 End Class

@@ -43,7 +43,7 @@
         Dim typeChambre = From tych In bd.tblTypeSalle
                           Join tychho In bd.tblTypeSalleHotel
                           On tych.codeTypeSalle Equals tychho.codeTypeSalle
-                          Where tychho.noHotel = hotel
+                          Where tychho.noHotel = hotel And tych.codeTypeSalle <> "REU"
                           Select tych
 
         cbTypeChambre.ItemsSource = typeChambre.ToList
