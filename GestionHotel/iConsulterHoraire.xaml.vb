@@ -26,8 +26,8 @@
         If cbNomEmp.SelectedIndex <> -1 Then
             Dim nEmpl As Integer = cbNomEmp.SelectedItem.noEmpl
             Dim res = From ho In bd.tblHoraire
-                      Where ho.noEmpl = nEmpl
-                      Select ho
+                      Where ho.noEmpl = nEmpl And ho.dateHoraire.ToString.StartsWith(txtRecherche.Text)
+                      Select ho.heureDebut, ho.heureFin, dateHoraire = ho.dateHoraire.ToString.Substring(0, 10)
 
             dgHoraire.ItemsSource = res.ToList
         End If
@@ -41,8 +41,23 @@
 
         Dim res = From em In bd.tblEmploye
                   Where em.noHotel = hotel And em.codeProf = prof
-                  Select complet = em.prenEmpl & " " & em.nomEmpl
+                  Select nomEmpl = em.prenEmpl & " " & em.nomEmpl, em.noEmpl
 
         cbNomEmp.ItemsSource = res.ToList
+    End Sub
+
+    Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
+        Me.Close()
+        Me.Owner.Show()
+    End Sub
+
+    Private Sub cbNomEmp_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbNomEmp.SelectionChanged
+        If cbNomEmp.SelectedIndex <> -1 Then
+            requete()
+        End If
+    End Sub
+
+    Private Sub txtRecherche_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRecherche.TextChanged
+        requete()
     End Sub
 End Class
