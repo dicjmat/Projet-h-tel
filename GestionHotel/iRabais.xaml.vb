@@ -17,7 +17,7 @@
         Dim rabais As New tblRabais
 
         If cbTypeChambre.SelectedIndex <> -1 Then
-            rabais.codeTypeChambre = cbTypeChambre.SelectedItem.codeTypeChambre
+            rabais.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeSalle
             rabais.tauxRabais = Convert.ToDecimal(numTaux.Value) / 100
             If chkActif.IsChecked Then
                 rabais.etatRabais = "AC"
@@ -36,8 +36,8 @@
     Private Sub windowRabais_Loaded(sender As Object, e As RoutedEventArgs) Handles windowRabais.Loaded
         Me.Owner.Hide()
         requete()
-        Dim res = From tych In bd.tblTypeChambre
-                  Join tychho In bd.tblTypeChambreHotel On tych.codeTypeChambre Equals tychho.codeTypeChambre
+        Dim res = From tych In bd.tblTypeSalle
+                  Join tychho In bd.tblTypeSalleHotel On tych.codeTypeSalle Equals tychho.codeTypeSalle
                   Where tychho.noHotel = noHotel
                   Select tych
 
@@ -46,10 +46,10 @@
 
     Private Sub requete()
         Dim res = From ra In bd.tblRabais
-                  Join tych In bd.tblTypeChambre On ra.codeTypeChambre Equals tych.codeTypeChambre
-                  Join tychho In bd.tblTypeChambreHotel On tych.codeTypeChambre Equals tychho.codeTypeChambre
+                  Join tych In bd.tblTypeSalle On ra.codeTypeSalle Equals tych.codeTypeSalle
+                  Join tychho In bd.tblTypeSalleHotel On tych.codeTypeSalle Equals tychho.codeTypeSalle
                   Where tychho.noHotel = noHotel
-                  Select ra.etatRabais, ra.noRabais, ra.tauxRabais, tych.nomTypeChambre
+                  Select ra.etatRabais, ra.noRabais, ra.tauxRabais, tych.nomTypeSalle
 
         dgRabais.ItemsSource = res.ToList
     End Sub
@@ -82,7 +82,7 @@
                       Select ra
 
             For Each el In cbTypeChambre.Items
-                If el.codeTypeChambre = res.Single.codeTypeChambre Then
+                If el.codeTypeSalle = res.Single.codeTypeSalle Then
                     cbTypeChambre.SelectedItem = el
                     Exit For
                 End If
@@ -104,7 +104,7 @@
                       Where rabais = ra.noRabais
                       Select ra
 
-            res.Single.codeTypeChambre = cbTypeChambre.SelectedItem.codeTypeChambre
+            res.Single.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeSalle
             If chkActif.IsChecked Then
                 res.Single.etatRabais = "AC"
             Else

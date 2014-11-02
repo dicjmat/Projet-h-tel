@@ -11,11 +11,11 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class tblGabarit
-    Public Property codeTypeChambre As String
+    Public Property codeTypeSalle As String
     Public Property codeItem As String
     Public Property quantite As Short
 
     Public Overridable Property tblItem As tblItem
-    Public Overridable Property tblTypeChambre As tblTypeChambre
+    Public Overridable Property tblTypeSalle As tblTypeSalle
 
 End Class

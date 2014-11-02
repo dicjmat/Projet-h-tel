@@ -12,11 +12,9 @@ Imports System.Collections.Generic
 
 Partial Public Class tblFacture
     Public Property noFacture As Integer
-    Public Property montantFacture As Decimal
     Public Property etatFacture As String
-    Public Property noReservation As Integer
+    Public Property dateFacture As Date
 
-    Public Overridable Property tblElementFacture As ICollection(Of tblElementFacture) = New HashSet(Of tblElementFacture)
-    Public Overridable Property tblReservationChambre As tblReservationChambre
+    Public Overridable Property tblNote As ICollection(Of tblNote) = New HashSet(Of tblNote)
 
 End Class

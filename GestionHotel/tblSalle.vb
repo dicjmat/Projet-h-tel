@@ -11,13 +11,17 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class tblSalle
-    Public Property noSalle As Byte
-    Public Property descSalle As String
-    Public Property nbPlace As Short
-    Public Property etatSalle As String
+    Public Property noSalle As Short
     Public Property noHotel As Byte
+    Public Property nomSalle As String
+    Public Property descSalle As String
+    Public Property nbPlace As Nullable(Of Short)
+    Public Property statutSalle As String
+    Public Property codeTypeSalle As String
 
+    Public Overridable Property tblChecklist As ICollection(Of tblChecklist) = New HashSet(Of tblChecklist)
     Public Overridable Property tblHotel As tblHotel
-    Public Overridable Property tblReservationSalle As ICollection(Of tblReservationSalle) = New HashSet(Of tblReservationSalle)
+    Public Overridable Property tblReservation As ICollection(Of tblReservation) = New HashSet(Of tblReservation)
+    Public Overridable Property tblTypeSalle As tblTypeSalle
 
 End Class

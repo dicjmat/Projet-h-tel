@@ -10,18 +10,21 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblReservationSalle
+Partial Public Class tblReservation
     Public Property noReservation As Integer
-    Public Property dateDebut As Date
-    Public Property dateFin As Date
+    Public Property dateDebutSejour As Date
+    Public Property dateFinSejour As Date
     Public Property dateReserv As Date
+    Public Property prixReserv As Nullable(Of Decimal)
     Public Property commentaire As String
-    Public Property noSalle As Byte
-    Public Property noEmpl As Short
+    Public Property noSalle As Short
+    Public Property noHotel As Byte
     Public Property noClient As Integer
+    Public Property noEmpl As Nullable(Of Short)
 
     Public Overridable Property tblEmploye As tblEmploye
     Public Overridable Property tblClient As tblClient
+    Public Overridable Property tblNote As ICollection(Of tblNote) = New HashSet(Of tblNote)
     Public Overridable Property tblSalle As tblSalle
 
 End Class

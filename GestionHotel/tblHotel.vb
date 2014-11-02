@@ -19,13 +19,14 @@ Partial Public Class tblHotel
     Public Property noTelReserv As String
     Public Property codePostal As String
     Public Property codeVille As String
+    Public Property codeProv As String
 
-    Public Overridable Property tblChambre As ICollection(Of tblChambre) = New HashSet(Of tblChambre)
+    Public Overridable Property tblCommunique As ICollection(Of tblCommunique) = New HashSet(Of tblCommunique)
     Public Overridable Property tblEmploye As ICollection(Of tblEmploye) = New HashSet(Of tblEmploye)
     Public Overridable Property tblForfait As ICollection(Of tblForfait) = New HashSet(Of tblForfait)
     Public Overridable Property tblVille As tblVille
     Public Overridable Property tblInventaire As ICollection(Of tblInventaire) = New HashSet(Of tblInventaire)
     Public Overridable Property tblSalle As ICollection(Of tblSalle) = New HashSet(Of tblSalle)
-    Public Overridable Property tblTypeChambreHotel As ICollection(Of tblTypeChambreHotel) = New HashSet(Of tblTypeChambreHotel)
+    Public Overridable Property tblTypeSalleHotel As ICollection(Of tblTypeSalleHotel) = New HashSet(Of tblTypeSalleHotel)
 
 End Class

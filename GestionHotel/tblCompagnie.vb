@@ -17,6 +17,7 @@ Partial Public Class tblCompagnie
     Public Property noCellCompagnie As String
     Public Property adrCompagnie As String
     Public Property codeVille As String
+    Public Property codeProv As String
     Public Property respCompagnie As String
     Public Property commentaire As String
 

@@ -28,8 +28,8 @@
                         <Label Content="Commentaire * :" Margin="47,201,0,0" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="97"></Label>
                         <DataGrid x:Name="dgReserv" Margin="192,35,-0.4,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="302" Height="161" VerticalAlignment="Top">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="No" Binding="{Binding noChambre}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Type" Binding="{Binding codeTypeChambre}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="No" Binding="{Binding noSalle}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Type" Binding="{Binding codeTypeSalle}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Prix"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Lits"></DataGridTextColumn>
                             </DataGrid.Columns>

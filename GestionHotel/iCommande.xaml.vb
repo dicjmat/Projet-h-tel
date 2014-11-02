@@ -36,17 +36,17 @@
                 Dim ligne = New tblLigneCommande
                 ligne.codeItem = dgCommande.SelectedItem.CodeItem
                 ligne.quantite = txtQteCom.Text
-                ligne.prixLigne = dgCommande.SelectedItem.prixItem * Convert.ToInt32(txtQteCom.Text)
+                ligne.prixUnitaire = dgCommande.SelectedItem.prixItem
                 lstCommande.Add(ligne)
                 Dim affichage = New With {.nomFournisseur = dgCommande.SelectedItem.nomFournisseur _
                                          , .quantite = ligne.quantite _
-                                         , .prixLigne = ligne.prixLigne _
+                                         , .prixLigne = ligne.prixUnitaire * ligne.quantite _
                                          , .nomItem = dgCommande.SelectedItem.nomItem _
                                          , .codeItem = dgCommande.SelectedItem.codeItem _
                                          , .noFournisseur = dgCommande.SelectedItem.noFournisseur}
                 lstAffichage.Add(affichage)
                 lstViewCommande.ItemsSource = lstAffichage.ToList()
-                prixTotal += ligne.prixLigne
+                prixTotal += ligne.prixUnitaire * ligne.quantite
                 lblPrixComm.Content = Convert.ToDouble(prixTotal).ToString() + " $"
                 requete()
             Else
@@ -99,8 +99,8 @@
                 End If
             Next
             For Each el In lstCommande
-                If el.prixLigne = lstViewCommande.SelectedItem.prixLigne And el.codeItem = lstViewCommande.SelectedItem.codeItem Then
-                    prixTotal -= el.prixLigne
+                If el.prixUnitaire = lstViewCommande.SelectedItem.prixUnitaire And el.codeItem = lstViewCommande.SelectedItem.codeItem Then
+                    prixTotal -= el.prixUnitaire * el.quantite
                     lblPrixComm.Content = Convert.ToDouble(prixTotal).ToString() + " $"
                     lstCommande.Remove(el)
                     Exit For

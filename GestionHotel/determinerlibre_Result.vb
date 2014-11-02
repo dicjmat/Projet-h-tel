@@ -11,7 +11,7 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class determinerlibre_Result
-    Public Property noChambre As Short
-    Public Property codeTypeChambre As String
+    Public Property noSalle As Short
+    Public Property codeTypeSalle As String
 
 End Class

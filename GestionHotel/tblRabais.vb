@@ -14,9 +14,9 @@ Partial Public Class tblRabais
     Public Property noRabais As Byte
     Public Property tauxRabais As Decimal
     Public Property etatRabais As String
-    Public Property codeTypeChambre As String
+    Public Property codeTypeSalle As String
     Public Property noHotel As Byte
 
-    Public Overridable Property tblTypeChambreHotel As tblTypeChambreHotel
+    Public Overridable Property tblTypeSalleHotel As tblTypeSalleHotel
 
 End Class

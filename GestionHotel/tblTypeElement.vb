@@ -14,6 +14,6 @@ Partial Public Class tblTypeElement
     Public Property codeTypeElement As String
     Public Property nomTypeElement As String
 
-    Public Overridable Property tblElementFacture As ICollection(Of tblElementFacture) = New HashSet(Of tblElementFacture)
+    Public Overridable Property tblElementNote As ICollection(Of tblElementNote) = New HashSet(Of tblElementNote)
 
 End Class

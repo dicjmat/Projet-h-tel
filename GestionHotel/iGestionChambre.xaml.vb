@@ -15,16 +15,16 @@
     End Sub
     Private Sub btnAjouter_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouter.Click
         If txtNoChambre.Text <> "" And cbTypeChambre.SelectedIndex <> -1 Then
-            Dim res = From ch In bd.tblChambre
-                      Where txtNoChambre.Text = ch.noChambre And ch.noHotel = hotel
+            Dim res = From ch In bd.tblSalle
+                      Where txtNoChambre.Text = ch.noSalle And ch.noHotel = hotel
                       Select ch
             If res.Count = 0 Then
-                Dim chambre = New tblChambre
-                chambre.codeTypeChambre = cbTypeChambre.SelectedItem.codeTypeChambre
+                Dim chambre = New tblSalle
+                chambre.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeChambre
                 chambre.noHotel = hotel
-                chambre.noChambre = txtNoChambre.Text
-                chambre.statutChambre = "LI"
-                bd.tblChambre.Add(chambre)
+                chambre.noSalle = txtNoChambre.Text
+                chambre.statutSalle = "LI"
+                bd.tblSalle.Add(chambre)
                 bd.SaveChanges()
                 MessageBox.Show("La chambre a été ajoutée avec succès")
                 Me.Close()
@@ -40,9 +40,9 @@
     End Sub
 
     Private Sub windowGChambre_Loaded(sender As Object, e As RoutedEventArgs) Handles windowGChambre.Loaded
-        Dim typeChambre = From tych In bd.tblTypeChambre
-                          Join tychho In bd.tblTypeChambreHotel
-                          On tych.codeTypeChambre Equals tychho.codeTypeChambre
+        Dim typeChambre = From tych In bd.tblTypeSalle
+                          Join tychho In bd.tblTypeSalleHotel
+                          On tych.codeTypeSalle Equals tychho.codeTypeSalle
                           Where tychho.noHotel = hotel
                           Select tych
 

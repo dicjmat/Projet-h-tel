@@ -20,10 +20,10 @@
 
     Private Sub requete()
         Dim res = From fo In bd.tblForfait
-                  Join tych In bd.tblTypeChambre
-                  On tych.codeTypeChambre Equals fo.codeTypeChambre
-                  Where fo.noHotel = _hotel And (fo.nomForfait.StartsWith(txtrechercher.Text) Or tych.nomTypeChambre.StartsWith(txtrechercher.Text))
-                  Select fo.nomForfait, fo.noForfait, fo.etatForfait, tych.nomTypeChambre, fo.prixForfait, fo.descForfait
+                  Join tych In bd.tblTypeSalle
+                  On tych.codeTypeSalle Equals fo.codeTypeSalle
+                  Where fo.noHotel = _hotel And (fo.nomForfait.StartsWith(txtrechercher.Text) Or tych.nomTypeSalle.StartsWith(txtrechercher.Text))
+                  Select fo.nomForfait, fo.noForfait, fo.etatForfait, tych.nomTypeSalle, fo.prixForfait, fo.descForfait
 
         dgForfait.ItemsSource = res.ToList
     End Sub

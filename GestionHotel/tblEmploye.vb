@@ -18,6 +18,7 @@ Partial Public Class tblEmploye
     Public Property noCellEmpl As String
     Public Property adrEmpl As String
     Public Property codeVille As String
+    Public Property codeProv As String
     Public Property NAS As String
     Public Property dateEmbauche As Date
     Public Property noHotel As Byte
@@ -33,12 +34,9 @@ Partial Public Class tblEmploye
     Public Overridable Property tblCommande As ICollection(Of tblCommande) = New HashSet(Of tblCommande)
     Public Overridable Property tblHotel As tblHotel
     Public Overridable Property tblVille As tblVille
-    Public Overridable Property tblBoiteReception As ICollection(Of tblBoiteReception) = New HashSet(Of tblBoiteReception)
     Public Overridable Property tblProfession As tblProfession
     Public Overridable Property tblHoraire As ICollection(Of tblHoraire) = New HashSet(Of tblHoraire)
     Public Overridable Property tblLogin As ICollection(Of tblLogin) = New HashSet(Of tblLogin)
-    Public Overridable Property tblMessage As ICollection(Of tblMessage) = New HashSet(Of tblMessage)
-    Public Overridable Property tblReservationSalle As ICollection(Of tblReservationSalle) = New HashSet(Of tblReservationSalle)
-    Public Overridable Property tblReservationChambre As ICollection(Of tblReservationChambre) = New HashSet(Of tblReservationChambre)
+    Public Overridable Property tblReservation As ICollection(Of tblReservation) = New HashSet(Of tblReservation)
 
 End Class

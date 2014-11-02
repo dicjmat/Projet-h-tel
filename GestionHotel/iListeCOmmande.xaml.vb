@@ -42,7 +42,7 @@
                 '                            , .codeItem = el.codeItem}
                 Dim affichage = New With {.nomFournisseur = el.tblCommande.tblFournisseur.nomFournisseur _
                             , .quantite = el.quantite _
-                            , .prixLigne = el.prixLigne _
+                            , .prixLigne = el.prixUnitaire * el.quantite _
                             , .nomItem = el.tblItem.nomItem _
                             , .codeItem = el.codeItem}
                 lstAffichage.Add(affichage)

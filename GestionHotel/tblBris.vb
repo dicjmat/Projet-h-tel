@@ -10,11 +10,15 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblOption
-    Public Property noOption As Byte
-    Public Property descOption As String
+Partial Public Class tblBris
+    Public Property noBris As Integer
+    Public Property etatBris As String
+    Public Property dateRepare As Nullable(Of Date)
+    Public Property dateBris As Date
+    Public Property noSalle As Short
+    Public Property noHotel As Byte
+    Public Property codeItem As String
 
-    Public Overridable Property tblForfait As ICollection(Of tblForfait) = New HashSet(Of tblForfait)
-    Public Overridable Property tblTypeChambre As ICollection(Of tblTypeChambre) = New HashSet(Of tblTypeChambre)
+    Public Overridable Property tblChecklist As tblChecklist
 
 End Class

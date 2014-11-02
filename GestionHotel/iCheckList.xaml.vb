@@ -17,7 +17,7 @@
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-        Dim res = From el In BD.tblChambre Where el.noHotel = noHotel Select el
+        Dim res = From el In BD.tblSalle Where el.noHotel = noHotel Select el
 
         cbChambre.DataContext = res.ToList()
     End Sub
@@ -27,10 +27,10 @@
     End Sub
 
     Private Sub cbChambre_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbChambre.SelectionChanged
-        Dim chambre = Convert.ToInt16(cbChambre.SelectedValue.noChambre())
-        Dim typeChambre = From el In BD.tblChambre Where el.noChambre = chambre And el.noHotel = noHotel Select el.codeTypeChambre
+        Dim chambre = Convert.ToInt16(cbChambre.SelectedValue.noSalle())
+        Dim typeChambre = From el In BD.tblSalle Where el.noSalle = chambre And el.noHotel = noHotel Select el.codeTypeSalle
         Dim codeType = typeChambre.First.ToString()
-        Dim res = From el In BD.tblItem Join comp In BD.tblGabarit On comp.codeItem Equals el.codeItem Where comp.codeTypeChambre = codeType Select el
+        Dim res = From el In BD.tblItem Join comp In BD.tblGabarit On comp.codeItem Equals el.codeItem Where comp.codeTypeSalle = codeType Select el
 
         lbItem.DataContext = res.ToList()
     End Sub

@@ -12,8 +12,8 @@ Imports System.Collections.Generic
 
 Partial Public Class tblVille
     Public Property codeVille As String
-    Public Property nomVille As String
     Public Property codeProv As String
+    Public Property nomVille As String
 
     Public Overridable Property tblHotel As ICollection(Of tblHotel) = New HashSet(Of tblHotel)
     Public Overridable Property tblProvince As tblProvince

@@ -18,6 +18,7 @@ Partial Public Class tblFournisseur
     Public Property noTelFournisseur As String
     Public Property respFournisseur As String
     Public Property codeVille As String
+    Public Property codeProv As String
 
     Public Overridable Property tblCatalogue As ICollection(Of tblCatalogue) = New HashSet(Of tblCatalogue)
     Public Overridable Property tblCommande As ICollection(Of tblCommande) = New HashSet(Of tblCommande)

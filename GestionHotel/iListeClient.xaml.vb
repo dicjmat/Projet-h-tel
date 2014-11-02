@@ -42,15 +42,15 @@
     End Sub
 
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
-        Dim reserv As New tblReservationChambre
+        Dim reserv As New tblReservation
         reserv.dateDebutSejour = dated
         reserv.dateFinSejour = datef
         reserv.dateReserv = DateValue(Now)
-        reserv.noChambre = noChambre
+        reserv.noSalle = noChambre
         reserv.noHotel = noHotel
         reserv.noClient = dgClient.SelectedItem.noClient
         reserv.noEmpl = noEmpl
-        bd.tblReservationChambre.Add(reserv)
+        bd.tblReservation.Add(reserv)
         bd.SaveChanges()
         MessageBox.Show("La réservation a été créé avec succès.")
     End Sub

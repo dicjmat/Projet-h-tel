@@ -10,13 +10,12 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblElementFacture
-    Public Property noFacture As Integer
-    Public Property codeTypeElement As String
-    Public Property montantElement As Short
-    Public Property noLigne As Byte
+Partial Public Class tblPeriode
+    Public Property codePeriode As String
+    Public Property nomPeriode As String
+    Public Property dateDebutPeriode As Date
+    Public Property dateFinPeriode As Date
 
-    Public Overridable Property tblTypeElement As tblTypeElement
-    Public Overridable Property tblFacture As tblFacture
+    Public Overridable Property tblPeriodeTypeSalle As ICollection(Of tblPeriodeTypeSalle) = New HashSet(Of tblPeriodeTypeSalle)
 
 End Class

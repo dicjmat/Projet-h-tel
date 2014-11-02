@@ -10,7 +10,7 @@
         ajout = p1
         _hotel = hotel
         bd = _bd
-        remplirTypeChambre()
+        remplirTypeSalle()
 
     End Sub
 
@@ -20,7 +20,7 @@
         _hotel = hotel
         bd = _bd
         forfait = p3
-        remplirTypeChambre()
+        remplirTypeSalle()
         Dim res = From fo In bd.tblForfait
                   Where fo.noForfait = forfait
                   Select fo
@@ -34,7 +34,7 @@
         txtDescAct.Text = res.Single.descForfait
         txtPrixForf.Text = res.Single.prixForfait
         For Each el In cbTypeChambre.Items
-            If el.codeTypeChambre = res.Single.codeTypeChambre Then
+            If el.codeTypeSalle = res.Single.codeTypeSalle Then
                 cbTypeChambre.SelectedItem = el
                 Exit For
             End If
@@ -65,7 +65,7 @@
             Next
             Forfait.prixForfait = txtPrixForf.Text
             Forfait.descForfait = txtDescAct.Text
-            Forfait.codeTypeChambre = cbTypeChambre.SelectedItem.codeTypeChambre
+            Forfait.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeSalle
             If ckActif.IsChecked Then
                 Forfait.etatForfait = "AC"
             Else
@@ -97,7 +97,7 @@
             Next
             res.Single.prixForfait = txtPrixForf.Text
             res.Single.descForfait = txtDescAct.Text
-            res.Single.codeTypeChambre = cbTypeChambre.SelectedItem.codeTypeChambre
+            res.Single.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeSalle
             If ckActif.IsChecked Then
                 res.Single.etatForfait = "AC"
             Else
@@ -111,10 +111,10 @@
         End If
     End Sub
 
-    Private Sub remplirTypeChambre()
-        Dim res = From tych In bd.tblTypeChambre
-          Join tycho In bd.tblTypeChambreHotel
-          On tycho.codeTypeChambre Equals tych.codeTypeChambre
+    Private Sub remplirTypeSalle()
+        Dim res = From tych In bd.tblTypeSalle
+          Join tycho In bd.tblTypeSalleHotel
+          On tycho.codeTypeSalle Equals tych.codeTypeSalle
           Where tycho.noHotel = _hotel
           Select tych
         cbTypeChambre.ItemsSource = res.ToList()

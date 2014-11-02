@@ -11,15 +11,17 @@ Imports System
 Imports System.Collections.Generic
 
 Partial Public Class tblChecklist
-    Public Property noChambre As Short
+    Public Property dateSaisit As Date
+    Public Property noSalle As Short
     Public Property noHotel As Byte
     Public Property codeItem As String
     Public Property statut As String
     Public Property commentaire As String
     Public Property noEmpl As Short
 
+    Public Overridable Property tblBris As ICollection(Of tblBris) = New HashSet(Of tblBris)
     Public Overridable Property tblItem As tblItem
-    Public Overridable Property tblChambre As tblChambre
     Public Overridable Property tblEmploye As tblEmploye
+    Public Overridable Property tblSalle As tblSalle
 
 End Class

@@ -63,12 +63,12 @@
     Private Sub btnSupprimerChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnSupprimerChambre.Click
         If dgChambre.SelectedIndex <> -1 Then
             Dim noHotel As Integer = dgHotel.SelectedItem.noHotel
-            Dim chambre As Integer = dgChambre.SelectedItem.noChambre
-            Dim supprimer = From ch In bd.tblChambre
-                            Where ch.noChambre = chambre And ch.noHotel = noHotel
+            Dim chambre As Integer = dgChambre.SelectedItem.noSalle
+            Dim supprimer = From ch In bd.tblSalle
+                            Where ch.noSalle = chambre And ch.noHotel = noHotel
                             Select ch
 
-            bd.tblChambre.Remove(supprimer.Single)
+            bd.tblSalle.Remove(supprimer.Single)
             bd.SaveChanges()
             MessageBox.Show("La chambre a bien été supprimée")
             requeteChambre()
@@ -89,10 +89,10 @@
 
     Private Sub requeteChambre()
         Dim noHotel As Integer = dgHotel.SelectedItem.noHotel
-        Dim res = From Ch In bd.tblChambre
-                  Join TyCh In bd.tblTypeChambre On Ch.codeTypeChambre Equals TyCh.codeTypeChambre
+        Dim res = From Ch In bd.tblSalle
+                  Join TyCh In bd.tblTypeSalle On Ch.codeTypeSalle Equals TyCh.codeTypeSalle
                   Where Ch.noHotel = noHotel
-                  Select Ch.noChambre, TyCh.nomTypeChambre
+                  Select Ch.noSalle, TyCh.nomTypeSalle
 
         dgChambre.ItemsSource = res.ToList()
     End Sub

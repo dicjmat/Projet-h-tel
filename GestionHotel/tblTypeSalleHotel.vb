@@ -10,13 +10,14 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblBoiteReception
-    Public Property noEmpl As Short
-    Public Property noMessage As Long
-    Public Property typeRecepteur As String
-    Public Property etatMessage As String
+Partial Public Class tblTypeSalleHotel
+    Public Property codeTypeSalle As String
+    Public Property noHotel As Byte
+    Public Property prixSalle As Nullable(Of Decimal)
 
-    Public Overridable Property tblEmploye As tblEmploye
-    Public Overridable Property tblMessage As tblMessage
+    Public Overridable Property tblHotel As tblHotel
+    Public Overridable Property tblPeriodeTypeSalle As ICollection(Of tblPeriodeTypeSalle) = New HashSet(Of tblPeriodeTypeSalle)
+    Public Overridable Property tblRabais As ICollection(Of tblRabais) = New HashSet(Of tblRabais)
+    Public Overridable Property tblTypeSalle As tblTypeSalle
 
 End Class
