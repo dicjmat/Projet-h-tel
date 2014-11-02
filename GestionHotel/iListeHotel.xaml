@@ -28,7 +28,7 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnLSalle" Content="Liste de salle" Height="25" Margin="562,85,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,123,0,600"></Rectangle>
                 <GroupBox Header="Liste d'hotel" Margin="0,138,431,35">
-                    <DataGrid Name="dgHotel" AutoGenerateColumns="False">
+                    <DataGrid Name="dgHotel" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Numéro" Binding="{Binding noHotel}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Nom de l'hôtel" Binding="{Binding nomHotel}"></DataGridTextColumn>
@@ -37,10 +37,10 @@
                     </DataGrid>
                 </GroupBox>
                 <GroupBox Header="Liste de chambre" Margin="379,138,0,35">
-                    <DataGrid Name="dgChambre" AutoGenerateColumns="False">
+                    <DataGrid Name="dgChambre" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Numéro" Binding="{Binding noChambre}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeChambre}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Numéro" Binding="{Binding noSalle}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeSalle}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>

@@ -16,7 +16,6 @@
 
         Dim res = From el In bd.tblTypeSalle Select el
         btnReserv.IsEnabled = False
-        btnAfficher.IsEnabled = False
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
@@ -29,32 +28,6 @@
         listClient.Show()
     End Sub
     Private Sub dpFin_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpFin.SelectedDateChanged
-        If dpDebut.SelectedDate IsNot Nothing Then
-            If dpDebut.SelectedDate > dpFin.SelectedDate Then
-                MessageBox.Show("La date de début ne peut être plus haute que la date de fin")
-                dpDebut.SelectedDate = Nothing
-            Else
-                btnAfficher.IsEnabled = True
-            End If
-        End If
-    End Sub
-    Private Sub dpDebut_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpDebut.SelectedDateChanged
-        If dpFin.SelectedDate IsNot Nothing Then
-            If dpDebut.SelectedDate > dpFin.SelectedDate Then
-                MessageBox.Show("La date de début ne peut être plus haute que la date de fin")
-                dpDebut.SelectedDate = Nothing
-            Else
-                btnAfficher.IsEnabled = True
-            End If
-        End If
-    End Sub
-    Private Sub dgReserv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
-        Dim nocha As Int16
-        nocha = dgReserv.SelectedItem.noSalle
-        btnReserv.IsEnabled = True
-    End Sub
-
-    Private Sub btnAfficher_Click(sender As Object, e As RoutedEventArgs) Handles btnAfficher.Click
         Dim datef As Date
         Dim dated As Date
 
@@ -63,5 +36,9 @@
         dgReserv.ItemsSource = bd.determinerlibre(dated, datef, noHotel).ToList
     End Sub
 
-
+    Private Sub dgReserv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
+        Dim nocha As Int16
+        nocha = dgReserv.SelectedItem.noSalle
+        btnReserv.IsEnabled = True
+    End Sub
 End Class
