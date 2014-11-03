@@ -14,7 +14,7 @@
         <Viewbox Stretch="Uniform">
             <Grid Height="509" Width="526">
                 <Label Content="Menu"></Label>
-                <Button Style="{StaticResource styleBouton}" Name="btnCheck" Content="Check-in/Check-out" Height="25" Width="125" Margin="10,33,391,451"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnCheck" Content="Check-in/Check-out" Height="25" Width="125" Margin="10,33,391,451" RenderTransformOrigin="0.501,0.5"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnFact" Content="Facture" Height="25" Width="125" Margin="10,63,391,421"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutCli" Content="Ajouter Client" Height="25" Width="125" Margin="10,93,391,391"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnFicheC" Content="Fiche client" Height="25" Width="125" Margin="140,33,261,451"></Button>
@@ -42,7 +42,7 @@
                         <Button x:Name="btnAfficher" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="176,100,0,0" VerticalAlignment="Top" Width="34"/>
                     </Grid>
                 </GroupBox>
-                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Retour" Height="25" Margin="383,480,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="128"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Quitter" Height="25" Margin="383,480,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="128"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnReserv" Content="Faire la réservation" Margin="245,480,0,0" HorizontalAlignment="Left" Width="133" Height="25" VerticalAlignment="Top"/>
             </Grid>
         </Viewbox>
