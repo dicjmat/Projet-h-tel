@@ -45,7 +45,7 @@
     Private Sub btnModifEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnModifEmp.Click
         If lstEmploye.SelectedIndex <> -1 Then
             Dim numEmpl = lstEmploye.SelectedItem.noEmpl
-            Dim iEmploye As New iFicheEmploye(numEmpl, maBd)
+            Dim iEmploye As New iFicheEmploye(_noEmpl, _noHotel, numEmpl, maBd)
             iEmploye.Owner = Me
             Me.Hide()
             iEmploye.Show()

@@ -1,11 +1,16 @@
 ﻿Public Class iFicheEmploye
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Private numEmpl As Integer
+    Private noGest As Short
+    Private hotel As Short
 
-    Sub New(_numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
+
+    Sub New(noEmpl As Short, noHotel As Short, _numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
+        noGest = noEmpl
+        hotel = noHotel
     End Sub
 
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
@@ -131,5 +136,16 @@
         Me.Hide()
     End Sub
 
+    Private Sub btnListeEmpGest_Click(sender As Object, e As RoutedEventArgs) Handles btnListeEmpGest.Click
+        Dim lst = New iListeEmploye(noGest, hotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub btnListeCommandeGest_Click(sender As Object, e As RoutedEventArgs) Handles btnListeCommandeGest.Click
+        Dim lst = New iListeCOmmande(noGest, hotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
 
 End Class
