@@ -29,7 +29,7 @@
                         <DataGrid x:Name="dgReserv" Margin="225,35,-0.4,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="269" Height="161" VerticalAlignment="Top">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="No" Binding="{Binding noSalle}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Type" Binding="{Binding codeTypeSalle}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Type" Binding="{Binding nomTypeSalle}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Prix"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Lits"></DataGridTextColumn>
                             </DataGrid.Columns>

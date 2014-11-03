@@ -21,6 +21,7 @@
         requete()
         btnReserv.IsEnabled = False
         btnModifierClient.IsEnabled = False
+        btnLierClient.IsEnabled = False
     End Sub
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Close()
@@ -79,5 +80,10 @@
                   Select el
         'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
         dgClient.ItemsSource = res.ToList()
+    End Sub
+
+    Private Sub btnLierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnLierClient.Click
+        dgClient.SelectedItem.noCompagnie = cbCompagnie.SelectedItem.noCompagnie
+        MessageBox.Show("La liaison a été faite avec succès.")
     End Sub
 End Class
