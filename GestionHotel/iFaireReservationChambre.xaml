@@ -26,7 +26,7 @@
                     <Grid>
                         <Label Content="* = non-obligatoire" Margin="192,0,-0.4,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302"></Label>
                         <Label Content="Commentaire * :" Margin="47,201,0,0" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="97"></Label>
-                        <DataGrid x:Name="dgReserv" Margin="192,35,-0.4,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="302" Height="161" VerticalAlignment="Top">
+                        <DataGrid x:Name="dgReserv" Margin="225,35,-0.4,0" AutoGenerateColumns="False" HorizontalAlignment="Left" Width="269" Height="161" VerticalAlignment="Top">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="No" Binding="{Binding noSalle}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Type" Binding="{Binding codeTypeSalle}"></DataGridTextColumn>
@@ -39,6 +39,7 @@
                         <DatePicker x:Name="dpFin" HorizontalAlignment="Left" Margin="14,141,0,0" VerticalAlignment="Top"/>
                         <Label Content="Date de début" HorizontalAlignment="Left" Margin="14,44,0,0" VerticalAlignment="Top"/>
                         <Label Content="Date de fin" HorizontalAlignment="Left" Margin="14,115,0,0" VerticalAlignment="Top"/>
+                        <Button x:Name="btnAfficher" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="176,100,0,0" VerticalAlignment="Top" Width="34"/>
                     </Grid>
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Retour" Height="25" Margin="383,480,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="128"/>
