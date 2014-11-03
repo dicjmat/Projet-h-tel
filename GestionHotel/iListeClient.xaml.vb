@@ -29,6 +29,10 @@
         requete()
         btnReserv.IsEnabled = False
         btnModifierClient.IsEnabled = False
+        btnLierClient.IsEnabled = False
+        cbCompagnie.IsEnabled = False
+        Dim res3 = From el In bd.tblCompagnie Select el
+        cbCompagnie.DataContext = res3.Distinct().ToList()
     End Sub
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         'Dim accueil = New iFaireReservation
@@ -69,6 +73,7 @@
     Private Sub dgClient_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgClient.SelectionChanged
         btnReserv.IsEnabled = True
         btnModifierClient.IsEnabled = True
+        cbCompagnie.IsEnabled = True
     End Sub
 
     Private Sub btnAjouterClient_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterClient.Click
@@ -131,5 +136,14 @@
         Dim ficheR = New iFicheReserv
         ficheR.Owner = Me
         ficheR.Show()
+    End Sub
+
+    Private Sub btnLierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnLierClient.Click
+        dgClient.SelectedItem.noCompagnie = cbCompagnie.SelectedItem.noCompagnie
+        MessageBox.Show("La liaison a été faite avec succès.")
+    End Sub
+
+    Private Sub cbCompagnie_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbCompagnie.SelectionChanged
+        btnLierClient.IsEnabled = True
     End Sub
 End Class
