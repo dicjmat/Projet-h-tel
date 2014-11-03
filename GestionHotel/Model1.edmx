@@ -2284,7 +2284,7 @@
         </ComplexType>
         <ComplexType Name="determinerlibre_Result">
           <Property Type="Int16" Name="noSalle" Nullable="false" />
-          <Property Type="String" Name="codeTypeSalle" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="nomTypeSalle" Nullable="false" MaxLength="25" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2678,7 +2678,7 @@
             <ResultMapping>
               <ComplexTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.determinerlibre_Result">
                 <ScalarProperty Name="noSalle" ColumnName="noSalle" />
-                <ScalarProperty Name="codeTypeSalle" ColumnName="codeTypeSalle" />
+                <ScalarProperty Name="nomTypeSalle" ColumnName="nomTypeSalle" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
