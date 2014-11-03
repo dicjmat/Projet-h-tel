@@ -12,6 +12,6 @@ Imports System.Collections.Generic
 
 Partial Public Class determinerlibre_Result
     Public Property noSalle As Short
-    Public Property codeTypeSalle As String
+    Public Property nomTypeSalle As String
 
 End Class
