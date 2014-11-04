@@ -55,7 +55,7 @@
 
         datef = dpFin.SelectedDate
         dated = dpDebut.SelectedDate
-        'dgReserv.ItemsSource = bd.determinerchambrelibre(dated, datef, noHotel).ToList
+        dgReserv.ItemsSource = bd.determinerchambrelibre(dated, datef, noHotel).ToList
     End Sub
 
     Private Sub dgReserv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
