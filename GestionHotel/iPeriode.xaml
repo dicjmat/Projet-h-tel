@@ -22,7 +22,7 @@
                 <TextBox Name="txtPrixP" Height="25" Margin="38,106,150,0" VerticalAlignment="Top"></TextBox>
             </Grid>
         </GroupBox>
-        <Button Name="btnAccueil" Content="Accueil" Height="25" Margin="172,168,10,0" VerticalAlignment="Top"></Button>
-        <Button Name="btnAjouter" Content="Ajouter la période" Height="25" Margin="49,168,133,0" VerticalAlignment="Top"></Button>
+        <Button Name="btnAccueil" Style="{StaticResource styleBouton}" Content="Accueil" Height="25" Margin="172,168,10,0" VerticalAlignment="Top"></Button>
+        <Button Name="btnAjouter" Style="{StaticResource styleBouton}" Content="Ajouter la période" Height="25" Margin="49,168,133,0" VerticalAlignment="Top"></Button>
     </Grid>
 </Window>
