@@ -127,4 +127,22 @@
     Private Sub cmbHeureDebutM_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbHeureDebutM.SelectionChanged
         cmbHeureFinM.SelectedIndex = cmbHeureDebutM.SelectedIndex
     End Sub
+
+    Private Sub btnFicheEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmploye.Click
+        Dim fiche = New iFicheEmploye(bd)
+        fiche.Owner = Me
+        fiche.Show()
+    End Sub
+
+    Private Sub btnListeEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnListeEmp.Click
+        Dim lst = New iListeEmploye(noGest, hotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub btnListeCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnListeCommande.Click
+        Dim lst = New iListeCOmmande(noGest, hotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
 End Class
