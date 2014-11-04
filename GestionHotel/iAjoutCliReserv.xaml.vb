@@ -1,20 +1,23 @@
 ﻿Public Class iAjoutCliReserv
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
+    Dim noClient As String
     Sub New()
         ' TODO: Complete member initialization 
         InitializeComponent()
         btnModifier.Visibility = System.Windows.Visibility.Hidden
     End Sub
-    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String)
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String, _noClient As String)
         ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
+        noClient = _noClient
         txtNomCli.Text = _nomClient
         txtPrenCli.Text = _prenClient
         txtTelCli.Text = _noTel
         txtCelCli.Text = _noCell
         txtAdrCli.Text = _adr
         txtNoCarteCredit.Text = _noCarte
+        cbTypeCarte.SelectedItem = _type
         txtCodeExp.Text = _dateEx
         btnAjouterCli.Visibility = System.Windows.Visibility.Hidden
     End Sub
@@ -101,4 +104,24 @@
         lst.Show()
     End Sub
 
+    Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
+        Try
+            Dim client As New tblClient
+            client.noClient = noClient
+            client.nomClient = txtNomCli.Text.Trim
+            client.prenClient = txtPrenCli.Text.Trim
+            client.noTelClient = txtTelCli.Text
+            client.noCellClient = txtCelCli.Text
+            client.adrClient = txtAdrCli.Text.Trim
+            client.noCarteCredit = txtNoCarteCredit.Text
+            client.typeCarteCredit = cbTypeCarte.SelectedItem.typeCarteCredit
+            client.dateExpiration = txtCodeExp.Text
+            client.codeVille = cbCodeVille.SelectedItem.codeVille
+            client.commentaire = txtCommCli.Text.Trim
+            bd.SaveChanges()
+            MessageBox.Show("Le client a été modifié avec succès.")
+        Catch ex As Exception
+            MessageBox.Show("Veuillez remplir tous les champs.")
+        End Try
+    End Sub
 End Class
