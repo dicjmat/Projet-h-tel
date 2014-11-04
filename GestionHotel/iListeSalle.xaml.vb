@@ -47,6 +47,6 @@
 
     Private Sub dpDebutSalle_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpDebutSalle.SelectedDateChanged
         Dim dateDebut = dpDebutSalle.SelectedDate()
-        Dim dateFin = 
+        'Dim dateFin = 
     End Sub
 End Class
