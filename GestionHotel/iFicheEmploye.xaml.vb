@@ -6,26 +6,45 @@
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
+        btnModifier.Visibility = Windows.Visibility.Visible
+        btnAjouterItem.Visibility = Windows.Visibility.Hidden
     End Sub
 
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         bd = _bd
+        btnModifier.Visibility = Windows.Visibility.Hidden
+        btnAjouterItem.Visibility = Windows.Visibility.Visible
     End Sub
 
     Private Sub windowFicheEmploye_Loaded(sender As Object, e As RoutedEventArgs) Handles windowFicheEmploye.Loaded
-        Dim ville = From el In bd.tblVille Select el
+        cmbProvince.IsEnabled = False
+        cmbCdVille.IsEnabled = False
+        Dim pays = From pa In bd.tblPays Select pa
         Dim hotel = From el In bd.tblHotel Select el
         Dim profession = From el In bd.tblProfession Select el
-
-        cmbCdVille.DataContext = ville.ToList()
-        cmbNoHot.DataContext = hotel.ToList()
-        cmbCdProf.DataContext = profession.ToList()
+        cmbPays.ItemsSource = pays.ToList()
+        cmbNoHot.ItemsSource = hotel.ToList()
+        cmbCdProf.ItemsSource = profession.ToList()
         If numEmpl <> 0 Then
             Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
             Me.DataContext = res.ToList()
             Dim i = 0
-            For Each el In cmbCdVille.DataContext
+            For Each el In cmbPays.Items
+                If el.codePays = res.First.tblVille.tblProvince.codePays Then
+                    cmbPays.SelectedIndex = i
+                    Exit For
+                End If
+                i = i + 1
+            Next
+            For Each el In cmbProvince.Items
+                If el.codeProv = res.First.codeProv Then
+                    cmbProvince.SelectedIndex = i
+                    Exit For
+                End If
+                i = i + 1
+            Next
+            For Each el In cmbCdVille.Items
                 If el.codeVille = res.First.codeVille Then
                     cmbCdVille.SelectedIndex = i
                     Exit For
@@ -33,7 +52,7 @@
                 i = i + 1
             Next
             i = 0
-            For Each el In cmbNoHot.DataContext
+            For Each el In cmbNoHot.Items
                 If el.noHotel = res.First.noHotel Then
                     cmbNoHot.SelectedIndex = i
                     Exit For
@@ -41,7 +60,7 @@
                 i = i + 1
             Next
             i = 0
-            For Each el In cmbCdProf.DataContext
+            For Each el In cmbCdProf.Items
                 If el.codeProf = res.First.codeProf Then
                     cmbCdProf.SelectedIndex = i
                     Exit For
@@ -132,4 +151,34 @@
     End Sub
 
 
+    Private Sub cmbPays_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbPays.SelectionChanged
+        remplirProv()
+    End Sub
+
+    Private Sub remplirProv()
+        If cmbPays.SelectedIndex <> -1 Then
+            cmbProvince.IsEnabled = True
+            Dim sPays As String = cmbPays.SelectedItem.codePays
+            Dim province = From pro In bd.tblProvince Where pro.codePays = sPays Select pro
+
+            cmbProvince.ItemsSource = province.ToList
+        End If
+    End Sub
+
+    Private Sub remplirVille()
+        If cmbProvince.SelectedIndex <> -1 Then
+            cmbCdVille.IsEnabled = True
+            Dim sProv As String = cmbProvince.SelectedItem.codeProv
+            Dim ville = From vi In bd.tblVille Where vi.codeProv = sProv Select vi
+            cmbCdVille.ItemsSource = ville.ToList
+        End If
+    End Sub
+
+    Private Sub cmbProvince_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbProvince.SelectionChanged
+        remplirVille()
+    End Sub
+
+    Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs)
+        'Dim employe = From 
+    End Sub
 End Class
