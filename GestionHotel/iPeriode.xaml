@@ -12,14 +12,14 @@
     <Grid>
         <GroupBox Header="Période" BorderBrush="Black" Margin="0,0,0,41">
             <Grid>
-                <Label Content="Nom :" Margin="0,0,242,0" Height="30" VerticalAlignment="Top"></Label>
-                <Label Content="Date début :" Margin="0,35,211,0" Height="27" VerticalAlignment="Top"></Label>
-                <Label Content="Date fin :" Margin="0,67,232,0" Height="32" VerticalAlignment="Top"></Label>
-                <Label Content="Prix :" Margin="0,104,250,0" Height="27" VerticalAlignment="Top"></Label>
-                <TextBox Name="txtNomP" Height="25" Margin="45,0,92,0" VerticalAlignment="Top"></TextBox>
-                <DatePicker Name="dpDebut" Height="25" Margin="77,37,59,0" VerticalAlignment="Top"></DatePicker>
-                <DatePicker Name="dpFin" Height="25" Margin="66,67,59,0" VerticalAlignment="Top"></DatePicker>
-                <TextBox Name="txtPrixP" Height="25" Margin="38,106,150,0" VerticalAlignment="Top"></TextBox>
+                <Label Content="Nom :" Margin="0,32,242,0" Height="30" VerticalAlignment="Top"></Label>
+                <Label Content="Date début :" Margin="0,67,211,0" Height="27" VerticalAlignment="Top"></Label>
+                <Label Content="Date fin :" Margin="0,99,232,0" Height="32" VerticalAlignment="Top"></Label>
+                <Label Content="Code:" Margin="0,0,250,0" Height="27" VerticalAlignment="Top"></Label>
+                <TextBox Name="txtNomP" Height="25" Margin="45,32,92,0" VerticalAlignment="Top"></TextBox>
+                <DatePicker Name="dpDebut" Height="25" Margin="77,69,59,0" VerticalAlignment="Top"></DatePicker>
+                <DatePicker Name="dpFin" Height="25" Margin="66,99,59,0" VerticalAlignment="Top"></DatePicker>
+                <TextBox Name="txtCodeP" Height="25" Margin="45,2,143,0" VerticalAlignment="Top"></TextBox>
             </Grid>
         </GroupBox>
         <Button Name="btnAccueil" Style="{StaticResource styleBouton}" Content="Accueil" Height="25" Margin="172,168,10,0" VerticalAlignment="Top"></Button>
