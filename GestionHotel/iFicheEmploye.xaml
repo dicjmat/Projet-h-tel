@@ -115,6 +115,7 @@
                     </StackPanel>
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btnCreer" Content="Créer" HorizontalAlignment="Left" Margin="420,312,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnCreer_Click"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifier" Content="Modifier" HorizontalAlignment="Left" Margin="420,312,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnModifier_Click"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Margin="420,382,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnAnnuler" Content="Annuler" HorizontalAlignment="Left" Margin="420,347,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAnnuler_Click"/>
             </Grid>
