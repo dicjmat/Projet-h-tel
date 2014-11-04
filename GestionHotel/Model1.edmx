@@ -900,7 +900,12 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="inventaireCommun" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Inventaire" />
-        <Function Name="determinerlibre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Reservation">
+        <Function Name="determinerchambrelibre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Reservation">
+          <Parameter Name="dateDebut" Type="date" Mode="In" />
+          <Parameter Name="datefin" Type="date" Mode="In" />
+          <Parameter Name="noHotel" Type="tinyint" Mode="In" />
+        </Function>
+        <Function Name="determinersallelibre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Reservation">
           <Parameter Name="dateDebut" Type="date" Mode="In" />
           <Parameter Name="datefin" Type="date" Mode="In" />
           <Parameter Name="noHotel" Type="tinyint" Mode="In" />
@@ -2269,7 +2274,12 @@
             <End Role="tblNote" EntitySet="tblNote" />
           </AssociationSet>
           <FunctionImport Name="inventaireCommun" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreV2Model.inventaireCommun_Result)" />
-          <FunctionImport Name="determinerlibre" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreV2Model.determinerlibre_Result)">
+          <FunctionImport Name="determinerchambrelibre" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreV2Model.determinerchambrelibre_Result)">
+            <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
+            <Parameter Name="datefin" Mode="In" Type="DateTime" />
+            <Parameter Name="noHotel" Mode="In" Type="Byte" />
+          </FunctionImport>
+          <FunctionImport Name="determinersallelibre" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreV2Model.determinersallelibre_Result)">
             <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
             <Parameter Name="datefin" Mode="In" Type="DateTime" />
             <Parameter Name="noHotel" Mode="In" Type="Byte" />
@@ -2282,7 +2292,11 @@
           <Property Type="String" Name="descItem" Nullable="true" MaxLength="30" />
           <Property Type="Byte" Name="quantiteMin" Nullable="false" />
         </ComplexType>
-        <ComplexType Name="determinerlibre_Result">
+        <ComplexType Name="determinerchambrelibre_Result">
+          <Property Type="Int16" Name="noSalle" Nullable="false" />
+          <Property Type="String" Name="nomTypeSalle" Nullable="false" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="determinersallelibre_Result">
           <Property Type="Int16" Name="noSalle" Nullable="false" />
           <Property Type="String" Name="nomTypeSalle" Nullable="false" MaxLength="25" />
         </ComplexType>
@@ -2674,9 +2688,17 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="determinerlibre" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.determinerlibre">
+          <FunctionImportMapping FunctionImportName="determinerchambrelibre" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.determinerchambrelibre">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.determinerlibre_Result">
+              <ComplexTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.determinerchambrelibre_Result">
+                <ScalarProperty Name="noSalle" ColumnName="noSalle" />
+                <ScalarProperty Name="nomTypeSalle" ColumnName="nomTypeSalle" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="determinersallelibre" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.determinersallelibre">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.determinersallelibre_Result">
                 <ScalarProperty Name="noSalle" ColumnName="noSalle" />
                 <ScalarProperty Name="nomTypeSalle" ColumnName="nomTypeSalle" />
               </ComplexTypeMapping>

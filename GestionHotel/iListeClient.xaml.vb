@@ -17,12 +17,27 @@
         noChambre = _nochambre
     End Sub
 
+    Sub New()
+        ' TODO: Complete member initialization 
+        InitializeComponent()
+        btnReserv.IsEnabled = False
+        btnReserv.Visibility = Windows.Visibility.Hidden
+
+    End Sub
+
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         requete()
         btnReserv.IsEnabled = False
         btnModifierClient.IsEnabled = False
+        btnLierClient.IsEnabled = False
+        cbCompagnie.IsEnabled = False
+        Dim res3 = From el In bd.tblCompagnie Select el
+        cbCompagnie.DataContext = res3.Distinct().ToList()
     End Sub
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
+        'Dim accueil = New iFaireReservation
+        'accueil.Owner = Me
+        'accueil.Show()
         Me.Close()
     End Sub
 
@@ -58,6 +73,7 @@
     Private Sub dgClient_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgClient.SelectionChanged
         btnReserv.IsEnabled = True
         btnModifierClient.IsEnabled = True
+        cbCompagnie.IsEnabled = True
     End Sub
 
     Private Sub btnAjouterClient_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterClient.Click
@@ -79,5 +95,55 @@
                   Select el
         'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
         dgClient.ItemsSource = res.ToList()
+    End Sub
+    Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click
+        Dim check = New iCheck_in_out()
+        check.Owner = Me
+        check.Show()
+    End Sub
+
+    Private Sub btnReservC_Click(sender As Object, e As RoutedEventArgs) Handles btnReservC.Click
+        'Dim reserv = New iFaireReservation(bd, noEmploye, noHotel)
+        'reserv.Owner = Me
+        'reserv.Show()
+    End Sub
+
+    Private Sub btnFact_Click(sender As Object, e As RoutedEventArgs) Handles btnFact.Click
+        Dim facture = New iFacture
+        facture.Owner = Me
+        facture.Show()
+    End Sub
+
+    Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutCli.Click
+        Dim ajout = New iAjoutCliReserv
+        ajout.Owner = Me
+        ajout.Show()
+    End Sub
+
+    Private Sub btnFicheC_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
+        Dim ficheC = New iFicheClient
+        ficheC.Owner = Me
+        ficheC.Show()
+    End Sub
+
+    Private Sub btnFicheReservF_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReservF.Click
+        Dim ficheRF = New iFicheReservFacture
+        ficheRF.Owner = Me
+        ficheRF.Show()
+    End Sub
+
+    Private Sub btnFichereserv_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReserv.Click
+        Dim ficheR = New iFicheReserv
+        ficheR.Owner = Me
+        ficheR.Show()
+    End Sub
+
+    Private Sub btnLierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnLierClient.Click
+        dgClient.SelectedItem.noCompagnie = cbCompagnie.SelectedItem.noCompagnie
+        MessageBox.Show("La liaison a été faite avec succès.")
+    End Sub
+
+    Private Sub cbCompagnie_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbCompagnie.SelectionChanged
+        btnLierClient.IsEnabled = True
     End Sub
 End Class

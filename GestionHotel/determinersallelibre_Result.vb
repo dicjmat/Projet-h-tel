@@ -10,7 +10,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class determinerlibre_Result
+Partial Public Class determinersallelibre_Result
     Public Property noSalle As Short
     Public Property nomTypeSalle As String
 
