@@ -13,11 +13,11 @@ Imports System.Data.Entity.Infrastructure
 Imports System.Data.Entity.Core.Objects
 Imports System.Linq
 
-Partial Public Class P2014_Equipe2_GestionHôtelièreV2Entities
+Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
     Inherits DbContext
 
     Public Sub New()
-        MyBase.New("name=P2014_Equipe2_GestionHôtelièreV2Entities")
+        MyBase.New("name=P2014_Equipe2_GestionHôtelièreEntities")
     End Sub
 
     Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)

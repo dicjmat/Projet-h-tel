@@ -2072,7 +2072,7 @@
           <End Role="tblFacture" Type="Self.tblFacture" Multiplicity="*" />
           <End Role="tblNote" Type="Self.tblNote" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="P2014_Equipe2_GestionHôtelièreV2Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="P2014_Equipe2_GestionHôtelièreEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tblBris" EntityType="Self.tblBris" />
           <EntitySet Name="tblCatalogue" EntityType="Self.tblCatalogue" />
           <EntitySet Name="tblChecklist" EntityType="Self.tblChecklist" />
@@ -2305,7 +2305,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="P2014_Equipe2_GestionHôtelièreV2ModelStoreContainer" CdmEntityContainer="P2014_Equipe2_GestionHôtelièreV2Entities">
+        <EntityContainerMapping StorageEntityContainer="P2014_Equipe2_GestionHôtelièreV2ModelStoreContainer" CdmEntityContainer="P2014_Equipe2_GestionHôtelièreEntities">
           <EntitySetMapping Name="tblBris">
             <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.tblBris">
               <MappingFragment StoreEntitySet="tblBris">
