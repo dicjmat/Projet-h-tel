@@ -119,4 +119,28 @@
             MessageBox.Show("Veuillez sélectionner le rabais que vous voulez modifier")
         End If
     End Sub
+
+    Private Sub btnAjoutForfait_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutForfait.Click
+        'Dim forf = New iAjoutForf
+        'forf.Owner = Me
+        'forf.Show()
+    End Sub
+
+    Private Sub btnListeForf_Click(sender As Object, e As RoutedEventArgs) Handles btnListeForf.Click
+        'Dim lst = New ListeForfait
+        'lst.Owner = Me
+        'lst.Show()
+    End Sub
+
+    Private Sub btnReservSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnReservSalle.Click
+        'Dim reserv = New iFaireReservSalle
+        'reserv.Owner = Me
+        'reserv.Show()
+    End Sub
+
+    Private Sub btnListeSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnListeSalle.Click
+        'Dim lst = New iListeSalle
+        'lst.Owner = Me
+        'lst.Show()
+    End Sub
 End Class

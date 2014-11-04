@@ -72,4 +72,28 @@
             MessageBox.Show("Veuillez choisir le forfait que vous voulez supprimer")
         End If
     End Sub
+
+    Private Sub btnAjoutForfait_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutForfait.Click
+        'Dim forf = New iAjoutForf
+        'forf.Owner = Me
+        'forf.Show()
+    End Sub
+
+    Private Sub btnReservSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnReservSalle.Click
+        'Dim reserv = New iFaireReservSalle
+        'reserv.Owner = Me
+        'reserv.Show()
+    End Sub
+
+    Private Sub btnListeSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnListeSalle.Click
+        'Dim lst = New iListeSalle
+        'lst.Owner = Me
+        'lst.Show()
+    End Sub
+
+    Private Sub btnRabais_Click(sender As Object, e As RoutedEventArgs) Handles btnRabais.Click
+        'Dim rabais = New iRabais
+        'rabais.Owner = Me
+        'rabais.Show()
+    End Sub
 End Class

@@ -72,4 +72,22 @@
     Private Sub Window_Activated(sender As Object, e As EventArgs)
         requete()
     End Sub
+
+    Private Sub btnFicheEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmploye.Click
+        'Dim fiche = New iFicheEmploye
+        'fiche.Owner = Me
+        'fiche.Show()
+    End Sub
+
+    Private Sub btnAjoutHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutHoraire.Click
+        'Dim horaire = New iAjouterHoraire
+        'horaire.Owner = Me
+        'horaire.Show()
+    End Sub
+
+    Private Sub btnListeEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnListeEmp.Click
+        'Dim lst = New iListeEmploye
+        'lst.Owner = Me
+        'lst.Show()
+    End Sub
 End Class
