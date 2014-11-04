@@ -13,11 +13,11 @@ Imports System.Data.Entity.Infrastructure
 Imports System.Data.Entity.Core.Objects
 Imports System.Linq
 
-Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
+Partial Public Class P2014_Equipe2_GestionHôtelièreV2Entities
     Inherits DbContext
 
     Public Sub New()
-        MyBase.New("name=P2014_Equipe2_GestionHôtelièreEntities")
+        MyBase.New("name=P2014_Equipe2_GestionHôtelièreV2Entities")
     End Sub
 
     Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)
@@ -61,14 +61,24 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of inventaireCommun_Result)("inventaireCommun")
     End Function
 
-    Public Overridable Function determinerlibre(dateDebut As Nullable(Of Date), datefin As Nullable(Of Date), noHotel As Nullable(Of Byte)) As ObjectResult(Of determinerlibre_Result)
+    Public Overridable Function determinerchambrelibre(dateDebut As Nullable(Of Date), datefin As Nullable(Of Date), noHotel As Nullable(Of Byte)) As ObjectResult(Of determinerchambrelibre_Result)
         Dim dateDebutParameter As ObjectParameter = If(dateDebut.HasValue, New ObjectParameter("dateDebut", dateDebut), New ObjectParameter("dateDebut", GetType(Date)))
 
         Dim datefinParameter As ObjectParameter = If(datefin.HasValue, New ObjectParameter("datefin", datefin), New ObjectParameter("datefin", GetType(Date)))
 
         Dim noHotelParameter As ObjectParameter = If(noHotel.HasValue, New ObjectParameter("noHotel", noHotel), New ObjectParameter("noHotel", GetType(Byte)))
 
-        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of determinerlibre_Result)("determinerlibre", dateDebutParameter, datefinParameter, noHotelParameter)
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of determinerchambrelibre_Result)("determinerchambrelibre", dateDebutParameter, datefinParameter, noHotelParameter)
+    End Function
+
+    Public Overridable Function determinersallelibre(dateDebut As Nullable(Of Date), datefin As Nullable(Of Date), noHotel As Nullable(Of Byte)) As ObjectResult(Of determinersallelibre_Result)
+        Dim dateDebutParameter As ObjectParameter = If(dateDebut.HasValue, New ObjectParameter("dateDebut", dateDebut), New ObjectParameter("dateDebut", GetType(Date)))
+
+        Dim datefinParameter As ObjectParameter = If(datefin.HasValue, New ObjectParameter("datefin", datefin), New ObjectParameter("datefin", GetType(Date)))
+
+        Dim noHotelParameter As ObjectParameter = If(noHotel.HasValue, New ObjectParameter("noHotel", noHotel), New ObjectParameter("noHotel", GetType(Byte)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of determinersallelibre_Result)("determinersallelibre", dateDebutParameter, datefinParameter, noHotelParameter)
     End Function
 
 End Class

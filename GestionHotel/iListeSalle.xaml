@@ -33,7 +33,11 @@
                 <GroupBox BorderBrush="Black" Header="Salle" Margin="0,152,-0.2,34">
                     <StackPanel>
                         <Grid>
-                            <DataGrid Name="lstSalle" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,0,-0.2,-357" IsReadOnly="True">
+                            <Label Content="Date de début :"/>
+                            <DatePicker Name="dpDebutSalle" Margin="97,0,400,-0.4"/>
+                            <Label Content="Date de fin :" Margin="265,0,-265,-0.4"/>
+                            <DatePicker Name="dpFinSalle" Margin="342,0,155,-0.4"/>
+                            <DataGrid Name="lstSalle" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,31,0,-330.4" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="No" Binding="{Binding noSalle}"></DataGridTextColumn>
                                     <DataGridTextColumn Header="Nom" Binding="{Binding nomSalle}"></DataGridTextColumn>

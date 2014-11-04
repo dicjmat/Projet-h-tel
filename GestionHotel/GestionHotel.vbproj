@@ -102,7 +102,10 @@
     <Compile Include="AjoutVille.xaml.vb">
       <DependentUpon>AjoutVille.xaml</DependentUpon>
     </Compile>
-    <Compile Include="determinerlibre_Result.vb">
+    <Compile Include="determinerchambrelibre_Result.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="determinersallelibre_Result.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="iAccueilVente.xaml.vb">
