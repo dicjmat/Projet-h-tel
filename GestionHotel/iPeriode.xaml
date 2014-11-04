@@ -17,8 +17,8 @@
                 <Label Content="Date fin :" Margin="0,67,232,0" Height="32" VerticalAlignment="Top"></Label>
                 <Label Content="Prix :" Margin="0,104,250,0" Height="27" VerticalAlignment="Top"></Label>
                 <TextBox Name="txtNomP" Height="25" Margin="45,0,92,0" VerticalAlignment="Top"></TextBox>
-                <DatePicker Name="dpDebut" Height="25" Margin="77,37,69,0" VerticalAlignment="Top"></DatePicker>
-                <DatePicker Name="dpFin" Height="25" Margin="56,67,69,0" VerticalAlignment="Top"></DatePicker>
+                <DatePicker Name="dpDebut" Height="25" Margin="77,37,59,0" VerticalAlignment="Top"></DatePicker>
+                <DatePicker Name="dpFin" Height="25" Margin="66,67,59,0" VerticalAlignment="Top"></DatePicker>
                 <TextBox Name="txtPrixP" Height="25" Margin="38,106,150,0" VerticalAlignment="Top"></TextBox>
             </Grid>
         </GroupBox>
