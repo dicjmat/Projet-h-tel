@@ -2,11 +2,13 @@
 
     Private hotel As Short
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
+    Private noEmpl As Integer
 
-    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, nHotel As Short)
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, nHotel As Short, _noEmpl As Integer)
         InitializeComponent()
         bd = maBD
         hotel = nHotel
+        noEmpl = _noEmpl
     End Sub
 
     Private Sub AppuieForfait()
@@ -26,7 +28,7 @@
     End Sub
 
     Private Sub AppuieSalle()
-        Dim salle = New iFaireReservSalle(bd)
+        Dim salle = New iListeSalle(hotel, bd, noEmpl)
         salle.Owner = Me
         salle.Show()
     End Sub

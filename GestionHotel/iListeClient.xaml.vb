@@ -3,26 +3,34 @@
     Private noHotel As Short
     Private dated As Date
     Private datef As Date
-    Private noChambre As Short
+    Private noSalle As Short
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short, _dated As Date, _datef As Date, _nochambre As Int16)
-        ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
         noEmpl = noEmploye
         noHotel = nHotel
         dated = _dated
         datef = _datef
-        noChambre = _nochambre
+        noSalle = _nochambre
+    End Sub
+
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short, _dated As Date, _datef As Date, _nosalle As Int16, _vente As Boolean)
+        InitializeComponent()
+        bd = maBD
+        noEmpl = noEmploye
+        noHotel = nHotel
+        dated = _dated
+        datef = _datef
+        noSalle = _nosalle
+        Menu.Visibility = Windows.Visibility.Hidden
     End Sub
 
     Sub New()
-        ' TODO: Complete member initialization 
         InitializeComponent()
         btnReserv.IsEnabled = False
         btnReserv.Visibility = Windows.Visibility.Hidden
-
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
@@ -61,7 +69,7 @@
         reserv.dateDebutSejour = dated
         reserv.dateFinSejour = datef
         reserv.dateReserv = DateValue(Now)
-        reserv.noSalle = noChambre
+        reserv.noSalle = noSalle
         reserv.noHotel = noHotel
         reserv.noClient = dgClient.SelectedItem.noClient
         reserv.noEmpl = noEmpl

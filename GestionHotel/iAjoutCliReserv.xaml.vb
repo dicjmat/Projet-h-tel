@@ -1,11 +1,15 @@
 ﻿Public Class iAjoutCliReserv
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Sub New()
-        ' TODO: Complete member initialization 
         InitializeComponent()
     End Sub
+
+    Sub New(vente As Boolean)
+        InitializeComponent()
+        Menu.Visibility = Windows.Visibility.Hidden
+    End Sub
+
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String)
-        ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
         txtNomCli.Text = _nomClient
@@ -26,7 +30,6 @@
 
         cbTypeCarte.DataContext = res.ToList()
         cbCodeVille.DataContext = res2.Distinct().ToList()
-
     End Sub
 
     Private Sub btnAjouterCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterCli.Click

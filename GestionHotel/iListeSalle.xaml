@@ -26,7 +26,7 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="511,55,-0.2,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnLSalle" Content="Liste de salle" Height="25" Margin="511,85,-0.2,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutForfaitVente" Content="Ajouter un forfait" Height="25" Margin="10,25,500.8,547"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnReservSalleVente" Content="Réservation de salle" Height="25" Margin="10,55,500.8,517"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeSalleVente" Content="Liste de salle" Height="25" Margin="10,55,500.8,517"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeForfVente" Content="Liste de forfait" Height="25" Margin="10,85,500.8,487"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnRabaisVente" Content="Rabais" Height="25" Margin="177,25,333.8,547"/>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,136,-0.2,459"></Rectangle>
@@ -42,7 +42,7 @@
                                     <DataGridTextColumn Header="No" Binding="{Binding noSalle}"></DataGridTextColumn>
                                     <DataGridTextColumn Header="Nom" Binding="{Binding nomSalle}"></DataGridTextColumn>
                                     <DataGridTextColumn Header="Nb de place" Binding="{Binding nbPlace}"></DataGridTextColumn>
-                                    <DataGridTextColumn Header="Disponible" Binding="{Binding disponibiliteSalle}"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Description" Binding="{Binding descSalle}"></DataGridTextColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </Grid>
