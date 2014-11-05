@@ -71,19 +71,19 @@
     End Sub
 
     Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click
-        Dim check = New iCheck_in_out
+        Dim check = New iCheck_in_out(bd, noEmpl, noHotel)
         check.Owner = Me
         check.Show()
     End Sub
 
     Private Sub btnFact_Click(sender As Object, e As RoutedEventArgs) Handles btnFact.Click
-        Dim facture = New iFacture
+        Dim facture = New iFacture(bd, noEmpl, noHotel)
         facture.Owner = Me
         facture.Show()
     End Sub
 
     Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutCli.Click
-        Dim Cli = New iAjoutCliReserv
+        Dim Cli = New iAjoutCliReserv(noHotel, noEmpl, bd)
         Cli.Owner = Me
         Cli.Show()
     End Sub

@@ -3,7 +3,7 @@
     Dim noClient As String
     Dim noEmp As Integer
     Dim noHotel As Integer
-    Sub New(_noEmp As Integer, _noHotel As Integer)
+    Sub New(_noEmp As Integer, _noHotel As Integer, maBD As P2014_Equipe2_GestionHôtelièreEntities)
         ' TODO: Complete member initialization 
         InitializeComponent()
         btnModifier.Visibility = System.Windows.Visibility.Hidden
@@ -64,25 +64,25 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        'Dim accueil = New iFaireReservation
-        'accueil.Owner = Me
-        'accueil.Show()
+        Dim reserv = New iFaireReservationChambre(bd, noEmp, noHotel)
+        reserv.Owner = Me
+        reserv.Show()
         Me.Close()
     End Sub
     Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click
-        Dim check = New iCheck_in_out()
+        Dim check = New iCheck_in_out(bd, noEmp, noHotel)
         check.Owner = Me
         check.Show()
     End Sub
 
     Private Sub btnReservC_Click(sender As Object, e As RoutedEventArgs) Handles btnReservC.Click
-        Dim reserv = New iFaireReservation(bd, noEmp, noHotel)
+        Dim reserv = New iFaireReservationChambre(bd, noEmp, noHotel)
         reserv.Owner = Me
         reserv.Show()
     End Sub
 
     Private Sub btnFact_Click(sender As Object, e As RoutedEventArgs) Handles btnFact.Click
-        Dim facture = New iFacture
+        Dim facture = New iFacture(bd, noEmp, noHotel)
         facture.Owner = Me
         facture.Show()
     End Sub
