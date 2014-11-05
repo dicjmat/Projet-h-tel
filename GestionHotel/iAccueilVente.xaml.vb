@@ -26,7 +26,7 @@
     End Sub
 
     Private Sub AppuieSalle()
-        Dim salle = New iFaireReservSalle(bd)
+        Dim salle = New iFaireReservSalle(hotel, bd)
         salle.Owner = Me
         salle.Show()
     End Sub

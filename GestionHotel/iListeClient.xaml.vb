@@ -103,9 +103,9 @@
     End Sub
 
     Private Sub btnReservC_Click(sender As Object, e As RoutedEventArgs) Handles btnReservC.Click
-        'Dim reserv = New iFaireReservation(bd, noEmploye, noHotel)
-        'reserv.Owner = Me
-        'reserv.Show()
+        Dim reserv = New iFaireReservationChambre(bd, noEmpl, noHotel)
+        reserv.Owner = Me
+        reserv.Show()
     End Sub
 
     Private Sub btnFact_Click(sender As Object, e As RoutedEventArgs) Handles btnFact.Click

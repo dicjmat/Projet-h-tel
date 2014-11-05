@@ -5,7 +5,7 @@
     Private hotel As Short
 
 
-    Sub New(noEmpl As Short, noHotel As Short, _numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
+    Sub New(_noGest As Short, noHotel As Short, _numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
