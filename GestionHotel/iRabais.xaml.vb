@@ -133,7 +133,7 @@
     End Sub
 
     Private Sub btnReservSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnReservSalle.Click
-        Dim reserv = New iFaireReservSalle(bd)
+        Dim reserv = New iFaireReservSalle(noHotel, bd)
         reserv.Owner = Me
         reserv.Show()
     End Sub

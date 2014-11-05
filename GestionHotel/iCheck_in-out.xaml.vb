@@ -35,19 +35,19 @@
     End Sub
 
     Private Sub btnFicheC_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
-        Dim fiche = New iFicheClient
+        Dim fiche = New iFicheClient(bd, noEmp, noHotel)
         fiche.Owner = Me
         fiche.Show()
     End Sub
 
     Private Sub btnFicheReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReserv.Click
-        Dim ficheR = New iFicheReserv
+        Dim ficheR = New iFicheReserv(bd, noEmp, noHotel)
         ficheR.Owner = Me
         ficheR.Show()
     End Sub
 
     Private Sub btnFicheReservF_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReservF.Click
-        Dim ficheRF = New iFicheReservFacture
+        Dim ficheRF = New iFicheReservFacture(bd, noEmp, noHotel)
         ficheRF.Owner = Me
         ficheRF.Show()
     End Sub
