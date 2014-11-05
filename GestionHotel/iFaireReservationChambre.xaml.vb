@@ -1,4 +1,4 @@
-﻿Public Class iFaireReservation
+﻿Public Class iFaireReservationChambre
     Private noEmpl As Short
     Private noHotel As Short
     Dim TypeSalle As String
@@ -108,7 +108,7 @@
 
     Private Sub btnListeCli_Click(sender As Object, e As RoutedEventArgs) Handles btnListeCli.Click
         Dim lst = New iListeClient
-        lst.owner = Me
+        lst.Owner = Me
         lst.Show()
     End Sub
 End Class

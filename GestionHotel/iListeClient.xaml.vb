@@ -77,7 +77,7 @@
     End Sub
 
     Private Sub btnAjouterClient_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterClient.Click
-        Dim client As New iAjoutCliReserv
+        Dim client As New iAjoutCliReserv()
         client.Owner = Me
         client.Show()
     End Sub
@@ -103,9 +103,9 @@
     End Sub
 
     Private Sub btnReservC_Click(sender As Object, e As RoutedEventArgs) Handles btnReservC.Click
-        'Dim reserv = New iFaireReservation(bd, noEmploye, noHotel)
-        'reserv.Owner = Me
-        'reserv.Show()
+        Dim reserv = New iFaireReservationChambre(bd, noEmpl, noHotel)
+        reserv.Owner = Me
+        reserv.Show()
     End Sub
 
     Private Sub btnFact_Click(sender As Object, e As RoutedEventArgs) Handles btnFact.Click
