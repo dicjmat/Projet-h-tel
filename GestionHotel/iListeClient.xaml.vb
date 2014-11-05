@@ -35,9 +35,6 @@
         cbCompagnie.DataContext = res3.Distinct().ToList()
     End Sub
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        'Dim accueil = New iFaireReservation
-        'accueil.Owner = Me
-        'accueil.Show()
         Me.Close()
     End Sub
 
