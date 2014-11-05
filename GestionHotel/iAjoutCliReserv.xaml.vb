@@ -1,15 +1,22 @@
 ﻿Public Class iAjoutCliReserv
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Dim noClient As String
-    Sub New()
+    Dim noEmp As Integer
+    Dim noHotel As Integer
+    Sub New(_noEmp As Integer, _noHotel As Integer)
         ' TODO: Complete member initialization 
         InitializeComponent()
         btnModifier.Visibility = System.Windows.Visibility.Hidden
+        noEmp = _noEmp
+        noHotel = _noHotel
+
     End Sub
-    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String, _noClient As String)
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String, _noClient As String, _noEmp As Integer, _noHotel As Integer)
         ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
+        noEmp = _noEmp
+        noHotel = _noHotel
         noClient = _noClient
         txtNomCli.Text = _nomClient
         txtPrenCli.Text = _prenClient
@@ -69,9 +76,9 @@
     End Sub
 
     Private Sub btnReservC_Click(sender As Object, e As RoutedEventArgs) Handles btnReservC.Click
-        'Dim reserv = New iFaireReservation(bd, noEmploye, noHotel)
-        'reserv.Owner = Me
-        'reserv.Show()
+        Dim reserv = New iFaireReservation(bd, noEmp, noHotel)
+        reserv.Owner = Me
+        reserv.Show()
     End Sub
 
     Private Sub btnFact_Click(sender As Object, e As RoutedEventArgs) Handles btnFact.Click
