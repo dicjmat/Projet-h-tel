@@ -36,7 +36,7 @@
     Private Sub btnReservSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnReservSalle.Click
         If lstSalle.SelectedIndex <> -1 Then
             Dim numSalle = lstSalle.SelectedItem.noSalle
-            Dim iReservSalle As New iFaireReservSalle(bd)
+            Dim iReservSalle As New iFaireReservSalle(noHotel, bd)
             iReservSalle.Owner = Me
             Me.Hide()
             iReservSalle.ShowDialog()
