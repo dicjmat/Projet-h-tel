@@ -1,4 +1,4 @@
-﻿Public Class iFaireReservation
+﻿Public Class iFaireReservationChambre
     Private noEmpl As Short
     Private noHotel As Short
     Dim TypeSalle As String
@@ -55,7 +55,7 @@
 
         datef = dpFin.SelectedDate
         dated = dpDebut.SelectedDate
-        'dgReserv.ItemsSource = bd.determinerchambrelibre(dated, datef, noHotel).ToList
+        dgReserv.ItemsSource = bd.determinerchambrelibre(dated, datef, noHotel).ToList
     End Sub
 
     Private Sub dgReserv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
@@ -71,44 +71,44 @@
     End Sub
 
     Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click
-        Dim check = New iCheck_in_out
+        Dim check = New iCheck_in_out(bd, noEmpl, noHotel)
         check.Owner = Me
         check.Show()
     End Sub
 
     Private Sub btnFact_Click(sender As Object, e As RoutedEventArgs) Handles btnFact.Click
-        Dim facture = New iFacture
+        Dim facture = New iFacture(bd, noEmpl, noHotel)
         facture.Owner = Me
         facture.Show()
     End Sub
 
     Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutCli.Click
-        Dim Cli = New iAjoutCliReserv
+        Dim Cli = New iAjoutCliReserv(noHotel, noEmpl, bd)
         Cli.Owner = Me
         Cli.Show()
     End Sub
 
     Private Sub btnFicheC_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
-        Dim fiche = New iFicheClient
+        Dim fiche = New iFicheClient(bd, noEmpl, noHotel)
         fiche.Owner = Me
         fiche.Show()
     End Sub
 
     Private Sub btnFicheReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReserv.Click
-        Dim ficheR = New iFicheReserv
+        Dim ficheR = New iFicheReserv(bd, noEmpl, noHotel)
         ficheR.Owner = Me
         ficheR.Show()
     End Sub
 
     Private Sub btnFicheReservF_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReservF.Click
-        Dim ficheRF = New iFicheReservFacture
+        Dim ficheRF = New iFicheReservFacture(bd, noEmpl, noHotel)
         ficheRF.Owner = Me
         ficheRF.Show()
     End Sub
 
     Private Sub btnListeCli_Click(sender As Object, e As RoutedEventArgs) Handles btnListeCli.Click
         Dim lst = New iListeClient
-        lst.owner = Me
+        lst.Owner = Me
         lst.Show()
     End Sub
 End Class

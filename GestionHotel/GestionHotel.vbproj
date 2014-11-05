@@ -168,11 +168,17 @@
     <Compile Include="iListeHotel.xaml.vb">
       <DependentUpon>iListeHotel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iListePeriode.xaml.vb">
+      <DependentUpon>iListePeriode.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iListeSalle.xaml.vb">
       <DependentUpon>iListeSalle.xaml</DependentUpon>
     </Compile>
     <Compile Include="inventaireCommun_Result.vb">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="iPeriode.xaml.vb">
+      <DependentUpon>iPeriode.xaml</DependentUpon>
     </Compile>
     <Compile Include="iRabais.xaml.vb">
       <DependentUpon>iRabais.xaml</DependentUpon>
@@ -438,11 +444,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="iListePeriode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iListeSalle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iPeriode.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
