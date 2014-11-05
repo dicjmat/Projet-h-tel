@@ -77,7 +77,7 @@
     End Sub
 
     Private Sub btnAjouterClient_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterClient.Click
-        Dim client As New iAjoutCliReserv
+        Dim client As New iAjoutCliReserv()
         client.Owner = Me
         client.Show()
     End Sub
