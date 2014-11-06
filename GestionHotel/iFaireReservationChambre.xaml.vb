@@ -5,7 +5,6 @@
     Dim listClient As iListeClient
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short)
-        ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
         noEmpl = noEmploye
@@ -83,15 +82,9 @@
     End Sub
 
     Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutCli.Click
-        Dim Cli = New iAjoutCliReserv(noHotel, noEmpl, bd)
+        Dim Cli = New iAjoutCliReserv(noEmpl, noHotel, bd)
         Cli.Owner = Me
         Cli.Show()
-    End Sub
-
-    Private Sub btnFicheC_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
-        Dim fiche = New iFicheClient(bd, noEmpl, noHotel)
-        fiche.Owner = Me
-        fiche.Show()
     End Sub
 
     Private Sub btnFicheReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReserv.Click

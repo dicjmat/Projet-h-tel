@@ -119,7 +119,7 @@
     End Sub
 
     Private Sub btnFicheC_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
-        Dim fiche = New iFicheClient(bd, noEmp, noHotel)
+        Dim fiche = New iAjoutCliReserv(noEmp, noHotel, bd)
         fiche.Owner = Me
         fiche.Show()
     End Sub

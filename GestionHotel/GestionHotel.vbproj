@@ -369,10 +369,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="iFicheClient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="iFicheCompagnie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -484,9 +480,6 @@
   <ItemGroup>
     <Compile Include="iCommande.xaml.vb">
       <DependentUpon>iCommande.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="iFicheClient.xaml.vb">
-      <DependentUpon>iFicheClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="iFicheEmploye.xaml.vb">
       <DependentUpon>iFicheEmploye.xaml</DependentUpon>
