@@ -14,7 +14,16 @@
         <Viewbox Stretch="Uniform">
             <Grid Height="573" Width="418">
                 <Canvas Name="Menu">
-                    <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="1,108,-1,464"></Rectangle>
+                    <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Canvas.Left="2" RenderTransformOrigin="0.5,0.5" Canvas.Top="110" Width="417">
+                        <Rectangle.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleY="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Rectangle.RenderTransform>
+                    </Rectangle>
                     <Label Content="Menu" Margin="19,-5,354,548"></Label>
                     <Button Name="btnCheck" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Check-in/Check-out" Height="25" Width="125" Margin="19,18,274,530"></Button>
                     <Button Name="btnFact" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Facture" Height="25" Width="125" Margin="19,48,274,500"></Button>
@@ -22,9 +31,9 @@
                     <Button Name="btnFicheC" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Ajouter client" Height="25" Width="125" Margin="149,18,144,530"></Button>
                     <Button Name="btnFicheReserv" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Fiche Réservation" Height="25" Width="125" Margin="149,49,144,499"></Button>
                     <Button Name="btnFicheReservF" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Fiche Réservation Fact" Height="25" Width="125" Margin="149,79,144,469"></Button>
-                    <Button Name="btnListeCli" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Liste de client" Height="25" Width="125" Margin="279,18,14,530"></Button>
+                    <Button Name="btnListeCli" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Liste de client" Height="25" Width="125" Canvas.Left="149" Canvas.Top="18"/>
                 </Canvas>
-                <GroupBox Header="Client" BorderBrush="Black" Margin="1,108,0,23">
+                <GroupBox Header="Client" BorderBrush="Black" Margin="1,124,0,23">
                     <Grid>
                         <Label Content="Nom :" Margin="10,0,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"></Label>
                         <xctk:MaskedTextBox Height="20" Name="txtNomCli" Text="{Binding nomClient}" Margin="53,2,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="177"></xctk:MaskedTextBox>

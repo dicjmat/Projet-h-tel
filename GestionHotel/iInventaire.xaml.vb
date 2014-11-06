@@ -63,62 +63,92 @@
     End Function
 
     Private Sub btnCommandeGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnCommandeGerant.Click
-
+        Dim com = New iCommande(_noEmpl, maBD)
+        com.Owner = Me
+        com.Show()
     End Sub
 
     Private Sub btnAjoutFourniGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFourniGerant.Click
-
+        Dim fourni = New iAjoutFournisseur(maBD)
+        fourni.Owner = Me
+        fourni.Show()
     End Sub
 
     Private Sub btnAjoutItemGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutItemGerant.Click
-
+        Dim item = New iAjouterItem(maBD)
+        item.Owner = Me
+        item.Show()
     End Sub
 
     Private Sub btnCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnCommande.Click
-
+        Dim com = New iCommande(_noEmpl, maBD)
+        com.Owner = Me
+        com.Show()
     End Sub
 
     Private Sub btnAjoutFourni_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFourni.Click
-
+        Dim fourni = New iAjoutFournisseur(maBD)
+        fourni.Owner = Me
+        fourni.Show()
     End Sub
 
     Private Sub btnAjouterItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItem.Click
-
+        Dim item = New iAjouterItem(maBD)
+        item.Owner = Me
+        item.Show()
     End Sub
 
     Private Sub btnFicheEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmp.Click
-
+        Dim fiche = New iFicheEmploye(maBD)
+        fiche.Owner = Me
+        fiche.Show()
     End Sub
 
     Private Sub btnGSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnGSalle.Click
-
+        Dim gest = New iGestionSalle(maBD)
+        gest.Owner = Me
+        gest.Show()
     End Sub
 
     Private Sub btnGChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnGChambre.Click
-
+        Dim gest = New iGestionChambre(maBD, _noHotel)
+        gest.Owner = Me
+        gest.Show()
     End Sub
 
     Private Sub btnGHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnGHotel.Click
-
+        Dim gest = New iGestionHotel(maBD)
+        gest.Owner = Me
+        gest.Show()
     End Sub
 
     Private Sub btnIComplet_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
-
+        Dim inv = New iInventaireComplet(maBD, _noEmpl, _noHotel)
+        inv.Owner = Me
+        inv.Show()
     End Sub
 
     Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
-
+        Dim lst = New iListeCentrale(maBD, _noEmpl, _noHotel)
+        lst.Owner = Me
+        lst.Show()
     End Sub
 
     Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
-
+        Dim lst = New iListeEmployeComplet(maBD, _noEmpl, _noHotel)
+        lst.Owner = Me
+        lst.Show()
     End Sub
 
     Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
-
+        Dim lst = New iListeHotel(maBD, _noEmpl, _noHotel)
+        lst.Owner = Me
+        lst.Show()
     End Sub
 
     Private Sub btnLSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnLSalle.Click
-
+        Dim lst = New iListeSalle(_noHotel, maBD, _noEmpl)
+        lst.Owner = Me
+        lst.Show()
     End Sub
 End Class
