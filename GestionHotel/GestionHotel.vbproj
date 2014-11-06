@@ -135,9 +135,6 @@
     <Compile Include="iFaireReservationChambre.xaml.vb">
       <DependentUpon>iFaireReservationChambre.xaml</DependentUpon>
     </Compile>
-    <Compile Include="iFaireReservSalle.xaml.vb">
-      <DependentUpon>iFaireReservSalle.xaml</DependentUpon>
-    </Compile>
     <Compile Include="iFicheCompagnie.xaml.vb">
       <DependentUpon>iFicheCompagnie.xaml</DependentUpon>
     </Compile>
@@ -369,10 +366,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iFaireReservationChambre.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="iFaireReservSalle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

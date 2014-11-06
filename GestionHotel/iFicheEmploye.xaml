@@ -75,7 +75,7 @@
                             <ComboBox x:Name="cmbProvince" ItemsSource="{Binding}" Margin="281,25,1,175.6" Height="25" Background="White" FontSize="10">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
-                    <StackPanel>
+                                        <StackPanel>
                                             <Label x:Name="lblProvince" Content="{Binding nomProv}"/>
                                         </StackPanel>
                                     </DataTemplate>

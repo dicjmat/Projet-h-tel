@@ -135,12 +135,8 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Dim lol = txtCellEmp.Text
         Me.Owner.Close()
         Me.Close()
-        'Dim listeemploye As iListeEmploye
-        'listeemploye = New iListeEmploye()
-        'listeemploye.Close()
     End Sub
     Private Sub btnAnnuler_Click(sender As Object, e As RoutedEventArgs)
         windowFicheEmploye.Close()

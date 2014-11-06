@@ -1,11 +1,13 @@
 ﻿Public Class ListeForfait
     Dim bd As New P2014_Equipe2_GestionHôtelièreEntities
     Private _hotel As Short
+    Private noEmpl
 
-    Sub New(hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities)
+    Sub New(hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmpl As Integer)
         InitializeComponent()
         _hotel = hotel
         bd = _bd
+        noEmpl = _noEmpl
     End Sub
 
     Private Sub window_ListeForf_Loaded(sender As Object, e As RoutedEventArgs) Handles window_ListeForf.Loaded
@@ -79,20 +81,14 @@
         forf.Show()
     End Sub
 
-    Private Sub btnReservSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnReservSalle.Click
-        Dim reserv = New iFaireReservSalle(_hotel, bd)
-        reserv.Owner = Me
-        reserv.Show()
-    End Sub
-
     Private Sub btnListeSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnListeSalle.Click
-        Dim lst = New iListeSalle(_hotel, bd)
+        Dim lst = New iListeSalle(_hotel, bd, noEmpl)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnRabais_Click(sender As Object, e As RoutedEventArgs) Handles btnRabais.Click
-        Dim rabais = New iRabais(_hotel, bd)
+        Dim rabais = New iRabais(_hotel, bd, noEmpl)
         rabais.Owner = Me
         rabais.Show()
     End Sub
