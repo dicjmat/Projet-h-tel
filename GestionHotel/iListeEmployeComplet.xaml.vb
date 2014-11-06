@@ -2,15 +2,12 @@
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Dim noEmp As Integer
     Dim noHotel As Integer
-    Dim p2 As Integer
 
-    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _noHotel As Integer, _p2 As Integer)
-        ' TODO: Complete member initialization 
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _noHotel As Integer)
         InitializeComponent()
         bd = _bd
         noEmp = _noEmp
         noHotel = _noHotel
-        p2 = _p2
     End Sub
 
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
@@ -39,11 +36,8 @@
                       Where el.noHotel = hotel And (el.noEmpl.ToString.StartsWith(txtRecherche.Text) Or (el.nomEmpl + " " + el.prenEmpl).StartsWith(txtRecherche.Text) Or (el.prenEmpl + " " + el.nomEmpl).StartsWith(txtRecherche.Text) Or el.codeProf.StartsWith(txtRecherche.Text))
                       Select el
 
-            'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
             dgEmploye.ItemsSource = res.ToList()
         End If
-
-
     End Sub
 
     Private Sub cbHotel_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbHotel.SelectionChanged
@@ -54,17 +48,17 @@
         requete()
     End Sub
 
-    'Private Sub btnModif_Click(sender As Object, e As RoutedEventArgs) Handles btnModif.Click
-    '    If dgEmploye.SelectedIndex <> -1 Then
-    '        Dim numEmpl = dgEmploye.SelectedItem.noEmpl
-    '        Dim iEmploye As New iFicheEmploye(numEmpl, bd)
-    '        iEmploye.Owner = Me
-    '        Me.Hide()
-    '        iEmploye.Show()
-    '    Else
-    '        MessageBox.Show("Veuillez sélectionner un employé")
-    '    End If
-    'End Sub
+    Private Sub btnModif_Click(sender As Object, e As RoutedEventArgs) Handles btnModif.Click
+        If dgEmploye.SelectedIndex <> -1 Then
+            Dim numEmpl = dgEmploye.SelectedItem.noEmpl
+            Dim iEmploye As New iFicheEmploye(noEmp, noHotel, numEmpl, bd)
+            iEmploye.Owner = Me
+            Me.Hide()
+            iEmploye.Show()
+        Else
+            MessageBox.Show("Veuillez sélectionner un employé")
+        End If
+    End Sub
 
     Private Sub window_lstEmployeComplet_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles window_lstEmployeComplet.Closing
         Me.Owner.Show()
@@ -101,7 +95,7 @@
     End Sub
 
     Private Sub btnGChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnGChambre.Click
-        Dim gC = New iGestionChambre(bd, p2)
+        Dim gC = New iGestionChambre(bd, noHotel)
         gC.Owner = Me
         gC.Show()
     End Sub
@@ -119,19 +113,19 @@
     End Sub
 
     Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
-        Dim lst = New iListeCentrale(bd, noEmp, noHotel, p2)
+        Dim lst = New iListeCentrale(bd, noEmp, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btniCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
-        Dim lst = New iListeEmployeComplet(bd, noEmp, noHotel, p2)
+        Dim lst = New iListeEmployeComplet(bd, noEmp, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
-        Dim lst = New iListeHotel(bd, noEmp, noHotel, p2)
+        Dim lst = New iListeHotel(bd, noEmp, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub

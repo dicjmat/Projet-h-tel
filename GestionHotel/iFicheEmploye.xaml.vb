@@ -3,14 +3,12 @@
     Private numEmpl As Integer
     Private noGest As Short
     Private hotel As Short
-    Dim p2 As Integer
 
 
-    Sub New(_noGest As Short, noHotel As Short, _numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities, _p2 As Integer)
+    Sub New(_noGest As Short, noHotel As Short, _numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
-        p2 = _p2
         btnModifier.Visibility = Windows.Visibility.Visible
         btnAjouterItem.Visibility = Windows.Visibility.Hidden
     End Sub
@@ -269,7 +267,7 @@
     End Sub
 
     Private Sub btnGChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnGChambre.Click
-        Dim gest = New iGestionChambre(bd, p2)
+        Dim gest = New iGestionChambre(bd, hotel)
         gest.Owner = Me
         gest.Show()
     End Sub
@@ -281,25 +279,25 @@
     End Sub
 
     Private Sub btnIComplet_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
-        Dim inv = New iInventaireComplet(bd, numEmpl, hotel, p2)
+        Dim inv = New iInventaireComplet(bd, numEmpl, hotel)
         inv.Owner = Me
         inv.Show()
     End Sub
 
     Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
-        Dim lst = New iListeCentrale(bd, numEmpl, hotel, p2)
+        Dim lst = New iListeCentrale(bd, numEmpl, hotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
-        Dim lst = New iListeEmployeComplet(bd, numEmpl, hotel, p2)
+        Dim lst = New iListeEmployeComplet(bd, numEmpl, hotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
-        Dim lst = New iListeHotel(bd, numEmpl, hotel, p2)
+        Dim lst = New iListeHotel(bd, numEmpl, hotel)
         lst.Owner = Me
         lst.Show()
     End Sub

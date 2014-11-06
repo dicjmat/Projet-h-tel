@@ -3,7 +3,6 @@
     Private _item As String
     Dim noEmp As Integer
     Dim noHotel As Integer
-    Dim p2 As Integer
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
@@ -130,7 +129,7 @@
     End Sub
 
     Private Sub btnGChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnGChambre.Click
-        Dim chambre = New iGestionChambre(bd, p2)
+        Dim chambre = New iGestionChambre(bd, noHotel)
         chambre.Owner = Me
         chambre.Show()
     End Sub
@@ -142,25 +141,25 @@
     End Sub
 
     Private Sub btnIComplet_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
-        Dim inv = New iInventaireComplet(bd, noEmp, noHotel, p2)
+        Dim inv = New iInventaireComplet(bd, noEmp, noHotel)
         inv.Owner = Me
         inv.Show()
     End Sub
 
     Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
-        Dim lst = New iListeCentrale(bd, noEmp, noHotel, p2)
+        Dim lst = New iListeCentrale(bd, noEmp, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
-        Dim lst = New iListeEmployeComplet(bd, noEmp, noHotel, p2)
+        Dim lst = New iListeEmployeComplet(bd, noEmp, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
-        Dim lst = New iListeHotel(bd, noEmp, noHotel, p2)
+        Dim lst = New iListeHotel(bd, noEmp, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub

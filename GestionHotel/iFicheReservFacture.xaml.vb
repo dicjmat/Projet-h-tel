@@ -29,16 +29,10 @@
         facture.Show()
     End Sub
 
-    Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutCli.Click
-        Dim ajout = New iAjoutCliReserv(noHotel, noEmp, bd)
+    Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheCli.Click
+        Dim ajout = New iAjoutCliReserv(noEmp, noHotel, bd)
         ajout.Owner = Me
         ajout.Show()
-    End Sub
-
-    Private Sub btnFicheC_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
-        Dim ficheC = New iFicheClient(bd, noEmp, noHotel)
-        ficheC.Owner = Me
-        ficheC.Show()
     End Sub
 
     Private Sub btnFicheReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReserv.Click

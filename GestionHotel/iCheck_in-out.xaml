@@ -13,13 +13,12 @@
         <Viewbox Stretch="Uniform">
             <Grid Width="503" Height="639">
                 <Label Content="Menu" Margin="10,0,453,614"></Label>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjoutCli" Content="Ajouter Client" Height="25" Width="125" Margin="10,25,368,589"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnFact" Content="Facture" Height="25" Width="125" Margin="10,55,368,559"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnReservC" Content="Réservation Chambre" Height="25" Width="125" Margin="10,85,368,529"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnFicheC" Content="Fiche client" Height="25" Width="125" Margin="140,25,238,589"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheC" Content="Ajout client" Height="25" Width="125" Margin="140,25,238,589"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnFicheReserv" Content="Fiche Réservation" Height="25" Width="125" Margin="140,55,238,559"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnFicheReservF" Content="Fiche Réservation Fact" Height="25" Width="125" Margin="140,85,238,529"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnListeCli" Content="Liste de client" Height="25" Width="125" Margin="270,25,108,589"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeCli" Content="Liste de client" Height="25" Width="125" Margin="10,25,368,589"></Button>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,115,0,522"></Rectangle>
                 <GroupBox Header="Arrivé" BorderBrush="Black" Margin="0,130,0,278">
                     <Grid Margin="0,0,0,-0.4">
