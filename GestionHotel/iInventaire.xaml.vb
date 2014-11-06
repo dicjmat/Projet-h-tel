@@ -61,4 +61,64 @@
         Next
         Return lstAffichage
     End Function
+
+    Private Sub btnCommandeGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnCommandeGerant.Click
+
+    End Sub
+
+    Private Sub btnAjoutFourniGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFourniGerant.Click
+
+    End Sub
+
+    Private Sub btnAjoutItemGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutItemGerant.Click
+
+    End Sub
+
+    Private Sub btnCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnCommande.Click
+
+    End Sub
+
+    Private Sub btnAjoutFourni_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFourni.Click
+
+    End Sub
+
+    Private Sub btnAjouterItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItem.Click
+
+    End Sub
+
+    Private Sub btnFicheEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmp.Click
+
+    End Sub
+
+    Private Sub btnGSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnGSalle.Click
+
+    End Sub
+
+    Private Sub btnGChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnGChambre.Click
+
+    End Sub
+
+    Private Sub btnGHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnGHotel.Click
+
+    End Sub
+
+    Private Sub btnIComplet_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
+
+    End Sub
+
+    Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
+
+    End Sub
+
+    Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
+
+    End Sub
+
+    Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
+
+    End Sub
+
+    Private Sub btnLSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnLSalle.Click
+
+    End Sub
 End Class

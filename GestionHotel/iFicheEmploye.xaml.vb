@@ -3,12 +3,14 @@
     Private numEmpl As Integer
     Private noGest As Short
     Private hotel As Short
+    Dim p2 As Integer
 
 
-    Sub New(_noGest As Short, noHotel As Short, _numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
+    Sub New(_noGest As Short, noHotel As Short, _numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities, _p2 As Integer)
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
+        p2 = _p2
         btnModifier.Visibility = Windows.Visibility.Visible
         btnAjouterItem.Visibility = Windows.Visibility.Hidden
     End Sub
@@ -139,9 +141,9 @@
         Dim lol = txtCellEmp.Text
         Me.Owner.Close()
         Me.Close()
-        'Dim listeemploye As iListeEmploye
-        'listeemploye = New iListeEmploye()
-        'listeemploye.Close()
+        Dim listeemploye As iListeEmploye
+        listeemploye = New iListeEmploye(numEmpl, hotel, bd)
+        listeemploye.Close()
     End Sub
     Private Sub btnAnnuler_Click(sender As Object, e As RoutedEventArgs)
         windowFicheEmploye.Close()
@@ -250,5 +252,83 @@
         Else
             MessageBox.Show("Un des champs obligatoires n'a pas été rempli")
         End If
+    End Sub
+
+    Private Sub btnAhoutHoraireGest_Click(sender As Object, e As RoutedEventArgs) Handles btnAhoutHoraireGest.Click
+        Dim ajout = New iAjouterHoraire(numEmpl, bd)
+        ajout.Owner = Me
+        ajout.Show()
+    End Sub
+
+    Private Sub btnFicheEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmp.Click
+        Dim fiche = New iFicheEmploye(bd)
+        fiche.Owner = Me
+        fiche.Show()
+    End Sub
+
+    Private Sub btnGSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnGSalle.Click
+        Dim gest = New iGestionSalle(bd)
+        gest.Owner = Me
+        gest.Show()
+    End Sub
+
+    Private Sub btnGChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnGChambre.Click
+        Dim gest = New iGestionChambre(bd, p2)
+        gest.Owner = Me
+        gest.Show()
+    End Sub
+
+    Private Sub btnGHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnGHotel.Click
+        Dim gest = New iGestionHotel(bd)
+        gest.Owner = Me
+        gest.Show()
+    End Sub
+
+    Private Sub btnIComplet_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
+        Dim inv = New iInventaireComplet(bd, numEmpl, hotel, p2)
+        inv.Owner = Me
+        inv.Show()
+    End Sub
+
+    Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
+        Dim lst = New iListeCentrale(bd, numEmpl, hotel, p2)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
+        Dim lst = New iListeEmployeComplet(bd, numEmpl, hotel, p2)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
+        Dim lst = New iListeHotel(bd, numEmpl, hotel, p2)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub btnLSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnLSalle.Click
+        Dim lst = New iListeSalle(hotel, bd, numEmpl)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub btnAjouterItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItem.Click
+        Dim item = New iAjouterItem(bd)
+        item.Owner = Me
+        item.Show()
+    End Sub
+
+    Private Sub btnAjoutFourni_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFourni.Click
+        Dim fourni = New iAjoutFournisseur(bd)
+        fourni.Owner = Me
+        fourni.Show()
+    End Sub
+
+    Private Sub btnCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnCommande.Click
+        Dim com = New iCommande(numEmpl, bd)
+        com.Owner = Me
+        com.Show()
     End Sub
 End Class
