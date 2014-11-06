@@ -64,7 +64,7 @@ Public Class iLogin
                 gestionPatr.Owner = Me
                 gestionPatr.Show()
             Case "VEND"
-                vente = New iAccueilVente(maBD, nHotel, noEmploye)
+                vente = New iAccueilVente(maBD, nHotel, noEmploye, p2)
                 vente.Owner = Me
                 vente.Show()
             Case "RECE"

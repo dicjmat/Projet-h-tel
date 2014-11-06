@@ -15,9 +15,9 @@
             <Grid Height="429" Width="587">
                 <Label Content="Menu" Margin="0,0,533,403"></Label>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutForfait" Content="Ajouter un forfait" Height="25" Width="125" Margin="36,26,426,378"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnReservSalle" Content="Réservation de salle" Height="25" Width="125" Margin="36,56,426,348"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnListeSalle" Content="Liste de salle" Height="25" Width="125" Margin="166,56,296,348"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeSalle" Content="Liste de salle" Height="25" Width="125" Margin="296,26,166,378"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeForf" Content="Liste de forfait" Height="25" Width="125" Margin="166,26,296,378"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnLPeriode" Content="Liste de période" Height="25" Margin="296,26,166,378"></Button>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,99,0,328"></Rectangle>
                 <GroupBox Header="Rabais" BorderBrush="Black" Margin="0,117,0,40">
                     <Grid Margin="0,0,-2.6,-0.2">
@@ -47,9 +47,9 @@
                     </Grid>
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btndeco" Content="Annuler" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,10" Width="77"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="AjoutRab" Content="Ajouter un rabais" Height="25" Margin="110,341,323,63"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="ModifcRab" Content="Modifier un rabais" Height="25" Margin="269,341,164,63"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="SuppRab" Content="Supprimer un rabais" Height="25" Margin="428,341,5,63"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="AjoutRab" Content="Ajouter un rabais" Height="25" Margin="110,327,323,77"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="ModifcRab" Content="Modifier un rabais" Height="25" Margin="269,327,164,77"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="SuppRab" Content="Supprimer un rabais" Height="25" Margin="428,327,5,77"></Button>
             </Grid>
         </Viewbox>
     </Grid>

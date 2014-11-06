@@ -44,7 +44,7 @@
                 Dim iReservSalle As New iListeClient(bd, noEmpl, noHotel, dpDebutSalle.SelectedDate, dpFinSalle.SelectedDate, lstSalle.SelectedItem.noSalle, True)
                 iReservSalle.Owner = Me
                 Me.Hide()
-                iReservSalle.ShowDialog()
+                iReservSalle.Show()
             Else
                 MessageBox.Show("Veuillez sélectionner une date de début")
             End If

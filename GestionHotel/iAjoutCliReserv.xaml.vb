@@ -4,12 +4,11 @@
     Dim noEmp As Integer
     Dim noHotel As Integer
     Sub New(_noEmp As Integer, _noHotel As Integer, maBD As P2014_Equipe2_GestionHôtelièreEntities)
-        ' TODO: Complete member initialization 
         InitializeComponent()
         btnModifier.Visibility = System.Windows.Visibility.Hidden
         noEmp = _noEmp
         noHotel = _noHotel
-
+        bd = maBD
     End Sub
 
     Sub New(vente As Boolean)
@@ -17,32 +16,59 @@
         Menu.Visibility = Windows.Visibility.Hidden
     End Sub
 
-    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String, _noClient As String, _noEmp As Integer, _noHotel As Integer)
-        ' TODO: Complete member initialization 
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _noClient As String, _noEmp As Integer, _noHotel As Integer)
         InitializeComponent()
         bd = maBD
         noEmp = _noEmp
         noHotel = _noHotel
         noClient = _noClient
-        txtNomCli.Text = _nomClient
-        txtPrenCli.Text = _prenClient
-        txtTelCli.Text = _noTel
-        txtCelCli.Text = _noCell
-        txtAdrCli.Text = _adr
-        txtNoCarteCredit.Text = _noCarte
-        cbTypeCarte.SelectedItem = _type
-        txtCodeExp.Text = _dateEx
         btnAjouterCli.Visibility = System.Windows.Visibility.Hidden
     End Sub
     Private Sub window_AjoutCliReserv_Loaded(sender As Object, e As RoutedEventArgs) Handles window_AjoutCliReserv.Loaded
-        bd = New P2014_Equipe2_GestionHôtelièreEntities
-        Dim res = From cli In bd.tblClient
+        cbCodeProv.IsEnabled = False
+        cbCodeVille.IsEnabled = False
+        Dim pays = From pa In bd.tblPays Select pa
+        cbCodePays.ItemsSource = pays.ToList()
+        Dim cred = From cli In bd.tblClient
                   Group cli By cli.typeCarteCredit Into Group
                   Select Group.FirstOrDefault()
-        Dim res2 = From el In bd.tblVille Select el
-
-        cbTypeCarte.DataContext = res.ToList()
-        cbCodeVille.DataContext = res2.Distinct().ToList()
+        cbTypeCarte.ItemsSource = cred.ToList()
+        If noClient <> 0 Then
+            Dim res = From el In bd.tblClient Where el.noClient = noClient Select el
+            Me.DataContext = res.ToList()
+            Dim i = 0
+            For Each el In cbCodePays.Items
+                If el.codePays = res.First.tblVille.tblProvince.codePays Then
+                    cbCodePays.SelectedIndex = i
+                    Exit For
+                    End If
+                i = i + 1
+            Next
+            i = 0
+            For Each el In cbCodeProv.Items
+                If el.codeProv = res.First.codeProv Then
+                    cbCodeProv.SelectedIndex = i
+                    Exit For
+                    End If
+                i = i + 1
+            Next
+            i = 0
+            For Each el In cbCodeVille.Items
+                If el.codeVille = res.First.codeVille Then
+                    cbCodeVille.SelectedIndex = i
+                    Exit For
+                    End If
+                i = i + 1
+            Next
+            i = 0
+            For Each el In cbTypeCarte.Items
+                If el.typeCarteCredit = res.First.typeCarteCredit Then
+                    cbTypeCarte.SelectedIndex = i
+                    Exit For
+                    End If
+                i = i + 1
+            Next
+            End If
     End Sub
 
     Private Sub btnAjouterCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterCli.Click
@@ -135,5 +161,23 @@
         Catch ex As Exception
             MessageBox.Show("Veuillez remplir tous les champs.")
         End Try
+    End Sub
+
+    Private Sub cbCodePays_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbCodePays.SelectionChanged
+        If cbCodePays.SelectedIndex <> -1 Then
+            cbCodeProv.IsEnabled = True
+            Dim sPays As String = cbCodePays.SelectedItem.codePays
+            Dim province = From pro In bd.tblProvince Where pro.codePays = sPays Select pro
+            cbCodeProv.ItemsSource = province.ToList
+        End If
+    End Sub
+
+    Private Sub cbCodeProv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbCodeProv.SelectionChanged
+        If cbCodeProv.SelectedIndex <> -1 Then
+            cbCodeVille.IsEnabled = True
+            Dim sProv As String = cbCodeProv.SelectedItem.codeProv
+            Dim ville = From vi In bd.tblVille Where vi.codeProv = sProv Select vi
+            cbCodeVille.ItemsSource = ville.ToList
+        End If
     End Sub
 End Class

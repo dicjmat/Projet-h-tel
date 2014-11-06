@@ -3,6 +3,7 @@
     Private _noHotel As Short
     Dim maBd As P2014_Equipe2_GestionHôtelièreEntities
     Private _noEmpl As Short
+    Dim p2 As Integer
 
     Sub New(noEmpl As Short, noHotel As Short, _maBd As P2014_Equipe2_GestionHôtelièreEntities)
         ' TODO: Complete member initialization
@@ -45,7 +46,7 @@
     Private Sub btnModifEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnModifEmp.Click
         If lstEmploye.SelectedIndex <> -1 Then
             Dim numEmpl = lstEmploye.SelectedItem.noEmpl
-            Dim iEmploye As New iFicheEmploye(_noEmpl, _noHotel, numEmpl, maBd)
+            Dim iEmploye As New iFicheEmploye(_noEmpl, _noHotel, numEmpl, maBd, p2)
             iEmploye.Owner = Me
             Me.Hide()
             iEmploye.Show()

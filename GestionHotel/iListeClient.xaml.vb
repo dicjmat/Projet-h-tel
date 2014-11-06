@@ -91,7 +91,7 @@
     End Sub
 
     Private Sub btnModifierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierClient.Click
-        Dim client As New iAjoutCliReserv(bd, dgClient.SelectedItem.nomClient, dgClient.SelectedItem.prenClient, dgClient.SelectedItem.noTelClient, dgClient.SelectedItem.noCellClient, dgClient.SelectedItem.adrClient, dgClient.SelectedItem.noCarteCredit, dgClient.SelectedItem.typeCarteCredit, dgClient.SelectedItem.dateExpiration, dgClient.SelectedItem.noClient, noEmpl, noHotel)
+        Dim client As New iAjoutCliReserv(bd, dgClient.SelectedItem.noClient, noEmpl, noHotel)
         client.Owner = Me
         client.Show()
     End Sub
