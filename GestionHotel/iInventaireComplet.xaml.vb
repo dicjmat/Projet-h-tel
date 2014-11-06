@@ -171,19 +171,19 @@
     End Sub
 
     Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
-        Dim lst = New iListeCentrale(bd)
+        Dim lst = New iListeCentrale(bd, noEmp, noHotel, p2)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
-        Dim lst = New iListeEmployeComplet(bd)
+        Dim lst = New iListeEmployeComplet(bd, noEmp, noHotel, p2)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
-        Dim lst = New iListeHotel(bd)
+        Dim lst = New iListeHotel(bd, noEmp, noHotel, p2)
         lst.Owner = Me
         lst.Show()
     End Sub

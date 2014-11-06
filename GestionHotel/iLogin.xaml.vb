@@ -48,7 +48,7 @@ Public Class iLogin
         txtNomUtilisateur.Focus()
         Select Case typeEmploye
             Case "ADMI"
-                gerant = New iAccueilGerant(maBD, noEmploye, nHotel)
+                gerant = New iAccueilGerant(maBD, noEmploye, nHotel, p2)
                 gerant.Owner = Me
                 gerant.Show()
             Case "PERS"

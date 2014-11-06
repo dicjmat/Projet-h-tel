@@ -18,14 +18,14 @@
 
     End Sub
     Private Sub AppuielstCent()
-        Dim liste = New iListeCentrale(bd)
+        Dim liste = New iListeCentrale(bd, noEmp, noHotel, p2)
         liste.Owner = Me
         liste.Show()
         Me.Hide()
     End Sub
 
     Private Sub AppuielstEmp()
-        Dim lstemp = New iListeEmployeComplet(bd)
+        Dim lstemp = New iListeEmployeComplet(bd, noEmp, noHotel, p2)
         lstemp.Owner = Me
         lstemp.Show()
     End Sub
