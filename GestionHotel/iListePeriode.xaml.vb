@@ -1,8 +1,10 @@
 ﻿Public Class iListePeriode
-    Dim noEmp As Integer
-    Dim noHotel As Integer
-    Dim p2 As Integer
-    Dim bd As P2014_Equipe2_GestionHôtelièreEntities
+    Private bd As P2014_Equipe2_GestionHôtelièreEntities
+    Private Sub window_lstPeriode_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstPeriode.Loaded
+        Dim noEmp As Integer
+        Dim noHotel As Integer
+        Dim p2 As Integer
+        Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Private Sub btnAjoutForfait_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutForfait.Click
         Dim forf = New iAjoutForf(True, noHotel, bd)
         forf.Owner = Me
@@ -31,5 +33,7 @@
         Dim rab = New iRabais(noHotel, bd, noEmp)
         rab.Owner = Me
         rab.Show()
+    End Sub
+    End Sub
     End Sub
 End Class
