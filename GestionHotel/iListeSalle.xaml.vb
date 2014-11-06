@@ -66,4 +66,64 @@
             dpFinSalle.SelectedDate = (Year(dateDebut).ToString() + "-" + Month(dateDebut).ToString() + "-" + (Day(dateDebut) + 1).ToString())
         End If
     End Sub
+
+    Private Sub btnAjoutForfaitVente_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutForfaitVente.Click
+
+    End Sub
+
+    Private Sub btnListeSalleVente_Click(sender As Object, e As RoutedEventArgs) Handles btnListeSalleVente.Click
+
+    End Sub
+
+    Private Sub btnListeForfVente_Click(sender As Object, e As RoutedEventArgs) Handles btnListeForfVente.Click
+
+    End Sub
+
+    Private Sub btnRabaisVente_Click(sender As Object, e As RoutedEventArgs) Handles btnRabaisVente.Click
+
+    End Sub
+
+    Private Sub btnLPeriodeVente_Click(sender As Object, e As RoutedEventArgs) Handles btnLPeriodeVente.Click
+
+    End Sub
+
+    Private Sub btnGChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnGChambre.Click
+
+    End Sub
+
+    Private Sub btnGHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnGHotel.Click
+
+    End Sub
+
+    Private Sub btnIComplet_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
+
+    End Sub
+
+    Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
+
+    End Sub
+
+    Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
+
+    End Sub
+
+    Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
+
+    End Sub
+
+    Private Sub btnLSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnLSalle.Click
+
+    End Sub
+
+    Private Sub btnAjoutFourni_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFourni.Click
+
+    End Sub
+
+    Private Sub btnAjouterItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItem.Click
+
+    End Sub
+
+    Private Sub btnCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnCommande.Click
+
+    End Sub
 End Class

@@ -12,8 +12,8 @@
     <Grid>
         <Viewbox Stretch="Uniform">
             <Grid Height="628" Width="522">
-                <Label Content="Rechercher :" Margin="9,85,437,515"></Label>
-                <TextBox Name="txtrechercher" Height="25" Margin="90,88,231,515"></TextBox>
+                <Label Content="Rechercher :" Margin="9,111,437,489"></Label>
+                <TextBox Name="txtrechercher" Height="25" Margin="90,114,231,489"></TextBox>
                 <Label Content="Menu" Margin="0,0,469,599"></Label>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutForfait" Content="Ajouter un forfait" Height="25" Width="125" Margin="36,34,361,569"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeSalle" Content="Liste de salle" Height="25" Width="125" Margin="166,34,231,569"/>
