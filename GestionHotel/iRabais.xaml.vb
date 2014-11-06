@@ -2,12 +2,14 @@
     Dim bd As New P2014_Equipe2_GestionHôtelièreEntities
     Private noHotel As Short
     Dim noEmp As Integer
+    Dim p2 As Integer
 
-    Sub New(hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer)
+    Sub New(hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _p2 As Integer)
         InitializeComponent()
         noHotel = hotel
         bd = _bd
         noEmp = _noEmp
+        p2 = _p2
     End Sub
 
     Private Sub btndeco_Click(sender As Object, e As RoutedEventArgs) Handles btndeco.Click
@@ -129,13 +131,13 @@
     End Sub
 
     Private Sub btnListeForf_Click(sender As Object, e As RoutedEventArgs) Handles btnListeForf.Click
-        Dim lst = New ListeForfait(noHotel, bd, noEmp)
+        Dim lst = New ListeForfait(noHotel, bd, noEmp, p2)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnReservSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnReservSalle.Click
-        Dim reserv = New iFaireReservSalle(noHotel, bd, noEmp)
+        Dim reserv = New iFaireReservSalle(noHotel, bd, noEmp, p2)
         reserv.Owner = Me
         reserv.Show()
     End Sub
@@ -147,7 +149,7 @@
     End Sub
 
     Private Sub btnLPeriode_Click(sender As Object, e As RoutedEventArgs) Handles btnLPeriode.Click
-        Dim per = New iListePeriode
+        Dim per = New iListePeriode(bd, noHotel, noEmp, p2)
         per.Owner = Me
         per.Show()
     End Sub

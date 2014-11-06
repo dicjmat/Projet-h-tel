@@ -3,16 +3,18 @@
     Private hotel As Short
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
     Private noEmpl As Integer
+    Dim p2 As Integer
 
-    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, nHotel As Short, _noEmpl As Integer)
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, nHotel As Short, _noEmpl As Integer, _p2 As Integer)
         InitializeComponent()
         bd = maBD
         hotel = nHotel
         noEmpl = _noEmpl
+        p2 = _p2
     End Sub
 
     Private Sub AppuieForfait()
-        Dim Forfait = New ListeForfait(hotel, bd, noEmpl)
+        Dim Forfait = New ListeForfait(hotel, bd, noEmpl, p2)
         Forfait.Owner = Me
         Forfait.Show()
     End Sub
@@ -22,7 +24,7 @@
         Me.Close()
     End Sub
     Private Sub AppuieRabais()
-        Dim Rabais = New iRabais(hotel, bd, noEmpl)
+        Dim Rabais = New iRabais(hotel, bd, noEmpl, p2)
         Rabais.Owner = Me
         Rabais.Show()
     End Sub
@@ -34,7 +36,7 @@
     End Sub
 
     Private Sub AppuiePeriode()
-        Dim periode = New iListePeriode
+        Dim periode = New iListePeriode(bd, hotel, noEmpl, p2)
         periode.Owner = Me
         periode.Show()
     End Sub

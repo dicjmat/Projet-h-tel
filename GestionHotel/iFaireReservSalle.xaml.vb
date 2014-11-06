@@ -3,12 +3,14 @@
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
     Private nohotel As Short
     Dim noEmp As Integer
+    Dim p2 As Integer
 
-    Sub New(_nohotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer)
+    Sub New(_nohotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _p2 As Integer)
         InitializeComponent()
         bd = _bd
         nohotel = _nohotel
         noEmp = _noEmp
+        p2 = _p2
     End Sub
 
     Private Sub window_ReservSalle_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles window_ReservSalle.Closing
@@ -22,13 +24,13 @@
     End Sub
 
     Private Sub btnListeForf_Click(sender As Object, e As RoutedEventArgs) Handles btnListeForf.Click
-        Dim lst = New ListeForfait(nohotel, bd, noEmp)
+        Dim lst = New ListeForfait(nohotel, bd, noEmp, p2)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnRabais_Click(sender As Object, e As RoutedEventArgs) Handles btnRabais.Click
-        Dim rab = New iRabais(nohotel, bd, noEmp)
+        Dim rab = New iRabais(nohotel, bd, noEmp, p2)
         rab.Owner = Me
         rab.Show()
     End Sub
@@ -40,7 +42,7 @@
     End Sub
 
     Private Sub btnLPeriode_Click(sender As Object, e As RoutedEventArgs) Handles btnLPeriode.Click
-        Dim per = New iListePeriode
+        Dim per = New iListePeriode(bd, nohotel, noEmp, p2)
         per.Owner = Me
         per.Show()
     End Sub
