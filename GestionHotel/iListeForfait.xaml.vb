@@ -100,7 +100,7 @@
     End Sub
 
     Private Sub btnLPeriode_Click(sender As Object, e As RoutedEventArgs) Handles btnLPeriode.Click
-        Dim per = New iListePeriode
+        Dim per = New iListePeriode(bd, _hotel)
         per.Owner = Me
         per.Show()
     End Sub

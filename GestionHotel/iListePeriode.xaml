@@ -11,17 +11,26 @@
     </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid>
+            <Grid Width="577">
         <Label Content="Recherche :" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
         <TextBox Name="txtRecherche" Height="25" Margin="70,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150"></TextBox>
         <GroupBox Header="Liste de période" BorderBrush="Black" Margin="0,25,-0.4,36">
             <Grid>
-                <DataGrid Name="dgPeriode" AutoGenerateColumns="False" IsReadOnly="True">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Lawl"></DataGridTextColumn>
-                    </DataGrid.Columns>
+                <DataGrid Name="dgPeriode" AutoGenerateColumns="False" CanUserResizeColumns="False" IsReadOnly="True" Margin="0,0,137.4,0.4">
+                     <DataGrid.Columns>
+                         <DataGridTextColumn Header="Code" Binding="{Binding codePeriode}"></DataGridTextColumn>
+                         <DataGridTextColumn Header="Nom" Binding="{Binding nomPeriode}"></DataGridTextColumn>
+                         <DataGridTextColumn Header="Date de début" Binding="{Binding dateDebutPeriode}"></DataGridTextColumn>
+                         <DataGridTextColumn Header="Date de fin" Binding="{Binding dateFinPeriode}"></DataGridTextColumn>
+                     </DataGrid.Columns>
                 </DataGrid>
-            </Grid>
+                        <DataGrid Name="dgTypeChambre" AutoGenerateColumns="False" CanUserResizeColumns="False" IsReadOnly="True" Margin="370,0,0,0.4">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeSalle}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Prix" Binding="{Binding prixSallePeriode,StringFormat={}{0:#.00}}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
         </GroupBox>
         <Button Name="btnAccueil" Style="{StaticResource styleBouton}" Content="Accueil" Height="25" Margin="324,377,0,0" HorizontalAlignment="Left" Width="120" VerticalAlignment="Top"></Button>
         <Button Name="btnAjout" Style="{StaticResource styleBouton}" Content="Ajouter une période" Height="25" Margin="199,377,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"></Button>

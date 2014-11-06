@@ -34,7 +34,7 @@
     End Sub
 
     Private Sub AppuiePeriode()
-        Dim periode = New iListePeriode
+        Dim periode = New iListePeriode(bd, hotel)
         periode.Owner = Me
         periode.Show()
     End Sub
