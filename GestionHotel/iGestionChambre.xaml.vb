@@ -3,10 +3,10 @@
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
     Private hotel As Integer
 
-    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, p2 As Integer)
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _hotel As Integer)
         InitializeComponent()
         bd = _bd
-        hotel = p2
+        hotel = _hotel
 
     End Sub
 

@@ -205,25 +205,25 @@
     End Sub
 
     Private Sub btnIComplet_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
-        Dim inv = New iInventaireComplet(bd, _noEmpl, noHotel, p2)
+        Dim inv = New iInventaireComplet(bd, _noEmpl, noHotel)
         inv.Owner = Me
         inv.Show()
     End Sub
 
     Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
-        Dim lst = New iListeCentrale(bd, _noEmpl, noHotel, p2)
+        Dim lst = New iListeCentrale(bd, _noEmpl, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
-        Dim lst = New iListeEmployeComplet(bd, _noEmpl, noHotel, p2)
+        Dim lst = New iListeEmployeComplet(bd, _noEmpl, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
-        Dim lst = New iListeHotel(bd, _noEmpl, noHotel, p2)
+        Dim lst = New iListeHotel(bd, _noEmpl, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
