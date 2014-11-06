@@ -9,6 +9,9 @@ Public Class iLogin
     Dim gestionPatr As iGestionCentrale
     Dim vente As iAccueilVente
     Dim recep As iFaireReservationChambre
+    Dim noEmp As Integer
+    Dim noHotel As Integer
+    Dim p2 As Integer
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click
         Me.Close()
     End Sub
@@ -45,7 +48,7 @@ Public Class iLogin
         txtNomUtilisateur.Focus()
         Select Case typeEmploye
             Case "ADMI"
-                gerant = New iAccueilGerant(maBD, noEmploye, nHotel)
+                gerant = New iAccueilGerant(maBD, noEmploye, nHotel, p2)
                 gerant.Owner = Me
                 gerant.Show()
             Case "PERS"
@@ -57,11 +60,11 @@ Public Class iLogin
                 gestion.Owner = Me
                 gestion.Show()
             Case "PATR"
-                gestionPatr = New iGestionCentrale(maBD)
+                gestionPatr = New iGestionCentrale(maBD, noEmp, noHotel, p2)
                 gestionPatr.Owner = Me
                 gestionPatr.Show()
             Case "VEND"
-                vente = New iAccueilVente(maBD, nHotel, noEmploye)
+                vente = New iAccueilVente(maBD, nHotel, noEmploye, p2)
                 vente.Owner = Me
                 vente.Show()
             Case "RECE"

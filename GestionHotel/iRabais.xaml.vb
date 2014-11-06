@@ -1,13 +1,15 @@
 ﻿Public Class iRabais
     Dim bd As New P2014_Equipe2_GestionHôtelièreEntities
     Private noHotel As Short
-    Private noEmpl As Integer
+    Dim noEmp As Integer
+    Dim p2 As Integer
 
-    Sub New(hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmpl As Integer)
+    Sub New(hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _p2 As Integer)
         InitializeComponent()
         noHotel = hotel
         bd = _bd
-        noEmpl = _noEmpl
+        noEmp = _noEmp
+        p2 = _p2
     End Sub
 
     Private Sub btndeco_Click(sender As Object, e As RoutedEventArgs) Handles btndeco.Click
@@ -129,14 +131,20 @@
     End Sub
 
     Private Sub btnListeForf_Click(sender As Object, e As RoutedEventArgs) Handles btnListeForf.Click
-        Dim lst = New ListeForfait(noHotel, bd, noEmpl)
+        Dim lst = New ListeForfait(noHotel, bd, noEmp, p2)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnListeSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnListeSalle.Click
-        Dim lst = New iListeSalle(noHotel, bd, noEmpl)
+        Dim lst = New iListeSalle(noHotel, bd, noEmp)
         lst.Owner = Me
         lst.Show()
+    End Sub
+
+    Private Sub btnLPeriode_Click(sender As Object, e As RoutedEventArgs) Handles btnLPeriode.Click
+        Dim per = New iListePeriode(bd, noHotel, noEmp, p2)
+        per.Owner = Me
+        per.Show()
     End Sub
 End Class

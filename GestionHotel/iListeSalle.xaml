@@ -29,6 +29,7 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnListeSalleVente" Content="Liste de salle" Height="25" Margin="10,55,500.8,517"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeForfVente" Content="Liste de forfait" Height="25" Margin="10,85,500.8,487"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnRabaisVente" Content="Rabais" Height="25" Margin="177,25,333.8,547"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnLPeriodeVente" Content="Liste de période" Height="25" Margin="177,55,333.8,517"></Button>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,136,-0.2,459"></Rectangle>
                 <GroupBox BorderBrush="Black" Header="Salle" Margin="0,152,-0.2,34">
                     <StackPanel>

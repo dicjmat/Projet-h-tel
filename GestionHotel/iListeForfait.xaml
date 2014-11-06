@@ -17,9 +17,10 @@
                 <Label Content="Menu" Margin="0,0,469,599"></Label>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutForfait" Content="Ajouter un forfait" Height="25" Width="125" Margin="36,34,361,569"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeSalle" Content="Liste de salle" Height="25" Width="125" Margin="166,34,231,569"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnRabais" Content="Rabais" Height="25" Width="125" Margin="296,34,101,569"></Button>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="-10,72,10,554"></Rectangle>
-                <GroupBox Header="Liste de forfaits" BorderBrush="Black" Margin="0,117,0,36">
+                <Button Style="{StaticResource styleBouton}" Name="btnRabais" Content="Rabais" Height="25" Width="125" Margin="166,64,231,539"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnLPeriode" Content="Liste de période" Height="25" Margin="296,34,101,569"></Button>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="-10,107,10,519"></Rectangle>
+                <GroupBox Header="Liste de forfaits" BorderBrush="Black" Margin="0,144,0,36">
                     <Grid>
                         <DataGrid Name="dgForfait" AutoGenerateColumns="False" IsReadOnly="True">
                             <DataGrid.Columns>

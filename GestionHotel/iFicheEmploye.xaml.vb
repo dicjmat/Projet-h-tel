@@ -74,7 +74,7 @@
     End Sub
     Private Sub btnCreer_Click(sender As Object, e As RoutedEventArgs)
         Dim Employe = New tblEmploye()
-        If txtNomEmp.Text = "" Or txtPrenomEmp.Text = "" Or txtTellEmp.Text = "" Or txtAdrEmp.Text = "" Or txtNASEmp.Text = "" Or txtSalaireEmp.Text = "" Then
+        If Not (txtNomEmp.Text = "" Or txtPrenomEmp.Text = "" Or txtTellEmp.Text = "" Or txtAdrEmp.Text = "" Or txtNASEmp.Text = "" Or txtSalaireEmp.Text = "") Then
             Employe.nomEmpl = txtNomEmp.Text
             Employe.prenEmpl = txtPrenomEmp.Text
             Employe.noTelEmpl = txtTellEmp.Text
@@ -106,6 +106,7 @@
             Employe.salaire = txtSalaireEmp.Text
             If cmbCdVille.SelectedIndex <> -1 Then
                 Employe.codeVille = cmbCdVille.SelectedItem.codeVille
+                Employe.codeProv = cmbProvince.SelectedItem.codeProv
                 If cmbCdProf.SelectedIndex <> -1 Then
                     Employe.codeProf = cmbCdProf.SelectedItem.codeProf
                     If cmbNoHot.SelectedIndex <> -1 Then
@@ -189,6 +190,61 @@
     End Sub
 
     Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs)
-        'Dim employe = From 
+        Dim employe = From em In bd.tblEmploye
+                      Where em.noEmpl = numEmpl
+                      Select em
+
+        If Not (txtNomEmp.Text = "" Or txtPrenomEmp.Text = "" Or txtTellEmp.Text = "" Or txtAdrEmp.Text = "" Or txtNASEmp.Text = "" Or txtSalaireEmp.Text = "") Then
+            employe.Single.nomEmpl = txtNomEmp.Text
+            employe.Single.prenEmpl = txtPrenomEmp.Text
+            employe.Single.noTelEmpl = txtTellEmp.Text
+
+            If txtCellEmp.Text <> "   -   -    " Then
+                employe.Single.noCellEmpl = txtCellEmp.Text
+            End If
+
+            employe.Single.adrEmpl = txtAdrEmp.Text
+            employe.Single.NAS = txtNASEmp.Text
+            employe.Single.dateEmbauche = DPEmbaucheEmp.Text
+
+            If txtHrsEmp.Text <> "" Then
+                employe.Single.hrtravail = txtHrsEmp.Text
+            End If
+
+            If txtVacEmp.Text <> "" Then
+                employe.Single.joursVac = txtVacEmp.Text
+            End If
+
+            If txtFerieEmp.Text <> "" Then
+                employe.Single.joursFerie = txtFerieEmp.Text
+            End If
+
+            If txtMaladieEmp.Text <> "" Then
+                employe.Single.joursMal = txtMaladieEmp.Text
+            End If
+
+            employe.Single.salaire = txtSalaireEmp.Text
+            If cmbCdVille.SelectedIndex <> -1 Then
+                employe.Single.codeVille = cmbCdVille.SelectedItem.codeVille
+                employe.Single.codeProv = cmbProvince.SelectedItem.codeProv
+                If cmbCdProf.SelectedIndex <> -1 Then
+                    employe.Single.codeProf = cmbCdProf.SelectedItem.codeProf
+                    If cmbNoHot.SelectedIndex <> -1 Then
+                        employe.Single.noHotel = cmbNoHot.SelectedItem.noHotel
+                        bd.SaveChanges()
+                    Else
+                        MessageBox.Show("Veuillez choisir un hôtel")
+                    End If
+
+                Else
+                    MessageBox.Show("Veuillez choisir une profession")
+                End If
+            Else
+                MessageBox.Show("Veuillez choisir une ville")
+            End If
+            MessageBox.Show("L'employé a été modifié avec succès.")
+        Else
+            MessageBox.Show("Un des champs obligatoires n'a pas été rempli")
+        End If
     End Sub
 End Class

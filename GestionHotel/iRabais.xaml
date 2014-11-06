@@ -17,8 +17,9 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutForfait" Content="Ajouter un forfait" Height="25" Width="125" Margin="36,26,426,378"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeSalle" Content="Liste de salle" Height="25" Width="125" Margin="296,26,166,378"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeForf" Content="Liste de forfait" Height="25" Width="125" Margin="166,26,296,378"></Button>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,66,0,361"></Rectangle>
-                <GroupBox Header="Rabais" BorderBrush="Black" Margin="0,94,0,63">
+                <Button Style="{StaticResource styleBouton}" Name="btnLPeriode" Content="Liste de période" Height="25" Margin="296,26,166,378"></Button>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,99,0,328"></Rectangle>
+                <GroupBox Header="Rabais" BorderBrush="Black" Margin="0,117,0,40">
                     <Grid Margin="0,0,-2.6,-0.2">
                         <Label Content="Taux du rabais :" Margin="1,0,414,182"></Label>
                         <xctk:IntegerUpDown DefaultValue="1" Name="numTaux" Height="20" Margin="99,0,428.8,224.8" RenderTransformOrigin="0.581,0.486" Minimum="1" Maximum="100" VerticalAlignment="Bottom"/>

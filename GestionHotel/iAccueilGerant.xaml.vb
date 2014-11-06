@@ -3,13 +3,15 @@
     Private noEmploye As Short
     Private noHotel As Short
     Dim maBd As P2014_Equipe2_GestionHôtelièreEntities
+    Dim p2 As Integer
 
-    Sub New(_maBD As P2014_Equipe2_GestionHôtelièreEntities, _noEmploye As Short, nHotel As Short)
+    Sub New(_maBD As P2014_Equipe2_GestionHôtelièreEntities, _noEmploye As Short, nHotel As Short, _p2 As Integer)
         ' TODO: Complete member initialization
         InitializeComponent()
         maBd = _maBD
         noEmploye = _noEmploye
         noHotel = nHotel
+        p2 = _p2
     End Sub
 
     Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
@@ -26,7 +28,7 @@
     End Sub
 
     Private Sub AppuieGHotel()
-        Dim Ghotel = New iListeHotel(maBd)
+        Dim Ghotel = New iListeHotel(maBd, noEmploye, noHotel, p2)
         Ghotel.Owner = Me
         Ghotel.Show()
     End Sub
