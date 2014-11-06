@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub AppuieForfait()
-        Dim Forfait = New ListeForfait(hotel, bd, noEmpl, p2)
+        Dim Forfait = New ListeForfait(hotel, bd, noEmpl)
         Forfait.Owner = Me
         Forfait.Show()
     End Sub
@@ -24,7 +24,7 @@
         Me.Close()
     End Sub
     Private Sub AppuieRabais()
-        Dim Rabais = New iRabais(hotel, bd, noEmpl, p2)
+        Dim Rabais = New iRabais(hotel, bd, noEmpl)
         Rabais.Owner = Me
         Rabais.Show()
     End Sub
@@ -36,7 +36,7 @@
     End Sub
 
     Private Sub AppuiePeriode()
-        Dim periode = New iListePeriode(bd, hotel, noEmpl, p2)
+        Dim periode = New iListePeriode(bd, hotel, noEmpl)
         periode.Owner = Me
         periode.Show()
     End Sub
