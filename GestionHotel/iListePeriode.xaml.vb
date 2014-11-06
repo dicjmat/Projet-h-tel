@@ -26,13 +26,6 @@
         lst.Owner = Me
         lst.Show()
     End Sub
-
-    Private Sub btnReservSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnReservSalle.Click
-        Dim reserv = New iFaireReservSalle(noHotel, bd, noEmp, p2)
-        reserv.Owner = Me
-        reserv.Show()
-    End Sub
-
     Private Sub btnListeSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnListeSalle.Click
         Dim lst = New iListeSalle(noHotel, bd, noEmp)
         lst.Owner = Me
