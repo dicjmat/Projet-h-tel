@@ -33,4 +33,10 @@
         salle.Show()
     End Sub
 
+    Private Sub AppuiePeriode()
+        Dim periode = New iPeriode
+        periode.Owner = Me
+        periode.Show()
+    End Sub
+
 End Class
