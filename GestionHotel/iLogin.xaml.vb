@@ -8,7 +8,10 @@ Public Class iLogin
     Dim gestion As iAccueilGestionnaire
     Dim gestionPatr As iGestionCentrale
     Dim vente As iAccueilVente
-    Dim recep As iFaireReservation
+    Dim recep As iFaireReservationChambre
+    Dim noEmp As Integer
+    Dim noHotel As Integer
+    Dim p2 As Integer
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click
         Me.Close()
     End Sub
@@ -57,15 +60,15 @@ Public Class iLogin
                 gestion.Owner = Me
                 gestion.Show()
             Case "PATR"
-                gestionPatr = New iGestionCentrale(maBD)
+                gestionPatr = New iGestionCentrale(maBD, noEmp, noHotel, p2)
                 gestionPatr.Owner = Me
                 gestionPatr.Show()
             Case "VEND"
-                vente = New iAccueilVente(maBD, nHotel)
+                vente = New iAccueilVente(maBD, nHotel, noEmploye)
                 vente.Owner = Me
                 vente.Show()
             Case "RECE"
-                recep = New iFaireReservation(maBD, noEmploye, nHotel)
+                recep = New iFaireReservationChambre(maBD, noEmploye, nHotel)
                 recep.Owner = Me
                 recep.Show()
             Case Else

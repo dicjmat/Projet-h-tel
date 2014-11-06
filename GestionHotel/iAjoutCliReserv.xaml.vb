@@ -1,20 +1,36 @@
 ﻿Public Class iAjoutCliReserv
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
-    Sub New()
+    Dim noClient As String
+    Dim noEmp As Integer
+    Dim noHotel As Integer
+    Sub New(_noEmp As Integer, _noHotel As Integer, maBD As P2014_Equipe2_GestionHôtelièreEntities)
         ' TODO: Complete member initialization 
         InitializeComponent()
         btnModifier.Visibility = System.Windows.Visibility.Hidden
+        noEmp = _noEmp
+        noHotel = _noHotel
+
     End Sub
-    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String)
+
+    Sub New(vente As Boolean)
+        InitializeComponent()
+        Menu.Visibility = Windows.Visibility.Hidden
+    End Sub
+
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _nomClient As String, _prenClient As String, _noTel As String, _noCell As String, _adr As String, _noCarte As String, _type As String, _dateEx As String, _noClient As String, _noEmp As Integer, _noHotel As Integer)
         ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
+        noEmp = _noEmp
+        noHotel = _noHotel
+        noClient = _noClient
         txtNomCli.Text = _nomClient
         txtPrenCli.Text = _prenClient
         txtTelCli.Text = _noTel
         txtCelCli.Text = _noCell
         txtAdrCli.Text = _adr
         txtNoCarteCredit.Text = _noCarte
+        cbTypeCarte.SelectedItem = _type
         txtCodeExp.Text = _dateEx
         btnAjouterCli.Visibility = System.Windows.Visibility.Hidden
     End Sub
@@ -27,7 +43,6 @@
 
         cbTypeCarte.DataContext = res.ToList()
         cbCodeVille.DataContext = res2.Distinct().ToList()
-
     End Sub
 
     Private Sub btnAjouterCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterCli.Click
@@ -54,43 +69,43 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        'Dim accueil = New iFaireReservation
-        'accueil.Owner = Me
-        'accueil.Show()
+        Dim reserv = New iFaireReservationChambre(bd, noEmp, noHotel)
+        reserv.Owner = Me
+        reserv.Show()
         Me.Close()
     End Sub
     Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click
-        Dim check = New iCheck_in_out()
+        Dim check = New iCheck_in_out(bd, noEmp, noHotel)
         check.Owner = Me
         check.Show()
     End Sub
 
     Private Sub btnReservC_Click(sender As Object, e As RoutedEventArgs) Handles btnReservC.Click
-        'Dim reserv = New iFaireReservation(bd, noEmploye, noHotel)
-        'reserv.Owner = Me
-        'reserv.Show()
+        Dim reserv = New iFaireReservationChambre(bd, noEmp, noHotel)
+        reserv.Owner = Me
+        reserv.Show()
     End Sub
 
     Private Sub btnFact_Click(sender As Object, e As RoutedEventArgs) Handles btnFact.Click
-        Dim facture = New iFacture
+        Dim facture = New iFacture(bd, noEmp, noHotel)
         facture.Owner = Me
         facture.Show()
     End Sub
 
     Private Sub btnFicheC_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
-        Dim fiche = New iFicheClient
+        Dim fiche = New iFicheClient(bd, noEmp, noHotel)
         fiche.Owner = Me
         fiche.Show()
     End Sub
 
     Private Sub btnFicheReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReserv.Click
-        Dim ficheR = New iFicheReserv
+        Dim ficheR = New iFicheReserv(bd, noEmp, noHotel)
         ficheR.Owner = Me
         ficheR.Show()
     End Sub
 
     Private Sub btnFicheReservF_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReservF.Click
-        Dim ficheRF = New iFicheReservFacture
+        Dim ficheRF = New iFicheReservFacture(bd, noEmp, noHotel)
         ficheRF.Owner = Me
         ficheRF.Show()
     End Sub
@@ -101,4 +116,24 @@
         lst.Show()
     End Sub
 
+    Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
+        Try
+            Dim client As New tblClient
+            client.noClient = noClient
+            client.nomClient = txtNomCli.Text.Trim
+            client.prenClient = txtPrenCli.Text.Trim
+            client.noTelClient = txtTelCli.Text
+            client.noCellClient = txtCelCli.Text
+            client.adrClient = txtAdrCli.Text.Trim
+            client.noCarteCredit = txtNoCarteCredit.Text
+            client.typeCarteCredit = cbTypeCarte.SelectedItem.typeCarteCredit
+            client.dateExpiration = txtCodeExp.Text
+            client.codeVille = cbCodeVille.SelectedItem.codeVille
+            client.commentaire = txtCommCli.Text.Trim
+            bd.SaveChanges()
+            MessageBox.Show("Le client a été modifié avec succès.")
+        Catch ex As Exception
+            MessageBox.Show("Veuillez remplir tous les champs.")
+        End Try
+    End Sub
 End Class

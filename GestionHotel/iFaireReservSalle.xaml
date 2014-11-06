@@ -22,16 +22,12 @@
                 <GroupBox Header="Réservation d'une salle" BorderBrush="Black" Margin="0,117,0,30">
                     <Grid>
                         <Label Content="* = non-obligatoire" Margin="177,-3,-0.4,227.8"></Label>
-                        <Label Content="Nom de salle :" Margin="0,0,213.6,224.6"></Label>
-                        <ComboBox Name="cbNoSalle" Background="White" Margin="80,2,133.6,227.6"/>
-                        <Label Content="Nom de client :" Margin="0,29,199.6,195.8"></Label>
-                        <TextBox IsEnabled="False" Name="txtNoCli" Height="25" Margin="99,30,92.6,193.8"></TextBox>
-                        <Label Content="Date de début :" Margin="0,58,199.6,166.6"></Label>
-                        <DatePicker Name="dpDebut" Height="25" Margin="94,60,39.6,168.6"></DatePicker>
-                        <Label Content="Date de fin :" Margin="0,87,213.6,137.6"></Label>
-                        <DatePicker Name="dpFin" Height="25" Margin="94,90,39.6,138.6"></DatePicker>
-                        <Label Content="Date de la réservation :" Margin="0,116,155.6,107.6"></Label>
-                        <DatePicker Name="dpReserv" Margin="131,117,6.6,107.8"/>
+                        <Label Content="No de salle :" Margin="0,2,213.8,221.4"></Label>
+                        <TextBox Name="txtNoSalle" Background="White" Margin="79,4,134.8,225.4" IsEnabled="False"/>
+                        <Label Content="Nom de salle :" Margin="0,31,199.8,189.4"></Label>
+                        <TextBox Name="txtNomSalle" Background="White" Margin="90,34,123.8,195.4" IsEnabled="False"/>
+                        <Label Content="Nom de client :" Margin="0,61,199.8,160.4"></Label>
+                        <TextBox IsEnabled="False" Name="txtNoCli" Height="25" Margin="94,64,97.8,165.4"></TextBox>
                         <Label Content="Commentaire* :" Margin="0,146,199.6,76.6"></Label>
                         <TextBox Name="txtCommReserv" Margin="94,151,6.6,-0.2"></TextBox>
                     </Grid>
