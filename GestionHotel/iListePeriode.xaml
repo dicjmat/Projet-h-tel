@@ -22,7 +22,7 @@
                 <TextBox Name="txtRecherche" Height="25" Margin="78,125,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150"></TextBox>
                 <GroupBox Header="Liste de période" BorderBrush="Black" Margin="0,155,0.4,36">
                     <Grid>
-                        <DataGrid Name="dgPeriode" AutoGenerateColumns="False" CanUserResizeColumns="False" IsReadOnly="True" Margin="0,0,137.4,0.4">
+                        <DataGrid Name="dgPeriode" AutoGenerateColumns="False" CanUserResizeColumns="False" IsReadOnly="True" Margin="0,0,165.6,33.4">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Code" Binding="{Binding codePeriode}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Nom" Binding="{Binding nomPeriode}"></DataGridTextColumn>
@@ -30,17 +30,18 @@
                                 <DataGridTextColumn Header="Date de fin" Binding="{Binding dateFinPeriode}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <DataGrid Name="dgTypeChambre" AutoGenerateColumns="False" CanUserResizeColumns="False" IsReadOnly="True" Margin="370,0,0.4,33.4">
+                        <DataGrid Name="dgTypeChambre" AutoGenerateColumns="False" CanUserResizeColumns="False" IsReadOnly="True" Margin="337,0,0.6,33.4">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeSalle}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Prix" Binding="{Binding prixSallePeriode,StringFormat={}{0:#.00}}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Style="{StaticResource styleBouton}" Content="Modifier le prix" HorizontalAlignment="Left" Margin="371,322,0,0" VerticalAlignment="Top" Width="127" Height="28"/>
+                        <Button Name="btnModifier" Style="{StaticResource styleBouton}" Content="Modifier le prix" HorizontalAlignment="Left" Margin="371,322,0,0" VerticalAlignment="Top" Width="127" Height="28"/>
                     </Grid>
                 </GroupBox>
                 <Button Name="btnAccueil" Style="{StaticResource styleBouton}" Content="Accueil" Height="25" Margin="384,539,0,0" HorizontalAlignment="Left" Width="120" VerticalAlignment="Top"></Button>
-                <Button Name="btnAjout" Style="{StaticResource styleBouton}" Content="Ajouter une période" Height="25" Margin="259,539,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"></Button>
+                <Button Name="btnAjout" Style="{StaticResource styleBouton}" Content="Ajouter une période" Height="25" Margin="10,494,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"></Button>
+                <Button Name="btnModif" Style="{StaticResource styleBouton}" Content="Modifier une période" Height="25" Margin="135,494,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"></Button>
             </Grid>
         </Viewbox>
     </Grid>

@@ -13,6 +13,7 @@
     End Sub
     Private Sub window_lstPeriode_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstPeriode.Loaded
         requete()
+        Me.Owner.Hide()
     End Sub
 
     Private Sub requete()
@@ -20,9 +21,9 @@
                   Join petysa In bd.tblPeriodeTypeSalle
                   On petysa.codePeriode Equals pe.codePeriode
                   Where petysa.noHotel = noHotel
-                  Select pe.codePeriode, pe.nomPeriode, dateDebutPeriode = pe.dateDebutPeriode.ToString.Substring(0, 10), dateFinPeriode = pe.dateFinPeriode.ToString.Substring(0, 10), petysa
+                  Select pe.codePeriode, pe.nomPeriode, dateDebutPeriode = pe.dateDebutPeriode.ToString.Substring(0, 10), dateFinPeriode = pe.dateFinPeriode.ToString.Substring(0, 10)
 
-        dgPeriode.ItemsSource = res.ToList
+        dgPeriode.ItemsSource = res.ToList.Distinct
     End Sub
 
     Private Sub txtRecherche_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRecherche.TextChanged
@@ -51,22 +52,24 @@
     End Sub
 
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
-
+        Dim periode = New iPeriode(bd, noHotel)
+        periode.Owner = Me
+        periode.Show()
     End Sub
 
     Private Sub dgPeriode_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgPeriode.SelectionChanged
-        If dgPeriode.SelectedIndex <> -1 Then
-            requeteTypeChambre()
-        End If
+        requeteTypeChambre()
     End Sub
 
     Private Sub requeteTypeChambre()
-        Dim periode As String = dgPeriode.SelectedItem.codePeriode
-        Dim res = From petych In bd.tblPeriodeTypeSalle
-                  Where petych.codePeriode = periode And petych.noHotel = noHotel
-                  Select petych.tblTypeSalleHotel.tblTypeSalle.nomTypeSalle, petych.prixSallePeriode
+        If dgPeriode.SelectedIndex <> -1 Then
+            Dim periode As String = dgPeriode.SelectedItem.codePeriode
+            Dim res = From petych In bd.tblPeriodeTypeSalle
+                      Where petych.codePeriode = periode And petych.noHotel = noHotel
+                      Select petych.tblTypeSalleHotel.tblTypeSalle.nomTypeSalle, petych.prixSallePeriode, petych.codeTypeSalle
 
-        dgTypeChambre.ItemsSource = res.ToList
+            dgTypeChambre.ItemsSource = res.ToList
+        End If
     End Sub
     Private Sub btnRabais_Click(sender As Object, e As RoutedEventArgs) Handles btnRabais.Click
         Dim rab = New iRabais(noHotel, bd, noEmp)
@@ -74,4 +77,31 @@
         rab.Show()
     End Sub
 
+    Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
+        'Manque les vérifs
+        If dgTypeChambre.SelectedIndex <> -1 Then
+            Dim periode As String = dgPeriode.SelectedItem.codePeriode
+            Dim type As String = dgTypeChambre.SelectedItem.codeTypeSalle
+            Dim prix = InputBox("Entrez le nouveau prix", "Modifier le prix", dgTypeChambre.SelectedItem.prixSallePeriode)
+            Dim aModif = From petych In bd.tblPeriodeTypeSalle
+                       Where petych.codePeriode = periode And petych.codeTypeSalle = type
+                       Select petych
+            aModif.Single.prixSallePeriode = prix.Replace(".", ",")
+            bd.SaveChanges()
+            MessageBox.Show("Le prix a bien été modifié")
+        Else
+            MessageBox.Show("Veuillez choisir le type de chambre dont vous voulez modifier le prix")
+        End If
+    End Sub
+
+    Private Sub window_lstPeriode_Activated(sender As Object, e As EventArgs) Handles window_lstPeriode.Activated
+        requete()
+        requeteTypeChambre()
+    End Sub
+
+    Private Sub btnModif_Click(sender As Object, e As RoutedEventArgs) Handles btnModif.Click
+        Dim periode = New iPeriode(bd, noHotel, dgPeriode.SelectedItem.codePeriode)
+        periode.Owner = Me
+        periode.Show()
+    End Sub
 End Class
