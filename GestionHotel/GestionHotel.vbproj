@@ -183,8 +183,8 @@
     <Compile Include="iRabais.xaml.vb">
       <DependentUpon>iRabais.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListeForfait.xaml.vb">
-      <DependentUpon>ListeForfait.xaml</DependentUpon>
+    <Compile Include="iListeForfait.xaml.vb">
+      <DependentUpon>iListeForfait.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model1.vb">
       <AutoGen>True</AutoGen>
@@ -464,7 +464,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListeForfait.xaml">
+    <Page Include="iListeForfait.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
