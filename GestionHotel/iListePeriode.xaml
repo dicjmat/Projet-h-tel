@@ -10,6 +10,8 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Viewbox Stretch="Uniform">
+            <Grid>
         <Label Content="Recherche :" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"/>
         <TextBox Name="txtRecherche" Height="25" Margin="70,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150"></TextBox>
         <GroupBox Header="Liste de période" BorderBrush="Black" Margin="0,25,-0.4,36">
@@ -23,5 +25,7 @@
         </GroupBox>
         <Button Name="btnAccueil" Style="{StaticResource styleBouton}" Content="Accueil" Height="25" Margin="324,377,0,0" HorizontalAlignment="Left" Width="120" VerticalAlignment="Top"></Button>
         <Button Name="btnAjout" Style="{StaticResource styleBouton}" Content="Ajouter une période" Height="25" Margin="199,377,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"></Button>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Window>
