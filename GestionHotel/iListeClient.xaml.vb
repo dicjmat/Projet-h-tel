@@ -122,7 +122,7 @@
         facture.Show()
     End Sub
 
-    Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutCli.Click
+    Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
         Dim ajout = New iAjoutCliReserv(noEmpl, noHotel, bd)
         ajout.Owner = Me
         ajout.Show()

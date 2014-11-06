@@ -15,7 +15,7 @@
                 <Label Content="Menu" Margin="10,0,453,614"></Label>
                 <Button Style="{StaticResource styleBouton}" Name="btnFact" Content="Facture" Height="25" Width="125" Margin="10,55,368,559"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnReservC" Content="Réservation Chambre" Height="25" Width="125" Margin="10,85,368,529"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnFicheC" Content="Fiche client" Height="25" Width="125" Margin="140,25,238,589"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheC" Content="Ajout client" Height="25" Width="125" Margin="140,25,238,589"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnFicheReserv" Content="Fiche Réservation" Height="25" Width="125" Margin="140,55,238,559"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnFicheReservF" Content="Fiche Réservation Fact" Height="25" Width="125" Margin="140,85,238,529"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeCli" Content="Liste de client" Height="25" Width="125" Margin="10,25,368,589"></Button>

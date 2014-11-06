@@ -22,7 +22,7 @@
         check.Show()
     End Sub
 
-    Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutCli.Click
+    Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
         Dim Cli = New iAjoutCliReserv(noEmp, noHotel, bd)
         Cli.Owner = Me
         Cli.Show()
