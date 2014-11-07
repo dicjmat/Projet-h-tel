@@ -8,7 +8,16 @@
         InitializeComponent()
         _noEmpl = noEmpl
         _noHotel = noHotel
-        maBd = _maBd
+        maBD = _maBd
+        Dim res = From el In maBD.tblLogin Where el.noEmpl = _noEmpl Select el
+
+        If res.First.statut = "PATR" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGerant.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        End If
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)

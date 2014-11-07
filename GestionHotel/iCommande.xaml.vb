@@ -3,14 +3,22 @@
     Dim lstCommande As New List(Of tblLigneCommande)
     Dim lstAffichage As New List(Of Object)
     Dim prixTotal
-    Private _noEmpl As Short
+    Private noEmpl As Short
     Dim noHotel As Integer
-    Dim p2 As Integer
 
-    Sub New(noEmpl As Short, maBD As P2014_Equipe2_GestionHôtelièreEntities)
+    Sub New(_noEmpl As Short, maBD As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
-        _noEmpl = noEmpl
+        noEmpl = _noEmpl
         bd = maBD
+        Dim res = From el In bd.tblLogin Where el.noEmpl = noEmpl Select el
+
+        If res.First.statut = "PATR" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGerant.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        End If
     End Sub
 
     Private Sub Grid_Loaded(sender As Object, e As RoutedEventArgs)
@@ -122,7 +130,7 @@
             commande.prixCommande = prixTotal
             commande.etatCommande = "NL"
             commande.noFournisseur = dgCommande.SelectedItem.noFournisseur
-            commande.noEmpl = _noEmpl
+            commande.noEmpl = noEmpl
             For Each el In lstCommande
                 commande.tblLigneCommande.Add(el)
             Next
@@ -163,7 +171,7 @@
     End Sub
 
     Private Sub btnInventaireGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnInventaireGerant.Click
-        Dim inv = New iInventaire(_noEmpl, noHotel, bd)
+        Dim inv = New iInventaire(noEmpl, noHotel, bd)
         inv.Owner = Me
         inv.Show()
     End Sub
@@ -193,7 +201,7 @@
     End Sub
 
     Private Sub btnGChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnGChambre.Click
-        Dim chambre = New iGestionChambre(bd, p2)
+        Dim chambre = New iGestionChambre(bd, noHotel)
         chambre.Owner = Me
         chambre.Show()
     End Sub
@@ -205,31 +213,31 @@
     End Sub
 
     Private Sub btnIComplet_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
-        Dim inv = New iInventaireComplet(bd, _noEmpl, noHotel)
+        Dim inv = New iInventaireComplet(bd, noEmpl, noHotel)
         inv.Owner = Me
         inv.Show()
     End Sub
 
     Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
-        Dim lst = New iListeCentrale(bd, _noEmpl, noHotel)
+        Dim lst = New iListeCentrale(bd, noEmpl, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
-        Dim lst = New iListeEmployeComplet(bd, _noEmpl, noHotel)
+        Dim lst = New iListeEmployeComplet(bd, noEmpl, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
-        Dim lst = New iListeHotel(bd, _noEmpl, noHotel)
+        Dim lst = New iListeHotel(bd, noEmpl, noHotel)
         lst.Owner = Me
         lst.Show()
     End Sub
 
     Private Sub btnLSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnLSalle.Click
-        Dim lst = New iListeSalle(noHotel, bd, _noEmpl)
+        Dim lst = New iListeSalle(noHotel, bd, noEmpl)
         lst.Owner = Me
         lst.Show()
     End Sub
@@ -241,7 +249,7 @@
     End Sub
 
     Private Sub btnCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnCommande.Click
-        Dim com = New iCommande(_noEmpl, bd)
+        Dim com = New iCommande(noEmpl, bd)
         com.Owner = Me
         com.Show()
     End Sub

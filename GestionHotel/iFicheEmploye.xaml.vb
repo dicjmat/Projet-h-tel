@@ -9,8 +9,17 @@
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
+        Dim res = From el In bd.tblLogin Where el.noEmpl = numEmpl Select el
         btnModifier.Visibility = Windows.Visibility.Visible
         btnAjouterItem.Visibility = Windows.Visibility.Hidden
+
+        If res.First.statut = "PATR" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGest.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        End If
     End Sub
 
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
