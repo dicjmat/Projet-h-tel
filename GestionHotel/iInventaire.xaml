@@ -13,6 +13,7 @@
         <Viewbox Stretch="Uniform" Margin="0,0,0.4,0.4">
             <Grid Height="500" Width="710">
                 <Label Content="Menu"></Label>
+                <Canvas Name="menu">
                 <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="10,28,0,447" HorizontalAlignment="Left" Width="162"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,58,0,417" HorizontalAlignment="Left" Width="162"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,88,0,387" HorizontalAlignment="Left" Width="162"/>
@@ -25,9 +26,12 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="511,28,0,447" HorizontalAlignment="Left" Width="162"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="511,58,0,417" HorizontalAlignment="Left" Width="162"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnLSalle" Content="Liste de salle" Height="25" Margin="511,88,0,387" HorizontalAlignment="Left" Width="162"></Button>
+                </Canvas>
+                <Canvas Name="menuGerant">
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourniGerant" Content="Ajouter un fournisseur" Height="25" Margin="10,58,538,417"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutItemGerant" Content="Ajouter un item" Height="25" Margin="10,28,538,447"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnCommandeGerant" Content="Faire une commande" Height="25" Margin="10,88,538,387"></Button>
+                </Canvas>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,118,0,380"></Rectangle>
                 <Label Content="Rechercher : " Margin="7,0,621,346" Height="27" VerticalAlignment="Bottom"></Label>
                 <TextBox Name="txtCodeItem" Margin="89,127,501,0" Height="20" Width="120" VerticalAlignment="Top"/>
