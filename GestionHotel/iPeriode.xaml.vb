@@ -17,8 +17,15 @@
         bd = _bd
         hotel = noHotel
         codePeriode = p3
+        Dim periode = From pe In bd.tblPeriode
+                      Where codePeriode = pe.codePeriode
+                      Select pe
         btnAjouter.Visibility = Windows.Visibility.Hidden
         btnModifier.Visibility = Windows.Visibility.Visible
+        txtCodeP.Text = periode.Single.codePeriode
+        txtNomP.Text = periode.Single.nomPeriode
+        dpDebut.Text = periode.Single.dateDebutPeriode
+        dpFin.Text = periode.Single.dateFinPeriode
         txtCodeP.IsEnabled = False
     End Sub
 
@@ -40,6 +47,7 @@
             Next
             bd.SaveChanges()
             MessageBox.Show("La période a bien été ajoutée")
+            Me.Close()
         Else
             MessageBox.Show("Un des champs n'a pas été rempli")
         End If
@@ -48,10 +56,15 @@
 
     Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
         If txtCodeP.Text <> "" And txtNomP.Text <> "" And dpDebut.Text <> "" And dpFin.Text <> "" Then
-            Dim periode = New tblPeriode
-            periode.nomPeriode = txtNomP.Text
-            periode.dateDebutPeriode = dpDebut.Text
-            periode.dateFinPeriode = dpFin.Text
+            Dim periode = From pe In bd.tblPeriode
+                          Where pe.codePeriode = codePeriode
+                          Select pe
+            periode.Single.nomPeriode = txtNomP.Text
+            periode.Single.dateDebutPeriode = dpDebut.Text
+            periode.Single.dateFinPeriode = dpFin.Text
+            bd.SaveChanges()
+            MessageBox.Show("La période à été modifiée avec succès")
+            Me.Close()
         Else
             MessageBox.Show("Un des champs n'a pas été rempli")
         End If

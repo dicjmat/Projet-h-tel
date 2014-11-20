@@ -1,4 +1,6 @@
-﻿Public Class iFicheEmploye
+﻿Imports System.Text.RegularExpressions
+
+Public Class iFicheEmploye
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
     Private numEmpl As Integer
     Private noGest As Short
@@ -11,6 +13,7 @@
         bd = _bd
         btnModifier.Visibility = Windows.Visibility.Visible
         btnAjouterItem.Visibility = Windows.Visibility.Hidden
+        txtNASEmp.IsEnabled = False
     End Sub
 
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
@@ -18,6 +21,7 @@
         bd = _bd
         btnModifier.Visibility = Windows.Visibility.Hidden
         btnAjouterItem.Visibility = Windows.Visibility.Visible
+        txtNASEmp.IsEnabled = True
     End Sub
 
     Private Sub windowFicheEmploye_Loaded(sender As Object, e As RoutedEventArgs) Handles windowFicheEmploye.Loaded
@@ -74,7 +78,8 @@
     End Sub
     Private Sub btnCreer_Click(sender As Object, e As RoutedEventArgs)
         Dim Employe = New tblEmploye()
-        If Not (txtNomEmp.Text = "" Or txtPrenomEmp.Text = "" Or txtTellEmp.Text = "" Or txtAdrEmp.Text = "" Or txtNASEmp.Text = "" Or txtSalaireEmp.Text = "") Then
+        Dim regNASCanada As Regex = New Regex("^[0-9]{3}[, -]?[0-9]{3}[, -]?[0-9]{3}$")
+        If Not (txtNomEmp.Text = "" Or txtPrenomEmp.Text = "" Or txtTellEmp.Text = "" Or txtAdrEmp.Text = "" Or regNASCanada.IsMatch("txtNasEmp.Text") Or txtSalaireEmp.Text = "") Then
             Employe.nomEmpl = txtNomEmp.Text
             Employe.prenEmpl = txtPrenomEmp.Text
             Employe.noTelEmpl = txtTellEmp.Text
@@ -84,6 +89,7 @@
             End If
 
             Employe.adrEmpl = txtAdrEmp.Text
+
             Employe.NAS = txtNASEmp.Text
             Employe.dateEmbauche = DPEmbaucheEmp.Text
 
@@ -204,7 +210,6 @@
             End If
 
             employe.Single.adrEmpl = txtAdrEmp.Text
-            employe.Single.NAS = txtNASEmp.Text
             employe.Single.dateEmbauche = DPEmbaucheEmp.Text
 
             If txtHrsEmp.Text <> "" Then

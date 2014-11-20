@@ -45,6 +45,11 @@ Public Class iLogin
         txtMDP.Password = ""
         txtNomUtilisateur.Text = ""
         txtNomUtilisateur.Focus()
+        'If res.First.premiereConnexion Then
+        '    modifMdp = New iModifierMdp(maBD, noEmp)
+        '    modifMdp.Owner = Me
+        '    modifMdp.ShowDialog()
+        'End If
         Select Case typeEmploye
             Case "ADMI"
                 gerant = New iAccueilGerant(maBD, noEmploye, nHotel)
