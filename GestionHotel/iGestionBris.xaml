@@ -1,0 +1,34 @@
+﻿<Window x:Class="iGestionBris" WindowStyle="None" WindowStartupLocation="CenterScreen" WindowState="Maximized" ResizeMode="NoResize" Background="CadetBlue" Icon="icon.ico" Name="window_GestBris"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="iGestionBris" Height="508.21" Width="453.6">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Viewbox Stretch="Uniform">
+            <Grid>
+                <GroupBox Header="Liste de bris" BorderBrush="Black" Margin="0,155,0.4,36">
+                    <Grid>
+                        <DataGrid Name="dgBris" AutoGenerateColumns="False" CanUserResizeColumns="False" IsReadOnly="True" Margin="0,0,0,33.4">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="No" Binding="{Binding noBris}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Item" Binding="{Binding nomItem}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Salle" Binding="{Binding noSalle}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Date de bris" Binding="{Binding dateBris}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="État" Binding="{Binding etatBris}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Date de réparation" Binding="{Binding dateRepare}"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Name="btnConult" Style="{StaticResource styleBouton}" Content="Consulter" HorizontalAlignment="Left" Margin="240,322,0,0" VerticalAlignment="Top" Width="127" Height="28"/>
+                        <Button Name="btnEtat" Style="{StaticResource styleBouton}" Content="Modifier état" HorizontalAlignment="Left" Margin="371,322,0,0" VerticalAlignment="Top" Width="127" Height="28"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Window>

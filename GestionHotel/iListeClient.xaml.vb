@@ -43,9 +43,8 @@
         cbCompagnie.DataContext = res3.Distinct().ToList()
     End Sub
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Dim accueil = New iFaireReservationChambre(bd, noEmpl, noHotel)
-        accueil.Owner = Me
-        accueil.Show()
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
@@ -76,6 +75,9 @@
         bd.tblReservation.Add(reserv)
         bd.SaveChanges()
         MessageBox.Show("La réservation a été créé avec succès.")
+        Me.Owner.Hide()
+        Me.Owner.Show()
+        Me.Close()
     End Sub
 
     Private Sub dgClient_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgClient.SelectionChanged
@@ -101,7 +103,6 @@
         Dim res = From el In bd.tblClient
                   Where (el.nomClient + " " + el.prenClient).StartsWith(txtRCli.Text) Or (el.prenClient + " " + el.nomClient).StartsWith(txtRCli.Text)
                   Select el
-        'el.noEmpl, el.nomEmpl, el.prenEmpl, el.codeProf
         dgClient.ItemsSource = res.ToList()
     End Sub
     Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click

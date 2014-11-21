@@ -17,6 +17,7 @@ Partial Public Class tblClient
     Public Property noTelClient As String
     Public Property noCellClient As String
     Public Property adrClient As String
+    Public Property emailClient As String
     Public Property typeCarteCredit As String
     Public Property noCarteCredit As String
     Public Property dateExpiration As String
@@ -27,6 +28,7 @@ Partial Public Class tblClient
 
     Public Overridable Property tblVille As tblVille
     Public Overridable Property tblCompagnie As tblCompagnie
+    Public Overridable Property tblCompte As ICollection(Of tblCompte) = New HashSet(Of tblCompte)
     Public Overridable Property tblReservation As ICollection(Of tblReservation) = New HashSet(Of tblReservation)
 
 End Class

@@ -25,7 +25,7 @@ Partial Public Class tblEmploye
     Public Property codeProf As String
     Public Property hrSemaine As Nullable(Of Byte)
     Public Property hrtravail As Nullable(Of Short)
-    Public Property salaire As Byte
+    Public Property salaire As Decimal
     Public Property joursVac As Nullable(Of Byte)
     Public Property joursFerie As Nullable(Of Byte)
     Public Property joursMal As Nullable(Of Byte)

@@ -22,12 +22,12 @@
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,115,0,522"></Rectangle>
                 <GroupBox Header="Arrivé" BorderBrush="Black" Margin="0,130,0,278">
                     <Grid Margin="0,0,0,-0.4">
-                        <DataGrid AutoGenerateColumns="False" Name="dgArrive" Margin="0,0,0,30">
+                        <DataGrid AutoGenerateColumns="False" Name="dgArrive" Margin="0,0,0,30" CanUserAddRows="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="NoChambre"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Nom"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Prénom"></DataGridTextColumn>
-                                <DataGridTextColumn Header="NoRéservation"></DataGridTextColumn>
+                                <DataGridTextColumn Header="No Chambre" Binding="{Binding noSalle}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nom" Binding="{Binding tblClient.nomClient}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Prénom" Binding="{Binding tblClient.prenClient}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="No Réservation" Binding="{Binding noReservation}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                         <Button Style="{StaticResource styleBouton}" Name="btnConsulterA" Height="25" Content="Consulter" Margin="327,183,0,0" HorizontalAlignment="Left" Width="77" VerticalAlignment="Top"></Button>
@@ -36,12 +36,12 @@
                 </GroupBox>
                 <GroupBox Header="Départ" BorderBrush="Black" Margin="0,361,0,30">
                     <Grid Margin="0,0,0,-12.4">
-                        <DataGrid AutoGenerateColumns="False" Name="dgDepart" Margin="0,0,0,45.6">
+                        <DataGrid AutoGenerateColumns="False" Name="dgDepart" Margin="0,0,0,45.6" CanUserAddRows="False">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Header="NoChambre"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Nom"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Prénom"></DataGridTextColumn>
-                                <DataGridTextColumn Header="NoRéservation"></DataGridTextColumn>
+                                <DataGridTextColumn Header="No Chambre" Binding="{Binding noSalle}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nom" Binding="{Binding nomClient}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="No Réservation" Binding="{Binding noReservation}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                         <Button Style="{StaticResource styleBouton}" Name="btnConsulterD" Height="25" Content="Consulter" Margin="337,198,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77"></Button>

@@ -77,7 +77,7 @@
         rab.Show()
     End Sub
 
-    Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs) Handles btnModifier.Click
+    Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs)
         'Manque les vérifs
         If dgTypeChambre.SelectedIndex <> -1 Then
             Dim periode As String = dgPeriode.SelectedItem.codePeriode
@@ -99,7 +99,7 @@
         requeteTypeChambre()
     End Sub
 
-    Private Sub btnModif_Click(sender As Object, e As RoutedEventArgs) Handles btnModif.Click
+    Private Sub btnModif_Click(sender As Object, e As RoutedEventArgs)
         Dim periode = New iPeriode(bd, noHotel, dgPeriode.SelectedItem.codePeriode)
         periode.Owner = Me
         periode.Show()

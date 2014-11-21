@@ -44,6 +44,7 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
     Public Overridable Property tblProfession() As DbSet(Of tblProfession)
     Public Overridable Property tblClient() As DbSet(Of tblClient)
     Public Overridable Property tblCompagnie() As DbSet(Of tblCompagnie)
+    Public Overridable Property tblCompte() As DbSet(Of tblCompte)
     Public Overridable Property tblElementNote() As DbSet(Of tblElementNote)
     Public Overridable Property tblFacture() As DbSet(Of tblFacture)
     Public Overridable Property tblForfait() As DbSet(Of tblForfait)
@@ -54,6 +55,7 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
     Public Overridable Property tblReservation() As DbSet(Of tblReservation)
     Public Overridable Property tblSalle() As DbSet(Of tblSalle)
     Public Overridable Property tblTypeElement() As DbSet(Of tblTypeElement)
+    Public Overridable Property tblTypeLit() As DbSet(Of tblTypeLit)
     Public Overridable Property tblTypeSalle() As DbSet(Of tblTypeSalle)
     Public Overridable Property tblTypeSalleHotel() As DbSet(Of tblTypeSalleHotel)
 

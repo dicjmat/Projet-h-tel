@@ -10,13 +10,12 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblLogin
-    Public Property utilisateur As String
+Partial Public Class tblCompte
+    Public Property email As String
     Public Property mdp As String
-    Public Property statut As String
     Public Property premiereConnexion As Boolean
-    Public Property noEmpl As Short
+    Public Property noClient As Integer
 
-    Public Overridable Property tblEmploye As tblEmploye
+    Public Overridable Property tblClient As tblClient
 
 End Class

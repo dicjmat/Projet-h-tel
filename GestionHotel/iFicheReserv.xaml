@@ -23,31 +23,31 @@
                 <GroupBox Header="Réservation" BorderBrush="Black" Margin="10,153,10,296">
                     <Grid>
                         <Label Content="NoRéservation :" Margin="0,0,257.2,184.6"></Label>
-                        <TextBox Name="txtNoReserv" Height="20" Margin="99,5,118.2,184.6"></TextBox>
+                        <TextBox Name="txtNoReserv" Text="{Binding noReservation}" Height="20" Margin="99,5,118.2,184.6"></TextBox>
                         <Label Content="Date de début :" Margin="0,64,255.2,113.6"></Label>
-                        <TextBox Name="txtDateDebut" Height="20" Margin="96,69,118.2,120.6"></TextBox>
+                        <TextBox Name="txtDateDebut" Text="{Binding dateDebutReserv}" Height="20" Margin="96,69,118.2,120.6"></TextBox>
                         <Label Content="Date de fin :" Margin="0,96,246.2,89.6"></Label>
-                        <TextBox Name="txtDateFin" Height="20" Margin="96,100,118.2,89.6"></TextBox>
+                        <TextBox Name="txtDateFin" Text="{Binding dateFinReserv}" Height="20" Margin="96,100,118.2,89.6"></TextBox>
                         <Label Content="Date de réservation :" Margin="0,32,229.2,145.6"></Label>
-                        <TextBox Name="txtDatereserv" Height="20" Margin="122,36,118.2,153.6"></TextBox>
+                        <TextBox Name="txtDatereserv" Text="{Binding dateReserv}" Height="20" Margin="122,36,118.2,153.6"></TextBox>
                         <Label Content="Commentaire :" Margin="0,128,227.2,52.6"></Label>
-                        <TextBox Name="txtCommReserv" TextWrapping="Wrap" AcceptsReturn="False" Margin="96,133,10.2,5.6"></TextBox>
+                        <TextBox Name="txtCommReserv" Text="{Binding commentaire}" TextWrapping="Wrap" AcceptsReturn="False" Margin="96,133,10.2,5.6"></TextBox>
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Client" BorderBrush="Black" Margin="10,390,10,33">
                     <Grid>
                         <Label Content="Prénom :" Margin="0,0,296,207.2"></Label>
-                        <TextBox Name="txtPrenCli" Height="20" Margin="61,5,111,210.2"></TextBox>
+                        <TextBox Name="txtPrenCli" Text="{Binding tblClient.prenClient}" Height="20" Margin="61,5,111,210.2"></TextBox>
                         <Label Content="Nom :" Margin="0,28,288,176.2"></Label>
-                        <TextBox Name="txtNomCli" Height="20" Margin="61,34,111,181.2"></TextBox>
+                        <TextBox Name="txtNomCli" Text="{Binding tblClient.nomClient}" Height="20" Margin="61,34,111,181.2"></TextBox>
                         <Label Content="NoTéléphone :" Margin="0,59,261,147.2"></Label>
-                        <TextBox Name="txtNoTelCli" Height="20" Margin="96,63,111,152.2"></TextBox>
+                        <TextBox Name="txtNoTelCli" Text="{Binding tblClient.noTelClient}" Height="20" Margin="96,63,111,152.2"></TextBox>
                         <Label Content="NoCellulaire :" Margin="0,88,265,116.2"></Label>
-                        <TextBox Name="txtNoCellCli" Height="20" Margin="87,94,111,121.2"></TextBox>
+                        <TextBox Name="txtNoCellCli" Text="{Binding tblClient.noCellClient}" Height="20" Margin="87,94,111,121.2"></TextBox>
                         <Label Content="Adresse :" Margin="0,119,259,81.2"></Label>
-                        <TextBox Name="txtAdrCli" Height="20" Margin="61,124,10,91.2"></TextBox>
+                        <TextBox Name="txtAdrCli" Text="{Binding tblClient.adrClient}" Height="20" Margin="61,124,10,91.2"></TextBox>
                         <Label Content="Commentaire :" Margin="0,154,264,52.2"></Label>
-                        <TextBox Name="txtCommCli" TextWrapping="Wrap" AcceptsReturn="False" Margin="88,159,10,0.2"></TextBox>
+                        <TextBox Name="txtCommCli" Text="{Binding tblClient.commentaire}" TextWrapping="Wrap" AcceptsReturn="False" Margin="88,159,10,0.2"></TextBox>
                         <Button Style="{StaticResource styleBouton}" Name="btnFicheCli" Content="Fiche du client" Height="25" Margin="246,5,10,205.2"></Button>
                     </Grid>
                 </GroupBox>

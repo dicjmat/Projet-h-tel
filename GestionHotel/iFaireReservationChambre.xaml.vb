@@ -19,6 +19,8 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
@@ -63,12 +65,6 @@
         btnReserv.IsEnabled = True
     End Sub
 
-    Private Sub dgReserv_SelectionChanged_1(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
-        Dim nocha As Int16
-        nocha = dgReserv.SelectedItem.noSalle
-        btnReserv.IsEnabled = True
-    End Sub
-
     Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click
         Dim check = New iCheck_in_out(bd, noEmpl, noHotel)
         check.Owner = Me
@@ -103,5 +99,16 @@
         Dim lst = New iListeClient
         lst.Owner = Me
         lst.Show()
+    End Sub
+
+    Private Sub window_FaireReserv_Activated(sender As Object, e As EventArgs) Handles window_FaireReserv.Activated
+        If dpDebut.Text <> "" And dpFin.Text <> "" Then
+            Dim datef As Date
+            Dim dated As Date
+
+            datef = dpFin.SelectedDate
+            dated = dpDebut.SelectedDate
+            dgReserv.ItemsSource = bd.determinerchambrelibre(dated, datef, noHotel).ToList
+        End If
     End Sub
 End Class

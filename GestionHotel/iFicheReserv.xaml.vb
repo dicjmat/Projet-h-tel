@@ -1,15 +1,28 @@
 ﻿Public Class iFicheReserv
-    Dim bd As P2014_Equipe2_GestionHôtelièreEntities
-    Dim noEmp As Integer
-    Dim noHotel As Integer
+    Private bd As P2014_Equipe2_GestionHôtelièreEntities
+    Private noEmp As Integer
+    Private noHotel As Integer
+    Private noReserv As Integer
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _noHotel As Integer)
         InitializeComponent()
         bd = maBD
         noEmp = _noEmp
         noHotel = _noHotel
-
     End Sub
+
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _noHotel As Integer, _noReserv As Integer)
+        InitializeComponent()
+        bd = _bd
+        noEmp = _noEmp
+        noHotel = _noHotel
+        noReserv = _noReserv
+
+        Dim res = From el In bd.tblReservation Where el.noReservation = noReserv Select el
+
+        window_FicheReserv.DataContext = res.ToList()
+    End Sub
+
     Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click
         Dim check = New iCheck_in_out(bd, noEmp, noHotel)
         check.Owner = Me

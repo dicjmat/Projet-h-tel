@@ -18,10 +18,12 @@ Partial Public Class tblSalle
     Public Property nbPlace As Nullable(Of Short)
     Public Property statutSalle As String
     Public Property codeTypeSalle As String
+    Public Property codeTypeLit As String
 
     Public Overridable Property tblChecklist As ICollection(Of tblChecklist) = New HashSet(Of tblChecklist)
     Public Overridable Property tblHotel As tblHotel
     Public Overridable Property tblReservation As ICollection(Of tblReservation) = New HashSet(Of tblReservation)
+    Public Overridable Property tblTypeLit As tblTypeLit
     Public Overridable Property tblTypeSalle As tblTypeSalle
 
 End Class

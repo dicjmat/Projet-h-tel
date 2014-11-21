@@ -10,13 +10,10 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblLogin
-    Public Property utilisateur As String
-    Public Property mdp As String
-    Public Property statut As String
-    Public Property premiereConnexion As Boolean
-    Public Property noEmpl As Short
+Partial Public Class tblTypeLit
+    Public Property codeTypeLit As String
+    Public Property descTypeLit As String
 
-    Public Overridable Property tblEmploye As tblEmploye
+    Public Overridable Property tblSalle As ICollection(Of tblSalle) = New HashSet(Of tblSalle)
 
 End Class
