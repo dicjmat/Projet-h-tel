@@ -9,7 +9,6 @@ Public Class iLogin
     Dim gestionPatr As iGestionCentrale
     Dim vente As iAccueilVente
     Dim recep As iFaireReservationChambre
-    Dim noEmp As Integer
     Dim noHotel As Integer
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click
         Me.Close()
@@ -45,6 +44,11 @@ Public Class iLogin
         txtMDP.Password = ""
         txtNomUtilisateur.Text = ""
         txtNomUtilisateur.Focus()
+        'If res.First.premiereConnexion Then
+        '    modifMdp = New iModifierMdp(maBD, noEmp)
+        '    modifMdp.Owner = Me
+        '    modifMdp.ShowDialog()
+        'End If
         Select Case typeEmploye
             Case "ADMI"
                 gerant = New iAccueilGerant(maBD, noEmploye, nHotel)
@@ -59,7 +63,7 @@ Public Class iLogin
                 gestion.Owner = Me
                 gestion.Show()
             Case "PATR"
-                gestionPatr = New iGestionCentrale(maBD, noEmp, noHotel)
+                gestionPatr = New iGestionCentrale(maBD, noEmploye, noHotel)
                 gestionPatr.Owner = Me
                 gestionPatr.Show()
             Case "VEND"

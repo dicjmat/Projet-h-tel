@@ -7,6 +7,15 @@
         noHotel = _noHotel
         bd = _bd
         noEmpl = _noEmpl
+        Dim res = From el In bd.tblLogin Where el.noEmpl = _noEmpl Select el
+
+        If res.First.statut = "PATR" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuVente.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        End If
     End Sub
     Private Sub windowListeSalle_Loaded(sender As Object, e As RoutedEventArgs) Handles windowListeSalle.Loaded
         Dim res = From el In bd.tblSalle Where el.noHotel = noHotel And el.codeTypeSalle = "REU" Select el

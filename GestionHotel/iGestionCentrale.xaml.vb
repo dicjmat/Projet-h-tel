@@ -5,7 +5,6 @@
     Dim noHotel As Integer
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _noHotel As Integer)
-        ' TODO: Complete member initialization 
         InitializeComponent()
         bd = maBD
         noEmp = _noEmp

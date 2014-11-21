@@ -16,7 +16,7 @@
                 <Label Content="Date début :" Margin="0,67,211,0" Height="27" VerticalAlignment="Top"></Label>
                 <Label Content="Date fin :" Margin="0,99,232,0" Height="32" VerticalAlignment="Top"></Label>
                 <Label Content="Code:" Margin="0,0,250,0" Height="27" VerticalAlignment="Top"></Label>
-                <TextBox Name="txtNomP" Height="25" Margin="45,32,92,0" VerticalAlignment="Top"></TextBox>
+                <TextBox Name="txtNomP" Height="25" Margin="45,32,42,0" VerticalAlignment="Top"></TextBox>
                 <DatePicker Name="dpDebut" Height="25" Margin="77,69,59,0" VerticalAlignment="Top"></DatePicker>
                 <DatePicker Name="dpFin" Height="25" Margin="66,99,59,0" VerticalAlignment="Top"></DatePicker>
                 <TextBox Name="txtCodeP" Height="25" Margin="45,2,143,0" VerticalAlignment="Top"></TextBox>
