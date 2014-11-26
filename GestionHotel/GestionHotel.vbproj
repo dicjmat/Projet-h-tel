@@ -114,6 +114,9 @@
     <Compile Include="iAjoutCliReserv.xaml.vb">
       <DependentUpon>iAjoutCliReserv.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iAjouterCommunique.xaml.vb">
+      <DependentUpon>iAjouterCommunique.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iAjoutForf.xaml.vb">
       <DependentUpon>iAjoutForf.xaml</DependentUpon>
     </Compile>
@@ -321,6 +324,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iAjoutCliReserv.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iAjouterCommunique.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
