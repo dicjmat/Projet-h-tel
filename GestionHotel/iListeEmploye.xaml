@@ -16,6 +16,7 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnFicheEmploye" Content="Fiche Employé" Height="25" Margin="27,34,305.6,576"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeCommande" Content="Liste de commande" Height="25" Margin="206,34,127.6,576"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutHoraire" Content="Ajouter un horaire" Height="25" Margin="27,64,305.6,546"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnCommuni" Content="Liste de communiqué" Height="25" Margin="206,64,127.6,546"></Button>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,107,-0.4,526"></Rectangle>
                 <Label Content="Recherche : " Margin="0,0,427.6,486" Height="36" VerticalAlignment="Bottom"></Label>
                 <TextBox Name="txtNoEmp" Margin="80,119,305.6,0" Height="20" Width="120" VerticalAlignment="Top"/>
