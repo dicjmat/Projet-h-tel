@@ -17,6 +17,7 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnFicheEmploye" Content="Fiche Employé" Height="25" Margin="9,18,324,403"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeCommande" Content="Liste de commande" Height="25" Margin="10,52,324,369"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeEmp" Content="Liste d'employé" Height="25" Margin="189,18,144,403"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnCommuni" Content="Liste de communiqué" Height="25" Margin="189,52,144,369"></Button>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,84,0,360"/>
                 <GroupBox BorderBrush="Black" Header="Employé" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Height="70" Width="498">
                     <StackPanel>

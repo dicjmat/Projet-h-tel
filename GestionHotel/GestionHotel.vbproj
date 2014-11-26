@@ -126,6 +126,9 @@
     <Compile Include="iCheck_in-out.xaml.vb">
       <DependentUpon>iCheck_in-out.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iCommunique.xaml.vb">
+      <DependentUpon>iCommunique.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iConsulterHoraire.xaml.vb">
       <DependentUpon>iConsulterHoraire.xaml</DependentUpon>
     </Compile>
@@ -366,6 +369,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iCommande.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iCommunique.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

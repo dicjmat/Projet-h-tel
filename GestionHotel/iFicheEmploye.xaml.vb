@@ -339,4 +339,10 @@ Public Class iFicheEmploye
         com.Owner = Me
         com.Show()
     End Sub
+
+    Private Sub btnCommuni_Click(sender As Object, e As RoutedEventArgs) Handles btnCommuni.Click
+        Dim lst = New iCommunique(numEmpl, hotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
 End Class
