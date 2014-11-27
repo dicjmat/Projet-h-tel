@@ -12,10 +12,13 @@
     <Grid>
         <DockPanel>
             <Menu DockPanel.Dock="Top">
-                <MenuItem Header="_File">
-                    <MenuItem Header="_Open"/>
-                    <MenuItem Header="_Close"/>
-                    <MenuItem Header="_Save"/>
+                <MenuItem Header="_Employé">
+                    <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click"/>
+                    <MenuItem Header="_Ajouter un horaire" Click="MenuItem_Click_1"/>
+                    <MenuItem Header="_Liste d'employé" Click="MenuItem_Click_2"/>
+                </MenuItem>
+                <MenuItem Header="_Commande">
+                    <MenuItem Header="_Liste de commande" Click="MenuItem_Click_3"></MenuItem>
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
@@ -23,10 +26,6 @@
         <Viewbox Stretch="Uniform">
             <Grid Width="624" Height="463">
                 <Label Content="Menu" Margin="0,0,583,434"></Label>
-                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmploye" Content="Fiche Employé" Height="25" Margin="27,34,0,0" HorizontalAlignment="Left" Width="153" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnListeCommande" Content="Liste de commande" Height="25" Margin="185,34,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="153"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjoutHoraire" Content="Ajouter un horaire" Height="25" Margin="27,64,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="153"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnLEmp" Content="Liste d'employé" Height="25" Margin="185,64,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="153"></Button>
                 <Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,107,0,0" Width="624" VerticalAlignment="Top"></Rectangle>
                 <Label Content="Rechercher : " Margin="0,114,543,323"></Label>
                 <TextBox Name="txtRecherche" Height="25" Margin="81,115,0,0" HorizontalAlignment="Left" Width="164" VerticalAlignment="Top"></TextBox>
