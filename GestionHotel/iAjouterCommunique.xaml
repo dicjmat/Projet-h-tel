@@ -15,12 +15,13 @@
             <GroupBox Header="Communiqué" BorderBrush="Black" Height="198">
                 <Grid>
                     <Label Content="Nom :" Margin="0,0,150,152"></Label>
-                    <TextBox Name="txtCodePays" Height="20" Margin="47,4,0,0" HorizontalAlignment="Left" Width="155" VerticalAlignment="Top"></TextBox>
+                    <TextBox Name="txtNomCommunique" Height="20" Margin="47,4,0,0" HorizontalAlignment="Left" Width="155" VerticalAlignment="Top"></TextBox>
                     <Label Content="Texte :" Margin="0,29,187.4,119"></Label>
-                    <TextBox Name="txtnomPays" Height="73" Margin="47,33,0,0" HorizontalAlignment="Left" Width="183" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+                    <TextBox Name="txtTexteCommunique" Height="73" Margin="47,33,0,0" HorizontalAlignment="Left" Width="183" VerticalAlignment="Top" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
                     <Button Style="{StaticResource styleBouton}" Name="btnAjouter" Height="25" Content="Ajouter" Margin="10,141,120.4,10"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnModifier" Height="25" Content="Modifier" Margin="10,141,120.4,10"></Button>
                     <Button Style="{StaticResource styleBouton}" Name="btnAnnuler" Height="25" Content="Annuler" Margin="120,141,10.4,10"></Button>
-                    <CheckBox Content="Actif" HorizontalAlignment="Left" Margin="25,114,0,0" VerticalAlignment="Top"/>
+                    <CheckBox Name="chkStatutCommunique" Content="Actif" HorizontalAlignment="Left" Margin="25,114,0,0" VerticalAlignment="Top"/>
                 </Grid>
             </GroupBox>
         </Viewbox>
