@@ -20,17 +20,17 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnFicheReservF" Content="Fiche Réservation Fact" Height="25" Width="125" Margin="158,81,138,459"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnListeCli" Content="Liste de client" Height="25" Width="125" Margin="27,51,269,489"></Button>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,111,0,452"></Rectangle>
-                <Label Content="No de facture :" Margin="11,120,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"></Label>
-                <TextBox Height="25" Name="txtNoFact" Margin="105,121,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135"></TextBox>
-                <DataGrid AutoGenerateColumns="False" Name="dgEleFacture" Margin="11,152,0,0" Height="166" VerticalAlignment="Top" HorizontalAlignment="Left" Width="379">
+                <Label Content="No de note :" Margin="11,120,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"></Label>
+                <TextBox Height="25" Name="txtNoFact" Text="{Binding noNote}" Margin="105,121,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135"></TextBox>
+                <DataGrid AutoGenerateColumns="False" Name="dgEleFacture" Margin="11,152,0,0" Height="166" VerticalAlignment="Top" HorizontalAlignment="Left" Width="379" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Description"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Montant"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Description" Binding="{Binding tblTypeElement.nomTypeElement}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Montant" Binding="{Binding montantElement}"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-                <DataGrid Name="dgDescFact" AutoGenerateColumns="False" Margin="11,329,0,0" Height="156" VerticalAlignment="Top" HorizontalAlignment="Left" Width="182">
+                <DataGrid Name="dgDescFact" AutoGenerateColumns="False" Margin="11,329,0,0" Height="156" VerticalAlignment="Top" HorizontalAlignment="Left" Width="182" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Description"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Description" Binding="{Binding nomTypeElement}"></DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
                 <Label Content="Montant :" Margin="11,486,0,0" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="62"></Label>

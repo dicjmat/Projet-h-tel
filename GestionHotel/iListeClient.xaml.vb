@@ -65,6 +65,7 @@
 
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
         Dim reserv As New tblReservation
+        reserv.tblSalle = (From el In bd.tblSalle Where noSalle = el.noSalle And noHotel = el.noHotel Select el).Single
         reserv.dateDebutSejour = dated
         reserv.dateFinSejour = datef
         reserv.dateReserv = DateValue(Now)

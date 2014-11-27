@@ -10,9 +10,6 @@
         bd = maBD
         noEmp = _noEmp
         noHotel = _noHotel
-        Dim res = From el In bd.tblReservation Where el.noHotel = noHotel Select el
-
-        dgReserv.ItemsSource = res.ToList()
     End Sub
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _noHotel As Integer, _noReservation As Integer)
@@ -63,16 +60,38 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Dim accueil = New iFaireReservationChambre(bd, noEmp, noHotel)
-        accueil.Owner = Me
-        accueil.Show()
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
     Private Sub dgReserv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
-        noReservation = dgFacture.SelectedItem.noReservation
+        noReservation = dgReserv.SelectedItem.noReservation
         Dim res = From el In bd.tblReservation Where el.noReservation = noReservation Select el
 
         window_FicheReservFacture.DataContext = res.ToList()
+
+        Dim note = (From el In bd.tblNote Where el.noReservation = noReservation Select el).Single
+        Dim elem = From el In bd.tblElementNote Where el.noNote = note.noNote Select el
+        dgFacture.ItemsSource = elem.ToList()
+        txtNoFact.Text = note.noNote.ToString()
+    End Sub
+
+    Private Sub window_FicheReservFacture_Loaded(sender As Object, e As RoutedEventArgs) Handles window_FicheReservFacture.Loaded
+        Dim today = Date.Now()
+        Dim res = From el In bd.tblReservation Join sa In bd.tblSalle On sa.noSalle Equals el.noSalle And sa.noHotel Equals el.noHotel Where el.noHotel = noHotel And sa.statutSalle = "Occuper" And el.dateDebutSejour <= today And el.dateFinSejour >= today Select el
+        dgReserv.ItemsSource = res.ToList()
+
+        Dim note = (From el In bd.tblNote Where el.noReservation = noReservation Select el).Single
+
+        Dim elem = From el In bd.tblElementNote Where el.noNote - note.noNote Select el
+        dgFacture.ItemsSource = elem.ToList()
+        txtNoFact.Text = note.noNote.ToString()
+    End Sub
+
+    Private Sub btnConsulter_Click(sender As Object, e As RoutedEventArgs) Handles btnConsulter.Click
+        Dim note = New iFacture(bd, noEmp, noHotel, noReservation)
+        note.Owner = Me
+        note.Show()
     End Sub
 End Class

@@ -99,17 +99,16 @@
         If dgArrive.SelectedItem IsNot Nothing Then
             Dim arrive = dgArrive.SelectedItem
             Dim fiche = New iFicheReservFacture(bd, noEmp, noHotel, arrive.noReservation)
-            'Dim note = New tblNote()
             arrive.tblSalle.statutSalle = "Occuper"
-            'note.noReservation = arrive.noReservation
-            'bd.tblNote.Add(note)
+            Dim note = New tblNote()
+            note.noReservation = arrive.noReservation
+            note.etatNote = "Actif"
+            bd.tblNote.Add(note)
             bd.SaveChanges()
             fiche.Owner = Me
             fiche.Show()
-            Me.Close()
         Else
             MessageBox.Show("Veuillez sélectionner une réservation", "Erreur", MessageBoxButton.OK, MessageBoxImage.Exclamation)
         End If
     End Sub
 End Class
-
