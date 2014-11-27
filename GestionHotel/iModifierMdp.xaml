@@ -25,7 +25,7 @@
                                 Entrez votre nouveau mot de passe :
                             </TextBlock>
                             <PasswordBox Name="txtMdp" Height="20" Margin="0,17,1,19" HorizontalAlignment="Right" Width="149" TabIndex="1"></PasswordBox>
-                            <Label x:Name="lblErreur" Content="" HorizontalAlignment="Center" Margin="9,90,10,-78" Foreground="Red" Width="247" RenderTransformOrigin="0.5,0.5"/>
+                            <Label x:Name="lblErreur" Content="" HorizontalAlignment="Center" Margin="-3,84,-1,-83" Foreground="Red" Width="270" RenderTransformOrigin="0.5,0.5"/>
                         </Grid>
                     </StackPanel>
                 </GroupBox>
