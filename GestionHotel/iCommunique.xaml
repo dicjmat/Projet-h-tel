@@ -10,6 +10,16 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open"/>
+                    <MenuItem Header="_Close"/>
+                    <MenuItem Header="_Save"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
         <Viewbox Stretch="Uniform">
             <Grid Width="624" Height="463">
                 <Label Content="Menu" Margin="0,0,583,434"></Label>
