@@ -60,9 +60,8 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Dim reserv = New iFaireReservationChambre(bd, noEmp, noHotel)
-        reserv.Owner = Me
-        reserv.Show()
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
 End Class

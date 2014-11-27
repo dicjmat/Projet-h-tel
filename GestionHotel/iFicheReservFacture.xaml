@@ -25,11 +25,11 @@
                         <Label Content="NoRéservation :" Margin="0,0,257.2,184.6"></Label>
                         <TextBox Name="txtNoReserv" Text="{Binding noReservation}" Height="20" Margin="99,5,118.2,184.6"></TextBox>
                         <Label Content="Date de début :" Margin="0,64,255.2,113.6"></Label>
-                        <TextBox Name="txtDateDebut" Text="{Binding dateDebutSejour}" Height="20" Margin="96,69,118.2,120.6"></TextBox>
+                        <TextBox Name="txtDateDebut" Text="{Binding dateDebutSejour, StringFormat= yyyy-MM-dd}" Height="20" Margin="96,69,118.2,120.6"></TextBox>
                         <Label Content="Date de fin :" Margin="0,96,246.2,89.6"></Label>
-                        <TextBox Name="txtDateFin" Text="{Binding dateFinSejour}" Height="20" Margin="96,100,118.2,89.6"></TextBox>
+                        <TextBox Name="txtDateFin" Text="{Binding dateFinSejour, StringFormat= yyyy-MM-dd}" Height="20" Margin="96,100,118.2,89.6"></TextBox>
                         <Label Content="Date de réservation :" Margin="0,32,229.2,145.6"></Label>
-                        <TextBox Name="txtDatereserv" Text="{Binding dateReserv}" Height="20" Margin="122,36,118.2,153.6"></TextBox>
+                        <TextBox Name="txtDatereserv" Text="{Binding dateReserv, StringFormat= yyyy-MM-dd}" Height="20" Margin="122,36,118.2,153.6"></TextBox>
                         <Label Content="Commentaire :" Margin="0,128,227.2,52.6"></Label>
                         <TextBox Name="txtCommReserv" Text="{Binding commentaire}" TextWrapping="Wrap" AcceptsReturn="False" Margin="96,133,10.2,5.6"></TextBox>
                     </Grid>
@@ -51,19 +51,21 @@
                         <Button Style="{StaticResource styleBouton}" Name="btnFicheCli" Content="Fiche du client" Height="25" Margin="246,5,10,205.2"></Button>
                     </Grid>
                 </GroupBox>
-                <GroupBox Header="Facture" BorderBrush="Black" Margin="379,125,10,250">
+                <GroupBox Header="Note" BorderBrush="Black" Margin="379,125,10,217">
                     <Grid>
-                        <DataGrid Name="dgFacture" AutoGenerateColumns="False" Margin="0,0,-0.2,30.8">
+                        <DataGrid Name="dgFacture" AutoGenerateColumns="False" Margin="0,31,0.2,30.4" CanUserAddRows="False" IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Description" Binding="{Binding tblTypeElement.nomTypeElement}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Prix" Binding="{Binding montantElement}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Date" Binding="{Binding dateAjoutElem}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Date" Binding="{Binding dateAjoutElem, StringFormat= yyyy-MM-dd}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Style="{StaticResource styleBouton}" Name="btnConsulter" Content="Consulter" Height="25" Margin="219,271,10.2,0.8"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnConsulter" Content="Consulter" Height="25" Margin="219,305,10.2,0.4"></Button>
+                        <Label Content="No Note :" Margin="-2,2,210.2,301.4"/>
+                        <TextBox x:Name="txtNoFact" Text="{Binding noNote}" Margin="67,5,167.2,304.4"/>
                     </Grid>
                 </GroupBox>
-                <DataGrid Name="dgReserv" AutoGenerateColumns="False" Margin="379,458,10,90" CanUserAddRows="False">
+                <DataGrid Name="dgReserv" AutoGenerateColumns="False" Margin="379,482,10,66" CanUserAddRows="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="No de chambre" Binding="{Binding noSalle}"></DataGridTextColumn>
                         <DataGridTextColumn Header="Nom" Binding="{Binding tblClient.nomClient}"></DataGridTextColumn>

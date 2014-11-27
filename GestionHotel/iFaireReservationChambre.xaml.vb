@@ -25,9 +25,13 @@
     End Sub
 
     Private Sub btnReserv_Click(sender As Object, e As RoutedEventArgs) Handles btnReserv.Click
-        listClient = New iListeClient(bd, noEmpl, noHotel, dpDebut.SelectedDate, dpFin.SelectedDate, dgReserv.SelectedItem.noSalle)
-        listClient.Owner = Me
-        listClient.Show()
+        If dgReserv.SelectedItem IsNot Nothing Then
+            listClient = New iListeClient(bd, noEmpl, noHotel, dpDebut.SelectedDate, dpFin.SelectedDate, dgReserv.SelectedItem.noSalle)
+            listClient.Owner = Me
+            listClient.Show()
+        Else
+            MessageBox.Show("Veuillez sélectionner une chambre", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+        End If
     End Sub
     Private Sub dpFin_SelectedDateChanged(sender As Object, e As SelectionChangedEventArgs) Handles dpFin.SelectedDateChanged
         If dpDebut.SelectedDate IsNot Nothing Then
