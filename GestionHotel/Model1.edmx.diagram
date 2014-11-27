@@ -4,41 +4,41 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5a28f2228d0145319ba22498fe3ac81f" Name="Diagram1">
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblBris" Width="1.5" PointX="17.25" PointY="18.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblCatalogue" Width="1.5" PointX="18" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblChecklist" Width="1.5" PointX="15" PointY="20.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblCommande" Width="1.5" PointX="18" PointY="22.875" IsExpanded="true" />
+      <Diagram DiagramId="c9a50f3f5b814d5eb52bdee89b123c21" Name="Diagram1">
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblBris" Width="1.5" PointX="17.25" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblCatalogue" Width="1.5" PointX="18" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblChecklist" Width="1.5" PointX="15" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblCommande" Width="1.5" PointX="18" PointY="23" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblFournisseur" Width="1.5" PointX="15.75" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblGabarit" Width="1.5" PointX="12.75" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblHotel" Width="1.5" PointX="7.5" PointY="21.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblInventaire" Width="1.5" PointX="9.75" PointY="22.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblItem" Width="1.5" PointX="7.5" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblGabarit" Width="1.5" PointX="12.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblHotel" Width="1.5" PointX="7.5" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblInventaire" Width="1.5" PointX="9.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblItem" Width="1.5" PointX="7.5" PointY="17.5" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblLigneCommande" Width="1.5" PointX="20.25" PointY="23.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblPays" Width="1.5" PointX="0.75" PointY="24.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblProvince" Width="1.5" PointX="3" PointY="24.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblVille" Width="1.5" PointX="5.25" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblPays" Width="1.5" PointX="0.75" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblProvince" Width="1.5" PointX="3" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblVille" Width="1.5" PointX="5.25" PointY="24.5" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblCommunique" Width="1.5" PointX="9.75" PointY="25.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblEmploye" Width="1.5" PointX="12.75" PointY="21.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblHoraire" Width="1.5" PointX="15" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblEmploye" Width="1.5" PointX="12.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblHoraire" Width="1.5" PointX="15" PointY="29.375" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblLogin" Width="1.5" PointX="15" PointY="32" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblProfession" Width="1.5" PointX="10.5" PointY="37.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblClient" Width="1.5" PointX="12.75" PointY="28.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblCompagnie" Width="1.5" PointX="7.5" PointY="31.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblCompte" Width="1.5" PointX="15" PointY="25.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblElementNote" Width="1.5" PointX="22.5" PointY="27.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblFacture" Width="1.5" PointX="18" PointY="35" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblProfession" Width="1.5" PointX="10.5" PointY="37.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblClient" Width="1.5" PointX="12.75" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblCompagnie" Width="1.5" PointX="7.5" PointY="31.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblCompte" Width="1.5" PointX="15" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblElementNote" Width="1.5" PointX="22.5" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblFacture" Width="1.5" PointX="18" PointY="35.125" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblForfait" Width="1.5" PointX="9.75" PointY="18.375" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblNote" Width="1.5" PointX="20.25" PointY="27.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblPeriode" Width="1.5" PointX="15.75" PointY="35.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblPeriodeTypeSalle" Width="1.5" PointX="18" PointY="31.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblRabais" Width="1.5" PointX="12" PointY="34.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblReservation" Width="1.5" PointX="18" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblPeriode" Width="1.5" PointX="15.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblPeriodeTypeSalle" Width="1.5" PointX="18" PointY="31.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblRabais" Width="1.5" PointX="12" PointY="34.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblReservation" Width="1.5" PointX="18" PointY="27.125" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblSalle" Width="1.5" PointX="12.75" PointY="17" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblTypeElement" Width="1.5" PointX="20.25" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblTypeElement" Width="1.5" PointX="20.25" PointY="31.25" IsExpanded="true" />
         <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblTypeLit" Width="1.5" PointX="10.5" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblTypeSalle" Width="1.5" PointX="10.5" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblTypeSalleHotel" Width="1.5" PointX="9.75" PointY="28.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblTypeSalle" Width="1.5" PointX="10.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="P2014_Equipe2_GestionHôtelièreV2Model.tblTypeSalleHotel" Width="1.5" PointX="9.75" PointY="28.625" IsExpanded="true" />
         <AssociationConnector Association="P2014_Equipe2_GestionHôtelièreV2Model.fk_bris_datesalle" ManuallyRouted="false" />
         <AssociationConnector Association="P2014_Equipe2_GestionHôtelièreV2Model.fk_cat_codeitem" ManuallyRouted="false" />
         <AssociationConnector Association="P2014_Equipe2_GestionHôtelièreV2Model.fk_cat_nofour" ManuallyRouted="false" />

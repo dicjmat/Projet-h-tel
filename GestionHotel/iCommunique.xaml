@@ -1,0 +1,38 @@
+﻿<Window x:Class="iCommunique"  WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" WindowStyle="None" Icon="icon.ico"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="iCommunique" Height="224.8" Width="300" Activated="Window_Activated">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Viewbox Stretch="Uniform">
+            <Grid Width="624" Height="463">
+                <Label Content="Menu" Margin="0,0,583,434"></Label>
+                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmploye" Content="Fiche Employé" Height="25" Margin="27,34,0,0" HorizontalAlignment="Left" Width="153" VerticalAlignment="Top"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnListeCommande" Content="Liste de commande" Height="25" Margin="185,34,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="153"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutHoraire" Content="Ajouter un horaire" Height="25" Margin="27,64,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="153"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnLEmp" Content="Liste d'employé" Height="25" Margin="185,64,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="153"></Button>
+                <Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,107,0,0" Width="624" VerticalAlignment="Top"></Rectangle>
+                <Label Content="Rechercher : " Margin="0,114,543,323"></Label>
+                <TextBox Name="txtRecherche" Height="25" Margin="81,115,0,0" HorizontalAlignment="Left" Width="164" VerticalAlignment="Top"></TextBox>
+                <DataGrid Name="dgCommuni" Margin="10,148,0,0" Height="268" VerticalAlignment="Top" HorizontalAlignment="Left" Width="328" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Titre du communiqué" Binding="{Binding titreCommunique}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="État" Binding="{Binding etatCommunique}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Label Content="Communiqué" Margin="343,140,196,291"></Label>
+                <TextBox Name="txtCommuni" IsEnabled="False" TextWrapping="Wrap" AcceptsReturn="True" Margin="343,177,0,0" Height="239" VerticalAlignment="Top" HorizontalAlignment="Left" Width="271"></TextBox>
+                <Button Name="btnAjouterCommuni" Style="{StaticResource styleBouton}" Height="25" Content="Ajouter un communiqué" Margin="19,430,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="152"></Button>
+                <Button Name="btnModifierCommuni" Style="{StaticResource styleBouton}" Height="25" Content="Modifier un communiqué" Margin="176,430,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="152"></Button>
+                <Button Name="btnSupprimerCommuni" Style="{StaticResource styleBouton}" Height="25" Content="Supprimer un communiqué" Margin="333,430,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="152"></Button>
+                <Button Name="btnAccueil" Style="{StaticResource styleBouton}" Height="25" Content="Accueil" Margin="490,430,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="124"></Button>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Window>

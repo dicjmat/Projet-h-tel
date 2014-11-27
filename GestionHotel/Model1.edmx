@@ -148,6 +148,7 @@
           <Property Name="titreCommunique" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="contCommunique" Type="text" Nullable="false" />
           <Property Name="noHotel" Type="tinyint" Nullable="false" />
+          <Property Name="etatCommunique" Type="varchar" MaxLength="7" />
         </EntityType>
         <EntityType Name="tblEmploye">
           <Key>
@@ -1356,6 +1357,7 @@
           <Property Name="titreCommunique" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="contCommunique" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noHotel" Type="Byte" Nullable="false" />
+          <Property Name="etatCommunique" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblHotel" Relationship="Self.fk_com_nohot" FromRole="tblCommunique" ToRole="tblHotel" />
         </EntityType>
         <EntityType Name="tblEmploye">
@@ -2563,6 +2565,7 @@
                 <ScalarProperty Name="titreCommunique" ColumnName="titreCommunique" />
                 <ScalarProperty Name="contCommunique" ColumnName="contCommunique" />
                 <ScalarProperty Name="noHotel" ColumnName="noHotel" />
+                <ScalarProperty Name="etatCommunique" ColumnName="etatCommunique" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

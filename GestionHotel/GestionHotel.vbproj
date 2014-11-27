@@ -114,6 +114,9 @@
     <Compile Include="iAjoutCliReserv.xaml.vb">
       <DependentUpon>iAjoutCliReserv.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iAjouterCommunique.xaml.vb">
+      <DependentUpon>iAjouterCommunique.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iAjoutForf.xaml.vb">
       <DependentUpon>iAjoutForf.xaml</DependentUpon>
     </Compile>
@@ -125,6 +128,9 @@
     </Compile>
     <Compile Include="iCheck_in-out.xaml.vb">
       <DependentUpon>iCheck_in-out.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iCommunique.xaml.vb">
+      <DependentUpon>iCommunique.xaml</DependentUpon>
     </Compile>
     <Compile Include="iConsulterHoraire.xaml.vb">
       <DependentUpon>iConsulterHoraire.xaml</DependentUpon>
@@ -324,6 +330,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="iAjouterCommunique.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iAjouterHoraire.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -366,6 +376,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iCommande.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iCommunique.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

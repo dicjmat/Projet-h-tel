@@ -31,24 +31,24 @@ Public Class iLogin
         If Not My.Computer.Network.IsAvailable Then
             lblErreur.Content = "Erreur de connexion"
             Exit Sub
-        ElseIf res.ToList().Count = 0 Then
+        ElseIf res.ToList().Count = 0 OrElse res.First.mdp <> txtMDP.Password Then
             lblErreur.Content = "Nom d'utilisateur ou mot de passe invalide"
             Exit Sub
         End If
+        Dim changeMdp = res.First.premiereConnexion
         typeEmploye = res.First.statut
         noEmploye = res.First.noEmpl
         Dim hotel = From el In maBD.tblEmploye Where el.noEmpl = noEmploye Select el.noHotel
-
         nHotel = hotel.First()
         lblErreur.Content = ""
         txtMDP.Password = ""
         txtNomUtilisateur.Text = ""
         txtNomUtilisateur.Focus()
-        'If res.First.premiereConnexion Then
-        '    modifMdp = New iModifierMdp(maBD, noEmp)
-        '    modifMdp.Owner = Me
-        '    modifMdp.ShowDialog()
-        'End If
+        If changeMdp Then
+            Dim modifMdp = New iModifierMdp(maBD, noEmploye)
+            modifMdp.Owner = Me
+            modifMdp.ShowDialog()
+        End If
         Select Case typeEmploye
             Case "ADMI"
                 gerant = New iAccueilGerant(maBD, noEmploye, nHotel)

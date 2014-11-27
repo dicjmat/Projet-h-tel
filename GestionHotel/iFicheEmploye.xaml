@@ -15,23 +15,24 @@
             <Grid Height="422" Width="679">
                 <Label Content="Menu" Margin="0,-1,637,396"></Label>
                 <Canvas Name="menu">
-                <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="10,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,103,0,0" HorizontalAlignment="Left" Width="160" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="177,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnGSalle" Content="Gestion salle" Height="25" Margin="177,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="177,103,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="344,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="344,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLCentrale" Content="Liste centrale" Height="25" Margin="344,103,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="511,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="511,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLSalle" Content="Liste de salle" Height="25" Margin="511,103,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnCommuni" Content="Liste de communiqué" Height="25" Canvas.Left="177" Canvas.Top="26" Width="160"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="10,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                    <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                    <Button Style="{StaticResource styleBouton}" Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,103,0,0" HorizontalAlignment="Left" Width="160" VerticalAlignment="Top"/>
+                    <Button Style="{StaticResource styleBouton}" Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="177,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnGSalle" Content="Gestion salle" Height="25" Margin="177,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="177,103,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="344,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="344,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnLCentrale" Content="Liste centrale" Height="25" Margin="344,103,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="511,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="511,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
+                    <Button Style="{StaticResource styleBouton}" Name="btnLSalle" Content="Liste de salle" Height="25" Margin="511,103,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
                 </Canvas>
                 <Canvas Name="menuGest">
-                <Button Style="{StaticResource styleBouton}" Name="btnAhoutHoraireGest" Content="Ajouter un horaire" Height="25" Margin="10,103,0,0" HorizontalAlignment="Left" Width="160" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnListeCommandeGest" Content="Liste de commande" Height="25" Margin="10,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnListeEmpGest" Content="Liste d'employé" Height="25" Margin="10,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                    <Button Style="{StaticResource styleBouton}" Name="btnAhoutHoraireGest" Content="Ajouter un horaire" Height="25" Margin="10,103,0,0" HorizontalAlignment="Left" Width="160" VerticalAlignment="Top"/>
+                    <Button Style="{StaticResource styleBouton}" Name="btnListeCommandeGest" Content="Liste de commande" Height="25" Margin="10,67,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
+                    <Button Style="{StaticResource styleBouton}" Name="btnListeEmpGest" Content="Liste d'employé" Height="25" Margin="10,26,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
                 </Canvas>
                 <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,133,0,287"></Rectangle>
                 <Label Content="* = non-obligatoire" Margin="292,146,264,248"></Label>
