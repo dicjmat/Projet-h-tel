@@ -11,17 +11,11 @@ Public Class iFicheEmploye
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
-        Dim res = From el In bd.tblLogin Where el.noEmpl = numEmpl Select el
+
         btnModifier.Visibility = Windows.Visibility.Visible
         btnAjouterItem.Visibility = Windows.Visibility.Hidden
 
-        If res.First.statut = "PATR" Then
-            menu.Visibility = Windows.Visibility.Hidden
-            menu.IsEnabled = False
-        Else
-            menuGest.Visibility = Windows.Visibility.Hidden
-            menu.IsEnabled = False
-        End If
+        
         txtNASEmp.IsEnabled = False
     End Sub
 
@@ -42,6 +36,18 @@ Public Class iFicheEmploye
         cmbPays.ItemsSource = pays.ToList()
         cmbNoHot.ItemsSource = hotel.ToList()
         cmbCdProf.ItemsSource = profession.ToList()
+
+        Dim ress = From el In bd.tblLogin Where el.noEmpl = numEmpl Select el
+
+        If ress.First.statut = "PATR" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGest.Visibility = Windows.Visibility.Hidden
+            menuGest.IsEnabled = False
+        End If
+
+
         If numEmpl <> 0 Then
             Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
             Me.DataContext = res.ToList()
