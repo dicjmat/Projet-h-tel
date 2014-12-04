@@ -1,7 +1,7 @@
 ﻿<Window x:Class="iAccueilGestionnaire" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" Name="windowAGest" AllowsTransparency="True" WindowStyle="None" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Gestion Hotel" Height="661.588" Width="698.6" Loaded="Window_Loaded">
+    Title="Gestion Hotel" Height="1193.628" Width="698.6" Loaded="Window_Loaded">
     <Window.Resources>
         <Style x:Key="styleBouton" TargetType="Button">
             <Setter Property="Background" Value="WhiteSmoke"></Setter>
@@ -11,12 +11,12 @@
     </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="261" Width="236">
+            <Grid Height="397" Width="236">
                 <Border BorderThickness="2" BorderBrush="Black" Height="59" VerticalAlignment="Top" Margin="0,26,0,0">
-                    <TextBlock MouseLeftButtonDown="AppuieItem" Margin="-0.8,-0.8,-1.6,-0.6" Background="WhiteSmoke">                 
-                    Liste d'item <LineBreak/>
-                    - Ajouter/Modifier/Supprimer un Item<LineBreak/>
-                    - Faire une commande
+                    <TextBlock MouseLeftButtonDown="AppuieCommunique" Margin="-0.8,-0.8,-1.6,-0.6" Background="WhiteSmoke">                 
+                    Liste de communiqué <LineBreak/>
+                    - Ajouter/Modifier un communiqué<LineBreak/>
+                    - Supprimer un communiqué <LineBreak/>
                     </TextBlock>
                 </Border>
                 <Border BorderThickness="1" BorderBrush="Black" Height="59" VerticalAlignment="Top" Margin="0,90,0,0">
@@ -25,16 +25,29 @@
                         - Ajouter/Supprimer des commandes
                     </TextBlock>
                 </Border>
-                <Border BorderThickness="1" BorderBrush="Black" Height="59" Margin="0,154,0,48">
-                    <TextBlock MouseLeftButtonDown="AppuieEmploye" Background="WhiteSmoke">
+                <Border BorderThickness="1" BorderBrush="Black" Height="59" Margin="0,218,0,120">
+                    <TextBlock MouseLeftButtonDown="AppuieLEmploye" Background="WhiteSmoke">
                         Liste d'employé<LineBreak/>
                         - Ajouter/Modifier des employés <LineBreak/>
                         - Faire les horaires
                     </TextBlock>
                 </Border>
+                <Border BorderThickness="2" BorderBrush="Black" Height="59" VerticalAlignment="Top" Margin="0,154,0,0">
+                    <TextBlock MouseLeftButtonDown="AppuieHoraire" Margin="-0.8,-0.8,-1.6,-0.6" Background="WhiteSmoke">                 
+                    Ajouter un horaire <LineBreak/>
+                    - Ajouter/Modifier un horaire<LineBreak/>
+                    - Supprimer un horaire <LineBreak/>
+                    </TextBlock>
+                </Border>
+                <Border BorderThickness="2" BorderBrush="Black" Height="59" VerticalAlignment="Top" Margin="0,282,0,0">
+                    <TextBlock MouseLeftButtonDown="AppuieEmp" Margin="-0.8,-0.8,-1.6,-0.6" Background="WhiteSmoke">                 
+                    Fiche d'employé <LineBreak/>
+                    - Modifier un employé<LineBreak/>
+                    </TextBlock>
+                </Border>
                 <Label Content="Accueil" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
-                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Label Name="lblNom" Content="" HorizontalAlignment="Left" Margin="0,225,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.182,1.764"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,29" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Label Name="lblNom" Content="" HorizontalAlignment="Left" Margin="10,346,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.182,1.764"/>
             </Grid>
         </Viewbox>
     </Grid>
