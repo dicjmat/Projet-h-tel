@@ -20,6 +20,9 @@
                 <MenuItem Header="_Commande"  BorderThickness="2" BorderBrush="Black">
                     <MenuItem Header="_Liste de commande" Click="MenuItem_Click_3"></MenuItem>
                 </MenuItem>
+                <MenuItem Header="_Communiqué" BorderBrush="Black" BorderThickness="2">
+                    <MenuItem Header="_Liste de communiqué" Click="MenuItem_Click_4"></MenuItem>
+                </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
         </DockPanel><Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,75,0,0" Width="2000" VerticalAlignment="Top">

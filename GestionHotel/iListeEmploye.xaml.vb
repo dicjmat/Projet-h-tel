@@ -96,6 +96,7 @@
         Dim horaire = New iAjouterHoraire(_noEmpl, _noHotel, maBd)
         horaire.Owner = Me
         horaire.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)

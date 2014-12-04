@@ -99,4 +99,10 @@
         com.Owner = Me
         com.Show()
     End Sub
+
+    Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
+        Dim com = New iCommunique(_noEmpl, _noHotel, maBd)
+        com.Owner = Me
+        com.Show()
+    End Sub
 End Class
