@@ -106,41 +106,6 @@
                   Select el
         dgClient.ItemsSource = res.ToList()
     End Sub
-    Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click
-        Dim check = New iCheck_in_out(bd, noEmpl, noHotel)
-        check.Owner = Me
-        check.Show()
-    End Sub
-
-    Private Sub btnReservC_Click(sender As Object, e As RoutedEventArgs) Handles btnReservC.Click
-        Dim reserv = New iFaireReservationChambre(bd, noEmpl, noHotel)
-        reserv.Owner = Me
-        reserv.Show()
-    End Sub
-
-    Private Sub btnFact_Click(sender As Object, e As RoutedEventArgs) Handles btnFact.Click
-        Dim facture = New iFacture(bd, noEmpl, noHotel)
-        facture.Owner = Me
-        facture.Show()
-    End Sub
-
-    Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheC.Click
-        Dim ajout = New iAjoutCliReserv(noEmpl, noHotel, bd)
-        ajout.Owner = Me
-        ajout.Show()
-    End Sub
-
-    Private Sub btnFicheReservF_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReservF.Click
-        Dim ficheRF = New iFicheReservFacture(bd, noEmpl, noHotel)
-        ficheRF.Owner = Me
-        ficheRF.Show()
-    End Sub
-
-    Private Sub btnFichereserv_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheReserv.Click
-        Dim ficheR = New iFicheReserv(bd, noEmpl, noHotel)
-        ficheR.Owner = Me
-        ficheR.Show()
-    End Sub
 
     Private Sub btnLierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnLierClient.Click
         dgClient.SelectedItem.noCompagnie = cbCompagnie.SelectedItem.noCompagnie
@@ -149,5 +114,46 @@
 
     Private Sub cbCompagnie_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbCompagnie.SelectionChanged
         btnLierClient.IsEnabled = True
+    End Sub
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim check = New iCheck_in_out(bd, noEmpl, noHotel)
+        check.Owner = Me
+        check.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
+        Dim facture = New iFacture(bd, noEmpl, noHotel)
+        facture.Owner = Me
+        facture.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeClient
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
+        Dim reserv = New iFaireReservationChambre(bd, noEmpl, noHotel)
+        reserv.Owner = Me
+        reserv.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
+        Dim ficheR = New iFicheReserv(bd, noEmpl, noHotel)
+        ficheR.Owner = Me
+        ficheR.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
+        Dim ficheRF = New iFicheReservFacture(bd, noEmpl, noHotel)
+        ficheRF.Owner = Me
+        ficheRF.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
+        Dim Cli = New iAjoutCliReserv(noEmpl, noHotel, bd)
+        Cli.Owner = Me
+        Cli.Show()
     End Sub
 End Class

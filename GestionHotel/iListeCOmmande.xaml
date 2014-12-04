@@ -10,14 +10,26 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,25,-4.4,0">
+                <MenuItem Header="_Employé"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click"/>
+                    <MenuItem Header="_Liste d'employé" Click="MenuItem_Click_1"/>
+                    <MenuItem Header="_Ajouter un horaire" Click="MenuItem_Click_2"/>
+                </MenuItem>
+                <MenuItem Header="_Commande"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Liste de commande" Click="MenuItem_Click_3"/>
+                </MenuItem>
+                <MenuItem Header="_Communiqué" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Liste de communiqué" Click="MenuItem_Click_4"/>
+                </MenuItem>
+                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,0,0,0" Width="2000"></Rectangle>
+            </Menu>
+            <StackPanel></StackPanel>
+            
+        </DockPanel>
         <Viewbox Stretch="Uniform">
             <Grid Height="638" Width="873">
-                <Label Content="Menu"></Label>
-                        <Button Style="{StaticResource styleBouton}" Name="btnFicheEmploye" Content="Fiche Employé" Height="25" Margin="10,30,674,583"/>
-                        <Button Style="{StaticResource styleBouton}" Name="btnAjoutHoraire" Content="Ajouter un horaire" Height="25" Margin="204,30,480,583"/>
-                        <Button Style="{StaticResource styleBouton}" Name="btnListeEmp" Content="Liste d'employé" Height="25" Margin="398,30,286,583"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnCommuni" Content="Liste de communiqué" Height="25" Margin="592,30,92,583"></Button>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,66,0,570"></Rectangle>
                 <Label Content="Rechercher :" Margin="50,86,741,524"/>
                 <TextBox Name="txtRComm" Height="20" Margin="137,89,616,529" Width="120"></TextBox>
                 <GroupBox Header="Liste de commande" Margin="0,114,336,33">
