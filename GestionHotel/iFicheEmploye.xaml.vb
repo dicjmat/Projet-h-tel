@@ -23,7 +23,7 @@ Public Class iFicheEmploye
             menuGest.Visibility = Windows.Visibility.Hidden
             menuGest.IsEnabled = False
         End If
-        
+
         txtNASEmp.IsEnabled = False
     End Sub
 
@@ -57,7 +57,7 @@ Public Class iFicheEmploye
 
         Dim ress = From el In bd.tblLogin Where el.noEmpl = numEmpl Select el
 
-        If ress.First.statut = "PATR" Then
+        If ress.First.statut = "GEST" Then
             menu.Visibility = Windows.Visibility.Hidden
             menu.IsEnabled = False
         Else
@@ -67,9 +67,9 @@ Public Class iFicheEmploye
 
 
         If numEmpl <> 0 Then
-            Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
+    Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
             Me.DataContext = res.ToList()
-            Dim i = 0
+    Dim i = 0
             For Each el In cmbPays.Items
                 If el.codePays = res.First.tblVille.tblProvince.codePays Then
                     cmbPays.SelectedIndex = i
