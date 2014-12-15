@@ -130,25 +130,31 @@
         cmbHeureFinM.SelectedIndex = cmbHeureDebutM.SelectedIndex
     End Sub
 
-    Private Sub btnFicheEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmploye.Click
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim fiche = New iFicheEmploye(bd)
         fiche.Owner = Me
         fiche.Show()
     End Sub
 
-    Private Sub btnListeEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnListeEmp.Click
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeEmploye(noGest, hotel, bd)
         lst.Owner = Me
         lst.Show()
     End Sub
 
-    Private Sub btnListeCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnListeCommande.Click
+    Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
+        Dim horaire = New iAjouterHoraire(numEmpl, hotel, bd)
+        horaire.Owner = Me
+        horaire.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeCOmmande(noGest, hotel, bd)
         lst.Owner = Me
         lst.Show()
     End Sub
 
-    Private Sub btnCommuni_Click(sender As Object, e As RoutedEventArgs) Handles btnCommuni.Click
+    Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
         Dim lst = New iCommunique(numEmpl, hotel, bd)
         lst.Owner = Me
         lst.Show()

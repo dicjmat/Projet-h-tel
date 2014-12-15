@@ -23,12 +23,6 @@
         lblNom.Content = "Bonjour, " + res.ToList.Single.prenEmpl + " " + res.ToList.Single.nomEmpl
     End Sub
 
-    Private Sub AppuieItem()
-        Dim inventaire = New iInventaire(noEmpl, noHotel, maBd)
-        inventaire.Owner = Me
-        inventaire.Show()
-    End Sub
-
     Private Sub AppuieCommande()
         Dim lstcommande = New iListeCOmmande(noEmpl, noHotel, maBd)
         lstcommande.Owner = Me
@@ -36,10 +30,28 @@
         lstcommande.Show()
     End Sub
 
-    Private Sub AppuieEmploye()
+    Private Sub AppuieLEmploye()
         Dim iEmploye = New iListeEmploye(noEmpl, noHotel, maBd)
         iEmploye.Owner = Me
         iEmploye.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub AppuieCommunique()
+        Dim com = New iCommunique(noEmpl, noHotel, maBd)
+        com.Owner = Me
+        com.Show()
+    End Sub
+
+    Private Sub AppuieEmp()
+        Dim emp = New iFicheEmploye(maBd)
+        emp.Owner = Me
+        emp.Show()
+    End Sub
+
+    Private Sub AppuieHoraire()
+        Dim ho = New iAjouterHoraire(noEmpl, noHotel, maBd)
+        ho.Owner = Me
+        ho.Show()
     End Sub
 End Class

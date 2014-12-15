@@ -11,30 +11,6 @@
         maBd = _maBd
     End Sub
 
-    Private Sub btnFicheEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmploye.Click
-        Dim fiche = New iFicheEmploye(maBd)
-        fiche.Owner = Me
-        fiche.Show()
-    End Sub
-
-    Private Sub btnListeCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnListeCommande.Click
-        Dim com = New iListeCOmmande(_noEmpl, _noHotel, maBd)
-        com.Owner = Me
-        com.Show()
-    End Sub
-
-    Private Sub btnAjoutHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutHoraire.Click
-        Dim horaire = New iAjouterHoraire(_noEmpl, _noHotel, maBd)
-        horaire.Owner = Me
-        horaire.Show()
-    End Sub
-
-    Private Sub btnLEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmp.Click
-        Dim lst = New iListeEmploye(_noEmpl, _noHotel, maBd)
-        lst.Owner = Me
-        lst.Show()
-    End Sub
-
     Private Sub txtRecherche_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRecherche.TextChanged
         requete()
     End Sub
@@ -98,5 +74,35 @@
             MessageBox.Show("Veuillez choisir le communiqué que vous désirez modifier")
         End If
 
+    End Sub
+
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim fiche = New iFicheEmploye(maBd)
+        fiche.Owner = Me
+        fiche.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
+        Dim horaire = New iAjouterHoraire(_noEmpl, _noHotel, maBd)
+        horaire.Owner = Me
+        horaire.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeEmploye(_noEmpl, _noHotel, maBd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
+        Dim com = New iListeCOmmande(_noEmpl, _noHotel, maBd)
+        com.Owner = Me
+        com.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
+        Dim com = New iCommunique(_noEmpl, _noHotel, maBd)
+        com.Owner = Me
+        com.Show()
     End Sub
 End Class

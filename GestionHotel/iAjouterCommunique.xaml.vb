@@ -17,7 +17,7 @@
         _noHotel = noHotel
         noCommu = p3
         btnAjouter.Visibility = Windows.Visibility.Hidden
-        Dim commu = From co In maBd.tblCommunique Where _noHotel = co.noHotel Select co
+        Dim commu = From co In maBd.tblCommunique Where _noHotel = co.noHotel And co.noCommunique = noCommu Select co
 
         txtNomCommunique.Text = commu.Single.titreCommunique
         txtTexteCommunique.Text = commu.Single.contCommunique

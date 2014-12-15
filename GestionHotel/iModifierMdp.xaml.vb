@@ -27,7 +27,7 @@ Public Class iModifierMdp
     End Sub
 
     Private Sub modifier()
-        Dim regex = New Regex("^(?=(.*[A-Z]))(?=(.*[0-9]))(?!.*\|)(?=[a-zA-Z0-9]{6,})")
+        Dim regex = New Regex("^[a-z](?=.*\d)((?=[a-z0-9]).{6}|(?=[a-z0-9]).{13})$")
         If txtMdp.Password = txtConfirmation.Password Then
             If regex.IsMatch(txtMdp.Password) Then
                 Dim res = From lo In _maBD.tblLogin
@@ -40,11 +40,11 @@ Public Class iModifierMdp
                 MessageBox.Show("Votre mot de passe a bien été modifié")
                 Me.Close()
             Else
-                lblErreur.Content = "Le mot de passe doit contenir au minimum" & vbCrLf & "-6 caractères    -1 majuscule    -1 chiffres"
+                lblErreur.Content = "Le mot de passe doit contenir au minimum" & vbCrLf & "-7 ou 14 caractères  -commencer par une lettre" & vbCrLf & "-1 chiffre"
             End If
 
         Else
-            lblErreur.Content = "Les deux mot de passe ne sont pas pareils"
+            lblErreur.Content = "Les deux mots de passe ne sont pas pareils"
         End If
     End Sub
 End Class

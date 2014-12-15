@@ -14,7 +14,7 @@
             menu.IsEnabled = False
         Else
             menuVente.Visibility = Windows.Visibility.Hidden
-            menu.IsEnabled = False
+            menuVente.IsEnabled = False
         End If
     End Sub
     Private Sub windowListeSalle_Loaded(sender As Object, e As RoutedEventArgs) Handles windowListeSalle.Loaded
