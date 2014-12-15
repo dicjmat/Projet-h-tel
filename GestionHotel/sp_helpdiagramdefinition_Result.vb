@@ -10,12 +10,8 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblCompte
-    Public Property email As String
-    Public Property mdp As String
-    Public Property premiereConnexion As Boolean
-    Public Property noClient As Integer
-
-    Public Overridable Property tblClient As tblClient
+Partial Public Class sp_helpdiagramdefinition_Result
+    Public Property version As Nullable(Of Integer)
+    Public Property definition As Byte()
 
 End Class

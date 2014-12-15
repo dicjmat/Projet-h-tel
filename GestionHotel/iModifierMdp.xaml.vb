@@ -27,7 +27,7 @@ Public Class iModifierMdp
     End Sub
 
     Private Sub modifier()
-        Dim regex = New Regex("^[a-z](?=.*\d)((?=[a-zA-Z0-9]).{6}|(?=[a-zA-Z0-9]).{13})$")
+        Dim regex = New Regex("^[a-z](?=.*\d)((?=[a-z0-9]).{6}|(?=[a-z0-9]).{13})$")
         If txtMdp.Password = txtConfirmation.Password Then
             If regex.IsMatch(txtMdp.Password) Then
                 Dim res = From lo In _maBD.tblLogin
@@ -36,7 +36,7 @@ Public Class iModifierMdp
 
                 res.First.mdp = txtMdp.Password
                 res.First.premiereConnexion = False
-                '_maBD.SaveChanges()
+                _maBD.SaveChanges()
                 MessageBox.Show("Votre mot de passe a bien été modifié")
                 Me.Close()
             Else

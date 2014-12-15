@@ -35,19 +35,19 @@
                 <GroupBox Header="Client" BorderBrush="Black" Margin="0,43,1,0" Height="431" VerticalAlignment="Top">
                     <Grid>
                         <Label Content="Nom :" Margin="10,0,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="43"></Label>
-                        <xctk:MaskedTextBox Height="20" Name="txtNomCli" Text="{Binding nomClient}" Margin="53,2,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="177"></xctk:MaskedTextBox>
+                        <xctk:MaskedTextBox Height="20" Name="txtNomCli" Margin="53,2,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="177"></xctk:MaskedTextBox>
                         <Label Content="Prénom :" Margin="10,30,0,0" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59"></Label>
-                        <xctk:MaskedTextBox Height="20" Name="txtPrenCli" Text="{Binding prenClient}" Margin="69,33,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="161"></xctk:MaskedTextBox>
-                        <Label Content="NoTéléphone :" Margin="10,60,0,0" Height="37" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"></Label>
-                        <xctk:MaskedTextBox PromptChar=" " Mask="000-000-0000" Height="20" Name="txtTelCli" Text="{Binding noTelClient}" Margin="100,63,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"></xctk:MaskedTextBox>
-                        <Label Content="NoCéllulaire :" Margin="11,90,0,0" HorizontalAlignment="Left" Width="81" Height="36" VerticalAlignment="Top"></Label>
-                        <xctk:MaskedTextBox PromptChar=" " Mask="000-000-0000" Height="20" Name="txtCelCli" Text="{Binding noCellClient}" Margin="100,92,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"></xctk:MaskedTextBox>
+                        <xctk:MaskedTextBox Height="20" Name="txtPrenCli" Margin="69,33,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="161"></xctk:MaskedTextBox>
+                        <Label Content="No Téléphone :" Margin="10,60,0,0" Height="37" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"></Label>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="000-000-0000" Height="20" Name="txtTelCli" Margin="100,63,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"></xctk:MaskedTextBox>
+                        <Label Content="No Cellulaire :" Margin="11,90,0,0" HorizontalAlignment="Left" Width="81" Height="36" VerticalAlignment="Top"></Label>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="000-000-0000" Height="20" Name="txtCelCli" Margin="100,92,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130"></xctk:MaskedTextBox>
                         <Label Content="Adresse :" Margin="10,120,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59"></Label>
-                        <xctk:MaskedTextBox Height="20" Name="txtAdrCli" Text="{Binding adrClient}" Margin="69,123,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="228"></xctk:MaskedTextBox>
-                        <Label Content="No Carte de crédit :" Margin="10,150,0,0" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116"></Label>
-                        <xctk:MaskedTextBox Height="20" PromptChar=" " Mask="0000-0000-0000-0009" Name="txtNoCarteCredit" Text="{Binding noCarteCredit}" Margin="126,153,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="124"></xctk:MaskedTextBox>
-                        <Label Content="Type de carte :" Margin="10,180,0,0" Height="33" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"></Label>
-                        <ComboBox Height="25" ItemsSource="{Binding}" Name="cbTypeCarte" Background="White" Margin="100,181,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130">
+                        <xctk:MaskedTextBox Height="20" Name="txtAdrCli" Margin="69,123,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="228"></xctk:MaskedTextBox>
+                        <Label Content="No Carte de crédit :" Margin="10,212,0,0" Height="31" VerticalAlignment="Top" HorizontalAlignment="Left" Width="116"></Label>
+                        <xctk:MaskedTextBox Height="20" PromptChar=" " Mask="0000-0000-0000-0009" Name="txtNoCarteCredit" Margin="126,215,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="124"></xctk:MaskedTextBox>
+                        <Label Content="Type de carte :" Margin="10,242,0,0" Height="33" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"></Label>
+                        <ComboBox Height="25" ItemsSource="{Binding}" Name="cbTypeCarte" Background="White" Margin="100,243,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -56,10 +56,10 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <Label Content="Date d'expiration :" Margin="10,210,0,0" HorizontalAlignment="Left" Width="111" Height="25" VerticalAlignment="Top"></Label>
-                        <xctk:MaskedTextBox PromptChar=" " Mask="00\/00" Height="20" Name="txtCodeExp" Text="{Binding dateExpiration}" Margin="126,213,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="52"></xctk:MaskedTextBox>
-                        <Label Content="Pays :" Margin="11,240,0,0" HorizontalAlignment="Left" Width="100" Height="29" VerticalAlignment="Top"></Label>
-                        <ComboBox Name="cbCodePays" ItemsSource="{Binding}" Height="26" Background="White" Margin="81,243,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
+                        <Label Content="Date d'expiration :" Margin="10,272,0,0" HorizontalAlignment="Left" Width="111" Height="25" VerticalAlignment="Top"></Label>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="00\/00" Height="20" Name="txtCodeExp" Margin="126,275,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="52"></xctk:MaskedTextBox>
+                        <Label Content="Pays :" Margin="11,302,0,0" HorizontalAlignment="Left" Width="100" Height="29" VerticalAlignment="Top"></Label>
+                        <ComboBox Name="cbCodePays" ItemsSource="{Binding}" Height="26" Background="White" Margin="81,305,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -68,8 +68,8 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <Label Content="Province :" Margin="10,269,0,0" HorizontalAlignment="Left" Width="100" Height="29" VerticalAlignment="Top"></Label>
-                        <ComboBox Name="cbCodeProv" ItemsSource="{Binding}" Height="26" Background="White" Margin="81,272,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
+                        <Label Content="Province :" Margin="10,331,0,0" HorizontalAlignment="Left" Width="100" Height="29" VerticalAlignment="Top"></Label>
+                        <ComboBox Name="cbCodeProv" ItemsSource="{Binding}" Height="26" Background="White" Margin="81,334,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -78,8 +78,8 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <Label Content="Ville :" Margin="10,296,0,0" HorizontalAlignment="Left" Width="100" Height="29" VerticalAlignment="Top"></Label>
-                        <ComboBox Name="cbCodeVille" ItemsSource="{Binding}" Height="25" Background="White" Margin="81,299,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
+                        <Label Content="Ville :" Margin="10,358,0,0" HorizontalAlignment="Left" Width="100" Height="29" VerticalAlignment="Top"></Label>
+                        <ComboBox Name="cbCodeVille" ItemsSource="{Binding}" Height="25" Background="White" Margin="81,361,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -88,8 +88,12 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <Label Content="Commentaire :" Margin="10,324,0,0" HorizontalAlignment="Left" Width="90" Height="29" VerticalAlignment="Top"></Label>
-                        <TextBox Name="txtCommCli" TextWrapping="Wrap" AcceptsReturn="False" Margin="100,328,0,0" Height="88" VerticalAlignment="Top" HorizontalAlignment="Left" Width="206"/>
+                        <Label Content="Commentaire :" Margin="10,386,0,-11.8" HorizontalAlignment="Left" Width="90" Height="29" VerticalAlignment="Top"></Label>
+                        <TextBox Name="txtCommCli" TextWrapping="Wrap" AcceptsReturn="False" Margin="100,390,0,-74.8" Height="88" VerticalAlignment="Top" HorizontalAlignment="Left" Width="206"/>
+                        <Label Content="Code postal :" Margin="10,153,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81"/>
+                        <xctk:MaskedTextBox PromptChar=" " Mask="L0L0L0" Height="20" Name="txtCPCli" Margin="91,155,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="53"/>
+                        <Label Content="Email :" Margin="10,183,0,0" Height="39" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59"/>
+                        <xctk:MaskedTextBox Height="20" Name="txtEmailCli" Margin="69,186,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="181"/>
                     </Grid>
                 </GroupBox>
                 <Button Name="btnAccueil" BorderBrush="Black" Style="{StaticResource styleBouton}" Height="25" Content="Accueil" Margin="330,479,0,-3" HorizontalAlignment="Left" Width="78"></Button>

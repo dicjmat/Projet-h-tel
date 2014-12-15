@@ -38,7 +38,7 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <Label x:Name="lblTypeChambre" Content="{Binding nomTypeChambre}"/>
+                                        <Label x:Name="lblTypeChambre" Content="{Binding nomTypeSalle}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -48,7 +48,7 @@
                         <DataGrid Name="dgRabais" Margin="228,0,0,43.8" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Numéro" Binding="{Binding noRabais}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeChambre}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeSalle}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Taux" Binding="{Binding tauxRabais}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="État" Binding="{Binding etatRabais}"></DataGridTextColumn>
                             </DataGrid.Columns>

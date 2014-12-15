@@ -52,11 +52,12 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjouterClient" Content="Ajouter un client" Margin="542,379,0,100" Height="25" RenderTransformOrigin="0.5,0.504" HorizontalAlignment="Left" Width="126"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnModifierClient" Content="Modifier un client" Margin="542,409,0,70" Height="25" HorizontalAlignment="Left" Width="126"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Margin="542,469,0,10" Height="25" HorizontalAlignment="Left" Width="126"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnReserv" Content="Faire une réservation" Margin="542,439,0,40" Height="25" HorizontalAlignment="Left" Width="126"/>
-                <GroupBox Header="Liaison Client" BorderBrush="Black" Margin="514,125,62,275">
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterClient" Content="Ajouter un client" Margin="251,549,0,10" Height="25" RenderTransformOrigin="0.5,0.504" HorizontalAlignment="Left" Width="101"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifierClient" Content="Modifier un client" Margin="357,549,0,10" Height="25" HorizontalAlignment="Left" Width="109"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Margin="471,549,0,10" Height="25" HorizontalAlignment="Left" Width="57"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnReserv" Content="Faire une réservation" Margin="120,549,0,10" Height="25" HorizontalAlignment="Left" Width="126"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnLierCli" Content="Lier le client" Margin="166,549,0,10" Height="25" HorizontalAlignment="Left" Width="80"/>
+                <GroupBox Header="Liaison Client" BorderBrush="Black" Margin="522,171,54,303">
                     <Grid>
                         <Label Content="Compagnie :" Margin="0,0,38,0" Height="27" VerticalAlignment="Top"/>
                         <ComboBox x:Name="cbCompagnie" ItemsSource="{Binding}" Background="White" Margin="0,27,10,0" Height="25" VerticalAlignment="Top">
@@ -68,7 +69,7 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
-                        <Button x:Name="btnLierClient" Style="{StaticResource styleBouton2}" Height="25" Content="Lier le client" Margin="0,57,0,0" VerticalAlignment="Top"/>
+                        <Button x:Name="btnLierCie" Style="{StaticResource styleBouton2}" Height="25" Content="Lier le client" Margin="0,57,0,0" VerticalAlignment="Top"/>
                     </Grid>
                 </GroupBox>
             </Grid>

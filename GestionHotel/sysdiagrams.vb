@@ -10,14 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblNote
-    Public Property noNote As Integer
-    Public Property noReservation As Integer
-    Public Property etatNote As String
-    Public Property noFacture As Nullable(Of Integer)
-
-    Public Overridable Property tblElementNote As ICollection(Of tblElementNote) = New HashSet(Of tblElementNote)
-    Public Overridable Property tblFacture As tblFacture
-    Public Overridable Property tblReservation As tblReservation
+Partial Public Class sysdiagrams
+    Public Property name As String
+    Public Property principal_id As Integer
+    Public Property diagram_id As Integer
+    Public Property version As Nullable(Of Integer)
+    Public Property definition As Byte()
 
 End Class

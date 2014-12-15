@@ -10,14 +10,11 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblNote
-    Public Property noNote As Integer
-    Public Property noReservation As Integer
-    Public Property etatNote As String
-    Public Property noFacture As Nullable(Of Integer)
-
-    Public Overridable Property tblElementNote As ICollection(Of tblElementNote) = New HashSet(Of tblElementNote)
-    Public Overridable Property tblFacture As tblFacture
-    Public Overridable Property tblReservation As tblReservation
+Partial Public Class sp_helpdiagrams_Result
+    Public Property Database As String
+    Public Property Name As String
+    Public Property ID As Integer
+    Public Property Owner As String
+    Public Property OwnerID As Integer
 
 End Class
