@@ -77,6 +77,7 @@ Public Class iFicheEmploye
                 End If
                 i = i + 1
             Next
+            i = 0
             For Each el In cmbProvince.Items
                 If el.codeProv = res.First.codeProv Then
                     cmbProvince.SelectedIndex = i
@@ -84,6 +85,7 @@ Public Class iFicheEmploye
                 End If
                 i = i + 1
             Next
+            i = 0
             For Each el In cmbCdVille.Items
                 If el.codeVille = res.First.codeVille Then
                     cmbCdVille.SelectedIndex = i
