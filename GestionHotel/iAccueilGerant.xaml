@@ -42,7 +42,7 @@
                     </TextBlock>
                 </Border>
                 <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Label Content="" Name="lblNomEmpl" HorizontalAlignment="Left" Margin="0,391,0,0" VerticalAlignment="Top"/>
+                <Label Content="" Name="lblNomEmpl" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top"/>
             </Grid>
         </Viewbox>
     </Grid>
