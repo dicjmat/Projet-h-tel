@@ -11,9 +11,17 @@ Public Class iFicheEmploye
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
+        Dim res = From el In bd.tblLogin Where el.noEmpl = numEmpl Select el
 
         btnModifier.Visibility = Windows.Visibility.Visible
 
+        If res.First.statut = "GEST" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGest.Visibility = Windows.Visibility.Hidden
+            menuGest.IsEnabled = False
+        End If
         
         txtNASEmp.IsEnabled = False
     End Sub
@@ -21,8 +29,17 @@ Public Class iFicheEmploye
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         bd = _bd
+        Dim res = From el In bd.tblLogin Where el.noEmpl = numEmpl Select el
         btnModifier.Visibility = Windows.Visibility.Hidden
         txtNASEmp.IsEnabled = True
+
+        If res.First.statut = "GEST" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGest.Visibility = Windows.Visibility.Hidden
+            menuGest.IsEnabled = False
+        End If
     End Sub
 
     Private Sub windowFicheEmploye_Loaded(sender As Object, e As RoutedEventArgs) Handles windowFicheEmploye.Loaded
