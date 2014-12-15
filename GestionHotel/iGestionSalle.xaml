@@ -17,13 +17,21 @@
                     <StackPanel>
                         <Grid>
                             <Label Content="Nom :" Margin="0,0,0,0"></Label>
-                            <xctk:MaskedTextBox  PromptChar=" " Mask="09" Name="txtNomSalle" Margin="43,5,0.6,100.6" Height="20"></xctk:MaskedTextBox>
+                            <TextBox Name="txtNomSalle" Margin="43,5,0.6,100.6" Height="20"></TextBox>
                             <Label Content="Description :" Margin="0,25,0,0"></Label>
                             <TextBox Name="txtDescSalle" Margin="73,30,0.6,75.6" Height="20"></TextBox>
                             <Label Content="Nombre de place :" Margin="0,50,0,0"></Label>
                             <xctk:MaskedTextBox Mask="09999999999" PromptChar=" " Name="txtNbPlaceSalle" Margin="163,55,0.8,50.6" Height="20"></xctk:MaskedTextBox>
-                            <Label Content="No d'hôtel :" Margin="0,75,0.8,24.6"></Label>
-                            <ComboBox Name="cbNoHotel" Margin="73,80,98.6,25.6" Background="White" Height="20"></ComboBox>
+                            <Label Content="Nom d'hôtel :" Margin="0,75,0.8,24.6"></Label>
+                            <ComboBox Name="cbNomHotel" Margin="82,80,-0.2,19.6" Background="White">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Label x:Name="lblHotel" Content="{Binding nomHotel}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                         </Grid>
                     </StackPanel>
                 </GroupBox>

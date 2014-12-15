@@ -40,7 +40,7 @@
     End Sub
 
     Private Sub btnSupprimerCommuni_Click(sender As Object, e As RoutedEventArgs) Handles btnSupprimerCommuni.Click
-        If dgCommuni.SelectedIndex <> 0 Then
+        If dgCommuni.SelectedItem IsNot Nothing Then
             Dim noCommu As Integer = dgCommuni.SelectedItem.noCommunique
             Dim res = From co In maBd.tblCommunique
                       Where co.noCommunique = noCommu

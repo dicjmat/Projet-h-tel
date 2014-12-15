@@ -31,6 +31,8 @@
     End Sub
 
     Private Sub btnRetour_Click(sender As Object, e As RoutedEventArgs) Handles btnRetour.Click
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
