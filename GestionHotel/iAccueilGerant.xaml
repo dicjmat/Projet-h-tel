@@ -11,7 +11,7 @@
     </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="420" Width="236">
+            <Grid Height="352" Width="236">
                 <Label Content="Accueil" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
 
                 <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,31,0,0">
@@ -34,21 +34,15 @@
                     </TextBlock>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,250,0,0">
-                    <TextBlock MouseLeftButtonDown="AppuieCommande" Background="WhiteSmoke">
-                        Commande<LineBreak/>
-                        - Faire une commande <LineBreak/>
-                    </TextBlock>
-                </Border>
-                <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,323,0,-55">
-                    <TextBlock MouseLeftButtonDown="AppuieItem" Background="WhiteSmoke" Margin="0.4,0.4,-0.4,-2.4">
+                    <TextBlock MouseLeftButtonDown="AppuieItem" Background="WhiteSmoke" Margin="0.4,0,-0.4,-2.4">
                         Item<LineBreak/>
                         - Ajouter un item <LineBreak/>
                         - Ajouter un fournisseur<LineBreak/>
                         - Inventaire
                     </TextBlock>
                 </Border>
-                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-                <Label Content="" Name="lblNomEmpl" HorizontalAlignment="Left" Margin="0,301,0,0" VerticalAlignment="Top"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Label Content="" Name="lblNomEmpl" HorizontalAlignment="Left" Margin="0,391,0,0" VerticalAlignment="Top"/>
             </Grid>
         </Viewbox>
     </Grid>
