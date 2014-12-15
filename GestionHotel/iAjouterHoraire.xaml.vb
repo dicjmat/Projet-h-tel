@@ -36,14 +36,6 @@
         Me.Close()
     End Sub
 
-    Private Sub windowAjoutHoraire_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles windowAjoutHoraire.Closing
-        If Me.Focusable Then
-            Me.Owner.Close()
-        Else
-            Me.Owner.Show()
-        End If
-    End Sub
-
     Private Sub btnAjouterHor_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterHor.Click
         If cbEmploye.SelectedItem IsNot Nothing And cldHoraire.SelectedDate IsNot Nothing And cmbHeureDebutH.SelectedItem IsNot Nothing And cmbHeureDebutM.SelectedItem IsNot Nothing Then
             If cldHoraire.SelectedDates.Count > 1 Then

@@ -68,8 +68,9 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Close()
+        Me.Owner.Hide()
         Me.Owner.Show()
+        Me.Close()
     End Sub
 
     Private Sub cbNomEmp_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbNomEmp.SelectionChanged
