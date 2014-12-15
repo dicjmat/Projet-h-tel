@@ -10,14 +10,15 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblClient
-    Public Property noClient As Integer
-    Public Property nomClient As String
-    Public Property prenClient As String
-    Public Property noTelClient As String
-    Public Property noCellClient As String
-    Public Property adrClient As String
-    Public Property emailClient As String
+Partial Public Class tblDemandeur
+    Public Property noDemandeur As Integer
+    Public Property nomDemandeur As String
+    Public Property prenDemandeur As String
+    Public Property noTelDemandeur As String
+    Public Property noCellDemandeur As String
+    Public Property adrDemandeur As String
+    Public Property codePostalDemandeur As String
+    Public Property emailDemandeur As String
     Public Property typeCarteCredit As String
     Public Property noCarteCredit As String
     Public Property dateExpiration As String

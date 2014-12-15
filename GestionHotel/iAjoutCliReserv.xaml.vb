@@ -3,12 +3,20 @@
     Dim noClient As String
     Dim noEmp As Integer
     Dim noHotel As Integer
+    Dim reserv As tblReservation
+
     Sub New(_noEmp As Integer, _noHotel As Integer, maBD As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         btnModifier.Visibility = System.Windows.Visibility.Hidden
         noEmp = _noEmp
         noHotel = _noHotel
         bd = maBD
+    End Sub
+
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _reserv As tblReservation)
+        InitializeComponent()
+        bd = maBD
+        reserv = _reserv
     End Sub
 
     Sub New(vente As Boolean)
@@ -35,13 +43,22 @@
         cbTypeCarte.ItemsSource = cred.ToList()
         If noClient <> 0 Then
             Dim res = From el In bd.tblClient Where el.noClient = noClient Select el
-            Me.DataContext = res.ToList()
+            txtAdrCli.Text = res.Single.adrClient
+            txtCelCli.Text = res.Single.noCellClient
+            txtCodeExp.Text = res.Single.dateExpiration
+            txtCommCli.Text = res.Single.commentaire
+            txtNoCarteCredit.Text = res.Single.noCarteCredit
+            txtNomCli.Text = res.Single.nomClient
+            txtPrenCli.Text = res.Single.prenClient
+            txtTelCli.Text = res.Single.noTelClient
+            'txtCPCli.Text = res.Single.codePostalClient
+            txtEmailCli.Text = res.Single.emailClient
             Dim i = 0
             For Each el In cbCodePays.Items
                 If el.codePays = res.First.tblVille.tblProvince.codePays Then
                     cbCodePays.SelectedIndex = i
                     Exit For
-                    End If
+                End If
                 i = i + 1
             Next
             i = 0
@@ -49,7 +66,7 @@
                 If el.codeProv = res.First.codeProv Then
                     cbCodeProv.SelectedIndex = i
                     Exit For
-                    End If
+                End If
                 i = i + 1
             Next
             i = 0
@@ -57,7 +74,7 @@
                 If el.codeVille = res.First.codeVille Then
                     cbCodeVille.SelectedIndex = i
                     Exit For
-                    End If
+                End If
                 i = i + 1
             Next
             i = 0
@@ -65,10 +82,54 @@
                 If el.typeCarteCredit = res.First.typeCarteCredit Then
                     cbTypeCarte.SelectedIndex = i
                     Exit For
-                    End If
+                End If
                 i = i + 1
             Next
-            End If
+        ElseIf reserv IsNot Nothing Then
+            Dim cli = reserv.tblDemandeur
+            txtAdrCli.Text = cli.adrDemandeur
+            txtCelCli.Text = cli.noCellDemandeur
+            txtCodeExp.Text = cli.dateExpiration
+            txtCommCli.Text = cli.commentaire
+            txtNoCarteCredit.Text = cli.noCarteCredit
+            txtNomCli.Text = cli.nomDemandeur
+            txtPrenCli.Text = cli.prenDemandeur
+            txtTelCli.Text = cli.noTelDemandeur
+            txtCPCli.Text = cli.codePostalDemandeur
+            txtEmailCli.Text = cli.emailDemandeur
+            Dim i = 0
+            For Each el In cbCodePays.Items
+                If el.codePays = cli.tblVille.tblProvince.codePays Then
+                    cbCodePays.SelectedIndex = i
+                    Exit For
+                End If
+                i = i + 1
+            Next
+            i = 0
+            For Each el In cbCodeProv.Items
+                If el.codeProv = cli.codeProv Then
+                    cbCodeProv.SelectedIndex = i
+                    Exit For
+                End If
+                i = i + 1
+            Next
+            i = 0
+            For Each el In cbCodeVille.Items
+                If el.codeVille = cli.codeVille Then
+                    cbCodeVille.SelectedIndex = i
+                    Exit For
+                End If
+                i = i + 1
+            Next
+            i = 0
+            For Each el In cbTypeCarte.Items
+                If el.typeCarteCredit = cli.typeCarteCredit Then
+                    cbTypeCarte.SelectedIndex = i
+                    Exit For
+                End If
+                i = i + 1
+            Next
+        End If
     End Sub
 
     Private Sub btnAjouterCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterCli.Click
@@ -87,17 +148,22 @@
             bd.tblClient.Add(client)
             bd.SaveChanges()
             MessageBox.Show("Le client a été ajouté avec succès.")
+            If reserv IsNot Nothing Then
+                reserv.noClient = client.noClient
+                bd.tblDemandeur.Remove(reserv.tblDemandeur)
+                bd.SaveChanges()
+                Me.Owner.Owner.Hide()
+                Me.Owner.Owner.Show()
+                Me.Owner.Close()
+            End If
         Catch ex As Exception
             MessageBox.Show("Veuillez remplir tous les champs.")
         End Try
-
-
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Dim reserv = New iFaireReservationChambre(bd, noEmp, noHotel)
-        reserv.Owner = Me
-        reserv.Show()
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
     Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click

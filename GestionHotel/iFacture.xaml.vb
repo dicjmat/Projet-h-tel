@@ -101,7 +101,20 @@
                       Join sa In bd.tblSalle On ts.codeTypeSalle Equals sa.codeTypeSalle
                       Join re In bd.tblReservation On sa.noSalle Equals re.noSalle And sa.noHotel Equals re.noHotel
                       Where re.noReservation = noReserv And tsh.noHotel = noHotel And pe.dateDebutPeriode <= today And pe.dateFinPeriode >= today
-                      Select pts.prixSallePeriode, tsh.prixSalle
+                      Select pts.prixSallePeriode
+            If res.ToList.Count = 0 Then
+                Dim prix = From tsh In bd.tblTypeSalleHotel
+                           Join ts In bd.tblTypeSalle On tsh.codeTypeSalle Equals ts.codeTypeSalle
+                           Join sa In bd.tblSalle On ts.codeTypeSalle Equals sa.codeTypeSalle
+                           Join re In bd.tblReservation On sa.noSalle Equals re.noSalle And sa.noHotel Equals re.noHotel
+                           Where re.noReservation = noReserv And tsh.noHotel = noHotel
+                           Select tsh.prixSalle
+
+                txtMontant.Text = prix.First.ToString()
+            Else
+                txtMontant.Text = res.First.ToString()
+            End If
+
         End If
     End Sub
 End Class

@@ -63,9 +63,7 @@
     End Sub
 
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
-        Dim emp = From em In BD.tblHoraire Where em.noEmpl = 1001 Select em
 
-        Dim yolo = 2
     End Sub
 
     Private Sub dgCheckList_CellEditEnding(sender As Object, e As DataGridCellEditEndingEventArgs) Handles dgCheckList.CellEditEnding

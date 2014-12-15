@@ -5,6 +5,7 @@
     Private datef As Date
     Private noSalle As Short
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
+    Private reserv As tblReservation
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short, _dated As Date, _datef As Date, _nochambre As Int16)
         InitializeComponent()
@@ -14,6 +15,8 @@
         dated = _dated
         datef = _datef
         noSalle = _nochambre
+        btnLierCli.IsEnabled = False
+        btnLierCli.Visibility = Windows.Visibility.Hidden
     End Sub
 
     Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, nHotel As Short, _dated As Date, _datef As Date, _nosalle As Int16, _vente As Boolean)
@@ -25,19 +28,31 @@
         datef = _datef
         noSalle = _nosalle
         Menu.Visibility = Windows.Visibility.Hidden
+        btnLierCli.IsEnabled = False
+        btnLierCli.Visibility = Windows.Visibility.Hidden
+    End Sub
+
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _noReserv As Integer)
+        InitializeComponent()
+        bd = maBD
+        reserv = (From el In bd.tblReservation Where el.noReservation = _noReserv Select el).Single
+        btnReserv.IsEnabled = False
+        btnReserv.Visibility = Windows.Visibility.Hidden
     End Sub
 
     Sub New()
         InitializeComponent()
         btnReserv.IsEnabled = False
         btnReserv.Visibility = Windows.Visibility.Hidden
+        btnLierCli.IsEnabled = False
+        btnLierCli.Visibility = Windows.Visibility.Hidden
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
         requete()
         btnReserv.IsEnabled = False
         btnModifierClient.IsEnabled = False
-        btnLierClient.IsEnabled = False
+        btnLierCie.IsEnabled = False
         cbCompagnie.IsEnabled = False
         Dim res3 = From el In bd.tblCompagnie Select el
         cbCompagnie.DataContext = res3.Distinct().ToList()
@@ -88,9 +103,15 @@
     End Sub
 
     Private Sub btnAjouterClient_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterClient.Click
-        Dim client As New iAjoutCliReserv(noHotel, noEmpl, bd)
-        client.Owner = Me
-        client.Show()
+        If btnLierCli.Visibility = Windows.Visibility.Visible Then
+            Dim client As New iAjoutCliReserv(bd, reserv)
+            client.Owner = Me
+            client.Show()
+        Else
+            Dim client As New iAjoutCliReserv(noHotel, noEmpl, bd)
+            client.Owner = Me
+            client.Show()
+        End If
     End Sub
 
     Private Sub btnModifierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierClient.Click
@@ -100,7 +121,6 @@
     End Sub
 
     Private Sub requete2()
-
         Dim res = From el In bd.tblClient
                   Where (el.nomClient + " " + el.prenClient).StartsWith(txtRCli.Text) Or (el.prenClient + " " + el.nomClient).StartsWith(txtRCli.Text)
                   Select el
@@ -142,12 +162,28 @@
         ficheR.Show()
     End Sub
 
-    Private Sub btnLierClient_Click(sender As Object, e As RoutedEventArgs) Handles btnLierClient.Click
+    Private Sub btnLierCie_Click(sender As Object, e As RoutedEventArgs) Handles btnLierCie.Click
         dgClient.SelectedItem.noCompagnie = cbCompagnie.SelectedItem.noCompagnie
         MessageBox.Show("La liaison a été faite avec succès.")
     End Sub
 
     Private Sub cbCompagnie_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbCompagnie.SelectionChanged
-        btnLierClient.IsEnabled = True
+        btnLierCie.IsEnabled = True
+    End Sub
+
+    Private Sub btnLierCli_Click(sender As Object, e As RoutedEventArgs) Handles btnLierCli.Click
+        If dgClient.SelectedItem IsNot Nothing Then
+            Dim noDem = reserv.noDemandeur
+            Dim dem = (From el In bd.tblDemandeur Where el.noDemandeur = noDem Select el).Single
+            reserv.noClient = dgClient.SelectedItem.noClient
+            reserv.noDemandeur = Nothing
+            reserv.tblDemandeur = Nothing
+            bd.SaveChanges()
+            Me.Owner.Hide()
+            Me.Owner.Show()
+            Me.Close()
+        Else
+            MessageBox.Show("Veuillez sélectionner un client", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+        End If
     End Sub
 End Class
