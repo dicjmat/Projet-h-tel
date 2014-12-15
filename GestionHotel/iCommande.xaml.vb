@@ -170,18 +170,6 @@
         dgCommande.ItemsSource = res.ToList()
     End Sub
 
-    Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
-        Dim inv = New iInventaire(noEmpl, noHotel, bd)
-        inv.Owner = Me
-        inv.Show()
-    End Sub
-
-    Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
-        Dim fourni = New iAjoutFournisseur(bd)
-        fourni.Owner = Me
-        fourni.Show()
-    End Sub
-
     Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
         Dim com = New iCommande(noEmpl, bd)
         com.Owner = Me

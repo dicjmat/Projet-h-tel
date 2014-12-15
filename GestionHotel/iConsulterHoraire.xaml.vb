@@ -12,6 +12,15 @@
         nohotel = _nohotel
         requete()
         remplirNom()
+        Dim res = From el In bd.tblLogin Where el.noEmpl = _numEmpl Select el
+
+        If res.First.statut = "GEST" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGerant.Visibility = Windows.Visibility.Hidden
+            menuGerant.IsEnabled = False
+        End If
     End Sub
 
     Sub New(numEmpl As Object, maBd As P2014_Equipe2_GestionHôtelièreEntities, _noGest As Short, _noHotel As Integer)
@@ -22,6 +31,15 @@
         noGest = _noGest
         requete()
         remplirNom()
+        Dim res = From el In bd.tblLogin Where el.noEmpl = _numEmpl Select el
+
+        If res.First.statut = "GEST" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGerant.Visibility = Windows.Visibility.Hidden
+            menuGerant.IsEnabled = False
+        End If
     End Sub
 
 
