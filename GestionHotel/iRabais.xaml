@@ -29,7 +29,7 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
-                                        <Label x:Name="lblTypeChambre" Content="{Binding nomTypeChambre}"/>
+                                        <Label x:Name="lblTypeChambre" Content="{Binding nomTypeSalle}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -39,7 +39,7 @@
                         <DataGrid Name="dgRabais" Margin="228,0,0,43.8" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Numéro" Binding="{Binding noRabais}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeChambre}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeSalle}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Taux" Binding="{Binding tauxRabais}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="État" Binding="{Binding etatRabais}"></DataGridTextColumn>
                             </DataGrid.Columns>
@@ -47,9 +47,9 @@
                     </Grid>
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btndeco" Content="Annuler" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,10" Width="77"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="AjoutRab" Content="Ajouter un rabais" Height="25" Margin="110,327,323,77"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="ModifcRab" Content="Modifier un rabais" Height="25" Margin="269,327,164,77"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="SuppRab" Content="Supprimer un rabais" Height="25" Margin="428,327,5,77"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="AjoutRab" Content="Ajouter un rabais" Height="25" Margin="101,348,331,56"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="ModifcRab" Content="Modifier un rabais" Height="25" Margin="260,348,172,56"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="SuppRab" Content="Supprimer un rabais" Height="25" Margin="419,348,13,56"></Button>
             </Grid>
         </Viewbox>
     </Grid>

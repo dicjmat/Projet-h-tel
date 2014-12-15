@@ -126,7 +126,8 @@
                   Select el
         dgClient.ItemsSource = res.ToList()
     End Sub
-    Private Sub btnCheck_Click(sender As Object, e As RoutedEventArgs) Handles btnCheck.Click
+
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim check = New iCheck_in_out(bd, noEmpl, noHotel)
         check.Owner = Me
         check.Show()
@@ -160,6 +161,7 @@
         Dim ficheRF = New iFicheReservFacture(bd, noEmpl, noHotel)
         ficheRF.Owner = Me
         ficheRF.Show()
+    End Sub
     Private Sub btnLierCie_Click(sender As Object, e As RoutedEventArgs) Handles btnLierCie.Click
         dgClient.SelectedItem.noCompagnie = cbCompagnie.SelectedItem.noCompagnie
         MessageBox.Show("La liaison a été faite avec succès.")
@@ -183,6 +185,7 @@
         Else
             MessageBox.Show("Veuillez sélectionner un client", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
         End If
+    End Sub
     Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
         Dim Cli = New iAjoutCliReserv(noEmpl, noHotel, bd)
         Cli.Owner = Me

@@ -43,7 +43,7 @@
                   Where tychho.noHotel = noHotel
                   Select tych
 
-        cbTypeChambre.DataContext = res.ToList
+        cbTypeChambre.ItemsSource = res.ToList
     End Sub
 
     Private Sub requete()
