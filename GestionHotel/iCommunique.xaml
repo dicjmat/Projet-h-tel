@@ -25,9 +25,7 @@
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
-        </DockPanel><Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,75,0,0" Width="2000" VerticalAlignment="Top">
-        </Rectangle>
-
+        </DockPanel>
         <Viewbox Stretch="Uniform">
             <Grid Width="624" Height="422">
                 

@@ -24,7 +24,6 @@
         dated = _dated
         datef = _datef
         noSalle = _nosalle
-        Menu.Visibility = Windows.Visibility.Hidden
     End Sub
 
     Sub New()

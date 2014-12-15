@@ -10,10 +10,20 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <DockPanel>
+            <Canvas Name="menu">
+                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4.4,0">
+                    <MenuItem Header="_Bris"  BorderThickness="1" BorderBrush="Black">
+                        <MenuItem Header="_Gestion des bris" Click="MenuItem_Click"/>
+                        <MenuItem Header="_Check-List" Click="MenuItem_Click_1"/>
+                    </MenuItem>
+                </Menu>
+            </Canvas>
+        </DockPanel>
         <Viewbox>
-            <Grid Height="578">
-                <Label Content="Numéro de la salle" FontSize="15" Margin="70,10,409.6,538"/>
-                <ComboBox ItemsSource="{Binding}" Name="cbSalle" Height="30" Margin="245,9,276.6,539" Background="White">
+            <Grid Height="621">
+                <Label Content="Numéro de la salle :" FontSize="15" Margin="72,41,407.6,507"/>
+                <ComboBox ItemsSource="{Binding}" Name="cbSalle" Height="30" Margin="216,41,305.6,550" Background="White">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -22,17 +32,17 @@
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <DataGrid Name="dgCheckList" AutoGenerateColumns="False" CanUserResizeColumns="False" Margin="10,57,159.6,79" CanUserAddRows="False">
+                <DataGrid Name="dgCheckList" AutoGenerateColumns="False" CanUserResizeColumns="False" Margin="12,88,157.6,48" CanUserAddRows="False">
                     <DataGrid.Columns>
                         <DataGridCheckBoxColumn Header="Présence"/>
                         <DataGridTextColumn Header="Item" Binding="{Binding tblItem.nomItem}" IsReadOnly="True"/>
                         <DataGridTextColumn Header="Commentaire" IsReadOnly="False"/>
                     </DataGrid.Columns>
                 </DataGrid>
-                <Button x:Name="btnSauvegarder" Style="{StaticResource styleBouton}" Content="Sauvegarder" Width="100" Height="50" Margin="369,518,180.6,10"/>
-                <Button x:Name="btnQuitter" Style="{StaticResource styleBouton}" Content="Déconnexion" Width="100" Height="50" Margin="474,518,75.6,10"/>
-                <Button x:Name="btnAjout" Style="{StaticResource styleBouton}" Content="Ajouter un item" Height="50" Margin="515,138,9.6,390"/>
-                <Button x:Name="btnBris" Style="{StaticResource styleBouton}" Content="Déclarer un bris" Height="50" Margin="515,193,9.6,335"/>
+                <Button x:Name="btnSauvegarder" Style="{StaticResource styleBouton}" Content="Sauvegarder" Width="100" Height="25" Margin="371,549,178.6,-21"/>
+                <Button x:Name="btnQuitter" Style="{StaticResource styleBouton}" Content="Déconnexion" Width="100" Height="25" Margin="476,549,73.6,-21"/>
+                <Button x:Name="btnAjout" Style="{StaticResource styleBouton}" Content="Ajouter un item" Height="25" Margin="506,471,18.6,82"/>
+                <Button x:Name="btnBris" Style="{StaticResource styleBouton}" Content="Déclarer un bris" Height="25" Margin="506,501,18.6,52"/>
             </Grid>
         </Viewbox>
     </Grid>

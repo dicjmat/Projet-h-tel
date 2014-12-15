@@ -29,7 +29,6 @@
                 <StackPanel></StackPanel>
             </DockPanel>
         </Canvas>
-        <Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,75,0,0" Width="2000" VerticalAlignment="Top"></Rectangle>
         <Viewbox Stretch="Uniform">
             <Grid Height="446">
                 <GroupBox BorderBrush="Black" Header="Employé" HorizontalAlignment="Left" Margin="10,91,0,0" VerticalAlignment="Top" Height="70" Width="498">

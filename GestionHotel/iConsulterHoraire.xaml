@@ -10,18 +10,36 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <DockPanel>
+        <Canvas Name="menu">
+        <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4,354">
+            <MenuItem Header="_Employé" BorderBrush="Black" BorderThickness="1">
+                <MenuItem Header="_Ajouter un horaire" Click="MenuItem_Click"/>
+                <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click_1"/>
+                <MenuItem Header="_Liste d'employé" Click="MenuItem_Click_2"/>
+            </MenuItem>
+            <MenuItem Header="_Commande" BorderBrush="Black" BorderThickness="1">
+                <MenuItem Header="_Liste de commande" Click="MenuItem_Click_3"/>
+            </MenuItem>
+        </Menu>
+        </Canvas>
+        <Canvas Name="menuGerant">
+            <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4,354">
+                <MenuItem Header="_Item" BorderBrush="Black" BorderThickness="1">
+                    <MenuItem Header="_Ajouter un item" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_5"/>
+                    <MenuItem Header="_Inventaire" Click="MenuItem_Click_6"/>
+                </MenuItem>
+                <MenuItem Header="_Commande" BorderBrush="Black" BorderThickness="1">
+                    <MenuItem Header="_faire une commande" Click="MenuItem_Click_7"/>
+                </MenuItem>
+            </Menu>    
+        </Canvas>
+        <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,50,0,631"></Rectangle>
+        </DockPanel>
         <Viewbox Stretch="Uniform">
             <Grid Width="517" Height="758">
-                <Label Content="Menu" Margin="0,0,0,31"></Label>
-                <Button Name="btnAjoutItemGerant" Height="25" Style="{StaticResource styleBouton}" Content="Ajouter un item" Margin="10,24,368,709"></Button>
-                <Button Name="btnAjoutFourniGerant" Height="25" Style="{StaticResource styleBouton}" Content="Ajouter un fournisseur" Margin="10,54,368,679"></Button>
-                <Button Name="btnCommandeGerant" Height="25" Style="{StaticResource styleBouton}" Content="Faire une commande" Margin="10,84,368,649"></Button>
-                <Button Name="btnInventaireGerant" Height="25" Style="{StaticResource styleBouton}" Content="Inventaire" Margin="154,24,226,709"></Button>
-                <Button Name="btnAjoutHoraire" Height="25" Style="{StaticResource styleBouton}" Content="Ajouter un horaire" Margin="10,24,368,709"></Button>
-                <Button Name="btnFicheEmploye" Height="25" Style="{StaticResource styleBouton}" Content="Fiche d'employé" Margin="10,54,368,679"></Button>
-                <Button Name="btnListeCommande" Height="25" Style="{StaticResource styleBouton}" Content="Liste de commande" Margin="10,84,368,649"></Button>
-                <Button Name="btnListeEmp" Height="25" Style="{StaticResource styleBouton}" Content="Liste d'employé" Margin="154,24,226,709"></Button>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,125,0,631"></Rectangle>
+                
                 <GroupBox Header="Liste d'horaire" Margin="0,132,0,81">
                     <Grid>
                         <Label Content="Recherche :" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="77" Margin="10,0,0,0"/>
