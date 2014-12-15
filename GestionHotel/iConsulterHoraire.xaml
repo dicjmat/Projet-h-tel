@@ -23,19 +23,18 @@
             </MenuItem>
         </Menu>
         </Canvas>
-        <Canvas Name="menuGerant">
-            <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4,354">
-                <MenuItem Header="_Item" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="_Ajouter un item" Click="MenuItem_Click_4"/>
-                    <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_5"/>
-                    <MenuItem Header="_Inventaire" Click="MenuItem_Click_6"/>
-                </MenuItem>
-                <MenuItem Header="_Commande" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="_faire une commande" Click="MenuItem_Click_7"/>
-                </MenuItem>
-            </Menu>    
-        </Canvas>
-        <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,50,0,631"></Rectangle>
+            <Canvas Name="menuGerant">
+                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4,354">
+                    <MenuItem Header="_Item" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_Ajouter un item" Click="MenuItem_Click_4"/>
+                        <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_5"/>
+                        <MenuItem Header="_Inventaire" Click="MenuItem_Click_6"/>
+                    </MenuItem>
+                    <MenuItem Header="_Commande" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_faire une commande" Click="MenuItem_Click_7"/>
+                    </MenuItem>
+                </Menu>
+            </Canvas>
         </DockPanel>
         <Viewbox Stretch="Uniform">
             <Grid Width="517" Height="758">
