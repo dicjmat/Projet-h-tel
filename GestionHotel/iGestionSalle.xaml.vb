@@ -21,6 +21,7 @@
         bd = _bd
 
         res = From el In bd.tblSalle Where el.noSalle = numSalle Select el
+        txtNoSalle.Text = res.noSalle
         txtNomSalle.Text = res.nomSalle
         txtDescSalle.Text = res.descSalle
         txtNbPlaceSalle.Text = res.nbPlace
@@ -42,6 +43,7 @@
     Private Sub btnAjouter_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouter.Click
         If txtDescSalle.Text <> "" And txtNbPlaceSalle.Text <> "" And txtNomSalle.Text <> "" And cbNomHotel.SelectedIndex <> -1 Then
             Dim Salle = New tblSalle()
+            Salle.noSalle = txtNoSalle.Text
             Salle.nomSalle = txtNomSalle.Text
             Salle.descSalle = txtDescSalle.Text
             Salle.nbPlace = txtNbPlaceSalle.Text

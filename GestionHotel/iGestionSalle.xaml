@@ -16,14 +16,14 @@
                 <GroupBox BorderBrush="Black" Header="Gestion des salles" HorizontalAlignment="Center" Width="238" Height="148" VerticalAlignment="Top" Margin="10,2,110.4,0">
                     <StackPanel>
                         <Grid>
-                            <Label Content="Nom :" Margin="0,0,0,0"></Label>
-                            <TextBox Name="txtNomSalle" Margin="43,5,0.6,100.6" Height="20"></TextBox>
-                            <Label Content="Description :" Margin="0,25,0,0"></Label>
-                            <TextBox Name="txtDescSalle" Margin="73,30,0.6,75.6" Height="20"></TextBox>
-                            <Label Content="Nombre de place :" Margin="0,50,0,0"></Label>
-                            <xctk:MaskedTextBox Mask="09999999999" PromptChar=" " Name="txtNbPlaceSalle" Margin="163,55,0.8,50.6" Height="20"></xctk:MaskedTextBox>
-                            <Label Content="Nom d'hôtel :" Margin="0,75,0.8,24.6"></Label>
-                            <ComboBox Name="cbNomHotel" Margin="82,80,-0.2,19.6" Background="White">
+                            <Label Content="Nom :" Margin="1,22,-0.2,-21.4"></Label>
+                            <TextBox Name="txtNomSalle" Margin="44,26,-1.2,79.6" Height="20"></TextBox>
+                            <Label Content="Description :" Margin="1,47,-0.2,-21.4"></Label>
+                            <TextBox Name="txtDescSalle" Margin="73,52,-0.2,53.6" Height="20"></TextBox>
+                            <Label Content="Nombre de place :" Margin="1,72,-0.2,-21.4"></Label>
+                            <xctk:MaskedTextBox Mask="09999999999" PromptChar=" " Name="txtNbPlaceSalle" Margin="164,77,-0.2,28.6" Height="20"></xctk:MaskedTextBox>
+                            <Label Content="Nom d'hôtel :" Margin="1,97,-0.2,2.6"></Label>
+                            <ComboBox Name="cbNomHotel" Margin="83,102,-1.2,-2.4" Background="White">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
@@ -32,6 +32,8 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
+                            <Label Content="No :" Margin="0,-2,0.8,2.6"/>
+                            <xctk:MaskedTextBox PromptChar=" " Mask="09" Name="txtNoSalle" Margin="43,2,136.8,103.6" Height="20"/>
                         </Grid>
                     </StackPanel>
                 </GroupBox>

@@ -25,11 +25,9 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Close()
-    End Sub
-
-    Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
+        Me.Owner.Hide()
         Me.Owner.Show()
+        Me.Close()
     End Sub
 
     Private Sub txtNoEmp_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtNoEmp.TextChanged
