@@ -65,18 +65,6 @@
         Me.Owner.Show()
     End Sub
 
-    Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
-        Dim com = New iCommande(noEmp, bd)
-        com.Owner = Me
-        com.Show()
-    End Sub
-
-    Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(bd)
-        fiche.Owner = Me
-        fiche.Show()
-    End Sub
-
     Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeEmployeComplet(bd, noEmp, noHotel)
         lst.Owner = Me
@@ -84,7 +72,7 @@
     End Sub
 
     Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
-        Dim ajout = New iAjouterItem(item, bd)
+        Dim ajout = New iAjouterItem(bd, noEmp, noHotel)
         ajout.Owner = Me
         ajout.Show()
     End Sub

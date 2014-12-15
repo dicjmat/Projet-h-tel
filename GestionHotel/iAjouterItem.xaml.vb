@@ -11,21 +11,8 @@
         noHotel = _noHotel
         Dim res = From el In bd.tblLogin Where el.noEmpl = noEmp Select el
 
-        cbFournisseur.Visibility = Windows.Visibility.Hidden
-        btnAjoutFour.Visibility = Windows.Visibility.Hidden
-        btnAjoutFour.IsEnabled = False
         btnAjouterItem.Visibility = Windows.Visibility.Visible
         btnAjouterItem.IsEnabled = True
-        btnModifierItem.Visibility = Windows.Visibility.Hidden
-        btnModifierItem.IsEnabled = False
-        lblFourni.Visibility = Windows.Visibility.Hidden
-        If res.First.statut = "PATR" Then
-            menu.Visibility = Windows.Visibility.Hidden
-            menu.IsEnabled = False
-        Else
-            menuGerant.Visibility = Windows.Visibility.Hidden
-            menuGerant.IsEnabled = False
-        End If
     End Sub
 
     Sub New(item As String, _bd As P2014_Equipe2_GestionHôtelièreEntities)

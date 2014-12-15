@@ -39,19 +39,13 @@
     End Sub
 
     Private Sub AppuieEmploye()
-        Dim gEmp = New iListeEmploye(noEmploye, noHotel, maBd)
+        Dim gEmp = New iListeEmployeComplet(maBd, noEmploye, noHotel)
         gEmp.Owner = Me
-        Me.Show()
-    End Sub
-
-    Private Sub AppuieCommande()
-        Dim com = New iCommande(noEmploye, maBd)
-        com.Owner = Me
-        com.Show()
+        gEmp.Show()
     End Sub
 
     Private Sub AppuieItem()
-        Dim inv = New iInventaire(noEmploye, noHotel, maBd)
+        Dim inv = New iInventaireComplet(maBd, noEmploye, noHotel)
         inv.Owner = Me
         Me.Close()
     End Sub

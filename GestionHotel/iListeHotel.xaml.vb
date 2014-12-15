@@ -116,12 +116,6 @@
         fourni.Show()
     End Sub
 
-    Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
-        Dim com = New iCommande(noEmp, bd)
-        com.Owner = Me
-        com.Show()
-    End Sub
-
     Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
         Dim inv = New iInventaireComplet(bd, noEmp, noHotel)
         inv.Owner = Me
@@ -138,12 +132,6 @@
         Dim hotel = New iGestionHotel(bd)
         hotel.Owner = Me
         hotel.Show()
-    End Sub
-
-    Private Sub MenuItem_Click_9(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(bd)
-        fiche.Owner = Me
-        fiche.Show()
     End Sub
 
     Private Sub MenuItem_Click_10(sender As Object, e As RoutedEventArgs)

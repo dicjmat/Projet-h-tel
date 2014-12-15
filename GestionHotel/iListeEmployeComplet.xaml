@@ -12,11 +12,7 @@
     <Grid>
         <DockPanel>
             <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,-800,-4.4,0">
-                <MenuItem Header="_Commande" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="Faire une commande" Click="MenuItem_Click_3"></MenuItem>
-                </MenuItem>
                 <MenuItem Header="_Employé" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click_4"></MenuItem>
                     <MenuItem Header="_Liste d'employé centrale" Click="MenuItem_Click_5"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="_Item" BorderBrush="Black" BorderThickness="1">
@@ -40,7 +36,7 @@
                 <Label Content="Rechercher :" Margin="1,52,610,325"></Label>
                 <TextBox Name="txtRecherche" Height="24" Margin="86,52,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="162"/>
                 <Label Content="Hôtel :" Margin="318,51,330,320"></Label>
-                <ComboBox Name="cbHotel" Height="25" Margin="366,51,0,0" ItemsSource="{Binding}" Background="White" SelectedIndex="0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="164">
+                <ComboBox Name="cbHotel" Height="30" Margin="366,51,0,0" ItemsSource="{Binding}" Background="White" SelectedIndex="0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="164">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>

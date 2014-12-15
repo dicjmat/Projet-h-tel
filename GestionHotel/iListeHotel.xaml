@@ -16,19 +16,15 @@
                 <MenuItem Header="_Item"  BorderThickness="1" BorderBrush="Black">
                     <MenuItem Header="_Inventaire" Click="MenuItem_Click_3"/>
                     <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_4"/>
-                    <MenuItem Header="_Faire une commande" Click="MenuItem_Click_5"/>
                     <MenuItem Header="_Inventaire complet" Click="MenuItem_Click_6"/>
                 </MenuItem>
                 <MenuItem Header="_Gestion" BorderThickness="1" BorderBrush="Black">
                     <MenuItem Header="Gestion de salle" Click="MenuItem_Click_7"/>
                     <MenuItem Header="Gestion d'hotel" Click="MenuItem_Click_8"/>
                 </MenuItem>
-                <MenuItem Header="_Employé" BorderThickness="1" BorderBrush="Black">
-                    <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click_9"/>
-                </MenuItem>
                 <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black">
                     <MenuItem Header="_Liste centrale" Click="MenuItem_Click_10"/>
-                    <MenuItem Header="_Liste d'employé centrale" Click="MenuItem_Click_11"/>
+                    <MenuItem Header="_Liste d'employé complet" Click="MenuItem_Click_11"/>
                     <MenuItem Header="_Liste de salle" Click="MenuItem_Click_12"/>
                     <MenuItem Header="_Liste d'hôtel" Click="MenuItem_Click_13"/>
                 </MenuItem>
