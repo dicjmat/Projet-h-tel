@@ -64,7 +64,6 @@
                     </MenuItem>
                 </Menu>
                 <StackPanel></StackPanel>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,0,0,0" Width="2000"></Rectangle>
             </DockPanel>
         </Canvas>
         <Viewbox Stretch="Uniform">

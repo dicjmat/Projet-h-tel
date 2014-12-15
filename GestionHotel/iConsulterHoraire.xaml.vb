@@ -3,18 +3,21 @@
     Private _numEmpl As Integer
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
     Private noGest As Short
+    Private nohotel As Integer
 
-    Sub New(maBd As P2014_Equipe2_GestionHôtelièreEntities, _noGest As Short)
+    Sub New(maBd As P2014_Equipe2_GestionHôtelièreEntities, _noGest As Short, _nohotel As Integer)
         InitializeComponent()
         bd = maBd
         noGest = _noGest
+        nohotel = _nohotel
         requete()
         remplirNom()
     End Sub
 
-    Sub New(numEmpl As Object, maBd As P2014_Equipe2_GestionHôtelièreEntities, _noGest As Short)
+    Sub New(numEmpl As Object, maBd As P2014_Equipe2_GestionHôtelièreEntities, _noGest As Short, _noHotel As Integer)
         InitializeComponent()
         _numEmpl = numEmpl
+        nohotel = _noHotel
         bd = maBd
         noGest = _noGest
         requete()
@@ -59,5 +62,53 @@
 
     Private Sub txtRecherche_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRecherche.TextChanged
         requete()
+    End Sub
+
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim ajout = New iAjouterHoraire(_numEmpl, bd)
+        ajout.Owner = Me
+        ajout.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
+        Dim fiche = New iFicheEmploye(bd)
+        fiche.Owner = Me
+        fiche.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeEmploye(_numEmpl, nohotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeCOmmande(_numEmpl, nohotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
+        Dim ajout = New iAjouterItem(bd, noGest, nohotel)
+        ajout.Owner = Me
+        ajout.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
+        Dim ajout = New iAjoutFournisseur(bd)
+        ajout.Owner = Me
+        ajout.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
+        Dim inv = New iInventaire(_numEmpl, nohotel, bd)
+        inv.Owner = Me
+        inv.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_7(sender As Object, e As RoutedEventArgs)
+        Dim com = New iCommande(_numEmpl, bd)
+        com.Owner = Me
+        com.Show()
     End Sub
 End Class

@@ -30,8 +30,6 @@
                 <StackPanel></StackPanel>
             </DockPanel>
         </Canvas>
-        <Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,75,0,0" Width="2000" VerticalAlignment="Top">
-                    </Rectangle>
         <Viewbox Stretch="Uniform">
             <Grid Height="501" Width="418">
                 <GroupBox Header="Client" BorderBrush="Black" Margin="0,43,1,0" Height="431" VerticalAlignment="Top">

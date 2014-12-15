@@ -75,4 +75,14 @@
         checkList.noEmpl = noEmploye
         'checkList.commentaire = dgCheckList.CurrentCell
     End Sub
+
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim bri = New iGestionBris()
+        bri.Owner = Me
+        bri.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
+        Dim check = New iCheckList(BD, noEmploye, noHotel)
+    End Sub
 End Class

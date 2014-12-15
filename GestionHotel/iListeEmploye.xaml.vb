@@ -68,12 +68,12 @@
     Private Sub btnConsulterHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnConsulterHoraire.Click
         If lstEmploye.SelectedIndex <> -1 Then
             Dim numEmpl = lstEmploye.SelectedItem.noEmpl
-            Dim iHoraire As New iConsulterHoraire(numEmpl, maBd, _noEmpl)
+            Dim iHoraire As New iConsulterHoraire(numEmpl, maBd, _noEmpl, _noHotel)
             iHoraire.Owner = Me
             Me.Hide()
             iHoraire.Show()
         Else
-            Dim iHoraire As New iConsulterHoraire(maBd, _noEmpl)
+            Dim iHoraire As New iConsulterHoraire(maBd, _noEmpl, _noHotel)
             iHoraire.Owner = Me
             Me.Hide()
             iHoraire.Show()

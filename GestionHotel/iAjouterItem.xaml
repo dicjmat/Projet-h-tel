@@ -16,31 +16,46 @@
                     <ColumnDefinition Width="22*"/>
                     <ColumnDefinition Width="21*"/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Menu" Margin="6,-4,264,309"></Label>
                 <Canvas Name="menu">
-                <Button Style="{StaticResource styleBouton}" Name="btnInventaire" Content="Inventaire" Height="25" Margin="3,21,0,285" HorizontalAlignment="Left" Width="134"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="3,51,0,255" HorizontalAlignment="Left" Width="134"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnCommande" Content="Faire une commande" Height="25" Margin="3,81,0,225" HorizontalAlignment="Left" Width="134"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="142,21,0,285" HorizontalAlignment="Left" Width="140"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnGSalle" Content="Gestion salle" Height="25" Margin="142,51,0,255" HorizontalAlignment="Left" Width="140"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="142,81,0,225" HorizontalAlignment="Left" Width="140"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="287,21,0,285" HorizontalAlignment="Left" Width="140" Grid.ColumnSpan="2"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="287,51,0,255" HorizontalAlignment="Left" Width="140" Grid.ColumnSpan="2"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLCentrale" Content="Liste centrale" Height="25" Margin="287,81,0,225" HorizontalAlignment="Left" Width="140" Grid.ColumnSpan="2"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="116,21,0,285" HorizontalAlignment="Left" Width="140" Grid.Column="1"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="116,51,0,255" HorizontalAlignment="Left" Width="140" Grid.Column="1"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLSalle" Content="Liste de salle" Height="25" Margin="116,81,0,225" HorizontalAlignment="Left" Width="140" Grid.Column="1"></Button>
+                    <DockPanel>
+                        <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="15" Height="50" Margin="0,5,-4.4,0">
+                            <MenuItem Header="_Item"  BorderThickness="1" BorderBrush="Black">
+                                <MenuItem Header="_Inventaire" Click="MenuItem_Click_3"/>
+                                <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_4"/>
+                                <MenuItem Header="_Faire une commande" Click="MenuItem_Click_5"/>
+                                <MenuItem Header="_Inventaire complet" Click="MenuItem_Click_6"/>
+                            </MenuItem>
+                            <MenuItem Header="_Gestion" BorderThickness="1" BorderBrush="Black">
+                                <MenuItem Header="Gestion de salle" Click="MenuItem_Click_7"/>
+                                <MenuItem Header="Gestion d'hotel" Click="MenuItem_Click_8"/>
+                            </MenuItem>
+                            <MenuItem Header="_Employé" BorderThickness="1" BorderBrush="Black">
+                                <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click_9"/>
+                            </MenuItem>
+                            <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black">
+                                <MenuItem Header="_Liste centrale" Click="MenuItem_Click_10"/>
+                                <MenuItem Header="_Liste d'employé centrale" Click="MenuItem_Click_11"/>
+                                <MenuItem Header="_Liste de salle" Click="MenuItem_Click_12"/>
+                                <MenuItem Header="_Liste d'hôtel" Click="MenuItem_Click_13"/>
+                            </MenuItem>
+                        </Menu>
+                    </DockPanel>
                 </Canvas>
                 <Canvas Name="menuGerant">
-                <Button Style="{StaticResource styleBouton}" Name="btnCommandeGerant" Content="Faire une commande" Height="25" Margin="3,81,0,225" HorizontalAlignment="Left" Width="134"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnInventaireGerant" Content="Inventaire" Height="25" Margin="3,21,0,285" HorizontalAlignment="Left" Width="134"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourniGerant" Content="Ajouter un fournisseur" Height="25" Margin="3,51,0,255" HorizontalAlignment="Left" Width="134"></Button>
+                    <DockPanel>
+                        <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="15" Height="50" Margin="0,5,-4.4,0">
+                            <MenuItem Header="_Item"  BorderThickness="1" BorderBrush="Black">
+                                <MenuItem Header="_Faire une commande" Click="MenuItem_Click"/>
+                                <MenuItem Header="_Inventaire" Click="MenuItem_Click_1"/>
+                                <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_2"/>
+                            </MenuItem>
+                        </Menu>
+                    </DockPanel>
                 </Canvas>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="-42,108,-38.4,221" Grid.ColumnSpan="2"></Rectangle>
-                <Label Content="* = non-obligatoire" Margin="287,111,196.6,183" Grid.ColumnSpan="2"/>
-                <Label Content="Code de l'item : " HorizontalAlignment="Left" Margin="-3,111,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="txtRCodeItem" Height="20" VerticalAlignment="Top" Width="99" HorizontalAlignment="Left" Margin="87,115,0,0"/>
-                <GroupBox BorderBrush="Black" Header="Item" Margin="0,135,196.6,0" Grid.ColumnSpan="2" Height="163" VerticalAlignment="Top">
+                <Label Content="* = non-obligatoire" Margin="289,79,194.6,214" Grid.ColumnSpan="2"/>
+                <Label Content="Code de l'item : " HorizontalAlignment="Left" Margin="-1,79,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtRCodeItem" Height="20" VerticalAlignment="Top" Width="99" HorizontalAlignment="Left" Margin="90,84,0,0"/>
+                <GroupBox BorderBrush="Black" Header="Item" Margin="2,103,194.6,0" Grid.ColumnSpan="2" Height="163" VerticalAlignment="Top">
                     <StackPanel>
                         <Grid Height="140" Margin="0,0,0.2,0">
                             <Label Content="Nom :" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-4,-7,0,0"/>
@@ -62,7 +77,7 @@
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Grid.Column="1" HorizontalAlignment="Left" Margin="145,271,0,0" VerticalAlignment="Top" Width="111"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter" Grid.Column="1" HorizontalAlignment="Left" Margin="145,219,0,0" VerticalAlignment="Top" Width="111"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFour" Content="Ajouter Fournisseur" Margin="87,272,113,39" Height="20"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFour" Content="Ajouter Fournisseur" Margin="289,232,212.6,79" Height="20" Grid.ColumnSpan="2"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnModifierItem" Content="Modifier" Height="20" Margin="145,247,0,64" Grid.Column="1" HorizontalAlignment="Left" Width="111"/>
             </Grid>
         </Viewbox>

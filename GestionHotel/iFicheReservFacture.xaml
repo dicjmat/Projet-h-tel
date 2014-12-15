@@ -30,7 +30,6 @@
                 <StackPanel></StackPanel>
             </DockPanel>
         </Canvas>
-        <Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,75,0,0" Width="2000" VerticalAlignment="Top"></Rectangle>
         <Viewbox Stretch="Uniform">
             <Grid Width="705" Height="694">
                 <GroupBox Header="Réservation" BorderBrush="Black" Margin="10,125,0,335" HorizontalAlignment="Left" Width="364">

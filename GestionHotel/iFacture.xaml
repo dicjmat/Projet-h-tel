@@ -30,7 +30,6 @@
                 <StackPanel></StackPanel>
             </DockPanel>
         </Canvas>
-        <Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,75,0,0" Width="2000" VerticalAlignment="Top"></Rectangle>
         <Viewbox Stretch="Uniform">
             <Grid Width="421" Height="565">
                 <Label Content="No de note :" Margin="11,120,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"></Label>

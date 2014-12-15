@@ -320,7 +320,7 @@ Public Class iFicheEmploye
     End Sub
 
     Private Sub MenuItem_Click_11(sender As Object, e As RoutedEventArgs)
-        Dim item = New iAjouterItem(bd)
+        Dim item = New iAjouterItem(bd, numEmpl, hotel)
         item.Owner = Me
         item.Show()
     End Sub
