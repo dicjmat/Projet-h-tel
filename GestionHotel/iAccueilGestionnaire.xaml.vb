@@ -44,7 +44,7 @@
     End Sub
 
     Private Sub AppuieEmp()
-        Dim emp = New iFicheEmploye(maBd)
+        Dim emp = New iFicheEmploye(maBd, noHotel, noEmpl)
         emp.Owner = Me
         emp.Show()
     End Sub

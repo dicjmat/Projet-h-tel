@@ -6,12 +6,13 @@ Public Class iFicheEmploye
     Private noGest As Short
     Private hotel As Short
 
-
     Sub New(_noGest As Short, noHotel As Short, _numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
-        Dim res = From el In bd.tblLogin Where el.noEmpl = numEmpl Select el
+        noGest = _noGest
+        hotel = noHotel
+        Dim res = From el In bd.tblLogin Where el.noEmpl = noGest Select el
 
         btnModifier.Visibility = Windows.Visibility.Visible
 
@@ -26,10 +27,12 @@ Public Class iFicheEmploye
         txtNASEmp.IsEnabled = False
     End Sub
 
-    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _noHotel As Integer, _noGest As Integer)
         InitializeComponent()
         bd = _bd
-        Dim res = From el In bd.tblLogin Where el.noEmpl = numEmpl Select el
+        noGest = _noGest
+        hotel = _noHotel
+        Dim res = From el In bd.tblLogin Where el.noEmpl = noGest Select el
         btnModifier.Visibility = Windows.Visibility.Hidden
         txtNASEmp.IsEnabled = True
 
@@ -167,12 +170,9 @@ Public Class iFicheEmploye
 
     End Sub
 
-    Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
-        Me.Owner.Show()
-    End Sub
-
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Owner.Close()
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
     Private Sub btnAnnuler_Click(sender As Object, e As RoutedEventArgs)
@@ -271,7 +271,7 @@ Public Class iFicheEmploye
         End If
     End Sub
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(bd)
+        Dim fiche = New iFicheEmploye(bd, hotel, noGest)
         fiche.Owner = Me
         fiche.Show()
     End Sub
@@ -301,7 +301,7 @@ Public Class iFicheEmploye
     End Sub
 
     Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(bd)
+        Dim fiche = New iFicheEmploye(bd, hotel, noGest)
         fiche.Owner = Me
         fiche.Show()
     End Sub

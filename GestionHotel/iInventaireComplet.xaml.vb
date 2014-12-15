@@ -112,10 +112,6 @@
         End If
     End Sub
 
-    Private Sub window_invComp_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles window_invComp.Closing
-        Me.Owner.Show()
-    End Sub
-
     Private Sub window_invComp_Activated(sender As Object, e As EventArgs) Handles window_invComp.Activated
         requete()
     End Sub
@@ -127,7 +123,7 @@
     End Sub
 
     Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(bd)
+        Dim fiche = New iFicheEmploye(bd, noHotel, noEmp)
         fiche.Owner = Me
         fiche.Show()
     End Sub

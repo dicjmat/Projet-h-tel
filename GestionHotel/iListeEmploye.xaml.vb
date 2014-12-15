@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub btnAjouterEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterEmploye.Click
-        Dim iEmploye As New iFicheEmploye(maBd)
+        Dim iEmploye As New iFicheEmploye(maBd, _noHotel, _noEmpl)
         iEmploye.Owner = Me
         Me.Hide()
         iEmploye.Show()
@@ -79,7 +79,7 @@
     End Sub
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(maBd)
+        Dim fiche = New iFicheEmploye(maBd, _noHotel, _noEmpl)
         fiche.Owner = Me
         fiche.Show()
     End Sub

@@ -12,7 +12,7 @@
         nohotel = _nohotel
         requete()
         remplirNom()
-        Dim res = From el In bd.tblLogin Where el.noEmpl = _numEmpl Select el
+        Dim res = From el In bd.tblLogin Where el.noEmpl = noGest Select el
 
         If res.First.statut = "GEST" Then
             menu.Visibility = Windows.Visibility.Hidden
@@ -31,7 +31,7 @@
         noGest = _noGest
         requete()
         remplirNom()
-        Dim res = From el In bd.tblLogin Where el.noEmpl = _numEmpl Select el
+        Dim res = From el In bd.tblLogin Where el.noEmpl = noGest Select el
 
         If res.First.statut = "GEST" Then
             menu.Visibility = Windows.Visibility.Hidden
@@ -90,7 +90,7 @@
     End Sub
 
     Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(bd)
+        Dim fiche = New iFicheEmploye(bd, nohotel, noGest)
         fiche.Owner = Me
         fiche.Show()
     End Sub

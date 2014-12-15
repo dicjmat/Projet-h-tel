@@ -12,7 +12,7 @@
     End Sub
 
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
-        Dim emp = New iFicheEmploye(bd)
+        Dim emp = New iFicheEmploye(bd, noHotel, noEmp)
         emp.Owner = Me
         emp.Show()
         Me.Hide()

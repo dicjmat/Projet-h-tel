@@ -97,7 +97,7 @@
     End Sub
 
     Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(maBD)
+        Dim fiche = New iFicheEmploye(maBD, _noHotel, _noEmpl)
         fiche.Owner = Me
         fiche.Show()
     End Sub
