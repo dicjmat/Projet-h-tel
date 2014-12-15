@@ -170,11 +170,6 @@
         dgCommande.ItemsSource = res.ToList()
     End Sub
 
-    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
-        Dim ajout = New iAjouterItem(bd, noEmpl, noHotel)
-        ajout.Owner = Me
-        ajout.Show()
-    End Sub
     Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
         Dim inv = New iInventaire(noEmpl, noHotel, bd)
         inv.Owner = Me
@@ -241,21 +236,33 @@
         lst.Show()
     End Sub
 
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim fiche = New iFicheEmploye(bd)
+        fiche.Owner = Me
+        fiche.Show()
+    End Sub
+
     Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
-        Dim ajout = New iAjouterItem(bd, noEmpl, noHotel)
-        ajout.Owner = Me
-        ajout.Show()
+        Dim lst = New iListeEmploye(noEmpl, noHotel, bd)
+        lst.Owner = Me
+        lst.Show()
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
-        Dim ajout = New iAjoutFournisseur(bd)
-        ajout.Owner = Me
-        ajout.Show()
+        Dim horaire = New iAjouterHoraire(noEmpl, noHotel, bd)
+        horaire.Owner = Me
+        horaire.Show()
     End Sub
 
-    Private Sub MenuItem_Click_14(sender As Object, e As RoutedEventArgs)
-        Dim inv = New iInventaire(noEmpl, noHotel, bd)
-        inv.Owner = Me
-        inv.Show()
+    Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeCOmmande(noEmpl, noHotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iCommunique(noEmpl, noHotel, bd)
+        lst.Owner = Me
+        lst.Show()
     End Sub
 End Class

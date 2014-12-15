@@ -39,11 +39,17 @@
                 </Menu>
             </Canvas>
             <Canvas Name="menuGerant">
-                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,5,-4.4,0">
-                    <MenuItem Header="_Item" BorderBrush="Black" BorderThickness="1">
-                        <MenuItem Header="_Ajouter un item" Click="MenuItem_Click_1"/>
-                        <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_2"/>
-                        <MenuItem Header="_Inventaire" Click="MenuItem_Click_14"/>
+                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,25,-4.4,0">
+                    <MenuItem Header="_Employé"  BorderThickness="1" BorderBrush="Black">
+                        <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click"/>
+                        <MenuItem Header="_Liste d'employé" Click="MenuItem_Click_1"/>
+                        <MenuItem Header="_Ajouter un horaire" Click="MenuItem_Click_2"/>
+                    </MenuItem>
+                    <MenuItem Header="_Commande"  BorderThickness="1" BorderBrush="Black">
+                        <MenuItem Header="_Liste de commande" Click="MenuItem_Click_3"/>
+                    </MenuItem>
+                    <MenuItem Header="_Communiqué" BorderThickness="1" BorderBrush="Black">
+                        <MenuItem Header="_Liste de communiqué" Click="MenuItem_Click_4"/>
                     </MenuItem>
                 </Menu>
             </Canvas>
