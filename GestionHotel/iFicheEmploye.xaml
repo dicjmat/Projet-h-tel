@@ -13,7 +13,7 @@
     <Grid Margin="0,0,14.8,0.4">
         <Canvas Name="menu">
             <DockPanel>
-                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,25,-4.4,0">
+                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4.4,0">
                     <MenuItem Header="_Employé"  BorderThickness="1" BorderBrush="Black">
                         <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click_5"/>
                         <MenuItem Header="_Liste d'employé" Click="MenuItem_Click_6"/>
@@ -50,7 +50,7 @@
         </Canvas>
         <Canvas Name="menuGest">
             <DockPanel>
-                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,25,-4.4,0">
+                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4.4,0">
                     <MenuItem Header="_Employé"  BorderThickness="1" BorderBrush="Black">
                         <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click"/>
                         <MenuItem Header="_Liste d'employé" Click="MenuItem_Click_1"/>
