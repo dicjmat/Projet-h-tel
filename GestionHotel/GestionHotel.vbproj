@@ -207,6 +207,9 @@
     <Compile Include="iListeForfait.xaml.vb">
       <DependentUpon>iListeForfait.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LierFournisseur.xaml.vb">
+      <DependentUpon>LierFournisseur.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model1.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -521,6 +524,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iListeForfait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LierFournisseur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

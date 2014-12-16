@@ -56,6 +56,7 @@
                     <StackPanel>
                         <Grid Height="294" Margin="0,0,-0.4,0">
                             <Button Style="{StaticResource styleBouton}" Name="btnAjoutItem" Content="Ajouter Item" HorizontalAlignment="Center" Margin="598,259,0,0" VerticalAlignment="Top" Width="100" Height="25"/>
+                            <Button Style="{StaticResource styleBouton}" Name="btnLierItem" Content="Lier Fournisseur" Width="100" Height="25" Margin="493,259,105,10"/>
                             <DataGrid Name="lstInventaire" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,0,0,40">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Code" Binding="{Binding codeItem}"></DataGridTextColumn>
