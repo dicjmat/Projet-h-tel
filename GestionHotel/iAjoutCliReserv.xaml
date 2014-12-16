@@ -98,7 +98,7 @@
                     </Grid>
                 </GroupBox>
                 <Button Name="btnAccueil" BorderBrush="Black" Style="{StaticResource styleBouton}" Height="25" Content="Accueil" Margin="330,514,0,0" HorizontalAlignment="Left" Width="78"></Button>
-                <Button Name="btnAjouterCli" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Ajouter le client" Height="25" Margin="223,509,0,-33" HorizontalAlignment="Left" Width="102"></Button>
+                <Button Name="btnAjouterCli" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Ajouter le client" Height="25" Margin="223,514,0,0" HorizontalAlignment="Left" Width="102"></Button>
                 <Button x:Name="btnModifier" BorderBrush="Black" Style="{StaticResource styleBouton}" Content="Sauvegarder" Height="25" Margin="223,514,0,0" HorizontalAlignment="Left" Width="102"/>
             </Grid>
         </Viewbox>
