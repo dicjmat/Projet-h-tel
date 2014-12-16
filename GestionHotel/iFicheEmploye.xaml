@@ -38,11 +38,12 @@
                     <MenuItem Header="_Inventaire" BorderThickness="1" BorderBrush="Black">
                         <MenuItem Header="_Inventaire complet" Click="MenuItem_Click_16"></MenuItem>
                     </MenuItem>
-                    <MenuItem Header="_Liste" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Liste" BorderThickness="1" BorderBrush="Black" Click="MenuItem_Click_21">
                         <MenuItem Header="_Liste centrale" Click="MenuItem_Click_17"></MenuItem>
                         <MenuItem Header="_Liste d'employé centrale" Click="MenuItem_Click_18"></MenuItem>
                         <MenuItem Header="_Liste d'hotel" Click="MenuItem_Click_19"></MenuItem>
                         <MenuItem Header="_Liste de salle" Click="MenuItem_Click_20"></MenuItem>
+                        <MenuItem Header="_Liste de réservation centrale"/>
                     </MenuItem>
                 </Menu>
                 <StackPanel></StackPanel>

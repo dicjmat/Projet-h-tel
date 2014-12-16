@@ -253,4 +253,10 @@
         lst.Owner = Me
         lst.Show()
     End Sub
+
+    Private Sub MenuItem_Click_14(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeReservComplet(bd, noEmpl, noHotel)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
 End Class

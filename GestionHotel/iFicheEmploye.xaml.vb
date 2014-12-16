@@ -397,4 +397,10 @@ Public Class iFicheEmploye
         lst.Owner = Me
         lst.Show()
     End Sub
+
+    Private Sub MenuItem_Click_21(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeReservComplet(bd, numEmpl, hotel)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
 End Class
