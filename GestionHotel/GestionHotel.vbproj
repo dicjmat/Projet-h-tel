@@ -108,6 +108,9 @@
     <Compile Include="determinersallelibre_Result.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="determinertypechambrelibre_Result.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="iAccueilVente.xaml.vb">
       <DependentUpon>iAccueilVente.xaml</DependentUpon>
     </Compile>
@@ -137,6 +140,9 @@
     </Compile>
     <Compile Include="iFacture.xaml.vb">
       <DependentUpon>iFacture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="iFactureNote.xaml.vb">
+      <DependentUpon>iFactureNote.xaml</DependentUpon>
     </Compile>
     <Compile Include="iFaireReservationChambre.xaml.vb">
       <DependentUpon>iFaireReservationChambre.xaml</DependentUpon>
@@ -171,6 +177,9 @@
     <Compile Include="iListeEmployeComplet.xaml.vb">
       <DependentUpon>iListeEmployeComplet.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iListeFacture.xaml.vb">
+      <DependentUpon>iListeFacture.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iListeHotel.xaml.vb">
       <DependentUpon>iListeHotel.xaml</DependentUpon>
     </Compile>
@@ -200,6 +209,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.vb">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="tblBris.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -221,7 +239,7 @@
     <Compile Include="tblCompagnie.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblCompte.vb">
+    <Compile Include="tblDemandeur.vb">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tblElementNote.vb">
@@ -391,6 +409,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="iFactureNote.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iFaireReservationChambre.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -456,6 +478,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iListeEmployeComplet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iListeFacture.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

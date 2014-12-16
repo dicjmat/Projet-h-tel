@@ -6,23 +6,43 @@ Public Class iFicheEmploye
     Private noGest As Short
     Private hotel As Short
 
-
     Sub New(_noGest As Short, noHotel As Short, _numEmpl As Integer, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         numEmpl = _numEmpl
         bd = _bd
+        noGest = _noGest
+        hotel = noHotel
+        Dim res = From el In bd.tblLogin Where el.noEmpl = noGest Select el
 
         btnModifier.Visibility = Windows.Visibility.Visible
 
-        
+        If res.First.statut = "GEST" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGest.Visibility = Windows.Visibility.Hidden
+            menuGest.IsEnabled = False
+        End If
+
         txtNASEmp.IsEnabled = False
     End Sub
 
-    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _noHotel As Integer, _noGest As Integer)
         InitializeComponent()
         bd = _bd
+        noGest = _noGest
+        hotel = _noHotel
+        Dim res = From el In bd.tblLogin Where el.noEmpl = noGest Select el
         btnModifier.Visibility = Windows.Visibility.Hidden
         txtNASEmp.IsEnabled = True
+
+        If res.First.statut = "GEST" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menu.IsEnabled = False
+        Else
+            menuGest.Visibility = Windows.Visibility.Hidden
+            menuGest.IsEnabled = False
+        End If
     End Sub
 
     Private Sub windowFicheEmploye_Loaded(sender As Object, e As RoutedEventArgs) Handles windowFicheEmploye.Loaded
@@ -37,7 +57,7 @@ Public Class iFicheEmploye
 
         Dim ress = From el In bd.tblLogin Where el.noEmpl = numEmpl Select el
 
-        If ress.First.statut = "PATR" Then
+        If ress.First.statut = "GEST" Then
             menu.Visibility = Windows.Visibility.Hidden
             menu.IsEnabled = False
         Else
@@ -47,9 +67,9 @@ Public Class iFicheEmploye
 
 
         If numEmpl <> 0 Then
-            Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
+    Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
             Me.DataContext = res.ToList()
-            Dim i = 0
+    Dim i = 0
             For Each el In cmbPays.Items
                 If el.codePays = res.First.tblVille.tblProvince.codePays Then
                     cmbPays.SelectedIndex = i
@@ -57,6 +77,7 @@ Public Class iFicheEmploye
                 End If
                 i = i + 1
             Next
+            i = 0
             For Each el In cmbProvince.Items
                 If el.codeProv = res.First.codeProv Then
                     cmbProvince.SelectedIndex = i
@@ -64,6 +85,7 @@ Public Class iFicheEmploye
                 End If
                 i = i + 1
             Next
+            i = 0
             For Each el In cmbCdVille.Items
                 If el.codeVille = res.First.codeVille Then
                     cmbCdVille.SelectedIndex = i
@@ -150,12 +172,9 @@ Public Class iFicheEmploye
 
     End Sub
 
-    Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
-        Me.Owner.Show()
-    End Sub
-
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Owner.Close()
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
     Private Sub btnAnnuler_Click(sender As Object, e As RoutedEventArgs)
@@ -254,7 +273,7 @@ Public Class iFicheEmploye
         End If
     End Sub
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(bd)
+        Dim fiche = New iFicheEmploye(bd, hotel, noGest)
         fiche.Owner = Me
         fiche.Show()
     End Sub
@@ -284,7 +303,7 @@ Public Class iFicheEmploye
     End Sub
 
     Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(bd)
+        Dim fiche = New iFicheEmploye(bd, hotel, noGest)
         fiche.Owner = Me
         fiche.Show()
     End Sub
@@ -320,7 +339,7 @@ Public Class iFicheEmploye
     End Sub
 
     Private Sub MenuItem_Click_11(sender As Object, e As RoutedEventArgs)
-        Dim item = New iAjouterItem(bd)
+        Dim item = New iAjouterItem(bd, numEmpl, hotel)
         item.Owner = Me
         item.Show()
     End Sub

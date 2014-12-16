@@ -14,7 +14,9 @@ Partial Public Class tblFacture
     Public Property noFacture As Integer
     Public Property etatFacture As String
     Public Property dateFacture As Date
+    Public Property noHotel As Nullable(Of Byte)
 
+    Public Overridable Property tblHotel As tblHotel
     Public Overridable Property tblNote As ICollection(Of tblNote) = New HashSet(Of tblNote)
 
 End Class

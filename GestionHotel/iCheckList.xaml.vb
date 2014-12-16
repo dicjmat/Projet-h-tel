@@ -63,9 +63,7 @@
     End Sub
 
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
-        Dim emp = From em In BD.tblHoraire Where em.noEmpl = 1001 Select em
 
-        Dim yolo = 2
     End Sub
 
     Private Sub dgCheckList_CellEditEnding(sender As Object, e As DataGridCellEditEndingEventArgs) Handles dgCheckList.CellEditEnding
@@ -76,5 +74,15 @@
         checkList.noHotel = noHotel
         checkList.noEmpl = noEmploye
         'checkList.commentaire = dgCheckList.CurrentCell
+    End Sub
+
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim bri = New iGestionBris()
+        bri.Owner = Me
+        bri.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
+        Dim check = New iCheckList(BD, noEmploye, noHotel)
     End Sub
 End Class

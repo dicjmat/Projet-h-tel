@@ -52,7 +52,10 @@
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
         bd = _bd
+        Dim pays = From pa In bd.tblPays
+           Select pa
 
+        cbPays.ItemsSource = pays.ToList
         cbProvince.IsEnabled = False
         cbCodeVille.IsEnabled = False
         btnAjouter.Visibility = Windows.Visibility.Visible
@@ -62,6 +65,8 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
@@ -82,7 +87,7 @@
                         hotel.noTelecopieur = txtNoteleC.Text
                         hotel.noTelHotel = txtTelHotel.Text
                         hotel.noTelReserv = noTelRes.Text
-                        'hotel.codeProv = cbProvince.SelectedItem.codeProv
+                        hotel.codeProv = cbProvince.SelectedItem.codeProv
                         bd.tblHotel.Add(hotel)
                         bd.SaveChanges()
                         MessageBox.Show("L'hôtel a bien été créé")

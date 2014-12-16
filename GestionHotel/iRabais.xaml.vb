@@ -2,6 +2,7 @@
     Dim bd As New P2014_Equipe2_GestionHôtelièreEntities
     Private noHotel As Short
     Dim noEmp As Integer
+    Dim p1 As Boolean
 
     Sub New(hotel As Short, _bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer)
         InitializeComponent()
@@ -43,7 +44,7 @@
                   Where tychho.noHotel = noHotel
                   Select tych
 
-        cbTypeChambre.DataContext = res.ToList
+        cbTypeChambre.ItemsSource = res.ToList
     End Sub
 
     Private Sub requete()
@@ -122,27 +123,33 @@
         End If
     End Sub
 
-    Private Sub btnAjoutForfait_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutForfait.Click
-        Dim forf = New iAjoutForf(True, noHotel, bd)
-        forf.Owner = Me
-        forf.Show()
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim ajout = New iAjoutForf(p1, noHotel, bd)
+        ajout.owner = Me
+        ajout.Show()
     End Sub
 
-    Private Sub btnListeForf_Click(sender As Object, e As RoutedEventArgs) Handles btnListeForf.Click
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim lst = New ListeForfait(noHotel, bd, noEmp)
         lst.Owner = Me
         lst.Show()
     End Sub
 
-    Private Sub btnListeSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnListeSalle.Click
+    Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeSalle(noHotel, bd, noEmp)
         lst.Owner = Me
         lst.Show()
     End Sub
 
-    Private Sub btnLPeriode_Click(sender As Object, e As RoutedEventArgs) Handles btnLPeriode.Click
-        Dim per = New iListePeriode(bd, noHotel, noEmp)
-        per.Owner = Me
-        per.Show()
+    Private Sub MenuItem_Click_14(sender As Object, e As RoutedEventArgs)
+        Dim rab = New iRabais(noHotel, bd, noEmp)
+        rab.Owner = Me
+        rab.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_15(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListePeriode(bd, noHotel, noEmp)
+        lst.Owner = Me
+        lst.Show()
     End Sub
 End Class

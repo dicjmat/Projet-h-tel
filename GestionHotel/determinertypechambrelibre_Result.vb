@@ -10,14 +10,9 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class tblTypeSalle
-    Public Property codeTypeSalle As String
+Partial Public Class determinertypechambrelibre_Result
     Public Property nomTypeSalle As String
-    Public Property descTypeSalle As String
-
-    Public Overridable Property tblGabarit As ICollection(Of tblGabarit) = New HashSet(Of tblGabarit)
-    Public Overridable Property tblForfait As ICollection(Of tblForfait) = New HashSet(Of tblForfait)
-    Public Overridable Property tblSalle As ICollection(Of tblSalle) = New HashSet(Of tblSalle)
-    Public Overridable Property tblTypeSalleHotel As ICollection(Of tblTypeSalleHotel) = New HashSet(Of tblTypeSalleHotel)
+    Public Property codeTypeSalle As String
+    Public Property nbChambre As Nullable(Of Integer)
 
 End Class

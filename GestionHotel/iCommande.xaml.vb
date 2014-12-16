@@ -17,7 +17,7 @@
             menu.IsEnabled = False
         Else
             menuGerant.Visibility = Windows.Visibility.Hidden
-            menu.IsEnabled = False
+            menuGerant.IsEnabled = False
         End If
     End Sub
 
@@ -170,93 +170,87 @@
         dgCommande.ItemsSource = res.ToList()
     End Sub
 
-    Private Sub btnInventaireGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnInventaireGerant.Click
-        Dim inv = New iInventaire(noEmpl, noHotel, bd)
-        inv.Owner = Me
-        inv.Show()
-    End Sub
-
-    Private Sub btnAjoutFourniGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFourniGerant.Click
-        Dim fourni = New iAjoutFournisseur(bd)
-        fourni.Owner = Me
-        fourni.Show()
-    End Sub
-
-    Private Sub btnAjoutItemGerant_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutItemGerant.Click
-        Dim item = New iAjouterItem(bd)
-        item.Owner = Me
-        item.Show()
-    End Sub
-
-    Private Sub btnFicheEmp_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheEmp.Click
-        Dim fiche = New iFicheEmploye(bd)
-        fiche.Owner = Me
-        fiche.Show()
-    End Sub
-
-    Private Sub btnGSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnGSalle.Click
-        Dim salle = New iGestionSalle(bd)
-        salle.Owner = Me
-        salle.Show()
-    End Sub
-
-    Private Sub btnGChambre_Click(sender As Object, e As RoutedEventArgs) Handles btnGChambre.Click
-        Dim chambre = New iGestionChambre(bd, noHotel)
-        chambre.Owner = Me
-        chambre.Show()
-    End Sub
-
-    Private Sub btnGHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnGHotel.Click
-        Dim hotel = New iGestionHotel(bd)
-        hotel.Owner = Me
-        hotel.Show()
-    End Sub
-
-    Private Sub btnIComplet_Click(sender As Object, e As RoutedEventArgs) Handles btnIComplet.Click
-        Dim inv = New iInventaireComplet(bd, noEmpl, noHotel)
-        inv.Owner = Me
-        inv.Show()
-    End Sub
-
-    Private Sub btnLCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLCentrale.Click
-        Dim lst = New iListeCentrale(bd, noEmpl, noHotel)
-        lst.Owner = Me
-        lst.Show()
-    End Sub
-
-    Private Sub btnLEmpCentrale_Click(sender As Object, e As RoutedEventArgs) Handles btnLEmpCentrale.Click
-        Dim lst = New iListeEmployeComplet(bd, noEmpl, noHotel)
-        lst.Owner = Me
-        lst.Show()
-    End Sub
-
-    Private Sub btnLHotel_Click(sender As Object, e As RoutedEventArgs) Handles btnLHotel.Click
-        Dim lst = New iListeHotel(bd, noEmpl, noHotel)
-        lst.Owner = Me
-        lst.Show()
-    End Sub
-
-    Private Sub btnLSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnLSalle.Click
-        Dim lst = New iListeSalle(noHotel, bd, noEmpl)
-        lst.Owner = Me
-        lst.Show()
-    End Sub
-
-    Private Sub btnAjoutFourni_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFourni.Click
-        Dim fourni = New iAjoutFournisseur(bd)
-        fourni.Owner = Me
-        fourni.Show()
-    End Sub
-
-    Private Sub btnCommande_Click(sender As Object, e As RoutedEventArgs) Handles btnCommande.Click
+    Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
         Dim com = New iCommande(noEmpl, bd)
         com.Owner = Me
         com.Show()
     End Sub
 
-    Private Sub btnAjouterItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItem.Click
-        Dim ajout = New iAjouterItem(bd)
-        ajout.Owner = Me
-        ajout.Show()
+    Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
+        Dim inv = New iInventaireComplet(bd, noEmpl, noHotel)
+        inv.Owner = Me
+        inv.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_7(sender As Object, e As RoutedEventArgs)
+        Dim salle = New iGestionSalle(bd)
+        salle.Owner = Me
+        salle.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_8(sender As Object, e As RoutedEventArgs)
+        Dim hotel = New iGestionHotel(bd)
+        hotel.Owner = Me
+        hotel.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_9(sender As Object, e As RoutedEventArgs)
+        Dim fiche = New iFicheEmploye(bd, noHotel, noEmpl)
+        fiche.Owner = Me
+        fiche.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_10(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeCentrale(bd, noEmpl, noHotel)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_11(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeEmployeComplet(bd, noEmpl, noHotel)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_12(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeSalle(noHotel, bd, noEmpl)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_13(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeHotel(bd, noEmpl, noHotel)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim fiche = New iFicheEmploye(bd, noHotel, noEmpl)
+        fiche.Owner = Me
+        fiche.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeEmploye(noEmpl, noHotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
+        Dim horaire = New iAjouterHoraire(noEmpl, noHotel, bd)
+        horaire.Owner = Me
+        horaire.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeCOmmande(noEmpl, noHotel, bd)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iCommunique(noEmpl, noHotel, bd)
+        lst.Owner = Me
+        lst.Show()
     End Sub
 End Class

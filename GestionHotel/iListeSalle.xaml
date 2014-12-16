@@ -1,7 +1,7 @@
 ﻿<Window x:Name="windowListeSalle" x:Class="iListeSalle" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="CadetBlue" WindowStyle="None" Icon="icon.ico"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Gestion Hotel" Height="264.8" Width="300">
+    Title="Gestion Hotel" Height="223.627" Width="300">
     <Window.Resources>
         <Style x:Key="styleBouton" TargetType="Button">
             <Setter Property="Background" Value="WhiteSmoke"></Setter>
@@ -10,39 +10,58 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <DockPanel>
+            <Canvas Name="menu">
+                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4.4,0">
+                    <MenuItem Header="_Commande" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_Faire une commande" Click="MenuItem_Click_3"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="_Employé" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click_4"></MenuItem>
+                        <MenuItem Header="_Liste d'employé centrale" Click="MenuItem_Click_5"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="_Item" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_Ajouter un item" Click="MenuItem_Click_6"/>
+                        <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_7"/>
+                        <MenuItem Header="_Inventaire complet" Click="MenuItem_Click_8"/>
+                    </MenuItem>
+                    <MenuItem Header="_Gestion" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_Gestion de salle" Click="MenuItem_Click_9"/>
+                        <MenuItem Header="_Gestion d'hôtel" Click="MenuItem_Click_10"/>
+                    </MenuItem>
+                    <MenuItem Header="_Listes" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_Liste centrale" Click="MenuItem_Click_11"/>
+                        <MenuItem Header="_Liste hotel" Click="MenuItem_Click_12"/>
+                        <MenuItem Header="_Liste salle" Click="MenuItem_Click_13"/>
+                    </MenuItem>
+                </Menu>
+            </Canvas>
+            <Canvas Name="menuVente">
+                <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4.4,0">
+                    <MenuItem Header="_Forfait" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_Ajouter un forfait" Click="MenuItem_Click"/>
+                        <MenuItem Header="_Liste de forfaits" Click="MenuItem_Click_1"/>
+                    </MenuItem>
+                    <MenuItem Header="_Salle" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_Liste de salle" Click="MenuItem_Click_2"/>
+                    </MenuItem>
+                    <MenuItem Header="_Rabais" BorderBrush="Black" BorderThickness="1">
+                        <MenuItem Header="_Rabais" Click="MenuItem_Click_14"/>
+                        <MenuItem Header="_Liste de périodes" Click="MenuItem_Click_15"/>
+                    </MenuItem>
+                </Menu>
+            </Canvas>
+        </DockPanel>
         <Viewbox Stretch="Uniform">
-            <Grid Height="597">
-                <Label Content="Menu"></Label>
-                <Canvas Name="menu">
-                <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter un item" Height="25" Margin="10,55,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFourni" Content="Ajouter un fournisseur" Height="25" Margin="10,25,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnCommande" Content="Faire une commande" Height="25" Margin="10,85,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnFicheEmp" Content="Fiche d'employé" Height="25" Margin="177,25,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnGSalle" Content="Gestion salle" Height="25" Margin="177,55,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnGChambre" Content="Gestion chambre" Height="25" Margin="177,85,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnGHotel" Content="Gestion hotel" Height="25" Margin="344,25,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnIComplet" Content="Inventaire complet" Height="25" Margin="344,55,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLCentrale" Content="Liste centrale" Height="25" Margin="344,87,0,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLEmpCentrale" Content="Liste d'employé centrale" Height="25" Margin="511,25,-0.2,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLHotel" Content="Liste d'hotel" Height="25" Margin="511,55,-0.2,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnLSalle" Content="Liste de salle" Height="25" Margin="511,85,-0.2,0" HorizontalAlignment="Left" Width="162" VerticalAlignment="Top"></Button>
-                </Canvas>
-                <Canvas Name="menuVente">
-                <Button Style="{StaticResource styleBouton}" Name="btnAjoutForfaitVente" Content="Ajouter un forfait" Height="25" Margin="10,25,500.8,547"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnListeSalleVente" Content="Liste de salle" Height="25" Margin="10,55,500.8,517"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnListeForfVente" Content="Liste de forfait" Height="25" Margin="10,85,500.8,487"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnRabaisVente" Content="Rabais" Height="25" Margin="177,25,333.8,547"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnLPeriodeVente" Content="Liste de période" Height="25" Margin="177,55,333.8,517"></Button>
-                </Canvas>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,136,-0.2,459"></Rectangle>
-                <GroupBox BorderBrush="Black" Header="Salle" Margin="0,152,-0.2,34">
+            <Grid Height="482">
+                <GroupBox BorderBrush="Black" Header="Salle" Margin="0,43,-0.4,40">
                     <StackPanel>
                         <Grid>
                             <Label Content="Date de début :"/>
                             <DatePicker Name="dpDebutSalle" Margin="97,0,400,-0.4"/>
                             <Label Content="Date de fin :" Margin="265,0,-265,-0.4"/>
                             <DatePicker Name="dpFinSalle" Margin="342,0,155,-0.4"/>
-                            <DataGrid Name="lstSalle" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,31,0,-330.4" IsReadOnly="True">
+                            <DataGrid Name="lstSalle" AutoGenerateColumns="False" ItemsSource="{Binding}" Margin="0,31,-0.4,-314.4" IsReadOnly="True">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="No" Binding="{Binding noSalle}"></DataGridTextColumn>
                                     <DataGridTextColumn Header="Nom" Binding="{Binding nomSalle}"></DataGridTextColumn>
@@ -53,10 +72,10 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Margin="0,0,9.8,4" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="74"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjouterSalle" Content="Ajouter une salle" Margin="0,0,88.8,4" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnModifSalle" Content="Modifier la salle" Height="25" Margin="495,532,9.8,0" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnReservSalle" Content="Réserver la salle" Height="25" Margin="310,532,194.8,0" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Margin="0,0,9.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="74"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterSalle" Content="Ajouter une salle" Margin="0,0,88.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifSalle" Content="Modifier la salle" Height="25" Margin="495,408,9.6,0" VerticalAlignment="Top"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnReservSalle" Content="Réserver la salle" Height="25" Margin="310,408,194.6,0" VerticalAlignment="Top"></Button>
             </Grid>
         </Viewbox>
     </Grid>

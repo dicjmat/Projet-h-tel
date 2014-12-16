@@ -24,6 +24,7 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
         Throw New UnintentionalCodeFirstException()
     End Sub
 
+    Public Overridable Property sysdiagrams() As DbSet(Of sysdiagrams)
     Public Overridable Property tblBris() As DbSet(Of tblBris)
     Public Overridable Property tblCatalogue() As DbSet(Of tblCatalogue)
     Public Overridable Property tblChecklist() As DbSet(Of tblChecklist)
@@ -44,7 +45,7 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
     Public Overridable Property tblProfession() As DbSet(Of tblProfession)
     Public Overridable Property tblClient() As DbSet(Of tblClient)
     Public Overridable Property tblCompagnie() As DbSet(Of tblCompagnie)
-    Public Overridable Property tblCompte() As DbSet(Of tblCompte)
+    Public Overridable Property tblDemandeur() As DbSet(Of tblDemandeur)
     Public Overridable Property tblElementNote() As DbSet(Of tblElementNote)
     Public Overridable Property tblFacture() As DbSet(Of tblFacture)
     Public Overridable Property tblForfait() As DbSet(Of tblForfait)
@@ -58,6 +59,68 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
     Public Overridable Property tblTypeLit() As DbSet(Of tblTypeLit)
     Public Overridable Property tblTypeSalle() As DbSet(Of tblTypeSalle)
     Public Overridable Property tblTypeSalleHotel() As DbSet(Of tblTypeSalleHotel)
+
+    Public Overridable Function sp_alterdiagram(diagramname As String, owner_id As Nullable(Of Integer), version As Nullable(Of Integer), definition As Byte()) As Integer
+        Dim diagramnameParameter As ObjectParameter = If(diagramname IsNot Nothing, New ObjectParameter("diagramname", diagramname), New ObjectParameter("diagramname", GetType(String)))
+
+        Dim owner_idParameter As ObjectParameter = If(owner_id.HasValue, New ObjectParameter("owner_id", owner_id), New ObjectParameter("owner_id", GetType(Integer)))
+
+        Dim versionParameter As ObjectParameter = If(version.HasValue, New ObjectParameter("version", version), New ObjectParameter("version", GetType(Integer)))
+
+        Dim definitionParameter As ObjectParameter = If(definition IsNot Nothing, New ObjectParameter("definition", definition), New ObjectParameter("definition", GetType(Byte())))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("sp_alterdiagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter)
+    End Function
+
+    Public Overridable Function sp_creatediagram(diagramname As String, owner_id As Nullable(Of Integer), version As Nullable(Of Integer), definition As Byte()) As Integer
+        Dim diagramnameParameter As ObjectParameter = If(diagramname IsNot Nothing, New ObjectParameter("diagramname", diagramname), New ObjectParameter("diagramname", GetType(String)))
+
+        Dim owner_idParameter As ObjectParameter = If(owner_id.HasValue, New ObjectParameter("owner_id", owner_id), New ObjectParameter("owner_id", GetType(Integer)))
+
+        Dim versionParameter As ObjectParameter = If(version.HasValue, New ObjectParameter("version", version), New ObjectParameter("version", GetType(Integer)))
+
+        Dim definitionParameter As ObjectParameter = If(definition IsNot Nothing, New ObjectParameter("definition", definition), New ObjectParameter("definition", GetType(Byte())))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("sp_creatediagram", diagramnameParameter, owner_idParameter, versionParameter, definitionParameter)
+    End Function
+
+    Public Overridable Function sp_dropdiagram(diagramname As String, owner_id As Nullable(Of Integer)) As Integer
+        Dim diagramnameParameter As ObjectParameter = If(diagramname IsNot Nothing, New ObjectParameter("diagramname", diagramname), New ObjectParameter("diagramname", GetType(String)))
+
+        Dim owner_idParameter As ObjectParameter = If(owner_id.HasValue, New ObjectParameter("owner_id", owner_id), New ObjectParameter("owner_id", GetType(Integer)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter)
+    End Function
+
+    Public Overridable Function sp_helpdiagramdefinition(diagramname As String, owner_id As Nullable(Of Integer)) As ObjectResult(Of sp_helpdiagramdefinition_Result)
+        Dim diagramnameParameter As ObjectParameter = If(diagramname IsNot Nothing, New ObjectParameter("diagramname", diagramname), New ObjectParameter("diagramname", GetType(String)))
+
+        Dim owner_idParameter As ObjectParameter = If(owner_id.HasValue, New ObjectParameter("owner_id", owner_id), New ObjectParameter("owner_id", GetType(Integer)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of sp_helpdiagramdefinition_Result)("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter)
+    End Function
+
+    Public Overridable Function sp_helpdiagrams(diagramname As String, owner_id As Nullable(Of Integer)) As ObjectResult(Of sp_helpdiagrams_Result)
+        Dim diagramnameParameter As ObjectParameter = If(diagramname IsNot Nothing, New ObjectParameter("diagramname", diagramname), New ObjectParameter("diagramname", GetType(String)))
+
+        Dim owner_idParameter As ObjectParameter = If(owner_id.HasValue, New ObjectParameter("owner_id", owner_id), New ObjectParameter("owner_id", GetType(Integer)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of sp_helpdiagrams_Result)("sp_helpdiagrams", diagramnameParameter, owner_idParameter)
+    End Function
+
+    Public Overridable Function sp_renamediagram(diagramname As String, owner_id As Nullable(Of Integer), new_diagramname As String) As Integer
+        Dim diagramnameParameter As ObjectParameter = If(diagramname IsNot Nothing, New ObjectParameter("diagramname", diagramname), New ObjectParameter("diagramname", GetType(String)))
+
+        Dim owner_idParameter As ObjectParameter = If(owner_id.HasValue, New ObjectParameter("owner_id", owner_id), New ObjectParameter("owner_id", GetType(Integer)))
+
+        Dim new_diagramnameParameter As ObjectParameter = If(new_diagramname IsNot Nothing, New ObjectParameter("new_diagramname", new_diagramname), New ObjectParameter("new_diagramname", GetType(String)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter)
+    End Function
+
+    Public Overridable Function sp_upgraddiagrams() As Integer
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction("sp_upgraddiagrams")
+    End Function
 
     Public Overridable Function inventaireCommun() As ObjectResult(Of inventaireCommun_Result)
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of inventaireCommun_Result)("inventaireCommun")
@@ -81,6 +144,16 @@ Partial Public Class P2014_Equipe2_GestionHôtelièreEntities
         Dim noHotelParameter As ObjectParameter = If(noHotel.HasValue, New ObjectParameter("noHotel", noHotel), New ObjectParameter("noHotel", GetType(Byte)))
 
         Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of determinersallelibre_Result)("determinersallelibre", dateDebutParameter, datefinParameter, noHotelParameter)
+    End Function
+
+    Public Overridable Function determinertypechambrelibre(dateDebut As Nullable(Of Date), datefin As Nullable(Of Date), noHotel As Nullable(Of Byte)) As ObjectResult(Of determinertypechambrelibre_Result)
+        Dim dateDebutParameter As ObjectParameter = If(dateDebut.HasValue, New ObjectParameter("dateDebut", dateDebut), New ObjectParameter("dateDebut", GetType(Date)))
+
+        Dim datefinParameter As ObjectParameter = If(datefin.HasValue, New ObjectParameter("datefin", datefin), New ObjectParameter("datefin", GetType(Date)))
+
+        Dim noHotelParameter As ObjectParameter = If(noHotel.HasValue, New ObjectParameter("noHotel", noHotel), New ObjectParameter("noHotel", GetType(Byte)))
+
+        Return DirectCast(Me, IObjectContextAdapter).ObjectContext.ExecuteFunction(Of determinertypechambrelibre_Result)("determinertypechambrelibre", dateDebutParameter, datefinParameter, noHotelParameter)
     End Function
 
 End Class

@@ -21,10 +21,6 @@
         lblNomEmpl.Content = "Bonjour, " + res.ToList.Single.prenEmpl + " " + res.ToList.Single.nomEmpl
     End Sub
 
-    Private Sub AppuieRapport()
-
-    End Sub
-
     Private Sub AppuieGHotel()
         Dim Ghotel = New iListeHotel(maBd, noEmploye, noHotel)
         Ghotel.Owner = Me
@@ -41,4 +37,17 @@
         Me.Owner.Show()
         Me.Close()
     End Sub
+
+    Private Sub AppuieEmploye()
+        Dim gEmp = New iListeEmployeComplet(maBd, noEmploye, noHotel)
+        gEmp.Owner = Me
+        gEmp.Show()
+    End Sub
+
+    Private Sub AppuieItem()
+        Dim inv = New iInventaireComplet(maBd, noEmploye, noHotel)
+        inv.Owner = Me
+        Me.Close()
+    End Sub
+
 End Class

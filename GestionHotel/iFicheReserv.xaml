@@ -30,7 +30,6 @@
                 <StackPanel></StackPanel>
             </DockPanel>
         </Canvas>
-        <Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,75,0,0" Width="2000" VerticalAlignment="Top"></Rectangle>
         <Viewbox Stretch="Uniform">
             <Grid Width="384" Height="649">
                 <GroupBox Header="Réservation" BorderBrush="Black" Margin="10,99,10,313">
@@ -38,11 +37,11 @@
                         <Label Content="NoRéservation :" Margin="0,0,257.2,184.6"></Label>
                         <TextBox Name="txtNoReserv" Text="{Binding noReservation}" Height="20" Margin="99,5,118.2,184.6"></TextBox>
                         <Label Content="Date de début :" Margin="0,64,255.2,113.6"></Label>
-                        <TextBox Name="txtDateDebut" Text="{Binding dateDebutReserv}" Height="20" Margin="96,69,118.2,120.6"></TextBox>
+                        <TextBox Name="txtDateDebut" Text="{Binding dateDebutSejour, StringFormat= yyyy-MM-dd}" Height="20" Margin="96,69,118.2,120.6"></TextBox>
                         <Label Content="Date de fin :" Margin="0,96,246.2,89.6"></Label>
-                        <TextBox Name="txtDateFin" Text="{Binding dateFinReserv}" Height="20" Margin="96,100,118.2,89.6"></TextBox>
+                        <TextBox Name="txtDateFin" Text="{Binding dateFinSejour, StringFormat= yyyy-MM-dd}" Height="20" Margin="96,100,118.2,89.6"></TextBox>
                         <Label Content="Date de réservation :" Margin="0,32,229.2,145.6"></Label>
-                        <TextBox Name="txtDatereserv" Text="{Binding dateReserv}" Height="20" Margin="122,36,118.2,153.6"></TextBox>
+                        <TextBox Name="txtDatereserv" Text="{Binding dateReserv, StringFormat= yyyy-MM-dd}" Height="20" Margin="122,36,118.2,153.6"></TextBox>
                         <Label Content="Commentaire :" Margin="0,128,227.2,52.6"></Label>
                         <TextBox Name="txtCommReserv" Text="{Binding commentaire}" TextWrapping="Wrap" AcceptsReturn="False" Margin="96,133,10.2,5.6"></TextBox>
                     </Grid>

@@ -30,30 +30,41 @@
                 <StackPanel></StackPanel>
             </DockPanel>
         </Canvas>
-        <Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,75,0,0" Width="2000" VerticalAlignment="Top"></Rectangle>
         <Viewbox Stretch="Uniform">
             <Grid Width="503" Height="563">
                 <GroupBox Header="Arrivé" BorderBrush="Black" Margin="0,82,0,251">
                     <Grid Margin="0,0,0,-0.4">
-                        <DataGrid AutoGenerateColumns="False" Name="dgArrive" Margin="0,0,0,30" CanUserAddRows="False">
+                        <DataGrid AutoGenerateColumns="False" Name="dgArrive" Margin="0,0,0,30" CanUserAddRows="False" IsReadOnly="True">
                             <DataGrid.Columns>
+                                <DataGridCheckBoxColumn Header="Client lié">
+                                    <DataGridCheckBoxColumn.ElementStyle>
+                                        <Style TargetType="{x:Type CheckBox}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding client}" Value="True">
+                                                    <Setter Property="IsChecked" Value="True"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </DataGridCheckBoxColumn.ElementStyle>
+                                </DataGridCheckBoxColumn>
                                 <DataGridTextColumn Header="No Chambre" Binding="{Binding noSalle}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Nom" Binding="{Binding tblClient.nomClient}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Prénom" Binding="{Binding tblClient.prenClient}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nom" Binding="{Binding nomClient}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="No Réservation" Binding="{Binding noReservation}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Style="{StaticResource styleBouton}" Name="btnConsulterA" Height="25" Content="Consulter" Margin="327,183,0,0" HorizontalAlignment="Left" Width="77" VerticalAlignment="Top"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnConsulterA" Height="25" Content="Consulter" Margin="246,183,0,0" HorizontalAlignment="Left" Width="77" VerticalAlignment="Top"></Button>
                         <Button Style="{StaticResource styleBouton}" Name="btnArrive" Height="25" Content="Arrivé" Margin="409,183,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="71"></Button>
+                        <Button Style="{StaticResource styleBouton}" Name="btnLierCli" Height="25" Content="Lier Client" Margin="327,183,0,0" HorizontalAlignment="Left" Width="77" VerticalAlignment="Top"/>
                     </Grid>
                 </GroupBox>
                 <GroupBox Header="Départ" BorderBrush="Black" Margin="0,312,0,35">
                     <Grid Margin="0,0,0,-12.4">
-                        <DataGrid AutoGenerateColumns="False" Name="dgDepart" Margin="0,0,0.4,45" CanUserAddRows="False">
+                        <DataGrid AutoGenerateColumns="False" Name="dgDepart" Margin="0,0,0.4,45" CanUserAddRows="False" IsReadOnly="True">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="No Chambre" Binding="{Binding noSalle}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Nom" Binding="{Binding nomClient}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Nom" Binding="{Binding tblClient.nomClient}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Prénom" Binding="{Binding tblClient.prenClient}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="No Réservation" Binding="{Binding noReservation}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>

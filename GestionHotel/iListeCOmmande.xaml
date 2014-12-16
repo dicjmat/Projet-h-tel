@@ -23,10 +23,8 @@
                 <MenuItem Header="_Communiqué" BorderThickness="1" BorderBrush="Black">
                     <MenuItem Header="_Liste de communiqué" Click="MenuItem_Click_4"/>
                 </MenuItem>
-                <Rectangle HorizontalAlignment="Stretch" Fill="Black" Height="2" Margin="0,0,0,0" Width="2000"></Rectangle>
             </Menu>
-            <StackPanel></StackPanel>
-            
+            <StackPanel></StackPanel>           
         </DockPanel>
         <Viewbox Stretch="Uniform">
             <Grid Height="638" Width="873">

@@ -52,7 +52,7 @@
 
         Dim note = (From el In bd.tblNote Where el.noReservation = noReservation Select el).Single
 
-        Dim elem = From el In bd.tblElementNote Where el.noNote - note.noNote Select el
+        Dim elem = From el In bd.tblElementNote Where el.noNote = note.noNote Select el
         dgFacture.ItemsSource = elem.ToList()
         txtNoFact.Text = note.noNote.ToString()
     End Sub

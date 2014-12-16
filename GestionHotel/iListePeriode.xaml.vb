@@ -2,6 +2,7 @@
     Private bd As P2014_Equipe2_GestionHôtelièreEntities
     Dim noEmp As Integer
     Dim noHotel As Integer
+    Dim p1 As Boolean
 
     Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _noHotel As Integer, _noEmp As Integer)
 
@@ -34,22 +35,6 @@
         Me.Close()
         Me.Owner.Show()
     End Sub
-    Private Sub btnAjoutForfait_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutForfait.Click
-        Dim forf = New iAjoutForf(True, noHotel, bd)
-        forf.Owner = Me
-        forf.Show()
-    End Sub
-
-    Private Sub btnListeForf_Click(sender As Object, e As RoutedEventArgs) Handles btnListeForf.Click
-        Dim lst = New ListeForfait(noHotel, bd, noEmp)
-        lst.Owner = Me
-        lst.Show()
-    End Sub
-    Private Sub btnListeSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnListeSalle.Click
-        Dim lst = New iListeSalle(noHotel, bd, noEmp)
-        lst.Owner = Me
-        lst.Show()
-    End Sub
 
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
         Dim periode = New iPeriode(bd, noHotel)
@@ -70,11 +55,6 @@
 
             dgTypeChambre.ItemsSource = res.ToList
         End If
-    End Sub
-    Private Sub btnRabais_Click(sender As Object, e As RoutedEventArgs) Handles btnRabais.Click
-        Dim rab = New iRabais(noHotel, bd, noEmp)
-        rab.Owner = Me
-        rab.Show()
     End Sub
 
     Private Sub btnModifier_Click(sender As Object, e As RoutedEventArgs)
@@ -103,5 +83,35 @@
         Dim periode = New iPeriode(bd, noHotel, dgPeriode.SelectedItem.codePeriode)
         periode.Owner = Me
         periode.Show()
+    End Sub
+
+    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+        Dim ajout = New iAjoutForf(p1, noHotel, bd)
+        ajout.owner = Me
+        ajout.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
+        Dim lst = New ListeForfait(noHotel, bd, noEmp)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeSalle(noHotel, bd, noEmp)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_14(sender As Object, e As RoutedEventArgs)
+        Dim rab = New iRabais(noHotel, bd, noEmp)
+        rab.Owner = Me
+        rab.Show()
+    End Sub
+
+    Private Sub MenuItem_Click_15(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListePeriode(bd, noHotel, noEmp)
+        lst.Owner = Me
+        lst.Show()
     End Sub
 End Class

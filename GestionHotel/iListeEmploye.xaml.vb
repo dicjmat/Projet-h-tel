@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub btnAjouterEmploye_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterEmploye.Click
-        Dim iEmploye As New iFicheEmploye(maBd)
+        Dim iEmploye As New iFicheEmploye(maBd, _noHotel, _noEmpl)
         iEmploye.Owner = Me
         Me.Hide()
         iEmploye.Show()
@@ -25,11 +25,9 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
-        Me.Close()
-    End Sub
-
-    Private Sub Window_Closing(sender As Object, e As ComponentModel.CancelEventArgs)
+        Me.Owner.Hide()
         Me.Owner.Show()
+        Me.Close()
     End Sub
 
     Private Sub txtNoEmp_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtNoEmp.TextChanged
@@ -68,12 +66,12 @@
     Private Sub btnConsulterHoraire_Click(sender As Object, e As RoutedEventArgs) Handles btnConsulterHoraire.Click
         If lstEmploye.SelectedIndex <> -1 Then
             Dim numEmpl = lstEmploye.SelectedItem.noEmpl
-            Dim iHoraire As New iConsulterHoraire(numEmpl, maBd, _noEmpl)
+            Dim iHoraire As New iConsulterHoraire(numEmpl, maBd, _noEmpl, _noHotel)
             iHoraire.Owner = Me
             Me.Hide()
             iHoraire.Show()
         Else
-            Dim iHoraire As New iConsulterHoraire(maBd, _noEmpl)
+            Dim iHoraire As New iConsulterHoraire(maBd, _noEmpl, _noHotel)
             iHoraire.Owner = Me
             Me.Hide()
             iHoraire.Show()
@@ -81,7 +79,7 @@
     End Sub
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(maBd)
+        Dim fiche = New iFicheEmploye(maBd, _noHotel, _noEmpl)
         fiche.Owner = Me
         fiche.Show()
     End Sub

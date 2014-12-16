@@ -23,6 +23,7 @@ Partial Public Class tblHotel
 
     Public Overridable Property tblCommunique As ICollection(Of tblCommunique) = New HashSet(Of tblCommunique)
     Public Overridable Property tblEmploye As ICollection(Of tblEmploye) = New HashSet(Of tblEmploye)
+    Public Overridable Property tblFacture As ICollection(Of tblFacture) = New HashSet(Of tblFacture)
     Public Overridable Property tblForfait As ICollection(Of tblForfait) = New HashSet(Of tblForfait)
     Public Overridable Property tblVille As tblVille
     Public Overridable Property tblInventaire As ICollection(Of tblInventaire) = New HashSet(Of tblInventaire)

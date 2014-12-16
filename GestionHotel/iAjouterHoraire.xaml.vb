@@ -5,7 +5,6 @@
     Private numEmpl As Short
 
     Sub New(noEmpl As Short, noHotel As Short, maBd As P2014_Equipe2_GestionHôtelièreEntities)
-        ' TODO: Complete member initialization
         InitializeComponent()
         noGest = noEmpl
         hotel = noHotel
@@ -32,19 +31,13 @@
     End Sub
 
     Private Sub btnRetour_Click(sender As Object, e As RoutedEventArgs) Handles btnRetour.Click
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
-    Private Sub windowAjoutHoraire_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles windowAjoutHoraire.Closing
-        If Me.Focusable Then
-            Me.Owner.Close()
-        Else
-            Me.Owner.Show()
-        End If
-    End Sub
-
     Private Sub btnAjouterHor_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterHor.Click
-        If cbEmploye.SelectedItem IsNot DBNull.Value And cldHoraire.SelectedDate IsNot Nothing And cmbHeureDebutH.SelectedItem IsNot DBNull.Value And cmbHeureDebutM.SelectedItem IsNot DBNull.Value Then
+        If cbEmploye.SelectedItem IsNot Nothing And cldHoraire.SelectedDate IsNot Nothing And cmbHeureDebutH.SelectedItem IsNot Nothing And cmbHeureDebutM.SelectedItem IsNot Nothing Then
             If cldHoraire.SelectedDates.Count > 1 Then
                 For Each el As Date In cldHoraire.SelectedDates
                     Dim Horaire = New tblHoraire()
@@ -80,19 +73,22 @@
             cmbHeureFinH.SelectedIndex = temp
         End If
         cmbHeureFinH.SelectedIndex = Debut + 8
+        cmbHeureDebutM.SelectedIndex = 0
     End Sub
 
     Private Sub cldHoraire_SelectedDatesChanged(sender As Object, e As SelectionChangedEventArgs) Handles cldHoraire.SelectedDatesChanged
-        If cbEmploye.SelectedItem() IsNot Nothing Then
+        If cbEmploye.SelectedItem IsNot Nothing Then
             Dim numEmpl As Integer = cbEmploye.SelectedItem.noEmpl
             Dim dateSaisi = cldHoraire.SelectedDate
             Dim res = From el In bd.tblHoraire Where el.noEmpl = numEmpl And el.dateHoraire = dateSaisi Select el
             If res.ToList().Count <> 0 Then
+                btnAjouterHor.IsEnabled = False
                 cmbHeureDebutH.SelectedIndex = res.First.heureDebut.Hours
                 cmbHeureDebutM.SelectedIndex = res.First.heureDebut.Minutes / 15
                 cmbHeureFinH.SelectedIndex = res.First.heureFin.Hours
                 cmbHeureFinM.SelectedIndex = res.First.heureFin.Minutes / 15
             Else
+                btnAjouterHor.IsEnabled = True
                 cmbHeureDebutH.SelectedIndex = -1
                 cmbHeureDebutM.SelectedIndex = -1
                 cmbHeureFinH.SelectedIndex = -1
@@ -102,7 +98,7 @@
     End Sub
 
     Private Sub btnModifierHor_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierHor.Click
-        If cbEmploye.SelectedItem IsNot DBNull.Value And cldHoraire.SelectedDate IsNot Nothing And cmbHeureDebutH.SelectedItem IsNot DBNull.Value And cmbHeureDebutM.SelectedItem IsNot DBNull.Value Then
+        If cbEmploye.SelectedItem IsNot Nothing And cldHoraire.SelectedDate IsNot Nothing And cmbHeureDebutH.SelectedItem IsNot Nothing And cmbHeureDebutM.SelectedItem IsNot Nothing Then
             Dim numeroEmpl As Integer = cbEmploye.SelectedItem.noEmpl
             Dim Horaire As tblHoraire
             If cldHoraire.SelectedDates.Count > 1 Then
@@ -129,7 +125,7 @@
     End Sub
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
-        Dim fiche = New iFicheEmploye(bd)
+        Dim fiche = New iFicheEmploye(bd, hotel, noGest)
         fiche.Owner = Me
         fiche.Show()
     End Sub

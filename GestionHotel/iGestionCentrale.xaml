@@ -37,7 +37,7 @@
                         - Ajouter/Modifier un employé de l'hôtel désiré
                     </TextBlock>
                 </Border>
-                <Label Content="Gestion Centrale" Margin="113,0,113,347" HorizontalAlignment="Center" FontSize="26" Width="200"/>
+                <Label Content="Accueil" Margin="169,0,169,347" HorizontalAlignment="Center" FontSize="26" Width="88"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="290,355,10,10"/>
             </Grid>
         </Viewbox>

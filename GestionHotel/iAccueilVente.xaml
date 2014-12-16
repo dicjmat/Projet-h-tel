@@ -11,33 +11,28 @@
     </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform">
-            <Grid Height="325">
+            <Grid Height="258">
                 <Label Content="Accueil" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
                 <Border BorderThickness="2" BorderBrush="Black" Height="59" Margin="0,95,-0.2,0" VerticalAlignment="Top">
                     <TextBlock Background="WhiteSmoke" MouseLeftButtonDown="AppuieForfait">
-                        Gestion Forfait<LineBreak/>
-                        - Créer un forfait
+                        Liste de forfait<LineBreak/>
+                        - Ajouter un forfait
                     </TextBlock>
                 </Border>
                 <Border BorderThickness="2" BorderBrush="Black" Height="59" Margin="0,31,-0.2,0" VerticalAlignment="Top">
                     <TextBlock Background="WhiteSmoke" MouseLeftButtonDown="AppuieRabais">
                         Gestion Rabais<LineBreak/>
-                        - Créer/Modifier/Supprimer un rabais
+                        - Créer/Modifier/Supprimer un rabais<LineBreak/>
+                        - Liste de rabais
                     </TextBlock>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="2" Height="59" Margin="0,159,-0.2,0" VerticalAlignment="Top">
                     <TextBlock Background="WhiteSmoke" MouseLeftButtonDown="AppuieSalle">
                         Réservation de salle<LineBreak/>
-                        - Faire une réservation de salle
+                        - Liste de salle
                     </TextBlock>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="2" Height="59" Margin="0,223,-0.2,0" VerticalAlignment="Top">
-                    <TextBlock Background="WhiteSmoke" MouseLeftButtonDown="AppuiePeriode">
-                        Gestion de période<LineBreak/>
-                        - Ajouter/modifier une période
-                    </TextBlock>
-                </Border>
-                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Margin="0,0,-0.2,10"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="25" Margin="0,0,-0.4,10"></Button>
             </Grid>
         </Viewbox>
     </Grid>

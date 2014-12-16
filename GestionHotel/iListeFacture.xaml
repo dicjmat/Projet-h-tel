@@ -1,0 +1,51 @@
+﻿<Window x:Class="iListeFacture" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="CadetBlue" Name="window_ListeFacture" Icon="icon.ico"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="iListeFacture" Height="403" Width="408">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4.4,0">
+                <MenuItem Header="_Employé"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Check-in/Check-out" Click="MenuItem_Click"/>
+                    <MenuItem Header="_Facture" Click="MenuItem_Click_1"/>
+                </MenuItem>
+                <MenuItem Header="_Client"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Fiche de client" Click="MenuItem_Click_6"/>
+                    <MenuItem Header="_Liste de client" Click="MenuItem_Click_2"/>
+                </MenuItem>
+                <MenuItem Header="_Réservation" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Réservation chambre" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="_Fiche de réservation" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="_Fiche de réservation fact" Click="MenuItem_Click_5"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
+        <Viewbox Stretch="Uniform">
+            <Grid Width="403" Height="408">
+                <GroupBox Header="Facture" BorderBrush="Black" Margin="10,83,10,57">
+                    <Grid>
+                        <DataGrid x:Name="dgListeFact" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="0,0,0.4,41.6">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="No" Binding="{Binding noFacture}"/>
+                                <DataGridTextColumn Header="Date" Binding="{Binding dateFacture, StringFormat = dd-MM-yyyy}"/>
+                                <DataGridTextColumn Header="État" Binding="{Binding etatFacture}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button Style="{StaticResource styleBouton}" Name="btnAjouterFact" Content="Créer une facture" Height="25" Margin="266,211,0.4,9.6"/>
+                        <Button Style="{StaticResource styleBouton}" Name="btnAjouterNote" Content="Ajouter une note" Height="25" Margin="41,211,226.4,9.6"/>
+                        <Button Style="{StaticResource styleBouton}" Name="btnConsultFact" Content="Consulter la facture" Height="25" Margin="149,211,109.4,9.6"/>
+                    </Grid>
+                </GroupBox>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Height="25" Margin="291,356,10,27"/>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Window>

@@ -31,10 +31,9 @@
                 <StackPanel></StackPanel>
             </DockPanel>
         </Canvas>
-        <Rectangle HorizontalAlignment="Left" Fill="Black" Height="2" Margin="0,75,0,0" Width="2000" VerticalAlignment="Top"></Rectangle>
         <Viewbox Stretch="Uniform">
             <Grid Height="509" Width="526">
-                <GroupBox Header="Réservation d'une chambre" BorderBrush="Black" Margin="10,141,10,0" Height="334" VerticalAlignment="Top">
+                <GroupBox Header="Réservation d'une chambre" BorderBrush="Black" Margin="10,81,10,0" Height="334" VerticalAlignment="Top">
                     <Grid>
                         <Label Content="* = non-obligatoire" Margin="192,0,-0.4,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="302"></Label>
                         <Label Content="Commentaire * :" Margin="47,201,0,0" Height="36" VerticalAlignment="Top" HorizontalAlignment="Left" Width="97"></Label>
@@ -54,8 +53,8 @@
                         <Button x:Name="btnAfficher" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="176,100,0,0" VerticalAlignment="Top" Width="34"/>
                     </Grid>
                 </GroupBox>
-                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Quitter" Height="25" Margin="383,480,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="128"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnReserv" Content="Faire la réservation" Margin="245,480,0,0" HorizontalAlignment="Left" Width="133" Height="25" VerticalAlignment="Top"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Quitter" Height="25" Margin="388,420,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="128"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnReserv" Content="Faire la réservation" Margin="250,420,0,0" HorizontalAlignment="Left" Width="133" Height="25" VerticalAlignment="Top"/>
             </Grid>
         </Viewbox>
     </Grid>
