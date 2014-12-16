@@ -67,9 +67,9 @@ Public Class iFicheEmploye
 
 
         If numEmpl <> 0 Then
-    Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
+            Dim res = From el In bd.tblEmploye Where el.noEmpl = numEmpl Select el
             Me.DataContext = res.ToList()
-    Dim i = 0
+            Dim i = 0
             For Each el In cmbPays.Items
                 If el.codePays = res.First.tblVille.tblProvince.codePays Then
                     cmbPays.SelectedIndex = i

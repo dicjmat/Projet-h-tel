@@ -38,8 +38,8 @@
             <Grid Height="504" Width="705">
                 <Label Content="Rechercher :" Margin="10,97,464,384"></Label>
                 <TextBox Name="txtRCli" Height="20" Margin="98,100,487,384" Width="120"></TextBox>
-                <GroupBox Header="Liste de clients" BorderBrush="Black" Margin="10,125,196,10">
-                    <DataGrid Name="dgClient" ItemsSource="{Binding}" AutoGenerateColumns="False"  Margin="0,10,-2.6,0" Height="333" VerticalAlignment="Top">
+                <GroupBox Header="Liste de clients" BorderBrush="Black" Margin="10,125,196,50">
+                    <DataGrid Name="dgClient" ItemsSource="{Binding}" AutoGenerateColumns="False"  Margin="0,10,-2.6,43.8">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Nom" Binding="{Binding nomClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
@@ -52,12 +52,12 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjouterClient" Content="Ajouter un client" Margin="251,549,0,10" Height="25" RenderTransformOrigin="0.5,0.504" HorizontalAlignment="Left" Width="101"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnModifierClient" Content="Modifier un client" Margin="357,549,0,10" Height="25" HorizontalAlignment="Left" Width="109"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Margin="471,549,0,10" Height="25" HorizontalAlignment="Left" Width="57"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnReserv" Content="Faire une réservation" Margin="120,549,0,10" Height="25" HorizontalAlignment="Left" Width="126"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnLierCli" Content="Lier le client" Margin="166,549,0,10" Height="25" HorizontalAlignment="Left" Width="80"/>
-                <GroupBox Header="Liaison Client" BorderBrush="Black" Margin="522,171,54,303">
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterClient" Content="Ajouter un client" Margin="399,413,0,66" Height="25" RenderTransformOrigin="0.5,0.504" HorizontalAlignment="Left" Width="101"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifierClient" Content="Modifier un client" Margin="287,413,0,66" Height="25" HorizontalAlignment="Left" Width="108"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Margin="434,469,0,10" Height="25" HorizontalAlignment="Left" Width="56"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnReserv" Content="Faire une réservation" Margin="156,413,0,66" Height="25" HorizontalAlignment="Left" Width="126"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnLierCli" Content="Lier le client" Margin="202,413,0,66" Height="25" HorizontalAlignment="Left" Width="80"/>
+                <GroupBox Header="Liaison Client" BorderBrush="Black" Margin="522,171,10,228">
                     <Grid>
                         <Label Content="Compagnie :" Margin="0,0,38,0" Height="27" VerticalAlignment="Top"/>
                         <ComboBox x:Name="cbCompagnie" ItemsSource="{Binding}" Background="White" Margin="0,27,10,0" Height="25" VerticalAlignment="Top">
