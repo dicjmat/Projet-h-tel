@@ -19,6 +19,7 @@ Partial Public Class tblBris
     Public Property noHotel As Byte
     Public Property codeItem As String
 
-    Public Overridable Property tblChecklist As tblChecklist
+    Public Overridable Property tblItem As tblItem
+    Public Overridable Property tblSalle As tblSalle
 
 End Class

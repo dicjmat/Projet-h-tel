@@ -22,11 +22,15 @@ Partial Public Class tblReservation
     Public Property noClient As Nullable(Of Integer)
     Public Property noEmpl As Nullable(Of Short)
     Public Property noDemandeur As Nullable(Of Integer)
+    Public Property noForfait As Nullable(Of Byte)
+    Public Property noRabais As Nullable(Of Byte)
 
     Public Overridable Property tblEmploye As tblEmploye
     Public Overridable Property tblClient As tblClient
     Public Overridable Property tblDemandeur As tblDemandeur
+    Public Overridable Property tblForfait As tblForfait
     Public Overridable Property tblNote As ICollection(Of tblNote) = New HashSet(Of tblNote)
+    Public Overridable Property tblRabais As tblRabais
     Public Overridable Property tblSalle As tblSalle
 
 End Class
