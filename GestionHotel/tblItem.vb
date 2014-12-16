@@ -15,6 +15,7 @@ Partial Public Class tblItem
     Public Property nomItem As String
     Public Property descItem As String
 
+    Public Overridable Property tblBris As ICollection(Of tblBris) = New HashSet(Of tblBris)
     Public Overridable Property tblCatalogue As ICollection(Of tblCatalogue) = New HashSet(Of tblCatalogue)
     Public Overridable Property tblChecklist As ICollection(Of tblChecklist) = New HashSet(Of tblChecklist)
     Public Overridable Property tblGabarit As ICollection(Of tblGabarit) = New HashSet(Of tblGabarit)

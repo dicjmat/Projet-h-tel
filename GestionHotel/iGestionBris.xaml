@@ -25,14 +25,13 @@
                         <DataGrid Name="dgBris" AutoGenerateColumns="False" CanUserResizeColumns="False" IsReadOnly="True" Margin="0,0,0,33.4">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="No" Binding="{Binding noBris}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Item" Binding="{Binding nomItem}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Item" Binding="{Binding tblItem.nomItem}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Salle" Binding="{Binding noSalle}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Date de bris" Binding="{Binding dateBris}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Date de bris" Binding="{Binding dateBris, StringFormat = dd-MM-yyyy}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="État" Binding="{Binding etatBris}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Date de réparation" Binding="{Binding dateRepare}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Date de réparation" Binding="{Binding dateRepare, StringFormat = dd-MM-yyyy}"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
-                        <Button Name="btnConult" Style="{StaticResource styleBouton}" Content="Consulter" HorizontalAlignment="Left" Margin="240,322,0,0" VerticalAlignment="Top" Width="127" Height="28"/>
                         <Button Name="btnEtat" Style="{StaticResource styleBouton}" Content="Modifier état" HorizontalAlignment="Left" Margin="371,322,0,0" VerticalAlignment="Top" Width="127" Height="28"/>
                     </Grid>
                 </GroupBox>

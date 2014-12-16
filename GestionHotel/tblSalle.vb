@@ -20,6 +20,7 @@ Partial Public Class tblSalle
     Public Property codeTypeSalle As String
     Public Property codeTypeLit As String
 
+    Public Overridable Property tblBris As ICollection(Of tblBris) = New HashSet(Of tblBris)
     Public Overridable Property tblChecklist As ICollection(Of tblChecklist) = New HashSet(Of tblChecklist)
     Public Overridable Property tblHotel As tblHotel
     Public Overridable Property tblReservation As ICollection(Of tblReservation) = New HashSet(Of tblReservation)

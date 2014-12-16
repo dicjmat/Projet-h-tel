@@ -20,6 +20,8 @@
         menu.Visibility = Windows.Visibility.Hidden
         menuGerant.IsEnabled = False
         menuGerant.Visibility = Windows.Visibility.Hidden
+        btnLierItem.IsEnabled = False
+        btnLierItem.Visibility = Windows.Visibility.Hidden
     End Sub
 
     Sub New(noEmpl As Short, noHotel As Short, _maBd As P2014_Equipe2_GestionHôtelièreEntities)
