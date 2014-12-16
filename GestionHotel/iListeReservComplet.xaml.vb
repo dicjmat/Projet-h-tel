@@ -9,9 +9,6 @@
         noEmp = _noEmp
         noHotel = _noHotel
     End Sub
-    Private Sub btnAcceuil_Click(sender As Object, e As RoutedEventArgs) Handles btnAcceuil.Click
-        Me.Close()
-    End Sub
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim check = New iCheck_in_out(bd, noEmp, noHotel)
