@@ -38,7 +38,7 @@
             Contenu.noEmpl = noEmploye
             Contenu.statut = "OUI"
             BD.tblChecklist.Add(Contenu)
-            BD.SaveChanges()
+            'BD.SaveChanges()
         Next (el)
     End Sub
 
