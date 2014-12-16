@@ -26,8 +26,8 @@
                             <TextBox x:Name="txtNomItem" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="141" Margin="78,-2,0,0"/>
                             <Label Content="Description* :" HorizontalAlignment="Left" Margin="-4,23,0,0" VerticalAlignment="Top"/>
                             <TextBox x:Name="txtDescItem" Height="60" VerticalAlignment="Top" Width="233" HorizontalAlignment="Left" Canvas.Left="85" Margin="78,23,0,0"/>
-                            <Label x:Name="lblFourni" Content="Fournisseur :" Margin="-4,83,4,32"/>
-                            <ComboBox x:Name="cbFournisseur" Margin="78,88,0,0" Background="White" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122">
+                            <Label x:Name="lblFourni" Content="Fournisseur :" Margin="-4,88,3.4,27"/>
+                            <ComboBox x:Name="cbFournisseur" Margin="78,88,0,0" Background="White" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>

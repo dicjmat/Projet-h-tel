@@ -47,7 +47,7 @@
     Private Sub AppuieItem()
         Dim inv = New iInventaireComplet(maBd, noEmploye, noHotel)
         inv.Owner = Me
-        Me.Close()
+        inv.Show()
     End Sub
 
 End Class
