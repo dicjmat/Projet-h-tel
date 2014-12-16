@@ -21,10 +21,11 @@
                         <MenuItem Header="_Fiche de client" Click="MenuItem_Click_6"/>
                         <MenuItem Header="_Liste de client" Click="MenuItem_Click_2"/>
                     </MenuItem>
-                    <MenuItem Header="_Réservation" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Réservation" BorderThickness="1" BorderBrush="Black" Click="MenuItem_Click_7">
                         <MenuItem Header="_Réservation chambre" Click="MenuItem_Click_3"/>
                         <MenuItem Header="_Fiche de réservation" Click="MenuItem_Click_4"/>
                         <MenuItem Header="_Fiche de réservation fact" Click="MenuItem_Click_5"/>
+                        <MenuItem Header="_Liste de réservation centrale"/>
                     </MenuItem>
                 </Menu>
                 <StackPanel></StackPanel>

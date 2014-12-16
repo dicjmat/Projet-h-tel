@@ -30,11 +30,12 @@
                     <MenuItem Header="_Employé" BorderThickness="1" BorderBrush="Black">
                         <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click_9"/>
                     </MenuItem>
-                    <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black" Click="MenuItem_Click_14">
                         <MenuItem Header="_Liste centrale" Click="MenuItem_Click_10"/>
                         <MenuItem Header="_Liste d'employé centrale" Click="MenuItem_Click_11"/>
                         <MenuItem Header="_Liste de salle" Click="MenuItem_Click_12"/>
                         <MenuItem Header="_Liste d'hôtel" Click="MenuItem_Click_13"/>
+                        <MenuItem Header="_Liste de réservatipon centrale"/>
                     </MenuItem>
                 </Menu>
             </Canvas>

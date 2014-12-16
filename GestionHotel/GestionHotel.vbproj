@@ -186,6 +186,9 @@
     <Compile Include="iListePeriode.xaml.vb">
       <DependentUpon>iListePeriode.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iListeReservComplet.xaml.vb">
+      <DependentUpon>iListeReservComplet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iListeSalle.xaml.vb">
       <DependentUpon>iListeSalle.xaml</DependentUpon>
     </Compile>
@@ -203,6 +206,9 @@
     </Compile>
     <Compile Include="iListeForfait.xaml.vb">
       <DependentUpon>iListeForfait.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LierFournisseur.xaml.vb">
+      <DependentUpon>LierFournisseur.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model1.vb">
       <AutoGen>True</AutoGen>
@@ -493,6 +499,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="iListeReservComplet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iListeSalle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -514,6 +524,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iListeForfait.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LierFournisseur.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

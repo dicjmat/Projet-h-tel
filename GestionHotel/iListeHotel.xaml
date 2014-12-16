@@ -22,11 +22,12 @@
                     <MenuItem Header="Gestion de salle" Click="MenuItem_Click_7"/>
                     <MenuItem Header="Gestion d'hotel" Click="MenuItem_Click_8"/>
                 </MenuItem>
-                <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black">
+                <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black" Click="MenuItem_Click">
                     <MenuItem Header="_Liste centrale" Click="MenuItem_Click_10"/>
                     <MenuItem Header="_Liste d'employé complet" Click="MenuItem_Click_11"/>
                     <MenuItem Header="_Liste de salle" Click="MenuItem_Click_12"/>
                     <MenuItem Header="_Liste d'hôtel" Click="MenuItem_Click_13"/>
+                    <MenuItem Header="_Liste de réservation centrale"/>
                 </MenuItem>
             </Menu>
         </DockPanel>

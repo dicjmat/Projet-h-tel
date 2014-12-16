@@ -1,0 +1,54 @@
+﻿<Window x:Class="iListeReservComplet" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="CadetBlue" Name="window_lstReservComplet" Icon="icon.ico"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="iListeReservComplet" Height="516.716" Width="715.385">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,-800,-4.4,0">
+                <MenuItem Header="_Employé"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Check-in/Check-out" Click="MenuItem_Click"/>
+                    <MenuItem Header="_Facture" Click="MenuItem_Click_1"/>
+                </MenuItem>
+                <MenuItem Header="_Client"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Fiche de client" Click="MenuItem_Click_6"/>
+                    <MenuItem Header="_Liste de client" Click="MenuItem_Click_2"/>
+                </MenuItem>
+                <MenuItem Header="_Réservation" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Réservation chambre" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="_Fiche de réservation" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="_Fiche de réservation fact" Click="MenuItem_Click_5"/>
+                    <MenuItem Header="_Liste de réservation centrale" Click="MenuItem_Click_7"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Viewbox Stretch="Uniform">
+            <Grid Height="427" Width="597">
+                <Label Content="Recherche :" Margin="0,44,338,351"/>
+                <TextBox Height="25" Width="120" Margin="76,46,401,356"/>
+                <GroupBox BorderBrush="Black" Header="Liste de réservation" Margin="0,76,0,31">
+                    <DataGrid Name="dgReserv" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nom" Binding="{Binding nomClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="No téléphone" Binding="{Binding noTelClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="NoCellulaire" Binding="{Binding noCellClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Date Début" Binding="{Binding dateDebutSejour}" ></DataGridTextColumn>
+                            <DataGridTextColumn Header="Date Fin" Binding="{Binding dateFinSejour}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="No Chambre" Binding="{Binding noSalle}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+                <Button Name="btnAcceuil" Content="Acceuil" Height="25" Style="{StaticResource styleBouton}" Margin="482,400,10,2"></Button>
+                <Button Name="ModifReserv" Content="Modifier" Height="25" Style="{StaticResource styleBouton}" Margin="372,401,120,1"></Button>
+                <Button Name="SuppReserv" Content="Supprimer" Height="25" Style="{StaticResource styleBouton}" Margin="263,402,230,0"></Button>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Window>
