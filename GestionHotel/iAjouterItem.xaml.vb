@@ -11,6 +11,7 @@
         noHotel = _noHotel
         Dim res = From el In bd.tblLogin Where el.noEmpl = noEmp Select el
 
+        btnModifierItem.Visibility = Windows.Visibility.Hidden
         btnAjouterItem.Visibility = Windows.Visibility.Visible
         btnAjouterItem.IsEnabled = True
     End Sub
@@ -51,7 +52,7 @@
     End Sub
 
     Private Sub btnAjoutFour_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFour.Click
-        Dim fournisseur = New iAjoutFournisseur(bd)
+        Dim fournisseur = New iAjoutFournisseur(bd, _item)
         fournisseur.Owner = Me
         fournisseur.Show()
         Me.Hide()
@@ -178,5 +179,17 @@
         Dim lst = New iListeHotel(bd, noEmp, noHotel)
         lst.Owner = Me
         lst.Show()
+    End Sub
+
+    Private Sub iAjouterItem_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+
+        Dim res = From it In bd.tblItem
+                  Join ca In bd.tblCatalogue
+                  On ca.codeItem Equals it.codeItem
+                  Join fo In bd.tblFournisseur
+                  On ca.noFournisseur Equals fo.noFournisseur
+                  Where it.codeItem = _item
+                  Select it.codeItem, it.descItem, it.nomItem, fo.nomFournisseur
+        cbFournisseur.ItemsSource = res.ToList
     End Sub
 End Class
