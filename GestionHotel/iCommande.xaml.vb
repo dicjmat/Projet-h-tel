@@ -109,7 +109,7 @@
                 End If
             Next
             For Each el In lstCommande
-                If el.prixUnitaire = lstViewCommande.SelectedItem.prixUnitaire And el.codeItem = lstViewCommande.SelectedItem.codeItem Then
+                If el.prixUnitaire = lstViewCommande.SelectedItem.prixLigne / el.quantite And el.codeItem = lstViewCommande.SelectedItem.codeItem Then
                     prixTotal -= el.prixUnitaire * el.quantite
                     lblPrixComm.Content = Convert.ToDouble(prixTotal).ToString() + " $"
                     lstCommande.Remove(el)

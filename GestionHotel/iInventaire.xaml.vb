@@ -26,7 +26,6 @@
                   Where el.noHotel = _noHotel
                   Select el.codeItem, item.nomItem, el.Quantite, item.descItem, el.quantiteMin
         lstInventaire.ItemsSource = creerAffichage(res)
-        Me.Owner.Hide()
     End Sub
 
     Private Sub txtCodeItem_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtCodeItem.TextChanged
@@ -38,6 +37,7 @@
 
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
+        Me.Owner.Hide()
         Me.Owner.Show()
         Me.Close()
     End Sub

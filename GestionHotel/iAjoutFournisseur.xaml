@@ -15,7 +15,7 @@
             <Grid Height="260" Width="265">
                 <Label Content="Ajouter un Fournisseur" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="68,-3,63,0" Width="134"></Label>
                 <Label Content="Nom du fournisseur :" Margin="10,19,131,163"></Label>
-                <TextBox Name="txtNomFourni" Margin="139,23,0,197" Width="116" HorizontalAlignment="Left" Height="20"/>
+                <TextBox Name="txtNomFourni" Margin="139,23,0,217" Width="116" HorizontalAlignment="Left" Height="20"/>
                 <Button Style="{StaticResource styleBouton}" Name="btnConfirmer" Content="Ajouter le fournisseur" Height="25" Margin="61,221,0,-6" HorizontalAlignment="Left" Width="119"></Button>
                 <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Annuler" Height="25" Margin="185,221,0,-6" HorizontalAlignment="Left" Width="54"></Button>
                 <Label Content="Adresse :" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top"/>
