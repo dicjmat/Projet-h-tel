@@ -19,7 +19,6 @@ Partial Public Class tblChecklist
     Public Property commentaire As String
     Public Property noEmpl As Short
 
-    Public Overridable Property tblBris As ICollection(Of tblBris) = New HashSet(Of tblBris)
     Public Overridable Property tblItem As tblItem
     Public Overridable Property tblEmploye As tblEmploye
     Public Overridable Property tblSalle As tblSalle

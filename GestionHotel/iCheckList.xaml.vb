@@ -28,30 +28,23 @@
 
     Private Sub btnSauvegarder_Click(sender As Object, e As RoutedEventArgs) Handles btnSauvegarder.Click
         Dim Contenu As tblChecklist
-        Dim coche = dgCheckList.Columns.Item(1)
         Dim dateAjout = Date.Today
-        Dim i = 0
         For Each el In dgCheckList.Items
             Contenu = New tblChecklist()
             Contenu.dateSaisit = dateAjout
-            Contenu.noSalle = cbSalle.SelectedValue.noChambre()
+            Contenu.noSalle = cbSalle.SelectedValue.noSalle
             Contenu.noHotel = noHotel
-            'If = True Then
-            '    Contenu.statut = "oui"
-            'Else
-            '    Contenu.statut = "non"
-            'End If
-            Contenu.commentaire = el.
             Contenu.codeItem = el.codeItem
             Contenu.noEmpl = noEmploye
+            Contenu.statut = "OUI"
             BD.tblChecklist.Add(Contenu)
-            BD.SaveChanges()
+            'BD.SaveChanges()
         Next (el)
     End Sub
 
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
         If cbSalle.SelectedItem IsNot Nothing Then
-            Dim item = New iInventaire(noEmploye, noHotel, BD, cbSalle.SelectedValue)
+            Dim item = New iInventaire(noEmploye, noHotel, BD, cbSalle.SelectedValue.noSalle)
             item.Owner = Me
             item.Show()
         Else
@@ -97,6 +90,7 @@
             bris.dateBris = Date.Today
             bris.noHotel = noHotel
             bris.noSalle = cbSalle.SelectedValue.noSalle
+            bris.etatBris = "Brisé"
             BD.tblBris.Add(bris)
             BD.SaveChanges()
             MessageBox.Show("La bris a été ajouté", "Confirmation", MessageBoxButton.OK)

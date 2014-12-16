@@ -23,7 +23,8 @@
         window_FicheReservFacture.DataContext = res.ToList()
     End Sub
     Private Sub btnAjoutCli_Click(sender As Object, e As RoutedEventArgs) Handles btnFicheCli.Click
-        Dim ajout = New iAjoutCliReserv(noEmp, noHotel, bd)
+        Dim res = From el In bd.tblReservation Where el.noReservation = noReservation Select el
+        Dim ajout = New iAjoutCliReserv(bd, res.Single.tblClient.noClient, noEmp, noHotel)
         ajout.Owner = Me
         ajout.Show()
     End Sub
