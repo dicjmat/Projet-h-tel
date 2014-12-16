@@ -44,11 +44,13 @@ Public Class iLogin
         txtMDP.Password = ""
         txtNomUtilisateur.Text = ""
         txtNomUtilisateur.Focus()
-        If changeMdp Then
-            Dim modifMdp = New iModifierMdp(maBD, noEmploye)
-            modifMdp.Owner = Me
-            modifMdp.ShowDialog()
-        End If
+
+        'Pas oublier de le réactiver
+        'If changeMdp Then
+        '    Dim modifMdp = New iModifierMdp(maBD, noEmploye)
+        '    modifMdp.Owner = Me
+        '    modifMdp.ShowDialog()
+        'End If
         Select Case typeEmploye
             Case "ADMI"
                 gerant = New iAccueilGerant(maBD, noEmploye, nHotel)

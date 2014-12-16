@@ -10,6 +10,24 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,0,-4.4,0">
+                <MenuItem Header="_Employé"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Check-in/Check-out" Click="MenuItem_Click"/>
+                    <MenuItem Header="_Facture" Click="MenuItem_Click_1"/>
+                </MenuItem>
+                <MenuItem Header="_Client"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Fiche de client" Click="MenuItem_Click_6"/>
+                    <MenuItem Header="_Liste de client" Click="MenuItem_Click_2"/>
+                </MenuItem>
+                <MenuItem Header="_Réservation" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Réservation chambre" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="_Fiche de réservation" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="_Fiche de réservation fact" Click="MenuItem_Click_5"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
         <Viewbox Stretch="Uniform">
             <Grid Width="403" Height="408">
                 <Label Content="No Facture : " Margin="0,40,326,339"/>
