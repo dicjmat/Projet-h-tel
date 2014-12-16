@@ -3,6 +3,13 @@
     Private hotel As Integer
     Private noEmp As Integer
 
+    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _noHotel As Integer, _noEmpl As Integer)
+        InitializeComponent()
+        bd = _bd
+        hotel = _noHotel
+        noEmp = _noEmpl
+    End Sub
+
     Private Sub window_GestBris_Loaded(sender As Object, e As RoutedEventArgs) Handles window_GestBris.Loaded
         Dim res = From el In bd.tblBris Where el.noHotel = hotel Select el
 
@@ -23,7 +30,7 @@
     End Sub
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
-        Dim bris = New iGestionBris()
+        Dim bris = New iGestionBris(bd, hotel, noEmp)
         bris.Owner = Me
         bris.Show()
     End Sub

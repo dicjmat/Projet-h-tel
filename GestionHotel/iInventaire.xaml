@@ -76,6 +76,7 @@
                                     <DataGridTextColumn Header="Description" Binding="{Binding descItem}"></DataGridTextColumn>
                                 </DataGrid.Columns>
                             </DataGrid>
+                            <Button Style="{StaticResource styleBouton}" Name="btnAjouterItemChk" Content="Ajouter l'item" HorizontalAlignment="Center" Margin="597.8,259,0.2,0" VerticalAlignment="Top" Width="100" Height="25"/>
                         </Grid>
                     </StackPanel>
                 </GroupBox>

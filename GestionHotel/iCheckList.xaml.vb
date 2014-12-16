@@ -23,20 +23,7 @@
     End Sub
 
     Private Sub cbSalle_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbSalle.SelectionChanged
-        Dim salle = Convert.ToInt16(cbSalle.SelectedValue.noSalle())
-        Dim check = From el In BD.tblChecklist Where el.noSalle = salle And el.noHotel = noHotel Order By el.dateSaisit Descending Select el
-        If check.ToList IsNot Nothing Then
-            Dim dernDate = check.First.dateSaisit
-            Dim last = From el In BD.tblChecklist Where el.dateSaisit = dernDate Select el
-
-            dgCheckList.ItemsSource = last.ToList()
-        Else
-            Dim typeSalle = From el In BD.tblSalle Where el.noSalle = salle And el.noHotel = noHotel Select el.codeTypeSalle
-            Dim codeType = typeSalle.First.ToString()
-            Dim res = From el In BD.tblItem Join comp In BD.tblGabarit On comp.codeItem Equals el.codeItem Where comp.codeTypeSalle = codeType Select el
-
-            dgCheckList.DataContext = res.ToList()
-        End If
+        remplirCheckList()
     End Sub
 
     Private Sub btnSauvegarder_Click(sender As Object, e As RoutedEventArgs) Handles btnSauvegarder.Click
@@ -63,26 +50,66 @@
     End Sub
 
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
-
-    End Sub
-
-    Private Sub dgCheckList_CellEditEnding(sender As Object, e As DataGridCellEditEndingEventArgs) Handles dgCheckList.CellEditEnding
-        Dim checkList = New tblChecklist()
-        checkList.dateSaisit = Date.Now
-        checkList.codeItem = dgCheckList.SelectedItem.codeItem
-        checkList.noSalle = cbSalle.SelectedItem.noSalle
-        checkList.noHotel = noHotel
-        checkList.noEmpl = noEmploye
-        'checkList.commentaire = dgCheckList.CurrentCell
+        If cbSalle.SelectedItem IsNot Nothing Then
+            Dim item = New iInventaire(noEmploye, noHotel, BD, cbSalle.SelectedValue)
+            item.Owner = Me
+            item.Show()
+        Else
+            MessageBox.Show("Veuillez sélectionner une salle", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+        End If
     End Sub
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
-        Dim bri = New iGestionBris()
+        Dim bri = New iGestionBris(BD, noHotel, noEmploye)
         bri.Owner = Me
         bri.Show()
     End Sub
 
     Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim check = New iCheckList(BD, noEmploye, noHotel)
+    End Sub
+
+    Private Sub windowCheckList_Activated(sender As Object, e As EventArgs) Handles windowCheckList.Activated
+        remplirCheckList()
+    End Sub
+
+    Private Sub remplirCheckList()
+        Dim salle = Convert.ToInt16(cbSalle.SelectedValue.noSalle())
+        Dim check = From el In BD.tblChecklist Where el.noSalle = salle And el.noHotel = noHotel Order By el.dateSaisit Descending Select el
+        If check.ToList IsNot Nothing Then
+            Dim dernDate = check.First.dateSaisit
+            Dim last = From el In BD.tblChecklist Where el.dateSaisit = dernDate Select el
+
+            dgCheckList.ItemsSource = last.ToList()
+        Else
+            Dim typeSalle = From el In BD.tblSalle Where el.noSalle = salle And el.noHotel = noHotel Select el.codeTypeSalle
+            Dim codeType = typeSalle.First.ToString()
+            Dim res = From el In BD.tblItem Join comp In BD.tblGabarit On comp.codeItem Equals el.codeItem Where comp.codeTypeSalle = codeType Select el
+
+            dgCheckList.DataContext = res.ToList()
+        End If
+    End Sub
+
+    Private Sub btnBris_Click(sender As Object, e As RoutedEventArgs) Handles btnBris.Click
+        If dgCheckList.SelectedItem IsNot Nothing Then
+            Dim bris = New tblBris()
+            bris.codeItem = dgCheckList.SelectedItem.codeItem
+            bris.dateBris = Date.Today
+            bris.noHotel = noHotel
+            bris.noSalle = cbSalle.SelectedValue.noSalle
+            BD.tblBris.Add(bris)
+            BD.SaveChanges()
+            MessageBox.Show("La bris a été ajouté", "Confirmation", MessageBoxButton.OK)
+        Else
+            MessageBox.Show("Veuillez sélectionner un item", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+        End If
+    End Sub
+
+    Private Sub btnRetire_Click(sender As Object, e As RoutedEventArgs) Handles btnRetire.Click
+        If dgCheckList.SelectedItem IsNot Nothing Then
+            dgCheckList.CanUserDeleteRows = True
+        Else
+            MessageBox.Show("Veuillez sélectionner un item", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+        End If
     End Sub
 End Class

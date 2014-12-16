@@ -4,6 +4,23 @@
     Dim maBD As P2014_Equipe2_GestionHôtelièreEntities
     Private _noEmpl As Short
     Dim item As String
+    Private noSalle As Integer
+
+    Sub New(noEmpl As Short, noHotel As Short, _maBd As P2014_Equipe2_GestionHôtelièreEntities, _noSalle As Integer)
+        InitializeComponent()
+        _noEmpl = noEmpl
+        _noHotel = noHotel
+        maBD = _maBd
+        noSalle = _noSalle
+        btnCommander.IsEnabled = False
+        btnCommander.Visibility = Windows.Visibility.Hidden
+        btnAjoutItem.IsEnabled = False
+        btnAjoutItem.Visibility = Windows.Visibility.Hidden
+        menu.IsEnabled = False
+        menu.Visibility = Windows.Visibility.Hidden
+        menuGerant.IsEnabled = False
+        menuGerant.Visibility = Windows.Visibility.Hidden
+    End Sub
 
     Sub New(noEmpl As Short, noHotel As Short, _maBd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
@@ -19,6 +36,8 @@
             menuGerant.Visibility = Windows.Visibility.Hidden
             menuGerant.IsEnabled = False
         End If
+        btnAjouterItemChk.IsEnabled = False
+        btnAjouterItemChk.Visibility = Windows.Visibility.Hidden
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
@@ -154,5 +173,24 @@
         Dim lst = New iListeSalle(_noHotel, maBD, _noEmpl)
         lst.Owner = Me
         lst.Show()
+    End Sub
+
+    Private Sub btnAjouterItemChk_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItemChk.Click
+        If lstInventaire.SelectedItem IsNot Nothing Then
+            Dim check = New tblChecklist()
+            check.codeItem = lstInventaire.SelectedItem.codeItem
+            check.dateSaisit = DateAdd(DateInterval.Day, -1, Date.Today)
+            check.noEmpl = _noEmpl
+            check.noSalle = noSalle
+            check.noHotel = _noHotel
+            check.statut = "OUI"
+            maBD.tblChecklist.Add(check)
+            maBD.SaveChanges()
+            Me.Owner.Hide()
+            Me.Owner.Show()
+            Me.Close()
+        Else
+            MessageBox.Show("Veuillez sélectionner un item", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+        End If
     End Sub
 End Class
