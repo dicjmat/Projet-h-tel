@@ -35,7 +35,13 @@
                 <GroupBox BorderBrush="Black" Header="Liste de réservation" Margin="0,76,0,31">
                     <DataGrid Name="dgReserv" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="tien nico biatch"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Nom" Binding="{Binding nomClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="No téléphone" Binding="{Binding noTelClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="NoCellulaire" Binding="{Binding noCellClient}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Date Début" Binding="{Binding dateDebutSejour}" ></DataGridTextColumn>
+                            <DataGridTextColumn Header="Date Fin" Binding="{Binding dateFinSejour}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="No Chambre" Binding="{Binding noSalle}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>

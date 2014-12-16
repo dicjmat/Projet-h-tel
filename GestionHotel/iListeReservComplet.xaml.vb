@@ -59,4 +59,18 @@
         lst.Owner = Me
         lst.Show()
     End Sub
+
+    Private Sub btnAcceuil_Click(sender As Object, e As RoutedEventArgs) Handles btnAcceuil.Click
+        Me.Close()
+    End Sub
+
+    Private Sub window_lstReservComplet_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstReservComplet.Loaded
+        SuppReserv.IsEnabled = False
+        ModifReserv.IsEnabled = False
+        Dim res = From el In bd.tblClient.Distinct
+        Join reserv In bd.tblReservation.Distinct On el.noClient Equals reserv.noClient
+        Join salle In bd.tblSalle.Distinct On reserv.noSalle Equals salle.noSalle
+        Select el
+        dgReserv.ItemsSource = res.ToList
+    End Sub
 End Class
