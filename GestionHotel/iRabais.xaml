@@ -25,7 +25,7 @@
                     <MenuItem Header="_Liste de périodes" Click="MenuItem_Click_15"/>
                 </MenuItem>
                 <MenuItem Header="_Réservation" BorderBrush="Black" BorderThickness="1" Click="MenuItem_Click_3">
-                    <MenuItem Header="_Liste de réservation centrale"/>
+                    <MenuItem Header="_Liste de réservation centrale" Click="MenuItem_Click_4"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
@@ -37,7 +37,7 @@
                         <xctk:IntegerUpDown DefaultValue="1" Name="numTaux" Height="20" Margin="99,0,428.8,224.8" RenderTransformOrigin="0.581,0.486" Minimum="1" Maximum="100" VerticalAlignment="Bottom"/>
                         <Label Content="%" Margin="154,0,390.8,182"></Label>
                         <Label Content="Code du type de chambre :" Margin="1,30,429,185.8"></Label>
-                        <ComboBox Background="White" Name="cbTypeChambre" ItemsSource="{Binding}" Height="25" Margin="158,33,349.8,191.8">
+                        <ComboBox Background="White" Name="cbTypeChambre" ItemsSource="{Binding}" Margin="158,33,349.8,181.2">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel>
@@ -47,8 +47,8 @@
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                         <Label Content="État du rabais :" Margin="1,63,414,124"></Label>
-                        <CheckBox Name="chkActif" Margin="93,69,354,113">Actif</CheckBox>
-                        <DataGrid Name="dgRabais" Margin="228,0,0,43.8" AutoGenerateColumns="False">
+                        <CheckBox Name="chkActif" Margin="93,69,428.8,155.2">Actif</CheckBox>
+                        <DataGrid Name="dgRabais" Margin="228,0,-0.2,56.2" AutoGenerateColumns="False">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Numéro" Binding="{Binding noRabais}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeSalle}"></DataGridTextColumn>
@@ -59,9 +59,9 @@
                     </Grid>
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btndeco" Content="Annuler" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,5,10" Width="77"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="AjoutRab" Content="Ajouter un rabais" Height="25" Margin="110,284,323,120"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="ModifcRab" Content="Modifier un rabais" Height="25" Margin="269,284,164,120"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="SuppRab" Content="Supprimer un rabais" Height="25" Margin="428,284,5,120"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="AjoutRab" Content="Ajouter un rabais" Height="25" Margin="110,267,323,59"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="ModifcRab" Content="Modifier un rabais" Height="25" Margin="269,267,164,59"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="SuppRab" Content="Supprimer un rabais" Height="25" Margin="428,267,5,59"></Button>
             </Grid>
         </Viewbox>
     </Grid>
