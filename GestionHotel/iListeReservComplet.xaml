@@ -12,19 +12,19 @@
     <Grid>
         <DockPanel>
             <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,-800,-4.4,0">
-                <MenuItem Header="_Forfait" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="_Ajouter un forfait" Click="MenuItem_Click"/>
-                    <MenuItem Header="_Liste de forfaits" Click="MenuItem_Click_1"/>
+                <MenuItem Header="_Employé"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Check-in/Check-out" Click="MenuItem_Click"/>
+                    <MenuItem Header="_Facture" Click="MenuItem_Click_1"/>
                 </MenuItem>
-                <MenuItem Header="_Salle" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="_Liste de salle" Click="MenuItem_Click_2"/>
+                <MenuItem Header="_Client"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Fiche de client" Click="MenuItem_Click_6"/>
+                    <MenuItem Header="_Liste de client" Click="MenuItem_Click_2"/>
                 </MenuItem>
-                <MenuItem Header="_Rabais" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="_Rabais" Click="MenuItem_Click_14"/>
-                    <MenuItem Header="_Liste de périodes" Click="MenuItem_Click_15"/>
-                </MenuItem>
-                <MenuItem Header="_Réservation" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="_Liste de réservation centrale" Click="MenuItem_Click_4"/>
+                <MenuItem Header="_Réservation" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Réservation chambre" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="_Fiche de réservation" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="_Fiche de réservation fact" Click="MenuItem_Click_5"/>
+                    <MenuItem Header="_Liste de réservation centrale" Click="MenuItem_Click_7"/>
                 </MenuItem>
             </Menu>
         </DockPanel>

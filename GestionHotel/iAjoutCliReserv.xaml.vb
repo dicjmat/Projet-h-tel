@@ -246,4 +246,10 @@
         ficheRF.Owner = Me
         ficheRF.Show()
     End Sub
+
+    Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeReservComplet(bd, noEmp, noHotel)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
 End Class

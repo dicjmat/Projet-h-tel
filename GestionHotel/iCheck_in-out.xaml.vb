@@ -164,7 +164,11 @@
         Cli.Owner = Me
         Cli.Show()
     End Sub
-
+    Private Sub MenuItem_Click_7(sender As Object, e As RoutedEventArgs)
+        Dim lst = New iListeReservComplet(bd, noEmp, noHotel)
+        lst.Owner = Me
+        lst.Show()
+    End Sub
     Private Sub window_Check_Activated(sender As Object, e As EventArgs) Handles window_Check.Activated
         Dim today = Format(Date.Now, "yyyy-MM-dd")
         Dim arrive = From el In bd.tblReservation
@@ -174,5 +178,6 @@
 
         dgArrive.ItemsSource = creerAffichage(arrive)
     End Sub
+
 End Class
 
