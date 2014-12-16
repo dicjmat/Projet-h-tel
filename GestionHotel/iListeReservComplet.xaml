@@ -31,7 +31,7 @@
         <Viewbox Stretch="Uniform">
             <Grid Height="427" Width="597">
                 <Label Content="Recherche :" Margin="0,44,338,351"/>
-                <TextBox Height="25" Width="120" Margin="76,46,401,356"/>
+                <TextBox x:Name="textnom" Height="25" Width="120" Margin="76,46,401,356" TextChanged="TextBox_TextChanged"/>
                 <GroupBox BorderBrush="Black" Header="Liste de réservation" Margin="0,76,0,31">
                     <DataGrid Name="dgReserv" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True">
                         <DataGrid.Columns>
