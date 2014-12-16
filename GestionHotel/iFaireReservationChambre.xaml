@@ -41,8 +41,6 @@
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="No" Binding="{Binding noSalle}"></DataGridTextColumn>
                                 <DataGridTextColumn Header="Type" Binding="{Binding nomTypeSalle}"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Prix"></DataGridTextColumn>
-                                <DataGridTextColumn Header="Lits"></DataGridTextColumn>
                             </DataGrid.Columns>
                         </DataGrid>
                         <TextBox Name="txtCommReser" TextWrapping="Wrap" AcceptsReturn="True" Margin="144,206,0,0" HorizontalAlignment="Left" Width="302" Height="95" VerticalAlignment="Top"></TextBox>
