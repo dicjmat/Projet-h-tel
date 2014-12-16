@@ -58,16 +58,16 @@
     End Sub
 
     Private Sub btnAcceuil_Click(sender As Object, e As RoutedEventArgs) Handles btnAcceuil.Click
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
     Private Sub window_lstReservComplet_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstReservComplet.Loaded
         SuppReserv.IsEnabled = False
         ModifReserv.IsEnabled = False
-        Dim res = From el In bd.tblClient.Distinct
-        Join reserv In bd.tblReservation.Distinct On el.noClient Equals reserv.noClient
-        Join salle In bd.tblSalle.Distinct On reserv.noSalle Equals salle.noSalle
-        Select el
+        Dim res = From el In bd.tblClient
+        Join reserv In bd.tblReservation On el.noClient Equals reserv.noClient
+        Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle
         dgReserv.ItemsSource = res.ToList
     End Sub
 End Class
