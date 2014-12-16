@@ -68,4 +68,8 @@
         lst.Owner = Me
         lst.Show()
     End Sub
+
+    Private Sub btnAcceuil_Click(sender As Object, e As RoutedEventArgs) Handles btnAcceuil.Click
+        Me.Close()
+    End Sub
 End Class
