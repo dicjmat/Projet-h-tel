@@ -91,4 +91,16 @@
         Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle, reserv.noHotel
         dgReserv.ItemsSource = res.ToList
     End Sub
+
+    Private Sub TextBox_TextChanged(sender As Object, e As TextChangedEventArgs)
+        requete2()
+    End Sub
+
+    Sub requete2()
+        Dim res = From el In bd.tblClient
+             Join reserv In bd.tblReservation On el.noClient Equals reserv.noClient
+          Where (el.nomClient + " " + el.prenClient).StartsWith(textnom.Text) Or (el.prenClient + " " + el.nomClient).StartsWith(textnom.Text)
+                  Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle, reserv.noHotel
+        dgReserv.ItemsSource = res.ToList()
+    End Sub
 End Class
