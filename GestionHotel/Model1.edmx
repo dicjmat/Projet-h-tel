@@ -5,16 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="P2014_Equipe2_GestionHôtelièreV2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="tblBris">
           <Key>
             <PropertyRef Name="noBris" />
@@ -69,7 +59,7 @@
           <Property Name="noFournisseur" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nomFournisseur" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="adrFournisseur" Type="varchar" MaxLength="60" Nullable="false" />
-          <Property Name="CPFournisseur" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="CPFournisseur" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="noTelFournisseur" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="respFournisseur" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="codeVille" Type="char" MaxLength="3" Nullable="false" />
@@ -94,7 +84,7 @@
           <Property Name="noTelHotel" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="noTelecopieur" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="noTelReserv" Type="char" MaxLength="14" Nullable="false" />
-          <Property Name="codePostal" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="codePostal" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="codeVille" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="codeProv" Type="char" MaxLength="2" Nullable="false" />
         </EntityType>
@@ -157,8 +147,8 @@
           <Property Name="noCommunique" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="titreCommunique" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="contCommunique" Type="text" Nullable="false" />
+          <Property Name="etatCommunique" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="noHotel" Type="tinyint" Nullable="false" />
-          <Property Name="etatCommunique" Type="varchar" MaxLength="7" />
         </EntityType>
         <EntityType Name="tblEmploye">
           <Key>
@@ -170,8 +160,10 @@
           <Property Name="noTelEmpl" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="noCellEmpl" Type="char" MaxLength="12" />
           <Property Name="adrEmpl" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="codePostalEmploye" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="codeVille" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="codeProv" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="emailEmploye" Type="varchar" MaxLength="100" />
           <Property Name="NAS" Type="char" MaxLength="9" Nullable="false" />
           <Property Name="dateEmbauche" Type="date" Nullable="false" />
           <Property Name="noHotel" Type="tinyint" Nullable="false" />
@@ -182,8 +174,6 @@
           <Property Name="joursVac" Type="tinyint" />
           <Property Name="joursFerie" Type="tinyint" />
           <Property Name="joursMal" Type="tinyint" />
-          <Property Name="codePostalEmploye" Type="char" MaxLength="6" />
-          <Property Name="emailEmploye" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="tblHoraire">
           <Key>
@@ -222,7 +212,8 @@
           <Property Name="noTelClient" Type="char" MaxLength="12" Nullable="false" />
           <Property Name="noCellClient" Type="char" MaxLength="12" />
           <Property Name="adrClient" Type="varchar" MaxLength="60" Nullable="false" />
-          <Property Name="emailClient" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="codePostalClient" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="emailClient" Type="varchar" MaxLength="100" />
           <Property Name="typeCarteCredit" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="noCarteCredit" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="dateExpiration" Type="char" MaxLength="5" Nullable="false" />
@@ -256,7 +247,7 @@
           <Property Name="noCellDemandeur" Type="char" MaxLength="12" />
           <Property Name="adrDemandeur" Type="varchar" MaxLength="60" Nullable="false" />
           <Property Name="codePostalDemandeur" Type="char" MaxLength="6" Nullable="false" />
-          <Property Name="emailDemandeur" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="emailDemandeur" Type="varchar" MaxLength="100" />
           <Property Name="typeCarteCredit" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="noCarteCredit" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="dateExpiration" Type="char" MaxLength="5" Nullable="false" />
@@ -284,7 +275,7 @@
           <Property Name="noFacture" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="etatFacture" Type="varchar" MaxLength="7" Nullable="false" />
           <Property Name="dateFacture" Type="date" Nullable="false" />
-          <Property Name="noHotel" Type="tinyint" />
+          <Property Name="noHotel" Type="tinyint" Nullable="false" />
         </EntityType>
         <EntityType Name="tblForfait">
           <Key>
@@ -293,11 +284,11 @@
           <Property Name="noForfait" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nomForfait" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="descForfait" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="nbNuitForfait" Type="tinyint" Nullable="false" />
           <Property Name="etatForfait" Type="char" MaxLength="2" Nullable="false" />
           <Property Name="prixForfait" Type="smallmoney" Nullable="false" />
           <Property Name="noHotel" Type="tinyint" Nullable="false" />
           <Property Name="codeTypeSalle" Type="char" MaxLength="3" Nullable="false" />
-          <Property Name="nbNuitForfait" Type="tinyint" />
         </EntityType>
         <EntityType Name="tblNote">
           <Key>
@@ -351,8 +342,8 @@
           <Property Name="noSalle" Type="smallint" Nullable="false" />
           <Property Name="noHotel" Type="tinyint" Nullable="false" />
           <Property Name="noClient" Type="int" />
-          <Property Name="noEmpl" Type="smallint" />
           <Property Name="noDemandeur" Type="int" />
+          <Property Name="noEmpl" Type="smallint" />
           <Property Name="noForfait" Type="tinyint" />
           <Property Name="noRabais" Type="tinyint" />
         </EntityType>
@@ -656,7 +647,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_fact_nohot">
-          <End Role="tblHotel" Type="Self.tblHotel" Multiplicity="0..1" />
+          <End Role="tblHotel" Type="Self.tblHotel" Multiplicity="1" />
           <End Role="tblFacture" Type="Self.tblFacture" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblHotel">
@@ -1023,37 +1014,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="inventaireCommun" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Inventaire" />
         <Function Name="determinerchambrelibre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Reservation">
           <Parameter Name="dateDebut" Type="date" Mode="In" />
@@ -1071,7 +1031,6 @@
           <Parameter Name="noHotel" Type="tinyint" Mode="In" />
         </Function>
         <EntityContainer Name="P2014_Equipe2_GestionHôtelièreV2ModelStoreContainer">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblBris" EntityType="Self.tblBris" Schema="Inventaire" store:Type="Tables" />
           <EntitySet Name="tblCatalogue" EntityType="Self.tblCatalogue" Schema="Inventaire" store:Type="Tables" />
           <EntitySet Name="tblChecklist" EntityType="Self.tblChecklist" Schema="Inventaire" store:Type="Tables" />
@@ -1312,16 +1271,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="P2014_Equipe2_GestionHôtelièreV2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="tblBris">
           <Key>
             <PropertyRef Name="noBris" />
@@ -1386,7 +1335,7 @@
           <Property Name="noFournisseur" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomFournisseur" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="adrFournisseur" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CPFournisseur" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="CPFournisseur" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="noTelFournisseur" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="respFournisseur" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codeVille" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
@@ -1415,7 +1364,7 @@
           <Property Name="noTelHotel" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="noTelecopieur" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="noTelReserv" Type="String" MaxLength="14" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="codePostal" Type="String" MaxLength="7" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="codePostal" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="codeVille" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="codeProv" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="tblCommunique" Relationship="Self.fk_com_nohot" FromRole="tblHotel" ToRole="tblCommunique" />
@@ -1505,8 +1454,8 @@
           <Property Name="noCommunique" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="titreCommunique" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="contCommunique" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="etatCommunique" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="noHotel" Type="Byte" Nullable="false" />
-          <Property Name="etatCommunique" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblHotel" Relationship="Self.fk_com_nohot" FromRole="tblCommunique" ToRole="tblHotel" />
         </EntityType>
         <EntityType Name="tblEmploye">
@@ -1519,8 +1468,10 @@
           <Property Name="noTelEmpl" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="noCellEmpl" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="adrEmpl" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codePostalEmploye" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="codeVille" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="codeProv" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="emailEmploye" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="NAS" Type="String" MaxLength="9" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="dateEmbauche" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="noHotel" Type="Byte" Nullable="false" />
@@ -1531,8 +1482,6 @@
           <Property Name="joursVac" Type="Byte" />
           <Property Name="joursFerie" Type="Byte" />
           <Property Name="joursMal" Type="Byte" />
-          <Property Name="codePostalEmploye" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
-          <Property Name="emailEmploye" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tblChecklist" Relationship="Self.fk_chklist_noempl" FromRole="tblEmploye" ToRole="tblChecklist" />
           <NavigationProperty Name="tblCommande" Relationship="Self.fk_com_empl" FromRole="tblEmploye" ToRole="tblCommande" />
           <NavigationProperty Name="tblHotel" Relationship="Self.fk_empl_hot" FromRole="tblEmploye" ToRole="tblHotel" />
@@ -1582,7 +1531,8 @@
           <Property Name="noTelClient" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="noCellClient" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="adrClient" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="emailClient" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codePostalClient" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="emailClient" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="typeCarteCredit" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="noCarteCredit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="dateExpiration" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
@@ -1622,7 +1572,7 @@
           <Property Name="noCellDemandeur" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
           <Property Name="adrDemandeur" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codePostalDemandeur" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="emailDemandeur" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="emailDemandeur" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="typeCarteCredit" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="noCarteCredit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="dateExpiration" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
@@ -1655,7 +1605,7 @@
           <Property Name="noFacture" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="etatFacture" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="dateFacture" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="noHotel" Type="Byte" />
+          <Property Name="noHotel" Type="Byte" Nullable="false" />
           <NavigationProperty Name="tblHotel" Relationship="Self.fk_fact_nohot" FromRole="tblFacture" ToRole="tblHotel" />
           <NavigationProperty Name="tblNote" Relationship="Self.fk_note_nofac" FromRole="tblFacture" ToRole="tblNote" />
         </EntityType>
@@ -1666,11 +1616,11 @@
           <Property Name="noForfait" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nomForfait" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="descForfait" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nbNuitForfait" Type="Byte" Nullable="false" />
           <Property Name="etatForfait" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="prixForfait" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
           <Property Name="noHotel" Type="Byte" Nullable="false" />
           <Property Name="codeTypeSalle" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="nbNuitForfait" Type="Byte" />
           <NavigationProperty Name="tblHotel" Relationship="Self.fk_for_nohot" FromRole="tblForfait" ToRole="tblHotel" />
           <NavigationProperty Name="tblTypeSalle" Relationship="Self.fk_for_cotysa" FromRole="tblForfait" ToRole="tblTypeSalle" />
           <NavigationProperty Name="tblReservation" Relationship="Self.fk_res_noforf" FromRole="tblForfait" ToRole="tblReservation" />
@@ -1735,8 +1685,8 @@
           <Property Name="noSalle" Type="Int16" Nullable="false" />
           <Property Name="noHotel" Type="Byte" Nullable="false" />
           <Property Name="noClient" Type="Int32" />
-          <Property Name="noEmpl" Type="Int16" />
           <Property Name="noDemandeur" Type="Int32" />
+          <Property Name="noEmpl" Type="Int16" />
           <Property Name="noForfait" Type="Byte" />
           <Property Name="noRabais" Type="Byte" />
           <NavigationProperty Name="tblEmploye" Relationship="Self.fk_res_noempl" FromRole="tblReservation" ToRole="tblEmploye" />
@@ -1983,7 +1933,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_fact_nohot">
-          <End Role="tblHotel" Type="Self.tblHotel" Multiplicity="0..1" />
+          <End Role="tblHotel" Type="Self.tblHotel" Multiplicity="1" />
           <End Role="tblFacture" Type="Self.tblFacture" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblHotel">
@@ -2431,7 +2381,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="P2014_Equipe2_GestionHôtelièreEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="tblBris" EntityType="Self.tblBris" />
           <EntitySet Name="tblCatalogue" EntityType="Self.tblCatalogue" />
           <EntitySet Name="tblChecklist" EntityType="Self.tblChecklist" />
@@ -2666,36 +2615,6 @@
             <End Role="tblTypeSalle" EntitySet="tblTypeSalle" />
             <End Role="tblTypeSalleHotel" EntitySet="tblTypeSalleHotel" />
           </AssociationSet>
-          <FunctionImport Name="sp_alterdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_creatediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="version" Mode="In" Type="Int32" />
-            <Parameter Name="definition" Mode="In" Type="Binary" />
-          </FunctionImport>
-          <FunctionImport Name="sp_dropdiagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreV2Model.sp_helpdiagramdefinition_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreV2Model.sp_helpdiagrams_Result)">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-          </FunctionImport>
-          <FunctionImport Name="sp_renamediagram">
-            <Parameter Name="diagramname" Mode="In" Type="String" />
-            <Parameter Name="owner_id" Mode="In" Type="Int32" />
-            <Parameter Name="new_diagramname" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="sp_upgraddiagrams" />
           <FunctionImport Name="inventaireCommun" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreV2Model.inventaireCommun_Result)" />
           <FunctionImport Name="determinerchambrelibre" ReturnType="Collection(P2014_Equipe2_GestionHôtelièreV2Model.determinerchambrelibre_Result)">
             <Parameter Name="dateDebut" Mode="In" Type="DateTime" />
@@ -2713,17 +2632,6 @@
             <Parameter Name="noHotel" Mode="In" Type="Byte" />
           </FunctionImport>
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
         <ComplexType Name="inventaireCommun_Result">
           <Property Type="String" Name="codeItem" Nullable="false" MaxLength="7" />
           <Property Type="String" Name="nomItem" Nullable="false" MaxLength="50" />
@@ -2750,17 +2658,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="P2014_Equipe2_GestionHôtelièreV2ModelStoreContainer" CdmEntityContainer="P2014_Equipe2_GestionHôtelièreEntities">
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="tblBris">
             <EntityTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.tblBris">
               <MappingFragment StoreEntitySet="tblBris">
@@ -2907,8 +2804,8 @@
                 <ScalarProperty Name="noCommunique" ColumnName="noCommunique" />
                 <ScalarProperty Name="titreCommunique" ColumnName="titreCommunique" />
                 <ScalarProperty Name="contCommunique" ColumnName="contCommunique" />
-                <ScalarProperty Name="noHotel" ColumnName="noHotel" />
                 <ScalarProperty Name="etatCommunique" ColumnName="etatCommunique" />
+                <ScalarProperty Name="noHotel" ColumnName="noHotel" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2921,8 +2818,10 @@
                 <ScalarProperty Name="noTelEmpl" ColumnName="noTelEmpl" />
                 <ScalarProperty Name="noCellEmpl" ColumnName="noCellEmpl" />
                 <ScalarProperty Name="adrEmpl" ColumnName="adrEmpl" />
+                <ScalarProperty Name="codePostalEmploye" ColumnName="codePostalEmploye" />
                 <ScalarProperty Name="codeVille" ColumnName="codeVille" />
                 <ScalarProperty Name="codeProv" ColumnName="codeProv" />
+                <ScalarProperty Name="emailEmploye" ColumnName="emailEmploye" />
                 <ScalarProperty Name="NAS" ColumnName="NAS" />
                 <ScalarProperty Name="dateEmbauche" ColumnName="dateEmbauche" />
                 <ScalarProperty Name="noHotel" ColumnName="noHotel" />
@@ -2933,8 +2832,6 @@
                 <ScalarProperty Name="joursVac" ColumnName="joursVac" />
                 <ScalarProperty Name="joursFerie" ColumnName="joursFerie" />
                 <ScalarProperty Name="joursMal" ColumnName="joursMal" />
-                <ScalarProperty Name="codePostalEmploye" ColumnName="codePostalEmploye" />
-                <ScalarProperty Name="emailEmploye" ColumnName="emailEmploye" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2976,6 +2873,7 @@
                 <ScalarProperty Name="noTelClient" ColumnName="noTelClient" />
                 <ScalarProperty Name="noCellClient" ColumnName="noCellClient" />
                 <ScalarProperty Name="adrClient" ColumnName="adrClient" />
+                <ScalarProperty Name="codePostalClient" ColumnName="codePostalClient" />
                 <ScalarProperty Name="emailClient" ColumnName="emailClient" />
                 <ScalarProperty Name="typeCarteCredit" ColumnName="typeCarteCredit" />
                 <ScalarProperty Name="noCarteCredit" ColumnName="noCarteCredit" />
@@ -3050,11 +2948,11 @@
                 <ScalarProperty Name="noForfait" ColumnName="noForfait" />
                 <ScalarProperty Name="nomForfait" ColumnName="nomForfait" />
                 <ScalarProperty Name="descForfait" ColumnName="descForfait" />
+                <ScalarProperty Name="nbNuitForfait" ColumnName="nbNuitForfait" />
                 <ScalarProperty Name="etatForfait" ColumnName="etatForfait" />
                 <ScalarProperty Name="prixForfait" ColumnName="prixForfait" />
                 <ScalarProperty Name="noHotel" ColumnName="noHotel" />
                 <ScalarProperty Name="codeTypeSalle" ColumnName="codeTypeSalle" />
-                <ScalarProperty Name="nbNuitForfait" ColumnName="nbNuitForfait" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3111,8 +3009,8 @@
                 <ScalarProperty Name="noSalle" ColumnName="noSalle" />
                 <ScalarProperty Name="noHotel" ColumnName="noHotel" />
                 <ScalarProperty Name="noClient" ColumnName="noClient" />
-                <ScalarProperty Name="noEmpl" ColumnName="noEmpl" />
                 <ScalarProperty Name="noDemandeur" ColumnName="noDemandeur" />
+                <ScalarProperty Name="noEmpl" ColumnName="noEmpl" />
                 <ScalarProperty Name="noForfait" ColumnName="noForfait" />
                 <ScalarProperty Name="noRabais" ColumnName="noRabais" />
               </MappingFragment>
@@ -3166,30 +3064,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.sp_upgraddiagrams" />
           <FunctionImportMapping FunctionImportName="inventaireCommun" FunctionName="P2014_Equipe2_GestionHôtelièreV2Model.Store.inventaireCommun">
             <ResultMapping>
               <ComplexTypeMapping TypeName="P2014_Equipe2_GestionHôtelièreV2Model.inventaireCommun_Result">

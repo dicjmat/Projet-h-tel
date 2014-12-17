@@ -17,6 +17,7 @@ Partial Public Class tblClient
     Public Property noTelClient As String
     Public Property noCellClient As String
     Public Property adrClient As String
+    Public Property codePostalClient As String
     Public Property emailClient As String
     Public Property typeCarteCredit As String
     Public Property noCarteCredit As String

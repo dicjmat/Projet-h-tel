@@ -20,8 +20,8 @@ Partial Public Class tblReservation
     Public Property noSalle As Short
     Public Property noHotel As Byte
     Public Property noClient As Nullable(Of Integer)
-    Public Property noEmpl As Nullable(Of Short)
     Public Property noDemandeur As Nullable(Of Integer)
+    Public Property noEmpl As Nullable(Of Short)
     Public Property noForfait As Nullable(Of Byte)
     Public Property noRabais As Nullable(Of Byte)
 
