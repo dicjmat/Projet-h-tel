@@ -1,4 +1,4 @@
-﻿<Window x:Class="iListeReservComplet" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="CadetBlue" Name="window_lstReservComplet" Icon="icon.ico"
+﻿<Window x:Class="iListeReservComplet" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" ResizeMode="NoResize" Background="CadetBlue" Name="window_lstReservComplet" Icon="icon.ico" Activated="delRes"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Title="iListeReservComplet" Height="516.716" Width="715.385">
@@ -31,7 +31,7 @@
         <Viewbox Stretch="Uniform">
             <Grid Height="427" Width="597">
                 <Label Content="Recherche :" Margin="0,44,338,351"/>
-                <TextBox Height="25" Width="120" Margin="76,46,401,356"/>
+                <TextBox x:Name="textnom" Height="25" Width="120" Margin="76,46,401,356" TextChanged="TextBox_TextChanged"/>
                 <GroupBox BorderBrush="Black" Header="Liste de réservation" Margin="0,76,0,31">
                     <DataGrid Name="dgReserv" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True">
                         <DataGrid.Columns>
@@ -39,14 +39,15 @@
                             <DataGridTextColumn Header="Prénom" Binding="{Binding prenClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="No téléphone" Binding="{Binding noTelClient}"></DataGridTextColumn>
                             <DataGridTextColumn Header="NoCellulaire" Binding="{Binding noCellClient}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Date Début" Binding="{Binding dateDebutSejour}" ></DataGridTextColumn>
-                            <DataGridTextColumn Header="Date Fin" Binding="{Binding dateFinSejour}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Date Début" Binding="{Binding dateDebutSejour,StringFormat=dd/MM/yyy}" ></DataGridTextColumn>
+                            <DataGridTextColumn Header="Date Fin" Binding="{Binding dateFinSejour,StringFormat=dd/MM/yyy}"></DataGridTextColumn>
                             <DataGridTextColumn Header="No Chambre" Binding="{Binding noSalle}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="No hotel" Binding="{Binding noHotel}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
                 <Button Name="btnAcceuil" Content="Acceuil" Height="25" Style="{StaticResource styleBouton}" Margin="482,400,10,2"></Button>
-                <Button Name="ModifReserv" Content="Modifier" Height="25" Style="{StaticResource styleBouton}" Margin="372,401,120,1"></Button>
+                <Button Name="ModifReserv" Content="Modifier" Height="25" Style="{StaticResource styleBouton}" Margin="372,401,120,0" VerticalAlignment="Top"></Button>
                 <Button Name="SuppReserv" Content="Supprimer" Height="25" Style="{StaticResource styleBouton}" Margin="263,402,230,0"></Button>
             </Grid>
         </Viewbox>

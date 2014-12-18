@@ -18,5 +18,6 @@ Partial Public Class tblRabais
     Public Property noHotel As Byte
 
     Public Overridable Property tblTypeSalleHotel As tblTypeSalleHotel
+    Public Overridable Property tblReservation As ICollection(Of tblReservation) = New HashSet(Of tblReservation)
 
 End Class

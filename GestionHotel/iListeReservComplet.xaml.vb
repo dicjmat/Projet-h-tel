@@ -63,11 +63,44 @@
     End Sub
 
     Private Sub window_lstReservComplet_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstReservComplet.Loaded
+        delRes()
+    End Sub
+
+    Private Sub dgReserv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
+        SuppReserv.IsEnabled = True
+        ModifReserv.IsEnabled = True
+    End Sub
+
+    Private Sub SuppReserv_Click(sender As Object, e As RoutedEventArgs) Handles SuppReserv.Click
+        bd.tblClient.Remove(dgReserv.SelectedItem)
+        bd.SaveChanges()
+        Me.Hide()
+        Me.Show()
+        MessageBox.Show("La réservation a été effacé avec succès.")
+    End Sub
+
+    Private Sub ModifReserv_Click(sender As Object, e As RoutedEventArgs) Handles ModifReserv.Click
+
+    End Sub
+
+    Sub delRes()
         SuppReserv.IsEnabled = False
         ModifReserv.IsEnabled = False
         Dim res = From el In bd.tblClient
         Join reserv In bd.tblReservation On el.noClient Equals reserv.noClient
-        Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle
+        Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle, reserv.noHotel
         dgReserv.ItemsSource = res.ToList
+    End Sub
+
+    Private Sub TextBox_TextChanged(sender As Object, e As TextChangedEventArgs)
+        requete2()
+    End Sub
+
+    Sub requete2()
+        Dim res = From el In bd.tblClient
+             Join reserv In bd.tblReservation On el.noClient Equals reserv.noClient
+          Where (el.nomClient + " " + el.prenClient).StartsWith(textnom.Text) Or (el.prenClient + " " + el.nomClient).StartsWith(textnom.Text)
+                  Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle, reserv.noHotel
+        dgReserv.ItemsSource = res.ToList()
     End Sub
 End Class

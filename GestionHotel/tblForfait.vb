@@ -14,6 +14,7 @@ Partial Public Class tblForfait
     Public Property noForfait As Byte
     Public Property nomForfait As String
     Public Property descForfait As String
+    Public Property nbNuitForfait As Byte
     Public Property etatForfait As String
     Public Property prixForfait As Decimal
     Public Property noHotel As Byte
@@ -21,5 +22,6 @@ Partial Public Class tblForfait
 
     Public Overridable Property tblHotel As tblHotel
     Public Overridable Property tblTypeSalle As tblTypeSalle
+    Public Overridable Property tblReservation As ICollection(Of tblReservation) = New HashSet(Of tblReservation)
 
 End Class
