@@ -143,6 +143,8 @@
             client.noTelClient = txtTelCli.Text
             client.noCellClient = txtCelCli.Text
             client.adrClient = txtAdrCli.Text.Trim
+            client.codePostalClient = txtCPCli.Text.Trim
+            client.emailClient = txtEmailCli.Text.Trim
             client.noCarteCredit = txtNoCarteCredit.Text
             client.typeCarteCredit = cbTypeCarte.SelectedItem.typeCarteCredit
             client.dateExpiration = txtCodeExp.Text

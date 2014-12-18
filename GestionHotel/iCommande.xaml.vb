@@ -46,6 +46,10 @@
                 Dim ligne = New tblLigneCommande
                 ligne.codeItem = dgCommande.SelectedItem.CodeItem
                 ligne.quantite = txtQteCom.Text
+                Dim item As tblItem = (From el In bd.tblItem
+                                Where el.codeItem = ligne.codeItem
+                                Select el).Single
+                ligne.tblItem = item
                 ligne.prixUnitaire = dgCommande.SelectedItem.prixItem
                 lstCommande.Add(ligne)
                 Dim affichage = New With {.nomFournisseur = dgCommande.SelectedItem.nomFournisseur _
@@ -130,6 +134,10 @@
             commande.prixCommande = prixTotal
             commande.etatCommande = "NL"
             commande.noFournisseur = dgCommande.SelectedItem.noFournisseur
+            Dim fourni As tblFournisseur = (From el In bd.tblFournisseur
+                                                Where el.noFournisseur = commande.noFournisseur
+                                                Select el).Single
+            commande.tblFournisseur = fourni
             commande.noEmpl = noEmpl
             For Each el In lstCommande
                 commande.tblLigneCommande.Add(el)

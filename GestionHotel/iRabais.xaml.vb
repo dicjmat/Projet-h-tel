@@ -22,15 +22,22 @@
         If cbTypeChambre.SelectedIndex <> -1 Then
             rabais.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeSalle
             rabais.tauxRabais = Convert.ToDecimal(numTaux.Value) / 100
+            rabais.noHotel = noHotel
             If chkActif.IsChecked Then
                 rabais.etatRabais = "AC"
             Else
                 rabais.etatRabais = "IN"
             End If
             bd.tblRabais.Add(rabais)
-            bd.SaveChanges()
-            requete()
-            MessageBox.Show("Votre rabais a été ajouté")
+            Try
+                bd.SaveChanges()
+                requete()
+                MessageBox.Show("Votre rabais a été ajouté")
+            Catch ex As Exception
+                MessageBox.Show("Il y a déjà un rabais assigné à cette chambre")
+            End Try
+
+
         Else
             MessageBox.Show("Veuillez remplir les champs")
         End If
@@ -125,7 +132,7 @@
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim ajout = New iAjoutForf(p1, noHotel, bd)
-        ajout.owner = Me
+        ajout.Owner = Me
         ajout.Show()
     End Sub
 

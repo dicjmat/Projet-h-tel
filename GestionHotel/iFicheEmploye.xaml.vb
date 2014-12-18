@@ -144,7 +144,12 @@ Public Class iFicheEmploye
                 Employe.joursMal = txtMaladieEmp.Text
             End If
 
+            If txtCourriel.Text <> "" Then
+                Employe.emailEmploye = txtCourriel.Text
+            End If
+
             Employe.salaire = Replace(txtSalaireEmp.Text, ".", ",")
+            Employe.codePostalEmploye = txtCodePostEmpl.Text
             If cmbCdVille.SelectedIndex <> -1 Then
                 Employe.codeVille = cmbCdVille.SelectedItem.codeVille
                 Employe.codeProv = cmbProvince.SelectedItem.codeProv

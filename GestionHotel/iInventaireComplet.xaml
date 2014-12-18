@@ -41,7 +41,7 @@
                 <Label Content="Rechercher :" Margin="10,65,600,412"></Label>
                 <TextBox Name="txtRecherche" Height="25" Margin="106,65,418,412"></TextBox>
                 <Label Content="Hôtel :" Margin="269,46,353,463"></Label>
-                <ComboBox Name="cbHotel" Background="White" Margin="317,46,196,469" ItemsSource="{Binding}">
+                <ComboBox Name="cbHotel" Background="White" Margin="438,56,77,412" ItemsSource="{Binding}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
@@ -60,7 +60,7 @@
                                 <DataGridTextColumn.ElementStyle>
                                     <Style TargetType="{x:Type TextBlock}">
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding stock}" Value="True">
+                                            <DataTrigger Binding="{Binding stock}" Value="True,Nothing">
                                                 <Setter Property="Background" Value="Red"/>
                                             </DataTrigger>
                                         </Style.Triggers>
