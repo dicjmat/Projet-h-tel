@@ -106,61 +106,71 @@
 
     Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
         Dim inv = New iInventaire(noEmp, noHotel, bd)
-        inv.Owner = Me
+        inv.Owner = Me.Owner
         inv.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
         Dim fourni = New iAjoutFournisseur(bd)
-        fourni.Owner = Me
+        fourni.Owner = Me.Owner
         fourni.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
         Dim inv = New iInventaireComplet(bd, noEmp, noHotel)
-        inv.Owner = Me
+        inv.Owner = Me.Owner
         inv.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_7(sender As Object, e As RoutedEventArgs)
         Dim salle = New iGestionSalle(bd)
-        salle.Owner = Me
+        salle.Owner = Me.Owner
         salle.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_8(sender As Object, e As RoutedEventArgs)
         Dim hotel = New iGestionHotel(bd)
-        hotel.Owner = Me
+        hotel.Owner = Me.Owner
         hotel.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_10(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeCentrale(bd, noEmp, noHotel)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_11(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeEmployeComplet(bd, noEmp, noHotel)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_12(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeSalle(noHotel, bd, noEmp)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_13(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeHotel(bd, noEmp, noHotel)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeReservComplet(bd, noEmp, noHotel)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 End Class

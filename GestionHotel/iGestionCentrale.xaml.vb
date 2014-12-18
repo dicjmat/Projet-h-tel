@@ -25,12 +25,14 @@
         Dim lstemp = New iListeEmployeComplet(bd, noEmp, noHotel)
         lstemp.Owner = Me
         lstemp.Show()
+        Me.Hide()
     End Sub
 
     Private Sub AppuieInvComp()
         Dim invComplet = New iInventaireComplet(bd, noEmp, noHotel)
         invComplet.Owner = Me
         invComplet.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnDeco_Click(sender As Object, e As RoutedEventArgs) Handles btnDeco.Click

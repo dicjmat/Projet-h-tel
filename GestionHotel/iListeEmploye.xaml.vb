@@ -80,32 +80,36 @@
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim fiche = New iFicheEmploye(maBd, _noHotel, _noEmpl)
-        fiche.Owner = Me
+        fiche.Owner = Me.Owner
         fiche.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeEmploye(_noEmpl, _noHotel, maBd)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
         Dim horaire = New iAjouterHoraire(_noEmpl, _noHotel, maBd)
-        horaire.Owner = Me
+        horaire.Owner = Me.Owner
         horaire.Show()
         Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeCOmmande(_noEmpl, _noHotel, maBd)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
         Dim lst = New iCommunique(_noEmpl, _noHotel, maBd)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 End Class

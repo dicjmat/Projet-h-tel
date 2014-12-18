@@ -78,31 +78,36 @@
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim ajout = New iAjoutForf(p1, _hotel, bd)
-        ajout.owner = Me
+        ajout.Owner = Me.Owner
         ajout.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim lst = New ListeForfait(_hotel, bd, noEmp)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeSalle(_hotel, bd, noEmp)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_14(sender As Object, e As RoutedEventArgs)
         Dim rab = New iRabais(_hotel, bd, noEmp)
-        rab.Owner = Me
+        rab.Owner = Me.Owner
         rab.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_15(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListePeriode(bd, _hotel, noEmp)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 End Class

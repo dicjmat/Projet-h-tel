@@ -13,6 +13,9 @@
     <Grid>
         <DockPanel Margin="0,0,0,223.2" VerticalAlignment="Top">
             <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,5,-4.4,0">
+                <MenuItem Header="_Employe" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Liste d'employé complet" Click="MenuItem_Click_11"/>
+                </MenuItem>
                 <MenuItem Header="_Item"  BorderThickness="1" BorderBrush="Black">
                     <MenuItem Header="_Inventaire" Click="MenuItem_Click_3"/>
                     <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_4"/>
@@ -24,7 +27,6 @@
                 </MenuItem>
                 <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black" Click="MenuItem_Click">
                     <MenuItem Header="_Liste centrale" Click="MenuItem_Click_10"/>
-                    <MenuItem Header="_Liste d'employé complet" Click="MenuItem_Click_11"/>
                     <MenuItem Header="_Liste de salle" Click="MenuItem_Click_12"/>
                     <MenuItem Header="_Liste d'hôtel" Click="MenuItem_Click_13"/>
                     <MenuItem Header="_Liste de réservation centrale"/>

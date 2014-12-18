@@ -76,43 +76,50 @@
     End Sub
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim check = New iCheck_in_out(bd, noEmpl, noHotel)
-        check.Owner = Me
+        check.Owner = Me.Owner
         check.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim facture = New iFacture(bd, noEmpl, noHotel)
-        facture.Owner = Me
+        facture.Owner = Me.Owner
         facture.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeClient
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
         Dim reserv = New iFaireReservationChambre(bd, noEmpl, noHotel)
-        reserv.Owner = Me
+        reserv.Owner = Me.Owner
         reserv.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
         Dim ficheR = New iFicheReserv(bd, noEmpl, noHotel)
-        ficheR.Owner = Me
+        ficheR.Owner = Me.Owner
         ficheR.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
         Dim ficheRF = New iFicheReservFacture(bd, noEmpl, noHotel)
-        ficheRF.Owner = Me
+        ficheRF.Owner = Me.Owner
         ficheRF.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
         Dim Cli = New iAjoutCliReserv(noEmpl, noHotel, bd)
-        Cli.Owner = Me
+        Cli.Owner = Me.Owner
         Cli.Show()
+        Me.Close()
     End Sub
 End Class

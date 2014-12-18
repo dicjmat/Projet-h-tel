@@ -15,6 +15,7 @@
         Dim Forfait = New ListeForfait(hotel, bd, noEmpl)
         Forfait.Owner = Me
         Forfait.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnDeco_Click(sender As Object, e As RoutedEventArgs) Handles btnDeco.Click
@@ -25,18 +26,21 @@
         Dim Rabais = New iRabais(hotel, bd, noEmpl)
         Rabais.Owner = Me
         Rabais.Show()
+        Me.Hide()
     End Sub
 
     Private Sub AppuieSalle()
         Dim salle = New iListeSalle(hotel, bd, noEmpl)
         salle.Owner = Me
         salle.Show()
+        Me.Hide()
     End Sub
 
     Private Sub AppuiePeriode()
         Dim periode = New iListePeriode(bd, hotel, noEmpl)
         periode.Owner = Me
         periode.Show()
+        Me.Hide()
     End Sub
 
 End Class
