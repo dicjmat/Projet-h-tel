@@ -46,7 +46,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
-                <Button Name="btnAcceuil" Content="Acceuil" Height="25" Style="{StaticResource styleBouton}" Margin="482,400,10,2"></Button>
+                <Button Name="btnAcceuil" Content="Accueil" Height="25" Style="{StaticResource styleBouton}" Margin="482,400,10,2"></Button>
                 <Button Name="ModifReserv" Content="Modifier" Height="25" Style="{StaticResource styleBouton}" Margin="372,401,120,0" VerticalAlignment="Top"></Button>
                 <Button Name="SuppReserv" Content="Supprimer" Height="25" Style="{StaticResource styleBouton}" Margin="263,402,230,0"></Button>
             </Grid>

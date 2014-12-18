@@ -60,6 +60,7 @@
             note.noFacture = facture
             note.etatNote = "Réglé"
             bd.SaveChanges()
+            MessageBox.Show("La note a bien été ajoutée à la facture", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
         Else
             MessageBox.Show("Veuillez choisir une facture", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
         End If
@@ -87,7 +88,7 @@
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
-        Dim lst = New iListeClient
+        Dim lst = New iListeClient(bd, noHotel, noEmpl)
         lst.Owner = Me
         lst.Show()
     End Sub

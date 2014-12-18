@@ -47,7 +47,7 @@
         If dpFin.SelectedDate IsNot Nothing Then
             If dpDebut.SelectedDate > dpFin.SelectedDate Then
                 MessageBox.Show("La date de début ne peut être plus haute que la date de fin")
-                dpDebut.SelectedDate = Nothing
+                dpFin.SelectedDate = Nothing
             Else
                 btnAfficher.IsEnabled = True
             End If
@@ -55,12 +55,22 @@
     End Sub
 
     Private Sub btnAfficher_Click(sender As Object, e As RoutedEventArgs) Handles btnAfficher.Click
-        Dim datef As Date
-        Dim dated As Date
+        If dpDebut.SelectedDate IsNot Nothing Then
+            If dpFin.SelectedDate IsNot Nothing Then
+                Dim datef As Date
+                Dim dated As Date
 
-        datef = dpFin.SelectedDate
-        dated = dpDebut.SelectedDate
-        dgReserv.ItemsSource = bd.determinerchambrelibre(dated, datef, noHotel).ToList
+                datef = dpFin.SelectedDate
+                dated = dpDebut.SelectedDate
+                dgReserv.UnselectAll()
+                dgReserv.ItemsSource = bd.determinerchambrelibre(dated, datef, noHotel).ToList
+            Else
+                MessageBox.Show("Veuillez sélectionner une date de fin de réservation", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+            End If
+        Else
+            MessageBox.Show("Veuillez sélectionner une date de début de réservation", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
+        End If
+
     End Sub
 
     Private Sub dgReserv_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles dgReserv.SelectionChanged
@@ -91,7 +101,7 @@
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
-        Dim lst = New iListeClient
+        Dim lst = New iListeClient(bd, noHotel, noEmpl)
         lst.Owner = Me
         lst.Show()
     End Sub
