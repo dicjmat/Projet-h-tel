@@ -79,7 +79,7 @@
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
-        Dim lst = New iListeClient
+        Dim lst = New iListeClient(bd, noHotel, noEmp)
         lst.Owner = Me.Owner
         lst.Show()
         Me.Close()

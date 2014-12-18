@@ -70,6 +70,7 @@
             Dim ajoutCommu = New iAjouterCommunique(maBd, _noHotel, dgCommuni.SelectedItem.noCommunique)
             ajoutCommu.Owner = Me
             ajoutCommu.ShowDialog()
+            dgCommuni.UnselectAll()
         Else
             MessageBox.Show("Veuillez choisir le communiqué que vous désirez modifier")
         End If

@@ -53,7 +53,9 @@
 
     Private Sub btnDepart_Click(sender As Object, e As RoutedEventArgs) Handles btnDepart.Click
         If dgDepart.SelectedItem IsNot Nothing Then
-            Dim facture = New iListeFacture(bd, noEmp, noHotel, dgDepart.SelectedItem.tblNote)
+            Dim noReserv As Integer = dgDepart.SelectedItem.noReservation
+            Dim note As tblNote = (From el In bd.tblNote Where el.noReservation = noReserv Select el).Single
+            Dim facture = New iListeFacture(bd, noEmp, noHotel, note)
             Dim depart = dgDepart.SelectedItem
             depart.tblSalle.statutSalle = "Libre"
             bd.SaveChanges()
@@ -138,7 +140,7 @@
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
-        Dim lst = New iListeClient
+        Dim lst = New iListeClient(bd, noHotel, noEmp)
         lst.Owner = Me.Owner
         lst.Show()
         Me.Close()

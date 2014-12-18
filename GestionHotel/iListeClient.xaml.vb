@@ -40,8 +40,11 @@
         btnReserv.Visibility = Windows.Visibility.Hidden
     End Sub
 
-    Sub New()
+    Sub New(maBD As P2014_Equipe2_GestionHôtelièreEntities, _noHotel As Integer, _noEmploye As Integer)
         InitializeComponent()
+        bd = maBD
+        noEmpl = _noEmploye
+        noHotel = _noHotel
         btnReserv.IsEnabled = False
         btnReserv.Visibility = Windows.Visibility.Hidden
         btnLierCli.IsEnabled = False
@@ -72,8 +75,7 @@
     End Sub
 
     Private Sub requete()
-        Dim res = From el In bd.tblClient
-        Select el
+        Dim res = From el In bd.tblClient Select el
         dgClient.ItemsSource = res.ToList
 
     End Sub
@@ -100,6 +102,11 @@
         btnReserv.IsEnabled = True
         btnModifierClient.IsEnabled = True
         cbCompagnie.IsEnabled = True
+        If dgClient.SelectedItem.noCompagnie IsNot Nothing Then
+            cbCompagnie.SelectedItem = dgClient.SelectedItem.tblCompagnie
+        Else
+            cbCompagnie.SelectedItem = Nothing
+        End If
     End Sub
 
     Private Sub btnAjouterClient_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterClient.Click
@@ -142,7 +149,7 @@
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
-        Dim lst = New iListeClient
+        Dim lst = New iListeClient(bd, noHotel, noEmpl)
         lst.Owner = Me.Owner
         lst.Show()
         Me.Close()

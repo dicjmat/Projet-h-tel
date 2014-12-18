@@ -115,9 +115,10 @@
                 bd.SaveChanges()
             End If
             lblConfirmation.Content = "L'horaire a été modifié"
-            lblConfirmation.Visibility = Windows.Visibility.Visible
+        Else
+            lblConfirmation.Content = "Des informations sont manquantes"
         End If
-
+        lblConfirmation.Visibility = Windows.Visibility.Visible
     End Sub
 
     Private Sub cmbHeureDebutM_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cmbHeureDebutM.SelectionChanged
@@ -157,5 +158,23 @@
         lst.Owner = Me.Owner
         lst.Show()
         Me.Close()
+    End Sub
+
+    Private Sub btnSupprimerHor_Click(sender As Object, e As RoutedEventArgs) Handles btnSupprimerHor.Click
+        If cbEmploye.SelectedItem IsNot Nothing And cldHoraire.SelectedDate IsNot Nothing Then
+            Dim numeroEmpl As Integer = cbEmploye.SelectedItem.noEmpl
+            Dim dateHoraire As Date = cldHoraire.SelectedDate
+            Dim horaire As tblHoraire = (From el In bd.tblHoraire Where el.noEmpl = numeroEmpl And el.dateHoraire = dateHoraire Select el).Single()
+            If horaire IsNot Nothing Then
+                bd.tblHoraire.Remove(horaire)
+                bd.SaveChanges()
+                lblConfirmation.Content = "L'horaire a été supprimé"
+            Else
+                lblConfirmation.Content = "L'horaire n'existe pas"
+            End If
+        Else
+            lblConfirmation.Content = "Aucun horaire n'est sélectionné"
+        End If
+        lblConfirmation.Visibility = Windows.Visibility.Visible
     End Sub
 End Class
