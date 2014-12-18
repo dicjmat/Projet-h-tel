@@ -65,6 +65,7 @@
             Next
             Forfait.prixForfait = txtPrixForf.Text
             Forfait.descForfait = txtDescAct.Text
+            Forfait.nbNuit()
             Forfait.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeSalle
             If ckActif.IsChecked Then
                 Forfait.etatForfait = "AC"

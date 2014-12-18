@@ -12,6 +12,8 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
@@ -32,7 +34,6 @@
                 Dim res = From el In bd.inventaireCommun
                           Where el.codeItem.StartsWith(txtRecherche.Text) Or el.nomItem.StartsWith(txtRecherche.Text)
                           Select el
-
                 dgInventaireC.ItemsSource = creerAffichage(res.ToList)
             End If
         End If

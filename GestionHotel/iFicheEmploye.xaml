@@ -73,35 +73,39 @@
                 <Button Style="{StaticResource styleBouton}" Name="btnAjoutHoraire" Content="Ajouter Horaire" HorizontalAlignment="Center" Margin="420,132,159,0" VerticalAlignment="Top" Width="100" Height="30"/>
                 <Label Content="No de l'employé : " HorizontalAlignment="Left" Margin="2,41,0,0" VerticalAlignment="Top"/>
                 <TextBox Name="txtNoEmpl" Text="{Binding noEmpl}" Height="25" VerticalAlignment="Top" Width="120" HorizontalAlignment="Left" Margin="106,39,0,0" IsEnabled="False"/>
-                <GroupBox BorderBrush="Black" Header="Fiche Employé" Margin="0,69,0,22" HorizontalAlignment="Left" Width="415">
+                <GroupBox BorderBrush="Black" Header="Fiche Employé" Margin="0,69,0,0" HorizontalAlignment="Left" Width="415">
                     <StackPanel>
-                        <Grid Margin="0,0,0.2,0">
-                            <Label Content="Nom : " Margin="0,0,0,0"/>
+                        <Grid Margin="0,0,0.2,0" Height="565">
+                            <Label Content="Nom : " Margin="0,0,0,296.8"/>
                             <xctk:MaskedTextBox  x:Name="txtNomEmp" Text="{Binding nomEmpl}" Margin="76,5,0,0" Height="23" Width="133" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="Prénom : " Margin="0,30,0,-4.8"/>
+                            <Label Content="Prénom : " Margin="0,30,0,251"/>
                             <xctk:MaskedTextBox x:Name="txtPrenomEmp" Text="{Binding prenEmpl}" Margin="91,34,0,0" Height="23" Width="118" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="noTéléphone : " Margin="0,60,0,-9.8"/>
+                            <Label Content="noTéléphone : " Margin="0,60,312,404.6"/>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="000-000-0000" x:Name="txtTellEmp" Text="{Binding noTelEmpl}" Margin="110,63,0,0" Height="20" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="noCéllulaire* : " Margin="0,90,0,-14.8"/>
+                            <Label Content="noCéllulaire* : " Margin="1,87,311,128"/>
                             <xctk:MaskedTextBox  PromptChar=" " Mask="000-000-0000" x:Name="txtCellEmp" Text="{Binding noCellEmpl}" Margin="110,90,0,0" Height="20" Width="99" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="Adresse : " Margin="0,116,0,-15.8"/>
-                            <xctk:MaskedTextBox x:Name="txtAdrEmp" Text="{Binding adrEmpl}" Margin="61,117,0,0" Height="20" Width="148" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="NAS : " Margin="0,141,0,-15.8"/>
-                            <xctk:MaskedTextBox PromptChar=" " Mask="000000000"  x:Name="txtNASEmp" Text="{Binding NAS}" Margin="103,143,0,0" Height="20" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="Date d'embauche : " Margin="0,168,298,40.6"/>
-                            <DatePicker x:Name="DPEmbaucheEmp" Text="{Binding dateEmbauche}" HorizontalAlignment="Left" Margin="104,169,0,0" VerticalAlignment="Top" Width="120"/>
-                            <Label Content="Heures travaillées* : " Margin="209,124,84,87.6"/>
-                            <TextBox x:Name="txtHrsEmp" Text="{Binding hrTravail}" Margin="316,128,0,0" Height="20" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="Salaire ($/h) : " Margin="209,106,114,91.6"/>
-                            <TextBox x:Name="txtSalaireEmp" Text="{Binding salaire}" Margin="291,106,0,0" Height="20" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="Jours Vacances : " Margin="228,173,63,13.2"/>
-                            <TextBox x:Name="txtVacEmp" Text="{Binding joursVac}" Margin="324,197,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="Jours Fériés : " Margin="228,195,92,-1.8"/>
-                            <TextBox x:Name="txtFerieEmp" Text="{Binding joursFerie}" Margin="324,174,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label Content="Jours Maladies : " Margin="210,146,92,60.6"/>
-                            <TextBox x:Name="txtMaladieEmp" Text="{Binding joursMal}" Margin="324,151,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="Adresse : " Margin="0,112,347,358"/>
+                            <xctk:MaskedTextBox x:Name="txtAdrEmp" Text="{Binding adrEmpl}" Margin="61,115,0,0" Height="20" Width="148" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="Code Postal : " Margin="0,137,329,390"/>
+                            <xctk:MaskedTextBox x:Name="txtCodePostEmpl" Text="{Binding codePostalEmploye}" Margin="79,138,0,0" Height="20" Width="130" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="NAS : " Margin="0,159,329,368"/>
+                            <xctk:MaskedTextBox PromptChar=" " Mask="000000000"  x:Name="txtNASEmp" Text="{Binding NAS}" Margin="103,160,0,0" Height="20" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="Date d'embauche : " Margin="0,181,299,276.2"/>
+                            <DatePicker x:Name="DPEmbaucheEmp" Text="{Binding dateEmbauche}" HorizontalAlignment="Left" Margin="104,183,0,0" VerticalAlignment="Top" Width="120"/>
+                            <Label Content="Courriel : " Margin="0,206,347,264"/>
+                            <xctk:MaskedTextBox x:Name="txtCourriel" Text="{Binding emailEmploye}" Margin="57,207,0,0" Height="20" Width="158" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="Heures travaillées* : " Margin="209,128,84,395.4"/>
+                            <TextBox x:Name="txtHrsEmp" Text="{Binding hrTravail}" Margin="316,131,0,0" Height="20" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="Salaire ($/h) : " Margin="209,110,114,387"/>
+                            <TextBox x:Name="txtSalaireEmp" Text="{Binding salaire}" Margin="291,109,0,0" Height="20" Width="75" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="Jours Vacances : " Margin="228,176,63,322.2"/>
+                            <TextBox x:Name="txtVacEmp" Text="{Binding joursVac}" Margin="324,200,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="Jours Fériés : " Margin="228,198,92,276"/>
+                            <TextBox x:Name="txtFerieEmp" Text="{Binding joursFerie}" Margin="324,177,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                            <Label Content="Jours Maladies : " Margin="210,148,92,312.2"/>
+                            <TextBox x:Name="txtMaladieEmp" Text="{Binding joursMal}" Margin="324,153,0,0" Height="20" Width="42" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                             <Label Content="Pays :" Margin="215,-4,121,187.2"/>
-                            <ComboBox x:Name="cmbPays" ItemsSource="{Binding}" Margin="267,-1,0,213.6" Height="25" Background="White" FontSize="10">
+                            <ComboBox x:Name="cmbPays" ItemsSource="{Binding}" Margin="267,-2,0,525.8" Height="25" Background="White" FontSize="10">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
@@ -110,8 +114,8 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                            <Label Content="Province :" Margin="209,24,127,159.6"/>
-                            <ComboBox x:Name="cmbProvince" ItemsSource="{Binding}" Margin="281,27,1,185.6" Height="25" Background="White" FontSize="10">
+                            <Label Content="Province :" Margin="214,29,122,490"/>
+                            <ComboBox x:Name="cmbProvince" ItemsSource="{Binding}" Margin="281,26,1,497.8" Height="25" Background="White" FontSize="10">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
@@ -120,10 +124,10 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                            <Label Content="Ville :" Margin="214,54,122,129.6"/>
-                            <Label Content="Profession :" Margin="209,82,121,118.4"/>
-                            <Label Content="Hôtel :" Margin="1,195,329,-11.8"/>
-                            <ComboBox x:Name="cmbCdVille" ItemsSource="{Binding}" Margin="267,54,0,158.6" Height="25" Background="White" FontSize="10">
+                            <Label Content="Ville :" Margin="214,54,122,466.8"/>
+                            <Label Content="Profession :" Margin="209,82,121,419"/>
+                            <Label Content="Hôtel :" Margin="179,223,151,242"/>
+                            <ComboBox x:Name="cmbCdVille" ItemsSource="{Binding}" Margin="267,53,0,470.8" Height="25" Background="White" FontSize="10">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
@@ -132,7 +136,7 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                            <ComboBox x:Name="cmbNoHot" ItemsSource="{Binding}" Margin="44,194,180,18.6" Height="25" Background="White" FontSize="10">
+                            <ComboBox x:Name="cmbNoHot" ItemsSource="{Binding}" Margin="225,222,-1,318" Height="25" Background="White" FontSize="10">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
@@ -141,7 +145,7 @@
                                     </DataTemplate>
                                 </ComboBox.ItemTemplate>
                             </ComboBox>
-                            <ComboBox x:Name="cmbCdProf" ItemsSource="{Binding}" Height="25" Margin="282,80,0,132.6" Background="White" FontSize="10">
+                            <ComboBox x:Name="cmbCdProf" ItemsSource="{Binding}" Height="25" Margin="282,79,0,444.8" Background="White" FontSize="10">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
