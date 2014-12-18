@@ -105,10 +105,10 @@
     Sub delRes()
         SuppReserv.IsEnabled = False
         ModifReserv.IsEnabled = False
-        Dim res = From el In bd.tblClient
-        Join reserv In bd.tblReservation On el.noClient Equals reserv.noClient
-        Where reserv.noHotel = noHotel
-        Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle, reserv.noHotel
+        Dim res = From reserv In bd.tblReservation
+        Join el In bd.tblClient On el.noClient Equals reserv.noClient
+        Where reserv.noHotel = noHotel And reserv.tblSalle.codeTypeSalle <> "REU"
+        Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle, reserv.noHotel, reserv.noReservation
         dgReserv.ItemsSource = res.ToList
     End Sub
 
@@ -117,10 +117,10 @@
     End Sub
 
     Sub requete2()
-        Dim res = From el In bd.tblClient
-             Join reserv In bd.tblReservation On el.noClient Equals reserv.noClient
-          Where (el.nomClient + " " + el.prenClient).StartsWith(textnom.Text) Or (el.prenClient + " " + el.nomClient).StartsWith(textnom.Text)
-                  Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle, reserv.noHotel
+        Dim res = From reserv In bd.tblReservation
+             Join el In bd.tblClient On el.noClient Equals reserv.noClient
+          Where ((el.nomClient + " " + el.prenClient).StartsWith(textnom.Text) Or (el.prenClient + " " + el.nomClient).StartsWith(textnom.Text) Or reserv.noReservation.ToString().StartsWith(textnom.Text)) And reserv.noHotel = noHotel And reserv.tblSalle.codeTypeSalle <> "REU"
+                  Select el.prenClient, el.nomClient, el.noTelClient, el.noCellClient, reserv.dateDebutSejour, reserv.dateFinSejour, reserv.noSalle, reserv.noHotel, reserv.noReservation
         dgReserv.ItemsSource = res.ToList()
     End Sub
 End Class
