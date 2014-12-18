@@ -133,32 +133,35 @@
     End Sub
 
     Private Sub btnAjouterCli_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterCli.Click
-        'Try
-        Dim client As New tblClient
-        client.nomClient = txtNomCli.Text.Trim
-        client.prenClient = txtPrenCli.Text.Trim
-        client.noTelClient = txtTelCli.Text
-        client.noCellClient = txtCelCli.Text
-        client.adrClient = txtAdrCli.Text.Trim
-        client.noCarteCredit = txtNoCarteCredit.Text
-        client.typeCarteCredit = cbTypeCarte.SelectedItem.typeCarteCredit
-        client.dateExpiration = txtCodeExp.Text
-        client.codeVille = cbCodeVille.SelectedItem.codeVille
-        client.commentaire = txtCommCli.Text.Trim
-        bd.tblClient.Add(client)
-        bd.SaveChanges()
-        MessageBox.Show("Le client a été ajouté avec succès.")
-        If reserv IsNot Nothing Then
-            reserv.noClient = client.noClient
-            bd.tblDemandeur.Remove(reserv.tblDemandeur)
+        Try
+            Dim client As New tblClient
+            client.nomClient = txtNomCli.Text.Trim
+            client.prenClient = txtPrenCli.Text.Trim
+            client.noTelClient = txtTelCli.Text
+            client.noCellClient = txtCelCli.Text
+            client.adrClient = txtAdrCli.Text.Trim
+            client.codePostalClient = txtCPCli.Text.Trim
+            client.emailClient = txtEmailCli.Text.Trim
+            client.noCarteCredit = txtNoCarteCredit.Text
+            client.typeCarteCredit = cbTypeCarte.SelectedItem.typeCarteCredit
+            client.dateExpiration = txtCodeExp.Text
+            client.codeVille = cbCodeVille.SelectedItem.codeVille
+            client.codeProv = cbCodeProv.SelectedItem.codeProv
+            client.commentaire = txtCommCli.Text.Trim
+            bd.tblClient.Add(client)
             bd.SaveChanges()
-            Me.Owner.Owner.Hide()
-            Me.Owner.Owner.Show()
-            Me.Owner.Close()
-        End If
-        'Catch ex As Exception
-        '    MessageBox.Show("Veuillez remplir tous les champs.")
-        'End Try
+            MessageBox.Show("Le client a été ajouté avec succès.")
+            If reserv IsNot Nothing Then
+                reserv.noClient = client.noClient
+                bd.tblDemandeur.Remove(reserv.tblDemandeur)
+                bd.SaveChanges()
+                Me.Owner.Owner.Hide()
+                Me.Owner.Owner.Show()
+                Me.Owner.Close()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Veuillez remplir tous les champs.")
+        End Try
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
