@@ -20,7 +20,7 @@
                       Select ch
             If res.Count = 0 Then
                 Dim chambre = New tblSalle
-                chambre.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeChambre
+                chambre.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeSalle
                 chambre.noHotel = hotel
                 chambre.noSalle = txtNoChambre.Text
                 chambre.statutSalle = "LI"
@@ -41,9 +41,7 @@
 
     Private Sub windowGChambre_Loaded(sender As Object, e As RoutedEventArgs) Handles windowGChambre.Loaded
         Dim typeChambre = From tych In bd.tblTypeSalle
-                          Join tychho In bd.tblTypeSalleHotel
-                          On tych.codeTypeSalle Equals tychho.codeTypeSalle
-                          Where tychho.noHotel = hotel And tych.codeTypeSalle <> "REU"
+                          Where tych.codeTypeSalle <> "REU"
                           Select tych
 
         cbTypeChambre.ItemsSource = typeChambre.ToList

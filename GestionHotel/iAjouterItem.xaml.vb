@@ -65,13 +65,27 @@
     Private Sub btnAjouterItem_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterItem.Click
         Dim Item = New tblItem()
         If txtRCodeItem.Text <> "" Or txtNomItem.Text <> "" Then
+            Dim pour = New tblInventaire
+            pour.codeItem = txtRCodeItem.Text
+            pour.noHotel = "1"
+            pour.quantiteMin = 0
+            pour.Quantite = 0
             Item.codeItem = txtRCodeItem.Text
             Item.nomItem = txtNomItem.Text
             Item.descItem = txtDescItem.Text
-
+            Item.tblInventaire.Add(pour)
             bd.tblItem.Add(Item)
-            bd.SaveChanges()
+            Try
+                bd.SaveChanges()
+            Catch ex As Exception
+                MessageBox.Show("Le code d'item existe déjà")
+                Exit Sub
+            End Try
+
             MessageBox.Show("L'item a été créé avec succès.")
+            Me.Owner.Hide()
+            Me.Owner.Show()
+            Me.Close()
         Else
             MessageBox.Show("Un des champs obligatoire n'a pas été remplis")
         End If
