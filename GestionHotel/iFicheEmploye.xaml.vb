@@ -16,11 +16,16 @@ Public Class iFicheEmploye
 
         btnModifier.Visibility = Windows.Visibility.Visible
 
-        If res.First.statut = "GEST" Then
+        If res.First.statut = "GEST" Or res.First.statut = "PATR" Then
             menu.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menu.IsEnabled = False
+        ElseIf res.First.statut = "ADMI" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menuGest.Visibility = Windows.Visibility.Hidden
         Else
             menuGest.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menuGest.IsEnabled = False
         End If
 
@@ -36,11 +41,16 @@ Public Class iFicheEmploye
         btnModifier.Visibility = Windows.Visibility.Hidden
         txtNASEmp.IsEnabled = True
 
-        If res.First.statut = "GEST" Then
+        If res.First.statut = "GEST" Or res.First.statut = "PATR" Then
             menu.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menu.IsEnabled = False
+        ElseIf res.First.statut = "ADMI" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menuGest.Visibility = Windows.Visibility.Hidden
         Else
             menuGest.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menuGest.IsEnabled = False
         End If
     End Sub
@@ -59,9 +69,14 @@ Public Class iFicheEmploye
 
         If ress.First.statut = "GEST" Then
             menu.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menu.IsEnabled = False
+        ElseIf ress.First.statut = "ADMI" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menuGest.Visibility = Windows.Visibility.Hidden
         Else
             menuGest.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menuGest.IsEnabled = False
         End If
 
@@ -279,133 +294,155 @@ Public Class iFicheEmploye
     End Sub
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim fiche = New iFicheEmploye(bd, hotel, noGest)
-        fiche.Owner = Me
+        fiche.Owner = Me.Owner
         fiche.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeEmploye(noGest, hotel, bd)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
         Dim horaire = New iAjouterHoraire(numEmpl, hotel, bd)
-        horaire.Owner = Me
+        horaire.Owner = Me.Owner
         horaire.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeCOmmande(noGest, hotel, bd)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_4(sender As Object, e As RoutedEventArgs)
         Dim lst = New iCommunique(numEmpl, hotel, bd)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_5(sender As Object, e As RoutedEventArgs)
         Dim fiche = New iFicheEmploye(bd, hotel, noGest)
-        fiche.Owner = Me
+        fiche.Owner = Me.Owner
         fiche.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_6(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeEmploye(noGest, hotel, bd)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_7(sender As Object, e As RoutedEventArgs)
         Dim horaire = New iAjouterHoraire(numEmpl, hotel, bd)
-        horaire.Owner = Me
+        horaire.Owner = Me.Owner
         horaire.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_8(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeEmploye(noGest, hotel, bd)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_9(sender As Object, e As RoutedEventArgs)
         Dim com = New iCommande(numEmpl, bd)
-        com.Owner = Me
+        com.Owner = Me.Owner
         com.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_10(sender As Object, e As RoutedEventArgs)
         Dim lst = New iCommunique(numEmpl, hotel, bd)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_11(sender As Object, e As RoutedEventArgs)
         Dim item = New iAjouterItem(bd, numEmpl, hotel)
-        item.Owner = Me
+        item.Owner = Me.Owner
         item.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_12(sender As Object, e As RoutedEventArgs)
         Dim fourni = New iAjoutFournisseur(bd)
-        fourni.Owner = Me
+        fourni.Owner = Me.Owner
         fourni.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_13(sender As Object, e As RoutedEventArgs)
-        Dim gest = New iGestionSalle(bd)
-        gest.Owner = Me
+        Dim gest = New iGestionSalle(bd, cmbNoHot.SelectedItem.noHotel)
+        gest.Owner = Me.Owner
         gest.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_14(sender As Object, e As RoutedEventArgs)
         Dim gest = New iGestionChambre(bd, hotel)
-        gest.Owner = Me
+        gest.Owner = Me.Owner
         gest.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_15(sender As Object, e As RoutedEventArgs)
         Dim gest = New iGestionHotel(bd)
-        gest.Owner = Me
+        gest.Owner = Me.Owner
         gest.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_16(sender As Object, e As RoutedEventArgs)
         Dim inv = New iInventaireComplet(bd, numEmpl, hotel)
-        inv.Owner = Me
+        inv.Owner = Me.Owner
         inv.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_17(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeCentrale(bd, numEmpl, hotel)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_18(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeEmployeComplet(bd, numEmpl, hotel)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_19(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeHotel(bd, numEmpl, hotel)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_20(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeSalle(hotel, bd, numEmpl)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_21(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeReservComplet(bd, numEmpl, hotel)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 End Class

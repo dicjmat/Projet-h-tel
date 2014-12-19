@@ -31,14 +31,16 @@
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim bris = New iGestionBris(bd, hotel, noEmp)
-        bris.Owner = Me
+        bris.Owner = Me.Owner
         bris.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim check = New iCheckList(bd, noEmp, hotel)
-        check.Owner = Me
+        check.Owner = Me.Owner
         check.Show()
+        Me.Close()
     End Sub
 
     Private Sub btnQuitter_Click(sender As Object, e As RoutedEventArgs) Handles btnQuitter.Click

@@ -39,6 +39,7 @@
                 Exit For
             End If
         Next
+        numNbJNuit.Text = res.Single.nbNuitForfait
     End Sub
 
     Private Sub windowAjoutForf_Loaded(sender As Object, e As RoutedEventArgs) Handles windowAjoutForf.Loaded
@@ -65,7 +66,7 @@
             Next
             Forfait.prixForfait = txtPrixForf.Text
             Forfait.descForfait = txtDescAct.Text
-            'Forfait.nbNuit()
+            Forfait.nbNuitForfait = numNbJNuit.Text
             Forfait.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeSalle
             If ckActif.IsChecked Then
                 Forfait.etatForfait = "AC"
@@ -83,6 +84,8 @@
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
+        Me.Owner.Hide()
+        Me.Owner.Show()
         Me.Close()
     End Sub
 
@@ -99,6 +102,7 @@
             res.Single.prixForfait = txtPrixForf.Text
             res.Single.descForfait = txtDescAct.Text
             res.Single.codeTypeSalle = cbTypeChambre.SelectedItem.codeTypeSalle
+            res.Single.nbNuitForfait = numNbJNuit.Text
             If ckActif.IsChecked Then
                 res.Single.etatForfait = "AC"
             Else
@@ -106,7 +110,7 @@
             End If
             res.Single.nomForfait = txtNomForf.Text
             bd.SaveChanges()
-            MessageBox.Show("Le forfait a été créé avec succès.")
+            MessageBox.Show("Le forfait a été modifié avec succès.")
         Else
             MessageBox.Show("Un des champs obligatoires n'a pas été rempli")
         End If
@@ -116,7 +120,7 @@
         Dim res = From tych In bd.tblTypeSalle
           Join tycho In bd.tblTypeSalleHotel
           On tycho.codeTypeSalle Equals tych.codeTypeSalle
-          Where tycho.noHotel = _hotel
+          Where tycho.noHotel = _hotel And tych.codeTypeSalle <> "REU"
           Select tych
         cbTypeChambre.ItemsSource = res.ToList()
     End Sub

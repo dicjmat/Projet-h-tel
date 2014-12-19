@@ -41,17 +41,20 @@
         Dim com = New iCommunique(noEmpl, noHotel, maBd)
         com.Owner = Me
         com.Show()
+        Me.Hide()
     End Sub
 
     Private Sub AppuieEmp()
         Dim emp = New iFicheEmploye(maBd, noHotel, noEmpl)
         emp.Owner = Me
         emp.Show()
+        Me.Hide()
     End Sub
 
     Private Sub AppuieHoraire()
         Dim ho = New iAjouterHoraire(noEmpl, noHotel, maBd)
         ho.Owner = Me
         ho.Show()
+        Me.Hide()
     End Sub
 End Class

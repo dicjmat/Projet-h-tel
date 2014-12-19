@@ -12,9 +12,6 @@
     <Grid>
         <DockPanel>
             <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,-800,-4.4,0">
-                <MenuItem Header="_Commande" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="Faire une commande" Click="MenuItem_Click_3"></MenuItem>
-                </MenuItem>
                 <MenuItem Header="_Employé" BorderBrush="Black" BorderThickness="1">
                     <MenuItem Header="_Fiche d'employé" Click="MenuItem_Click_4"></MenuItem>
                     <MenuItem Header="_Liste d'employé centrale" Click="MenuItem_Click_5"></MenuItem>
@@ -25,14 +22,12 @@
                     <MenuItem Header="_Inventaire complet" Click="MenuItem_Click_8"/>
                 </MenuItem>
                 <MenuItem Header="_Gestion" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Header="_Gestion de salle" Click="MenuItem_Click_9"/>
+                    <!--<MenuItem Header="_Gestion de salle" Click="MenuItem_Click_9"/>-->
                     <MenuItem Header="_Gestion d'hôtel" Click="MenuItem_Click_10"/>
                 </MenuItem>
                 <MenuItem Header="_Listes" BorderBrush="Black" BorderThickness="1">
                     <MenuItem Header="_Liste centrale" Click="MenuItem_Click_11"/>
                     <MenuItem Header="_Liste hotel" Click="MenuItem_Click_12"/>
-                    <MenuItem Header="_Liste salle" Click="MenuItem_Click_13"/>
-                    <MenuItem Header="_Liste de réservation centrale" Click="MenuItem_Click"/>
                 </MenuItem>
             </Menu>
         </DockPanel>

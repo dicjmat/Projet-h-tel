@@ -13,21 +13,21 @@
     <Grid>
         <DockPanel Margin="0,0,0,223.2" VerticalAlignment="Top">
             <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,5,-4.4,0">
+                <MenuItem Header="_Employe" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Liste d'employé complet" Click="MenuItem_Click_11"/>
+                </MenuItem>
                 <MenuItem Header="_Item"  BorderThickness="1" BorderBrush="Black">
                     <MenuItem Header="_Inventaire" Click="MenuItem_Click_3"/>
                     <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_4"/>
                     <MenuItem Header="_Inventaire complet" Click="MenuItem_Click_6"/>
                 </MenuItem>
                 <MenuItem Header="_Gestion" BorderThickness="1" BorderBrush="Black">
-                    <MenuItem Header="Gestion de salle" Click="MenuItem_Click_7"/>
+                    <!--<MenuItem Header="Gestion de salle" Click="MenuItem_Click_7"/>-->
                     <MenuItem Header="Gestion d'hotel" Click="MenuItem_Click_8"/>
                 </MenuItem>
-                <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black" Click="MenuItem_Click">
+                <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black">
                     <MenuItem Header="_Liste centrale" Click="MenuItem_Click_10"/>
-                    <MenuItem Header="_Liste d'employé complet" Click="MenuItem_Click_11"/>
-                    <MenuItem Header="_Liste de salle" Click="MenuItem_Click_12"/>
                     <MenuItem Header="_Liste d'hôtel" Click="MenuItem_Click_13"/>
-                    <MenuItem Header="_Liste de réservation centrale"/>
                 </MenuItem>
             </Menu>
         </DockPanel>
@@ -42,8 +42,8 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </GroupBox>
-                <GroupBox Header="Liste de chambre" Margin="379,60,0,100">
-                    <DataGrid Name="dgChambre" AutoGenerateColumns="False" IsReadOnly="True">
+                <GroupBox Header="Liste de chambre" Margin="379,60,234,100">
+                    <DataGrid Name="dgChambre" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,-2.8,-0.4">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Numéro" Binding="{Binding noSalle}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Type de chambre" Binding="{Binding nomTypeSalle}"></DataGridTextColumn>
@@ -51,10 +51,21 @@
                     </DataGrid>
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Margin="719,630,0,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjouterHotel" Content="Ajouter un hotel" Height="25" Margin="45,630,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnModifierHotel" Content="Modifier un hotel" Height="25" Margin="203,630,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="141"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjouterChambre" Content="Ajouter une chambre" Height="25" Margin="406,630,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="143"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnSupprimerChambre" Content="Supprimer une chambre" Height="25" Margin="561,630,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="143"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterHotel" Content="Ajouter un hotel" Height="25" Margin="10,613,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="142"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifierHotel" Content="Modifier un hotel" Height="25" Margin="182,613,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="141"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterChambre" Content="Ajouter une chambre" Height="25" Margin="397,589,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="143"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnSupprimerChambre" Content="Supprimer une chambre" Height="25" Margin="397,630,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="143"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterSalle" Content="Ajouter une Salle" Height="25" Margin="576,581,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="143"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifierSalle" Content="Modifier une Salle" Height="25" Margin="576,613,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="143"></Button>
+                <Button Style="{StaticResource styleBouton}" Name="btnSupprimerSalle" Content="Supprimer une salle" Height="25" Margin="576,643,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="143"></Button>
+                <GroupBox Header="Liste de salle" HorizontalAlignment="Left" Margin="576,60,0,0" VerticalAlignment="Top" Height="516" Width="197">
+                <DataGrid Name="dgSalle" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Numéro" Binding="{Binding noSalle}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Nom de la salle" Binding="{Binding nomSalle}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                </DataGrid>
+                </GroupBox>
             </Grid>
         </Viewbox>
     </Grid>

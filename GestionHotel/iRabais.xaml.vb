@@ -48,7 +48,7 @@
         requete()
         Dim res = From tych In bd.tblTypeSalle
                   Join tychho In bd.tblTypeSalleHotel On tych.codeTypeSalle Equals tychho.codeTypeSalle
-                  Where tychho.noHotel = noHotel
+                  Where tychho.noHotel = noHotel And tych.codeTypeSalle <> "REU"
                   Select tych
 
         cbTypeChambre.ItemsSource = res.ToList
@@ -132,37 +132,43 @@
 
     Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
         Dim ajout = New iAjoutForf(p1, noHotel, bd)
-        ajout.Owner = Me
+        ajout.Owner = Me.Owner
         ajout.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim lst = New ListeForfait(noHotel, bd, noEmp)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_2(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeSalle(noHotel, bd, noEmp)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_14(sender As Object, e As RoutedEventArgs)
         Dim rab = New iRabais(noHotel, bd, noEmp)
-        rab.Owner = Me
+        rab.Owner = Me.Owner
         rab.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_15(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListePeriode(bd, noHotel, noEmp)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 
     Private Sub MenuItem_Click_3(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeReservComplet(bd, noHotel, noEmp)
-        lst.Owner = Me
+        lst.Owner = Me.Owner
         lst.Show()
+        Me.Close()
     End Sub
 End Class

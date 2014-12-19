@@ -26,7 +26,7 @@
                         <MenuItem Header="_Inventaire complet" Click="MenuItem_Click_8"/>
                     </MenuItem>
                     <MenuItem Header="_Gestion" BorderBrush="Black" BorderThickness="1">
-                        <MenuItem Header="_Gestion de salle" Click="MenuItem_Click_9"/>
+                        <!--<MenuItem Header="_Gestion de salle" Click="MenuItem_Click_9"/>-->
                         <MenuItem Header="_Gestion d'hôtel" Click="MenuItem_Click_10"/>
                     </MenuItem>
                     <MenuItem Header="_Listes" BorderBrush="Black" BorderThickness="1">

@@ -235,6 +235,7 @@
           <Property Name="codeProv" Type="char" MaxLength="2" Nullable="false" />
           <Property Name="respCompagnie" Type="varchar" MaxLength="40" />
           <Property Name="commentaire" Type="text" />
+          <Property Name="codePostalCompagnie" Type="char" MaxLength="6" />
         </EntityType>
         <EntityType Name="tblDemandeur">
           <Key>
@@ -1557,6 +1558,7 @@
           <Property Name="codeProv" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="respCompagnie" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
           <Property Name="commentaire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codePostalCompagnie" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="tblVille" Relationship="Self.fk_com_ville" FromRole="tblCompagnie" ToRole="tblVille" />
           <NavigationProperty Name="tblClient" Relationship="Self.fk_cli_cum" FromRole="tblCompagnie" ToRole="tblClient" />
           <NavigationProperty Name="tblDemandeur" Relationship="Self.fk_dem_cum" FromRole="tblCompagnie" ToRole="tblDemandeur" />
@@ -2897,6 +2899,7 @@
                 <ScalarProperty Name="codeProv" ColumnName="codeProv" />
                 <ScalarProperty Name="respCompagnie" ColumnName="respCompagnie" />
                 <ScalarProperty Name="commentaire" ColumnName="commentaire" />
+                <ScalarProperty Name="codePostalCompagnie" ColumnName="codePostalCompagnie" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

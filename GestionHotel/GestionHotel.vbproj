@@ -171,6 +171,9 @@
     <Compile Include="iListeCOmmande.xaml.vb">
       <DependentUpon>iListeCOmmande.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iListeCompagnie.xaml.vb">
+      <DependentUpon>iListeCompagnie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iListeEmploye.xaml.vb">
       <DependentUpon>iListeEmploye.xaml</DependentUpon>
     </Compile>
@@ -209,6 +212,16 @@
     </Compile>
     <Compile Include="LierFournisseur.xaml.vb">
       <DependentUpon>LierFournisseur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model1.vb">
       <AutoGen>True</AutoGen>
@@ -473,6 +486,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="iListeCompagnie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="iListeEmploye.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -573,16 +590,6 @@
     </Compile>
     <Compile Include="iLogin.xaml.vb">
       <DependentUpon>iLogin.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Context.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb">
       <SubType>Code</SubType>

@@ -30,7 +30,7 @@
                     </StackPanel>
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btnModifierMdp" Content="Modifier le mot de passe" Height="25" Margin="10,163,108,0" TabIndex="3"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Retour" Height="25" Margin="157,163,5,0" TabIndex="4"/>
+                <!--<Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Retour" Height="25" Margin="157,163,5,0" TabIndex="4"/>-->
             </Grid>
         </Viewbox>
     </Grid>

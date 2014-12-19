@@ -26,7 +26,7 @@
                         <MenuItem Header="_Inventaire complet" Click="MenuItem_Click_8"/>
                     </MenuItem>
                     <MenuItem Header="_Gestion" BorderBrush="Black" BorderThickness="1">
-                        <MenuItem Header="_Gestion de salle" Click="MenuItem_Click_9"/>
+                        <!--<MenuItem Header="_Gestion de salle" Click="MenuItem_Click_9"/>-->
                         <MenuItem Header="_Gestion d'hôtel" Click="MenuItem_Click_10"/>
                     </MenuItem>
                     <MenuItem Header="_Listes" BorderBrush="Black" BorderThickness="1">
@@ -73,9 +73,9 @@
                     </StackPanel>
                 </GroupBox>
                 <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Margin="0,0,9.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="74"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjouterSalle" Content="Ajouter une salle" Margin="0,0,88.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnModifSalle" Content="Modifier la salle" Height="25" Margin="495,408,9.6,0" VerticalAlignment="Top"></Button>
-                <Button Style="{StaticResource styleBouton}" Name="btnReservSalle" Content="Réserver la salle" Height="25" Margin="310,408,194.6,0" VerticalAlignment="Top"></Button>
+                <!--<Button Style="{StaticResource styleBouton}" Name="btnAjouterSalle" Content="Ajouter une salle" Margin="0,0,88.6,10" Height="25" VerticalAlignment="Bottom" HorizontalAlignment="Right"></Button>-->
+                <!--<Button Style="{StaticResource styleBouton}" Name="btnModifSalle" Content="Modifier la salle" Height="25" Margin="495,408,9.6,0" VerticalAlignment="Top"></Button>-->
+                <Button Style="{StaticResource styleBouton}" Name="btnReservSalle" Content="Réserver la salle" Height="25" Margin="495,405,9.6,0" VerticalAlignment="Top"></Button>
             </Grid>
         </Viewbox>
     </Grid>

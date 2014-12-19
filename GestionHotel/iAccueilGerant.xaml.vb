@@ -25,12 +25,14 @@
         Dim Ghotel = New iListeHotel(maBd, noEmploye, noHotel)
         Ghotel.Owner = Me
         Ghotel.Show()
+        Me.Hide()
     End Sub
 
     Private Sub AppuieGSalle()
-        Dim Gsalle = New iGestionSalle(maBd)
+        Dim Gsalle = New iGestionSalle(maBd, noHotel)
         Gsalle.Owner = Me
         Gsalle.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnDeco_Click(sender As Object, e As RoutedEventArgs) Handles btnDeco.Click
@@ -42,12 +44,21 @@
         Dim gEmp = New iListeEmployeComplet(maBd, noEmploye, noHotel)
         gEmp.Owner = Me
         gEmp.Show()
+        Me.Hide()
     End Sub
 
     Private Sub AppuieItem()
         Dim inv = New iInventaireComplet(maBd, noEmploye, noHotel)
         inv.Owner = Me
         inv.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub AppuieCompagnie(sender As Object, e As MouseButtonEventArgs)
+        Dim lstComp = New iListeCompagnie(maBd, noEmploye, noHotel)
+        lstComp.Owner = Me
+        lstComp.Show()
+        Me.Hide()
     End Sub
 
 End Class
