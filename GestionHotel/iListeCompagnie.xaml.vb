@@ -1,21 +1,21 @@
-﻿Public Class iListeEmployeComplet
-    Dim bd As P2014_Equipe2_GestionHôtelièreEntities
-    Dim noEmp As Integer
-    Dim noHotel As Integer
-    Dim item As String
+﻿Public Class iListeCompagnie
 
-    Sub New(_bd As P2014_Equipe2_GestionHôtelièreEntities, _noEmp As Integer, _noHotel As Integer)
+    Private bd As P2014_Equipe2_GestionHôtelièreEntities
+    Private noEmp As Short
+    Private noHotel As Short
+
+    Sub New(maBd As P2014_Equipe2_GestionHôtelièreEntities, noEmploye As Short, _noHotel As Short)
         InitializeComponent()
-        bd = _bd
-        noEmp = _noEmp
+        bd = maBd
+        noEmp = noEmploye
         noHotel = _noHotel
+        requete()
     End Sub
 
     Private Sub btnAjout_Click(sender As Object, e As RoutedEventArgs) Handles btnAjout.Click
-        Dim emp = New iFicheEmploye(bd, noHotel, noEmp)
-        emp.Owner = Me
-        emp.Show()
-        Me.Hide()
+        Dim comp = New iFicheCompagnie(bd)
+        comp.Owner = Me
+        comp.Show()
     End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
@@ -23,42 +23,13 @@
         Me.Close()
     End Sub
 
-    Private Sub window_lstEmployeComplet_Loaded(sender As Object, e As RoutedEventArgs) Handles window_lstEmployeComplet.Loaded
-        Me.Owner.Hide()
-        Dim hotel = From ho In bd.tblHotel
-                    Select ho
-        cbHotel.DataContext = hotel.ToList
-        requete()
-    End Sub
-
-    Private Sub requete()
-        If cbHotel.SelectedIndex <> -1 Then
-            Dim hotel As Integer = cbHotel.SelectedItem.noHotel
-            Dim res = From el In bd.tblEmploye
-                      Where el.noHotel = hotel And (el.noEmpl.ToString.StartsWith(txtRecherche.Text) Or (el.nomEmpl + " " + el.prenEmpl).StartsWith(txtRecherche.Text) Or (el.prenEmpl + " " + el.nomEmpl).StartsWith(txtRecherche.Text) Or el.codeProf.StartsWith(txtRecherche.Text))
-                      Select el
-
-            dgEmploye.ItemsSource = res.ToList()
-        End If
-    End Sub
-
-    Private Sub cbHotel_SelectionChanged(sender As Object, e As SelectionChangedEventArgs) Handles cbHotel.SelectionChanged
-        requete()
-    End Sub
-
-    Private Sub txtRecherche_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRecherche.TextChanged
-        requete()
-    End Sub
-
     Private Sub btnModif_Click(sender As Object, e As RoutedEventArgs) Handles btnModif.Click
-        If dgEmploye.SelectedIndex <> -1 Then
-            Dim numEmpl = dgEmploye.SelectedItem.noEmpl
-            Dim iEmploye As New iFicheEmploye(noEmp, noHotel, numEmpl, bd)
-            iEmploye.Owner = Me
-            Me.Hide()
-            iEmploye.Show()
+        If dgCompagnie.SelectedIndex <> -1 Then
+            Dim comp = New iFicheCompagnie(bd, dgCompagnie.SelectedItem.noCompagnie)
+            comp.Owner = Me
+            comp.Show()
         Else
-            MessageBox.Show("Veuillez sélectionner un employé")
+            MessageBox.Show("Vous devez sélectionnez une compagnie")
         End If
     End Sub
 
@@ -130,5 +101,17 @@
         lst.Owner = Me.Owner
         lst.Show()
         Me.Close()
+    End Sub
+
+    Private Sub txtRecherche_TextChanged(sender As Object, e As TextChangedEventArgs) Handles txtRecherche.TextChanged
+        requete()
+    End Sub
+
+    Private Sub requete()
+        Dim res = From co In bd.tblCompagnie
+                  Where co.respCompagnie.StartsWith(txtRecherche.Text) Or co.nomCompagnie.StartsWith(txtRecherche.Text) Or co.noCompagnie.ToString.StartsWith(txtRecherche.Text) Or co.noTelCompagnie.StartsWith(txtRecherche.Text)
+                  Select co
+
+        dgCompagnie.ItemsSource = res.ToList
     End Sub
 End Class

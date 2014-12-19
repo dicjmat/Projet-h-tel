@@ -20,6 +20,7 @@ Partial Public Class tblCompagnie
     Public Property codeProv As String
     Public Property respCompagnie As String
     Public Property commentaire As String
+    Public Property codePostalCompagnie As String
 
     Public Overridable Property tblVille As tblVille
     Public Overridable Property tblClient As ICollection(Of tblClient) = New HashSet(Of tblClient)

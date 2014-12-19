@@ -23,24 +23,24 @@
         Dim res = From el In bd.tblSalle Where el.noHotel = noHotel And el.codeTypeSalle = "REU" Select el
         lstSalle.DataContext = res.ToList()
     End Sub
-    Private Sub btnAjouterSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterSalle.Click
-        Dim iSalle As New iGestionSalle(bd)
-        iSalle.Owner = Me
-        Me.Hide()
-        iSalle.ShowDialog()
-    End Sub
+    'Private Sub btnAjouterSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnAjouterSalle.Click
+    '    Dim iSalle As New iGestionSalle(bd, noHotel)
+    '    iSalle.Owner = Me
+    '    Me.Hide()
+    '    iSalle.ShowDialog()
+    'End Sub
 
-    Private Sub btnModifSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnModifSalle.Click
-        If lstSalle.SelectedIndex <> -1 Then
-            Dim numSalle = lstSalle.SelectedItem.noSalle
-            Dim iSalle As New iGestionSalle(numSalle, bd)
-            iSalle.Owner = Me
-            Me.Hide()
-            iSalle.ShowDialog()
-        Else
-            MessageBox.Show("Veuillez sélectionner une salle")
-        End If
-    End Sub
+    'Private Sub btnModifSalle_Click(sender As Object, e As RoutedEventArgs) Handles btnModifSalle.Click
+    '    If lstSalle.SelectedIndex <> -1 Then
+    '        Dim numSalle = lstSalle.SelectedItem.noSalle
+    '        Dim iSalle As New iGestionSalle(numSalle, bd, noHotel)
+    '        iSalle.Owner = Me
+    '        Me.Hide()
+    '        iSalle.ShowDialog()
+    '    Else
+    '        MessageBox.Show("Veuillez sélectionner une salle")
+    '    End If
+    'End Sub
 
     Private Sub btnAccueil_Click(sender As Object, e As RoutedEventArgs) Handles btnAccueil.Click
         Me.Owner.Show()
@@ -121,7 +121,7 @@
     End Sub
 
     Private Sub MenuItem_Click_9(sender As Object, e As RoutedEventArgs)
-        Dim gest = New iGestionSalle(bd)
+        Dim gest = New iGestionSalle(bd, noHotel)
         gest.Owner = Me.Owner
         gest.Show()
         Me.Close()
