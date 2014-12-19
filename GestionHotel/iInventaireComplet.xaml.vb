@@ -159,7 +159,7 @@
     End Sub
 
     Private Sub MenuItem_Click_9(sender As Object, e As RoutedEventArgs)
-        Dim gest = New iGestionSalle(bd)
+        Dim gest = New iGestionSalle(bd, noHotel)
         gest.Owner = Me.Owner
         gest.Show()
         Me.Close()

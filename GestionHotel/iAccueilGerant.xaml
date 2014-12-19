@@ -10,8 +10,8 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Viewbox Stretch="Uniform">
-            <Grid Height="352" Width="236">
+        <Viewbox Stretch="Uniform" Margin="0,0,0,-150.2">
+            <Grid Height="371" Width="236">
                 <Label Content="Accueil" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
 
                 <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,31,0,0">
@@ -27,21 +27,21 @@
                         - Ajouter/Supprimer une chambre
                     </TextBlock>
                 </Border>
-                <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,177,0,0">
+                <!--<Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,177,0,0">
                     <TextBlock MouseLeftButtonDown="AppuieGSalle" Background="WhiteSmoke" Margin="0,0,0,0.2">
                         Gestion Salle<LineBreak/>
                         - Ajouter/Modifier/Supprimer une salle
                     </TextBlock>
-                </Border>
-                <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,250,0,0">
-                    <TextBlock MouseLeftButtonDown="AppuieItem" Background="WhiteSmoke" Margin="0.4,0,-0.4,-2.4">
+                </Border>-->
+                <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,180,0,0">
+                    <TextBlock MouseLeftButtonDown="AppuieItem" Background="WhiteSmoke" Margin="0,0,0,-2">
                         Item<LineBreak/>
                         - Ajouter un item <LineBreak/>
                         - Ajouter un fournisseur<LineBreak/>
                         - Inventaire
                     </TextBlock>
                 </Border>
-                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,10" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,80" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Label Content="" Name="lblNomEmpl" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top"/>
             </Grid>
         </Viewbox>

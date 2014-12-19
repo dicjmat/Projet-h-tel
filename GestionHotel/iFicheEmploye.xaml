@@ -82,7 +82,7 @@
                     <MenuItem Header="Gestion d'hotel" Click="MenuItem_Click_8"/>
                 </MenuItem>
                 <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black">
-                    <MenuItem Header="_Liste centrale" Click="MenuItem_Click_10"/>
+                    <!--<MenuItem Header="_Liste centrale" Click="MenuItem_Click_10"/>-->
                     <MenuItem Header="_Liste d'hôtel" Click="MenuItem_Click_13"/>
                 </MenuItem>
             </Menu>

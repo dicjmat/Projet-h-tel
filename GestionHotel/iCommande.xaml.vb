@@ -193,7 +193,7 @@
     End Sub
 
     Private Sub MenuItem_Click_7(sender As Object, e As RoutedEventArgs)
-        Dim salle = New iGestionSalle(bd)
+        Dim salle = New iGestionSalle(bd, noHotel)
         salle.Owner = Me.Owner
         salle.Show()
         Me.Close()

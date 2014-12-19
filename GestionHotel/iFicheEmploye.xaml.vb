@@ -384,7 +384,7 @@ Public Class iFicheEmploye
     End Sub
 
     Private Sub MenuItem_Click_13(sender As Object, e As RoutedEventArgs)
-        Dim gest = New iGestionSalle(bd)
+        Dim gest = New iGestionSalle(bd, cmbNoHot.SelectedItem.noHotel)
         gest.Owner = Me.Owner
         gest.Show()
         Me.Close()

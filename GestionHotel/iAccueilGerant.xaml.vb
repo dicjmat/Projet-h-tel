@@ -29,7 +29,7 @@
     End Sub
 
     Private Sub AppuieGSalle()
-        Dim Gsalle = New iGestionSalle(maBd)
+        Dim Gsalle = New iGestionSalle(maBd, noHotel)
         Gsalle.Owner = Me
         Gsalle.Show()
         Me.Hide()
