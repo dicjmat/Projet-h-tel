@@ -54,4 +54,11 @@
         Me.Hide()
     End Sub
 
+    Private Sub AppuieCompagnie(sender As Object, e As MouseButtonEventArgs)
+        Dim lstComp = New iListeCompagnie(maBd, noEmploye, noHotel)
+        lstComp.Owner = Me
+        lstComp.Show()
+        Me.Hide()
+    End Sub
+
 End Class

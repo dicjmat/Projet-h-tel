@@ -171,6 +171,9 @@
     <Compile Include="iListeCOmmande.xaml.vb">
       <DependentUpon>iListeCOmmande.xaml</DependentUpon>
     </Compile>
+    <Compile Include="iListeCompagnie.xaml.vb">
+      <DependentUpon>iListeCompagnie.xaml</DependentUpon>
+    </Compile>
     <Compile Include="iListeEmploye.xaml.vb">
       <DependentUpon>iListeEmploye.xaml</DependentUpon>
     </Compile>
@@ -470,6 +473,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="iListeCOmmande.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="iListeCompagnie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

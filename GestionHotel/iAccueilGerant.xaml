@@ -11,7 +11,7 @@
     </Window.Resources>
     <Grid>
         <Viewbox Stretch="Uniform" Margin="0,0,0,-150.2">
-            <Grid Height="371" Width="236">
+            <Grid Height="406" Width="236">
                 <Label Content="Accueil" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
 
                 <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,31,0,0">
@@ -27,12 +27,12 @@
                         - Ajouter/Supprimer une chambre
                     </TextBlock>
                 </Border>
-                <!--<Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,177,0,0">
-                    <TextBlock MouseLeftButtonDown="AppuieGSalle" Background="WhiteSmoke" Margin="0,0,0,0.2">
-                        Gestion Salle<LineBreak/>
-                        - Ajouter/Modifier/Supprimer une salle
+                <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,255,0,0">
+                    <TextBlock MouseLeftButtonDown="AppuieCompagnie" Background="WhiteSmoke" Margin="0,0,0,0.2">
+                        Compagnie<LineBreak/>
+                        - Ajouter/Modifier une compagnie
                     </TextBlock>
-                </Border>-->
+                </Border>
                 <Border BorderBrush="Black" BorderThickness="2" VerticalAlignment="Top" Height="68" Margin="0,180,0,0">
                     <TextBlock MouseLeftButtonDown="AppuieItem" Background="WhiteSmoke" Margin="0,0,0,-2">
                         Item<LineBreak/>
@@ -41,7 +41,7 @@
                         - Inventaire
                     </TextBlock>
                 </Border>
-                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,80" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnDeco" Content="Déconnexion" Margin="0,0,0,60" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                 <Label Content="" Name="lblNomEmpl" HorizontalAlignment="Left" Margin="10,323,0,0" VerticalAlignment="Top"/>
             </Grid>
         </Viewbox>
