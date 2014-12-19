@@ -13,11 +13,20 @@
         <Viewbox Stretch="Uniform">
             <Grid Height="140" Width="193">
                 <Label Content="Fournisseur :" Margin="0,10,116,105"></Label>
-                <ComboBox Name="cbFourni" Background="White" Height="25" Margin="82,10,11,105"/>
+                <ComboBox Name="cbFourni" Background="White" Height="25" Margin="82,10,11,105">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Label x:Name="lblFourni" Content="{Binding nomFournisseur}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <Label Content="Prix :" Margin="0,40,151,75"/>
                 <TextBox Name="txtPrixItem" Height="25" Margin="47,40,66,75"/>
-                <Button Name="btnQuitter" Content="Quitter" Height="25" Style="{StaticResource styleBouton}" Margin="99,92,7,23"/>
-                <Button Name="btnLier" Content="Lier" Height="25" Style="{StaticResource styleBouton}" Margin="7,92,99,23"/>
+                <Button Name="btnQuitter" Content="Quitter" Height="25" Style="{StaticResource styleBouton}" Margin="99,115,7,0"/>
+                <Button Name="btnLier" Content="Lier" Height="25" Style="{StaticResource styleBouton}" Margin="7,115,99,0"/>
+                <Button Name="btnAjouterFour" Content="Ajouter" Height="25" Style="{StaticResource styleBouton}" Margin="7,85,99,30"/>
             </Grid>
         </Viewbox>
     </Grid>

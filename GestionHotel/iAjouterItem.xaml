@@ -12,10 +12,6 @@
     <Grid>
         <Viewbox Stretch="Uniform" Loaded="Viewbox_Loaded">
             <Grid Height="211" Width="438">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="22*"/>
-                    <ColumnDefinition Width="21*"/>
-                </Grid.ColumnDefinitions>
                 <Label Content="* = non-obligatoire" Margin="289,13,194.4,273" Grid.ColumnSpan="2"/>
                 <Label Content="Code de l'item : " HorizontalAlignment="Left" Margin="1,8,0,0" VerticalAlignment="Top"/>
                 <TextBox x:Name="txtRCodeItem" Height="20" VerticalAlignment="Top" Width="99" HorizontalAlignment="Left" Margin="92,13,0,0"/>
@@ -26,8 +22,8 @@
                             <TextBox x:Name="txtNomItem" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="141" Margin="78,-2,0,0"/>
                             <Label Content="Description* :" HorizontalAlignment="Left" Margin="-4,23,0,0" VerticalAlignment="Top"/>
                             <TextBox x:Name="txtDescItem" Height="60" VerticalAlignment="Top" Width="233" HorizontalAlignment="Left" Canvas.Left="85" Margin="78,23,0,0"/>
-                            <Label x:Name="lblFourni" Content="Fournisseur :" Margin="-4,88,3.4,27"/>
-                            <ComboBox x:Name="cbFournisseur" Margin="78,88,0,0" Background="White" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122">
+                            <Label x:Name="lblFourni" Content="Fournisseur :" Margin="-4,115,3.4,0"/>
+                            <ComboBox x:Name="cbFournisseur" Margin="78,115,0,0" Background="White" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="122">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
@@ -39,10 +35,10 @@
                         </Grid>
                     </StackPanel>
                 </GroupBox>
-                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" Grid.Column="1" HorizontalAlignment="Left" Margin="103,180,0,0" VerticalAlignment="Top" Width="111"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter" Grid.Column="1" HorizontalAlignment="Left" Margin="103,128,0,0" VerticalAlignment="Top" Width="111"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFour" Content="Ajouter Fournisseur" Margin="202,174,125.4,17" Height="20" Grid.ColumnSpan="2"/>
-                <Button Style="{StaticResource styleBouton}" Name="btnModifierItem" Content="Modifier" Height="20" Margin="103,156,0,35" Grid.Column="1" HorizontalAlignment="Left" Width="111"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAccueil" Content="Accueil" HorizontalAlignment="Left" Margin="327,172,0,0" VerticalAlignment="Top" Width="111"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjouterItem" Content="Ajouter" HorizontalAlignment="Left" Margin="244,143,0,0" VerticalAlignment="Top" Width="68"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnAjoutFour" Content="Lier Fournisseur" Margin="217,174,126.4,17" Height="20" Grid.ColumnSpan="2"/>
+                <Button Style="{StaticResource styleBouton}" Name="btnModifierItem" Content="Modifier" Height="20" Margin="167,145,0,46" HorizontalAlignment="Left" Width="72"/>
             </Grid>
         </Viewbox>
 

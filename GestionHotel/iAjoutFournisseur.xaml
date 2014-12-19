@@ -21,9 +21,9 @@
                 <Label Content="Adresse :" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top"/>
                 <TextBox Name="txtAdrFourni" HorizontalAlignment="Left" Height="20" Margin="68,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="187"/>
                 <Label Content="Code postal :" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
-                <xctk:MaskedTextBox Mask="L0L\ 0L0" PromptChar=" " Name="txtcodePostFourni" HorizontalAlignment="Left" Height="20" Margin="139,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
+                <xctk:MaskedTextBox Mask="L0L0L0" PromptChar=" " Name="txtcodePostFourni" HorizontalAlignment="Left" Height="20" Margin="139,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="116"/>
                 <Label Content="Téléphone :" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top"/>
-                <TextBox Name="txtnoTelFourni" HorizontalAlignment="Left" Height="20" Margin="135,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                <xctk:MaskedTextBox Mask="000 000-0000" PromptChar=" " Name="txtnoTelFourni" HorizontalAlignment="Left" Height="20" Margin="135,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                 <Label Content="Responsable :" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
                 <TextBox Name="txtRespFourni" HorizontalAlignment="Left" Height="22" Margin="98,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157"/>
                 <Label Content="Ville :" HorizontalAlignment="Left" Margin="13,184,0,0" VerticalAlignment="Top"/>

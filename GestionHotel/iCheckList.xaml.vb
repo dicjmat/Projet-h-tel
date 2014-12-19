@@ -101,7 +101,9 @@
 
     Private Sub btnRetire_Click(sender As Object, e As RoutedEventArgs) Handles btnRetire.Click
         If dgCheckList.SelectedItem IsNot Nothing Then
-            dgCheckList.CanUserDeleteRows = True
+            BD.tblChecklist.Remove(dgCheckList.SelectedItem)
+            BD.SaveChanges()
+            windowCheckList.OnActivated(e)
         Else
             MessageBox.Show("Veuillez sélectionner un item", "Attention", MessageBoxButton.OK, MessageBoxImage.Exclamation)
         End If

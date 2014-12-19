@@ -1,6 +1,6 @@
 ﻿Class iAjouterItem
     Dim bd As P2014_Equipe2_GestionHôtelièreEntities
-    Private _item As String
+    Private item As String
     Dim noEmp As Integer
     Dim noHotel As Integer
 
@@ -14,11 +14,12 @@
         btnModifierItem.Visibility = Windows.Visibility.Hidden
         btnAjouterItem.Visibility = Windows.Visibility.Visible
         btnAjouterItem.IsEnabled = True
+        btnAjoutFour.IsEnabled = False
     End Sub
 
-    Sub New(item As String, _bd As P2014_Equipe2_GestionHôtelièreEntities)
+    Sub New(_item As String, _bd As P2014_Equipe2_GestionHôtelièreEntities)
         InitializeComponent()
-        _item = item
+        item = _item
         bd = _bd
         lblFourni.Visibility = Windows.Visibility.Visible
         btnAjouterItem.Visibility = Windows.Visibility.Hidden
@@ -30,18 +31,20 @@
         btnModifierItem.IsEnabled = True
 
         Dim res = From it In bd.tblItem
-                  Join ca In bd.tblCatalogue
-                  On ca.codeItem Equals it.codeItem
-                  Join fo In bd.tblFournisseur
-                  On ca.noFournisseur Equals fo.noFournisseur
                   Where it.codeItem = item
-                  Select it.codeItem, it.descItem, it.nomItem, fo.nomFournisseur
+                  Select it
+
+        Dim fourn = From fo In bd.tblFournisseur
+                    Join ca In bd.tblCatalogue
+                    On ca.noFournisseur Equals fo.noFournisseur
+                    Where ca.codeItem = item
+                    Select fo
 
         txtRCodeItem.Text = res.First.codeItem
         txtRCodeItem.IsEnabled = False
         txtNomItem.Text = res.First.nomItem
         txtDescItem.Text = res.First.descItem
-        cbFournisseur.ItemsSource = res.ToList
+        cbFournisseur.ItemsSource = fourn.ToList
     End Sub
 
     Private Sub Viewbox_Loaded(sender As Object, e As RoutedEventArgs)
@@ -52,10 +55,9 @@
     End Sub
 
     Private Sub btnAjoutFour_Click(sender As Object, e As RoutedEventArgs) Handles btnAjoutFour.Click
-        Dim fournisseur = New iAjoutFournisseur(bd, _item)
+        Dim fournisseur = New LierFournisseur(bd, item)
         fournisseur.Owner = Me
         fournisseur.Show()
-        Me.Hide()
     End Sub
 
     Private Sub windowAjoutItem_Closing(sender As Object, e As ComponentModel.CancelEventArgs) Handles windowAjoutItem.Closing
@@ -82,10 +84,9 @@
                 Exit Sub
             End Try
 
-            MessageBox.Show("L'item a été créé avec succès.")
-            Me.Owner.Hide()
-            Me.Owner.Show()
-            Me.Close()
+            MessageBox.Show("L'item a été créé avec succès")
+            btnAjoutFour.IsEnabled = True
+            btnAjouterItem.IsEnabled = False
         Else
             MessageBox.Show("Un des champs obligatoire n'a pas été remplis")
         End If
@@ -94,14 +95,14 @@
     End Sub
 
     Private Sub btnModifierItem_Click(sender As Object, e As RoutedEventArgs) Handles btnModifierItem.Click
-        Dim item = From it In bd.tblItem
-                   Where it.codeItem = _item
+        Dim res = From it In bd.tblItem
+                   Where it.codeItem = item
                    Select it
 
         If txtRCodeItem.Text <> "" Or txtNomItem.Text <> "" Then
-            item.Single.codeItem = txtRCodeItem.Text
-            item.Single.nomItem = txtNomItem.Text
-            item.Single.descItem = txtDescItem.Text
+            res.Single.codeItem = txtRCodeItem.Text
+            res.Single.nomItem = txtNomItem.Text
+            res.Single.descItem = txtDescItem.Text
 
             bd.SaveChanges()
             MessageBox.Show("L'item a été modifié avec succès.")
@@ -202,7 +203,7 @@
                   On ca.codeItem Equals it.codeItem
                   Join fo In bd.tblFournisseur
                   On ca.noFournisseur Equals fo.noFournisseur
-                  Where it.codeItem = _item
+                  Where it.codeItem = item
                   Select it.codeItem, it.descItem, it.nomItem, fo.nomFournisseur
         cbFournisseur.ItemsSource = res.ToList
     End Sub
