@@ -18,6 +18,7 @@
         txtNomRespCie.Text = res.respCompagnie
         txtComCie.Text = res.commentaire
         txtAdresse.Text = res.adrCompagnie
+        txtcodePostComp.Text = res.codePostalCompagnie
 
         Dim pays = From pa In bd.tblPays
                    Select pa
@@ -50,7 +51,7 @@
 
     Private Sub btnCreer_Click(sender As Object, e As RoutedEventArgs) Handles btnCreer.Click
         Dim comp = New tblCompagnie
-        If txtNomCie.Text <> "" And txtTellCie.Text <> "   -   -    " And cbVille.SelectedIndex <> -1 And txtAdresse.Text <> "" Then
+        If txtNomCie.Text <> "" And txtTellCie.Text <> "   -   -    " And cbVille.SelectedIndex <> -1 And txtAdresse.Text <> "" And txtcodePostComp.Text <> "" Then
             comp.nomCompagnie = txtNomCie.Text
             comp.adrCompagnie = txtAdresse.Text
             comp.noTelCompagnie = txtTellCie.Text
@@ -58,6 +59,7 @@
                 comp.noCellCompagnie = txtCellCie.Text
             End If
             comp.respCompagnie = txtNomRespCie.Text
+            comp.codePostalCompagnie = txtcodePostComp.Text
             comp.commentaire = txtComCie.Text
             comp.codeProv = cbProvince.SelectedItem.codeProv
             comp.codeVille = cbVille.SelectedItem.codeVille
@@ -83,6 +85,7 @@
             comp.noCellCompagnie = txtCellCie.Text
             comp.respCompagnie = txtNomRespCie.Text
             comp.commentaire = txtComCie.Text
+            comp.codePostalCompagnie = txtcodePostComp.Text
             comp.codeProv = cbProvince.SelectedItem.codeProv
             comp.codeVille = cbVille.SelectedItem.codeVille
             bd.SaveChanges()
