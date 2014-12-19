@@ -167,7 +167,7 @@
         Me.Close()
     End Sub
 
-    Private Sub MenuItem_Click(sender As Object, e As RoutedEventArgs)
+    Private Sub MenuItem_Click_1(sender As Object, e As RoutedEventArgs)
         Dim lst = New iListeReservComplet(bd, noEmp, noHotel)
         lst.Owner = Me.Owner
         lst.Show()

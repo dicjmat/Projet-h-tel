@@ -67,6 +67,26 @@
                 <StackPanel></StackPanel>
             </DockPanel>
         </Canvas>
+        <Canvas Name="menuAdmin">
+            <Menu DockPanel.Dock="Top" Background="CadetBlue" FontSize="30" Height="50" Margin="0,5,-4.4,0">
+                <MenuItem Header="_Employe" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Liste d'employé complet" Click="MenuItem_Click_11"/>
+                </MenuItem>
+                <MenuItem Header="_Item"  BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Inventaire" Click="MenuItem_Click_3"/>
+                    <MenuItem Header="_Ajouter un fournisseur" Click="MenuItem_Click_4"/>
+                    <MenuItem Header="_Inventaire complet" Click="MenuItem_Click_6"/>
+                </MenuItem>
+                <MenuItem Header="_Gestion" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="Gestion de salle" Click="MenuItem_Click_7"/>
+                    <MenuItem Header="Gestion d'hotel" Click="MenuItem_Click_8"/>
+                </MenuItem>
+                <MenuItem Header="_Listes" BorderThickness="1" BorderBrush="Black">
+                    <MenuItem Header="_Liste centrale" Click="MenuItem_Click_10"/>
+                    <MenuItem Header="_Liste d'hôtel" Click="MenuItem_Click_13"/>
+                </MenuItem>
+            </Menu>
+        </Canvas>
         <Viewbox Stretch="Uniform">
             <Grid Height="339" Width="526">
                 <Label Content="* = non-obligatoire" Margin="292,146,264,248"></Label>

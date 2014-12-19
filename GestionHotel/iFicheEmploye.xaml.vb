@@ -16,11 +16,16 @@ Public Class iFicheEmploye
 
         btnModifier.Visibility = Windows.Visibility.Visible
 
-        If res.First.statut = "GEST" Then
+        If res.First.statut = "GEST" Or res.First.statut = "PATR" Then
             menu.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menu.IsEnabled = False
+        ElseIf res.First.statut = "ADMI" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menuGest.Visibility = Windows.Visibility.Hidden
         Else
             menuGest.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menuGest.IsEnabled = False
         End If
 
@@ -36,11 +41,16 @@ Public Class iFicheEmploye
         btnModifier.Visibility = Windows.Visibility.Hidden
         txtNASEmp.IsEnabled = True
 
-        If res.First.statut = "GEST" Then
+        If res.First.statut = "GEST" Or res.First.statut = "PATR" Then
             menu.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menu.IsEnabled = False
+        ElseIf res.First.statut = "ADMI" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menuGest.Visibility = Windows.Visibility.Hidden
         Else
             menuGest.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menuGest.IsEnabled = False
         End If
     End Sub
@@ -59,9 +69,14 @@ Public Class iFicheEmploye
 
         If ress.First.statut = "GEST" Then
             menu.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menu.IsEnabled = False
+        ElseIf ress.First.statut = "ADMI" Then
+            menu.Visibility = Windows.Visibility.Hidden
+            menuGest.Visibility = Windows.Visibility.Hidden
         Else
             menuGest.Visibility = Windows.Visibility.Hidden
+            menuAdmin.Visibility = Windows.Visibility.Hidden
             menuGest.IsEnabled = False
         End If
 

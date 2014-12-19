@@ -28,11 +28,9 @@
                     <MenuItem Header="_Gestion de salle" Click="MenuItem_Click_9"/>
                     <MenuItem Header="_Gestion d'hôtel" Click="MenuItem_Click_10"/>
                 </MenuItem>
-                <MenuItem Header="_Listes" BorderBrush="Black" BorderThickness="1" Click="MenuItem_Click">
+                <MenuItem Header="_Listes" BorderBrush="Black" BorderThickness="1">
                     <MenuItem Header="_Liste centrale" Click="MenuItem_Click_11"/>
                     <MenuItem Header="_Liste hotel" Click="MenuItem_Click_12"/>
-                    <MenuItem Header="_Liste salle" Click="MenuItem_Click_13"/>
-                    <MenuItem Header="_Liste de réservation centrale"/>
                 </MenuItem>
             </Menu>
         </DockPanel>

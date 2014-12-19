@@ -27,8 +27,6 @@
                 <MenuItem Header="_Listes" BorderBrush="Black" BorderThickness="1">
                     <MenuItem Header="_Liste centrale" Click="MenuItem_Click_11"/>
                     <MenuItem Header="_Liste hotel" Click="MenuItem_Click_12"/>
-                    <MenuItem Header="_Liste salle" Click="MenuItem_Click_13"/>
-                    <MenuItem Header="_Liste de reserv centrale" Click="MenuItem_Click"></MenuItem>
                 </MenuItem>
             </Menu>
         </DockPanel>
