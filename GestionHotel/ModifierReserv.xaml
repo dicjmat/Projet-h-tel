@@ -1,11 +1,20 @@
-﻿<Window x:Class="ModifierReserv"
+﻿<Window x:Class="ModifierReserv" Background="CadetBlue" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="ModifierReserv" Height="300" Width="300" Loaded="Window_Loaded">
+    Title="ModifierReserv" Height="127.954" Width="300" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="styleBouton" TargetType="Button">
+            <Setter Property="Background" Value="WhiteSmoke"></Setter>
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <DatePicker x:Name="datedeb" HorizontalAlignment="Left" Margin="79,99,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="datefin" HorizontalAlignment="Left" Margin="79,152,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="btnAccept" Content="Accepter" HorizontalAlignment="Left" Margin="115,240,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Date de début :" Margin="0,0,190.6,75"/>
+        <DatePicker x:Name="datedeb" HorizontalAlignment="Left" Margin="93,1,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date de fin :" Margin="0,30,218.6,46"/>
+        <DatePicker x:Name="datefin" HorizontalAlignment="Left" Margin="93,30,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnAccept" Content="Accepter" HorizontalAlignment="Left" Margin="106,68,0,0" VerticalAlignment="Top" Width="75" Style="{StaticResource styleBouton}"/>
 
     </Grid>
 </Window>
